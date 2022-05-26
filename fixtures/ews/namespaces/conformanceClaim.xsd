@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- ConformanceClaim.xsd from http://www.ws-i.org/Profiles/ConformanceClaims-1.0-2004-11-15.html - See Section 3 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"
+            targetNamespace="http://ws-i.org/schemas/conformanceClaim/"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ soap.xml">
+    <xsd:import namespace="http://schemas.xmlsoap.org/soap/envelope/" schemaLocation="soap.xml"/>
+    <xsd:element name="Claim">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="conformsTo" type="xsd:anyURI" use="required"/>
+            <xsd:attribute ref="soap:mustUnderstand" use="prohibited"/>
+            <xsd:anyAttribute namespace="##any" processContents="lax"/>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

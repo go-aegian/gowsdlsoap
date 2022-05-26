@@ -284,6 +284,48 @@ func TestComplexTypeGeneratedCorrectly(t *testing.T) {
 	}
 }
 
+func TestEWSWSDL(t *testing.T) {
+	log.SetFlags(0)
+	log.SetOutput(os.Stdout)
+
+	g, err := NewGoWSDL(`.\fixtures\ews\services.wsdl`, "ewsApi", true, true)
+	if err != nil {
+		t.Error(err)
+	}
+
+	resp, err := g.Start()
+	if err != nil {
+		t.Fatal(err)
+	}
+	data := new(bytes.Buffer)
+	data.Write(resp["header"])
+	data.Write(resp["types"])
+	data.Write(resp["operations"])
+	data.Write(resp["soap"])
+
+	// go fmt the generated code
+	source, err := format.Source(data.Bytes())
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if _, err := os.Stat(`.\fixtures\ews\proxy.src`); err != nil {
+		_ = ioutil.WriteFile(`.\fixtures\ews\proxy.src`, source, 0664)
+	}
+
+	expectedBytes, err := ioutil.ReadFile(`.\fixtures\ews\proxy.src`)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	actual := string(source)
+	expected := string(expectedBytes)
+	if actual != expected {
+		_ = ioutil.WriteFile(`.\fixtures\ews\proxy_gen.go`, source, 0664)
+		t.Error(`got source .\fixtures\ews\proxy_gen.go but expected .\fixtures\ews\proxy.src`)
+	}
+}
+
 func TestEPCISWSDL(t *testing.T) {
 	log.SetFlags(0)
 	log.SetOutput(os.Stdout)

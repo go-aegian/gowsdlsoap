@@ -202,8 +202,8 @@ var typesTmpl = `
 		{{else}}
 			type {{$typeName}} struct {
 				{{$type := findNameByType .Name}}
-				{{if or (ne .Name $type) (ne $typeName $type)}}
-					XMLName xml.Name ` + "`xml:\"{{$targetNamespace}} {{$typeName}}\"`" + `
+				{{if ne .Name $type}}
+					XMLName xml.Name ` + "`xml:\"{{$targetNamespace}} {{$type}}\"`" + `
 				{{end}}
 
 				{{if ne .ComplexContent.Extension.Base ""}}

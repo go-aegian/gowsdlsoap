@@ -25,6 +25,8 @@ type NCName string
 type Document struct {
 
 	//
+
+	//
 	// The version of the schema corresponding to which the instance conforms.
 	//
 
@@ -40,6 +42,9 @@ type Document struct {
 type EPC string
 
 type DocumentIdentification struct {
+
+	//
+
 	Standard string `xml:"Standard,omitempty" json:"Standard,omitempty"`
 
 	TypeVersion string `xml:"TypeVersion,omitempty" json:"TypeVersion,omitempty"`
@@ -54,13 +59,19 @@ type DocumentIdentification struct {
 }
 
 type Partner struct {
+
+	//
+
 	Identifier *PartnerIdentification `xml:"Identifier,omitempty" json:"Identifier,omitempty"`
 
 	ContactInformation []*ContactInformation `xml:"ContactInformation,omitempty" json:"ContactInformation,omitempty"`
 }
 
 type PartnerIdentification struct {
-	XMLName xml.Name `xml:"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader PartnerIdentification"`
+
+	//
+	XMLName xml.Name `xml:"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader Identifier"`
+	//
 
 	Value string `xml:",chardata" json:"-,"`
 
@@ -68,6 +79,9 @@ type PartnerIdentification struct {
 }
 
 type ContactInformation struct {
+
+	//
+
 	Contact string `xml:"Contact,omitempty" json:"Contact,omitempty"`
 
 	EmailAddress string `xml:"EmailAddress,omitempty" json:"EmailAddress,omitempty"`
@@ -91,12 +105,18 @@ type MimeTypeQualifier string
 type Language string
 
 type Manifest struct {
+
+	//
+
 	NumberOfItems int32 `xml:"NumberOfItems,omitempty" json:"NumberOfItems,omitempty"`
 
 	ManifestItem []*ManifestItem `xml:"ManifestItem,omitempty" json:"ManifestItem,omitempty"`
 }
 
 type ManifestItem struct {
+
+	//
+
 	MimeTypeQualifierCode *MimeTypeQualifier `xml:"MimeTypeQualifierCode,omitempty" json:"MimeTypeQualifierCode,omitempty"`
 
 	UniformResourceIdentifier AnyURI `xml:"UniformResourceIdentifier,omitempty" json:"UniformResourceIdentifier,omitempty"`
@@ -117,14 +137,23 @@ const (
 type ScopeInformation AnyType
 
 type BusinessScope struct {
+
+	//
+
 	Scope []*Scope `xml:"Scope,omitempty" json:"Scope,omitempty"`
 }
 
 type Scope struct {
+
+	//
+
 	ScopeInformation []*ScopeInformation `xml:"ScopeInformation,omitempty" json:"ScopeInformation,omitempty"`
 }
 
 type CorrelationInformation struct {
+
+	//
+
 	RequestingDocumentCreationDateTime soap.XSDDateTime `xml:"RequestingDocumentCreationDateTime,omitempty" json:"RequestingDocumentCreationDateTime,omitempty"`
 
 	RequestingDocumentInstanceIdentifier string `xml:"RequestingDocumentInstanceIdentifier,omitempty" json:"RequestingDocumentInstanceIdentifier,omitempty"`
@@ -133,12 +162,18 @@ type CorrelationInformation struct {
 }
 
 type BusinessService struct {
+
+	//
+
 	BusinessServiceName string `xml:"BusinessServiceName,omitempty" json:"BusinessServiceName,omitempty"`
 
 	ServiceTransaction *ServiceTransaction `xml:"ServiceTransaction,omitempty" json:"ServiceTransaction,omitempty"`
 }
 
 type ServiceTransaction struct {
+
+	//
+
 	TypeOfServiceTransaction *TypeOfServiceTransaction `xml:"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader TypeOfServiceTransaction,attr,omitempty" json:"TypeOfServiceTransaction,omitempty"`
 
 	IsNonRepudiationRequired string `xml:"http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader IsNonRepudiationRequired,attr,omitempty" json:"IsNonRepudiationRequired,omitempty"`
@@ -161,6 +196,9 @@ type ServiceTransaction struct {
 }
 
 type StandardBusinessDocumentHeader struct {
+
+	//
+
 	HeaderVersion string `xml:"HeaderVersion,omitempty" json:"HeaderVersion,omitempty"`
 
 	Sender []*Partner `xml:"Sender,omitempty" json:"Sender,omitempty"`
@@ -175,6 +213,9 @@ type StandardBusinessDocumentHeader struct {
 }
 
 type StandardBusinessDocument struct {
+
+	//
+
 	StandardBusinessDocumentHeader *StandardBusinessDocumentHeader `xml:"StandardBusinessDocumentHeader,omitempty" json:"StandardBusinessDocumentHeader,omitempty"`
 
 	Items []string `xml:",any" json:"items,omitempty"`
@@ -221,7 +262,10 @@ type ErrorReasonIDType AnyURI
 type EPCISDocument EPCISDocumentType
 
 type EPCISDocumentType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISDocumentType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISDocument"`
+	//
 
 	*Document
 
@@ -233,13 +277,19 @@ type EPCISDocumentType struct {
 }
 
 type EPCISDocumentExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISDocumentExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type EPCISHeaderType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISHeaderType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISHeader"`
+	//
 
 	StandardBusinessDocumentHeader *StandardBusinessDocumentHeader `xml:"StandardBusinessDocumentHeader,omitempty" json:"StandardBusinessDocumentHeader,omitempty"`
 
@@ -249,7 +299,10 @@ type EPCISHeaderType struct {
 }
 
 type EPCISHeaderExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISHeaderExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	EPCISMasterData *EPCISMasterDataType `xml:"EPCISMasterData,omitempty" json:"EPCISMasterData,omitempty"`
 
@@ -257,13 +310,19 @@ type EPCISHeaderExtensionType struct {
 }
 
 type EPCISHeaderExtension2Type struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISHeaderExtension2Type"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type EPCISMasterDataType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISMasterDataType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISMasterData"`
+	//
 
 	VocabularyList *VocabularyListType `xml:"VocabularyList,omitempty" json:"VocabularyList,omitempty"`
 
@@ -271,19 +330,28 @@ type EPCISMasterDataType struct {
 }
 
 type EPCISMasterDataExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISMasterDataExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type VocabularyListType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 VocabularyListType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 VocabularyList"`
+	//
 
 	Vocabulary []*VocabularyType `xml:"Vocabulary,omitempty" json:"Vocabulary,omitempty"`
 }
 
 type VocabularyType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 VocabularyType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 Vocabulary"`
+	//
 
 	VocabularyElementList *VocabularyElementListType `xml:"VocabularyElementList,omitempty" json:"VocabularyElementList,omitempty"`
 
@@ -295,13 +363,19 @@ type VocabularyType struct {
 }
 
 type VocabularyElementListType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 VocabularyElementListType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 VocabularyElementList"`
+	//
 
 	VocabularyElement []*VocabularyElementType `xml:"VocabularyElement,omitempty" json:"VocabularyElement,omitempty"`
 }
 
 type VocabularyElementType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 VocabularyElementType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 VocabularyElement"`
+	//
 
 	Attribute []*AttributeType `xml:"attribute,omitempty" json:"attribute,omitempty"`
 
@@ -315,7 +389,10 @@ type VocabularyElementType struct {
 }
 
 type AttributeType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 AttributeType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 attribute"`
+	//
 
 	AnyType
 
@@ -323,25 +400,37 @@ type AttributeType struct {
 }
 
 type IDListType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 IDListType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 children"`
+	//
 
 	Id []AnyURI `xml:"id,omitempty" json:"id,omitempty"`
 }
 
 type VocabularyExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 VocabularyExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type VocabularyElementExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 VocabularyElementExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type EPCISBodyType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISBodyType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISBody"`
+	//
 
 	EventList *EventListType `xml:"EventList,omitempty" json:"EventList,omitempty"`
 
@@ -351,13 +440,19 @@ type EPCISBodyType struct {
 }
 
 type EPCISBodyExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISBodyExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type EventListType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EventListType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EventList"`
+	//
 
 	ObjectEvent []*ObjectEventType `xml:"ObjectEvent,omitempty" json:"ObjectEvent,omitempty"`
 
@@ -371,7 +466,10 @@ type EventListType struct {
 }
 
 type EPCISEventListExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISEventListExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	TransformationEvent *TransformationEventType `xml:"TransformationEvent,omitempty" json:"TransformationEvent,omitempty"`
 
@@ -379,27 +477,42 @@ type EPCISEventListExtensionType struct {
 }
 
 type EPCISEventListExtension2Type struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISEventListExtension2Type"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type EPCListType struct {
+
+	//
+
 	Epc []*EPC `xml:"epc,omitempty" json:"epc,omitempty"`
 }
 
 type QuantityElementType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 QuantityElementType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 quantityElement"`
+	//
 
 	EpcClass *EPCClassType `xml:"epcClass,omitempty" json:"epcClass,omitempty"`
 }
 
 type QuantityListType struct {
+
+	//
+
 	QuantityElement []*QuantityElementType `xml:"quantityElement,omitempty" json:"quantityElement,omitempty"`
 }
 
 type ReadPointType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 ReadPointType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 readPoint"`
+	//
 
 	Id *ReadPointIDType `xml:"id,omitempty" json:"id,omitempty"`
 
@@ -409,13 +522,19 @@ type ReadPointType struct {
 }
 
 type ReadPointExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 ReadPointExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type BusinessLocationType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 BusinessLocationType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 bizLocation"`
+	//
 
 	Id *BusinessLocationIDType `xml:"id,omitempty" json:"id,omitempty"`
 
@@ -425,13 +544,19 @@ type BusinessLocationType struct {
 }
 
 type BusinessLocationExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 BusinessLocationExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type BusinessTransactionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 BusinessTransactionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 bizTransaction"`
+	//
 
 	Value *BusinessTransactionIDType `xml:",chardata" json:"-,"`
 
@@ -439,31 +564,46 @@ type BusinessTransactionType struct {
 }
 
 type BusinessTransactionListType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 BusinessTransactionListType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 bizTransactionList"`
+	//
 
 	BizTransaction []*BusinessTransactionType `xml:"bizTransaction,omitempty" json:"bizTransaction,omitempty"`
 }
 
 type SourceDestType struct {
+
+	//
+
 	Value *SourceDestIDType `xml:",chardata" json:"-,"`
 
 	Type *SourceDestTypeIDType `xml:"urn:epcglobal:epcis:xsd:1 type,attr,omitempty" json:"type,omitempty"`
 }
 
 type SourceListType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 SourceListType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 sourceList"`
+	//
 
 	Source []*SourceDestType `xml:"source,omitempty" json:"source,omitempty"`
 }
 
 type DestinationListType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 DestinationListType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 destinationList"`
+	//
 
 	Destination []*SourceDestType `xml:"destination,omitempty" json:"destination,omitempty"`
 }
 
 type ILMDType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 ILMDType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 ilmd"`
+	//
 
 	Extension *ILMDExtensionType `xml:"extension,omitempty" json:"extension,omitempty"`
 
@@ -471,19 +611,28 @@ type ILMDType struct {
 }
 
 type ILMDExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 ILMDExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type CorrectiveEventIDsType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 CorrectiveEventIDsType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 correctiveEventIDs"`
+	//
 
 	CorrectiveEventID []*EventIDType `xml:"correctiveEventID,omitempty" json:"correctiveEventID,omitempty"`
 }
 
 type ErrorDeclarationType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 ErrorDeclarationType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 errorDeclaration"`
+	//
 
 	DeclarationTime soap.XSDDateTime `xml:"declarationTime,omitempty" json:"declarationTime,omitempty"`
 
@@ -497,12 +646,18 @@ type ErrorDeclarationType struct {
 }
 
 type ErrorDeclarationExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 ErrorDeclarationExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type EPCISEventType struct {
+
+	//
+
 	EventTime soap.XSDDateTime `xml:"eventTime,omitempty" json:"eventTime,omitempty"`
 
 	RecordTime soap.XSDDateTime `xml:"recordTime,omitempty" json:"recordTime,omitempty"`
@@ -513,7 +668,10 @@ type EPCISEventType struct {
 }
 
 type EPCISEventExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISEventExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 baseExtension"`
+	//
 
 	EventID *EventIDType `xml:"eventID,omitempty" json:"eventID,omitempty"`
 
@@ -523,13 +681,19 @@ type EPCISEventExtensionType struct {
 }
 
 type EPCISEventExtension2Type struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 EPCISEventExtension2Type"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type ObjectEventType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 ObjectEventType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 ObjectEvent"`
+	//
 
 	*EPCISEventType
 
@@ -551,7 +715,10 @@ type ObjectEventType struct {
 }
 
 type ObjectEventExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 ObjectEventExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	QuantityList *QuantityListType `xml:"quantityList,omitempty" json:"quantityList,omitempty"`
 
@@ -565,13 +732,19 @@ type ObjectEventExtensionType struct {
 }
 
 type ObjectEventExtension2Type struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 ObjectEventExtension2Type"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type AggregationEventType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 AggregationEventType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 AggregationEvent"`
+	//
 
 	*EPCISEventType
 
@@ -595,7 +768,10 @@ type AggregationEventType struct {
 }
 
 type AggregationEventExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 AggregationEventExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	ChildQuantityList *QuantityListType `xml:"childQuantityList,omitempty" json:"childQuantityList,omitempty"`
 
@@ -607,13 +783,19 @@ type AggregationEventExtensionType struct {
 }
 
 type AggregationEventExtension2Type struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 AggregationEventExtension2Type"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type QuantityEventType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 QuantityEventType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 QuantityEvent"`
+	//
 
 	*EPCISEventType
 
@@ -635,13 +817,19 @@ type QuantityEventType struct {
 }
 
 type QuantityEventExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 QuantityEventExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type TransactionEventType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 TransactionEventType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 TransactionEvent"`
+	//
 
 	*EPCISEventType
 
@@ -665,7 +853,10 @@ type TransactionEventType struct {
 }
 
 type TransactionEventExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 TransactionEventExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	QuantityList *QuantityListType `xml:"quantityList,omitempty" json:"quantityList,omitempty"`
 
@@ -677,13 +868,19 @@ type TransactionEventExtensionType struct {
 }
 
 type TransactionEventExtension2Type struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 TransactionEventExtension2Type"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type TransformationEventType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 TransformationEventType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 TransformationEvent"`
+	//
 
 	*EPCISEventType
 
@@ -717,7 +914,10 @@ type TransformationEventType struct {
 }
 
 type TransformationEventExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 TransformationEventExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
@@ -751,7 +951,10 @@ type GetVendorVersion EmptyParms
 type GetVendorVersionResult string
 
 type EPCISQueryDocumentType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 EPCISQueryDocumentType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 EPCISQueryDocument"`
+	//
 
 	*Document
 
@@ -763,13 +966,19 @@ type EPCISQueryDocumentType struct {
 }
 
 type EPCISQueryDocumentExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 EPCISQueryDocumentExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type EPCISQueryBodyType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 EPCISQueryBodyType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 EPCISBody"`
+	//
 
 	GetQueryNames *GetQueryNames `xml:"GetQueryNames,omitempty" json:"GetQueryNames,omitempty"`
 
@@ -827,6 +1036,9 @@ type EPCISQueryBodyType struct {
 }
 
 type Subscribe struct {
+
+	//
+
 	QueryName string `xml:"queryName,omitempty" json:"queryName,omitempty"`
 
 	Params *QueryParams `xml:"params,omitempty" json:"params,omitempty"`
@@ -839,31 +1051,52 @@ type Subscribe struct {
 }
 
 type Unsubscribe struct {
+
+	//
+
 	SubscriptionID string `xml:"subscriptionID,omitempty" json:"subscriptionID,omitempty"`
 }
 
 type GetSubscriptionIDs struct {
+
+	//
+
 	QueryName string `xml:"queryName,omitempty" json:"queryName,omitempty"`
 }
 
 type Poll struct {
+
+	//
+
 	QueryName string `xml:"queryName,omitempty" json:"queryName,omitempty"`
 
 	Params *QueryParams `xml:"params,omitempty" json:"params,omitempty"`
 }
 
 type VoidHolder struct {
+
+	//
+
 }
 
 type EmptyParms struct {
+
+	//
+
 }
 
 type ArrayOfString struct {
+
+	//
+
 	Astring []string `xml:"string,omitempty" json:"string,omitempty"`
 }
 
 type SubscriptionControls struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 SubscriptionControls"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 controls"`
+	//
 
 	Schedule *QuerySchedule `xml:"schedule,omitempty" json:"schedule,omitempty"`
 
@@ -879,13 +1112,19 @@ type SubscriptionControls struct {
 }
 
 type SubscriptionControlsExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 SubscriptionControlsExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type QuerySchedule struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 QuerySchedule"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 schedule"`
+	//
 
 	Second string `xml:"second,omitempty" json:"second,omitempty"`
 
@@ -905,19 +1144,28 @@ type QuerySchedule struct {
 }
 
 type QueryScheduleExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 QueryScheduleExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type QueryParams struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 QueryParams"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 params"`
+	//
 
 	Param []*QueryParam `xml:"param,omitempty" json:"param,omitempty"`
 }
 
 type QueryParam struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 QueryParam"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 param"`
+	//
 
 	Name string `xml:"name,omitempty" json:"name,omitempty"`
 
@@ -925,6 +1173,9 @@ type QueryParam struct {
 }
 
 type QueryResults struct {
+
+	//
+
 	QueryName string `xml:"queryName,omitempty" json:"queryName,omitempty"`
 
 	SubscriptionID string `xml:"subscriptionID,omitempty" json:"subscriptionID,omitempty"`
@@ -937,13 +1188,19 @@ type QueryResults struct {
 }
 
 type QueryResultsExtensionType struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 QueryResultsExtensionType"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 extension"`
+	//
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type QueryResultsBody struct {
-	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 QueryResultsBody"`
+
+	//
+	XMLName xml.Name `xml:"urn:epcglobal:epcis-query:xsd:1 resultsBody"`
+	//
 
 	EventList *EventListType `xml:"EventList,omitempty" json:"EventList,omitempty"`
 
@@ -951,34 +1208,58 @@ type QueryResultsBody struct {
 }
 
 type EPCISException struct {
+
+	//
+
 	Reason string `xml:"reason,omitempty" json:"reason,omitempty"`
 }
 
 type DuplicateNameException struct {
+
+	//
+
 	*EPCISException
 }
 
 type InvalidURIException struct {
+
+	//
+
 	*EPCISException
 }
 
 type NoSuchNameException struct {
+
+	//
+
 	*EPCISException
 }
 
 type NoSuchSubscriptionException struct {
+
+	//
+
 	*EPCISException
 }
 
 type DuplicateSubscriptionException struct {
+
+	//
+
 	*EPCISException
 }
 
 type QueryParameterException struct {
+
+	//
+
 	*EPCISException
 }
 
 type QueryTooLargeException struct {
+
+	//
+
 	*EPCISException
 
 	QueryName string `xml:"queryName,omitempty" json:"queryName,omitempty"`
@@ -987,26 +1268,44 @@ type QueryTooLargeException struct {
 }
 
 type QueryTooComplexException struct {
+
+	//
+
 	*EPCISException
 }
 
 type SubscriptionControlsException struct {
+
+	//
+
 	*EPCISException
 }
 
 type SubscribeNotPermittedException struct {
+
+	//
+
 	*EPCISException
 }
 
 type SecurityException struct {
+
+	//
+
 	*EPCISException
 }
 
 type ValidationException struct {
+
+	//
+
 	*EPCISException
 }
 
 type ImplementationException struct {
+
+	//
+
 	*EPCISException
 
 	Severity *ImplementationExceptionSeverity `xml:"severity,omitempty" json:"severity,omitempty"`
