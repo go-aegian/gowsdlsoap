@@ -268,6 +268,7 @@ func (g *GoWSDL) resolveXSDExternals(schema *XSDSchema, loc *Location) error {
 
 func (g *GoWSDL) genTypes() ([]byte, error) {
 	funcMap := template.FuncMap{
+		"isInnerBasicType":         g.isInnerBasicType,
 		"toGoType":                 toGoType,
 		"stripns":                  stripns,
 		"replaceReservedWords":     replaceReservedWords,
@@ -278,6 +279,7 @@ func (g *GoWSDL) genTypes() ([]byte, error) {
 		"comment":                  comment,
 		"removeNS":                 removeNS,
 		"goString":                 goString,
+		"findType":                 g.findType,
 		"findNameByType":           g.findNameByType,
 		"removePointerFromType":    removePointerFromType,
 		"setNS":                    g.setNS,
@@ -493,6 +495,18 @@ func toGoType(xsdType string, nillable bool) string {
 
 func removePointerFromType(goType string) string {
 	return regexp.MustCompile("^\\s*\\*").ReplaceAllLiteralString(goType, "")
+}
+
+func (g *GoWSDL) isInnerBasicType(t string) bool {
+	t = stripns(t)
+	for _, schema := range g.wsdl.Types.Schemas {
+		for _, simpleType := range schema.SimpleType {
+			if simpleType.Name == t {
+				return true
+			}
+		}
+	}
+	return false
 }
 
 // Given a message, finds its type.

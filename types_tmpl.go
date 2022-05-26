@@ -48,9 +48,9 @@ var typesTmpl = `
 	{{range .}}
 		{{if .Doc}} {{.Doc | comment}} {{end}}
 		{{ if ne .Type "" }}
-			{{ normalize .Name | makeFieldPublic}} {{toGoType .Type false}} ` + "`" + `xml:"{{$targetNamespace}} {{.Name}},attr,omitempty" json:"{{.Name}},omitempty"` + "`" + `
+			{{ normalize .Name | makeFieldPublic}} {{toGoType .Type false}} ` + "`" + `xml:"{{if ne (isInnerBasicType .Type) true}}{{$targetNamespace}} {{end}}{{.Name}},attr,omitempty" json:"{{.Name}},omitempty"` + "`" + `
 		{{ else }}
-			{{ normalize .Name | makeFieldPublic}} string ` + "`" + `xml:"{{$targetNamespace}} {{.Name}},attr,omitempty" json:"{{.Name}},omitempty"` + "`" + `
+			{{ normalize .Name | makeFieldPublic}} string ` + "`" + `xml:"{{.Name}},attr,omitempty" json:"{{.Name}},omitempty"` + "`" + `
 		{{ end }}
 	{{end}}
 {{end}}
