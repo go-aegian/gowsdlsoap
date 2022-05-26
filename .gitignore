@@ -1,0 +1,6 @@
+./gosoap
+myservice
+build
+.DS_Store
+dist
+.idea/
