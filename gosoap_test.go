@@ -288,7 +288,7 @@ func TestEPCISWSDL(t *testing.T) {
 	log.SetFlags(0)
 	log.SetOutput(os.Stdout)
 
-	g, err := NewGoWSDL("./fixtures/epcis/EPCglobal-epcis-query-1_2.wsdl", "myservice", true, true)
+	g, err := NewGoWSDL(`.\fixtures\epcis\EPCglobal-epcis-query-1_2.wsdl`, "myservice", true, true)
 	if err != nil {
 		t.Error(err)
 	}
@@ -308,7 +308,7 @@ func TestEPCISWSDL(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	expectedBytes, err := ioutil.ReadFile("./fixtures/epcis/epcisquery.src")
+	expectedBytes, err := ioutil.ReadFile(`.\fixtures\epcis\epcisquery.src`)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -316,8 +316,8 @@ func TestEPCISWSDL(t *testing.T) {
 	actual := string(source)
 	expected := string(expectedBytes)
 	if actual != expected {
-		_ = ioutil.WriteFile("./fixtures/epcis/epcisquery_gen.src", source, 0664)
-		t.Error("got source ./fixtures/epcis/epcisquery_gen.src but expected ./fixtures/epcis/epcisquery.src")
+		_ = ioutil.WriteFile(`.\fixtures\epcis\epcisquery_gen.src`, source, 0664)
+		t.Error(`got source .\fixtures\epcis\epcisquery_gen.src but expected .\fixtures\epcis\epcisquery.src`)
 	}
 }
 

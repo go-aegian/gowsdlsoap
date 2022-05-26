@@ -121,7 +121,7 @@ func NewGoWSDL(file, pkg string, ignoreTLS bool, exportAllTypes bool) (*GoWSDL, 
 	}, nil
 }
 
-// Start initiaties the code generation process by starting two goroutines: one
+// Start initiates the code generation process by starting two goroutines: one
 // to generate types and another one to generate operations.
 func (g *GoWSDL) Start() (map[string][]byte, error) {
 	gocode := make(map[string][]byte)
