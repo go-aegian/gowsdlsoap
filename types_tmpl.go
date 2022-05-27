@@ -33,7 +33,7 @@ var typesTmpl = `
 
 {{define "ComplexContent"}}
 	{{$baseType := toGoType .Extension.Base false}}
-	{{ if and ($baseType) (ne (isInnerBasicType $baseType) true) }}
+	{{ if and ($baseType) (ne (isBasicType $baseType) true) }}
 		{{$baseType}}
 	{{end}}
 

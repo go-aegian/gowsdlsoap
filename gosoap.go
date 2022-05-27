@@ -269,6 +269,7 @@ func (g *GoWSDL) resolveXSDExternals(schema *XSDSchema, loc *Location) error {
 func (g *GoWSDL) genTypes() ([]byte, error) {
 	funcMap := template.FuncMap{
 		"isInnerBasicType":         g.isInnerBasicType,
+		"isBasicType":              isBasicType,
 		"toGoType":                 toGoType,
 		"stripns":                  stripns,
 		"replaceReservedWords":     replaceReservedWords,
