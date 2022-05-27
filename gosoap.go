@@ -500,7 +500,7 @@ func removePointerFromType(goType string) string {
 }
 
 func (g *GoWSDL) isAbstract(t string) bool {
-	t = stripns(t)
+	t = strings.ReplaceAll(stripns(t), "*", "")
 	if isBasicType(t) {
 		return true
 	}
@@ -510,7 +510,7 @@ func (g *GoWSDL) isAbstract(t string) bool {
 				if complexType.Abstract {
 					return true
 				}
-				baseType := stripns(complexType.ComplexContent.Extension.Base)
+				baseType := strings.ReplaceAll(stripns(complexType.ComplexContent.Extension.Base), "*", "")
 				if baseType == "" {
 					return false
 				}
@@ -525,7 +525,7 @@ func (g *GoWSDL) isAbstract(t string) bool {
 	return false
 }
 func (g *GoWSDL) isInnerBasicType(t string) bool {
-	t = stripns(t)
+	t = strings.ReplaceAll(stripns(t), "*", "")
 	if isBasicType(t) {
 		return true
 	}
@@ -587,8 +587,6 @@ func (g *GoWSDL) findNameByType(name string) string {
 	return newTraverser(nil, g.wsdl.Types.Schemas).findNameByType(name)
 }
 
-// TODO(c4milo): Add support for namespaces instead of striping them out
-// TODO(c4milo): improve runtime complexity if performance turns out to be an issue.
 func (g *GoWSDL) findSOAPAction(operation, portType string) string {
 	for _, binding := range g.wsdl.Binding {
 		if strings.ToUpper(stripns(binding.Type)) != strings.ToUpper(portType) {
@@ -615,7 +613,6 @@ func (g *GoWSDL) findServiceAddress(name string) string {
 	return ""
 }
 
-// TODO(c4milo): Add namespace support instead of stripping it
 func stripns(xsdType string) string {
 	r := strings.Split(xsdType, ":")
 	t := r[0]
