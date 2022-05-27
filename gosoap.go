@@ -501,22 +501,29 @@ func removePointerFromType(goType string) string {
 
 func (g *GoWSDL) isAbstract(t string) bool {
 	t = stripns(t)
-	if t == "" {
-		return true
-	}
 	if isBasicType(t) {
 		return true
 	}
 	for _, schema := range g.wsdl.Types.Schemas {
 		for _, complexType := range schema.ComplexTypes {
 			if complexType.Name == t {
-				return g.isAbstract(complexType.ComplexContent.Extension.Base)
+				if complexType.Abstract {
+					return true
+				}
+				baseType := complexType.ComplexContent.Extension.Base
+				if baseType == "" {
+					return false
+				}
+				for _, complexTypeInner := range schema.ComplexTypes {
+					if complexTypeInner.Name == baseType && complexTypeInner.Abstract {
+						return true
+					}
+				}
 			}
 		}
 	}
 	return false
 }
-
 func (g *GoWSDL) isInnerBasicType(t string) bool {
 	t = stripns(t)
 	if isBasicType(t) {
