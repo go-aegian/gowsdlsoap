@@ -500,7 +500,7 @@ func removePointerFromType(goType string) string {
 }
 
 func (g *GoWSDL) isAbstract(t string) bool {
-	t = strings.ReplaceAll(stripns(t), "*", "")
+	t = stripns(t)
 	if isBasicType(t) {
 		return true
 	}
@@ -510,7 +510,7 @@ func (g *GoWSDL) isAbstract(t string) bool {
 				if complexType.Abstract {
 					return true
 				}
-				baseType := strings.ReplaceAll(stripns(complexType.ComplexContent.Extension.Base), "*", "")
+				baseType := stripns(complexType.ComplexContent.Extension.Base)
 				if baseType == "" {
 					return false
 				}
@@ -525,7 +525,7 @@ func (g *GoWSDL) isAbstract(t string) bool {
 	return false
 }
 func (g *GoWSDL) isInnerBasicType(t string) bool {
-	t = strings.ReplaceAll(stripns(t), "*", "")
+	t = stripns(t)
 	if isBasicType(t) {
 		return true
 	}
@@ -536,7 +536,7 @@ func (g *GoWSDL) isInnerBasicType(t string) bool {
 			}
 		}
 		for _, complexType := range schema.ComplexTypes {
-			if complexType.Name == t && len(complexType.Sequence) > 0 {
+			if complexType.Name == t && !complexType.Mixed && (len(complexType.Sequence) > 0 || len(complexType.SequenceChoice) > 0 || complexType.Abstract) {
 				return true
 			}
 		}
@@ -626,7 +626,7 @@ func stripns(xsdType string) string {
 		t = r[1]
 	}
 
-	return t
+	return strings.ReplaceAll(t, "*", "")
 }
 
 func makePublic(identifier string) string {
