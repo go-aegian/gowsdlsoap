@@ -535,6 +535,11 @@ func (g *GoWSDL) isInnerBasicType(t string) bool {
 				return true
 			}
 		}
+		for _, complexType := range schema.ComplexTypes {
+			if complexType.Name == t && len(complexType.Sequence) > 0 {
+				return true
+			}
+		}
 	}
 	return false
 }
