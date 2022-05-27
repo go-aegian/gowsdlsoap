@@ -510,7 +510,7 @@ func (g *GoWSDL) isAbstract(t string) bool {
 				if complexType.Abstract {
 					return true
 				}
-				baseType := complexType.ComplexContent.Extension.Base
+				baseType := stripns(complexType.ComplexContent.Extension.Base)
 				if baseType == "" {
 					return false
 				}
