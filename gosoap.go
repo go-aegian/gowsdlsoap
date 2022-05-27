@@ -499,6 +499,9 @@ func removePointerFromType(goType string) string {
 
 func (g *GoWSDL) isInnerBasicType(t string) bool {
 	t = stripns(t)
+	if isBasicType(t) {
+		return true
+	}
 	for _, schema := range g.wsdl.Types.Schemas {
 		for _, simpleType := range schema.SimpleType {
 			if simpleType.Name == t {
