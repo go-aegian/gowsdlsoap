@@ -1,8 +1,4 @@
-// This Source Code Form is subject to the terms of the Mozilla Public
-// License, v. 2.0. If a copy of the MPL was not distributed with this
-// file, You can obtain one at http://mozilla.org/MPL/2.0/.
-
-package gosoap
+package wsdl
 
 import (
 	"encoding/xml"
@@ -11,7 +7,7 @@ import (
 )
 
 func TestUnmarshal(t *testing.T) {
-	data, err := ioutil.ReadFile("fixtures/vim.wsdl")
+	data, err := ioutil.ReadFile(`..\fixtures\ews\services.wsdl`)
 	if err != nil {
 		t.Errorf("incorrect result\ngot:  %#v\nwant: %#v", err, nil)
 	}

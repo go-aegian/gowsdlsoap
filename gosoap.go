@@ -1,7 +1,3 @@
-// This Source Code Form is subject to the terms of the Mozilla Public
-// License, v. 2.0. If a copy of the MPL was not distributed with this
-// file, You can obtain one at http://mozilla.org/MPL/2.0/.
-
 package gosoap
 
 import (
@@ -22,6 +18,10 @@ import (
 	"text/template"
 	"time"
 	"unicode"
+
+	"github.com/go-aegian/gosoap/templates"
+	"github.com/go-aegian/gosoap/wsdl"
+	"github.com/go-aegian/gosoap/xsd"
 )
 
 const maxRecursion uint8 = 20
@@ -32,7 +32,7 @@ type GoWSDL struct {
 	pkg                   string
 	ignoreTLS             bool
 	makePublicFn          func(string) string
-	wsdl                  *WSDL
+	wsdl                  *wsdl.WSDL
 	resolvedXSDExternals  map[string]bool
 	currentRecursionLevel uint8
 	currentNamespace      string
@@ -187,7 +187,7 @@ func (g *GoWSDL) unmarshal() error {
 		return err
 	}
 
-	g.wsdl = new(WSDL)
+	g.wsdl = new(wsdl.WSDL)
 	err = xml.Unmarshal(data, g.wsdl)
 	if err != nil {
 		return err
@@ -203,7 +203,7 @@ func (g *GoWSDL) unmarshal() error {
 	return nil
 }
 
-func (g *GoWSDL) resolveXSDExternals(schema *XSDSchema, loc *Location) error {
+func (g *GoWSDL) resolveXSDExternals(schema *xsd.XSDSchema, loc *Location) error {
 	download := func(base *Location, ref string) error {
 		location, err := base.Parse(ref)
 		if err != nil {
@@ -223,7 +223,7 @@ func (g *GoWSDL) resolveXSDExternals(schema *XSDSchema, loc *Location) error {
 			return err
 		}
 
-		newschema := new(XSDSchema)
+		newschema := new(xsd.XSDSchema)
 
 		err = xml.Unmarshal(data, newschema)
 		if err != nil {
@@ -289,7 +289,7 @@ func (g *GoWSDL) genTypes() ([]byte, error) {
 	}
 
 	data := new(bytes.Buffer)
-	tmpl := template.Must(template.New("types").Funcs(funcMap).Parse(typesTmpl))
+	tmpl := template.Must(template.New("types").Funcs(funcMap).Parse(templates.Types))
 	err := tmpl.Execute(data, g.wsdl.Types)
 	if err != nil {
 		return nil, err
@@ -312,7 +312,7 @@ func (g *GoWSDL) genOperations() ([]byte, error) {
 	}
 
 	data := new(bytes.Buffer)
-	tmpl := template.Must(template.New("operations").Funcs(funcMap).Parse(opsTmpl))
+	tmpl := template.Must(template.New("operations").Funcs(funcMap).Parse(templates.Operations))
 	err := tmpl.Execute(data, g.wsdl.PortTypes)
 	if err != nil {
 		return nil, err
@@ -333,7 +333,7 @@ func (g *GoWSDL) genHeader() ([]byte, error) {
 	}
 
 	data := new(bytes.Buffer)
-	tmpl := template.Must(template.New("header").Funcs(funcMap).Parse(headerTmpl))
+	tmpl := template.Must(template.New("header").Funcs(funcMap).Parse(templates.Header))
 	err := tmpl.Execute(data, g.pkg)
 	if err != nil {
 		return nil, err

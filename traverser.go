@@ -3,6 +3,8 @@ package gosoap
 import (
 	"encoding/xml"
 	"strings"
+
+	"github.com/go-aegian/gosoap/xsd"
 )
 
 type traverseMode int32
@@ -13,8 +15,8 @@ const (
 )
 
 type traverser struct {
-	c   *XSDSchema
-	all []*XSDSchema
+	c   *xsd.XSDSchema
+	all []*xsd.XSDSchema
 	tm  traverseMode
 	// fields used by findNameByType mode
 	typeName             string
@@ -22,7 +24,7 @@ type traverser struct {
 	conflictingTypeUsage bool
 }
 
-func newTraverser(c *XSDSchema, all []*XSDSchema) *traverser {
+func newTraverser(c *xsd.XSDSchema, all []*xsd.XSDSchema) *traverser {
 	return &traverser{
 		c:   c,
 		all: all,
@@ -84,13 +86,13 @@ func (t *traverser) initFindNameByType(name string) {
 	t.conflictingTypeUsage = false
 }
 
-func (t *traverser) traverseElements(ct []*XSDElement) {
+func (t *traverser) traverseElements(ct []*xsd.XSDElement) {
 	for _, elm := range ct {
 		t.traverseElement(elm)
 	}
 }
 
-func (t *traverser) traverseElement(elm *XSDElement) {
+func (t *traverser) traverseElement(elm *xsd.XSDElement) {
 	t.findElmName(elm)
 
 	if elm.ComplexType != nil {
@@ -101,7 +103,7 @@ func (t *traverser) traverseElement(elm *XSDElement) {
 	}
 }
 
-func (t *traverser) findElmName(elm *XSDElement) {
+func (t *traverser) findElmName(elm *xsd.XSDElement) {
 	// Check if we are called by findNameByType
 	if t.tm != findNameByType {
 		return
@@ -123,10 +125,10 @@ func (t *traverser) findElmName(elm *XSDElement) {
 	}
 }
 
-func (t *traverser) traverseSimpleType(st *XSDSimpleType) {
+func (t *traverser) traverseSimpleType(st *xsd.XSDSimpleType) {
 }
 
-func (t *traverser) traverseComplexType(ct *XSDComplexType) {
+func (t *traverser) traverseComplexType(ct *xsd.XSDComplexType) {
 	t.traverseElements(ct.Sequence)
 	t.traverseElements(ct.Choice)
 	t.traverseElements(ct.SequenceChoice)
@@ -139,13 +141,13 @@ func (t *traverser) traverseComplexType(ct *XSDComplexType) {
 	t.traverseAttributes(ct.SimpleContent.Extension.Attributes)
 }
 
-func (t *traverser) traverseAttributes(attrs []*XSDAttribute) {
+func (t *traverser) traverseAttributes(attrs []*xsd.XSDAttribute) {
 	for _, attr := range attrs {
 		t.traverseAttribute(attr)
 	}
 }
 
-func (t *traverser) traverseAttribute(attr *XSDAttribute) {
+func (t *traverser) traverseAttribute(attr *xsd.XSDAttribute) {
 	// Check if we are in ref resolution mode
 	if t.tm != refResolution {
 		return
@@ -169,7 +171,7 @@ func (t *traverser) traverseAttribute(attr *XSDAttribute) {
 	}
 }
 
-func (t *traverser) getGlobalAttribute(name string) *XSDAttribute {
+func (t *traverser) getGlobalAttribute(name string) *xsd.XSDAttribute {
 	ref := t.qname(name)
 
 	for _, schema := range t.all {

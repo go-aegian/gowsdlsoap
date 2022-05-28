@@ -1,10 +1,10 @@
-// This Source Code Form is subject to the terms of the Mozilla Public
-// License, v. 2.0. If a copy of the MPL was not distributed with this
-// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+package wsdl
 
-package gosoap
+import (
+	"encoding/xml"
 
-import "encoding/xml"
+	"github.com/go-aegian/gosoap/xsd"
+)
 
 const wsdlNamespace = "http://schemas.xmlsoap.org/wsdl/"
 
@@ -120,8 +120,8 @@ type WSDLImport struct {
 
 // WSDLType represents the entry point for deserializing XSD schemas used by the WSDL file.
 type WSDLType struct {
-	Doc     string       `xml:"documentation"`
-	Schemas []*XSDSchema `xml:"schema"`
+	Doc     string           `xml:"documentation"`
+	Schemas []*xsd.XSDSchema `xml:"schema"`
 }
 
 // WSDLPart defines the struct for a function parameter within a WSDL.
