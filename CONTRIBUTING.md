@@ -1,32 +1,16 @@
 ### Thanks for your interest in contributing to this project and for taking the time to read this guide.
 
-## Code of conduct
-*Taken from http://libvirt.org/governance.html with minor adjustments.*
-
-The open source community covers people from a wide variety of countries, backgrounds and positions. This global diversity is a great strength for this project, but can also lead to communication issues, which may in turn cause unhappiness. To maximize happiness of the project community taken as a whole, all members (whether users, contributors or committers) are expected to abide by the project's code of conduct. At a high level the code can be summarized as "be excellent to each other". Expanding on this:
-
-**Be respectful:** disagreements between people are to be expected and are usually the sign of healthy debate and engagement. Disagreements can lead to frustration and even anger for some members. Turning to personal insults, intimidation or threatening behavior does not improve the situation. Participants should thus take care to ensure all communications / interactions stay professional at all times.
-
-**Be considerate:** remember that the community has members with a diverse background many of whom have English as a second language. What might appear impolite, may simply be a result of a lack of knowledge of the English language. Bear in mind that actions will have an impact on other community members and the project as a whole, so take potential consequences into account before pursuing a course of action.
-
-**Be forgiving:** humans are fallible and as such prone to make mistakes and inexplicably change their positions at times. Don't assume that other members are acting with malicious intent. Be prepared to forgive people who make mistakes and assist each other in learning from them. Playing a blame game doesn't help anyone.
-
-## Issues
-* Before reporting an issue make sure you search first if anybody has already reported a similar issue and whether or not it has been fixed.
-* Make sure your issue report sufficiently details the problem.
-* Include code samples reproducing the issue.
-* Please do not derail or troll issues. Keep the discussion on topic and respect the Code of conduct.
-* Please do not open issues for personal support requests, use the mailing list instead.
-* If you want to tackle any open issue, make sure you let people know you are working on it.
-
 ## Development workflow
 Go is unlike any other language in that it forces a specific development workflow and project structure. Trying to fight it is useless, frustrating and time consuming. So, you better be prepare to adapt your workflow when contributing to Go projects.
 
 ### Prerequisites
-* **Go**: To install Go please follow its installation guide at https://golang.org/doc/install
-* **Git:**
-   * **Debian-based distros:** `apt-get install git-core`
-   * **OSX:** `brew install git`
+1. [Install Go][go-install].
+2. Download the sources and switch the working directory:
+
+    ```bash
+    go get -u -d github.com/go-aegian/gosoap
+    cd $GOPATH/src/github.com/go-aegian/gosoap
+    ```
 
 ### Pull Requests
 * Please be generous describing your changes.
@@ -44,6 +28,16 @@ Go is unlike any other language in that it forces a specific development workflo
 * In Github, from your fork, create the Pull Request and send it upstream.
 * You are done.
 
+#### A typical workflow is:
+
+1. [Fork the repository.][fork] [This tip maybe also helpful.][go-fork-tip]
+2. [Create a topic branch.][branch]
+3. Add tests for your change.
+4. Run `go test`. If your tests pass, return to the step 3.
+5. Implement the change and ensure the steps from the previous step pass.
+6. Run `goimports -w .`, to ensure the new code conforms to Go formatting guideline.
+7. [Add, commit and push your changes.][git-help]
+8. [Submit a pull request.][pull-req]
 
 ### Workflow for core developers
 Since core developers usually have access to the upstream repository, there is no need for having a workflow like the one for thid-party contributors.
@@ -55,6 +49,27 @@ Since core developers usually have access to the upstream repository, there is n
 * Before merging into master, wait for at least two developers to code review your contribution.
 
 
+## Issues
+* Before reporting an issue make sure you search first if anybody has already reported a similar issue and whether or not it has been fixed.
+* Make sure your issue report sufficiently details the problem.
+* Include code samples reproducing the issue.
+* Please do not derail or troll issues. Keep the discussion on topic and respect the Code of conduct.
+* Please do not open issues for personal support requests, use the mailing list instead.
+* If you want to tackle any open issue, make sure you let people know you are working on it.
+
+
 ## Resources
 * **W3C WSDL spec:** http://www.w3.org/TR/wsdl
 * **W3C SOAP 1.2 spec:** http://www.w3.org/TR/soap/
+
+[go-install]: https://golang.org/doc/install
+
+[go-fork-tip]: http://blog.campoy.cat/2014/03/github-and-go-forking-pull-requests-and.html
+
+[fork]: https://help.github.com/articles/fork-a-repo
+
+[branch]: http://learn.github.com/p/branching.html
+
+[git-help]: https://guides.github.com
+
+[pull-req]: https://help.github.com/articles/using-pull-requests

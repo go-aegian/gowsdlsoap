@@ -1,5 +1,5 @@
 ./gosoap
-myservice
+soapApi
 build
 .DS_Store
 dist

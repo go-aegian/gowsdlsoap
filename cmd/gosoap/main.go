@@ -1,17 +1,14 @@
-// This Source Code Form is subject to the terms of the Mozilla Public
-// License, v. 2.0. If a copy of the MPL was not distributed with this
-// file, You can obtain one at http://mozilla.org/MPL/2.0/.
 /*
 
 Gosoap generates Go code from a WSDL file.
 
 This project is originally intended to generate Go clients for WS-* services.
 
-Usage: gosoap [options] myservice.wsdl
+Usage: gosoap [clientOption] soapApi.wsdl
   -o string
-        File where the generated code will be saved (default "myservice.go")
+        File where the generated code will be saved (default "soapApi.go")
   -p string
-        Package under which code will be generated (default "myservice")
+        Package under which code will be generated (default "soapApi")
   -v    Shows gosoap version
 
 Features
@@ -32,15 +29,11 @@ UDDI.
 
 TODO
 
-Add support for filters to allow the user to change the generated code.
-
 If WSDL file is local, resolve external XML schemas locally too instead of failing due to not having a URL to download them from.
 
 Resolve XSD element references.
 
 Support for generating namespaces.
-
-Make code generation agnostic so generating code to other programming languages is feasible through plugins.
 
 */
 
@@ -55,7 +48,7 @@ import (
 	"os"
 	"path/filepath"
 
-	gen "github.com/go-aegian/gosoap"
+	"github.com/go-aegian/gosoap"
 )
 
 // Version is initialized in compilation time by go build.
@@ -64,29 +57,27 @@ var Version string
 // Name is initialized in compilation time by go build.
 var Name string
 
-var vers = flag.Bool("v", false, "Shows gosoap version")
-var pkg = flag.String("p", "myservice", "Package under which code will be generated")
-var outFile = flag.String("o", "myservice.go", "File where the generated code will be saved")
-var dir = flag.String("d", "./", "Directory under which package directory will be created")
-var insecure = flag.Bool("i", false, "Skips TLS Verification")
-var makePublic = flag.Bool("make-public", true, "Make the generated types public/exported")
+var version = flag.Bool("v", false, "display gosoap version")
+var pkg = flag.String("p", "soapProxy", "package name for the soap proxy")
+var outFile = flag.String("o", "soap-proxy.go", "output file name for the the soap proxy")
+var dir = flag.String("d", "./", "output directory of the soap proxy file")
+var insecure = flag.Bool("i", false, "skip TLS verification")
+var makePublic = flag.Bool("make-public", true, "generates go types with public/exported")
 
 func init() {
 	log.SetFlags(0)
 	log.SetOutput(os.Stdout)
-	log.SetPrefix("🍀  ")
+	log.SetPrefix("")
 }
 
 func main() {
 	flag.Usage = func() {
-		fmt.Fprintf(os.Stderr, "Usage: %s [options] myservice.wsdl\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "Usage: %s [Option] services.wsdl\n", os.Args[0])
 		flag.PrintDefaults()
 	}
-
 	flag.Parse()
 
-	// Show app version
-	if *vers {
+	if *version {
 		log.Println(Version)
 		os.Exit(0)
 	}
@@ -99,18 +90,16 @@ func main() {
 	wsdlPath := os.Args[len(os.Args)-1]
 
 	if *outFile == wsdlPath {
-		log.Fatalln("Output file cannot be the same WSDL file")
+		log.Fatalln("Output file cannot be the same wsdl file")
 	}
 
-	// load wsdl
-	gosoap, err := gen.NewGoWSDL(wsdlPath, *pkg, *insecure, *makePublic)
+	builder, err := gosoap.New(wsdlPath, *pkg, *insecure, *makePublic)
 	if err != nil {
 		log.Fatalln(err)
 	}
 
 	// generate code
-	gocode, err :=
-		gosoap.Start()
+	soapCode, err := builder.Build()
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -125,12 +114,11 @@ func main() {
 	defer file.Close()
 
 	data := new(bytes.Buffer)
-	data.Write(gocode["header"])
-	data.Write(gocode["types"])
-	data.Write(gocode["operations"])
-	data.Write(gocode["soap"])
+	data.Write(soapCode["header"])
+	data.Write(soapCode["types"])
+	data.Write(soapCode["operations"])
+	data.Write(soapCode["soap"])
 
-	// go fmt the generated code
 	source, err := format.Source(data.Bytes())
 	if err != nil {
 		file.Write(data.Bytes())
