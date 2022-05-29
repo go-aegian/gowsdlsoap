@@ -6,17 +6,14 @@ import (
 	"testing"
 
 	"github.com/go-aegian/gosoap/builder/wsdl"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestUnmarshal(t *testing.T) {
 	data, err := ioutil.ReadFile(`wsdl-samples\ews\services.wsdl`)
-	if err != nil {
-		t.Errorf("incorrect result\ngot:  %#v\nwant: %#v", err, nil)
-	}
+	assert.NoError(t, err)
 
 	v := wsdl.WSDL{}
 	err = xml.Unmarshal(data, &v)
-	if err != nil {
-		t.Errorf("incorrect result\ngot:  %#v\nwant: %#v", err, nil)
-	}
+	assert.NoError(t, err)
 }

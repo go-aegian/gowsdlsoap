@@ -6,20 +6,17 @@ import (
 	"testing"
 
 	"github.com/go-aegian/gosoap/builder"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestLocation_ParseLocation_URL(t *testing.T) {
 	r, err := builder.NewLocation("http://example.org/my.wsdl")
-	if err != nil {
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 
 	if !r.IsURL() || r.IsFile() {
 		t.Error("location should be a URL type")
 	}
-	if r.String() != "http://example.org/my.wsdl" {
-		t.Error("got " + r.String() + " wanted " + "http://example.org/my.wsdl")
-	}
+	assert.Equal(t, "http://example.org/my.wsdl", r.String())
 }
 
 func TestLocation_Parse_URL(t *testing.T) {
@@ -47,9 +44,7 @@ func TestLocation_Parse_URL(t *testing.T) {
 		if !r.IsURL() || r.IsFile() {
 			t.Error("location should be a URL type")
 		}
-		if r.String() != test.expected {
-			t.Error("got " + r.String() + " wanted " + test.name)
-		}
+		assert.Equal(t, test.expected, r.String())
 	}
 }
 
@@ -108,9 +103,7 @@ func TestLocation_Parse_File(t *testing.T) {
 		}
 		x, _ := filepath.Abs("")
 		rel, _ := filepath.Rel(x, r.String())
-		if rel != test.expected {
-			t.Error("got " + rel + " wanted " + test.expected)
-		}
+		assert.Equal(t, test.expected, rel)
 	}
 }
 
@@ -138,8 +131,6 @@ func TestLocation_Parse_FileToURL(t *testing.T) {
 			t.Error("location should be a URL type")
 			continue
 		}
-		if r.String() != test.expected {
-			t.Error("got " + r.String() + " wanted " + test.expected)
-		}
+		assert.Equal(t, test.expected, r.String())
 	}
 }

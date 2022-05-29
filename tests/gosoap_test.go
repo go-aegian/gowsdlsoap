@@ -3,7 +3,6 @@ package tests
 import (
 	"bytes"
 	"errors"
-	"fmt"
 	"go/ast"
 	"go/format"
 	"go/parser"
@@ -18,18 +17,15 @@ import (
 	"testing"
 
 	"github.com/go-aegian/gosoap"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestElementGenerationDoesntCommentOutStructProperty(t *testing.T) {
 	g, err := gosoap.New(`wsdl-samples\test.wsdl`, "soapApi", false, true)
-	if err != nil {
-		t.Error(err)
-	}
+	assert.NoError(t, err)
 
 	resp, err := g.Build()
-	if err != nil {
-		t.Error(err)
-	}
+	assert.NoError(t, err)
 
 	if strings.Contains(string(resp["types"]), "// this is a comment  GetInfoResult string `xml:\"GetInfoResult,omitempty\"`") {
 		t.Error("Type comment should not comment out struct type property")
@@ -39,18 +35,12 @@ func TestElementGenerationDoesntCommentOutStructProperty(t *testing.T) {
 
 func TestComplexTypeWithInlineSimpleType(t *testing.T) {
 	g, err := gosoap.New(`wsdl-samples\test.wsdl`, "soapApi", false, true)
-	if err != nil {
-		t.Error(err)
-	}
+	assert.NoError(t, err)
 
 	resp, err := g.Build()
-	if err != nil {
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 	actual, err := getTypeDeclaration(resp, "GetInfo")
-	if err != nil {
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 
 	expected := `type GetInfo struct {
 	XMLName	xml.Name	` + "`" + `xml:"http://www.mnb.hu/webservices/ GetInfo"` + "`" + `
@@ -63,154 +53,99 @@ func TestComplexTypeWithInlineSimpleType(t *testing.T) {
 }
 
 func TestAttributeRef(t *testing.T) {
-	g, err := gosoap.New(`wsdl-samples\test.wsdl`, "soapApi", false, true)
-	if err != nil {
-		t.Error(err)
-	}
+	g, err := gosoap.New(`wsdl-samples\ews\services.wsdl`, "ewsApi", false, true)
+	assert.NoError(t, err)
 
 	resp, err := g.Build()
-	if err != nil {
-		t.Fatal(err)
-	}
-	actual, err := getTypeDeclaration(resp, "ResponseStatus")
-	if err != nil {
-		fmt.Println(string(resp["types"]))
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 
-	expected := `type ResponseStatus struct {
-	Status	[]struct {
-		Value	string  ` + "`" + `xml:",chardata" json:"-,"` + "`" + `
+	actual, err := getTypeDeclaration(resp, "RequestAttachmentIdType")
+	assert.NoError(t, err)
 
-		Code	string	` + "`" + `xml:"code,attr,omitempty" json:"code,omitempty"` + "`" + `
-	}	` + "`" + `xml:"status,omitempty" json:"status,omitempty"` + "`" + `
+	expected := `type RequestAttachmentIdType struct {` + "`" +
+		`XMLName xml.Name ` + "`" +
+		`xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentId"` + "`" +
+		` Id string ` + "`" + `xml:"Id,attr,omitempty" json:"Id,omitempty"` + "`" +
+		`}`
 
-	ResponseCode	string	` + "`" + `xml:"http://www.mnb.hu/webservices/ responseCode,attr,omitempty" json:"responseCode,omitempty"` + "`" + `
-}`
-	actual = string(bytes.ReplaceAll([]byte(actual), []byte("\t"), []byte("  ")))
-	expected = string(bytes.ReplaceAll([]byte(expected), []byte("\t"), []byte("  ")))
-	if actual != expected {
-		t.Error("got \n" + actual + " want \n" + expected)
-	}
+	actual = strings.TrimSpace(string(bytes.ReplaceAll([]byte(actual), []byte("\n\t"), []byte(" "))))
+	expected = strings.TrimSpace(string(bytes.ReplaceAll([]byte(expected), []byte("\n\t"), []byte(" "))))
+	assert.Equal(t, expected, actual)
 }
 
 func TestElementWithLocalSimpleType(t *testing.T) {
 	g, err := gosoap.New(`wsdl-samples\test.wsdl`, "soapApi", false, true)
-	if err != nil {
-		t.Error(err)
-	}
+	assert.NoError(t, err)
 
 	resp, err := g.Build()
-	if err != nil {
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 
 	// Type declaration
 	actual, err := getTypeDeclaration(resp, "ElementWithLocalSimpleType")
-	if err != nil {
-		fmt.Println(string(resp["types"]))
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 
 	expected := `type ElementWithLocalSimpleType string`
 
-	if actual != expected {
-		t.Error("got \n" + actual + " want \n" + expected)
-	}
+	assert.Equal(t, expected, actual)
 
 	// Const declaration of first enum value
 	actual, err = getTypeDeclaration(resp, "ElementWithLocalSimpleTypeEnum1")
-	if err != nil {
-		fmt.Println(string(resp["types"]))
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 
 	expected = `const ElementWithLocalSimpleTypeEnum1 ElementWithLocalSimpleType = "enum1"`
 
-	if actual != expected {
-		t.Error("got \n" + actual + " want \n" + expected)
-	}
+	assert.Equal(t, expected, actual)
 
-	// Const declaration of second enum value
 	actual, err = getTypeDeclaration(resp, "ElementWithLocalSimpleTypeEnum2")
-	if err != nil {
-		fmt.Println(string(resp["types"]))
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 
 	expected = `const ElementWithLocalSimpleTypeEnum2 ElementWithLocalSimpleType = "enum2"`
-
-	if actual != expected {
-		t.Error("got \n" + actual + " want \n" + expected)
-	}
+	assert.Equal(t, expected, actual)
 }
 
 func TestDateTimeType(t *testing.T) {
 	g, err := gosoap.New(`wsdl-samples\test.wsdl`, "soapApi", false, true)
-	if err != nil {
-		t.Error(err)
-	}
+	assert.NoError(t, err)
 
 	resp, err := g.Build()
-	if err != nil {
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 
 	// Type declaration
 	actual, err := getTypeDeclaration(resp, "StartDate")
-	if err != nil {
-		fmt.Println(string(resp["types"]))
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 
 	expected := `type StartDate xsd.DateTime`
 
-	if actual != expected {
-		t.Error("got \n" + actual + " want \n" + expected)
-	}
+	assert.Equal(t, expected, actual)
 
 	// Method declaration MarshalXML
 	actual, err = getFuncDeclaration(resp, "MarshalXML", "StartDate")
-	if err != nil {
-		fmt.Println(string(resp["types"]))
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 
 	expected = `func (xdt StartDate) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	return xsd.DateTime(xdt).MarshalXML(e, start)
 }`
 
-	if actual != expected {
-		t.Error("got \n" + actual + " want \n" + expected)
-	}
+	assert.Equal(t, expected, actual)
 
 	// Method declaration UnmarshalXML
 	actual, err = getFuncDeclaration(resp, "UnmarshalXML", "StartDate")
-	if err != nil {
-		fmt.Println(string(resp["types"]))
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 
 	expected = `func (xdt *StartDate) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
 	return (*xsd.DateTime)(xdt).UnmarshalXML(d, start)
 }`
 
-	if actual != expected {
-		t.Error("got \n" + actual + " want \n" + expected)
-	}
+	assert.Equal(t, expected, actual)
 }
 
 func TestVboxGeneratesWithoutSyntaxErrors(t *testing.T) {
 	files, err := filepath.Glob(`wsdl-samples\*.wsdl`)
-	if err != nil {
-		t.Error(err)
-	}
+	assert.NoError(t, err)
 
 	for _, file := range files {
 		g, err := gosoap.New(file, "soapApi", false, true)
-		if err != nil {
-			t.Error(err)
-		}
+		assert.NoError(t, err)
 
 		resp, err := g.Build()
 		if err != nil {
@@ -224,24 +159,17 @@ func TestVboxGeneratesWithoutSyntaxErrors(t *testing.T) {
 		data.Write(resp["soap"])
 
 		_, err = format.Source(data.Bytes())
-		if err != nil {
-			fmt.Println(string(data.Bytes()))
-			t.Error(err)
-		}
+		assert.NoError(t, err)
 	}
 }
 
 func TestEnumerationsGeneratedCorrectly(t *testing.T) {
 	enumStringTest := func(t *testing.T, fixtureWsdl string, varName string, typeName string, enumString string) {
 		g, err := gosoap.New(`wsdl-samples\`+fixtureWsdl, "soapApi", false, true)
-		if err != nil {
-			t.Error(err)
-		}
+		assert.NoError(t, err)
 
 		resp, err := g.Build()
-		if err != nil {
-			t.Error(err)
-		}
+		assert.NoError(t, err)
 		re := regexp.MustCompile(varName + " " + typeName + " = \"([^\"]*)\"")
 		matches := re.FindStringSubmatch(string(resp["types"]))
 
@@ -257,14 +185,10 @@ func TestEnumerationsGeneratedCorrectly(t *testing.T) {
 
 func TestComplexTypeGeneratedCorrectly(t *testing.T) {
 	g, err := gosoap.New(`wsdl-samples\ews\services.wsdl`, "ewsApi", true, true)
-	if err != nil {
-		t.Error(err)
-	}
+	assert.NoError(t, err)
 
 	resp, err := g.Build()
-	if err != nil {
-		t.Error(err)
-	}
+	assert.NoError(t, err)
 
 	decl, err := getTypeDeclaration(resp, "ItemIdType")
 
@@ -284,34 +208,25 @@ func TestEWSWSDL(t *testing.T) {
 	log.SetOutput(os.Stdout)
 
 	g, err := gosoap.New(`.\wsdl-samples\ews\services.wsdl`, "ewsApi", true, true)
-	if err != nil {
-		t.Error(err)
-	}
+	assert.NoError(t, err)
 
 	resp, err := g.Build()
-	if err != nil {
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 	data := new(bytes.Buffer)
 	data.Write(resp["header"])
 	data.Write(resp["types"])
 	data.Write(resp["operations"])
 	data.Write(resp["soap"])
 
-	// go fmt the generated code
 	source, err := format.Source(data.Bytes())
-	if err != nil {
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 
 	if _, err := os.Stat(`.\wsdl-samples\ews\ewsApi\proxy.go`); err != nil {
 		_ = ioutil.WriteFile(`.\wsdl-samples\ews\ewsApi\proxy.go`, source, 0664)
 	}
 
 	expectedBytes, err := ioutil.ReadFile(`.\wsdl-samples\ews\ewsApi\proxy.go`)
-	if err != nil {
-		t.Fatal(err)
-	}
+	assert.NoError(t, err)
 
 	actual := string(source)
 	expected := string(expectedBytes)

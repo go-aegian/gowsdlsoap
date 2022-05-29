@@ -70,9 +70,8 @@ func TestClient_Call(t *testing.T) {
 
 	client := proxy.NewClient(ts.URL)
 
-	if err := client.Call("GetData", pingRequest, pingResponse); err != nil {
-		t.Fatalf("couln't call service: %v", err)
-	}
+	err := client.Call("GetData", pingRequest, pingResponse)
+	assert.NoError(t, err)
 
 	assert.Equal(t, "Pong", pingResponse.PingResult.Message)
 }
@@ -150,9 +149,8 @@ func TestClient_Attachments_WithAttachmentResponse(t *testing.T) {
 	client.AddMIMEMultipartAttachment(firstAtt)
 	client.AddMIMEMultipartAttachment(secondAtt)
 
-	if err := client.CallContextWithAttachmentsAndFaultDetail(context.TODO(), "''", req, reply, nil, &retAttachments); err != nil {
-		t.Fatalf("couln't call service: %v", err)
-	}
+	err := client.CallContextWithAttachmentsAndFaultDetail(context.TODO(), "''", req, reply, nil, &retAttachments)
+	assert.NoError(t, err)
 
 	assert.Equal(t, req.ContentID, reply.ContentID)
 	assert.Len(t, retAttachments, 2)
@@ -231,13 +229,11 @@ func Test_SimpleNode(t *testing.T) {
 	decoder := xml.NewDecoder(strings.NewReader(input))
 	var simple interface{}
 	simple = &SimpleNode{}
-	if err := decoder.Decode(&simple); err != nil {
-		t.Fatalf("error decoding: %v", err)
-	}
-	assert.EqualValues(t, &SimpleNode{
-		Detail: "detail message",
-		Num:    6.005,
-	}, simple)
+
+	err := decoder.Decode(&simple)
+	assert.NoError(t, err)
+
+	assert.EqualValues(t, &SimpleNode{Detail: "detail message", Num: 6.005}, simple)
 }
 
 func Test_Client_FaultDefault(t *testing.T) {
@@ -302,9 +298,7 @@ func Test_Client_FaultDefault(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			data, err := xml.MarshalIndent(tt.fault, "\t\t\t\t", "\t")
-			if err != nil {
-				t.Fatalf("Failed to encode input as XML: %v", err)
-			}
+			assert.NoError(t, err)
 
 			var pingRequest = new(Ping)
 			ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -354,7 +348,6 @@ func TestXsdDateTime(t *testing.T) {
 		XMLName  xml.Name     `xml:"TestAttrDateTime"`
 		Datetime xsd.DateTime `xml:"Datetime,attr"`
 	}
-	// test marshalling
 	{
 		// without nanosecond
 		testDateTime := TestDateTime{
@@ -378,11 +371,8 @@ func TestXsdDateTime(t *testing.T) {
 		if output, err := xml.MarshalIndent(testDateTime, "", ""); err != nil {
 			t.Error(err)
 		} else {
-			outputString := string(output)
 			expected := "<TestDateTime><Datetime>1951-10-22T01:02:03.000000004-08:00</Datetime></TestDateTime>"
-			if outputString != expected {
-				t.Errorf("Got: %v\nExpected: %v", outputString, expected)
-			}
+			assert.Equal(t, expected, string(output))
 		}
 	}
 
@@ -394,11 +384,8 @@ func TestXsdDateTime(t *testing.T) {
 		if output, err := xml.MarshalIndent(testDateTime, "", ""); err != nil {
 			t.Error(err)
 		} else {
-			outputstr := string(output)
 			expected := "<TestDateTime><Datetime>1951-10-22T01:02:03.000000004Z</Datetime></TestDateTime>"
-			if outputstr != expected {
-				t.Errorf("Got:      %v\nExpected: %v", outputstr, expected)
-			}
+			assert.Equal(t, expected, string(output))
 		}
 	}
 
@@ -410,27 +397,19 @@ func TestXsdDateTime(t *testing.T) {
 		if output, err := xml.MarshalIndent(testDateTime, "", ""); err != nil {
 			t.Error(err)
 		} else {
-			outputstr := string(output)
 			expected := "<TestDateTime><Datetime>1951-10-22T01:02:03.000000004</Datetime></TestDateTime>"
-			if outputstr != expected {
-				t.Errorf("Got:      %v\nExpected: %v", outputstr, expected)
-			}
+			assert.Equal(t, expected, string(output))
 		}
 	}
 
 	// test marshalling as attribute
 	{
-		testDateTime := TestAttrDateTime{
-			Datetime: xsd.NewDateTime(time.Date(1951, time.October, 22, 1, 2, 3, 4, time.UTC), true),
-		}
+		testDateTime := TestAttrDateTime{Datetime: xsd.NewDateTime(time.Date(1951, time.October, 22, 1, 2, 3, 4, time.UTC), true)}
 		if output, err := xml.MarshalIndent(testDateTime, "", ""); err != nil {
 			t.Error(err)
 		} else {
-			outputstr := string(output)
 			expected := "<TestAttrDateTime Datetime=\"1951-10-22T01:02:03.000000004Z\"></TestAttrDateTime>"
-			if outputstr != expected {
-				t.Errorf("Got:      %v\nExpected: %v", outputstr, expected)
-			}
+			assert.Equal(t, expected, string(output))
 		}
 	}
 
@@ -443,13 +422,9 @@ func TestXsdDateTime(t *testing.T) {
 		}
 		for dateTimeStr, dateTimeObj := range dateTimes {
 			parsedDt := TestDateTime{}
-			if err := xml.Unmarshal([]byte(dateTimeStr), &parsedDt); err != nil {
-				t.Error(err)
-			} else {
-				if !parsedDt.Datetime.Time().Equal(dateTimeObj) {
-					t.Errorf("Got:      %#v\nExpected: %#v", parsedDt.Datetime.Time(), dateTimeObj)
-				}
-			}
+			err := xml.Unmarshal([]byte(dateTimeStr), &parsedDt)
+			assert.NoError(t, err)
+			assert.Equal(t, dateTimeObj, parsedDt.Datetime.Time())
 		}
 	}
 
@@ -462,13 +437,10 @@ func TestXsdDateTime(t *testing.T) {
 		}
 		for dateTimeStr, dateTimeObj := range dateTimes {
 			parsedDt := TestAttrDateTime{}
-			if err := xml.Unmarshal([]byte(dateTimeStr), &parsedDt); err != nil {
-				t.Error(err)
-			} else {
-				if !parsedDt.Datetime.Time().Equal(dateTimeObj) {
-					t.Errorf("Got:      %#v\nExpected: %#v", parsedDt.Datetime.Time(), dateTimeObj)
-				}
-			}
+			err := xml.Unmarshal([]byte(dateTimeStr), &parsedDt)
+			assert.NoError(t, err)
+			assert.Equal(t, dateTimeObj, parsedDt.Datetime.Time())
+
 		}
 	}
 }
@@ -492,11 +464,8 @@ func TestXsdDate(t *testing.T) {
 		if output, err := xml.MarshalIndent(testDate, "", ""); err != nil {
 			t.Error(err)
 		} else {
-			outputstr := string(output)
 			expected := "<TestDate><Date>1951-10-22</Date></TestDate>"
-			if outputstr != expected {
-				t.Errorf("Got: %v\nExpected: %v", outputstr, expected)
-			}
+			assert.Equal(t, expected, string(output))
 		}
 	}
 
@@ -508,11 +477,8 @@ func TestXsdDate(t *testing.T) {
 		if output, err := xml.MarshalIndent(testDate, "", ""); err != nil {
 			t.Error(err)
 		} else {
-			outputstr := string(output)
 			expected := "<TestDate><Date>1951-10-22-08:00</Date></TestDate>"
-			if outputstr != expected {
-				t.Errorf("Got: %v\nExpected: %v", outputstr, expected)
-			}
+			assert.Equal(t, expected, string(output))
 		}
 	}
 
@@ -524,11 +490,8 @@ func TestXsdDate(t *testing.T) {
 		if output, err := xml.MarshalIndent(testDate, "", ""); err != nil {
 			t.Error(err)
 		} else {
-			outputstr := string(output)
 			expected := "<TestDate><Date>1951-10-22Z</Date></TestDate>"
-			if outputstr != expected {
-				t.Errorf("Got:      %v\nExpected: %v", outputstr, expected)
-			}
+			assert.Equal(t, expected, string(output))
 		}
 	}
 
@@ -540,11 +503,8 @@ func TestXsdDate(t *testing.T) {
 		if output, err := xml.MarshalIndent(testDate, "", ""); err != nil {
 			t.Error(err)
 		} else {
-			outputstr := string(output)
 			expected := "<TestAttrDate Date=\"1951-10-22Z\"></TestAttrDate>"
-			if outputstr != expected {
-				t.Errorf("Got:      %v\nExpected: %v", outputstr, expected)
-			}
+			assert.Equal(t, expected, string(output))
 		}
 	}
 
@@ -557,12 +517,11 @@ func TestXsdDate(t *testing.T) {
 		}
 		for dateStr, dateObj := range dates {
 			parsedDate := TestDate{}
-			if err := xml.Unmarshal([]byte(dateStr), &parsedDate); err != nil {
-				t.Error(dateStr, err)
-			} else {
-				if !parsedDate.Date.Time().Equal(dateObj) {
-					t.Errorf("Got:      %#v\nExpected: %#v", parsedDate.Date.Time(), dateObj)
-				}
+			err := xml.Unmarshal([]byte(dateStr), &parsedDate)
+			assert.NoError(t, err)
+
+			if !parsedDate.Date.Time().Equal(dateObj) {
+				t.Errorf("Got:      %#v\nExpected: %#v", parsedDate.Date.Time(), dateObj)
 			}
 		}
 	}
@@ -576,13 +535,13 @@ func TestXsdDate(t *testing.T) {
 		}
 		for dateStr, dateObj := range dates {
 			parsedDate := TestAttrDate{}
-			if err := xml.Unmarshal([]byte(dateStr), &parsedDate); err != nil {
-				t.Error(dateStr, err)
-			} else {
-				if !parsedDate.Date.Time().Equal(dateObj) {
-					t.Errorf("Got:      %#v\nExpected: %#v", parsedDate.Date.Time(), dateObj)
-				}
+			err := xml.Unmarshal([]byte(dateStr), &parsedDate)
+			assert.NoError(t, err)
+
+			if !parsedDate.Date.Time().Equal(dateObj) {
+				t.Errorf("Got:      %#v\nExpected: %#v", parsedDate.Date.Time(), dateObj)
 			}
+
 		}
 	}
 }
@@ -606,11 +565,8 @@ func TestXsdTime(t *testing.T) {
 		if output, err := xml.MarshalIndent(testTime, "", ""); err != nil {
 			t.Error(err)
 		} else {
-			outputstr := string(output)
 			expected := "<TestTime><Time>12:13:14.000000004-05:30</Time></TestTime>"
-			if outputstr != expected {
-				t.Errorf("Got: %v\nExpected: %v", outputstr, expected)
-			}
+			assert.Equal(t, expected, string(output))
 		}
 	}
 	{
@@ -620,11 +576,8 @@ func TestXsdTime(t *testing.T) {
 		if output, err := xml.MarshalIndent(testTime, "", ""); err != nil {
 			t.Error(err)
 		} else {
-			outputstr := string(output)
 			expected := "<TestTime><Time>12:13:14-08:00</Time></TestTime>"
-			if outputstr != expected {
-				t.Errorf("Got: %v\nExpected: %v", outputstr, expected)
-			}
+			assert.Equal(t, expected, string(output))
 		}
 	}
 	{
@@ -634,11 +587,8 @@ func TestXsdTime(t *testing.T) {
 		if output, err := xml.MarshalIndent(testTime, "", ""); err != nil {
 			t.Error(err)
 		} else {
-			outputstr := string(output)
 			expected := "<TestTime><Time>12:13:14</Time></TestTime>"
-			if outputstr != expected {
-				t.Errorf("Got: %v\nExpected: %v", outputstr, expected)
-			}
+			assert.Equal(t, expected, string(output))
 		}
 	}
 	// test marshalling as attribute
@@ -649,11 +599,8 @@ func TestXsdTime(t *testing.T) {
 		if output, err := xml.MarshalIndent(testTime, "", ""); err != nil {
 			t.Error(err)
 		} else {
-			outputstr := string(output)
 			expected := "<TestAttrTime Time=\"12:13:14.000000004-05:30\"></TestAttrTime>"
-			if outputstr != expected {
-				t.Errorf("Got: %v\nExpected: %v", outputstr, expected)
-			}
+			assert.Equal(t, expected, string(output))
 		}
 	}
 
@@ -811,21 +758,10 @@ func TestHTTPError(t *testing.T) {
 					t.Fatalf("Expected an error from call.  Received none")
 				}
 				requestError, ok := gotErr.(*soap.HTTPError)
-				if !ok {
-					t.Fatalf("Expected a HTTPError.  Received: %s", gotErr.Error())
-				}
-
-				if requestError.StatusCode != test.responseCode {
-					t.Fatalf("Unexpected StatusCode.  Got %d", requestError.StatusCode)
-				}
-
-				if string(requestError.ResponseBody) != test.responseBody {
-					t.Fatalf("Unexpected ResponseBody.  Got %s", requestError.ResponseBody)
-				}
-
-				if requestError.Error() != test.wantErrMsg {
-					t.Fatalf("Unexpected Error message.  Got %s", requestError.Error())
-				}
+				assert.True(t, ok)
+				assert.Equal(t, test.responseCode, requestError.StatusCode)
+				assert.Equal(t, test.responseBody, string(requestError.ResponseBody))
+				assert.Equal(t, test.wantErrMsg, requestError.Error())
 			} else if gotErr != nil {
 				t.Fatalf("Expected no error from call.  Received: %s", gotErr.Error())
 			}
