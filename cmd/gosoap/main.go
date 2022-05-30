@@ -2,8 +2,6 @@
 
 Gosoap generates Go code from a WSDL file.
 
-This project is originally intended to generate Go clients for WS-* services.
-
 Usage: gosoap [clientOption] soapApi.wsdl
   -o string
         File where the generated code will be saved (default "soapApi.go")
@@ -14,8 +12,6 @@ Usage: gosoap [clientOption] soapApi.wsdl
 Features
 
 Supports only Document/Literal wrapped services, which are WS-I (http://ws-i.org/) compliant.
-
-Attempts to generate idiomatic Go code as much as possible.
 
 Supports WSDL 1.1, XML Schema 1.0, SOAP 1.1.
 
