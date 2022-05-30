@@ -4047,7 +4047,7 @@ type SingleRecipientType struct {
 }
 
 type BasePathToElementType struct {
-	XMLName xml.Name `xml:"Path"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Path"`
 }
 
 type PathToUnindexedFieldType struct {
@@ -4770,7 +4770,7 @@ type ArrayOfFoldersType struct {
 }
 
 type BaseItemIdType struct {
-	XMLName xml.Name `xml:"BaseItemId"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types BaseItemId"`
 }
 
 type ItemIdType struct {
@@ -7898,7 +7898,7 @@ type ConstantValueType struct {
 }
 
 type SearchExpressionType struct {
-	XMLName xml.Name `xml:"SearchExpression"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchExpression"`
 }
 
 type AggregateOnType struct {
@@ -8583,7 +8583,7 @@ type VotingInformationType struct {
 }
 
 type AlternateIdBaseType struct {
-	XMLName xml.Name `xml:"AlternateId"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AlternateId"`
 
 	Format *IdFormatType `xml:"Format,attr,omitempty" json:"Format,omitempty"`
 }

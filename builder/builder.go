@@ -473,7 +473,7 @@ func (g *Builder) isInnerBasicType(t string) bool {
 		}
 
 		for _, complexType := range schema.ComplexTypes {
-			if complexType.Name == t && !complexType.Mixed && (len(complexType.Sequence) > 0 || len(complexType.SequenceChoice) > 0 || complexType.Abstract) {
+			if complexType.Name == t && !complexType.Mixed && (len(complexType.Sequence) > 0 || len(complexType.SequenceChoice) > 0) { // }  || complexType.Abstract) {
 				return true
 			}
 		}

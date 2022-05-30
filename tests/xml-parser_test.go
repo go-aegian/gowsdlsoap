@@ -2,12 +2,11 @@ package tests
 
 import (
 	"encoding/xml"
-	"fmt"
-	"log"
 	"strings"
 	"testing"
 
 	"github.com/go-aegian/gosoap/builder/soap"
+	"github.com/go-aegian/gosoap/proxy"
 	"github.com/go-aegian/gosoap/tests/wsdl-samples/ews/ewsApi"
 	"github.com/stretchr/testify/assert"
 )
@@ -43,7 +42,7 @@ func TestParseEwsCreateItemResponse(t *testing.T) {
 
 	assert.NoError(t, err)
 
-	LogXml("response", responseObject)
+	proxy.LogXml("response", responseObject)
 }
 
 func TestParseEwsFaultUpdateItemResponse(t *testing.T) {
@@ -71,7 +70,7 @@ func TestParseEwsFaultUpdateItemResponse(t *testing.T) {
 
 	assert.NoError(t, err)
 
-	LogXml("response", responseObject)
+	proxy.LogXml("response", responseObject)
 }
 
 func TestParseEwsDeleteItemResponse(t *testing.T) {
@@ -102,14 +101,5 @@ func TestParseEwsDeleteItemResponse(t *testing.T) {
 
 	assert.NoError(t, err)
 
-	LogXml("response", responseObject)
-}
-
-func LogXml(logType string, message interface{}) {
-	marshalledRequest, err := xml.MarshalIndent(message, "", "\t")
-	if err != nil {
-		log.Fatalf("error parsing as xml: %s %v %v", logType, message, err)
-	}
-
-	fmt.Printf("\n%s\n\n", string(marshalledRequest))
+	proxy.LogXml("response", responseObject)
 }

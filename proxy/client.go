@@ -6,6 +6,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net"
 	"net/http"
 
@@ -119,35 +120,35 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 		return err
 	}
 
-	req, err := http.NewRequest(http.MethodPost, s.url, buffer)
+	httpRequest, err := http.NewRequest(http.MethodPost, s.url, buffer)
 	if err != nil {
 		return err
 	}
 
 	if s.opts.BasicAuth != nil {
-		req.SetBasicAuth(s.opts.BasicAuth.Username, s.opts.BasicAuth.Password)
+		httpRequest.SetBasicAuth(s.opts.BasicAuth.Username, s.opts.BasicAuth.Password)
 	}
 
-	req = req.WithContext(ctx)
+	httpRequest = httpRequest.WithContext(ctx)
 
 	if s.opts.Mtom {
-		req.Header.Add(soap.ContentTypeHeader, fmt.Sprintf(soap.MtomContentType, encoder.(*mtomEncoder).Boundary()))
+		httpRequest.Header.Add(soap.ContentTypeHeader, fmt.Sprintf(soap.MtomContentType, encoder.(*mtomEncoder).Boundary()))
 	} else if s.opts.Mma {
-		req.Header.Add(soap.ContentTypeHeader, fmt.Sprintf(mmaContentType, encoder.(*mmaEncoder).Boundary()))
+		httpRequest.Header.Add(soap.ContentTypeHeader, fmt.Sprintf(mmaContentType, encoder.(*mmaEncoder).Boundary()))
 	} else {
-		req.Header.Add(soap.ContentTypeHeader, "text/xml; charset=\"utf-8\"")
+		httpRequest.Header.Add(soap.ContentTypeHeader, "text/xml; charset=\"utf-8\"")
 	}
 
-	req.Header.Add("SOAPAction", soapAction)
-	req.Header.Set("User-Agent", "gosoap/1.0")
+	httpRequest.Header.Add("SOAPAction", soapAction)
+	httpRequest.Header.Set("User-Agent", "gosoap/1.0")
 
 	if s.opts.HttpHeaders != nil {
 		for k, v := range s.opts.HttpHeaders {
-			req.Header.Set(k, v)
+			httpRequest.Header.Set(k, v)
 		}
 	}
 
-	req.Close = true
+	httpRequest.Close = true
 
 	client := s.opts.Client
 	if client == nil {
@@ -170,7 +171,7 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 		}
 	}
 
-	res, err := client.Do(req)
+	res, err := client.Do(httpRequest)
 	if err != nil {
 		return err
 	}
@@ -186,8 +187,8 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 
 	// xml Decoder (used with and without MTOM) cannot handle namespace prefixes (yet),
 	// so use a namespace-less response envelope
-	respEnvelope := soap.NewEnvelopeResponse()
-	respEnvelope.Body = soap.BodyResponse{
+	soapResponse := soap.NewEnvelopeResponse()
+	soapResponse.Body = soap.BodyResponse{
 		Content: response,
 		Fault: &soap.Fault{
 			Detail: faultDetail,
@@ -216,12 +217,24 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 		dec = xml.NewDecoder(res.Body)
 	}
 
-	if err := dec.Decode(respEnvelope); err != nil {
+	defer LogXml("Response", soapResponse)
+	defer LogXml("Request", httpRequest)
+
+	if err := dec.Decode(soapResponse); err != nil {
 		return err
 	}
 
-	if respEnvelope.Attachments != nil {
-		*retAttachments = respEnvelope.Attachments
+	if soapResponse.Attachments != nil {
+		*retAttachments = soapResponse.Attachments
 	}
-	return respEnvelope.Body.ErrorFromFault()
+	return soapResponse.Body.ErrorFromFault()
+}
+
+func LogXml(logType string, message interface{}) {
+	marshalledRequest, err := xml.MarshalIndent(message, "", "\t")
+	if err != nil {
+		log.Fatalf("error parsing as xml: %s %v %v", logType, message, err)
+	}
+
+	fmt.Printf("\n%s\n\n", string(marshalledRequest))
 }
