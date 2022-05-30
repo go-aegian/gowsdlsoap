@@ -89,13 +89,13 @@ func (s *Client) CallWithFaultDetail(soapAction string, request, response interf
 func (s *Client) call(ctx context.Context, soapAction string, request, response interface{}, faultDetail soap.FaultError,
 	retAttachments *[]soap.MIMEMultipartAttachment) error {
 
-	envelope := soap.NewEnvelope()
+	soapRequest := soap.NewEnvelope()
 
 	if s.headers != nil && len(s.headers) > 0 {
-		envelope.Header = &soap.Header{Headers: s.headers}
+		soapRequest.Header = &soap.Header{Headers: s.headers}
 	}
 
-	envelope.Body.Content = request
+	soapRequest.Body.Content = request
 
 	buffer := new(bytes.Buffer)
 
@@ -112,16 +112,13 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 		encoder = xml.NewEncoder(buffer)
 	}
 
-	if err := encoder.Encode(envelope); err != nil {
+	if err := encoder.Encode(soapRequest); err != nil {
 		return err
 	}
 
 	if err := encoder.Flush(); err != nil {
 		return err
 	}
-
-	var soapRequest soap.Envelope
-	err := xml.Unmarshal(buffer.Bytes(), &soapRequest)
 
 	httpRequest, err := http.NewRequest(http.MethodPost, s.url, buffer)
 	if err != nil {
@@ -236,8 +233,8 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 func LogXml(logType string, message interface{}) {
 	marshalledRequest, err := xml.MarshalIndent(message, "", "\t")
 	if err != nil {
-		log.Fatalf("error parsing as xml: %s %v %v", logType, message, err)
+		log.Fatalf("\nerror parsing as xml: %s %v %v\n", logType, message, err)
 	}
 
-	fmt.Printf("\n%s\n\n", string(marshalledRequest))
+	fmt.Printf("\n%s:\n%s\n\n", logType, string(marshalledRequest))
 }
