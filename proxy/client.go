@@ -173,9 +173,6 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 	}
 
 	res, err := client.Do(httpRequest)
-	if err != nil {
-		return err
-	}
 	defer res.Body.Close()
 
 	if res.StatusCode >= 400 {
