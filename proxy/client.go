@@ -90,6 +90,7 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 	retAttachments *[]soap.MIMEMultipartAttachment) error {
 
 	soapRequest := soap.NewEnvelope()
+	defer LogXml("Request", soapRequest)
 
 	if s.headers != nil && len(s.headers) > 0 {
 		soapRequest.Header = &soap.Header{Headers: s.headers}
@@ -194,6 +195,7 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 			Detail: faultDetail,
 		},
 	}
+	defer LogXml("Response", soapResponse)
 
 	mtomBoundary, err := getMtomHeader(res.Header.Get(soap.ContentTypeHeader))
 	if err != nil {
@@ -216,9 +218,6 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 	} else {
 		dec = xml.NewDecoder(res.Body)
 	}
-
-	defer LogXml("Response", soapResponse)
-	defer LogXml("Request", soapRequest)
 
 	if err := dec.Decode(soapResponse); err != nil {
 		return err
