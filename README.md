@@ -2,7 +2,11 @@
 
 [![GoDoc](https://godoc.org/github.com/go-aegian/gosoap?status.svg)](https://godoc.org/github.com/go-aegian/gosoap)
 
-Generates all the necessary soap code blocks, including a proxy from a given wsdl file.
+Generates GO types based structs for a given service wsdl file, it provides a proxy http client to make request to the given service.
+
+Supports file attachments.
+
+Supports NTLM and Basic Auth authentication methods.
 
 ### Install
 
