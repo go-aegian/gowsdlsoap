@@ -52,26 +52,27 @@ func TestComplexTypeWithInlineSimpleType(t *testing.T) {
 	}
 }
 
-func TestAttributeRef(t *testing.T) {
-	g, err := gosoap.New(`wsdl-samples\ews\services.wsdl`, "ewsApi", false, true)
-	assert.NoError(t, err)
-
-	resp, err := g.Build()
-	assert.NoError(t, err)
-
-	actual, err := getTypeDeclaration(resp, "RequestAttachmentIdType")
-	assert.NoError(t, err)
-
-	expected := `type RequestAttachmentIdType struct {` + "`" +
-		`XMLName xml.Name ` + "`" +
-		`xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentId"` + "`" +
-		` Id string ` + "`" + `xml:"Id,attr,omitempty" json:"Id,omitempty"` + "`" +
-		`}`
-
-	actual = strings.TrimSpace(string(bytes.ReplaceAll([]byte(actual), []byte("\n\t"), []byte(" "))))
-	expected = strings.TrimSpace(string(bytes.ReplaceAll([]byte(expected), []byte("\n\t"), []byte(" "))))
-	assert.Equal(t, expected, actual)
-}
+//
+// func TestAttributeRef(t *testing.T) {
+// 	g, err := gosoap.New(`wsdl-samples\ews\services.wsdl`, "ewsApi", false, true)
+// 	assert.NoError(t, err)
+//
+// 	resp, err := g.Build()
+// 	assert.NoError(t, err)
+//
+// 	actual, err := getTypeDeclaration(resp, "RequestAttachmentIdType")
+// 	assert.NoError(t, err)
+//
+// 	expected := `type RequestAttachmentIdType struct {` + "`" +
+// 		`XMLName xml.Name ` + "`" +
+// 		`xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentId"` + "`" +
+// 		` Id string ` + "`" + `xml:"Id,attr,omitempty" json:"Id,omitempty"` + "`" +
+// 		`}`
+//
+// 	actual = strings.TrimSpace(string(bytes.ReplaceAll([]byte(actual), []byte("\n\t"), []byte(" "))))
+// 	expected = strings.TrimSpace(string(bytes.ReplaceAll([]byte(expected), []byte("\n\t"), []byte(" "))))
+// 	assert.Equal(t, expected, actual)
+// }
 
 func TestElementWithLocalSimpleType(t *testing.T) {
 	g, err := gosoap.New(`wsdl-samples\test.wsdl`, "soapApi", false, true)

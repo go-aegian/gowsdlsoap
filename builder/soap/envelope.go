@@ -3,7 +3,7 @@ package soap
 import "encoding/xml"
 
 type Envelope struct {
-	XMLName  xml.Name `xml:"Envelope"`
+	XMLName  xml.Name `xml:"soap:Envelope"`
 	XMLNS    string   `xml:"xmlns:soap,attr"`
 	XMLNSXsd string   `xml:"xmlns:xsd,attr,omitempty"`
 	XMLNSXsi string   `xml:"xmlns:xsi,attr,omitempty"`
