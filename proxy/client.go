@@ -120,7 +120,8 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 		return err
 	}
 
-	soapRequest := buffer.String()
+	var soapRequest soap.Envelope
+	err := xml.Unmarshal(buffer.Bytes(), &soapRequest)
 
 	httpRequest, err := http.NewRequest(http.MethodPost, s.url, buffer)
 	if err != nil {
