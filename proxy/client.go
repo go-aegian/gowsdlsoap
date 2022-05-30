@@ -120,6 +120,8 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 		return err
 	}
 
+	soapRequest := buffer.String()
+
 	httpRequest, err := http.NewRequest(http.MethodPost, s.url, buffer)
 	if err != nil {
 		return err
@@ -218,7 +220,7 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 	}
 
 	defer LogXml("Response", soapResponse)
-	defer LogXml("Request", httpRequest)
+	defer LogXml("Request", soapRequest)
 
 	if err := dec.Decode(soapResponse); err != nil {
 		return err
