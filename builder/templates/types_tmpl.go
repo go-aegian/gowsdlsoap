@@ -193,7 +193,10 @@ var Types = `
 			type {{$typeName}} string
 		{{else}}
 			type {{$typeName}} struct {
-				XMLName xml.Name ` + "`xml:\"{{if eq (isInnerBasicType $typeName) false}}{{$targetNamespace}} {{end}}{{$typeName}}\"`" + `
+				{{$type := findNameByType .Name}}
+				{{if or (ne .Name $type) (eq isAbstract .Name)}}
+					XMLName xml.Name ` + "`xml:\"{{if eq (isInnerBasicType $typeName) false}}{{$targetNamespace}} {{end}}{{$type}}\"`" + `
+				{{end}}
 				{{if ne .ComplexContent.Extension.Base ""}}
 					{{template "ComplexContent" .ComplexContent}}
 				{{else if ne .SimpleContent.Extension.Base ""}}
