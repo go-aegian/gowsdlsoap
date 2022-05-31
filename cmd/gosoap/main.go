@@ -106,7 +106,7 @@ func main() {
 
 	writeFile(filepath.Join(pkg, strings.Replace(*outFile, ".", "_types.", 1)), soapCode["types"])
 
-	writeFile(filepath.Join(pkg, strings.Replace(*outFile, ".", "_messages.", 1)), soapCode["messages"])
+	writeFile(filepath.Join(pkg, strings.Replace(*outFile, ".", "_operations.", 1)), soapCode["operations"])
 
 	log.Println("Done")
 }

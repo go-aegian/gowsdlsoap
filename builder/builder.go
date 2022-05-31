@@ -221,9 +221,9 @@ func (g *Builder) Build() (map[string][]byte, error) {
 		defer wg.Done()
 		var err error
 
-		code["messages"], err = g.parseMessages()
+		code["operations"], err = g.parseOperations()
 		if err != nil {
-			log.Println(err)
+			log.Println("parseOperations", "error", err)
 		}
 	}()
 
@@ -386,7 +386,7 @@ func (g *Builder) parseTypes() ([]byte, error) {
 	return data.Bytes(), nil
 }
 
-func (g *Builder) parseMessages() ([]byte, error) {
+func (g *Builder) parseOperations() ([]byte, error) {
 	funcMap := template.FuncMap{
 		"toGoType":               toGoType,
 		"stripNamespaceFromType": stripNamespaceFromType,
@@ -402,7 +402,7 @@ func (g *Builder) parseMessages() ([]byte, error) {
 
 	data := new(bytes.Buffer)
 
-	tmpl := template.Must(template.New("messages").Funcs(funcMap).Parse(templates.Messages))
+	tmpl := template.Must(template.New("operations").Funcs(funcMap).Parse(templates.Operations))
 
 	err := tmpl.Execute(data, g.wsdl.PortTypes)
 	if err != nil {
