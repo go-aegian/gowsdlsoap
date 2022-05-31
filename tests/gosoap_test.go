@@ -16,12 +16,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-aegian/gosoap"
+	"github.com/go-aegian/gowsdlsoap"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestElementGenerationDoesntCommentOutStructProperty(t *testing.T) {
-	g, err := gosoap.New(`wsdl-samples\test.wsdl`, "soapApi", false, true)
+	g, err := gowsdlsoap.New(`wsdl-samples\test.wsdl`, "soapApi", false, true)
 	assert.NoError(t, err)
 
 	resp, err := g.Build()
@@ -34,7 +34,7 @@ func TestElementGenerationDoesntCommentOutStructProperty(t *testing.T) {
 }
 
 func TestComplexTypeWithInlineSimpleType(t *testing.T) {
-	g, err := gosoap.New(`wsdl-samples\test.wsdl`, "soapApi", false, true)
+	g, err := gowsdlsoap.New(`wsdl-samples\test.wsdl`, "soapApi", false, true)
 	assert.NoError(t, err)
 
 	resp, err := g.Build()
@@ -54,7 +54,7 @@ func TestComplexTypeWithInlineSimpleType(t *testing.T) {
 
 //
 // func TestAttributeRef(t *testing.T) {
-// 	g, err := gosoap.New(`wsdl-samples\ews\services.wsdl`, "ewsApi", false, true)
+// 	g, err := gowsdlsoap.New(`wsdl-samples\ews\services.wsdl`, "ewsApi", false, true)
 // 	assert.NoError(t, err)
 //
 // 	resp, err := g.Build()
@@ -75,7 +75,7 @@ func TestComplexTypeWithInlineSimpleType(t *testing.T) {
 // }
 
 func TestElementWithLocalSimpleType(t *testing.T) {
-	g, err := gosoap.New(`wsdl-samples\test.wsdl`, "soapApi", false, true)
+	g, err := gowsdlsoap.New(`wsdl-samples\test.wsdl`, "soapApi", false, true)
 	assert.NoError(t, err)
 
 	resp, err := g.Build()
@@ -105,7 +105,7 @@ func TestElementWithLocalSimpleType(t *testing.T) {
 }
 
 func TestDateTimeType(t *testing.T) {
-	g, err := gosoap.New(`wsdl-samples\test.wsdl`, "soapApi", false, true)
+	g, err := gowsdlsoap.New(`wsdl-samples\test.wsdl`, "soapApi", false, true)
 	assert.NoError(t, err)
 
 	resp, err := g.Build()
@@ -145,7 +145,7 @@ func TestVboxGeneratesWithoutSyntaxErrors(t *testing.T) {
 	assert.NoError(t, err)
 
 	for _, file := range files {
-		g, err := gosoap.New(file, "soapApi", false, true)
+		g, err := gowsdlsoap.New(file, "soapApi", false, true)
 		assert.NoError(t, err)
 
 		resp, err := g.Build()
@@ -166,7 +166,7 @@ func TestVboxGeneratesWithoutSyntaxErrors(t *testing.T) {
 
 func TestEnumerationsGeneratedCorrectly(t *testing.T) {
 	enumStringTest := func(t *testing.T, fixtureWsdl string, varName string, typeName string, enumString string) {
-		g, err := gosoap.New(`wsdl-samples\`+fixtureWsdl, "soapApi", false, true)
+		g, err := gowsdlsoap.New(`wsdl-samples\`+fixtureWsdl, "soapApi", false, true)
 		assert.NoError(t, err)
 
 		resp, err := g.Build()
@@ -185,7 +185,7 @@ func TestEnumerationsGeneratedCorrectly(t *testing.T) {
 }
 
 func TestComplexTypeGeneratedCorrectly(t *testing.T) {
-	g, err := gosoap.New(`wsdl-samples\ews\services.wsdl`, "ewsApi", true, true)
+	g, err := gowsdlsoap.New(`wsdl-samples\ews\services.wsdl`, "ewsApi", true, true)
 	assert.NoError(t, err)
 
 	resp, err := g.Build()
@@ -208,7 +208,7 @@ func TestEWSWSDL(t *testing.T) {
 	log.SetFlags(0)
 	log.SetOutput(os.Stdout)
 
-	g, err := gosoap.New(`.\wsdl-samples\ews\services.wsdl`, "ewsApi", true, true)
+	g, err := gowsdlsoap.New(`.\wsdl-samples\ews\services.wsdl`, "ewsApi", true, true)
 	assert.NoError(t, err)
 
 	resp, err := g.Build()

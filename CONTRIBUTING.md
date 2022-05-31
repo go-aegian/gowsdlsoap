@@ -8,8 +8,8 @@ Go is unlike any other language in that it forces a specific development workflo
 2. Download the sources and switch the working directory:
 
     ```bash
-    go get -u -d github.com/go-aegian/gosoap
-    cd $GOPATH/src/github.com/go-aegian/gosoap
+    go get -u -d github.com/go-aegian/gowsdlsoap
+    cd $GOPATH/src/github.com/go-aegian/gowsdlsoap
     ```
 
 ### Pull Requests
@@ -19,10 +19,10 @@ Go is unlike any other language in that it forces a specific development workflo
 * Make sure you run `go fmt` to format your code before submitting your pull request.
 
 ### Workflow for third-party code contributions
-* In Github, fork `https://github.com/go-aegian/gosoap` to your own account
-* Get the package using "go get": `go get github.com/go-aegian/gosoap`
-* Move to where the package was cloned: `cd $GOPATH/src/github.com/go-aegian/gosoap/`
-* Add a git remote pointing to your own fork: `git remote add downstream git@github.com:<your_account>/gosoap.git`
+* In Github, fork `https://github.com/go-aegian/gowsdlsoap` to your own account
+* Get the package using "go get": `go get github.com/go-aegian/gowsdlsoap`
+* Move to where the package was cloned: `cd $GOPATH/src/github.com/go-aegian/gowsdlsoap/`
+* Add a git remote pointing to your own fork: `git remote add downstream git@github.com:<your_account>/gowsdlsoap.git`
 * Create a branch for making your changes, then commit them.
 * Push changes to downstream repository, this is your own fork: `git push <mybranch> downstream`
 * In Github, from your fork, create the Pull Request and send it upstream.
@@ -42,7 +42,7 @@ Go is unlike any other language in that it forces a specific development workflo
 ### Workflow for core developers
 Since core developers usually have access to the upstream repository, there is no need for having a workflow like the one for thid-party contributors.
 
-* Get the package using "go get": `go get github.com/go-aegian/gosoap`
+* Get the package using "go get": `go get github.com/go-aegian/gowsdlsoap`
 * Create a branch for making your changes, then commit them.
 * Push changes to the repository: `git push origin <mybranch>`
 * In Github, create the Pull Request from your branch to master.

@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/go-aegian/gosoap/builder"
+	"github.com/go-aegian/gowsdlsoap/builder"
 	"github.com/stretchr/testify/assert"
 )
 

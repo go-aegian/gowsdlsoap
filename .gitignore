@@ -1,4 +1,4 @@
-./gosoap
+./gowsdlsoap
 soapApi
 build
 .DS_Store

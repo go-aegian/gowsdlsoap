@@ -8,7 +8,7 @@ import (
 	"mime/multipart"
 	"strings"
 
-	"github.com/go-aegian/gosoap/builder/soap"
+	"github.com/go-aegian/gowsdlsoap/builder/soap"
 )
 
 type mmaDecoder struct {
@@ -43,7 +43,7 @@ func (d *mmaDecoder) Decode(v interface{}) error {
 			// decode attachment parts
 			contentID := p.Header.Get(soap.ContentIdHeader)
 			if contentID == "" {
-				return errors.New("Invalid multipart content ID")
+				return errors.New("invalid multipart content id")
 			}
 			content, err := ioutil.ReadAll(p)
 			if err != nil {

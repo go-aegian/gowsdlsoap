@@ -21,9 +21,9 @@ import (
 	"time"
 	"unicode"
 
-	"github.com/go-aegian/gosoap/builder/templates"
-	"github.com/go-aegian/gosoap/builder/wsdl"
-	"github.com/go-aegian/gosoap/builder/xsd"
+	"github.com/go-aegian/gowsdlsoap/builder/templates"
+	"github.com/go-aegian/gowsdlsoap/builder/wsdl"
+	"github.com/go-aegian/gowsdlsoap/builder/xsd"
 )
 
 const maxRecursion uint8 = 20
@@ -134,7 +134,7 @@ var reservedWordsInAttr = map[string]string{
 
 var timeout = 30 * time.Second
 
-var cacheDir = filepath.Join(os.TempDir(), "gosoap-cache")
+var cacheDir = filepath.Join(os.TempDir(), "gowsdlsoap-cache")
 
 func init() {
 	err := os.MkdirAll(cacheDir, 0700)

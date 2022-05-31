@@ -5,9 +5,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-aegian/gosoap/builder/soap"
-	"github.com/go-aegian/gosoap/proxy"
-	"github.com/go-aegian/gosoap/tests/wsdl-samples/ews/ewsApi"
+	"github.com/go-aegian/gowsdlsoap/builder/soap"
+	"github.com/go-aegian/gowsdlsoap/proxy"
+	"github.com/go-aegian/gowsdlsoap/tests/wsdl-samples/ews/ewsApi"
 	"github.com/stretchr/testify/assert"
 )
 

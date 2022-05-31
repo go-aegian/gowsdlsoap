@@ -1,6 +1,6 @@
-# gosoap
+# gowsdlsoap
 
-[![GoDoc](https://godoc.org/github.com/go-aegian/gosoap?status.svg)](https://godoc.org/github.com/go-aegian/gosoap)
+[![GoDoc](https://godoc.org/github.com/go-aegian/gowsdlsoap?status.svg)](https://godoc.org/github.com/go-aegian/gowsdlsoap)
 
 Generates GO types based structs for a given service wsdl file, it provides a proxy http client to make request to the given service.
 
@@ -10,10 +10,10 @@ Supports NTLM and Basic Auth authentication methods.
 
 ### Install
 
-* [Download binary release](https://github.com/go-aegian/gosoap/releases)
-* Download and build locally: `go get github.com/go-aegian/gosoap/...`
-* Install from go: `go install github.com/go-aegian/gosoap/...`
-* Uninstall: `go clean -i -n github.com/go-aegian/gosoap`
+* [Download binary release](https://github.com/go-aegian/gowsdlsoap/releases)
+* Download and build locally: `go get github.com/go-aegian/gowsdlsoap/...`
+* Install from go: `go install github.com/go-aegian/gowsdlsoap/...`
+* Uninstall: `go clean -i -n github.com/go-aegian/gowsdlsoap`
 
 ### Goals
 * Generate go code for the wsdl definition
@@ -30,11 +30,11 @@ Supports NTLM and Basic Auth authentication methods.
 
 ### Usage
 ```
-Usage: gosoap [options] services.wsdl
+Usage: gowsdlsoap [options] services.wsdl
   -o string
         File where the generated code will be saved (default "services-proxy.go")
   -p string
         Package under which code will be generated (default "servicesProxy")
   -i    Skips TLS Verification
-  -v    Shows gosoap version
+  -v    Shows gowsdlsoap version
   ```

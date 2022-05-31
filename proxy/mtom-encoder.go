@@ -10,7 +10,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/go-aegian/gosoap/builder/soap"
+	"github.com/go-aegian/gowsdlsoap/builder/soap"
 )
 
 type mtomEncoder struct {
@@ -141,7 +141,7 @@ func (e *mtomEncoder) Encode(v interface{}) error {
 			return err
 		}
 
-		partWriter.Write(*pkg.content)
+		_, _ = partWriter.Write(*pkg.content)
 	}
 
 	return nil

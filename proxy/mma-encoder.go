@@ -10,10 +10,10 @@ import (
 	"net/textproto"
 	"strings"
 
-	"github.com/go-aegian/gosoap/builder/soap"
+	"github.com/go-aegian/gowsdlsoap/builder/soap"
 )
 
-const mmaContentType string = `multipart/related; start="<soap-request@gosoap.proxy>"; type="text/xml"; boundary="%s"`
+const mmaContentType string = `multipart/related; start="<soap-request@gowsdlsoap.proxy>"; type="text/xml"; boundary="%s"`
 
 type mmaEncoder struct {
 	writer      *multipart.Writer
@@ -35,7 +35,7 @@ func (e *mmaEncoder) Encode(v interface{}) error {
 	headers := make(textproto.MIMEHeader)
 	headers.Set(soap.ContentTypeHeader, `text/xml;charset=UTF-8`)
 	headers.Set(soap.ContentTransferEncodingHeader, "8bit")
-	headers.Set(soap.ContentIdHeader, "<soap-request@gosoap.proxy>")
+	headers.Set(soap.ContentIdHeader, "<soap-request@gowsdlsoap.proxy>")
 	if soapPartWriter, err = e.writer.CreatePart(headers); err != nil {
 		return err
 	}
@@ -88,8 +88,8 @@ func getMmaHeader(contentType string) (string, error) {
 		}
 
 		startInfo, ok := params["start"]
-		if !ok || startInfo != "<soap-request@gosoap.proxy>" {
-			return "", fmt.Errorf(`expected param start="<soap-request@gosoap.proxy>", got %s`, startInfo)
+		if !ok || startInfo != "<soap-request@gowsdlsoap.proxy>" {
+			return "", fmt.Errorf(`expected param start="<soap-request@gowsdlsoap.proxy>", got %s`, startInfo)
 		}
 		return boundary, nil
 	}

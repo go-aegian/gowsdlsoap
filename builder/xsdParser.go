@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 	"strings"
 
-	"github.com/go-aegian/gosoap/builder/xsd"
+	"github.com/go-aegian/gowsdlsoap/builder/xsd"
 )
 
 type parseMode int32

@@ -1,13 +1,13 @@
 /*
 
-Gosoap generates Go code from a WSDL file.
+gowsdlsoap generates Go code from a WSDL file.
 
-Usage: gosoap [clientOption] soapApi.wsdl
+Usage: gowsdlsoap [clientOption] soapApi.wsdl
   -o string
         File where the generated code will be saved (default "soapApi.go")
   -p string
         Package under which code will be generated (default "soapApi")
-  -v    Shows gosoap version
+  -v    Shows gowsdlsoap version
 
 Features
 
@@ -44,7 +44,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/go-aegian/gosoap"
+	"github.com/go-aegian/gowsdlsoap"
 )
 
 // Version is initialized in compilation time by go build.
@@ -53,7 +53,7 @@ var Version string
 // Name is initialized in compilation time by go build.
 var Name string
 
-var version = flag.Bool("v", false, "display gosoap version")
+var version = flag.Bool("v", false, "display gowsdlsoap version")
 var pkg = flag.String("p", "soapProxy", "package name for the soap proxy")
 var outFile = flag.String("o", "soap-proxy.go", "output file name for the the soap proxy")
 var dir = flag.String("d", "./", "output directory of the soap proxy file")
@@ -68,7 +68,7 @@ func init() {
 
 func main() {
 	flag.Usage = func() {
-		fmt.Fprintf(os.Stderr, "Usage: %s [Option] services.wsdl\n", os.Args[0])
+		_, _ = fmt.Fprintf(os.Stderr, "Usage: %s [Option] services.wsdl\n", os.Args[0])
 		flag.PrintDefaults()
 	}
 	flag.Parse()
@@ -89,7 +89,7 @@ func main() {
 		log.Fatalln("Output file cannot be the same wsdl file")
 	}
 
-	builder, err := gosoap.New(wsdlPath, *pkg, *insecure, *makePublic)
+	builder, err := gowsdlsoap.New(wsdlPath, *pkg, *insecure, *makePublic)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -116,14 +116,16 @@ func writeFile(fileName string, data []byte) {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	defer file.Close()
+	defer func(file *os.File) {
+		_ = file.Close()
+	}(file)
 
 	source, err := format.Source(data)
 	if err != nil {
-		file.Write(data)
+		_, _ = file.Write(data)
 		log.Fatalln(err)
 	}
 
-	file.Write(source)
+	_, _ = file.Write(source)
 
 }

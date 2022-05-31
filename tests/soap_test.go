@@ -12,9 +12,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-aegian/gosoap/builder/soap"
-	"github.com/go-aegian/gosoap/builder/xsd"
-	"github.com/go-aegian/gosoap/proxy"
+	"github.com/go-aegian/gowsdlsoap/builder/soap"
+	"github.com/go-aegian/gowsdlsoap/builder/xsd"
+	"github.com/go-aegian/gowsdlsoap/proxy"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -86,7 +86,7 @@ func TestClient_Send_Correct_Headers(t *testing.T) {
 			"GetTrade",
 			map[string]string{},
 			map[string]string{
-				"User-Agent":           "gosoap/1.0",
+				"User-Agent":           "gowsdlsoap/1.0",
 				"SOAPAction":           "GetTrade",
 				soap.ContentTypeHeader: "text/xml; charset=\"utf-8\"",
 			},

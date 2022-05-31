@@ -5,12 +5,13 @@ import (
 	"context"
 	"encoding/xml"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"net"
 	"net/http"
 
-	"github.com/go-aegian/gosoap/builder/soap"
+	"github.com/go-aegian/gowsdlsoap/builder/soap"
 )
 
 // HTTPClient is a client which can make HTTP requests
@@ -141,7 +142,7 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 	}
 
 	httpRequest.Header.Add("SOAPAction", soapAction)
-	httpRequest.Header.Set("User-Agent", "gosoap/1.0")
+	httpRequest.Header.Set("User-Agent", "gowsdlsoap/1.0")
 
 	if s.opts.HttpHeaders != nil {
 		for k, v := range s.opts.HttpHeaders {
@@ -173,7 +174,9 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 	}
 
 	res, err := client.Do(httpRequest)
-	defer res.Body.Close()
+	defer func(Body io.ReadCloser) {
+		_ = Body.Close()
+	}(res.Body)
 
 	if res.StatusCode >= 400 {
 		body, _ := ioutil.ReadAll(res.Body)

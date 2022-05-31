@@ -1,4 +1,4 @@
-module github.com/go-aegian/gosoap
+module github.com/go-aegian/gowsdlsoap
 
 go 1.18
 

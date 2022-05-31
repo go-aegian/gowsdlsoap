@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/go-aegian/gosoap/builder/wsdl"
+	"github.com/go-aegian/gowsdlsoap/builder/wsdl"
 	"github.com/stretchr/testify/assert"
 )
 
