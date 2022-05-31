@@ -36,13 +36,13 @@ Support for generating namespaces.
 package main
 
 import (
-	"bytes"
 	"flag"
 	"fmt"
 	"go/format"
 	"log"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/go-aegian/gosoap"
 )
@@ -94,7 +94,6 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	// generate code
 	soapCode, err := builder.Build()
 	if err != nil {
 		log.Fatalln(err)
@@ -103,25 +102,28 @@ func main() {
 	pkg := filepath.Join(*dir, *pkg)
 	err = os.Mkdir(pkg, 0744)
 
-	file, err := os.Create(filepath.Join(pkg, *outFile))
+	writeFile(filepath.Join(pkg, *outFile), soapCode["header"])
+
+	writeFile(filepath.Join(pkg, strings.Replace(*outFile, ".", "_types.", 1)), soapCode["types"])
+
+	writeFile(filepath.Join(pkg, strings.Replace(*outFile, ".", "_messages.", 1)), soapCode["messages"])
+
+	log.Println("Done")
+}
+
+func writeFile(fileName string, data []byte) {
+	file, err := os.Create(fileName)
 	if err != nil {
 		log.Fatalln(err)
 	}
 	defer file.Close()
 
-	data := new(bytes.Buffer)
-	data.Write(soapCode["header"])
-	data.Write(soapCode["types"])
-	data.Write(soapCode["operations"])
-	data.Write(soapCode["soap"])
-
-	source, err := format.Source(data.Bytes())
+	source, err := format.Source(data)
 	if err != nil {
-		file.Write(data.Bytes())
+		file.Write(data)
 		log.Fatalln(err)
 	}
 
 	file.Write(source)
 
-	log.Println("Done 👍")
 }

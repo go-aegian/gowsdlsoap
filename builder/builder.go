@@ -164,7 +164,7 @@ func New(file, pkg string, ignoreTLS bool, exportAllTypes bool) (*Builder, error
 
 	pkg = strings.TrimSpace(pkg)
 	if pkg == "" {
-		pkg = "soapApi"
+		pkg = "soapProxy"
 	}
 
 	makePublicFn := func(id string) string { return id }
@@ -208,9 +208,9 @@ func (g *Builder) Build() (map[string][]byte, error) {
 		defer wg.Done()
 		var err error
 
-		code["types"], err = g.genTypes()
+		code["types"], err = g.parseTypes()
 		if err != nil {
-			log.Println("genTypes", "error", err)
+			log.Println("parseTypes", "error", err)
 		}
 	}()
 
@@ -219,7 +219,7 @@ func (g *Builder) Build() (map[string][]byte, error) {
 		defer wg.Done()
 		var err error
 
-		code["operations"], err = g.genOperations()
+		code["messages"], err = g.parseMessages()
 		if err != nil {
 			log.Println(err)
 		}
@@ -227,7 +227,7 @@ func (g *Builder) Build() (map[string][]byte, error) {
 
 	wg.Wait()
 
-	code["header"], err = g.genHeader()
+	code["header"], err = g.parseHeader()
 	if err != nil {
 		log.Println(err)
 	}
@@ -346,7 +346,7 @@ func (g *Builder) resolveExternal(schema *xsd.Schema, loc *location) error {
 	return nil
 }
 
-func (g *Builder) genTypes() ([]byte, error) {
+func (g *Builder) parseTypes() ([]byte, error) {
 	funcMap := template.FuncMap{
 		"isBasicType":              isBasicType,
 		"toGoType":                 toGoType,
@@ -366,6 +366,7 @@ func (g *Builder) genTypes() ([]byte, error) {
 		"stripPointerFromType":     stripPointerFromType,
 		"setNamespace":             g.setNamespace,
 		"getNamespace":             g.getNamespace,
+		"packageName":              g.packageName,
 	}
 
 	data := new(bytes.Buffer)
@@ -380,13 +381,14 @@ func (g *Builder) genTypes() ([]byte, error) {
 	return data.Bytes(), nil
 }
 
-func (g *Builder) genOperations() ([]byte, error) {
+func (g *Builder) parseMessages() ([]byte, error) {
 	funcMap := template.FuncMap{
 		"toGoType":               toGoType,
 		"stripNamespaceFromType": stripNamespaceFromType,
 		"replaceReservedWords":   replaceReservedWords,
 		"normalize":              normalize,
 		"makePrivate":            makePrivate,
+		"packageName":            g.packageName,
 		"makePublic":             g.makePublicFn,
 		"findMessageType":        g.findMessageType,
 		"findSOAPAction":         g.findSOAPAction,
@@ -395,7 +397,7 @@ func (g *Builder) genOperations() ([]byte, error) {
 
 	data := new(bytes.Buffer)
 
-	tmpl := template.Must(template.New("operations").Funcs(funcMap).Parse(templates.Operations))
+	tmpl := template.Must(template.New("messages").Funcs(funcMap).Parse(templates.Messages))
 
 	err := tmpl.Execute(data, g.wsdl.PortTypes)
 	if err != nil {
@@ -405,7 +407,7 @@ func (g *Builder) genOperations() ([]byte, error) {
 	return data.Bytes(), nil
 }
 
-func (g *Builder) genHeader() ([]byte, error) {
+func (g *Builder) parseHeader() ([]byte, error) {
 	funcMap := template.FuncMap{
 		"toGoType":               toGoType,
 		"stripNamespaceFromType": stripNamespaceFromType,
@@ -426,6 +428,10 @@ func (g *Builder) genHeader() ([]byte, error) {
 	}
 
 	return data.Bytes(), nil
+}
+
+func (g *Builder) packageName() string {
+	return g.pkg
 }
 
 func (g *Builder) isAbstract(t string) bool {

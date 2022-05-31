@@ -6,12 +6,8 @@ var Header = `
 package {{.}}
 
 import (
-	"context"
 	"encoding/xml"
 	"time"
-
-	"github.com/go-aegian/gosoap/builder/xsd"
-	"github.com/go-aegian/gosoap/proxy"
 
 	{{/*range .Imports*/}}
 		{{/*.*/}}
