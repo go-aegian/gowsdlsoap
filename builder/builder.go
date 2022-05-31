@@ -154,6 +154,7 @@ type Builder struct {
 	xsdExternals          map[string]bool
 	currentRecursionLevel uint8
 	currentNamespace      string
+	hasXMLName            bool
 }
 
 func New(file, pkg string, ignoreTLS bool, exportAllTypes bool) (*Builder, error) {
@@ -182,6 +183,7 @@ func New(file, pkg string, ignoreTLS bool, exportAllTypes bool) (*Builder, error
 		pkg:          pkg,
 		skipTls:      ignoreTLS,
 		makePublicFn: makePublicFn,
+		hasXMLName:   false,
 	}, nil
 }
 
@@ -358,6 +360,8 @@ func (g *Builder) parseTypes() ([]byte, error) {
 		"comment":                  comment,
 		"stripNamespace":           stripNamespace,
 		"goString":                 goString,
+		"setHasXMLName":            g.setHasXMLName,
+		"getHasXMLName":            g.getHasXMLName,
 		"isInnerBasicType":         g.isInnerBasicType,
 		"isAbstract":               g.isAbstract,
 		"makePublic":               g.makePublicFn,
@@ -367,6 +371,7 @@ func (g *Builder) parseTypes() ([]byte, error) {
 		"setNamespace":             g.setNamespace,
 		"getNamespace":             g.getNamespace,
 		"packageName":              g.packageName,
+		"outputNSInField":          g.outputNSInField,
 	}
 
 	data := new(bytes.Buffer)
@@ -465,6 +470,37 @@ func (g *Builder) isAbstract(t string) bool {
 	return false
 }
 
+func (g *Builder) outputNSInField(t string) bool {
+	t = stripNamespaceFromType(t)
+	if isBasicType(t) {
+		return true
+	}
+
+	for _, schema := range g.wsdl.Types.Schemas {
+		for _, simpleType := range schema.SimpleType {
+			if simpleType.Name == t {
+				return true
+			}
+		}
+
+		for _, complexType := range schema.ComplexTypes {
+			if complexType.Name == t && (len(complexType.Sequence) > 0 || len(complexType.Choice) > 0 || len(complexType.SequenceChoice) > 0) && !complexType.Abstract {
+				return false
+			}
+		}
+	}
+
+	return false
+}
+
+func (g *Builder) setHasXMLName(b bool) bool {
+	g.hasXMLName = b
+	return g.hasXMLName
+}
+func (g *Builder) getHasXMLName() bool {
+	return g.hasXMLName
+}
+
 func (g *Builder) isInnerBasicType(t string) bool {
 	t = stripNamespaceFromType(t)
 	if isBasicType(t) {
@@ -479,7 +515,7 @@ func (g *Builder) isInnerBasicType(t string) bool {
 		}
 
 		for _, complexType := range schema.ComplexTypes {
-			if complexType.Name == t && !complexType.Mixed && (len(complexType.Sequence) > 0 || len(complexType.SequenceChoice) > 0 || complexType.Abstract) {
+			if complexType.Name == t && !complexType.Mixed && (len(complexType.Sequence) > 0 || len(complexType.Choice) > 0 || len(complexType.SequenceChoice) > 0 || complexType.Abstract) {
 				return true
 			}
 		}
@@ -676,7 +712,8 @@ func makePrivate(identifier string) string {
 }
 
 func isBasicType(identifier string) bool {
-	_, exists := basicTypes[identifier]
+
+	_, exists := basicTypes[stripNamespaceFromType(identifier)]
 	return exists
 }
 
@@ -692,9 +729,10 @@ func comment(text string) string {
 
 	for _, line := range lines {
 		line = strings.TrimLeftFunc(line, unicode.IsSpace)
-		if line != "" {
-			hasComment = true
+		if line == "" {
+			continue
 		}
+		hasComment = true
 		output += "\n// " + line
 	}
 
