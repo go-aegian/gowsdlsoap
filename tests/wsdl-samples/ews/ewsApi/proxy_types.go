@@ -4210,6 +4210,8 @@ type SetItemFieldType struct {
 
 	*ItemChangeDescriptionType
 
+	FieldURI *FieldURI `xml:"FieldURI,omitempty" json:"FieldURI,omitempty"`
+
 	Item *ItemType `xml:"Item,omitempty" json:"Item,omitempty"`
 
 	Message *MessageType `xml:"Message,omitempty" json:"Message,omitempty"`

@@ -371,7 +371,6 @@ func (g *Builder) parseTypes() ([]byte, error) {
 		"setNamespace":             g.setNamespace,
 		"getNamespace":             g.getNamespace,
 		"packageName":              g.packageName,
-		"outputNSInField":          g.outputNSInField,
 	}
 
 	data := new(bytes.Buffer)
@@ -473,29 +472,6 @@ func (g *Builder) isAbstract(t string, checkParent bool) bool {
 	return false
 }
 
-func (g *Builder) outputNSInField(t string) bool {
-	t = stripNamespaceFromType(t)
-	if isBasicType(t) {
-		return true
-	}
-
-	for _, schema := range g.wsdl.Types.Schemas {
-		for _, simpleType := range schema.SimpleType {
-			if simpleType.Name == t {
-				return true
-			}
-		}
-
-		for _, complexType := range schema.ComplexTypes {
-			if complexType.Name == t && (len(complexType.Sequence) > 0 || len(complexType.Choice) > 0 || len(complexType.SequenceChoice) > 0) && !complexType.Abstract {
-				return false
-			}
-		}
-	}
-
-	return false
-}
-
 func (g *Builder) setHasXMLName(b bool) bool {
 	g.hasXMLName = b
 	return g.hasXMLName
@@ -516,7 +492,9 @@ func (g *Builder) isInnerBasicType(t string) bool {
 				return true
 			}
 		}
+	}
 
+	for _, schema := range g.wsdl.Types.Schemas {
 		for _, complexType := range schema.ComplexTypes {
 			if complexType.Name == t && !complexType.Mixed && (len(complexType.Sequence) > 0 || len(complexType.Choice) > 0 || len(complexType.SequenceChoice) > 0 || complexType.Abstract) {
 				return true
@@ -715,7 +693,6 @@ func makePrivate(identifier string) string {
 }
 
 func isBasicType(identifier string) bool {
-
 	_, exists := basicTypes[stripNamespaceFromType(identifier)]
 	return exists
 }

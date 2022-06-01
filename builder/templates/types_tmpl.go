@@ -213,7 +213,8 @@ import (
 		{{else}}
 			type {{$typeName}} struct {
 				{{$type := findNameByType .Name}}
-				{{$hasXMLName := and (ne .Name $type) (ne (isAbstract $typeName false) true)}}
+				{{$isAbstract := isAbstract $typeName false}}
+				{{$hasXMLName := and (ne .Name $type) (eq $isAbstract false)}}
 				{{$hasXMLName := setHasXMLName $hasXMLName}}
 				{{if $hasXMLName}}
 					XMLName xml.Name ` + "`xml:\"{{if eq (isInnerBasicType $typeName) false}}{{$targetNamespace}} {{end}}{{$type}}\"`" + `
@@ -231,7 +232,6 @@ import (
 					{{template "Attributes" .Attributes}}
 				{{end}}
 			}
-
 		{{end}}
 	{{end}}
 {{end}}

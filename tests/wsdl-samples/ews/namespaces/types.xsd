@@ -1279,23 +1279,26 @@
     <xs:complexType name="SetItemFieldType">
         <xs:complexContent>
             <xs:extension base="t:ItemChangeDescriptionType">
-                <xs:choice>
-                    <xs:element name="Item" type="t:ItemType"/>
-                    <xs:element name="Message" type="t:MessageType"/>
-                    <xs:element name="SharingMessage" type="t:SharingMessageType"/>
-                    <xs:element name="CalendarItem" type="t:CalendarItemType"/>
-                    <xs:element name="Contact" type="t:ContactItemType"/>
-                    <xs:element name="DistributionList" type="t:DistributionListType"/>
-                    <xs:element name="MeetingMessage" type="t:MeetingMessageType"/>
-                    <xs:element name="MeetingRequest" type="t:MeetingRequestMessageType"/>
-                    <xs:element name="MeetingResponse" type="t:MeetingResponseMessageType"/>
-                    <xs:element name="MeetingCancellation" type="t:MeetingCancellationMessageType"/>
-                    <xs:element name="Task" type="t:TaskType"/>
-                    <xs:element name="PostItem" type="t:PostItemType"/>
-                    <xs:element name="RoleMember" type="t:RoleMemberItemType"/>
-                    <xs:element name="Network" type="t:NetworkItemType"/>
-                    <xs:element name="Person" type="t:AbchPersonItemType"/>
-                </xs:choice>
+                <xs:sequence>
+                    <xs:element ref="t:FieldURI"/>
+                    <xs:choice>
+                        <xs:element name="Item" type="t:ItemType"/>
+                        <xs:element name="Message" type="t:MessageType"/>
+                        <xs:element name="SharingMessage" type="t:SharingMessageType"/>
+                        <xs:element name="CalendarItem" type="t:CalendarItemType"/>
+                        <xs:element name="Contact" type="t:ContactItemType"/>
+                        <xs:element name="DistributionList" type="t:DistributionListType"/>
+                        <xs:element name="MeetingMessage" type="t:MeetingMessageType"/>
+                        <xs:element name="MeetingRequest" type="t:MeetingRequestMessageType"/>
+                        <xs:element name="MeetingResponse" type="t:MeetingResponseMessageType"/>
+                        <xs:element name="MeetingCancellation" type="t:MeetingCancellationMessageType"/>
+                        <xs:element name="Task" type="t:TaskType"/>
+                        <xs:element name="PostItem" type="t:PostItemType"/>
+                        <xs:element name="RoleMember" type="t:RoleMemberItemType"/>
+                        <xs:element name="Network" type="t:NetworkItemType"/>
+                        <xs:element name="Person" type="t:AbchPersonItemType"/>
+                    </xs:choice>
+                </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
