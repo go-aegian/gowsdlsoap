@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="gosoap" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="gosoap" />
+    <working_directory value="$PROJECT_DIR$" />
+    <parameters value="--d tests\wsdl-samples\ews --p ewsApi --o proxy.go --i true tests\wsdl-samples\ews\services.wsdl" />
+    <kind value="FILE" />
+    <package value="github.com/go-aegian/go-wsdl" />
+    <directory value="$PROJECT_DIR$" />
+    <filePath value="$PROJECT_DIR$/cmd/gosoap/main.go" />
+    <method v="2" />
+  </configuration>
+</component>
