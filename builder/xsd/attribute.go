@@ -11,4 +11,5 @@ type Attribute struct {
 	Use        string      `xml:"use,attr"`
 	Fixed      string      `xml:"fixed,attr"`
 	SimpleType *SimpleType `xml:"simpleType"`
+	Abstract   bool        `xml:"abstract,attr"`
 }

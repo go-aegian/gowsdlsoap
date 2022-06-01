@@ -4029,17 +4029,20 @@ type SingleRecipientType struct {
 }
 
 type BasePathToElementType struct {
-	XMLName xml.Name `xml:"Path"`
 }
 
 type PathToUnindexedFieldType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types FieldURI"`
+
+	*BasePathToElementType
 
 	FieldURI *UnindexedFieldURIType `xml:"FieldURI,attr,omitempty" json:"FieldURI,omitempty"`
 }
 
 type PathToIndexedFieldType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types IndexedFieldURI"`
+
+	*BasePathToElementType
 
 	FieldURI *DictionaryURIType `xml:"FieldURI,attr,omitempty" json:"FieldURI,omitempty"`
 
@@ -4049,10 +4052,14 @@ type PathToIndexedFieldType struct {
 type PathToExceptionFieldType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExceptionFieldURI"`
 
+	*BasePathToElementType
+
 	FieldURI *ExceptionPropertyURIType `xml:"FieldURI,attr,omitempty" json:"FieldURI,omitempty"`
 }
 
 type PathToExtendedFieldType struct {
+	*BasePathToElementType
+
 	DistinguishedPropertySetId *DistinguishedPropertySetType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistinguishedPropertySetId,attr,omitempty" json:"DistinguishedPropertySetId,omitempty"`
 
 	PropertySetId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PropertySetId,attr,omitempty" json:"PropertySetId,omitempty"`
@@ -4191,13 +4198,17 @@ type ChangeDescriptionType struct {
 }
 
 type ItemChangeDescriptionType struct {
+	*ChangeDescriptionType
 }
 
 type FolderChangeDescriptionType struct {
+	*ChangeDescriptionType
 }
 
 type SetItemFieldType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SetItemField"`
+
+	*ItemChangeDescriptionType
 
 	Item *ItemType `xml:"Item,omitempty" json:"Item,omitempty"`
 
@@ -4233,6 +4244,8 @@ type SetItemFieldType struct {
 type SetFolderFieldType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SetFolderField"`
 
+	*FolderChangeDescriptionType
+
 	Folder *FolderType `xml:"Folder,omitempty" json:"Folder,omitempty"`
 
 	CalendarFolder *CalendarFolderType `xml:"CalendarFolder,omitempty" json:"CalendarFolder,omitempty"`
@@ -4246,14 +4259,20 @@ type SetFolderFieldType struct {
 
 type DeleteItemFieldType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeleteItemField"`
+
+	*ItemChangeDescriptionType
 }
 
 type DeleteFolderFieldType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeleteFolderField"`
+
+	*FolderChangeDescriptionType
 }
 
 type AppendToItemFieldType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppendToItemField"`
+
+	*ItemChangeDescriptionType
 
 	Item *ItemType `xml:"Item,omitempty" json:"Item,omitempty"`
 
@@ -4288,6 +4307,8 @@ type AppendToItemFieldType struct {
 
 type AppendToFolderFieldType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppendToFolderField"`
+
+	*FolderChangeDescriptionType
 
 	Folder *FolderType `xml:"Folder,omitempty" json:"Folder,omitempty"`
 
@@ -4363,11 +4384,15 @@ type NonEmptyArrayOfPredictedActionReasonType struct {
 type RequestAttachmentIdType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentId"`
 
+	*BaseItemIdType
+
 	Id string `xml:"Id,attr,omitempty" json:"Id,omitempty"`
 }
 
 type AttachmentIdType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentId"`
+
+	*RequestAttachmentIdType
 
 	RootItemId string `xml:"RootItemId,attr,omitempty" json:"RootItemId,omitempty"`
 
@@ -4376,6 +4401,8 @@ type AttachmentIdType struct {
 
 type RootItemIdType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RootItemId"`
+
+	*BaseItemIdType
 
 	RootItemId string `xml:"RootItemId,attr,omitempty" json:"RootItemId,omitempty"`
 
@@ -4554,6 +4581,8 @@ type BaseFolderIdType struct {
 }
 
 type DistinguishedFolderIdType struct {
+	*BaseFolderIdType
+
 	Mailbox *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailbox,omitempty" json:"Mailbox,omitempty"`
 
 	Id *DistinguishedFolderIdNameType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,attr,omitempty" json:"Id,omitempty"`
@@ -4562,6 +4591,8 @@ type DistinguishedFolderIdType struct {
 }
 
 type FolderIdType struct {
+	*BaseFolderIdType
+
 	Id string `xml:"Id,attr,omitempty" json:"Id,omitempty"`
 
 	ChangeKey string `xml:"ChangeKey,attr,omitempty" json:"ChangeKey,omitempty"`
@@ -4569,6 +4600,8 @@ type FolderIdType struct {
 
 type AddressListIdType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AddressListId"`
+
+	*BaseFolderIdType
 
 	Id string `xml:"Id,attr,omitempty" json:"Id,omitempty"`
 }
@@ -4674,6 +4707,8 @@ type ManagedFolderInformationType struct {
 type FolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Folder"`
 
+	*BaseFolderType
+
 	PermissionSet *PermissionSetType `xml:"PermissionSet,omitempty" json:"PermissionSet,omitempty"`
 
 	UnreadCount int32 `xml:"UnreadCount,omitempty" json:"UnreadCount,omitempty"`
@@ -4681,6 +4716,8 @@ type FolderType struct {
 
 type CalendarFolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarFolder"`
+
+	*BaseFolderType
 
 	SharingEffectiveRights *CalendarPermissionReadAccessType `xml:"SharingEffectiveRights,omitempty" json:"SharingEffectiveRights,omitempty"`
 
@@ -4706,6 +4743,8 @@ type NonEmptyArrayOfReminderItemActionType struct {
 type ContactsFolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactsFolder"`
 
+	*BaseFolderType
+
 	SharingEffectiveRights *PermissionReadAccessType `xml:"SharingEffectiveRights,omitempty" json:"SharingEffectiveRights,omitempty"`
 
 	PermissionSet *PermissionSetType `xml:"PermissionSet,omitempty" json:"PermissionSet,omitempty"`
@@ -4718,11 +4757,15 @@ type ContactsFolderType struct {
 type SearchFolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchFolder"`
 
+	*FolderType
+
 	SearchParameters *SearchParametersType `xml:"SearchParameters,omitempty" json:"SearchParameters,omitempty"`
 }
 
 type TasksFolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types TasksFolder"`
+
+	*FolderType
 }
 
 type NonEmptyArrayOfFoldersType struct {
@@ -4752,10 +4795,11 @@ type ArrayOfFoldersType struct {
 }
 
 type BaseItemIdType struct {
-	XMLName xml.Name `xml:"BaseItemId"`
 }
 
 type ItemIdType struct {
+	*BaseItemIdType
+
 	Id string `xml:"Id,attr,omitempty" json:"Id,omitempty"`
 
 	ChangeKey string `xml:"ChangeKey,attr,omitempty" json:"ChangeKey,omitempty"`
@@ -4792,6 +4836,7 @@ type ResponseObjectCoreType struct {
 }
 
 type ResponseObjectType struct {
+	*ResponseObjectCoreType
 
 	// The name of this reply object class as an English string. The client application is required to translate it if it's running in a different locale
 
@@ -6547,14 +6592,20 @@ type DeclineItemType struct {
 
 type ProposeNewTimeType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProposeNewTime"`
+
+	*ResponseObjectType
 }
 
 type RemoveItemType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RemoveItem"`
+
+	*ResponseObjectType
 }
 
 type AddItemToMyCalendarType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AddItemToMyCalendar"`
+
+	*ResponseObjectType
 }
 
 type PostReplyItemBaseType struct {
@@ -6741,12 +6792,16 @@ type BasePagingType struct {
 }
 
 type IndexedPageViewType struct {
+	*BasePagingType
+
 	Offset int32 `xml:"Offset,attr,omitempty" json:"Offset,omitempty"`
 
 	BasePoint *IndexBasePointType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BasePoint,attr,omitempty" json:"BasePoint,omitempty"`
 }
 
 type FractionalPageViewType struct {
+	*BasePagingType
+
 	Numerator int32 `xml:"Numerator,attr,omitempty" json:"Numerator,omitempty"`
 
 	Denominator int32 `xml:"Denominator,attr,omitempty" json:"Denominator,omitempty"`
@@ -6754,6 +6809,8 @@ type FractionalPageViewType struct {
 
 type SeekToConditionPageViewType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SeekToConditionPageItemView"`
+
+	*BasePagingType
 
 	Condition *RestrictionType `xml:"Condition,omitempty" json:"Condition,omitempty"`
 
@@ -6763,6 +6820,8 @@ type SeekToConditionPageViewType struct {
 type CalendarViewType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarView"`
 
+	*BasePagingType
+
 	StartDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartDate,attr,omitempty" json:"StartDate,omitempty"`
 
 	EndDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndDate,attr,omitempty" json:"EndDate,omitempty"`
@@ -6770,6 +6829,8 @@ type CalendarViewType struct {
 
 type ContactsViewType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactsView"`
+
+	*BasePagingType
 
 	InitialName string `xml:"InitialName,attr,omitempty" json:"InitialName,omitempty"`
 
@@ -6839,6 +6900,8 @@ type NonEmptyArrayOfAttendeesType struct {
 type OccurrenceItemIdType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types OccurrenceItemId"`
 
+	*BaseItemIdType
+
 	RecurringMasterId *DerivedItemIdType `xml:"RecurringMasterId,attr,omitempty" json:"RecurringMasterId,omitempty"`
 
 	ChangeKey string `xml:"ChangeKey,attr,omitempty" json:"ChangeKey,omitempty"`
@@ -6849,6 +6912,8 @@ type OccurrenceItemIdType struct {
 type RecurringMasterItemIdType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecurringMasterItemId"`
 
+	*BaseItemIdType
+
 	OccurrenceId *DerivedItemIdType `xml:"OccurrenceId,attr,omitempty" json:"OccurrenceId,omitempty"`
 
 	ChangeKey string `xml:"ChangeKey,attr,omitempty" json:"ChangeKey,omitempty"`
@@ -6856,6 +6921,8 @@ type RecurringMasterItemIdType struct {
 
 type RecurringMasterItemIdRangesType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecurringMasterItemIdRanges"`
+
+	*ItemIdType
 
 	Ranges *ArrayOfOccurrenceRangesType `xml:"Ranges,omitempty" json:"Ranges,omitempty"`
 }
@@ -6882,25 +6949,34 @@ type RecurrencePatternBaseType struct {
 }
 
 type IntervalRecurrencePatternBaseType struct {
+	*RecurrencePatternBaseType
+
 	Interval int32 `xml:"Interval,omitempty" json:"Interval,omitempty"`
 }
 
 type RegeneratingPatternBaseType struct {
+	*IntervalRecurrencePatternBaseType
 }
 
 type DailyRegeneratingPatternType struct {
+	*RegeneratingPatternBaseType
 }
 
 type WeeklyRegeneratingPatternType struct {
+	*RegeneratingPatternBaseType
 }
 
 type MonthlyRegeneratingPatternType struct {
+	*RegeneratingPatternBaseType
 }
 
 type YearlyRegeneratingPatternType struct {
+	*RegeneratingPatternBaseType
 }
 
 type RelativeYearlyRecurrencePatternType struct {
+	*RecurrencePatternBaseType
+
 	DaysOfWeek *DayOfWeekType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DaysOfWeek,omitempty" json:"DaysOfWeek,omitempty"`
 
 	DayOfWeekIndex *DayOfWeekIndexType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DayOfWeekIndex,omitempty" json:"DayOfWeekIndex,omitempty"`
@@ -6909,28 +6985,37 @@ type RelativeYearlyRecurrencePatternType struct {
 }
 
 type AbsoluteYearlyRecurrencePatternType struct {
+	*RecurrencePatternBaseType
+
 	DayOfMonth int32 `xml:"DayOfMonth,omitempty" json:"DayOfMonth,omitempty"`
 
 	Month *MonthNamesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Month,omitempty" json:"Month,omitempty"`
 }
 
 type RelativeMonthlyRecurrencePatternType struct {
+	*IntervalRecurrencePatternBaseType
+
 	DaysOfWeek *DayOfWeekType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DaysOfWeek,omitempty" json:"DaysOfWeek,omitempty"`
 
 	DayOfWeekIndex *DayOfWeekIndexType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DayOfWeekIndex,omitempty" json:"DayOfWeekIndex,omitempty"`
 }
 
 type AbsoluteMonthlyRecurrencePatternType struct {
+	*IntervalRecurrencePatternBaseType
+
 	DayOfMonth int32 `xml:"DayOfMonth,omitempty" json:"DayOfMonth,omitempty"`
 }
 
 type WeeklyRecurrencePatternType struct {
+	*IntervalRecurrencePatternBaseType
+
 	DaysOfWeek *DaysOfWeekType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DaysOfWeek,omitempty" json:"DaysOfWeek,omitempty"`
 
 	FirstDayOfWeek *DayOfWeekType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FirstDayOfWeek,omitempty" json:"FirstDayOfWeek,omitempty"`
 }
 
 type DailyRecurrencePatternType struct {
+	*IntervalRecurrencePatternBaseType
 }
 
 type EnhancedLocationType struct {
@@ -6998,11 +7083,15 @@ type RecurringTimeTransitionType struct {
 type RecurringDateTransitionType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecurringDateTransition"`
 
+	*RecurringTimeTransitionType
+
 	Day int32 `xml:"Day,omitempty" json:"Day,omitempty"`
 }
 
 type RecurringDayTransitionType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecurringDayTransition"`
+
+	*RecurringTimeTransitionType
 
 	DayOfWeek *DayOfWeekType `xml:"DayOfWeek,omitempty" json:"DayOfWeek,omitempty"`
 
@@ -7054,13 +7143,18 @@ type RecurrenceRangeBaseType struct {
 }
 
 type NoEndRecurrenceRangeType struct {
+	*RecurrenceRangeBaseType
 }
 
 type EndDateRecurrenceRangeType struct {
+	*RecurrenceRangeBaseType
+
 	EndDate xsd.Date `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndDate,omitempty" json:"EndDate,omitempty"`
 }
 
 type NumberedRecurrenceRangeType struct {
+	*RecurrenceRangeBaseType
+
 	NumberOfOccurrences int32 `xml:"NumberOfOccurrences,omitempty" json:"NumberOfOccurrences,omitempty"`
 }
 
@@ -7879,7 +7973,6 @@ type ConstantValueType struct {
 }
 
 type SearchExpressionType struct {
-	XMLName xml.Name `xml:"SearchExpression"`
 }
 
 type AggregateOnType struct {
@@ -7901,6 +7994,8 @@ type BaseGroupByType struct {
 type GroupByType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupBy"`
 
+	*BaseGroupByType
+
 	AggregateOn *AggregateOnType `xml:"AggregateOn,omitempty" json:"AggregateOn,omitempty"`
 
 	UseCollapsibleGroups bool `xml:"UseCollapsibleGroups,omitempty" json:"UseCollapsibleGroups,omitempty"`
@@ -7920,6 +8015,8 @@ type GroupByType struct {
 
 type DistinguishedGroupByType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistinguishedGroupBy"`
+
+	*BaseGroupByType
 
 	StandardGroupBy *StandardGroupByType `xml:"StandardGroupBy,omitempty" json:"StandardGroupBy,omitempty"`
 }
@@ -7961,6 +8058,8 @@ type GroupSummaryType struct {
 type ExistsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Exists"`
 
+	*SearchExpressionType
+
 	Path *Path `xml:"Path,omitempty" json:"Path,omitempty"`
 }
 
@@ -7973,6 +8072,8 @@ type FieldURIOrConstantType struct {
 }
 
 type TwoOperandExpressionType struct {
+	*SearchExpressionType
+
 	Path *Path `xml:"Path,omitempty" json:"Path,omitempty"`
 
 	FieldURIOrConstant *FieldURIOrConstantType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FieldURIOrConstant,omitempty" json:"FieldURIOrConstant,omitempty"`
@@ -7987,6 +8088,8 @@ type ExcludesValueType struct {
 type ExcludesType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Excludes"`
 
+	*SearchExpressionType
+
 	Path *Path `xml:"Path,omitempty" json:"Path,omitempty"`
 
 	Bitmask *ExcludesValueType `xml:"Bitmask,omitempty" json:"Bitmask,omitempty"`
@@ -7994,30 +8097,44 @@ type ExcludesType struct {
 
 type IsEqualToType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsEqualTo"`
+
+	*TwoOperandExpressionType
 }
 
 type IsNotEqualToType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsNotEqualTo"`
+
+	*TwoOperandExpressionType
 }
 
 type IsGreaterThanType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsGreaterThan"`
+
+	*TwoOperandExpressionType
 }
 
 type IsGreaterThanOrEqualToType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsGreaterThanOrEqualTo"`
+
+	*TwoOperandExpressionType
 }
 
 type IsLessThanType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsLessThan"`
+
+	*TwoOperandExpressionType
 }
 
 type IsLessThanOrEqualToType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsLessThanOrEqualTo"`
+
+	*TwoOperandExpressionType
 }
 
 type ContainsExpressionType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Contains"`
+
+	*SearchExpressionType
 
 	Path *Path `xml:"Path,omitempty" json:"Path,omitempty"`
 
@@ -8031,23 +8148,33 @@ type ContainsExpressionType struct {
 type NotType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Not"`
 
+	*SearchExpressionType
+
 	SearchExpression *SearchExpression `xml:"SearchExpression,omitempty" json:"SearchExpression,omitempty"`
 }
 
 type MultipleOperandBooleanExpressionType struct {
+	*SearchExpressionType
+
 	SearchExpression []*SearchExpression `xml:"SearchExpression,omitempty" json:"SearchExpression,omitempty"`
 }
 
 type AndType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types And"`
+
+	*MultipleOperandBooleanExpressionType
 }
 
 type OrType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Or"`
+
+	*MultipleOperandBooleanExpressionType
 }
 
 type NearType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Near"`
+
+	*MultipleOperandBooleanExpressionType
 
 	Distance uint32 `xml:"Distance,omitempty" json:"Distance,omitempty"`
 
@@ -8157,6 +8284,8 @@ type BaseSubscriptionRequestType struct {
 type PushSubscriptionRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PushSubscriptionRequest"`
 
+	*BaseSubscriptionRequestType
+
 	StatusFrequency *SubscriptionStatusFrequencyType `xml:"StatusFrequency,omitempty" json:"StatusFrequency,omitempty"`
 
 	URL string `xml:"URL,omitempty" json:"URL,omitempty"`
@@ -8166,6 +8295,8 @@ type PushSubscriptionRequestType struct {
 
 type PullSubscriptionRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PullSubscriptionRequest"`
+
+	*BaseSubscriptionRequestType
 
 	Timeout *SubscriptionTimeoutType `xml:"Timeout,omitempty" json:"Timeout,omitempty"`
 }
@@ -8410,16 +8541,22 @@ type AttendeeConflictData struct {
 }
 
 type UnknownAttendeeConflictData struct {
+	*AttendeeConflictData
 }
 
 type TooBigGroupAttendeeConflictData struct {
+	*AttendeeConflictData
 }
 
 type IndividualAttendeeConflictData struct {
+	*AttendeeConflictData
+
 	BusyType *LegacyFreeBusyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BusyType,omitempty" json:"BusyType,omitempty"`
 }
 
 type GroupAttendeeConflictData struct {
+	*AttendeeConflictData
+
 	NumberOfMembers int32 `xml:"NumberOfMembers,omitempty" json:"NumberOfMembers,omitempty"`
 
 	NumberOfMembersAvailable int32 `xml:"NumberOfMembersAvailable,omitempty" json:"NumberOfMembersAvailable,omitempty"`
@@ -8564,13 +8701,13 @@ type VotingInformationType struct {
 }
 
 type AlternateIdBaseType struct {
-	XMLName xml.Name `xml:"AlternateId"`
-
-	Format *IdFormatType `xml:"Format,attr,omitempty" json:"Format,omitempty"`
+	Format *IdFormatType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Format,attr,omitempty" json:"Format,omitempty"`
 }
 
 type AlternateIdType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AlternateId"`
+
+	*AlternateIdBaseType
 
 	Id string `xml:"Id,attr,omitempty" json:"Id,omitempty"`
 
@@ -8582,11 +8719,15 @@ type AlternateIdType struct {
 type AlternatePublicFolderIdType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AlternatePublicFolderId"`
 
+	*AlternateIdBaseType
+
 	FolderId string `xml:"FolderId,attr,omitempty" json:"FolderId,omitempty"`
 }
 
 type AlternatePublicFolderItemIdType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AlternatePublicFolderItemId"`
+
+	*AlternatePublicFolderIdType
 
 	ItemId string `xml:"ItemId,attr,omitempty" json:"ItemId,omitempty"`
 }
@@ -8654,6 +8795,8 @@ type BasePermissionType struct {
 type PermissionType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Permission"`
 
+	*BasePermissionType
+
 	ReadItems *PermissionReadAccessType `xml:"ReadItems,omitempty" json:"ReadItems,omitempty"`
 
 	PermissionLevel *PermissionLevelType `xml:"PermissionLevel,omitempty" json:"PermissionLevel,omitempty"`
@@ -8661,6 +8804,8 @@ type PermissionType struct {
 
 type CalendarPermissionType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarPermission"`
+
+	*BasePermissionType
 
 	ReadItems *CalendarPermissionReadAccessType `xml:"ReadItems,omitempty" json:"ReadItems,omitempty"`
 
@@ -9344,17 +9489,23 @@ type ArrayOfRuleOperationsType struct {
 type CreateRuleOperationType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreateRuleOperation"`
 
+	*RuleOperationType
+
 	Rule *RuleType `xml:"Rule,omitempty" json:"Rule,omitempty"`
 }
 
 type SetRuleOperationType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SetRuleOperation"`
 
+	*RuleOperationType
+
 	Rule *RuleType `xml:"Rule,omitempty" json:"Rule,omitempty"`
 }
 
 type DeleteRuleOperationType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeleteRuleOperation"`
+
+	*RuleOperationType
 
 	RuleId string `xml:"RuleId,omitempty" json:"RuleId,omitempty"`
 }
@@ -10315,12 +10466,16 @@ type SearchResultsType struct {
 }
 
 type SearchResultItemIdType struct {
+	*ItemIdType
+
 	EntryId []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types EntryId,omitempty" json:"EntryId,omitempty"`
 
 	OutlookItemId []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types OutlookItemId,omitempty" json:"OutlookItemId,omitempty"`
 }
 
 type SearchResultConversationIdType struct {
+	*ItemIdType
+
 	OutlookConversationId []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types OutlookConversationId,omitempty" json:"OutlookConversationId,omitempty"`
 }
 
@@ -12517,6 +12672,8 @@ type BaseRequestType struct {
 type GetFolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetFolder"`
 
+	*BaseRequestType
+
 	FolderShape *FolderResponseShapeType `xml:"FolderShape,omitempty" json:"FolderShape,omitempty"`
 
 	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"FolderIds,omitempty" json:"FolderIds,omitempty"`
@@ -12524,6 +12681,8 @@ type GetFolderType struct {
 
 type UploadItemsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UploadItems"`
+
+	*BaseRequestType
 
 	Items *NonEmptyArrayOfUploadItemsType `xml:"Items,omitempty" json:"Items,omitempty"`
 }
@@ -12544,6 +12703,8 @@ type UploadItemsResponseType struct {
 
 type ExportItemsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExportItems"`
+
+	*BaseRequestType
 
 	ItemIds *NonEmptyArrayOfItemIdsType `xml:"ItemIds,omitempty" json:"ItemIds,omitempty"`
 }
@@ -12567,6 +12728,8 @@ type ExportItemsResponseType struct {
 type CreateFolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateFolder"`
 
+	*BaseRequestType
+
 	ParentFolderId *TargetFolderIdType `xml:"ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
 
 	Folders *NonEmptyArrayOfFoldersType `xml:"Folders,omitempty" json:"Folders,omitempty"`
@@ -12574,6 +12737,8 @@ type CreateFolderType struct {
 
 type FindFolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindFolder"`
+
+	*BaseRequestType
 
 	FolderShape *FolderResponseShapeType `xml:"FolderShape,omitempty" json:"FolderShape,omitempty"`
 
@@ -12611,6 +12776,8 @@ type FindFolderResponseType struct {
 type DeleteFolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteFolder"`
 
+	*BaseRequestType
+
 	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"FolderIds,omitempty" json:"FolderIds,omitempty"`
 
 	DeleteType *DisposalType `xml:"DeleteType,attr,omitempty" json:"DeleteType,omitempty"`
@@ -12624,6 +12791,8 @@ type DeleteFolderResponseType struct {
 
 type EmptyFolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages EmptyFolder"`
+
+	*BaseRequestType
 
 	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"FolderIds,omitempty" json:"FolderIds,omitempty"`
 
@@ -12639,6 +12808,8 @@ type EmptyFolderResponseType struct {
 }
 
 type BaseMoveCopyFolderType struct {
+	*BaseRequestType
+
 	ToFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ToFolderId,omitempty" json:"ToFolderId,omitempty"`
 
 	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FolderIds,omitempty" json:"FolderIds,omitempty"`
@@ -12646,14 +12817,20 @@ type BaseMoveCopyFolderType struct {
 
 type MoveFolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MoveFolder"`
+
+	*BaseMoveCopyFolderType
 }
 
 type CopyFolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CopyFolder"`
+
+	*BaseMoveCopyFolderType
 }
 
 type UpdateFolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateFolder"`
+
+	*BaseRequestType
 
 	FolderChanges *NonEmptyArrayOfFolderChangesType `xml:"FolderChanges,omitempty" json:"FolderChanges,omitempty"`
 }
@@ -12691,6 +12868,8 @@ type CopyFolderResponseType struct {
 type CreateFolderPathType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateFolderPath"`
 
+	*BaseRequestType
+
 	ParentFolderId *TargetFolderIdType `xml:"ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
 
 	RelativeFolderPath *NonEmptyArrayOfFoldersType `xml:"RelativeFolderPath,omitempty" json:"RelativeFolderPath,omitempty"`
@@ -12705,6 +12884,8 @@ type CreateFolderPathResponseType struct {
 type GetItemType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetItem"`
 
+	*BaseRequestType
+
 	ItemShape *ItemResponseShapeType `xml:"ItemShape,omitempty" json:"ItemShape,omitempty"`
 
 	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"ItemIds,omitempty" json:"ItemIds,omitempty"`
@@ -12712,6 +12893,8 @@ type GetItemType struct {
 
 type CreateItemType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateItem"`
+
+	*BaseRequestType
 
 	SavedItemFolderId *TargetFolderIdType `xml:"SavedItemFolderId,omitempty" json:"SavedItemFolderId,omitempty"`
 
@@ -12724,6 +12907,8 @@ type CreateItemType struct {
 
 type UpdateItemType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateItem"`
+
+	*BaseRequestType
 
 	SavedItemFolderId *TargetFolderIdType `xml:"SavedItemFolderId,omitempty" json:"SavedItemFolderId,omitempty"`
 
@@ -12755,6 +12940,8 @@ type UpdateItemResponseMessageType struct {
 type UpdateItemInRecoverableItemsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateItemInRecoverableItems"`
 
+	*BaseRequestType
+
 	ItemId *ItemIdType `xml:"ItemId,omitempty" json:"ItemId,omitempty"`
 
 	Updates *NonEmptyArrayOfItemChangeDescriptionsType `xml:"Updates,omitempty" json:"Updates,omitempty"`
@@ -12776,6 +12963,8 @@ type UpdateItemInRecoverableItemsResponseMessageType struct {
 
 type DeleteItemType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteItem"`
+
+	*BaseRequestType
 
 	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"ItemIds,omitempty" json:"ItemIds,omitempty"`
 
@@ -12803,6 +12992,8 @@ type DeleteAttachmentResponseMessageType struct {
 }
 
 type BaseMoveCopyItemType struct {
+	*BaseRequestType
+
 	ToFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ToFolderId,omitempty" json:"ToFolderId,omitempty"`
 
 	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemIds,omitempty" json:"ItemIds,omitempty"`
@@ -12812,14 +13003,20 @@ type BaseMoveCopyItemType struct {
 
 type MoveItemType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MoveItem"`
+
+	*BaseMoveCopyItemType
 }
 
 type CopyItemType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CopyItem"`
+
+	*BaseMoveCopyItemType
 }
 
 type ArchiveItemType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ArchiveItem"`
+
+	*BaseRequestType
 
 	ArchiveSourceFolderId *TargetFolderIdType `xml:"ArchiveSourceFolderId,omitempty" json:"ArchiveSourceFolderId,omitempty"`
 
@@ -12828,6 +13025,8 @@ type ArchiveItemType struct {
 
 type SendItemType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SendItem"`
+
+	*BaseRequestType
 
 	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"ItemIds,omitempty" json:"ItemIds,omitempty"`
 
@@ -12856,6 +13055,8 @@ type QueryStringType struct {
 
 type FindItemType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindItem"`
+
+	*BaseRequestType
 
 	ItemShape *ItemResponseShapeType `xml:"ItemShape,omitempty" json:"ItemShape,omitempty"`
 
@@ -12886,6 +13087,8 @@ type FindItemType struct {
 
 type FindConversationType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindConversation"`
+
+	*BaseRequestType
 
 	SortOrder *NonEmptyArrayOfFieldOrdersType `xml:"SortOrder,omitempty" json:"SortOrder,omitempty"`
 
@@ -12923,6 +13126,8 @@ type FindConversationResponseMessageType struct {
 type PerformInstantSearchRequest struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PerformInstantSearch"`
 
+	*BaseRequestType
+
 	SearchSessionId string `xml:"SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
 
 	ItemType *InstantSearchItemType `xml:"ItemType,omitempty" json:"ItemType,omitempty"`
@@ -12951,11 +13156,15 @@ type PerformInstantSearchResponse struct {
 type EndInstantSearchSessionRequest struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages EndInstantSearchSession"`
 
+	*BaseRequestType
+
 	SessionId string `xml:"SessionId,omitempty" json:"SessionId,omitempty"`
 }
 
 type ApplyConversationActionType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ApplyConversationAction"`
+
+	*BaseRequestType
 
 	ConversationActions *NonEmptyArrayOfApplyConversationActionType `xml:"ConversationActions,omitempty" json:"ConversationActions,omitempty"`
 }
@@ -12974,6 +13183,8 @@ type ApplyConversationActionResponseMessageType struct {
 
 type FindPeopleType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindPeople"`
+
+	*BaseRequestType
 
 	PersonaShape *PersonaResponseShapeType `xml:"PersonaShape,omitempty" json:"PersonaShape,omitempty"`
 
@@ -13015,6 +13226,8 @@ type FindPeopleResponseMessageType struct {
 type FindTagsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindTags"`
 
+	*BaseRequestType
+
 	IndexedPageItemView *IndexedPageViewType `xml:"IndexedPageItemView,omitempty" json:"IndexedPageItemView,omitempty"`
 
 	SortOrder *NonEmptyArrayOfFieldOrdersType `xml:"SortOrder,omitempty" json:"SortOrder,omitempty"`
@@ -13033,6 +13246,8 @@ type FindTagsResponseMessageType struct {
 type AddTagType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddTag"`
 
+	*BaseRequestType
+
 	Tag string `xml:"Tag,omitempty" json:"Tag,omitempty"`
 
 	AppName string `xml:"AppName,omitempty" json:"AppName,omitempty"`
@@ -13047,6 +13262,8 @@ type AddTagResponseMessageType struct {
 type HideTagType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages HideTag"`
 
+	*BaseRequestType
+
 	Tag string `xml:"Tag,omitempty" json:"Tag,omitempty"`
 }
 
@@ -13058,6 +13275,8 @@ type HideTagResponseMessageType struct {
 
 type GetPersonaType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetPersona"`
+
+	*BaseRequestType
 
 	PersonaId *ItemIdType `xml:"PersonaId,omitempty" json:"PersonaId,omitempty"`
 
@@ -13081,6 +13300,8 @@ type GetPersonaResponseMessageType struct {
 type CreateAttachmentType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateAttachment"`
 
+	*BaseRequestType
+
 	ParentItemId *ItemIdType `xml:"ParentItemId,omitempty" json:"ParentItemId,omitempty"`
 
 	Attachments *NonEmptyArrayOfAttachmentsType `xml:"Attachments,omitempty" json:"Attachments,omitempty"`
@@ -13095,6 +13316,8 @@ type CreateAttachmentResponseType struct {
 type DeleteAttachmentType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteAttachment"`
 
+	*BaseRequestType
+
 	AttachmentIds *NonEmptyArrayOfRequestAttachmentIdsType `xml:"AttachmentIds,omitempty" json:"AttachmentIds,omitempty"`
 }
 
@@ -13106,6 +13329,8 @@ type DeleteAttachmentResponseType struct {
 
 type GetAttachmentType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetAttachment"`
+
+	*BaseRequestType
 
 	AttachmentShape *AttachmentResponseShapeType `xml:"AttachmentShape,omitempty" json:"AttachmentShape,omitempty"`
 
@@ -13191,6 +13416,8 @@ type ArchiveItemResponseType struct {
 type GetClientAccessTokenType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetClientAccessToken"`
 
+	*BaseRequestType
+
 	TokenRequests *NonEmptyArrayOfClientAccessTokenRequestsType `xml:"TokenRequests,omitempty" json:"TokenRequests,omitempty"`
 }
 
@@ -13210,6 +13437,8 @@ type GetClientAccessTokenResponseType struct {
 
 type GetFocusedOtherOverridesRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetFocusedOtherOverrides"`
+
+	*BaseRequestType
 }
 
 type GetFocusedOtherOverridesResponseType struct {
@@ -13222,6 +13451,8 @@ type GetFocusedOtherOverridesResponseType struct {
 
 type CreateOrUpdateFocusedOtherOverrideRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateOrUpdateFocusedOtherOverride"`
+
+	*BaseRequestType
 
 	SenderSmtpAddress string `xml:"SenderSmtpAddress,omitempty" json:"SenderSmtpAddress,omitempty"`
 
@@ -13241,6 +13472,8 @@ type CreateOrUpdateFocusedOtherOverrideResponseType struct {
 type DeleteFocusedOtherOverrideRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteFocusedOtherOverride"`
 
+	*BaseRequestType
+
 	Id *GuidType `xml:"Id,omitempty" json:"Id,omitempty"`
 }
 
@@ -13254,6 +13487,8 @@ type DeleteFocusedOtherOverrideResponseType struct {
 
 type ResolveNamesType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResolveNames"`
+
+	*BaseRequestType
 
 	ParentFolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"ParentFolderIds,omitempty" json:"ParentFolderIds,omitempty"`
 
@@ -13283,6 +13518,8 @@ type ResolveNamesResponseType struct {
 type GetPasswordExpirationDateType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetPasswordExpirationDate"`
 
+	*BaseRequestType
+
 	MailboxSmtpAddress string `xml:"MailboxSmtpAddress,omitempty" json:"MailboxSmtpAddress,omitempty"`
 }
 
@@ -13296,6 +13533,8 @@ type GetPasswordExpirationDateResponseMessageType struct {
 
 type GetMailTipsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetMailTips"`
+
+	*BaseRequestType
 
 	SendingAs *EmailAddressType `xml:"SendingAs,omitempty" json:"SendingAs,omitempty"`
 
@@ -13327,6 +13566,8 @@ type MailTipsResponseMessageType struct {
 type PlayOnPhoneType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PlayOnPhone"`
 
+	*BaseRequestType
+
 	ItemId *ItemIdType `xml:"ItemId,omitempty" json:"ItemId,omitempty"`
 
 	DialString string `xml:"DialString,omitempty" json:"DialString,omitempty"`
@@ -13343,6 +13584,8 @@ type PlayOnPhoneResponseMessageType struct {
 type GetPhoneCallInformationType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetPhoneCallInformation"`
 
+	*BaseRequestType
+
 	PhoneCallId *PhoneCallIdType `xml:"PhoneCallId,omitempty" json:"PhoneCallId,omitempty"`
 }
 
@@ -13357,6 +13600,8 @@ type GetPhoneCallInformationResponseMessageType struct {
 type DisconnectPhoneCallType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DisconnectPhoneCall"`
 
+	*BaseRequestType
+
 	PhoneCallId *PhoneCallIdType `xml:"PhoneCallId,omitempty" json:"PhoneCallId,omitempty"`
 }
 
@@ -13368,6 +13613,8 @@ type DisconnectPhoneCallResponseMessageType struct {
 
 type ExpandDLType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExpandDL"`
+
+	*BaseRequestType
 
 	Mailbox *EmailAddressType `xml:"Mailbox,omitempty" json:"Mailbox,omitempty"`
 }
@@ -13388,6 +13635,8 @@ type ExpandDLResponseType struct {
 
 type GetServerTimeZonesType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetServerTimeZones"`
+
+	*BaseRequestType
 
 	Ids *NonEmptyArrayOfTimeZoneIdType `xml:"Ids,omitempty" json:"Ids,omitempty"`
 
@@ -13411,6 +13660,8 @@ type GetServerTimeZonesResponseType struct {
 type CreateManagedFolderRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateManagedFolder"`
 
+	*BaseRequestType
+
 	FolderNames *NonEmptyArrayOfFolderNamesType `xml:"FolderNames,omitempty" json:"FolderNames,omitempty"`
 
 	Mailbox *EmailAddressType `xml:"Mailbox,omitempty" json:"Mailbox,omitempty"`
@@ -13424,6 +13675,8 @@ type CreateManagedFolderResponseType struct {
 
 type SubscribeType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Subscribe"`
+
+	*BaseRequestType
 
 	PullSubscriptionRequest *PullSubscriptionRequestType `xml:"PullSubscriptionRequest,omitempty" json:"PullSubscriptionRequest,omitempty"`
 
@@ -13451,6 +13704,8 @@ type SubscribeResponseType struct {
 type UnsubscribeType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Unsubscribe"`
 
+	*BaseRequestType
+
 	SubscriptionId *SubscriptionIdType `xml:"SubscriptionId,omitempty" json:"SubscriptionId,omitempty"`
 }
 
@@ -13462,6 +13717,8 @@ type UnsubscribeResponseType struct {
 
 type GetEventsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetEvents"`
+
+	*BaseRequestType
 
 	SubscriptionId *SubscriptionIdType `xml:"SubscriptionId,omitempty" json:"SubscriptionId,omitempty"`
 
@@ -13484,6 +13741,8 @@ type GetEventsResponseType struct {
 
 type GetStreamingEventsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetStreamingEvents"`
+
+	*BaseRequestType
 
 	SubscriptionIds *NonEmptyArrayOfSubscriptionIdsType `xml:"SubscriptionIds,omitempty" json:"SubscriptionIds,omitempty"`
 
@@ -13531,6 +13790,8 @@ type SendNotificationResultType struct {
 type SyncFolderHierarchyType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncFolderHierarchy"`
 
+	*BaseRequestType
+
 	FolderShape *FolderResponseShapeType `xml:"FolderShape,omitempty" json:"FolderShape,omitempty"`
 
 	SyncFolderId *TargetFolderIdType `xml:"SyncFolderId,omitempty" json:"SyncFolderId,omitempty"`
@@ -13558,6 +13819,8 @@ type SyncFolderHierarchyResponseType struct {
 
 type SyncFolderItemsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncFolderItems"`
+
+	*BaseRequestType
 
 	ItemShape *ItemResponseShapeType `xml:"ItemShape,omitempty" json:"ItemShape,omitempty"`
 
@@ -13592,6 +13855,8 @@ type SyncFolderItemsResponseType struct {
 
 type GetUserAvailabilityRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetUserAvailabilityRequest"`
+
+	*BaseRequestType
 
 	TimeZone *TimeZone `xml:"TimeZone,omitempty" json:"TimeZone,omitempty"`
 
@@ -13633,6 +13898,8 @@ type GetUserAvailabilityResponseType struct {
 }
 
 type GetUserOofSettingsRequest struct {
+	*BaseRequestType
+
 	Mailbox *Mailbox `xml:"Mailbox,omitempty" json:"Mailbox,omitempty"`
 }
 
@@ -13645,6 +13912,8 @@ type GetUserOofSettingsResponse struct {
 }
 
 type SetUserOofSettingsRequest struct {
+	*BaseRequestType
+
 	Mailbox *Mailbox `xml:"Mailbox,omitempty" json:"Mailbox,omitempty"`
 
 	UserOofSettings *UserOofSettings `xml:"UserOofSettings,omitempty" json:"UserOofSettings,omitempty"`
@@ -13656,6 +13925,8 @@ type SetUserOofSettingsResponse struct {
 
 type ConvertIdType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConvertId"`
+
+	*BaseRequestType
 
 	SourceIds *NonEmptyArrayOfAlternateIdsType `xml:"SourceIds,omitempty" json:"SourceIds,omitempty"`
 
@@ -13679,6 +13950,8 @@ type ConvertIdResponseMessageType struct {
 type GetDelegateType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetDelegate"`
 
+	*BaseDelegateType
+
 	UserIds *ArrayOfUserIdType `xml:"UserIds,omitempty" json:"UserIds,omitempty"`
 
 	IncludePermissions bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IncludePermissions,attr,omitempty" json:"IncludePermissions,omitempty"`
@@ -13686,6 +13959,8 @@ type GetDelegateType struct {
 
 type GetDelegateResponseMessageType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetDelegateResponse"`
+
+	*BaseDelegateResponseMessageType
 
 	DeliverMeetingRequests *DeliverMeetingRequestsType `xml:"DeliverMeetingRequests,omitempty" json:"DeliverMeetingRequests,omitempty"`
 }
@@ -13705,6 +13980,8 @@ type DelegateUserResponseMessageType struct {
 type AddDelegateType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddDelegate"`
 
+	*BaseDelegateType
+
 	DelegateUsers *ArrayOfDelegateUserType `xml:"DelegateUsers,omitempty" json:"DelegateUsers,omitempty"`
 
 	DeliverMeetingRequests *DeliverMeetingRequestsType `xml:"DeliverMeetingRequests,omitempty" json:"DeliverMeetingRequests,omitempty"`
@@ -13717,25 +13994,35 @@ type BaseDelegateResponseMessageType struct {
 }
 
 type BaseDelegateType struct {
+	*BaseRequestType
+
 	Mailbox *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Mailbox,omitempty" json:"Mailbox,omitempty"`
 }
 
 type AddDelegateResponseMessageType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddDelegateResponse"`
+
+	*BaseDelegateResponseMessageType
 }
 
 type RemoveDelegateType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveDelegate"`
+
+	*BaseDelegateType
 
 	UserIds *ArrayOfUserIdType `xml:"UserIds,omitempty" json:"UserIds,omitempty"`
 }
 
 type RemoveDelegateResponseMessageType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveDelegateResponse"`
+
+	*BaseDelegateResponseMessageType
 }
 
 type UpdateDelegateType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateDelegate"`
+
+	*BaseDelegateType
 
 	DelegateUsers *ArrayOfDelegateUserType `xml:"DelegateUsers,omitempty" json:"DelegateUsers,omitempty"`
 
@@ -13744,10 +14031,14 @@ type UpdateDelegateType struct {
 
 type UpdateDelegateResponseMessageType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateDelegateResponse"`
+
+	*BaseDelegateResponseMessageType
 }
 
 type GetSharingMetadataType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSharingMetadata"`
+
+	*BaseRequestType
 
 	IdOfFolderToShare *FolderIdType `xml:"IdOfFolderToShare,omitempty" json:"IdOfFolderToShare,omitempty"`
 
@@ -13767,6 +14058,8 @@ type GetSharingMetadataResponseMessageType struct {
 type RefreshSharingFolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RefreshSharingFolder"`
 
+	*BaseRequestType
+
 	SharingFolderId *FolderIdType `xml:"SharingFolderId,omitempty" json:"SharingFolderId,omitempty"`
 }
 
@@ -13776,6 +14069,8 @@ type RefreshSharingFolderResponseMessageType struct {
 
 type GetSharingFolderType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSharingFolder"`
+
+	*BaseRequestType
 
 	SmtpAddress *NonEmptyStringType `xml:"SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
 
@@ -13793,6 +14088,8 @@ type GetSharingFolderResponseMessageType struct {
 type CreateUserConfigurationType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateUserConfiguration"`
 
+	*BaseRequestType
+
 	UserConfiguration *UserConfigurationType `xml:"UserConfiguration,omitempty" json:"UserConfiguration,omitempty"`
 }
 
@@ -13805,6 +14102,8 @@ type CreateUserConfigurationResponseType struct {
 type DeleteUserConfigurationType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteUserConfiguration"`
 
+	*BaseRequestType
+
 	UserConfigurationName *UserConfigurationNameType `xml:"UserConfigurationName,omitempty" json:"UserConfigurationName,omitempty"`
 }
 
@@ -13816,6 +14115,8 @@ type DeleteUserConfigurationResponseType struct {
 
 type GetUserConfigurationType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetUserConfiguration"`
+
+	*BaseRequestType
 
 	UserConfigurationName *UserConfigurationNameType `xml:"UserConfigurationName,omitempty" json:"UserConfigurationName,omitempty"`
 
@@ -13839,6 +14140,8 @@ type GetUserConfigurationResponseType struct {
 type GetSpecificUserConfigurationType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSpecificUserConfiguration"`
 
+	*BaseRequestType
+
 	UserConfigurationName *UserConfigurationNameType `xml:"UserConfigurationName,omitempty" json:"UserConfigurationName,omitempty"`
 
 	UserConfigurationProperties *UserConfigurationPropertyType `xml:"UserConfigurationProperties,omitempty" json:"UserConfigurationProperties,omitempty"`
@@ -13861,6 +14164,8 @@ type GetSpecificUserConfigurationResponseType struct {
 type UpdateUserConfigurationType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateUserConfiguration"`
 
+	*BaseRequestType
+
 	UserConfiguration *UserConfigurationType `xml:"UserConfiguration,omitempty" json:"UserConfiguration,omitempty"`
 }
 
@@ -13873,6 +14178,8 @@ type UpdateUserConfigurationResponseType struct {
 type SetTeamMailboxRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetTeamMailbox"`
 
+	*BaseRequestType
+
 	EmailAddress *EmailAddressType `xml:"EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 
 	SharePointSiteUrl string `xml:"SharePointSiteUrl,omitempty" json:"SharePointSiteUrl,omitempty"`
@@ -13882,6 +14189,8 @@ type SetTeamMailboxRequestType struct {
 
 type UnpinTeamMailboxRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UnpinTeamMailbox"`
+
+	*BaseRequestType
 
 	EmailAddress *EmailAddressType `xml:"EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 }
@@ -13900,6 +14209,8 @@ type UnpinTeamMailboxResponseMessageType struct {
 
 type GetRoomListsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetRoomLists"`
+
+	*BaseRequestType
 }
 
 type GetRoomListsResponseMessageType struct {
@@ -13912,6 +14223,8 @@ type GetRoomListsResponseMessageType struct {
 
 type GetRoomsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetRooms"`
+
+	*BaseRequestType
 
 	RoomList *EmailAddressType `xml:"RoomList,omitempty" json:"RoomList,omitempty"`
 }
@@ -13926,6 +14239,8 @@ type GetRoomsResponseMessageType struct {
 
 type GetRemindersType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetReminders"`
+
+	*BaseRequestType
 
 	BeginTime xsd.DateTime `xml:"BeginTime,omitempty" json:"BeginTime,omitempty"`
 
@@ -13947,6 +14262,8 @@ type GetRemindersResponseMessageType struct {
 type PerformReminderActionType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PerformReminderAction"`
 
+	*BaseRequestType
+
 	ReminderItemActions *NonEmptyArrayOfReminderItemActionType `xml:"ReminderItemActions,omitempty" json:"ReminderItemActions,omitempty"`
 }
 
@@ -13966,6 +14283,8 @@ type ArrayOfServiceConfigurationType struct {
 
 type GetServiceConfigurationType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetServiceConfiguration"`
+
+	*BaseRequestType
 
 	ActingAs *EmailAddressType `xml:"ActingAs,omitempty" json:"ActingAs,omitempty"`
 
@@ -14004,6 +14323,8 @@ type ServiceConfigurationResponseMessageType struct {
 
 type FindMessageTrackingReportRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindMessageTrackingReport"`
+
+	*BaseRequestType
 }
 
 type FindMessageTrackingReportResponseMessageType struct {
@@ -14024,6 +14345,8 @@ type FindMessageTrackingReportResponseMessageType struct {
 
 type GetMessageTrackingReportRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetMessageTrackingReport"`
+
+	*BaseRequestType
 }
 
 type GetMessageTrackingReportResponseMessageType struct {
@@ -14043,6 +14366,8 @@ type GetMessageTrackingReportResponseMessageType struct {
 type GetInboxRulesRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetInboxRules"`
 
+	*BaseRequestType
+
 	MailboxSmtpAddress string `xml:"MailboxSmtpAddress,omitempty" json:"MailboxSmtpAddress,omitempty"`
 }
 
@@ -14058,6 +14383,8 @@ type GetInboxRulesResponseType struct {
 
 type UpdateInboxRulesRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateInboxRules"`
+
+	*BaseRequestType
 
 	MailboxSmtpAddress string `xml:"MailboxSmtpAddress,omitempty" json:"MailboxSmtpAddress,omitempty"`
 
@@ -14076,6 +14403,8 @@ type UpdateInboxRulesResponseType struct {
 
 type FindMailboxStatisticsByKeywordsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindMailboxStatisticsByKeywords"`
+
+	*BaseRequestType
 
 	Mailboxes *ArrayOfUserMailboxesType `xml:"Mailboxes,omitempty" json:"Mailboxes,omitempty"`
 
@@ -14117,6 +14446,8 @@ type FindMailboxStatisticsByKeywordsResponseMessageType struct {
 type GetSearchableMailboxesType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSearchableMailboxes"`
 
+	*BaseRequestType
+
 	SearchFilter string `xml:"SearchFilter,omitempty" json:"SearchFilter,omitempty"`
 
 	ExpandGroupMembership bool `xml:"ExpandGroupMembership,omitempty" json:"ExpandGroupMembership,omitempty"`
@@ -14132,6 +14463,8 @@ type GetSearchableMailboxesResponseMessageType struct {
 
 type SearchMailboxesType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchMailboxes"`
+
+	*BaseRequestType
 
 	SearchQueries *NonEmptyArrayOfMailboxQueriesType `xml:"SearchQueries,omitempty" json:"SearchQueries,omitempty"`
 
@@ -14169,6 +14502,8 @@ type SearchMailboxesResponseMessageType struct {
 type GetDiscoverySearchConfigurationType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetDiscoverySearchConfiguration"`
 
+	*BaseRequestType
+
 	SearchId string `xml:"SearchId,omitempty" json:"SearchId,omitempty"`
 
 	ExpandGroupMembership bool `xml:"ExpandGroupMembership,omitempty" json:"ExpandGroupMembership,omitempty"`
@@ -14185,6 +14520,8 @@ type GetDiscoverySearchConfigurationResponseMessageType struct {
 type GetHoldOnMailboxesType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetHoldOnMailboxes"`
 
+	*BaseRequestType
+
 	HoldId string `xml:"HoldId,omitempty" json:"HoldId,omitempty"`
 }
 
@@ -14196,6 +14533,8 @@ type GetHoldOnMailboxesResponseMessageType struct {
 
 type SetHoldOnMailboxesType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetHoldOnMailboxes"`
+
+	*BaseRequestType
 
 	ActionType *HoldActionType `xml:"ActionType,omitempty" json:"ActionType,omitempty"`
 
@@ -14225,6 +14564,8 @@ type SetHoldOnMailboxesResponseMessageType struct {
 type GetNonIndexableItemStatisticsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetNonIndexableItemStatistics"`
 
+	*BaseRequestType
+
 	Mailboxes *NonEmptyArrayOfLegacyDNsType `xml:"Mailboxes,omitempty" json:"Mailboxes,omitempty"`
 
 	SearchArchiveOnly bool `xml:"SearchArchiveOnly,omitempty" json:"SearchArchiveOnly,omitempty"`
@@ -14238,6 +14579,8 @@ type GetNonIndexableItemStatisticsResponseMessageType struct {
 
 type GetNonIndexableItemDetailsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetNonIndexableItemDetails"`
+
+	*BaseRequestType
 
 	Mailboxes *NonEmptyArrayOfLegacyDNsType `xml:"Mailboxes,omitempty" json:"Mailboxes,omitempty"`
 
@@ -14259,6 +14602,8 @@ type GetNonIndexableItemDetailsResponseMessageType struct {
 type MarkAllItemsAsReadType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MarkAllItemsAsRead"`
 
+	*BaseRequestType
+
 	ReadFlag bool `xml:"ReadFlag,omitempty" json:"ReadFlag,omitempty"`
 
 	SuppressReadReceipts bool `xml:"SuppressReadReceipts,omitempty" json:"SuppressReadReceipts,omitempty"`
@@ -14274,6 +14619,8 @@ type MarkAllItemsAsReadResponseType struct {
 
 type GetConversationItemsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetConversationItems"`
+
+	*BaseRequestType
 
 	ItemShape *ItemResponseShapeType `xml:"ItemShape,omitempty" json:"ItemShape,omitempty"`
 
@@ -14304,6 +14651,8 @@ type GetConversationItemsResponseType struct {
 
 type GetOMEConfigurationType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetOMEConfiguration"`
+
+	*BaseRequestType
 }
 
 type OMEConfigurationResponseType struct {
@@ -14317,6 +14666,8 @@ type OMEConfigurationResponseType struct {
 type SetOMEConfigurationType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetOMEConfiguration"`
 
+	*BaseRequestType
+
 	Xml string `xml:"Xml,omitempty" json:"Xml,omitempty"`
 }
 
@@ -14328,6 +14679,8 @@ type SetOMEConfigurationResponseType struct {
 
 type GetAppManifestsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetAppManifests"`
+
+	*BaseRequestType
 
 	ApiVersionSupported string `xml:"ApiVersionSupported,omitempty" json:"ApiVersionSupported,omitempty"`
 
@@ -14364,6 +14717,8 @@ type ArrayOfAppManifestsType struct {
 
 type GetAppMarketplaceUrlType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetAppMarketplaceUrl"`
+
+	*BaseRequestType
 }
 
 type GetAppMarketplaceUrlResponseMessageType struct {
@@ -14378,6 +14733,8 @@ type GetAppMarketplaceUrlResponseMessageType struct {
 
 type MarkAsJunkType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MarkAsJunk"`
+
+	*BaseRequestType
 
 	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"ItemIds,omitempty" json:"ItemIds,omitempty"`
 
@@ -14401,6 +14758,8 @@ type MarkAsJunkResponseMessageType struct {
 type ReportMessageType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ReportMessage"`
 
+	*BaseRequestType
+
 	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"ItemIds,omitempty" json:"ItemIds,omitempty"`
 
 	ReportAction *ReportMessageActionType `xml:"ReportAction,attr,omitempty" json:"ReportAction,omitempty"`
@@ -14420,6 +14779,8 @@ type ReportMessageResponseMessageType struct {
 
 type InstallAppType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages InstallApp"`
+
+	*BaseRequestType
 
 	Manifest []byte `xml:"Manifest,omitempty" json:"Manifest,omitempty"`
 
@@ -14449,6 +14810,8 @@ type InstallAppResponseType struct {
 type UninstallAppType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UninstallApp"`
 
+	*BaseRequestType
+
 	ID string `xml:"ID,omitempty" json:"ID,omitempty"`
 }
 
@@ -14460,6 +14823,8 @@ type UninstallAppResponseType struct {
 
 type DisableAppType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DisableApp"`
+
+	*BaseRequestType
 
 	ID string `xml:"ID,omitempty" json:"ID,omitempty"`
 
@@ -14474,6 +14839,8 @@ type DisableAppResponseType struct {
 
 type AddNewImContactToGroupType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddNewImContactToGroup"`
+
+	*BaseRequestType
 
 	ImAddress *NonEmptyStringType `xml:"ImAddress,omitempty" json:"ImAddress,omitempty"`
 
@@ -14492,6 +14859,8 @@ type AddNewImContactToGroupResponseMessageType struct {
 
 type AddNewTelUriContactToGroupType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddNewTelUriContactToGroup"`
+
+	*BaseRequestType
 
 	TelUriAddress *NonEmptyStringType `xml:"TelUriAddress,omitempty" json:"TelUriAddress,omitempty"`
 
@@ -14513,6 +14882,8 @@ type AddNewTelUriContactToGroupResponseMessageType struct {
 type AddImContactToGroupType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddImContactToGroup"`
 
+	*BaseRequestType
+
 	ContactId *ItemIdType `xml:"ContactId,omitempty" json:"ContactId,omitempty"`
 
 	GroupId *ItemIdType `xml:"GroupId,omitempty" json:"GroupId,omitempty"`
@@ -14526,6 +14897,8 @@ type AddImContactToGroupResponseMessageType struct {
 
 type RemoveImContactFromGroupType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveImContactFromGroup"`
+
+	*BaseRequestType
 
 	ContactId *ItemIdType `xml:"ContactId,omitempty" json:"ContactId,omitempty"`
 
@@ -14541,6 +14914,8 @@ type RemoveImContactFromGroupResponseMessageType struct {
 type AddImGroupType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddImGroup"`
 
+	*BaseRequestType
+
 	DisplayName *NonEmptyStringType `xml:"DisplayName,omitempty" json:"DisplayName,omitempty"`
 }
 
@@ -14554,6 +14929,8 @@ type AddImGroupResponseMessageType struct {
 
 type AddDistributionGroupToImListType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddDistributionGroupToImList"`
+
+	*BaseRequestType
 
 	SmtpAddress *NonEmptyStringType `xml:"SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
 
@@ -14571,6 +14948,8 @@ type AddDistributionGroupToImListResponseMessageType struct {
 type GetImItemListType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetImItemList"`
 
+	*BaseRequestType
+
 	ExtendedProperties *NonEmptyArrayOfExtendedFieldURIs `xml:"ExtendedProperties,omitempty" json:"ExtendedProperties,omitempty"`
 }
 
@@ -14584,6 +14963,8 @@ type GetImItemListResponseMessageType struct {
 
 type GetImItemsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetImItems"`
+
+	*BaseRequestType
 
 	ContactIds *NonEmptyArrayOfBaseItemIdsType `xml:"ContactIds,omitempty" json:"ContactIds,omitempty"`
 
@@ -14603,6 +14984,8 @@ type GetImItemsResponseMessageType struct {
 type RemoveContactFromImListType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveContactFromImList"`
 
+	*BaseRequestType
+
 	ContactId *ItemIdType `xml:"ContactId,omitempty" json:"ContactId,omitempty"`
 }
 
@@ -14614,6 +14997,8 @@ type RemoveContactFromImListResponseMessageType struct {
 
 type RemoveDistributionGroupFromImListType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveDistributionGroupFromImList"`
+
+	*BaseRequestType
 
 	GroupId *ItemIdType `xml:"GroupId,omitempty" json:"GroupId,omitempty"`
 }
@@ -14627,6 +15012,8 @@ type RemoveDistributionGroupFromImListResponseMessageType struct {
 type RemoveImGroupType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveImGroup"`
 
+	*BaseRequestType
+
 	GroupId *ItemIdType `xml:"GroupId,omitempty" json:"GroupId,omitempty"`
 }
 
@@ -14638,6 +15025,8 @@ type RemoveImGroupResponseMessageType struct {
 
 type SetImGroupType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetImGroup"`
+
+	*BaseRequestType
 
 	GroupId *ItemIdType `xml:"GroupId,omitempty" json:"GroupId,omitempty"`
 
@@ -14653,6 +15042,8 @@ type SetImGroupResponseMessageType struct {
 type SetImListMigrationCompletedType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetImListMigrationCompleted"`
 
+	*BaseRequestType
+
 	ImListMigrationCompleted bool `xml:"ImListMigrationCompleted,omitempty" json:"ImListMigrationCompleted,omitempty"`
 }
 
@@ -14664,6 +15055,8 @@ type SetImListMigrationCompletedResponseMessageType struct {
 
 type GetUserRetentionPolicyTagsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetUserRetentionPolicyTags"`
+
+	*BaseRequestType
 }
 
 type GetUserRetentionPolicyTagsResponseMessageType struct {
@@ -14674,6 +15067,8 @@ type GetUserRetentionPolicyTagsResponseMessageType struct {
 
 type GetUserPhotoType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetUserPhoto"`
+
+	*BaseRequestType
 
 	Email string `xml:"Email,omitempty" json:"Email,omitempty"`
 
@@ -14697,6 +15092,8 @@ type GetUserPhotoResponseType struct {
 type GetMeetingSpaceType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetMeetingSpace"`
 
+	*BaseRequestType
+
 	ItemId *ItemIdType `xml:"ItemId,omitempty" json:"ItemId,omitempty"`
 }
 
@@ -14711,6 +15108,8 @@ type GetMeetingSpaceResponseMessageType struct {
 type CreateMeetingSpaceType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateMeetingSpace"`
 
+	*BaseRequestType
+
 	MeetingSpace *MeetingSpaceType `xml:"MeetingSpace,omitempty" json:"MeetingSpace,omitempty"`
 }
 
@@ -14724,6 +15123,8 @@ type CreateMeetingSpaceResponseMessageType struct {
 
 type UpdateMeetingSpaceType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateMeetingSpace"`
+
+	*BaseRequestType
 
 	ItemId *ItemIdType `xml:"ItemId,omitempty" json:"ItemId,omitempty"`
 
@@ -14741,6 +15142,8 @@ type UpdateMeetingSpaceResponseMessageType struct {
 type FindMeetingSpaceByJoinUrlType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindMeetingSpaceByJoinUrl"`
 
+	*BaseRequestType
+
 	JoinUrl string `xml:"JoinUrl,omitempty" json:"JoinUrl,omitempty"`
 }
 
@@ -14755,6 +15158,8 @@ type FindMeetingSpaceByJoinUrlResponseMessageType struct {
 type DeleteMeetingSpaceType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteMeetingSpace"`
 
+	*BaseRequestType
+
 	ItemId *ItemIdType `xml:"ItemId,omitempty" json:"ItemId,omitempty"`
 }
 
@@ -14766,6 +15171,8 @@ type DeleteMeetingSpaceResponseMessageType struct {
 
 type GetMeetingInstanceRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetMeetingInstanceRequest"`
+
+	*BaseRequestType
 
 	ItemId *ItemIdType `xml:"ItemId,omitempty" json:"ItemId,omitempty"`
 }
@@ -14781,6 +15188,8 @@ type GetMeetingInstanceResponseMessageType struct {
 type CreateMeetingInstanceRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateMeetingInstanceRequest"`
 
+	*BaseRequestType
+
 	MeetingInstance *MeetingInstanceType `xml:"MeetingInstance,omitempty" json:"MeetingInstance,omitempty"`
 }
 
@@ -14794,6 +15203,8 @@ type CreateMeetingInstanceResponseMessageType struct {
 
 type UpdateMeetingInstanceRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateMeetingInstanceRequest"`
+
+	*BaseRequestType
 
 	ItemId *ItemIdType `xml:"ItemId,omitempty" json:"ItemId,omitempty"`
 
@@ -14815,6 +15226,8 @@ type UpdateMeetingInstanceResponseMessageType struct {
 type DeleteMeetingInstanceRequestType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteMeetingInstanceRequest"`
 
+	*BaseRequestType
+
 	ItemId *ItemIdType `xml:"ItemId,omitempty" json:"ItemId,omitempty"`
 }
 
@@ -14826,6 +15239,8 @@ type DeleteMeetingInstanceResponseMessageType struct {
 
 type SetUserPhotoType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetUserPhoto"`
+
+	*BaseRequestType
 
 	Email *NonEmptyStringType `xml:"Email,omitempty" json:"Email,omitempty"`
 
@@ -14843,6 +15258,8 @@ type SetUserPhotoResponseMessageType struct {
 type RegisterConsentType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RegisterConsent"`
 
+	*BaseRequestType
+
 	Id string `xml:"Id,omitempty" json:"Id,omitempty"`
 
 	ConsentState *ConsentStateType `xml:"ConsentState,omitempty" json:"ConsentState,omitempty"`
@@ -14856,6 +15273,8 @@ type RegisterConsentResponseMessageType struct {
 
 type FindAvailableMeetingTimesType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindAvailableMeetingTimes"`
+
+	*BaseRequestType
 
 	Attendees *ArrayOfSmtpAddressType `xml:"Attendees,omitempty" json:"Attendees,omitempty"`
 
@@ -14885,6 +15304,8 @@ type FindAvailableMeetingTimesResponseMessageType struct {
 type FindMeetingTimeCandidatesType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindMeetingTimeCandidates"`
 
+	*BaseRequestType
+
 	AttendeeConstraints *FindMeetingTimesAttendeeConstraints `xml:"AttendeeConstraints,omitempty" json:"AttendeeConstraints,omitempty"`
 
 	LocationConstraints *FindMeetingTimesLocationConstraints `xml:"LocationConstraints,omitempty" json:"LocationConstraints,omitempty"`
@@ -14903,6 +15324,8 @@ type FindMeetingTimeCandidatesResponseMessageType struct {
 }
 
 type StartSearchSession struct {
+	*BaseRequestType
+
 	SearchSessionId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
 
 	WarmupOptions *WarmupOptionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages WarmupOptions,omitempty" json:"WarmupOptions,omitempty"`
@@ -14925,6 +15348,8 @@ type StartSearchSessionResponseMessage struct {
 }
 
 type GetSearchSuggestions struct {
+	*BaseRequestType
+
 	SearchSessionId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
 
 	Query string `xml:"Query,omitempty" json:"Query,omitempty"`
@@ -14949,6 +15374,8 @@ type GetSearchSuggestionsResponseMessage struct {
 }
 
 type DeleteSearchSuggestion struct {
+	*BaseRequestType
+
 	SearchSessionId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
 
 	Query string `xml:"Query,omitempty" json:"Query,omitempty"`
@@ -14969,6 +15396,8 @@ type DeleteSearchSuggestionResponseMessageType struct {
 }
 
 type ExecuteSearch struct {
+	*BaseRequestType
+
 	ApplicationId *SearchApplicationIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ApplicationId,omitempty" json:"ApplicationId,omitempty"`
 
 	Scenario string `xml:"Scenario,omitempty" json:"Scenario,omitempty"`
@@ -15027,6 +15456,8 @@ type ExecuteSearchResponseMessage struct {
 }
 
 type EndSearchSession struct {
+	*BaseRequestType
+
 	SearchSessionId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
 }
 
@@ -15038,6 +15469,8 @@ type EndSearchSessionResponseMessage struct {
 
 type GetLastPrivateCatalogUpdateType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetLastPrivateCatalogUpdate"`
+
+	*BaseRequestType
 
 	Client *OfficeClientType `xml:"Client,omitempty" json:"Client,omitempty"`
 }
@@ -15054,6 +15487,8 @@ type GetLastPrivateCatalogUpdateResponseType struct {
 
 type GetPrivateCatalogAddInsType struct {
 	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetPrivateCatalogAddIns"`
+
+	*BaseRequestType
 
 	Client *OfficeClientType `xml:"Client,omitempty" json:"Client,omitempty"`
 }

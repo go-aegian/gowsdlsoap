@@ -24,11 +24,7 @@ type xsdParser struct {
 }
 
 func NewXsdParser(c *xsd.Schema, all []*xsd.Schema) *xsdParser {
-	return &xsdParser{
-		c:    c,
-		all:  all,
-		mode: refResolution,
-	}
+	return &xsdParser{c: c, all: all, mode: refResolution}
 }
 
 func (t *xsdParser) parse() {
@@ -98,33 +94,35 @@ func (t *xsdParser) parseAttribute(attr *xsd.Attribute) {
 			t.parseAttribute(refAttr)
 			attr.Name = refAttr.Name
 			attr.Type = refAttr.Type
+			attr.Abstract = refAttr.Abstract
 			if attr.Fixed == "" {
 				attr.Fixed = refAttr.Fixed
 			}
 		}
-	} else if attr.Type == "" {
-		if attr.SimpleType != nil {
-			t.parseSimpleType(attr.SimpleType)
-			attr.Type = attr.SimpleType.Restriction.Base
-		}
+		return
+	}
+
+	if attr.Type == "" && attr.SimpleType != nil {
+		t.parseSimpleType(attr.SimpleType)
+		attr.Type = attr.SimpleType.Restriction.Base
 	}
 }
 
 func (t *xsdParser) findElementName(element *xsd.Element) {
-	if t.mode != findNameByType {
-		return
-	}
-
-	if t.typeUsageConflict {
+	if t.mode != findNameByType || t.typeUsageConflict {
 		return
 	}
 
 	if stripNamespaceFromType(element.Type) == t.typeName {
 		if len(t.foundElementName) == 0 {
 			t.foundElementName = element.Name
-		} else if t.foundElementName != element.Name {
-			// Duplicate use of t.typeName with different element names
+			return
+		}
+
+		if t.foundElementName != element.Name {
+			// Duplicate t.typeName under different element names
 			t.typeUsageConflict = true
+			return
 		}
 	}
 }
@@ -149,15 +147,15 @@ func (t *xsdParser) buildQualifiedName(name string) (qualifiedName xml.Name) {
 	x := strings.SplitN(name, ":", 2)
 	if len(x) == 1 {
 		qualifiedName.Local = x[0]
-	} else {
-		qualifiedName.Local = x[1]
-		qualifiedName.Space = x[0]
-		if ns, ok := t.c.Xmlns[qualifiedName.Space]; ok {
-			qualifiedName.Space = ns
-		}
+		return
 	}
 
-	return qualifiedName
+	qualifiedName.Local = x[1]
+	qualifiedName.Space = x[0]
+	if ns, ok := t.c.Xmlns[qualifiedName.Space]; ok {
+		qualifiedName.Space = ns
+	}
+	return
 }
 
 func (t *xsdParser) initFindNameByType(name string) {

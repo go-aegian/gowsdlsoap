@@ -37,7 +37,7 @@ import (
 
 {{define "ComplexContent"}}
 	{{$baseType := toGoType .Extension.Base false}}
-	{{ if and ($baseType) (eq (isAbstract $baseType) false) }}
+	{{ if $baseType }}
 		{{$baseType}}
 	{{end}}
 	{{template "Elements" .Extension.Sequence}}
@@ -135,7 +135,6 @@ import (
 				type {{$typeName}} struct {
 					{{$hasXMLName := setHasXMLName true}}
 					XMLName xml.Name ` + "`xml:\"{{if eq (isInnerBasicType $typeName) false}}{{$targetNamespace}} {{end}}{{$name}}\"`" + `
-
 					{{if ne .ComplexContent.Extension.Base ""}}
 						{{template "ComplexContent" .ComplexContent}}
 					{{else if ne .SimpleContent.Extension.Base ""}}
@@ -214,7 +213,7 @@ import (
 		{{else}}
 			type {{$typeName}} struct {
 				{{$type := findNameByType .Name}}
-				{{$hasXMLName := ne .Name $type}}
+				{{$hasXMLName := and (ne .Name $type) (ne (isAbstract $typeName false) true)}}
 				{{$hasXMLName := setHasXMLName $hasXMLName}}
 				{{if $hasXMLName}}
 					XMLName xml.Name ` + "`xml:\"{{if eq (isInnerBasicType $typeName) false}}{{$targetNamespace}} {{end}}{{$type}}\"`" + `
@@ -232,6 +231,7 @@ import (
 					{{template "Attributes" .Attributes}}
 				{{end}}
 			}
+
 		{{end}}
 	{{end}}
 {{end}}

@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="gowsdlsoap Navblue" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="gowsdlsoap" />
+    <working_directory value="$PROJECT_DIR$" />
+    <parameters value="--d tests\wsdl-samples\navblue --p raidoApi --o proxy.go --i true tests\wsdl-samples\navblue\navblue.wsdl" />
+    <kind value="FILE" />
+    <package value="github.com/go-aegian/gowsdlsoap" />
+    <directory value="$PROJECT_DIR$" />
+    <filePath value="$PROJECT_DIR$/cmd/gowsdlsoap/main.go" />
+    <method v="2" />
+  </configuration>
+</component>

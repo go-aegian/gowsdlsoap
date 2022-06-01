@@ -439,7 +439,7 @@ func (g *Builder) packageName() string {
 	return g.pkg
 }
 
-func (g *Builder) isAbstract(t string) bool {
+func (g *Builder) isAbstract(t string, checkParent bool) bool {
 	t = stripNamespaceFromType(t)
 	if isBasicType(t) {
 		return true
@@ -448,20 +448,23 @@ func (g *Builder) isAbstract(t string) bool {
 	for _, schema := range g.wsdl.Types.Schemas {
 		for _, complexType := range schema.ComplexTypes {
 			if complexType.Name == t {
-				if complexType.Abstract {
-					return true
-				}
-
-				baseType := stripNamespaceFromType(complexType.ComplexContent.Extension.Base)
-
-				if baseType == "" {
-					return false
-				}
-
-				for _, complexTypeInner := range schema.ComplexTypes {
-					if complexTypeInner.Name == baseType && complexTypeInner.Abstract {
+				if checkParent {
+					if complexType.Abstract {
 						return true
 					}
+					baseType := stripNamespaceFromType(complexType.ComplexContent.Extension.Base)
+
+					if baseType == "" {
+						return false
+					}
+
+					for _, complexTypeInner := range schema.ComplexTypes {
+						if complexTypeInner.Name == baseType && complexTypeInner.Abstract {
+							return true
+						}
+					}
+				} else {
+					return complexType.Abstract
 				}
 			}
 		}
