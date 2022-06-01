@@ -3708,6 +3708,8 @@ type ProxySuggesterSid ProxySecurityContextType
 type ProxyPartnerToken ProxySecurityContextType
 
 type ServerVersionInfo struct {
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ServerVersionInfo"`
+
 	MajorVersion int32 `xml:"MajorVersion,attr,omitempty" json:"MajorVersion,omitempty"`
 
 	MinorVersion int32 `xml:"MinorVersion,attr,omitempty" json:"MinorVersion,omitempty"`
@@ -3720,7 +3722,9 @@ type ServerVersionInfo struct {
 }
 
 type RequestServerVersion struct {
-	Version *ExchangeVersionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Version,attr,omitempty" json:"Version,omitempty"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RequestServerVersion"`
+
+	Version *ExchangeVersionType `xml:"Version,attr,omitempty" json:"Version,omitempty"`
 }
 
 type DateTimePrecision DateTimePrecisionType

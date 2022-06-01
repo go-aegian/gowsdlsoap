@@ -34,6 +34,7 @@ import (
 	)
 	{{end}}
 {{end}}
+
 {{define "ComplexContent"}}
 	{{$baseType := toGoType .Extension.Base false}}
 	{{ if and ($baseType) (eq (isAbstract $baseType) false) }}
@@ -44,6 +45,7 @@ import (
 	{{template "Elements" .Extension.SequenceChoice}}
 	{{template "Attributes" .Extension.Attributes}}
 {{end}}
+
 {{define "Attributes"}}
 	{{ $hasXMLName := getHasXMLName }}
     {{ $targetNamespace := getNamespace }}
@@ -60,10 +62,12 @@ import (
 		{{ end }}
 	{{end}}
 {{end}}
+
 {{define "SimpleContent"}}
 	Value {{toGoType .Extension.Base false}} ` + "`xml:\",chardata\" json:\"-,\"`" + `
 	{{template "Attributes" .Extension.Attributes}}
 {{end}}
+
 {{define "ComplexTypeInline"}}
 	{{ $targetNamespace := getNamespace }}
 	{{replaceReservedWords .Name | makePublic}} {{if eq .MaxOccurs "unbounded"}}[]{{end}}struct {
@@ -84,6 +88,7 @@ import (
 	{{end}}
 	} ` + "`" + `{{.Name}},omitempty" json:"{{.Name}},omitempty"` + "`" + `
 {{end}}
+
 {{define "Elements"}}
 	{{ $targetNamespace := getNamespace }}
 	{{ $hasXMLName := getHasXMLName }}
@@ -109,11 +114,13 @@ import (
 		{{end}}
 	{{end}}
 {{end}}
+
 {{define "Any"}}
 	{{range .}}
 		Items     []string ` + "`" + `xml:",any" json:"items,omitempty"` + "`" + `
 	{{end}}
 {{end}}
+
 {{range .Schemas}}
 	{{ $targetNamespace := setNamespace .TargetNamespace }}
 	{{range .SimpleType}}
@@ -126,12 +133,9 @@ import (
 			{{/* ComplexTypeLocal */}}
 			{{with .ComplexType}}
 				type {{$typeName}} struct {
-					{{$type := findNameByType .Name}}
-					{{$hasXMLName := ne .Name $type}}
-					{{$hasXMLName := setHasXMLName $hasXMLName}}
-					{{if $hasXMLName}}
-						XMLName xml.Name ` + "`xml:\"{{if eq (isInnerBasicType $typeName) false}}{{$targetNamespace}} {{end}}{{$name}}\"`" + `
-					{{end}}
+					{{$hasXMLName := setHasXMLName true}}
+					XMLName xml.Name ` + "`xml:\"{{if eq (isInnerBasicType $typeName) false}}{{$targetNamespace}} {{end}}{{$name}}\"`" + `
+
 					{{if ne .ComplexContent.Extension.Base ""}}
 						{{template "ComplexContent" .ComplexContent}}
 					{{else if ne .SimpleContent.Extension.Base ""}}

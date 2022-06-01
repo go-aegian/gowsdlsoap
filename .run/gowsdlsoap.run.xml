@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="gowsdlsoap" type="GoApplicationRunConfiguration" factoryName="Go Application">
+  <configuration default="false" name="gowsdlsoap EWS" type="GoApplicationRunConfiguration" factoryName="Go Application">
     <module name="gowsdlsoap" />
     <working_directory value="$PROJECT_DIR$" />
     <parameters value="--d tests\wsdl-samples\ews --p ewsApi --o proxy.go --i true tests\wsdl-samples\ews\services.wsdl" />
