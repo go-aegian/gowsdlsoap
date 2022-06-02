@@ -18,7 +18,7 @@ func NewEnvelopeResponse(ns map[string]string) *EnvelopeResponse {
 
 	env.addXmlns("xmlns:soap", XmlNsSoapEnv)
 
-	env.setXmlns(ns)
+	// env.setXmlns(ns)
 
 	return env
 }
