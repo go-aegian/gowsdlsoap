@@ -114,7 +114,7 @@ func (t *xsdParser) findElementName(element *xsd.Element) {
 		return
 	}
 
-	if stripNamespaceFromType(element.Type) == stripNamespaceFromType(t.typeName) {
+	if stripAliasNSFromType(element.Type) == stripAliasNSFromType(t.typeName) {
 		if len(t.foundElementName) == 0 {
 			t.foundElementName = element.Name
 			t.setNamespace(element.Type)
@@ -172,7 +172,7 @@ func (t *xsdParser) buildQualifiedName(name string) (qualifiedName xml.Name) {
 
 func (t *xsdParser) initFindNameByType(name string) {
 	t.mode = findNameByType
-	t.typeName = stripNamespaceFromType(name)
+	t.typeName = stripAliasNSFromType(name)
 	t.foundElementName = ""
 	t.typeUsageConflict = false
 }

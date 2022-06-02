@@ -3708,7 +3708,7 @@ type ProxySuggesterSid ProxySecurityContextType
 type ProxyPartnerToken ProxySecurityContextType
 
 type ServerVersionInfo struct {
-	XMLName xml.Name `xml:"t:ServerVersionInfo"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ServerVersionInfo"`
 
 	MajorVersion int32 `xml:"MajorVersion,attr,omitempty" json:"MajorVersion,omitempty"`
 
@@ -3722,7 +3722,7 @@ type ServerVersionInfo struct {
 }
 
 type RequestServerVersion struct {
-	XMLName xml.Name `xml:"t:RequestServerVersion"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RequestServerVersion"`
 
 	Version *ExchangeVersionType `xml:"Version,attr,omitempty" json:"Version,omitempty"`
 }
@@ -3800,109 +3800,109 @@ type NonNegativeInteger struct {
 type Language string
 
 type MailboxCultureType struct {
-	XMLName xml.Name `xml:"t:MailboxCulture"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxCulture"`
 
 	Value *Language `xml:",chardata" json:"-,"`
 }
 
 type InstalledAppType struct {
-	XMLName xml.Name `xml:"t:Extension"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Extension"`
 
-	Id string `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	MarketplaceAssetId string `xml:"t:MarketplaceAssetId,omitempty" json:"MarketplaceAssetId,omitempty"`
+	MarketplaceAssetId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MarketplaceAssetId,omitempty" json:"MarketplaceAssetId,omitempty"`
 
-	Enabled bool `xml:"t:Enabled,omitempty" json:"Enabled,omitempty"`
+	Enabled bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types Enabled,omitempty" json:"Enabled,omitempty"`
 
-	ConsentState string `xml:"t:ConsentState,omitempty" json:"ConsentState,omitempty"`
+	ConsentState string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConsentState,omitempty" json:"ConsentState,omitempty"`
 
-	Type string `xml:"t:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Type,omitempty" json:"Type,omitempty"`
 
-	LicenseStatus string `xml:"t:LicenseStatus,omitempty" json:"LicenseStatus,omitempty"`
+	LicenseStatus string `xml:"http://schemas.microsoft.com/exchange/services/2006/types LicenseStatus,omitempty" json:"LicenseStatus,omitempty"`
 
-	TrialExpirationDate xsd.DateTime `xml:"t:TrialExpirationDate,omitempty" json:"TrialExpirationDate,omitempty"`
+	TrialExpirationDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types TrialExpirationDate,omitempty" json:"TrialExpirationDate,omitempty"`
 
-	ProviderName string `xml:"t:ProviderName,omitempty" json:"ProviderName,omitempty"`
+	ProviderName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProviderName,omitempty" json:"ProviderName,omitempty"`
 
-	IconUrl string `xml:"t:IconUrl,omitempty" json:"IconUrl,omitempty"`
+	IconUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types IconUrl,omitempty" json:"IconUrl,omitempty"`
 
-	HighResolutionIconUrl string `xml:"t:HighResolutionIconUrl,omitempty" json:"HighResolutionIconUrl,omitempty"`
+	HighResolutionIconUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types HighResolutionIconUrl,omitempty" json:"HighResolutionIconUrl,omitempty"`
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	Description string `xml:"t:Description,omitempty" json:"Description,omitempty"`
+	Description string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Description,omitempty" json:"Description,omitempty"`
 
-	Requirements string `xml:"t:Requirements,omitempty" json:"Requirements,omitempty"`
+	Requirements string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Requirements,omitempty" json:"Requirements,omitempty"`
 
-	Version string `xml:"t:Version,omitempty" json:"Version,omitempty"`
+	Version string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Version,omitempty" json:"Version,omitempty"`
 }
 
 type NonEmptyArrayOfRoleType struct {
-	Role []string `xml:"t:Role,omitempty" json:"Role,omitempty"`
+	Role []string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Role,omitempty" json:"Role,omitempty"`
 }
 
 type ManagementRoleType struct {
-	XMLName xml.Name `xml:"t:ManagementRole"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ManagementRole"`
 
-	UserRoles *NonEmptyArrayOfRoleType `xml:"t:UserRoles,omitempty" json:"UserRoles,omitempty"`
+	UserRoles *NonEmptyArrayOfRoleType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserRoles,omitempty" json:"UserRoles,omitempty"`
 
-	ApplicationRoles *NonEmptyArrayOfRoleType `xml:"t:ApplicationRoles,omitempty" json:"ApplicationRoles,omitempty"`
+	ApplicationRoles *NonEmptyArrayOfRoleType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ApplicationRoles,omitempty" json:"ApplicationRoles,omitempty"`
 }
 
 type SidAndAttributesType struct {
-	SecurityIdentifier string `xml:"t:SecurityIdentifier,omitempty" json:"SecurityIdentifier,omitempty"`
+	SecurityIdentifier string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SecurityIdentifier,omitempty" json:"SecurityIdentifier,omitempty"`
 
 	Attributes uint32 `xml:"Attributes,attr,omitempty" json:"Attributes,omitempty"`
 }
 
 type NonEmptyArrayOfGroupIdentifiersType struct {
-	XMLName xml.Name `xml:"t:GroupSids"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupSids"`
 
-	GroupIdentifier []*SidAndAttributesType `xml:"t:GroupIdentifier,omitempty" json:"GroupIdentifier,omitempty"`
+	GroupIdentifier []*SidAndAttributesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupIdentifier,omitempty" json:"GroupIdentifier,omitempty"`
 }
 
 type NonEmptyArrayOfRestrictedGroupIdentifiersType struct {
-	XMLName xml.Name `xml:"t:RestrictedGroupSids"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RestrictedGroupSids"`
 
-	RestrictedGroupIdentifier []*SidAndAttributesType `xml:"t:RestrictedGroupIdentifier,omitempty" json:"RestrictedGroupIdentifier,omitempty"`
+	RestrictedGroupIdentifier []*SidAndAttributesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RestrictedGroupIdentifier,omitempty" json:"RestrictedGroupIdentifier,omitempty"`
 }
 
 type SerializedSecurityContextType struct {
-	XMLName xml.Name `xml:"t:SerializedSecurityContext"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SerializedSecurityContext"`
 
-	UserSid string `xml:"t:UserSid,omitempty" json:"UserSid,omitempty"`
+	UserSid string `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserSid,omitempty" json:"UserSid,omitempty"`
 
-	GroupSids *NonEmptyArrayOfGroupIdentifiersType `xml:"t:GroupSids,omitempty" json:"GroupSids,omitempty"`
+	GroupSids *NonEmptyArrayOfGroupIdentifiersType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupSids,omitempty" json:"GroupSids,omitempty"`
 
-	RestrictedGroupSids *NonEmptyArrayOfRestrictedGroupIdentifiersType `xml:"t:RestrictedGroupSids,omitempty" json:"RestrictedGroupSids,omitempty"`
+	RestrictedGroupSids *NonEmptyArrayOfRestrictedGroupIdentifiersType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RestrictedGroupSids,omitempty" json:"RestrictedGroupSids,omitempty"`
 
-	PrimarySmtpAddress string `xml:"t:PrimarySmtpAddress,omitempty" json:"PrimarySmtpAddress,omitempty"`
+	PrimarySmtpAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PrimarySmtpAddress,omitempty" json:"PrimarySmtpAddress,omitempty"`
 }
 
 type ConnectingSIDType struct {
-	PrincipalName *PrincipalNameType `xml:"t:PrincipalName,omitempty" json:"PrincipalName,omitempty"`
+	PrincipalName *PrincipalNameType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PrincipalName,omitempty" json:"PrincipalName,omitempty"`
 
-	SID *SIDType `xml:"t:SID,omitempty" json:"SID,omitempty"`
+	SID *SIDType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SID,omitempty" json:"SID,omitempty"`
 
-	PrimarySmtpAddress *PrimarySmtpAddressType `xml:"t:PrimarySmtpAddress,omitempty" json:"PrimarySmtpAddress,omitempty"`
+	PrimarySmtpAddress *PrimarySmtpAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PrimarySmtpAddress,omitempty" json:"PrimarySmtpAddress,omitempty"`
 
-	SmtpAddress *SmtpAddressType `xml:"t:SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
+	SmtpAddress *SmtpAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
 }
 
 type PrincipalNameType struct {
-	XMLName xml.Name `xml:"t:PrincipalName"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PrincipalName"`
 
 	Value *NonEmptyStringType `xml:",chardata" json:"-,"`
 }
 
 type SIDType struct {
-	XMLName xml.Name `xml:"t:SID"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SID"`
 
 	Value *NonEmptyStringType `xml:",chardata" json:"-,"`
 }
 
 type PrimarySmtpAddressType struct {
-	XMLName xml.Name `xml:"t:PrimarySmtpAddress"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PrimarySmtpAddress"`
 
 	Value *NonEmptyStringType `xml:",chardata" json:"-,"`
 }
@@ -3912,15 +3912,15 @@ type SmtpAddressType struct {
 }
 
 type ExchangeImpersonationType struct {
-	XMLName xml.Name `xml:"t:ExchangeImpersonation"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExchangeImpersonation"`
 
-	ConnectingSID *ConnectingSIDType `xml:"t:ConnectingSID,omitempty" json:"ConnectingSID,omitempty"`
+	ConnectingSID *ConnectingSIDType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConnectingSID,omitempty" json:"ConnectingSID,omitempty"`
 }
 
 type OpenAsAdminOrSystemServiceType struct {
-	XMLName xml.Name `xml:"t:OpenAsAdminOrSystemService"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types OpenAsAdminOrSystemService"`
 
-	ConnectingSID *ConnectingSIDType `xml:"t:ConnectingSID,omitempty" json:"ConnectingSID,omitempty"`
+	ConnectingSID *ConnectingSIDType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConnectingSID,omitempty" json:"ConnectingSID,omitempty"`
 
 	LogonType *SpecialLogonTypeType `xml:"LogonType,attr,omitempty" json:"LogonType,omitempty"`
 
@@ -3937,93 +3937,93 @@ type BaseEmailAddressType struct {
 type EmailAddressType struct {
 	*BaseEmailAddressType
 
-	Name string `xml:"t:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Name,omitempty" json:"Name,omitempty"`
 
-	EmailAddress *NonEmptyStringType `xml:"t:EmailAddress,omitempty" json:"EmailAddress,omitempty"`
+	EmailAddress *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 
-	RoutingType *NonEmptyStringType `xml:"t:RoutingType,omitempty" json:"RoutingType,omitempty"`
+	RoutingType *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RoutingType,omitempty" json:"RoutingType,omitempty"`
 
-	MailboxType *MailboxTypeType `xml:"t:MailboxType,omitempty" json:"MailboxType,omitempty"`
+	MailboxType *MailboxTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxType,omitempty" json:"MailboxType,omitempty"`
 
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 
-	OriginalDisplayName string `xml:"t:OriginalDisplayName,omitempty" json:"OriginalDisplayName,omitempty"`
+	OriginalDisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types OriginalDisplayName,omitempty" json:"OriginalDisplayName,omitempty"`
 }
 
 type EmailAddressExtendedType struct {
 	*EmailAddressType
 
-	ExternalObjectId string `xml:"t:ExternalObjectId,omitempty" json:"ExternalObjectId,omitempty"`
+	ExternalObjectId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExternalObjectId,omitempty" json:"ExternalObjectId,omitempty"`
 
-	PrimaryEmailAddress *NonEmptyStringType `xml:"t:PrimaryEmailAddress,omitempty" json:"PrimaryEmailAddress,omitempty"`
+	PrimaryEmailAddress *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PrimaryEmailAddress,omitempty" json:"PrimaryEmailAddress,omitempty"`
 }
 
 type ArrayOfEmailAddressesType struct {
-	Address []*EmailAddressType `xml:"t:Address,omitempty" json:"Address,omitempty"`
+	Address []*EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Address,omitempty" json:"Address,omitempty"`
 }
 
 type DirectoryEntryType struct {
-	Id *EmailAddressType `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 }
 
 type RoomType struct {
-	XMLName xml.Name `xml:"t:Room"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Room"`
 
 	*DirectoryEntryType
 }
 
 type ArrayOfRoomsType struct {
-	XMLName xml.Name `xml:"t:Rooms"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Rooms"`
 
-	Room []*RoomType `xml:"t:Room,omitempty" json:"Room,omitempty"`
+	Room []*RoomType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Room,omitempty" json:"Room,omitempty"`
 }
 
 type TimeSlot struct {
-	StartTime xsd.DateTime `xml:"t:StartTime,omitempty" json:"StartTime,omitempty"`
+	StartTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTime,omitempty" json:"StartTime,omitempty"`
 
-	DurationInMinutes float64 `xml:"t:DurationInMinutes,omitempty" json:"DurationInMinutes,omitempty"`
+	DurationInMinutes float64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types DurationInMinutes,omitempty" json:"DurationInMinutes,omitempty"`
 }
 
 type MeetingLocation struct {
-	EmailAddress string `xml:"t:EmailAddress,omitempty" json:"EmailAddress,omitempty"`
+	EmailAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 }
 
 type ReminderType struct {
-	XMLName xml.Name `xml:"t:Reminder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Reminder"`
 
-	Subject string `xml:"t:Subject,omitempty" json:"Subject,omitempty"`
+	Subject string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Subject,omitempty" json:"Subject,omitempty"`
 
-	Location string `xml:"t:Location,omitempty" json:"Location,omitempty"`
+	Location string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Location,omitempty" json:"Location,omitempty"`
 
-	ReminderTime xsd.DateTime `xml:"t:ReminderTime,omitempty" json:"ReminderTime,omitempty"`
+	ReminderTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReminderTime,omitempty" json:"ReminderTime,omitempty"`
 
-	StartDate xsd.DateTime `xml:"t:StartDate,omitempty" json:"StartDate,omitempty"`
+	StartDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartDate,omitempty" json:"StartDate,omitempty"`
 
-	EndDate xsd.DateTime `xml:"t:EndDate,omitempty" json:"EndDate,omitempty"`
+	EndDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndDate,omitempty" json:"EndDate,omitempty"`
 
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 
-	RecurringMasterItemId *ItemIdType `xml:"t:RecurringMasterItemId,omitempty" json:"RecurringMasterItemId,omitempty"`
+	RecurringMasterItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecurringMasterItemId,omitempty" json:"RecurringMasterItemId,omitempty"`
 
-	ReminderGroup *ReminderGroupType `xml:"t:ReminderGroup,omitempty" json:"ReminderGroup,omitempty"`
+	ReminderGroup *ReminderGroupType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReminderGroup,omitempty" json:"ReminderGroup,omitempty"`
 
-	UID string `xml:"t:UID,omitempty" json:"UID,omitempty"`
+	UID string `xml:"http://schemas.microsoft.com/exchange/services/2006/types UID,omitempty" json:"UID,omitempty"`
 }
 
 type ArrayOfRemindersType struct {
-	XMLName xml.Name `xml:"t:Reminders"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Reminders"`
 
-	Reminder []*ReminderType `xml:"t:Reminder,omitempty" json:"Reminder,omitempty"`
+	Reminder []*ReminderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Reminder,omitempty" json:"Reminder,omitempty"`
 }
 
 type ArrayOfRecipientsType struct {
-	Mailbox *EmailAddressType `xml:"t:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailbox,omitempty" json:"Mailbox,omitempty"`
 }
 
 type SingleRecipientType struct {
-	Mailbox *EmailAddressType `xml:"t:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailbox,omitempty" json:"Mailbox,omitempty"`
 }
 
 type BasePathToElementType struct {
@@ -4044,7 +4044,7 @@ type PathToIndexedFieldType struct {
 }
 
 type PathToExceptionFieldType struct {
-	XMLName xml.Name `xml:"t:ExceptionFieldURI"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExceptionFieldURI"`
 
 	*BasePathToElementType
 
@@ -4072,111 +4072,111 @@ type NonEmptyArrayOfPathsToElementType struct {
 }
 
 type NonEmptyArrayOfPropertyValuesType struct {
-	XMLName xml.Name `xml:"t:Values"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Values"`
 
-	Value []string `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value []string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 }
 
 type NonEmptyArrayOfExtendedPropertyType struct {
-	ExtendedProperty []*ExtendedPropertyType `xml:"t:ExtendedProperty,omitempty" json:"ExtendedProperty,omitempty"`
+	ExtendedProperty []*ExtendedPropertyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedProperty,omitempty" json:"ExtendedProperty,omitempty"`
 }
 
 type ExtendedPropertyType struct {
-	ExtendedFieldURI *PathToExtendedFieldType `xml:"t:ExtendedFieldURI,omitempty" json:"ExtendedFieldURI,omitempty"`
+	ExtendedFieldURI *PathToExtendedFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedFieldURI,omitempty" json:"ExtendedFieldURI,omitempty"`
 
-	Value string `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 
-	Values *NonEmptyArrayOfPropertyValuesType `xml:"t:Values,omitempty" json:"Values,omitempty"`
+	Values *NonEmptyArrayOfPropertyValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Values,omitempty" json:"Values,omitempty"`
 }
 
 type FolderResponseShapeType struct {
-	BaseShape *DefaultShapeNamesType `xml:"t:BaseShape,omitempty" json:"BaseShape,omitempty"`
+	BaseShape *DefaultShapeNamesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BaseShape,omitempty" json:"BaseShape,omitempty"`
 
-	AdditionalProperties *NonEmptyArrayOfPathsToElementType `xml:"t:AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
+	AdditionalProperties *NonEmptyArrayOfPathsToElementType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
 }
 
 type ItemResponseShapeType struct {
-	BaseShape *DefaultShapeNamesType `xml:"t:BaseShape,omitempty" json:"BaseShape,omitempty"`
+	BaseShape *DefaultShapeNamesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BaseShape,omitempty" json:"BaseShape,omitempty"`
 
-	IncludeMimeContent bool `xml:"t:IncludeMimeContent,omitempty" json:"IncludeMimeContent,omitempty"`
+	IncludeMimeContent bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IncludeMimeContent,omitempty" json:"IncludeMimeContent,omitempty"`
 
-	BodyType *BodyTypeResponseType `xml:"t:BodyType,omitempty" json:"BodyType,omitempty"`
+	BodyType *BodyTypeResponseType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BodyType,omitempty" json:"BodyType,omitempty"`
 
-	UniqueBodyType *BodyTypeResponseType `xml:"t:UniqueBodyType,omitempty" json:"UniqueBodyType,omitempty"`
+	UniqueBodyType *BodyTypeResponseType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UniqueBodyType,omitempty" json:"UniqueBodyType,omitempty"`
 
-	NormalizedBodyType *BodyTypeResponseType `xml:"t:NormalizedBodyType,omitempty" json:"NormalizedBodyType,omitempty"`
+	NormalizedBodyType *BodyTypeResponseType `xml:"http://schemas.microsoft.com/exchange/services/2006/types NormalizedBodyType,omitempty" json:"NormalizedBodyType,omitempty"`
 
-	FilterHtmlContent bool `xml:"t:FilterHtmlContent,omitempty" json:"FilterHtmlContent,omitempty"`
+	FilterHtmlContent bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types FilterHtmlContent,omitempty" json:"FilterHtmlContent,omitempty"`
 
-	ConvertHtmlCodePageToUTF8 bool `xml:"t:ConvertHtmlCodePageToUTF8,omitempty" json:"ConvertHtmlCodePageToUTF8,omitempty"`
+	ConvertHtmlCodePageToUTF8 bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConvertHtmlCodePageToUTF8,omitempty" json:"ConvertHtmlCodePageToUTF8,omitempty"`
 
-	InlineImageUrlTemplate string `xml:"t:InlineImageUrlTemplate,omitempty" json:"InlineImageUrlTemplate,omitempty"`
+	InlineImageUrlTemplate string `xml:"http://schemas.microsoft.com/exchange/services/2006/types InlineImageUrlTemplate,omitempty" json:"InlineImageUrlTemplate,omitempty"`
 
-	BlockExternalImages bool `xml:"t:BlockExternalImages,omitempty" json:"BlockExternalImages,omitempty"`
+	BlockExternalImages bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types BlockExternalImages,omitempty" json:"BlockExternalImages,omitempty"`
 
-	AddBlankTargetToLinks bool `xml:"t:AddBlankTargetToLinks,omitempty" json:"AddBlankTargetToLinks,omitempty"`
+	AddBlankTargetToLinks bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types AddBlankTargetToLinks,omitempty" json:"AddBlankTargetToLinks,omitempty"`
 
-	MaximumBodySize int32 `xml:"t:MaximumBodySize,omitempty" json:"MaximumBodySize,omitempty"`
+	MaximumBodySize int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MaximumBodySize,omitempty" json:"MaximumBodySize,omitempty"`
 
-	AdditionalProperties *NonEmptyArrayOfPathsToElementType `xml:"t:AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
+	AdditionalProperties *NonEmptyArrayOfPathsToElementType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
 }
 
 type AttachmentResponseShapeType struct {
-	XMLName xml.Name `xml:"t:AttachmentShape"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentShape"`
 
-	IncludeMimeContent bool `xml:"t:IncludeMimeContent,omitempty" json:"IncludeMimeContent,omitempty"`
+	IncludeMimeContent bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IncludeMimeContent,omitempty" json:"IncludeMimeContent,omitempty"`
 
-	BodyType *BodyTypeResponseType `xml:"t:BodyType,omitempty" json:"BodyType,omitempty"`
+	BodyType *BodyTypeResponseType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BodyType,omitempty" json:"BodyType,omitempty"`
 
-	FilterHtmlContent bool `xml:"t:FilterHtmlContent,omitempty" json:"FilterHtmlContent,omitempty"`
+	FilterHtmlContent bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types FilterHtmlContent,omitempty" json:"FilterHtmlContent,omitempty"`
 
-	AdditionalProperties *NonEmptyArrayOfPathsToElementType `xml:"t:AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
+	AdditionalProperties *NonEmptyArrayOfPathsToElementType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
 }
 
 type ConversationResponseShapeType struct {
-	XMLName xml.Name `xml:"t:ConversationShape"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationShape"`
 
-	BaseShape *DefaultShapeNamesType `xml:"t:BaseShape,omitempty" json:"BaseShape,omitempty"`
+	BaseShape *DefaultShapeNamesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BaseShape,omitempty" json:"BaseShape,omitempty"`
 
-	AdditionalProperties *NonEmptyArrayOfPathsToElementType `xml:"t:AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
+	AdditionalProperties *NonEmptyArrayOfPathsToElementType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
 }
 
 type PersonaResponseShapeType struct {
-	XMLName xml.Name `xml:"t:PersonaShape"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PersonaShape"`
 
-	BaseShape *DefaultShapeNamesType `xml:"t:BaseShape,omitempty" json:"BaseShape,omitempty"`
+	BaseShape *DefaultShapeNamesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BaseShape,omitempty" json:"BaseShape,omitempty"`
 
-	AdditionalProperties *NonEmptyArrayOfPathsToElementType `xml:"t:AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
+	AdditionalProperties *NonEmptyArrayOfPathsToElementType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
 }
 
 type NonEmptyArrayOfClientAccessTokenRequestsType struct {
-	XMLName xml.Name `xml:"t:TokenRequests"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types TokenRequests"`
 
-	TokenRequest []*ClientAccessTokenRequestType `xml:"t:TokenRequest,omitempty" json:"TokenRequest,omitempty"`
+	TokenRequest []*ClientAccessTokenRequestType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TokenRequest,omitempty" json:"TokenRequest,omitempty"`
 }
 
 type ClientAccessTokenRequestType struct {
-	XMLName xml.Name `xml:"t:TokenRequest"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types TokenRequest"`
 
-	Id string `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	TokenType *ClientAccessTokenTypeType `xml:"t:TokenType,omitempty" json:"TokenType,omitempty"`
+	TokenType *ClientAccessTokenTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TokenType,omitempty" json:"TokenType,omitempty"`
 
-	Scope string `xml:"t:Scope,omitempty" json:"Scope,omitempty"`
+	Scope string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Scope,omitempty" json:"Scope,omitempty"`
 
-	ResourceUri string `xml:"t:ResourceUri,omitempty" json:"ResourceUri,omitempty"`
+	ResourceUri string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ResourceUri,omitempty" json:"ResourceUri,omitempty"`
 }
 
 type ClientAccessTokenType struct {
-	XMLName xml.Name `xml:"t:Token"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Token"`
 
-	Id string `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	TokenType *ClientAccessTokenTypeType `xml:"t:TokenType,omitempty" json:"TokenType,omitempty"`
+	TokenType *ClientAccessTokenTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TokenType,omitempty" json:"TokenType,omitempty"`
 
-	TokenValue string `xml:"t:TokenValue,omitempty" json:"TokenValue,omitempty"`
+	TokenValue string `xml:"http://schemas.microsoft.com/exchange/services/2006/types TokenValue,omitempty" json:"TokenValue,omitempty"`
 
-	TTL int32 `xml:"t:TTL,omitempty" json:"TTL,omitempty"`
+	TTL int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types TTL,omitempty" json:"TTL,omitempty"`
 }
 
 type ChangeDescriptionType struct {
@@ -4192,163 +4192,163 @@ type FolderChangeDescriptionType struct {
 }
 
 type SetItemFieldType struct {
-	XMLName xml.Name `xml:"t:SetItemField"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SetItemField"`
 
 	*ItemChangeDescriptionType
 
 	FieldURI *FieldURI `xml:"FieldURI,omitempty" json:"FieldURI,omitempty"`
 
-	Item *ItemType `xml:"t:Item,omitempty" json:"Item,omitempty"`
+	Item *ItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 
-	Message *MessageType `xml:"t:Message,omitempty" json:"Message,omitempty"`
+	Message *MessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Message,omitempty" json:"Message,omitempty"`
 
-	SharingMessage *SharingMessageType `xml:"t:SharingMessage,omitempty" json:"SharingMessage,omitempty"`
+	SharingMessage *SharingMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharingMessage,omitempty" json:"SharingMessage,omitempty"`
 
-	CalendarItem *CalendarItemType `xml:"t:CalendarItem,omitempty" json:"CalendarItem,omitempty"`
+	CalendarItem *CalendarItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarItem,omitempty" json:"CalendarItem,omitempty"`
 
-	Contact *ContactItemType `xml:"t:Contact,omitempty" json:"Contact,omitempty"`
+	Contact *ContactItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Contact,omitempty" json:"Contact,omitempty"`
 
-	DistributionList *DistributionListType `xml:"t:DistributionList,omitempty" json:"DistributionList,omitempty"`
+	DistributionList *DistributionListType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistributionList,omitempty" json:"DistributionList,omitempty"`
 
-	MeetingMessage *MeetingMessageType `xml:"t:MeetingMessage,omitempty" json:"MeetingMessage,omitempty"`
+	MeetingMessage *MeetingMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingMessage,omitempty" json:"MeetingMessage,omitempty"`
 
-	MeetingRequest *MeetingRequestMessageType `xml:"t:MeetingRequest,omitempty" json:"MeetingRequest,omitempty"`
+	MeetingRequest *MeetingRequestMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingRequest,omitempty" json:"MeetingRequest,omitempty"`
 
-	MeetingResponse *MeetingResponseMessageType `xml:"t:MeetingResponse,omitempty" json:"MeetingResponse,omitempty"`
+	MeetingResponse *MeetingResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingResponse,omitempty" json:"MeetingResponse,omitempty"`
 
-	MeetingCancellation *MeetingCancellationMessageType `xml:"t:MeetingCancellation,omitempty" json:"MeetingCancellation,omitempty"`
+	MeetingCancellation *MeetingCancellationMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingCancellation,omitempty" json:"MeetingCancellation,omitempty"`
 
-	Task *TaskType `xml:"t:Task,omitempty" json:"Task,omitempty"`
+	Task *TaskType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Task,omitempty" json:"Task,omitempty"`
 
-	PostItem *PostItemType `xml:"t:PostItem,omitempty" json:"PostItem,omitempty"`
+	PostItem *PostItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostItem,omitempty" json:"PostItem,omitempty"`
 
-	RoleMember *RoleMemberItemType `xml:"t:RoleMember,omitempty" json:"RoleMember,omitempty"`
+	RoleMember *RoleMemberItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RoleMember,omitempty" json:"RoleMember,omitempty"`
 
-	Network *NetworkItemType `xml:"t:Network,omitempty" json:"Network,omitempty"`
+	Network *NetworkItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Network,omitempty" json:"Network,omitempty"`
 
-	Person *AbchPersonItemType `xml:"t:Person,omitempty" json:"Person,omitempty"`
+	Person *AbchPersonItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Person,omitempty" json:"Person,omitempty"`
 }
 
 type SetFolderFieldType struct {
-	XMLName xml.Name `xml:"t:SetFolderField"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SetFolderField"`
 
 	*FolderChangeDescriptionType
 
-	Folder *FolderType `xml:"t:Folder,omitempty" json:"Folder,omitempty"`
+	Folder *FolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Folder,omitempty" json:"Folder,omitempty"`
 
-	CalendarFolder *CalendarFolderType `xml:"t:CalendarFolder,omitempty" json:"CalendarFolder,omitempty"`
+	CalendarFolder *CalendarFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarFolder,omitempty" json:"CalendarFolder,omitempty"`
 
-	ContactsFolder *ContactsFolderType `xml:"t:ContactsFolder,omitempty" json:"ContactsFolder,omitempty"`
+	ContactsFolder *ContactsFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactsFolder,omitempty" json:"ContactsFolder,omitempty"`
 
-	SearchFolder *SearchFolderType `xml:"t:SearchFolder,omitempty" json:"SearchFolder,omitempty"`
+	SearchFolder *SearchFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchFolder,omitempty" json:"SearchFolder,omitempty"`
 
-	TasksFolder *TasksFolderType `xml:"t:TasksFolder,omitempty" json:"TasksFolder,omitempty"`
+	TasksFolder *TasksFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TasksFolder,omitempty" json:"TasksFolder,omitempty"`
 }
 
 type DeleteItemFieldType struct {
-	XMLName xml.Name `xml:"t:DeleteItemField"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeleteItemField"`
 
 	*ItemChangeDescriptionType
 }
 
 type DeleteFolderFieldType struct {
-	XMLName xml.Name `xml:"t:DeleteFolderField"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeleteFolderField"`
 
 	*FolderChangeDescriptionType
 }
 
 type AppendToItemFieldType struct {
-	XMLName xml.Name `xml:"t:AppendToItemField"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppendToItemField"`
 
 	*ItemChangeDescriptionType
 
-	Item *ItemType `xml:"t:Item,omitempty" json:"Item,omitempty"`
+	Item *ItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 
-	Message *MessageType `xml:"t:Message,omitempty" json:"Message,omitempty"`
+	Message *MessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Message,omitempty" json:"Message,omitempty"`
 
-	SharingMessage *SharingMessageType `xml:"t:SharingMessage,omitempty" json:"SharingMessage,omitempty"`
+	SharingMessage *SharingMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharingMessage,omitempty" json:"SharingMessage,omitempty"`
 
-	CalendarItem *CalendarItemType `xml:"t:CalendarItem,omitempty" json:"CalendarItem,omitempty"`
+	CalendarItem *CalendarItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarItem,omitempty" json:"CalendarItem,omitempty"`
 
-	Contact *ContactItemType `xml:"t:Contact,omitempty" json:"Contact,omitempty"`
+	Contact *ContactItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Contact,omitempty" json:"Contact,omitempty"`
 
-	DistributionList *DistributionListType `xml:"t:DistributionList,omitempty" json:"DistributionList,omitempty"`
+	DistributionList *DistributionListType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistributionList,omitempty" json:"DistributionList,omitempty"`
 
-	MeetingMessage *MeetingMessageType `xml:"t:MeetingMessage,omitempty" json:"MeetingMessage,omitempty"`
+	MeetingMessage *MeetingMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingMessage,omitempty" json:"MeetingMessage,omitempty"`
 
-	MeetingRequest *MeetingRequestMessageType `xml:"t:MeetingRequest,omitempty" json:"MeetingRequest,omitempty"`
+	MeetingRequest *MeetingRequestMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingRequest,omitempty" json:"MeetingRequest,omitempty"`
 
-	MeetingResponse *MeetingResponseMessageType `xml:"t:MeetingResponse,omitempty" json:"MeetingResponse,omitempty"`
+	MeetingResponse *MeetingResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingResponse,omitempty" json:"MeetingResponse,omitempty"`
 
-	MeetingCancellation *MeetingCancellationMessageType `xml:"t:MeetingCancellation,omitempty" json:"MeetingCancellation,omitempty"`
+	MeetingCancellation *MeetingCancellationMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingCancellation,omitempty" json:"MeetingCancellation,omitempty"`
 
-	Task *TaskType `xml:"t:Task,omitempty" json:"Task,omitempty"`
+	Task *TaskType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Task,omitempty" json:"Task,omitempty"`
 
-	PostItem *PostItemType `xml:"t:PostItem,omitempty" json:"PostItem,omitempty"`
+	PostItem *PostItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostItem,omitempty" json:"PostItem,omitempty"`
 
-	RoleMember *RoleMemberItemType `xml:"t:RoleMember,omitempty" json:"RoleMember,omitempty"`
+	RoleMember *RoleMemberItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RoleMember,omitempty" json:"RoleMember,omitempty"`
 
-	Network *NetworkItemType `xml:"t:Network,omitempty" json:"Network,omitempty"`
+	Network *NetworkItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Network,omitempty" json:"Network,omitempty"`
 
-	Person *AbchPersonItemType `xml:"t:Person,omitempty" json:"Person,omitempty"`
+	Person *AbchPersonItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Person,omitempty" json:"Person,omitempty"`
 }
 
 type AppendToFolderFieldType struct {
-	XMLName xml.Name `xml:"t:AppendToFolderField"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppendToFolderField"`
 
 	*FolderChangeDescriptionType
 
-	Folder *FolderType `xml:"t:Folder,omitempty" json:"Folder,omitempty"`
+	Folder *FolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Folder,omitempty" json:"Folder,omitempty"`
 
-	CalendarFolder *CalendarFolderType `xml:"t:CalendarFolder,omitempty" json:"CalendarFolder,omitempty"`
+	CalendarFolder *CalendarFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarFolder,omitempty" json:"CalendarFolder,omitempty"`
 
-	ContactsFolder *ContactsFolderType `xml:"t:ContactsFolder,omitempty" json:"ContactsFolder,omitempty"`
+	ContactsFolder *ContactsFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactsFolder,omitempty" json:"ContactsFolder,omitempty"`
 
-	SearchFolder *SearchFolderType `xml:"t:SearchFolder,omitempty" json:"SearchFolder,omitempty"`
+	SearchFolder *SearchFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchFolder,omitempty" json:"SearchFolder,omitempty"`
 
-	TasksFolder *TasksFolderType `xml:"t:TasksFolder,omitempty" json:"TasksFolder,omitempty"`
+	TasksFolder *TasksFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TasksFolder,omitempty" json:"TasksFolder,omitempty"`
 }
 
 type NonEmptyArrayOfItemChangeDescriptionsType struct {
-	AppendToItemField *AppendToItemFieldType `xml:"t:AppendToItemField,omitempty" json:"AppendToItemField,omitempty"`
+	AppendToItemField *AppendToItemFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppendToItemField,omitempty" json:"AppendToItemField,omitempty"`
 
-	SetItemField *SetItemFieldType `xml:"t:SetItemField,omitempty" json:"SetItemField,omitempty"`
+	SetItemField *SetItemFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SetItemField,omitempty" json:"SetItemField,omitempty"`
 
-	DeleteItemField *DeleteItemFieldType `xml:"t:DeleteItemField,omitempty" json:"DeleteItemField,omitempty"`
+	DeleteItemField *DeleteItemFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeleteItemField,omitempty" json:"DeleteItemField,omitempty"`
 }
 
 type NonEmptyArrayOfFolderChangeDescriptionsType struct {
-	XMLName xml.Name `xml:"t:Updates"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Updates"`
 
-	AppendToFolderField *AppendToFolderFieldType `xml:"t:AppendToFolderField,omitempty" json:"AppendToFolderField,omitempty"`
+	AppendToFolderField *AppendToFolderFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppendToFolderField,omitempty" json:"AppendToFolderField,omitempty"`
 
-	SetFolderField *SetFolderFieldType `xml:"t:SetFolderField,omitempty" json:"SetFolderField,omitempty"`
+	SetFolderField *SetFolderFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SetFolderField,omitempty" json:"SetFolderField,omitempty"`
 
-	DeleteFolderField *DeleteFolderFieldType `xml:"t:DeleteFolderField,omitempty" json:"DeleteFolderField,omitempty"`
+	DeleteFolderField *DeleteFolderFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeleteFolderField,omitempty" json:"DeleteFolderField,omitempty"`
 }
 
 type ItemChangeType struct {
-	XMLName xml.Name `xml:"t:ItemChange"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemChange"`
 
-	Updates *NonEmptyArrayOfItemChangeDescriptionsType `xml:"t:Updates,omitempty" json:"Updates,omitempty"`
+	Updates *NonEmptyArrayOfItemChangeDescriptionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Updates,omitempty" json:"Updates,omitempty"`
 
-	CalendarActivityData *CalendarActivityDataType `xml:"t:CalendarActivityData,omitempty" json:"CalendarActivityData,omitempty"`
+	CalendarActivityData *CalendarActivityDataType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarActivityData,omitempty" json:"CalendarActivityData,omitempty"`
 
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 
-	OccurrenceItemId *OccurrenceItemIdType `xml:"t:OccurrenceItemId,omitempty" json:"OccurrenceItemId,omitempty"`
+	OccurrenceItemId *OccurrenceItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OccurrenceItemId,omitempty" json:"OccurrenceItemId,omitempty"`
 
-	RecurringMasterItemId *RecurringMasterItemIdType `xml:"t:RecurringMasterItemId,omitempty" json:"RecurringMasterItemId,omitempty"`
+	RecurringMasterItemId *RecurringMasterItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecurringMasterItemId,omitempty" json:"RecurringMasterItemId,omitempty"`
 }
 
 type NonEmptyArrayOfItemChangesType struct {
-	XMLName xml.Name `xml:"t:ItemChanges"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemChanges"`
 
-	ItemChange []*ItemChangeType `xml:"t:ItemChange,omitempty" json:"ItemChange,omitempty"`
+	ItemChange []*ItemChangeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemChange,omitempty" json:"ItemChange,omitempty"`
 }
 
 type InternetHeaderType struct {
-	XMLName xml.Name `xml:"t:InternetMessageHeader"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types InternetMessageHeader"`
 
 	Value string `xml:",chardata" json:"-,"`
 
@@ -4356,19 +4356,19 @@ type InternetHeaderType struct {
 }
 
 type NonEmptyArrayOfInternetHeadersType struct {
-	XMLName xml.Name `xml:"t:InternetMessageHeaders"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types InternetMessageHeaders"`
 
-	InternetMessageHeader []*InternetHeaderType `xml:"t:InternetMessageHeader,omitempty" json:"InternetMessageHeader,omitempty"`
+	InternetMessageHeader []*InternetHeaderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types InternetMessageHeader,omitempty" json:"InternetMessageHeader,omitempty"`
 }
 
 type NonEmptyArrayOfPredictedActionReasonType struct {
-	XMLName xml.Name `xml:"t:PredictedActionReasons"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PredictedActionReasons"`
 
-	PredictedActionReason []*PredictedActionReasonType `xml:"t:PredictedActionReason,omitempty" json:"PredictedActionReason,omitempty"`
+	PredictedActionReason []*PredictedActionReasonType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PredictedActionReason,omitempty" json:"PredictedActionReason,omitempty"`
 }
 
 type RequestAttachmentIdType struct {
-	XMLName xml.Name `xml:"t:AttachmentId"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentId"`
 
 	*BaseItemIdType
 
@@ -4376,7 +4376,7 @@ type RequestAttachmentIdType struct {
 }
 
 type AttachmentIdType struct {
-	XMLName xml.Name `xml:"t:AttachmentId"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentId"`
 
 	*RequestAttachmentIdType
 
@@ -4386,7 +4386,7 @@ type AttachmentIdType struct {
 }
 
 type RootItemIdType struct {
-	XMLName xml.Name `xml:"t:RootItemId"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RootItemId"`
 
 	*BaseItemIdType
 
@@ -4396,141 +4396,141 @@ type RootItemIdType struct {
 }
 
 type NonEmptyArrayOfRequestAttachmentIdsType struct {
-	AttachmentId *RequestAttachmentIdType `xml:"t:AttachmentId,omitempty" json:"AttachmentId,omitempty"`
+	AttachmentId *RequestAttachmentIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentId,omitempty" json:"AttachmentId,omitempty"`
 }
 
 type AttachmentType struct {
-	AttachmentId *AttachmentIdType `xml:"t:AttachmentId,omitempty" json:"AttachmentId,omitempty"`
+	AttachmentId *AttachmentIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentId,omitempty" json:"AttachmentId,omitempty"`
 
-	Name string `xml:"t:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Name,omitempty" json:"Name,omitempty"`
 
-	ContentType string `xml:"t:ContentType,omitempty" json:"ContentType,omitempty"`
+	ContentType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContentType,omitempty" json:"ContentType,omitempty"`
 
-	ContentId string `xml:"t:ContentId,omitempty" json:"ContentId,omitempty"`
+	ContentId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContentId,omitempty" json:"ContentId,omitempty"`
 
-	ContentLocation string `xml:"t:ContentLocation,omitempty" json:"ContentLocation,omitempty"`
+	ContentLocation string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContentLocation,omitempty" json:"ContentLocation,omitempty"`
 
-	AttachmentOriginalUrl string `xml:"t:AttachmentOriginalUrl,omitempty" json:"AttachmentOriginalUrl,omitempty"`
+	AttachmentOriginalUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentOriginalUrl,omitempty" json:"AttachmentOriginalUrl,omitempty"`
 
-	Size int32 `xml:"t:Size,omitempty" json:"Size,omitempty"`
+	Size int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Size,omitempty" json:"Size,omitempty"`
 
-	LastModifiedTime xsd.DateTime `xml:"t:LastModifiedTime,omitempty" json:"LastModifiedTime,omitempty"`
+	LastModifiedTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastModifiedTime,omitempty" json:"LastModifiedTime,omitempty"`
 
-	IsInline bool `xml:"t:IsInline,omitempty" json:"IsInline,omitempty"`
+	IsInline bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsInline,omitempty" json:"IsInline,omitempty"`
 }
 
 type ItemAttachmentType struct {
 	*AttachmentType
 
-	Item *ItemType `xml:"t:Item,omitempty" json:"Item,omitempty"`
+	Item *ItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 
-	Message *MessageType `xml:"t:Message,omitempty" json:"Message,omitempty"`
+	Message *MessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Message,omitempty" json:"Message,omitempty"`
 
-	SharingMessage *SharingMessageType `xml:"t:SharingMessage,omitempty" json:"SharingMessage,omitempty"`
+	SharingMessage *SharingMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharingMessage,omitempty" json:"SharingMessage,omitempty"`
 
-	CalendarItem *CalendarItemType `xml:"t:CalendarItem,omitempty" json:"CalendarItem,omitempty"`
+	CalendarItem *CalendarItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarItem,omitempty" json:"CalendarItem,omitempty"`
 
-	Contact *ContactItemType `xml:"t:Contact,omitempty" json:"Contact,omitempty"`
+	Contact *ContactItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Contact,omitempty" json:"Contact,omitempty"`
 
-	MeetingMessage *MeetingMessageType `xml:"t:MeetingMessage,omitempty" json:"MeetingMessage,omitempty"`
+	MeetingMessage *MeetingMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingMessage,omitempty" json:"MeetingMessage,omitempty"`
 
-	MeetingRequest *MeetingRequestMessageType `xml:"t:MeetingRequest,omitempty" json:"MeetingRequest,omitempty"`
+	MeetingRequest *MeetingRequestMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingRequest,omitempty" json:"MeetingRequest,omitempty"`
 
-	MeetingResponse *MeetingResponseMessageType `xml:"t:MeetingResponse,omitempty" json:"MeetingResponse,omitempty"`
+	MeetingResponse *MeetingResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingResponse,omitempty" json:"MeetingResponse,omitempty"`
 
-	MeetingCancellation *MeetingCancellationMessageType `xml:"t:MeetingCancellation,omitempty" json:"MeetingCancellation,omitempty"`
+	MeetingCancellation *MeetingCancellationMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingCancellation,omitempty" json:"MeetingCancellation,omitempty"`
 
-	Task *TaskType `xml:"t:Task,omitempty" json:"Task,omitempty"`
+	Task *TaskType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Task,omitempty" json:"Task,omitempty"`
 
-	PostItem *PostItemType `xml:"t:PostItem,omitempty" json:"PostItem,omitempty"`
+	PostItem *PostItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostItem,omitempty" json:"PostItem,omitempty"`
 
-	RoleMember *RoleMemberItemType `xml:"t:RoleMember,omitempty" json:"RoleMember,omitempty"`
+	RoleMember *RoleMemberItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RoleMember,omitempty" json:"RoleMember,omitempty"`
 
-	Network *NetworkItemType `xml:"t:Network,omitempty" json:"Network,omitempty"`
+	Network *NetworkItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Network,omitempty" json:"Network,omitempty"`
 
-	Person *AbchPersonItemType `xml:"t:Person,omitempty" json:"Person,omitempty"`
+	Person *AbchPersonItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Person,omitempty" json:"Person,omitempty"`
 }
 
 type SyncFolderItemsCreateOrUpdateType struct {
-	Item *ItemType `xml:"t:Item,omitempty" json:"Item,omitempty"`
+	Item *ItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 
-	Message *MessageType `xml:"t:Message,omitempty" json:"Message,omitempty"`
+	Message *MessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Message,omitempty" json:"Message,omitempty"`
 
-	SharingMessage *SharingMessageType `xml:"t:SharingMessage,omitempty" json:"SharingMessage,omitempty"`
+	SharingMessage *SharingMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharingMessage,omitempty" json:"SharingMessage,omitempty"`
 
-	CalendarItem *CalendarItemType `xml:"t:CalendarItem,omitempty" json:"CalendarItem,omitempty"`
+	CalendarItem *CalendarItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarItem,omitempty" json:"CalendarItem,omitempty"`
 
-	Contact *ContactItemType `xml:"t:Contact,omitempty" json:"Contact,omitempty"`
+	Contact *ContactItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Contact,omitempty" json:"Contact,omitempty"`
 
-	DistributionList *DistributionListType `xml:"t:DistributionList,omitempty" json:"DistributionList,omitempty"`
+	DistributionList *DistributionListType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistributionList,omitempty" json:"DistributionList,omitempty"`
 
-	MeetingMessage *MeetingMessageType `xml:"t:MeetingMessage,omitempty" json:"MeetingMessage,omitempty"`
+	MeetingMessage *MeetingMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingMessage,omitempty" json:"MeetingMessage,omitempty"`
 
-	MeetingRequest *MeetingRequestMessageType `xml:"t:MeetingRequest,omitempty" json:"MeetingRequest,omitempty"`
+	MeetingRequest *MeetingRequestMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingRequest,omitempty" json:"MeetingRequest,omitempty"`
 
-	MeetingResponse *MeetingResponseMessageType `xml:"t:MeetingResponse,omitempty" json:"MeetingResponse,omitempty"`
+	MeetingResponse *MeetingResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingResponse,omitempty" json:"MeetingResponse,omitempty"`
 
-	MeetingCancellation *MeetingCancellationMessageType `xml:"t:MeetingCancellation,omitempty" json:"MeetingCancellation,omitempty"`
+	MeetingCancellation *MeetingCancellationMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingCancellation,omitempty" json:"MeetingCancellation,omitempty"`
 
-	Task *TaskType `xml:"t:Task,omitempty" json:"Task,omitempty"`
+	Task *TaskType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Task,omitempty" json:"Task,omitempty"`
 
-	PostItem *PostItemType `xml:"t:PostItem,omitempty" json:"PostItem,omitempty"`
+	PostItem *PostItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostItem,omitempty" json:"PostItem,omitempty"`
 
-	RoleMember *RoleMemberItemType `xml:"t:RoleMember,omitempty" json:"RoleMember,omitempty"`
+	RoleMember *RoleMemberItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RoleMember,omitempty" json:"RoleMember,omitempty"`
 
-	Network *NetworkItemType `xml:"t:Network,omitempty" json:"Network,omitempty"`
+	Network *NetworkItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Network,omitempty" json:"Network,omitempty"`
 
-	Person *AbchPersonItemType `xml:"t:Person,omitempty" json:"Person,omitempty"`
+	Person *AbchPersonItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Person,omitempty" json:"Person,omitempty"`
 }
 
 type FileAttachmentType struct {
 	*AttachmentType
 
-	IsContactPhoto bool `xml:"t:IsContactPhoto,omitempty" json:"IsContactPhoto,omitempty"`
+	IsContactPhoto bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsContactPhoto,omitempty" json:"IsContactPhoto,omitempty"`
 
-	Content []byte `xml:"t:Content,omitempty" json:"Content,omitempty"`
+	Content []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types Content,omitempty" json:"Content,omitempty"`
 }
 
 type ReferenceAttachmentType struct {
 	*AttachmentType
 
-	AttachLongPathName string `xml:"t:AttachLongPathName,omitempty" json:"AttachLongPathName,omitempty"`
+	AttachLongPathName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachLongPathName,omitempty" json:"AttachLongPathName,omitempty"`
 
-	ProviderType string `xml:"t:ProviderType,omitempty" json:"ProviderType,omitempty"`
+	ProviderType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProviderType,omitempty" json:"ProviderType,omitempty"`
 
-	ProviderEndpointUrl string `xml:"t:ProviderEndpointUrl,omitempty" json:"ProviderEndpointUrl,omitempty"`
+	ProviderEndpointUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProviderEndpointUrl,omitempty" json:"ProviderEndpointUrl,omitempty"`
 
-	AttachmentThumbnailUrl string `xml:"t:AttachmentThumbnailUrl,omitempty" json:"AttachmentThumbnailUrl,omitempty"`
+	AttachmentThumbnailUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentThumbnailUrl,omitempty" json:"AttachmentThumbnailUrl,omitempty"`
 
-	AttachmentPreviewUrl string `xml:"t:AttachmentPreviewUrl,omitempty" json:"AttachmentPreviewUrl,omitempty"`
+	AttachmentPreviewUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentPreviewUrl,omitempty" json:"AttachmentPreviewUrl,omitempty"`
 
-	PermissionType int32 `xml:"t:PermissionType,omitempty" json:"PermissionType,omitempty"`
+	PermissionType int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types PermissionType,omitempty" json:"PermissionType,omitempty"`
 
-	OriginalPermissionType int32 `xml:"t:OriginalPermissionType,omitempty" json:"OriginalPermissionType,omitempty"`
+	OriginalPermissionType int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types OriginalPermissionType,omitempty" json:"OriginalPermissionType,omitempty"`
 
-	AttachmentIsFolder bool `xml:"t:AttachmentIsFolder,omitempty" json:"AttachmentIsFolder,omitempty"`
+	AttachmentIsFolder bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentIsFolder,omitempty" json:"AttachmentIsFolder,omitempty"`
 }
 
 type ArrayOfAttachmentsType struct {
-	ItemAttachment *ItemAttachmentType `xml:"t:ItemAttachment,omitempty" json:"ItemAttachment,omitempty"`
+	ItemAttachment *ItemAttachmentType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemAttachment,omitempty" json:"ItemAttachment,omitempty"`
 
-	FileAttachment *FileAttachmentType `xml:"t:FileAttachment,omitempty" json:"FileAttachment,omitempty"`
+	FileAttachment *FileAttachmentType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileAttachment,omitempty" json:"FileAttachment,omitempty"`
 
-	ReferenceAttachment *ReferenceAttachmentType `xml:"t:ReferenceAttachment,omitempty" json:"ReferenceAttachment,omitempty"`
+	ReferenceAttachment *ReferenceAttachmentType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReferenceAttachment,omitempty" json:"ReferenceAttachment,omitempty"`
 }
 
 type NonEmptyArrayOfAttachmentsType struct {
-	ItemAttachment *ItemAttachmentType `xml:"t:ItemAttachment,omitempty" json:"ItemAttachment,omitempty"`
+	ItemAttachment *ItemAttachmentType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemAttachment,omitempty" json:"ItemAttachment,omitempty"`
 
-	FileAttachment *FileAttachmentType `xml:"t:FileAttachment,omitempty" json:"FileAttachment,omitempty"`
+	FileAttachment *FileAttachmentType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileAttachment,omitempty" json:"FileAttachment,omitempty"`
 
-	ReferenceAttachment *ReferenceAttachmentType `xml:"t:ReferenceAttachment,omitempty" json:"ReferenceAttachment,omitempty"`
+	ReferenceAttachment *ReferenceAttachmentType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReferenceAttachment,omitempty" json:"ReferenceAttachment,omitempty"`
 }
 
 type BodyType struct {
 	Value string `xml:",chardata" json:"-,"`
 
-	BodyType *BodyTypeType `xml:"BodyType,attr,omitempty" json:"t:BodyType,omitempty"`
+	BodyType *BodyTypeType `xml:"BodyType,attr,omitempty" json:"BodyType,omitempty"`
 
 	IsTruncated bool `xml:"IsTruncated,attr,omitempty" json:"IsTruncated,omitempty"`
 }
@@ -4557,7 +4557,7 @@ type BaseFolderIdType struct {
 type DistinguishedFolderIdType struct {
 	*BaseFolderIdType
 
-	Mailbox *EmailAddressType `xml:"t:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailbox,omitempty" json:"Mailbox,omitempty"`
 
 	Id *DistinguishedFolderIdNameType `xml:"Id,attr,omitempty" json:"Id,omitempty"`
 
@@ -4573,7 +4573,7 @@ type FolderIdType struct {
 }
 
 type AddressListIdType struct {
-	XMLName xml.Name `xml:"t:AddressListId"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AddressListId"`
 
 	*BaseFolderIdType
 
@@ -4581,39 +4581,39 @@ type AddressListIdType struct {
 }
 
 type ArrayOfDistinguishedFolderIdType struct {
-	XMLName xml.Name `xml:"t:DistinguishedFolderScope"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistinguishedFolderScope"`
 
-	DistinguishedFolderId *DistinguishedFolderIdType `xml:"t:DistinguishedFolderId,omitempty" json:"DistinguishedFolderId,omitempty"`
+	DistinguishedFolderId *DistinguishedFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistinguishedFolderId,omitempty" json:"DistinguishedFolderId,omitempty"`
 }
 
 type NonEmptyArrayOfBaseFolderIdsType struct {
-	FolderId *FolderIdType `xml:"t:FolderId,omitempty" json:"FolderId,omitempty"`
+	FolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderId,omitempty" json:"FolderId,omitempty"`
 
-	DistinguishedFolderId *DistinguishedFolderIdType `xml:"t:DistinguishedFolderId,omitempty" json:"DistinguishedFolderId,omitempty"`
+	DistinguishedFolderId *DistinguishedFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistinguishedFolderId,omitempty" json:"DistinguishedFolderId,omitempty"`
 }
 
 type TargetFolderIdType struct {
-	FolderId *FolderIdType `xml:"t:FolderId,omitempty" json:"FolderId,omitempty"`
+	FolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderId,omitempty" json:"FolderId,omitempty"`
 
-	DistinguishedFolderId *DistinguishedFolderIdType `xml:"t:DistinguishedFolderId,omitempty" json:"DistinguishedFolderId,omitempty"`
+	DistinguishedFolderId *DistinguishedFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistinguishedFolderId,omitempty" json:"DistinguishedFolderId,omitempty"`
 
-	AddressListId *AddressListIdType `xml:"t:AddressListId,omitempty" json:"AddressListId,omitempty"`
+	AddressListId *AddressListIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AddressListId,omitempty" json:"AddressListId,omitempty"`
 }
 
 type NonEmptyArrayOfUploadItemsType struct {
-	XMLName xml.Name `xml:"t:Items"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Items"`
 
-	Item []*UploadItemType `xml:"t:Item,omitempty" json:"Item,omitempty"`
+	Item []*UploadItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 }
 
 type UploadItemType struct {
-	XMLName xml.Name `xml:"t:Item"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item"`
 
-	ParentFolderId *FolderIdType `xml:"t:ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
+	ParentFolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
 
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 
-	Data []byte `xml:"t:Data,omitempty" json:"Data,omitempty"`
+	Data []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types Data,omitempty" json:"Data,omitempty"`
 
 	CreateAction *CreateActionType `xml:"CreateAction,attr,omitempty" json:"CreateAction,omitempty"`
 
@@ -4621,111 +4621,111 @@ type UploadItemType struct {
 }
 
 type FindFolderParentType struct {
-	XMLName xml.Name `xml:"t:RootFolder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RootFolder"`
 
-	Folders *ArrayOfFoldersType `xml:"t:Folders,omitempty" json:"Folders,omitempty"`
+	Folders *ArrayOfFoldersType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Folders,omitempty" json:"Folders,omitempty"`
 }
 
 type BaseFolderType struct {
-	FolderId *FolderIdType `xml:"t:FolderId,omitempty" json:"FolderId,omitempty"`
+	FolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderId,omitempty" json:"FolderId,omitempty"`
 
-	ParentFolderId *FolderIdType `xml:"t:ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
+	ParentFolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
 
-	FolderClass string `xml:"t:FolderClass,omitempty" json:"FolderClass,omitempty"`
+	FolderClass string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderClass,omitempty" json:"FolderClass,omitempty"`
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	TotalCount int32 `xml:"t:TotalCount,omitempty" json:"TotalCount,omitempty"`
+	TotalCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types TotalCount,omitempty" json:"TotalCount,omitempty"`
 
-	ChildFolderCount int32 `xml:"t:ChildFolderCount,omitempty" json:"ChildFolderCount,omitempty"`
+	ChildFolderCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ChildFolderCount,omitempty" json:"ChildFolderCount,omitempty"`
 
-	ExtendedProperty []*ExtendedPropertyType `xml:"t:ExtendedProperty,omitempty" json:"ExtendedProperty,omitempty"`
+	ExtendedProperty []*ExtendedPropertyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedProperty,omitempty" json:"ExtendedProperty,omitempty"`
 
-	ManagedFolderInformation *ManagedFolderInformationType `xml:"t:ManagedFolderInformation,omitempty" json:"ManagedFolderInformation,omitempty"`
+	ManagedFolderInformation *ManagedFolderInformationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ManagedFolderInformation,omitempty" json:"ManagedFolderInformation,omitempty"`
 
-	EffectiveRights *EffectiveRightsType `xml:"t:EffectiveRights,omitempty" json:"EffectiveRights,omitempty"`
+	EffectiveRights *EffectiveRightsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EffectiveRights,omitempty" json:"EffectiveRights,omitempty"`
 
-	DistinguishedFolderId *DistinguishedFolderIdNameType `xml:"t:DistinguishedFolderId,omitempty" json:"DistinguishedFolderId,omitempty"`
+	DistinguishedFolderId *DistinguishedFolderIdNameType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistinguishedFolderId,omitempty" json:"DistinguishedFolderId,omitempty"`
 
-	PolicyTag *RetentionTagType `xml:"t:PolicyTag,omitempty" json:"PolicyTag,omitempty"`
+	PolicyTag *RetentionTagType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PolicyTag,omitempty" json:"PolicyTag,omitempty"`
 
-	ArchiveTag *RetentionTagType `xml:"t:ArchiveTag,omitempty" json:"ArchiveTag,omitempty"`
+	ArchiveTag *RetentionTagType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ArchiveTag,omitempty" json:"ArchiveTag,omitempty"`
 
-	ReplicaList *ArrayOfStringsType `xml:"t:ReplicaList,omitempty" json:"ReplicaList,omitempty"`
+	ReplicaList *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReplicaList,omitempty" json:"ReplicaList,omitempty"`
 }
 
 type ManagedFolderInformationType struct {
-	XMLName xml.Name `xml:"t:ManagedFolderInformation"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ManagedFolderInformation"`
 
-	CanDelete bool `xml:"t:CanDelete,omitempty" json:"CanDelete,omitempty"`
+	CanDelete bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types CanDelete,omitempty" json:"CanDelete,omitempty"`
 
-	CanRenameOrMove bool `xml:"t:CanRenameOrMove,omitempty" json:"CanRenameOrMove,omitempty"`
+	CanRenameOrMove bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types CanRenameOrMove,omitempty" json:"CanRenameOrMove,omitempty"`
 
-	MustDisplayComment bool `xml:"t:MustDisplayComment,omitempty" json:"MustDisplayComment,omitempty"`
+	MustDisplayComment bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types MustDisplayComment,omitempty" json:"MustDisplayComment,omitempty"`
 
-	HasQuota bool `xml:"t:HasQuota,omitempty" json:"HasQuota,omitempty"`
+	HasQuota bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HasQuota,omitempty" json:"HasQuota,omitempty"`
 
-	IsManagedFoldersRoot bool `xml:"t:IsManagedFoldersRoot,omitempty" json:"IsManagedFoldersRoot,omitempty"`
+	IsManagedFoldersRoot bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsManagedFoldersRoot,omitempty" json:"IsManagedFoldersRoot,omitempty"`
 
-	ManagedFolderId string `xml:"t:ManagedFolderId,omitempty" json:"ManagedFolderId,omitempty"`
+	ManagedFolderId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ManagedFolderId,omitempty" json:"ManagedFolderId,omitempty"`
 
-	Comment string `xml:"t:Comment,omitempty" json:"Comment,omitempty"`
+	Comment string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Comment,omitempty" json:"Comment,omitempty"`
 
-	StorageQuota int32 `xml:"t:StorageQuota,omitempty" json:"StorageQuota,omitempty"`
+	StorageQuota int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types StorageQuota,omitempty" json:"StorageQuota,omitempty"`
 
-	FolderSize int32 `xml:"t:FolderSize,omitempty" json:"FolderSize,omitempty"`
+	FolderSize int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderSize,omitempty" json:"FolderSize,omitempty"`
 
-	HomePage string `xml:"t:HomePage,omitempty" json:"HomePage,omitempty"`
+	HomePage string `xml:"http://schemas.microsoft.com/exchange/services/2006/types HomePage,omitempty" json:"HomePage,omitempty"`
 }
 
 type FolderType struct {
 	*BaseFolderType
 
-	PermissionSet *PermissionSetType `xml:"t:PermissionSet,omitempty" json:"PermissionSet,omitempty"`
+	PermissionSet *PermissionSetType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PermissionSet,omitempty" json:"PermissionSet,omitempty"`
 
-	UnreadCount int32 `xml:"t:UnreadCount,omitempty" json:"UnreadCount,omitempty"`
+	UnreadCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types UnreadCount,omitempty" json:"UnreadCount,omitempty"`
 }
 
 type CalendarFolderType struct {
 	*BaseFolderType
 
-	SharingEffectiveRights *CalendarPermissionReadAccessType `xml:"t:SharingEffectiveRights,omitempty" json:"SharingEffectiveRights,omitempty"`
+	SharingEffectiveRights *CalendarPermissionReadAccessType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharingEffectiveRights,omitempty" json:"SharingEffectiveRights,omitempty"`
 
-	PermissionSet *CalendarPermissionSetType `xml:"t:PermissionSet,omitempty" json:"PermissionSet,omitempty"`
+	PermissionSet *CalendarPermissionSetType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PermissionSet,omitempty" json:"PermissionSet,omitempty"`
 }
 
 type ReminderItemActionType struct {
-	XMLName xml.Name `xml:"t:ReminderItemAction"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReminderItemAction"`
 
-	ActionType *ReminderActionType `xml:"t:ActionType,omitempty" json:"ActionType,omitempty"`
+	ActionType *ReminderActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ActionType,omitempty" json:"ActionType,omitempty"`
 
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 
-	NewReminderTime string `xml:"t:NewReminderTime,omitempty" json:"NewReminderTime,omitempty"`
+	NewReminderTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types NewReminderTime,omitempty" json:"NewReminderTime,omitempty"`
 }
 
 type NonEmptyArrayOfReminderItemActionType struct {
-	XMLName xml.Name `xml:"t:ReminderItemActions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReminderItemActions"`
 
-	ReminderItemAction []*ReminderItemActionType `xml:"t:ReminderItemAction,omitempty" json:"ReminderItemAction,omitempty"`
+	ReminderItemAction []*ReminderItemActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReminderItemAction,omitempty" json:"ReminderItemAction,omitempty"`
 }
 
 type ContactsFolderType struct {
 	*BaseFolderType
 
-	SharingEffectiveRights *PermissionReadAccessType `xml:"t:SharingEffectiveRights,omitempty" json:"SharingEffectiveRights,omitempty"`
+	SharingEffectiveRights *PermissionReadAccessType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharingEffectiveRights,omitempty" json:"SharingEffectiveRights,omitempty"`
 
-	PermissionSet *PermissionSetType `xml:"t:PermissionSet,omitempty" json:"PermissionSet,omitempty"`
+	PermissionSet *PermissionSetType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PermissionSet,omitempty" json:"PermissionSet,omitempty"`
 
-	SourceId string `xml:"t:SourceId,omitempty" json:"SourceId,omitempty"`
+	SourceId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SourceId,omitempty" json:"SourceId,omitempty"`
 
-	AccountName string `xml:"t:AccountName,omitempty" json:"AccountName,omitempty"`
+	AccountName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AccountName,omitempty" json:"AccountName,omitempty"`
 }
 
 type SearchFolderType struct {
 	*FolderType
 
-	SearchParameters *SearchParametersType `xml:"t:SearchParameters,omitempty" json:"SearchParameters,omitempty"`
+	SearchParameters *SearchParametersType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchParameters,omitempty" json:"SearchParameters,omitempty"`
 }
 
 type TasksFolderType struct {
@@ -4733,27 +4733,27 @@ type TasksFolderType struct {
 }
 
 type NonEmptyArrayOfFoldersType struct {
-	Folder *FolderType `xml:"t:Folder,omitempty" json:"Folder,omitempty"`
+	Folder *FolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Folder,omitempty" json:"Folder,omitempty"`
 
-	CalendarFolder *CalendarFolderType `xml:"t:CalendarFolder,omitempty" json:"CalendarFolder,omitempty"`
+	CalendarFolder *CalendarFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarFolder,omitempty" json:"CalendarFolder,omitempty"`
 
-	ContactsFolder *ContactsFolderType `xml:"t:ContactsFolder,omitempty" json:"ContactsFolder,omitempty"`
+	ContactsFolder *ContactsFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactsFolder,omitempty" json:"ContactsFolder,omitempty"`
 
-	SearchFolder *SearchFolderType `xml:"t:SearchFolder,omitempty" json:"SearchFolder,omitempty"`
+	SearchFolder *SearchFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchFolder,omitempty" json:"SearchFolder,omitempty"`
 
-	TasksFolder *TasksFolderType `xml:"t:TasksFolder,omitempty" json:"TasksFolder,omitempty"`
+	TasksFolder *TasksFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TasksFolder,omitempty" json:"TasksFolder,omitempty"`
 }
 
 type ArrayOfFoldersType struct {
-	Folder *FolderType `xml:"t:Folder,omitempty" json:"Folder,omitempty"`
+	Folder *FolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Folder,omitempty" json:"Folder,omitempty"`
 
-	CalendarFolder *CalendarFolderType `xml:"t:CalendarFolder,omitempty" json:"CalendarFolder,omitempty"`
+	CalendarFolder *CalendarFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarFolder,omitempty" json:"CalendarFolder,omitempty"`
 
-	ContactsFolder *ContactsFolderType `xml:"t:ContactsFolder,omitempty" json:"ContactsFolder,omitempty"`
+	ContactsFolder *ContactsFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactsFolder,omitempty" json:"ContactsFolder,omitempty"`
 
-	SearchFolder *SearchFolderType `xml:"t:SearchFolder,omitempty" json:"SearchFolder,omitempty"`
+	SearchFolder *SearchFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchFolder,omitempty" json:"SearchFolder,omitempty"`
 
-	TasksFolder *TasksFolderType `xml:"t:TasksFolder,omitempty" json:"TasksFolder,omitempty"`
+	TasksFolder *TasksFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TasksFolder,omitempty" json:"TasksFolder,omitempty"`
 }
 
 type BaseItemIdType struct {
@@ -4768,33 +4768,33 @@ type ItemIdType struct {
 }
 
 type NonEmptyArrayOfBaseItemIdsType struct {
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 
-	OccurrenceItemId *OccurrenceItemIdType `xml:"t:OccurrenceItemId,omitempty" json:"OccurrenceItemId,omitempty"`
+	OccurrenceItemId *OccurrenceItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OccurrenceItemId,omitempty" json:"OccurrenceItemId,omitempty"`
 
-	RecurringMasterItemId *RecurringMasterItemIdType `xml:"t:RecurringMasterItemId,omitempty" json:"RecurringMasterItemId,omitempty"`
+	RecurringMasterItemId *RecurringMasterItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecurringMasterItemId,omitempty" json:"RecurringMasterItemId,omitempty"`
 
-	RecurringMasterItemIdRanges *RecurringMasterItemIdRangesType `xml:"t:RecurringMasterItemIdRanges,omitempty" json:"RecurringMasterItemIdRanges,omitempty"`
+	RecurringMasterItemIdRanges *RecurringMasterItemIdRangesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecurringMasterItemIdRanges,omitempty" json:"RecurringMasterItemIdRanges,omitempty"`
 }
 
 type ArrayOfBaseItemIdsType struct {
-	XMLName xml.Name `xml:"t:Ignore"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Ignore"`
 
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 }
 
 type NonEmptyArrayOfItemIdsType struct {
-	ItemId []*ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId []*ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 }
 
 type ArrayOfItemIdsType struct {
-	ItemId []*ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId []*ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 }
 
 type ResponseObjectCoreType struct {
 	*MessageType
 
-	ReferenceItemId *ItemIdType `xml:"t:ReferenceItemId,omitempty" json:"ReferenceItemId,omitempty"`
+	ReferenceItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReferenceItemId,omitempty" json:"ReferenceItemId,omitempty"`
 }
 
 type ResponseObjectType struct {
@@ -4806,49 +4806,49 @@ type ResponseObjectType struct {
 }
 
 type NonEmptyArrayOfResponseObjectsType struct {
-	XMLName xml.Name `xml:"t:ResponseObjects"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ResponseObjects"`
 
-	AcceptItem *AcceptItemType `xml:"t:AcceptItem,omitempty" json:"AcceptItem,omitempty"`
+	AcceptItem *AcceptItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AcceptItem,omitempty" json:"AcceptItem,omitempty"`
 
-	TentativelyAcceptItem *TentativelyAcceptItemType `xml:"t:TentativelyAcceptItem,omitempty" json:"TentativelyAcceptItem,omitempty"`
+	TentativelyAcceptItem *TentativelyAcceptItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TentativelyAcceptItem,omitempty" json:"TentativelyAcceptItem,omitempty"`
 
-	DeclineItem *DeclineItemType `xml:"t:DeclineItem,omitempty" json:"DeclineItem,omitempty"`
+	DeclineItem *DeclineItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeclineItem,omitempty" json:"DeclineItem,omitempty"`
 
-	ReplyToItem *ReplyToItemType `xml:"t:ReplyToItem,omitempty" json:"ReplyToItem,omitempty"`
+	ReplyToItem *ReplyToItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReplyToItem,omitempty" json:"ReplyToItem,omitempty"`
 
-	ForwardItem *ForwardItemType `xml:"t:ForwardItem,omitempty" json:"ForwardItem,omitempty"`
+	ForwardItem *ForwardItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ForwardItem,omitempty" json:"ForwardItem,omitempty"`
 
-	ReplyAllToItem *ReplyAllToItemType `xml:"t:ReplyAllToItem,omitempty" json:"ReplyAllToItem,omitempty"`
+	ReplyAllToItem *ReplyAllToItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReplyAllToItem,omitempty" json:"ReplyAllToItem,omitempty"`
 
-	CancelCalendarItem *CancelCalendarItemType `xml:"t:CancelCalendarItem,omitempty" json:"CancelCalendarItem,omitempty"`
+	CancelCalendarItem *CancelCalendarItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CancelCalendarItem,omitempty" json:"CancelCalendarItem,omitempty"`
 
-	RemoveItem *RemoveItemType `xml:"t:RemoveItem,omitempty" json:"RemoveItem,omitempty"`
+	RemoveItem *RemoveItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RemoveItem,omitempty" json:"RemoveItem,omitempty"`
 
-	SuppressReadReceipt *SuppressReadReceiptType `xml:"t:SuppressReadReceipt,omitempty" json:"SuppressReadReceipt,omitempty"`
+	SuppressReadReceipt *SuppressReadReceiptType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SuppressReadReceipt,omitempty" json:"SuppressReadReceipt,omitempty"`
 
-	PostReplyItem *PostReplyItemType `xml:"t:PostReplyItem,omitempty" json:"PostReplyItem,omitempty"`
+	PostReplyItem *PostReplyItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostReplyItem,omitempty" json:"PostReplyItem,omitempty"`
 
-	AcceptSharingInvitation *AcceptSharingInvitationType `xml:"t:AcceptSharingInvitation,omitempty" json:"AcceptSharingInvitation,omitempty"`
+	AcceptSharingInvitation *AcceptSharingInvitationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AcceptSharingInvitation,omitempty" json:"AcceptSharingInvitation,omitempty"`
 
-	AddItemToMyCalendar *AddItemToMyCalendarType `xml:"t:AddItemToMyCalendar,omitempty" json:"AddItemToMyCalendar,omitempty"`
+	AddItemToMyCalendar *AddItemToMyCalendarType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AddItemToMyCalendar,omitempty" json:"AddItemToMyCalendar,omitempty"`
 
-	ProposeNewTime *ProposeNewTimeType `xml:"t:ProposeNewTime,omitempty" json:"ProposeNewTime,omitempty"`
+	ProposeNewTime *ProposeNewTimeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProposeNewTime,omitempty" json:"ProposeNewTime,omitempty"`
 }
 
 type FolderChangeType struct {
-	XMLName xml.Name `xml:"t:FolderChange"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderChange"`
 
-	Updates *NonEmptyArrayOfFolderChangeDescriptionsType `xml:"t:Updates,omitempty" json:"Updates,omitempty"`
+	Updates *NonEmptyArrayOfFolderChangeDescriptionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Updates,omitempty" json:"Updates,omitempty"`
 
-	FolderId *FolderIdType `xml:"t:FolderId,omitempty" json:"FolderId,omitempty"`
+	FolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderId,omitempty" json:"FolderId,omitempty"`
 
-	DistinguishedFolderId *DistinguishedFolderIdType `xml:"t:DistinguishedFolderId,omitempty" json:"DistinguishedFolderId,omitempty"`
+	DistinguishedFolderId *DistinguishedFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistinguishedFolderId,omitempty" json:"DistinguishedFolderId,omitempty"`
 }
 
 type NonEmptyArrayOfFolderChangesType struct {
-	XMLName xml.Name `xml:"t:FolderChanges"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderChanges"`
 
-	FolderChange []*FolderChangeType `xml:"t:FolderChange,omitempty" json:"FolderChange,omitempty"`
+	FolderChange []*FolderChangeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderChange,omitempty" json:"FolderChange,omitempty"`
 }
 
 type WellKnownResponseObjectType struct {
@@ -4860,7 +4860,7 @@ type SmartResponseBaseType struct {
 type SmartResponseType struct {
 	*SmartResponseBaseType
 
-	NewBodyContent *BodyType `xml:"t:NewBodyContent,omitempty" json:"NewBodyContent,omitempty"`
+	NewBodyContent *BodyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types NewBodyContent,omitempty" json:"NewBodyContent,omitempty"`
 }
 
 type ReplyToItemType struct {
@@ -4870,7 +4870,7 @@ type ReplyToItemType struct {
 type ReplyAllToItemType struct {
 	*SmartResponseType
 
-	IsSpecificMessageReply bool `xml:"t:IsSpecificMessageReply,omitempty" json:"IsSpecificMessageReply,omitempty"`
+	IsSpecificMessageReply bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsSpecificMessageReply,omitempty" json:"IsSpecificMessageReply,omitempty"`
 }
 
 type ForwardItemType struct {
@@ -4889,1483 +4889,1483 @@ type SuppressReadReceiptType struct {
 }
 
 type FindItemParentType struct {
-	XMLName xml.Name `xml:"t:RootFolder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RootFolder"`
 
-	Items *ArrayOfRealItemsType `xml:"t:Items,omitempty" json:"Items,omitempty"`
+	Items *ArrayOfRealItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Items,omitempty" json:"Items,omitempty"`
 
-	Groups *ArrayOfGroupedItemsType `xml:"t:Groups,omitempty" json:"Groups,omitempty"`
+	Groups *ArrayOfGroupedItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Groups,omitempty" json:"Groups,omitempty"`
 }
 
 type ItemType struct {
-	MimeContent *MimeContentType `xml:"t:MimeContent,omitempty" json:"MimeContent,omitempty"`
+	MimeContent *MimeContentType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MimeContent,omitempty" json:"MimeContent,omitempty"`
 
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 
-	ParentFolderId *FolderIdType `xml:"t:ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
+	ParentFolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
 
-	ItemClass *ItemClassType `xml:"t:ItemClass,omitempty" json:"ItemClass,omitempty"`
+	ItemClass *ItemClassType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemClass,omitempty" json:"ItemClass,omitempty"`
 
-	Subject string `xml:"t:Subject,omitempty" json:"Subject,omitempty"`
+	Subject string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Subject,omitempty" json:"Subject,omitempty"`
 
-	Sensitivity *SensitivityChoicesType `xml:"t:Sensitivity,omitempty" json:"Sensitivity,omitempty"`
+	Sensitivity *SensitivityChoicesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Sensitivity,omitempty" json:"Sensitivity,omitempty"`
 
-	Body *BodyType `xml:"t:Body,omitempty" json:"Body,omitempty"`
+	Body *BodyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Body,omitempty" json:"Body,omitempty"`
 
-	Attachments *NonEmptyArrayOfAttachmentsType `xml:"t:Attachments,omitempty" json:"Attachments,omitempty"`
+	Attachments *NonEmptyArrayOfAttachmentsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attachments,omitempty" json:"Attachments,omitempty"`
 
-	DateTimeReceived xsd.DateTime `xml:"t:DateTimeReceived,omitempty" json:"DateTimeReceived,omitempty"`
+	DateTimeReceived xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types DateTimeReceived,omitempty" json:"DateTimeReceived,omitempty"`
 
-	Size int32 `xml:"t:Size,omitempty" json:"Size,omitempty"`
+	Size int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Size,omitempty" json:"Size,omitempty"`
 
-	Categories *ArrayOfStringsType `xml:"t:Categories,omitempty" json:"Categories,omitempty"`
+	Categories *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Categories,omitempty" json:"Categories,omitempty"`
 
-	Importance *ImportanceChoicesType `xml:"t:Importance,omitempty" json:"Importance,omitempty"`
+	Importance *ImportanceChoicesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Importance,omitempty" json:"Importance,omitempty"`
 
-	InReplyTo string `xml:"t:InReplyTo,omitempty" json:"InReplyTo,omitempty"`
+	InReplyTo string `xml:"http://schemas.microsoft.com/exchange/services/2006/types InReplyTo,omitempty" json:"InReplyTo,omitempty"`
 
-	IsSubmitted bool `xml:"t:IsSubmitted,omitempty" json:"IsSubmitted,omitempty"`
+	IsSubmitted bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsSubmitted,omitempty" json:"IsSubmitted,omitempty"`
 
-	IsDraft bool `xml:"t:IsDraft,omitempty" json:"IsDraft,omitempty"`
+	IsDraft bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsDraft,omitempty" json:"IsDraft,omitempty"`
 
-	IsFromMe bool `xml:"t:IsFromMe,omitempty" json:"IsFromMe,omitempty"`
+	IsFromMe bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsFromMe,omitempty" json:"IsFromMe,omitempty"`
 
-	IsResend bool `xml:"t:IsResend,omitempty" json:"IsResend,omitempty"`
+	IsResend bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsResend,omitempty" json:"IsResend,omitempty"`
 
-	IsUnmodified bool `xml:"t:IsUnmodified,omitempty" json:"IsUnmodified,omitempty"`
+	IsUnmodified bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsUnmodified,omitempty" json:"IsUnmodified,omitempty"`
 
-	InternetMessageHeaders *NonEmptyArrayOfInternetHeadersType `xml:"t:InternetMessageHeaders,omitempty" json:"InternetMessageHeaders,omitempty"`
+	InternetMessageHeaders *NonEmptyArrayOfInternetHeadersType `xml:"http://schemas.microsoft.com/exchange/services/2006/types InternetMessageHeaders,omitempty" json:"InternetMessageHeaders,omitempty"`
 
-	DateTimeSent xsd.DateTime `xml:"t:DateTimeSent,omitempty" json:"DateTimeSent,omitempty"`
+	DateTimeSent xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types DateTimeSent,omitempty" json:"DateTimeSent,omitempty"`
 
-	DateTimeCreated xsd.DateTime `xml:"t:DateTimeCreated,omitempty" json:"DateTimeCreated,omitempty"`
+	DateTimeCreated xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types DateTimeCreated,omitempty" json:"DateTimeCreated,omitempty"`
 
-	ResponseObjects *NonEmptyArrayOfResponseObjectsType `xml:"t:ResponseObjects,omitempty" json:"ResponseObjects,omitempty"`
+	ResponseObjects *NonEmptyArrayOfResponseObjectsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ResponseObjects,omitempty" json:"ResponseObjects,omitempty"`
 
-	ReminderDueBy xsd.DateTime `xml:"t:ReminderDueBy,omitempty" json:"ReminderDueBy,omitempty"`
+	ReminderDueBy xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReminderDueBy,omitempty" json:"ReminderDueBy,omitempty"`
 
-	ReminderIsSet bool `xml:"t:ReminderIsSet,omitempty" json:"ReminderIsSet,omitempty"`
+	ReminderIsSet bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReminderIsSet,omitempty" json:"ReminderIsSet,omitempty"`
 
-	ReminderNextTime xsd.DateTime `xml:"t:ReminderNextTime,omitempty" json:"ReminderNextTime,omitempty"`
+	ReminderNextTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReminderNextTime,omitempty" json:"ReminderNextTime,omitempty"`
 
-	ReminderMinutesBeforeStart *ReminderMinutesBeforeStartType `xml:"t:ReminderMinutesBeforeStart,omitempty" json:"ReminderMinutesBeforeStart,omitempty"`
+	ReminderMinutesBeforeStart *ReminderMinutesBeforeStartType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReminderMinutesBeforeStart,omitempty" json:"ReminderMinutesBeforeStart,omitempty"`
 
-	DisplayCc string `xml:"t:DisplayCc,omitempty" json:"DisplayCc,omitempty"`
+	DisplayCc string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayCc,omitempty" json:"DisplayCc,omitempty"`
 
-	DisplayTo string `xml:"t:DisplayTo,omitempty" json:"DisplayTo,omitempty"`
+	DisplayTo string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayTo,omitempty" json:"DisplayTo,omitempty"`
 
-	DisplayBcc string `xml:"t:DisplayBcc,omitempty" json:"DisplayBcc,omitempty"`
+	DisplayBcc string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayBcc,omitempty" json:"DisplayBcc,omitempty"`
 
-	HasAttachments bool `xml:"t:HasAttachments,omitempty" json:"HasAttachments,omitempty"`
+	HasAttachments bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HasAttachments,omitempty" json:"HasAttachments,omitempty"`
 
-	ExtendedProperty []*ExtendedPropertyType `xml:"t:ExtendedProperty,omitempty" json:"ExtendedProperty,omitempty"`
+	ExtendedProperty []*ExtendedPropertyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedProperty,omitempty" json:"ExtendedProperty,omitempty"`
 
-	Culture *Language `xml:"t:Culture,omitempty" json:"Culture,omitempty"`
+	Culture *Language `xml:"http://schemas.microsoft.com/exchange/services/2006/types Culture,omitempty" json:"Culture,omitempty"`
 
-	EffectiveRights *EffectiveRightsType `xml:"t:EffectiveRights,omitempty" json:"EffectiveRights,omitempty"`
+	EffectiveRights *EffectiveRightsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EffectiveRights,omitempty" json:"EffectiveRights,omitempty"`
 
-	LastModifiedName string `xml:"t:LastModifiedName,omitempty" json:"LastModifiedName,omitempty"`
+	LastModifiedName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastModifiedName,omitempty" json:"LastModifiedName,omitempty"`
 
-	LastModifiedTime xsd.DateTime `xml:"t:LastModifiedTime,omitempty" json:"LastModifiedTime,omitempty"`
+	LastModifiedTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastModifiedTime,omitempty" json:"LastModifiedTime,omitempty"`
 
-	IsAssociated bool `xml:"t:IsAssociated,omitempty" json:"IsAssociated,omitempty"`
+	IsAssociated bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsAssociated,omitempty" json:"IsAssociated,omitempty"`
 
-	WebClientReadFormQueryString string `xml:"t:WebClientReadFormQueryString,omitempty" json:"WebClientReadFormQueryString,omitempty"`
+	WebClientReadFormQueryString string `xml:"http://schemas.microsoft.com/exchange/services/2006/types WebClientReadFormQueryString,omitempty" json:"WebClientReadFormQueryString,omitempty"`
 
-	WebClientEditFormQueryString string `xml:"t:WebClientEditFormQueryString,omitempty" json:"WebClientEditFormQueryString,omitempty"`
+	WebClientEditFormQueryString string `xml:"http://schemas.microsoft.com/exchange/services/2006/types WebClientEditFormQueryString,omitempty" json:"WebClientEditFormQueryString,omitempty"`
 
-	ConversationId *ItemIdType `xml:"t:ConversationId,omitempty" json:"ConversationId,omitempty"`
+	ConversationId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationId,omitempty" json:"ConversationId,omitempty"`
 
-	UniqueBody *BodyType `xml:"t:UniqueBody,omitempty" json:"UniqueBody,omitempty"`
+	UniqueBody *BodyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UniqueBody,omitempty" json:"UniqueBody,omitempty"`
 
-	Flag *FlagType `xml:"t:Flag,omitempty" json:"Flag,omitempty"`
+	Flag *FlagType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Flag,omitempty" json:"Flag,omitempty"`
 
-	StoreEntryId []byte `xml:"t:StoreEntryId,omitempty" json:"StoreEntryId,omitempty"`
+	StoreEntryId []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types StoreEntryId,omitempty" json:"StoreEntryId,omitempty"`
 
-	InstanceKey []byte `xml:"t:InstanceKey,omitempty" json:"InstanceKey,omitempty"`
+	InstanceKey []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types InstanceKey,omitempty" json:"InstanceKey,omitempty"`
 
-	NormalizedBody *BodyType `xml:"t:NormalizedBody,omitempty" json:"NormalizedBody,omitempty"`
+	NormalizedBody *BodyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types NormalizedBody,omitempty" json:"NormalizedBody,omitempty"`
 
-	EntityExtractionResult *EntityExtractionResultType `xml:"t:EntityExtractionResult,omitempty" json:"EntityExtractionResult,omitempty"`
+	EntityExtractionResult *EntityExtractionResultType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EntityExtractionResult,omitempty" json:"EntityExtractionResult,omitempty"`
 
-	PolicyTag *RetentionTagType `xml:"t:PolicyTag,omitempty" json:"PolicyTag,omitempty"`
+	PolicyTag *RetentionTagType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PolicyTag,omitempty" json:"PolicyTag,omitempty"`
 
-	ArchiveTag *RetentionTagType `xml:"t:ArchiveTag,omitempty" json:"ArchiveTag,omitempty"`
+	ArchiveTag *RetentionTagType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ArchiveTag,omitempty" json:"ArchiveTag,omitempty"`
 
-	RetentionDate xsd.DateTime `xml:"t:RetentionDate,omitempty" json:"RetentionDate,omitempty"`
+	RetentionDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types RetentionDate,omitempty" json:"RetentionDate,omitempty"`
 
-	Preview string `xml:"t:Preview,omitempty" json:"Preview,omitempty"`
+	Preview string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Preview,omitempty" json:"Preview,omitempty"`
 
-	RightsManagementLicenseData *RightsManagementLicenseDataType `xml:"t:RightsManagementLicenseData,omitempty" json:"RightsManagementLicenseData,omitempty"`
+	RightsManagementLicenseData *RightsManagementLicenseDataType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RightsManagementLicenseData,omitempty" json:"RightsManagementLicenseData,omitempty"`
 
-	PredictedActionReasons *NonEmptyArrayOfPredictedActionReasonType `xml:"t:PredictedActionReasons,omitempty" json:"PredictedActionReasons,omitempty"`
+	PredictedActionReasons *NonEmptyArrayOfPredictedActionReasonType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PredictedActionReasons,omitempty" json:"PredictedActionReasons,omitempty"`
 
-	IsClutter bool `xml:"t:IsClutter,omitempty" json:"IsClutter,omitempty"`
+	IsClutter bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsClutter,omitempty" json:"IsClutter,omitempty"`
 
-	BlockStatus bool `xml:"t:BlockStatus,omitempty" json:"BlockStatus,omitempty"`
+	BlockStatus bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types BlockStatus,omitempty" json:"BlockStatus,omitempty"`
 
-	HasBlockedImages bool `xml:"t:HasBlockedImages,omitempty" json:"HasBlockedImages,omitempty"`
+	HasBlockedImages bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HasBlockedImages,omitempty" json:"HasBlockedImages,omitempty"`
 
-	TextBody *BodyType `xml:"t:TextBody,omitempty" json:"TextBody,omitempty"`
+	TextBody *BodyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TextBody,omitempty" json:"TextBody,omitempty"`
 
-	IconIndex *IconIndexType `xml:"t:IconIndex,omitempty" json:"IconIndex,omitempty"`
+	IconIndex *IconIndexType `xml:"http://schemas.microsoft.com/exchange/services/2006/types IconIndex,omitempty" json:"IconIndex,omitempty"`
 
-	SearchKey []byte `xml:"t:SearchKey,omitempty" json:"SearchKey,omitempty"`
+	SearchKey []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchKey,omitempty" json:"SearchKey,omitempty"`
 
-	SortKey int64 `xml:"t:SortKey,omitempty" json:"SortKey,omitempty"`
+	SortKey int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types SortKey,omitempty" json:"SortKey,omitempty"`
 
-	Hashtags *ArrayOfStringsType `xml:"t:Hashtags,omitempty" json:"Hashtags,omitempty"`
+	Hashtags *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Hashtags,omitempty" json:"Hashtags,omitempty"`
 
-	Mentions *ArrayOfRecipientsType `xml:"t:Mentions,omitempty" json:"Mentions,omitempty"`
+	Mentions *ArrayOfRecipientsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mentions,omitempty" json:"Mentions,omitempty"`
 
-	MentionedMe bool `xml:"t:MentionedMe,omitempty" json:"MentionedMe,omitempty"`
+	MentionedMe bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types MentionedMe,omitempty" json:"MentionedMe,omitempty"`
 
-	MentionsPreview *MentionsPreviewType `xml:"t:MentionsPreview,omitempty" json:"MentionsPreview,omitempty"`
+	MentionsPreview *MentionsPreviewType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MentionsPreview,omitempty" json:"MentionsPreview,omitempty"`
 
-	MentionsEx *NonEmptyArrayOfMentionActionsType `xml:"t:MentionsEx,omitempty" json:"MentionsEx,omitempty"`
+	MentionsEx *NonEmptyArrayOfMentionActionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MentionsEx,omitempty" json:"MentionsEx,omitempty"`
 
-	AppliedHashtags *NonEmptyArrayOfAppliedHashtagType `xml:"t:AppliedHashtags,omitempty" json:"AppliedHashtags,omitempty"`
+	AppliedHashtags *NonEmptyArrayOfAppliedHashtagType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppliedHashtags,omitempty" json:"AppliedHashtags,omitempty"`
 
-	AppliedHashtagsPreview *AppliedHashtagsPreviewType `xml:"t:AppliedHashtagsPreview,omitempty" json:"AppliedHashtagsPreview,omitempty"`
+	AppliedHashtagsPreview *AppliedHashtagsPreviewType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppliedHashtagsPreview,omitempty" json:"AppliedHashtagsPreview,omitempty"`
 
-	Likes *NonEmptyArrayOfLikeType `xml:"t:Likes,omitempty" json:"Likes,omitempty"`
+	Likes *NonEmptyArrayOfLikeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Likes,omitempty" json:"Likes,omitempty"`
 
-	LikesPreview *LikesPreviewType `xml:"t:LikesPreview,omitempty" json:"LikesPreview,omitempty"`
+	LikesPreview *LikesPreviewType `xml:"http://schemas.microsoft.com/exchange/services/2006/types LikesPreview,omitempty" json:"LikesPreview,omitempty"`
 
-	PendingSocialActivityTagIds *ArrayOfStringsType `xml:"t:PendingSocialActivityTagIds,omitempty" json:"PendingSocialActivityTagIds,omitempty"`
+	PendingSocialActivityTagIds *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PendingSocialActivityTagIds,omitempty" json:"PendingSocialActivityTagIds,omitempty"`
 
-	AtAllMention bool `xml:"t:AtAllMention,omitempty" json:"AtAllMention,omitempty"`
+	AtAllMention bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types AtAllMention,omitempty" json:"AtAllMention,omitempty"`
 
-	CanDelete bool `xml:"t:CanDelete,omitempty" json:"CanDelete,omitempty"`
+	CanDelete bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types CanDelete,omitempty" json:"CanDelete,omitempty"`
 
-	InferenceClassification *InferenceClassificationType `xml:"t:InferenceClassification,omitempty" json:"InferenceClassification,omitempty"`
+	InferenceClassification *InferenceClassificationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types InferenceClassification,omitempty" json:"InferenceClassification,omitempty"`
 }
 
 type ArrayOfItemClassType struct {
-	ItemClass *ItemClassType `xml:"t:ItemClass,omitempty" json:"ItemClass,omitempty"`
+	ItemClass *ItemClassType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemClass,omitempty" json:"ItemClass,omitempty"`
 }
 
 type FlagType struct {
-	FlagStatus *FlagStatusType `xml:"t:FlagStatus,omitempty" json:"FlagStatus,omitempty"`
+	FlagStatus *FlagStatusType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FlagStatus,omitempty" json:"FlagStatus,omitempty"`
 
-	StartDate xsd.DateTime `xml:"t:StartDate,omitempty" json:"StartDate,omitempty"`
+	StartDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartDate,omitempty" json:"StartDate,omitempty"`
 
-	DueDate xsd.DateTime `xml:"t:DueDate,omitempty" json:"DueDate,omitempty"`
+	DueDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types DueDate,omitempty" json:"DueDate,omitempty"`
 
-	CompleteDate xsd.DateTime `xml:"t:CompleteDate,omitempty" json:"CompleteDate,omitempty"`
+	CompleteDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompleteDate,omitempty" json:"CompleteDate,omitempty"`
 }
 
 type EntityType struct {
-	Position []*EmailPositionType `xml:"t:Position,omitempty" json:"Position,omitempty"`
+	Position []*EmailPositionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Position,omitempty" json:"Position,omitempty"`
 }
 
 type ArrayOfAddressesType struct {
-	XMLName xml.Name `xml:"t:Addresses"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Addresses"`
 
-	Address []string `xml:"t:Address,omitempty" json:"Address,omitempty"`
+	Address []string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Address,omitempty" json:"Address,omitempty"`
 }
 
 type ArrayOfAddressEntitiesType struct {
-	XMLName xml.Name `xml:"t:Addresses"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Addresses"`
 
-	AddressEntity []*AddressEntityType `xml:"t:AddressEntity,omitempty" json:"AddressEntity,omitempty"`
+	AddressEntity []*AddressEntityType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AddressEntity,omitempty" json:"AddressEntity,omitempty"`
 }
 
 type AddressEntityType struct {
-	XMLName xml.Name `xml:"t:AddressEntity"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AddressEntity"`
 
 	*EntityType
 
-	Address string `xml:"t:Address,omitempty" json:"Address,omitempty"`
+	Address string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Address,omitempty" json:"Address,omitempty"`
 }
 
 type ArrayOfEmailAddressEntitiesType struct {
-	XMLName xml.Name `xml:"t:EmailAddresses"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddresses"`
 
-	EmailAddressEntity []*EmailAddressEntityType `xml:"t:EmailAddressEntity,omitempty" json:"EmailAddressEntity,omitempty"`
+	EmailAddressEntity []*EmailAddressEntityType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddressEntity,omitempty" json:"EmailAddressEntity,omitempty"`
 }
 
 type EmailAddressEntityType struct {
-	XMLName xml.Name `xml:"t:EmailAddressEntity"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddressEntity"`
 
 	*EntityType
 
-	EmailAddress string `xml:"t:EmailAddress,omitempty" json:"EmailAddress,omitempty"`
+	EmailAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 }
 
 type ArrayOfUrlEntitiesType struct {
-	XMLName xml.Name `xml:"t:Urls"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Urls"`
 
-	UrlEntity []*UrlEntityType `xml:"t:UrlEntity,omitempty" json:"UrlEntity,omitempty"`
+	UrlEntity []*UrlEntityType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UrlEntity,omitempty" json:"UrlEntity,omitempty"`
 }
 
 type UrlEntityType struct {
-	XMLName xml.Name `xml:"t:UrlEntity"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types UrlEntity"`
 
 	*EntityType
 
-	Url string `xml:"t:Url,omitempty" json:"Url,omitempty"`
+	Url string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Url,omitempty" json:"Url,omitempty"`
 }
 
 type ArrayOfMeetingSuggestionsType struct {
-	XMLName xml.Name `xml:"t:MeetingSuggestions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingSuggestions"`
 
-	MeetingSuggestion []*MeetingSuggestionType `xml:"t:MeetingSuggestion,omitempty" json:"MeetingSuggestion,omitempty"`
+	MeetingSuggestion []*MeetingSuggestionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingSuggestion,omitempty" json:"MeetingSuggestion,omitempty"`
 }
 
 type MeetingSuggestionType struct {
-	XMLName xml.Name `xml:"t:MeetingSuggestion"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingSuggestion"`
 
 	*EntityType
 
-	Attendees *ArrayOfEmailUsersType `xml:"t:Attendees,omitempty" json:"Attendees,omitempty"`
+	Attendees *ArrayOfEmailUsersType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attendees,omitempty" json:"Attendees,omitempty"`
 
-	Location string `xml:"t:Location,omitempty" json:"Location,omitempty"`
+	Location string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Location,omitempty" json:"Location,omitempty"`
 
-	Subject string `xml:"t:Subject,omitempty" json:"Subject,omitempty"`
+	Subject string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Subject,omitempty" json:"Subject,omitempty"`
 
-	MeetingString string `xml:"t:MeetingString,omitempty" json:"MeetingString,omitempty"`
+	MeetingString string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingString,omitempty" json:"MeetingString,omitempty"`
 
-	StartTime xsd.DateTime `xml:"t:StartTime,omitempty" json:"StartTime,omitempty"`
+	StartTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTime,omitempty" json:"StartTime,omitempty"`
 
-	EndTime xsd.DateTime `xml:"t:EndTime,omitempty" json:"EndTime,omitempty"`
+	EndTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndTime,omitempty" json:"EndTime,omitempty"`
 }
 
 type ArrayOfTaskSuggestionsType struct {
-	XMLName xml.Name `xml:"t:TaskSuggestions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types TaskSuggestions"`
 
-	TaskSuggestion []*TaskSuggestionType `xml:"t:TaskSuggestion,omitempty" json:"TaskSuggestion,omitempty"`
+	TaskSuggestion []*TaskSuggestionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TaskSuggestion,omitempty" json:"TaskSuggestion,omitempty"`
 }
 
 type ArrayOfContactsType struct {
-	XMLName xml.Name `xml:"t:Contacts"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Contacts"`
 
-	Contact []*ContactType `xml:"t:Contact,omitempty" json:"Contact,omitempty"`
+	Contact []*ContactType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Contact,omitempty" json:"Contact,omitempty"`
 }
 
 type ContactType struct {
-	XMLName xml.Name `xml:"t:Contact"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Contact"`
 
 	*EntityType
 
-	PersonName string `xml:"t:PersonName,omitempty" json:"PersonName,omitempty"`
+	PersonName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PersonName,omitempty" json:"PersonName,omitempty"`
 
-	BusinessName string `xml:"t:BusinessName,omitempty" json:"BusinessName,omitempty"`
+	BusinessName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types BusinessName,omitempty" json:"BusinessName,omitempty"`
 
-	PhoneNumbers *ArrayOfPhonesType `xml:"t:PhoneNumbers,omitempty" json:"PhoneNumbers,omitempty"`
+	PhoneNumbers *ArrayOfPhonesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneNumbers,omitempty" json:"PhoneNumbers,omitempty"`
 
-	Urls *ArrayOfUrlsType `xml:"t:Urls,omitempty" json:"Urls,omitempty"`
+	Urls *ArrayOfUrlsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Urls,omitempty" json:"Urls,omitempty"`
 
-	EmailAddresses *ArrayOfExtractedEmailAddresses `xml:"t:EmailAddresses,omitempty" json:"EmailAddresses,omitempty"`
+	EmailAddresses *ArrayOfExtractedEmailAddresses `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddresses,omitempty" json:"EmailAddresses,omitempty"`
 
-	Addresses *ArrayOfAddressesType `xml:"t:Addresses,omitempty" json:"Addresses,omitempty"`
+	Addresses *ArrayOfAddressesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Addresses,omitempty" json:"Addresses,omitempty"`
 
-	ContactString string `xml:"t:ContactString,omitempty" json:"ContactString,omitempty"`
+	ContactString string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactString,omitempty" json:"ContactString,omitempty"`
 }
 
 type ArrayOfUrlsType struct {
-	XMLName xml.Name `xml:"t:Urls"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Urls"`
 
-	Url []string `xml:"t:Url,omitempty" json:"Url,omitempty"`
+	Url []string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Url,omitempty" json:"Url,omitempty"`
 }
 
 type ArrayOfPhonesType struct {
-	XMLName xml.Name `xml:"t:PhoneNumbers"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneNumbers"`
 
-	Phone []*PhoneType `xml:"t:Phone,omitempty" json:"Phone,omitempty"`
+	Phone []*PhoneType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Phone,omitempty" json:"Phone,omitempty"`
 }
 
 type PhoneType struct {
-	XMLName xml.Name `xml:"t:Phone"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Phone"`
 
-	OriginalPhoneString string `xml:"t:OriginalPhoneString,omitempty" json:"OriginalPhoneString,omitempty"`
+	OriginalPhoneString string `xml:"http://schemas.microsoft.com/exchange/services/2006/types OriginalPhoneString,omitempty" json:"OriginalPhoneString,omitempty"`
 
-	PhoneString string `xml:"t:PhoneString,omitempty" json:"PhoneString,omitempty"`
+	PhoneString string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneString,omitempty" json:"PhoneString,omitempty"`
 
-	Type string `xml:"t:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Type,omitempty" json:"Type,omitempty"`
 }
 
 type ArrayOfPhoneEntitiesType struct {
-	XMLName xml.Name `xml:"t:PhoneNumbers"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneNumbers"`
 
-	Phone []*PhoneEntityType `xml:"t:Phone,omitempty" json:"Phone,omitempty"`
+	Phone []*PhoneEntityType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Phone,omitempty" json:"Phone,omitempty"`
 }
 
 type PhoneEntityType struct {
-	XMLName xml.Name `xml:"t:Phone"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Phone"`
 
 	*EntityType
 
-	OriginalPhoneString string `xml:"t:OriginalPhoneString,omitempty" json:"OriginalPhoneString,omitempty"`
+	OriginalPhoneString string `xml:"http://schemas.microsoft.com/exchange/services/2006/types OriginalPhoneString,omitempty" json:"OriginalPhoneString,omitempty"`
 
-	PhoneString string `xml:"t:PhoneString,omitempty" json:"PhoneString,omitempty"`
+	PhoneString string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneString,omitempty" json:"PhoneString,omitempty"`
 
-	Type string `xml:"t:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Type,omitempty" json:"Type,omitempty"`
 }
 
 type ArrayOfEmailUsersType struct {
-	EmailUser []*EmailUserType `xml:"t:EmailUser,omitempty" json:"EmailUser,omitempty"`
+	EmailUser []*EmailUserType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailUser,omitempty" json:"EmailUser,omitempty"`
 }
 
 type EmailUserType struct {
-	XMLName xml.Name `xml:"t:EmailUser"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailUser"`
 
-	Name string `xml:"t:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Name,omitempty" json:"Name,omitempty"`
 
-	UserId string `xml:"t:UserId,omitempty" json:"UserId,omitempty"`
+	UserId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserId,omitempty" json:"UserId,omitempty"`
 }
 
 type TaskSuggestionType struct {
-	XMLName xml.Name `xml:"t:TaskSuggestion"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types TaskSuggestion"`
 
 	*EntityType
 
-	TaskString string `xml:"t:TaskString,omitempty" json:"TaskString,omitempty"`
+	TaskString string `xml:"http://schemas.microsoft.com/exchange/services/2006/types TaskString,omitempty" json:"TaskString,omitempty"`
 
-	Assignees *ArrayOfEmailUsersType `xml:"t:Assignees,omitempty" json:"Assignees,omitempty"`
+	Assignees *ArrayOfEmailUsersType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Assignees,omitempty" json:"Assignees,omitempty"`
 }
 
 type ArrayOfExtractedEmailAddresses struct {
-	XMLName xml.Name `xml:"t:EmailAddresses"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddresses"`
 
-	EmailAddress []string `xml:"t:EmailAddress,omitempty" json:"EmailAddress,omitempty"`
+	EmailAddress []string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 }
 
 type ParcelDeliveryEntityType struct {
-	XMLName xml.Name `xml:"t:ParcelDelivery"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ParcelDelivery"`
 
-	Carrier string `xml:"t:Carrier,omitempty" json:"Carrier,omitempty"`
+	Carrier string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Carrier,omitempty" json:"Carrier,omitempty"`
 
-	TrackingNumber string `xml:"t:TrackingNumber,omitempty" json:"TrackingNumber,omitempty"`
+	TrackingNumber string `xml:"http://schemas.microsoft.com/exchange/services/2006/types TrackingNumber,omitempty" json:"TrackingNumber,omitempty"`
 
-	TrackingUrl string `xml:"t:TrackingUrl,omitempty" json:"TrackingUrl,omitempty"`
+	TrackingUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types TrackingUrl,omitempty" json:"TrackingUrl,omitempty"`
 
-	ExpectedArrivalFrom string `xml:"t:ExpectedArrivalFrom,omitempty" json:"ExpectedArrivalFrom,omitempty"`
+	ExpectedArrivalFrom string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExpectedArrivalFrom,omitempty" json:"ExpectedArrivalFrom,omitempty"`
 
-	ExpectedArrivalUntil string `xml:"t:ExpectedArrivalUntil,omitempty" json:"ExpectedArrivalUntil,omitempty"`
+	ExpectedArrivalUntil string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExpectedArrivalUntil,omitempty" json:"ExpectedArrivalUntil,omitempty"`
 
-	Product string `xml:"t:Product,omitempty" json:"Product,omitempty"`
+	Product string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Product,omitempty" json:"Product,omitempty"`
 
-	ProductUrl string `xml:"t:ProductUrl,omitempty" json:"ProductUrl,omitempty"`
+	ProductUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProductUrl,omitempty" json:"ProductUrl,omitempty"`
 
-	ProductImage string `xml:"t:ProductImage,omitempty" json:"ProductImage,omitempty"`
+	ProductImage string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProductImage,omitempty" json:"ProductImage,omitempty"`
 
-	ProductSku string `xml:"t:ProductSku,omitempty" json:"ProductSku,omitempty"`
+	ProductSku string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProductSku,omitempty" json:"ProductSku,omitempty"`
 
-	ProductDescription string `xml:"t:ProductDescription,omitempty" json:"ProductDescription,omitempty"`
+	ProductDescription string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProductDescription,omitempty" json:"ProductDescription,omitempty"`
 
-	ProductBrand string `xml:"t:ProductBrand,omitempty" json:"ProductBrand,omitempty"`
+	ProductBrand string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProductBrand,omitempty" json:"ProductBrand,omitempty"`
 
-	ProductColor string `xml:"t:ProductColor,omitempty" json:"ProductColor,omitempty"`
+	ProductColor string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProductColor,omitempty" json:"ProductColor,omitempty"`
 
-	OrderNumber string `xml:"t:OrderNumber,omitempty" json:"OrderNumber,omitempty"`
+	OrderNumber string `xml:"http://schemas.microsoft.com/exchange/services/2006/types OrderNumber,omitempty" json:"OrderNumber,omitempty"`
 
-	Seller string `xml:"t:Seller,omitempty" json:"Seller,omitempty"`
+	Seller string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Seller,omitempty" json:"Seller,omitempty"`
 
-	OrderStatus string `xml:"t:OrderStatus,omitempty" json:"OrderStatus,omitempty"`
+	OrderStatus string `xml:"http://schemas.microsoft.com/exchange/services/2006/types OrderStatus,omitempty" json:"OrderStatus,omitempty"`
 
-	AddressName string `xml:"t:AddressName,omitempty" json:"AddressName,omitempty"`
+	AddressName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AddressName,omitempty" json:"AddressName,omitempty"`
 
-	StreetAddress string `xml:"t:StreetAddress,omitempty" json:"StreetAddress,omitempty"`
+	StreetAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types StreetAddress,omitempty" json:"StreetAddress,omitempty"`
 
-	AddressLocality string `xml:"t:AddressLocality,omitempty" json:"AddressLocality,omitempty"`
+	AddressLocality string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AddressLocality,omitempty" json:"AddressLocality,omitempty"`
 
-	AddressRegion string `xml:"t:AddressRegion,omitempty" json:"AddressRegion,omitempty"`
+	AddressRegion string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AddressRegion,omitempty" json:"AddressRegion,omitempty"`
 
-	AddressCountry string `xml:"t:AddressCountry,omitempty" json:"AddressCountry,omitempty"`
+	AddressCountry string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AddressCountry,omitempty" json:"AddressCountry,omitempty"`
 
-	PostalCode string `xml:"t:PostalCode,omitempty" json:"PostalCode,omitempty"`
+	PostalCode string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostalCode,omitempty" json:"PostalCode,omitempty"`
 }
 
 type InferenceClassificationOverrideType struct {
-	Id *GuidType `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	SenderSmtpAddress string `xml:"t:SenderSmtpAddress,omitempty" json:"SenderSmtpAddress,omitempty"`
+	SenderSmtpAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SenderSmtpAddress,omitempty" json:"SenderSmtpAddress,omitempty"`
 
-	SenderDisplayName string `xml:"t:SenderDisplayName,omitempty" json:"SenderDisplayName,omitempty"`
+	SenderDisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SenderDisplayName,omitempty" json:"SenderDisplayName,omitempty"`
 
-	AlwaysClassifyAs *InferenceClassificationType `xml:"t:AlwaysClassifyAs,omitempty" json:"AlwaysClassifyAs,omitempty"`
+	AlwaysClassifyAs *InferenceClassificationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AlwaysClassifyAs,omitempty" json:"AlwaysClassifyAs,omitempty"`
 }
 
 type ArrayOfInferenceClassificationOverridesType struct {
-	XMLName xml.Name `xml:"t:Overrides"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Overrides"`
 
-	Override []*InferenceClassificationOverrideType `xml:"t:Override,omitempty" json:"Override,omitempty"`
+	Override []*InferenceClassificationOverrideType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Override,omitempty" json:"Override,omitempty"`
 }
 
 type ArrayOfParcelDeliveryEntitiesType struct {
-	XMLName xml.Name `xml:"t:ParcelDeliveries"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ParcelDeliveries"`
 
-	ParcelDelivery []*ParcelDeliveryEntityType `xml:"t:ParcelDelivery,omitempty" json:"ParcelDelivery,omitempty"`
+	ParcelDelivery []*ParcelDeliveryEntityType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ParcelDelivery,omitempty" json:"ParcelDelivery,omitempty"`
 }
 
 type FlightEntityType struct {
-	XMLName xml.Name `xml:"t:Flight"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Flight"`
 
-	FlightNumber string `xml:"t:FlightNumber,omitempty" json:"FlightNumber,omitempty"`
+	FlightNumber string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FlightNumber,omitempty" json:"FlightNumber,omitempty"`
 
-	AirlineIataCode string `xml:"t:AirlineIataCode,omitempty" json:"AirlineIataCode,omitempty"`
+	AirlineIataCode string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AirlineIataCode,omitempty" json:"AirlineIataCode,omitempty"`
 
-	DepartureTime string `xml:"t:DepartureTime,omitempty" json:"DepartureTime,omitempty"`
+	DepartureTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DepartureTime,omitempty" json:"DepartureTime,omitempty"`
 
-	WindowsTimeZoneName string `xml:"t:WindowsTimeZoneName,omitempty" json:"WindowsTimeZoneName,omitempty"`
+	WindowsTimeZoneName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types WindowsTimeZoneName,omitempty" json:"WindowsTimeZoneName,omitempty"`
 
-	DepartureAirportIataCode string `xml:"t:DepartureAirportIataCode,omitempty" json:"DepartureAirportIataCode,omitempty"`
+	DepartureAirportIataCode string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DepartureAirportIataCode,omitempty" json:"DepartureAirportIataCode,omitempty"`
 
-	ArrivalAirportIataCode string `xml:"t:ArrivalAirportIataCode,omitempty" json:"ArrivalAirportIataCode,omitempty"`
+	ArrivalAirportIataCode string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ArrivalAirportIataCode,omitempty" json:"ArrivalAirportIataCode,omitempty"`
 }
 
 type ArrayOfFlightsType struct {
-	XMLName xml.Name `xml:"t:Flights"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Flights"`
 
-	Flight []*FlightEntityType `xml:"t:Flight,omitempty" json:"Flight,omitempty"`
+	Flight []*FlightEntityType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Flight,omitempty" json:"Flight,omitempty"`
 }
 
 type FlightReservationEntityType struct {
-	XMLName xml.Name `xml:"t:FlightReservation"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types FlightReservation"`
 
-	ReservationId string `xml:"t:ReservationId,omitempty" json:"ReservationId,omitempty"`
+	ReservationId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReservationId,omitempty" json:"ReservationId,omitempty"`
 
-	ReservationStatus string `xml:"t:ReservationStatus,omitempty" json:"ReservationStatus,omitempty"`
+	ReservationStatus string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReservationStatus,omitempty" json:"ReservationStatus,omitempty"`
 
-	UnderName string `xml:"t:UnderName,omitempty" json:"UnderName,omitempty"`
+	UnderName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types UnderName,omitempty" json:"UnderName,omitempty"`
 
-	BrokerName string `xml:"t:BrokerName,omitempty" json:"BrokerName,omitempty"`
+	BrokerName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types BrokerName,omitempty" json:"BrokerName,omitempty"`
 
-	BrokerPhone string `xml:"t:BrokerPhone,omitempty" json:"BrokerPhone,omitempty"`
+	BrokerPhone string `xml:"http://schemas.microsoft.com/exchange/services/2006/types BrokerPhone,omitempty" json:"BrokerPhone,omitempty"`
 
-	Flights *ArrayOfFlightsType `xml:"t:Flights,omitempty" json:"Flights,omitempty"`
+	Flights *ArrayOfFlightsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Flights,omitempty" json:"Flights,omitempty"`
 }
 
 type ArrayOfFlightReservationsType struct {
-	XMLName xml.Name `xml:"t:FlightReservations"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types FlightReservations"`
 
-	FlightReservation []*FlightReservationEntityType `xml:"t:FlightReservation,omitempty" json:"FlightReservation,omitempty"`
+	FlightReservation []*FlightReservationEntityType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FlightReservation,omitempty" json:"FlightReservation,omitempty"`
 }
 
 type SenderAddInEntityType struct {
-	XMLName xml.Name `xml:"t:Microsoft.OutlookServices.SenderApp"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Microsoft.OutlookServices.SenderApp"`
 
-	ExtensionId string `xml:"t:ExtensionId,omitempty" json:"ExtensionId,omitempty"`
+	ExtensionId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtensionId,omitempty" json:"ExtensionId,omitempty"`
 }
 
 type ArrayOfSenderAddInsType struct {
-	XMLName xml.Name `xml:"t:SenderAddIns"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SenderAddIns"`
 
-	Microsoft_OutlookServices_SenderApp []*SenderAddInEntityType `xml:"t:Microsoft.OutlookServices.SenderApp,omitempty" json:"Microsoft.OutlookServices.SenderApp,omitempty"`
+	Microsoft_OutlookServices_SenderApp []*SenderAddInEntityType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Microsoft.OutlookServices.SenderApp,omitempty" json:"Microsoft.OutlookServices.SenderApp,omitempty"`
 }
 
 type EntityExtractionResultType struct {
-	XMLName xml.Name `xml:"t:EntityExtractionResult"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types EntityExtractionResult"`
 
-	Addresses *ArrayOfAddressEntitiesType `xml:"t:Addresses,omitempty" json:"Addresses,omitempty"`
+	Addresses *ArrayOfAddressEntitiesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Addresses,omitempty" json:"Addresses,omitempty"`
 
-	MeetingSuggestions *ArrayOfMeetingSuggestionsType `xml:"t:MeetingSuggestions,omitempty" json:"MeetingSuggestions,omitempty"`
+	MeetingSuggestions *ArrayOfMeetingSuggestionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingSuggestions,omitempty" json:"MeetingSuggestions,omitempty"`
 
-	TaskSuggestions *ArrayOfTaskSuggestionsType `xml:"t:TaskSuggestions,omitempty" json:"TaskSuggestions,omitempty"`
+	TaskSuggestions *ArrayOfTaskSuggestionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TaskSuggestions,omitempty" json:"TaskSuggestions,omitempty"`
 
-	EmailAddresses *ArrayOfEmailAddressEntitiesType `xml:"t:EmailAddresses,omitempty" json:"EmailAddresses,omitempty"`
+	EmailAddresses *ArrayOfEmailAddressEntitiesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddresses,omitempty" json:"EmailAddresses,omitempty"`
 
-	Contacts *ArrayOfContactsType `xml:"t:Contacts,omitempty" json:"Contacts,omitempty"`
+	Contacts *ArrayOfContactsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Contacts,omitempty" json:"Contacts,omitempty"`
 
-	Urls *ArrayOfUrlEntitiesType `xml:"t:Urls,omitempty" json:"Urls,omitempty"`
+	Urls *ArrayOfUrlEntitiesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Urls,omitempty" json:"Urls,omitempty"`
 
-	PhoneNumbers *ArrayOfPhoneEntitiesType `xml:"t:PhoneNumbers,omitempty" json:"PhoneNumbers,omitempty"`
+	PhoneNumbers *ArrayOfPhoneEntitiesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneNumbers,omitempty" json:"PhoneNumbers,omitempty"`
 
-	ParcelDeliveries *ArrayOfParcelDeliveryEntitiesType `xml:"t:ParcelDeliveries,omitempty" json:"ParcelDeliveries,omitempty"`
+	ParcelDeliveries *ArrayOfParcelDeliveryEntitiesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ParcelDeliveries,omitempty" json:"ParcelDeliveries,omitempty"`
 
-	FlightReservations *ArrayOfFlightReservationsType `xml:"t:FlightReservations,omitempty" json:"FlightReservations,omitempty"`
+	FlightReservations *ArrayOfFlightReservationsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FlightReservations,omitempty" json:"FlightReservations,omitempty"`
 
-	SenderAddIns *ArrayOfSenderAddInsType `xml:"t:SenderAddIns,omitempty" json:"SenderAddIns,omitempty"`
+	SenderAddIns *ArrayOfSenderAddInsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SenderAddIns,omitempty" json:"SenderAddIns,omitempty"`
 }
 
 type RightsManagementLicenseDataType struct {
-	XMLName xml.Name `xml:"t:RightsManagementLicenseData"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RightsManagementLicenseData"`
 
-	RightsManagedMessageDecryptionStatus int32 `xml:"t:RightsManagedMessageDecryptionStatus,omitempty" json:"RightsManagedMessageDecryptionStatus,omitempty"`
+	RightsManagedMessageDecryptionStatus int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types RightsManagedMessageDecryptionStatus,omitempty" json:"RightsManagedMessageDecryptionStatus,omitempty"`
 
-	RmsTemplateId string `xml:"t:RmsTemplateId,omitempty" json:"RmsTemplateId,omitempty"`
+	RmsTemplateId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types RmsTemplateId,omitempty" json:"RmsTemplateId,omitempty"`
 
-	TemplateName string `xml:"t:TemplateName,omitempty" json:"TemplateName,omitempty"`
+	TemplateName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types TemplateName,omitempty" json:"TemplateName,omitempty"`
 
-	TemplateDescription string `xml:"t:TemplateDescription,omitempty" json:"TemplateDescription,omitempty"`
+	TemplateDescription string `xml:"http://schemas.microsoft.com/exchange/services/2006/types TemplateDescription,omitempty" json:"TemplateDescription,omitempty"`
 
-	EditAllowed bool `xml:"t:EditAllowed,omitempty" json:"EditAllowed,omitempty"`
+	EditAllowed bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types EditAllowed,omitempty" json:"EditAllowed,omitempty"`
 
-	ReplyAllowed bool `xml:"t:ReplyAllowed,omitempty" json:"ReplyAllowed,omitempty"`
+	ReplyAllowed bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReplyAllowed,omitempty" json:"ReplyAllowed,omitempty"`
 
-	ReplyAllAllowed bool `xml:"t:ReplyAllAllowed,omitempty" json:"ReplyAllAllowed,omitempty"`
+	ReplyAllAllowed bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReplyAllAllowed,omitempty" json:"ReplyAllAllowed,omitempty"`
 
-	ForwardAllowed bool `xml:"t:ForwardAllowed,omitempty" json:"ForwardAllowed,omitempty"`
+	ForwardAllowed bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ForwardAllowed,omitempty" json:"ForwardAllowed,omitempty"`
 
-	ModifyRecipientsAllowed bool `xml:"t:ModifyRecipientsAllowed,omitempty" json:"ModifyRecipientsAllowed,omitempty"`
+	ModifyRecipientsAllowed bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ModifyRecipientsAllowed,omitempty" json:"ModifyRecipientsAllowed,omitempty"`
 
-	ExtractAllowed bool `xml:"t:ExtractAllowed,omitempty" json:"ExtractAllowed,omitempty"`
+	ExtractAllowed bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtractAllowed,omitempty" json:"ExtractAllowed,omitempty"`
 
-	PrintAllowed bool `xml:"t:PrintAllowed,omitempty" json:"PrintAllowed,omitempty"`
+	PrintAllowed bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types PrintAllowed,omitempty" json:"PrintAllowed,omitempty"`
 
-	ExportAllowed bool `xml:"t:ExportAllowed,omitempty" json:"ExportAllowed,omitempty"`
+	ExportAllowed bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExportAllowed,omitempty" json:"ExportAllowed,omitempty"`
 
-	ProgrammaticAccessAllowed bool `xml:"t:ProgrammaticAccessAllowed,omitempty" json:"ProgrammaticAccessAllowed,omitempty"`
+	ProgrammaticAccessAllowed bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProgrammaticAccessAllowed,omitempty" json:"ProgrammaticAccessAllowed,omitempty"`
 
-	IsOwner bool `xml:"t:IsOwner,omitempty" json:"IsOwner,omitempty"`
+	IsOwner bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsOwner,omitempty" json:"IsOwner,omitempty"`
 
-	ContentOwner string `xml:"t:ContentOwner,omitempty" json:"ContentOwner,omitempty"`
+	ContentOwner string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContentOwner,omitempty" json:"ContentOwner,omitempty"`
 
-	ContentExpiryDate string `xml:"t:ContentExpiryDate,omitempty" json:"ContentExpiryDate,omitempty"`
+	ContentExpiryDate string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContentExpiryDate,omitempty" json:"ContentExpiryDate,omitempty"`
 }
 
 type ConversationActionType struct {
-	XMLName xml.Name `xml:"t:ConversationAction"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationAction"`
 
-	Action *ConversationActionTypeType `xml:"t:Action,omitempty" json:"Action,omitempty"`
+	Action *ConversationActionTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Action,omitempty" json:"Action,omitempty"`
 
-	ConversationId *ItemIdType `xml:"t:ConversationId,omitempty" json:"ConversationId,omitempty"`
+	ConversationId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationId,omitempty" json:"ConversationId,omitempty"`
 
-	ContextFolderId *TargetFolderIdType `xml:"t:ContextFolderId,omitempty" json:"ContextFolderId,omitempty"`
+	ContextFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContextFolderId,omitempty" json:"ContextFolderId,omitempty"`
 
-	ConversationLastSyncTime xsd.DateTime `xml:"t:ConversationLastSyncTime,omitempty" json:"ConversationLastSyncTime,omitempty"`
+	ConversationLastSyncTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationLastSyncTime,omitempty" json:"ConversationLastSyncTime,omitempty"`
 
-	ProcessRightAway bool `xml:"t:ProcessRightAway,omitempty" json:"ProcessRightAway,omitempty"`
+	ProcessRightAway bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProcessRightAway,omitempty" json:"ProcessRightAway,omitempty"`
 
-	DestinationFolderId *TargetFolderIdType `xml:"t:DestinationFolderId,omitempty" json:"DestinationFolderId,omitempty"`
+	DestinationFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DestinationFolderId,omitempty" json:"DestinationFolderId,omitempty"`
 
-	Categories *ArrayOfStringsType `xml:"t:Categories,omitempty" json:"Categories,omitempty"`
+	Categories *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Categories,omitempty" json:"Categories,omitempty"`
 
-	EnableAlwaysDelete bool `xml:"t:EnableAlwaysDelete,omitempty" json:"EnableAlwaysDelete,omitempty"`
+	EnableAlwaysDelete bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types EnableAlwaysDelete,omitempty" json:"EnableAlwaysDelete,omitempty"`
 
-	IsRead bool `xml:"t:IsRead,omitempty" json:"IsRead,omitempty"`
+	IsRead bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsRead,omitempty" json:"IsRead,omitempty"`
 
-	DeleteType *DisposalType `xml:"t:DeleteType,omitempty" json:"DeleteType,omitempty"`
+	DeleteType *DisposalType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeleteType,omitempty" json:"DeleteType,omitempty"`
 
-	RetentionPolicyType *RetentionType `xml:"t:RetentionPolicyType,omitempty" json:"RetentionPolicyType,omitempty"`
+	RetentionPolicyType *RetentionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RetentionPolicyType,omitempty" json:"RetentionPolicyType,omitempty"`
 
-	RetentionPolicyTagId string `xml:"t:RetentionPolicyTagId,omitempty" json:"RetentionPolicyTagId,omitempty"`
+	RetentionPolicyTagId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types RetentionPolicyTagId,omitempty" json:"RetentionPolicyTagId,omitempty"`
 
-	Flag *FlagType `xml:"t:Flag,omitempty" json:"Flag,omitempty"`
+	Flag *FlagType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Flag,omitempty" json:"Flag,omitempty"`
 
-	SuppressReadReceipts bool `xml:"t:SuppressReadReceipts,omitempty" json:"SuppressReadReceipts,omitempty"`
+	SuppressReadReceipts bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types SuppressReadReceipts,omitempty" json:"SuppressReadReceipts,omitempty"`
 }
 
 type NonEmptyArrayOfApplyConversationActionType struct {
-	XMLName xml.Name `xml:"t:ConversationActions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationActions"`
 
-	ConversationAction []*ConversationActionType `xml:"t:ConversationAction,omitempty" json:"ConversationAction,omitempty"`
+	ConversationAction []*ConversationActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationAction,omitempty" json:"ConversationAction,omitempty"`
 }
 
 type ConversationType struct {
-	ConversationId *ItemIdType `xml:"t:ConversationId,omitempty" json:"ConversationId,omitempty"`
+	ConversationId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationId,omitempty" json:"ConversationId,omitempty"`
 
-	ConversationTopic string `xml:"t:ConversationTopic,omitempty" json:"ConversationTopic,omitempty"`
+	ConversationTopic string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationTopic,omitempty" json:"ConversationTopic,omitempty"`
 
-	UniqueRecipients *ArrayOfStringsType `xml:"t:UniqueRecipients,omitempty" json:"UniqueRecipients,omitempty"`
+	UniqueRecipients *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UniqueRecipients,omitempty" json:"UniqueRecipients,omitempty"`
 
-	GlobalUniqueRecipients *ArrayOfStringsType `xml:"t:GlobalUniqueRecipients,omitempty" json:"GlobalUniqueRecipients,omitempty"`
+	GlobalUniqueRecipients *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalUniqueRecipients,omitempty" json:"GlobalUniqueRecipients,omitempty"`
 
-	UniqueUnreadSenders *ArrayOfStringsType `xml:"t:UniqueUnreadSenders,omitempty" json:"UniqueUnreadSenders,omitempty"`
+	UniqueUnreadSenders *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UniqueUnreadSenders,omitempty" json:"UniqueUnreadSenders,omitempty"`
 
-	GlobalUniqueUnreadSenders *ArrayOfStringsType `xml:"t:GlobalUniqueUnreadSenders,omitempty" json:"GlobalUniqueUnreadSenders,omitempty"`
+	GlobalUniqueUnreadSenders *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalUniqueUnreadSenders,omitempty" json:"GlobalUniqueUnreadSenders,omitempty"`
 
-	UniqueSenders *ArrayOfStringsType `xml:"t:UniqueSenders,omitempty" json:"UniqueSenders,omitempty"`
+	UniqueSenders *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UniqueSenders,omitempty" json:"UniqueSenders,omitempty"`
 
-	GlobalUniqueSenders *ArrayOfStringsType `xml:"t:GlobalUniqueSenders,omitempty" json:"GlobalUniqueSenders,omitempty"`
+	GlobalUniqueSenders *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalUniqueSenders,omitempty" json:"GlobalUniqueSenders,omitempty"`
 
-	LastDeliveryTime xsd.DateTime `xml:"t:LastDeliveryTime,omitempty" json:"LastDeliveryTime,omitempty"`
+	LastDeliveryTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastDeliveryTime,omitempty" json:"LastDeliveryTime,omitempty"`
 
-	GlobalLastDeliveryTime xsd.DateTime `xml:"t:GlobalLastDeliveryTime,omitempty" json:"GlobalLastDeliveryTime,omitempty"`
+	GlobalLastDeliveryTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalLastDeliveryTime,omitempty" json:"GlobalLastDeliveryTime,omitempty"`
 
-	Categories *ArrayOfStringsType `xml:"t:Categories,omitempty" json:"Categories,omitempty"`
+	Categories *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Categories,omitempty" json:"Categories,omitempty"`
 
-	GlobalCategories *ArrayOfStringsType `xml:"t:GlobalCategories,omitempty" json:"GlobalCategories,omitempty"`
+	GlobalCategories *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalCategories,omitempty" json:"GlobalCategories,omitempty"`
 
-	FlagStatus *FlagStatusType `xml:"t:FlagStatus,omitempty" json:"FlagStatus,omitempty"`
+	FlagStatus *FlagStatusType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FlagStatus,omitempty" json:"FlagStatus,omitempty"`
 
-	GlobalFlagStatus *FlagStatusType `xml:"t:GlobalFlagStatus,omitempty" json:"GlobalFlagStatus,omitempty"`
+	GlobalFlagStatus *FlagStatusType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalFlagStatus,omitempty" json:"GlobalFlagStatus,omitempty"`
 
-	HasAttachments bool `xml:"t:HasAttachments,omitempty" json:"HasAttachments,omitempty"`
+	HasAttachments bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HasAttachments,omitempty" json:"HasAttachments,omitempty"`
 
-	GlobalHasAttachments bool `xml:"t:GlobalHasAttachments,omitempty" json:"GlobalHasAttachments,omitempty"`
+	GlobalHasAttachments bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalHasAttachments,omitempty" json:"GlobalHasAttachments,omitempty"`
 
-	MessageCount int32 `xml:"t:MessageCount,omitempty" json:"MessageCount,omitempty"`
+	MessageCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MessageCount,omitempty" json:"MessageCount,omitempty"`
 
-	GlobalMessageCount int32 `xml:"t:GlobalMessageCount,omitempty" json:"GlobalMessageCount,omitempty"`
+	GlobalMessageCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalMessageCount,omitempty" json:"GlobalMessageCount,omitempty"`
 
-	UnreadCount int32 `xml:"t:UnreadCount,omitempty" json:"UnreadCount,omitempty"`
+	UnreadCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types UnreadCount,omitempty" json:"UnreadCount,omitempty"`
 
-	GlobalUnreadCount int32 `xml:"t:GlobalUnreadCount,omitempty" json:"GlobalUnreadCount,omitempty"`
+	GlobalUnreadCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalUnreadCount,omitempty" json:"GlobalUnreadCount,omitempty"`
 
-	Size int32 `xml:"t:Size,omitempty" json:"Size,omitempty"`
+	Size int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Size,omitempty" json:"Size,omitempty"`
 
-	GlobalSize int32 `xml:"t:GlobalSize,omitempty" json:"GlobalSize,omitempty"`
+	GlobalSize int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalSize,omitempty" json:"GlobalSize,omitempty"`
 
-	ItemClasses *ArrayOfItemClassType `xml:"t:ItemClasses,omitempty" json:"ItemClasses,omitempty"`
+	ItemClasses *ArrayOfItemClassType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemClasses,omitempty" json:"ItemClasses,omitempty"`
 
-	GlobalItemClasses *ArrayOfItemClassType `xml:"t:GlobalItemClasses,omitempty" json:"GlobalItemClasses,omitempty"`
+	GlobalItemClasses *ArrayOfItemClassType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalItemClasses,omitempty" json:"GlobalItemClasses,omitempty"`
 
-	Importance *ImportanceChoicesType `xml:"t:Importance,omitempty" json:"Importance,omitempty"`
+	Importance *ImportanceChoicesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Importance,omitempty" json:"Importance,omitempty"`
 
-	GlobalImportance *ImportanceChoicesType `xml:"t:GlobalImportance,omitempty" json:"GlobalImportance,omitempty"`
+	GlobalImportance *ImportanceChoicesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalImportance,omitempty" json:"GlobalImportance,omitempty"`
 
-	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"t:ItemIds,omitempty" json:"ItemIds,omitempty"`
+	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemIds,omitempty" json:"ItemIds,omitempty"`
 
-	GlobalItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"t:GlobalItemIds,omitempty" json:"GlobalItemIds,omitempty"`
+	GlobalItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalItemIds,omitempty" json:"GlobalItemIds,omitempty"`
 
-	LastModifiedTime xsd.DateTime `xml:"t:LastModifiedTime,omitempty" json:"LastModifiedTime,omitempty"`
+	LastModifiedTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastModifiedTime,omitempty" json:"LastModifiedTime,omitempty"`
 
-	InstanceKey []byte `xml:"t:InstanceKey,omitempty" json:"InstanceKey,omitempty"`
+	InstanceKey []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types InstanceKey,omitempty" json:"InstanceKey,omitempty"`
 
-	Preview string `xml:"t:Preview,omitempty" json:"Preview,omitempty"`
+	Preview string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Preview,omitempty" json:"Preview,omitempty"`
 
-	MailboxScope *MailboxSearchLocationType `xml:"t:MailboxScope,omitempty" json:"MailboxScope,omitempty"`
+	MailboxScope *MailboxSearchLocationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxScope,omitempty" json:"MailboxScope,omitempty"`
 
-	IconIndex *IconIndexType `xml:"t:IconIndex,omitempty" json:"IconIndex,omitempty"`
+	IconIndex *IconIndexType `xml:"http://schemas.microsoft.com/exchange/services/2006/types IconIndex,omitempty" json:"IconIndex,omitempty"`
 
-	GlobalIconIndex *IconIndexType `xml:"t:GlobalIconIndex,omitempty" json:"GlobalIconIndex,omitempty"`
+	GlobalIconIndex *IconIndexType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalIconIndex,omitempty" json:"GlobalIconIndex,omitempty"`
 
-	DraftItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"t:DraftItemIds,omitempty" json:"DraftItemIds,omitempty"`
+	DraftItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DraftItemIds,omitempty" json:"DraftItemIds,omitempty"`
 
-	HasIrm bool `xml:"t:HasIrm,omitempty" json:"HasIrm,omitempty"`
+	HasIrm bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HasIrm,omitempty" json:"HasIrm,omitempty"`
 
-	GlobalHasIrm bool `xml:"t:GlobalHasIrm,omitempty" json:"GlobalHasIrm,omitempty"`
+	GlobalHasIrm bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalHasIrm,omitempty" json:"GlobalHasIrm,omitempty"`
 
-	InferenceClassification *InferenceClassificationType `xml:"t:InferenceClassification,omitempty" json:"InferenceClassification,omitempty"`
+	InferenceClassification *InferenceClassificationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types InferenceClassification,omitempty" json:"InferenceClassification,omitempty"`
 
-	SortKey int64 `xml:"t:SortKey,omitempty" json:"SortKey,omitempty"`
+	SortKey int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types SortKey,omitempty" json:"SortKey,omitempty"`
 
-	MentionedMe bool `xml:"t:MentionedMe,omitempty" json:"MentionedMe,omitempty"`
+	MentionedMe bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types MentionedMe,omitempty" json:"MentionedMe,omitempty"`
 
-	GlobalMentionedMe bool `xml:"t:GlobalMentionedMe,omitempty" json:"GlobalMentionedMe,omitempty"`
+	GlobalMentionedMe bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalMentionedMe,omitempty" json:"GlobalMentionedMe,omitempty"`
 
-	SenderSMTPAddress *SmtpAddressType `xml:"t:SenderSMTPAddress,omitempty" json:"SenderSMTPAddress,omitempty"`
+	SenderSMTPAddress *SmtpAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SenderSMTPAddress,omitempty" json:"SenderSMTPAddress,omitempty"`
 
 	MailboxGuids struct {
-		MailboxGuid []*GuidType `xml:"t:MailboxGuid,omitempty" json:"MailboxGuid,omitempty"`
+		MailboxGuid []*GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxGuid,omitempty" json:"MailboxGuid,omitempty"`
 	} `MailboxGuids,omitempty" json:"MailboxGuids,omitempty"`
 
-	From *SingleRecipientType `xml:"t:From,omitempty" json:"From,omitempty"`
+	From *SingleRecipientType `xml:"http://schemas.microsoft.com/exchange/services/2006/types From,omitempty" json:"From,omitempty"`
 
-	AtAllMention bool `xml:"t:AtAllMention,omitempty" json:"AtAllMention,omitempty"`
+	AtAllMention bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types AtAllMention,omitempty" json:"AtAllMention,omitempty"`
 
-	GlobalAtAllMention bool `xml:"t:GlobalAtAllMention,omitempty" json:"GlobalAtAllMention,omitempty"`
+	GlobalAtAllMention bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalAtAllMention,omitempty" json:"GlobalAtAllMention,omitempty"`
 }
 
 type HighlightTermType struct {
-	XMLName xml.Name `xml:"t:Term"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Term"`
 
-	Scope string `xml:"t:Scope,omitempty" json:"Scope,omitempty"`
+	Scope string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Scope,omitempty" json:"Scope,omitempty"`
 
-	Value string `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 }
 
 type ArrayOfConversationsType struct {
-	Conversation *ConversationType `xml:"t:Conversation,omitempty" json:"Conversation,omitempty"`
+	Conversation *ConversationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Conversation,omitempty" json:"Conversation,omitempty"`
 }
 
 type ConversationRequestType struct {
-	XMLName xml.Name `xml:"t:Conversation"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Conversation"`
 
-	ConversationId *ItemIdType `xml:"t:ConversationId,omitempty" json:"ConversationId,omitempty"`
+	ConversationId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationId,omitempty" json:"ConversationId,omitempty"`
 
-	SyncState []byte `xml:"t:SyncState,omitempty" json:"SyncState,omitempty"`
+	SyncState []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types SyncState,omitempty" json:"SyncState,omitempty"`
 }
 
 type ArrayOfConversationRequestsType struct {
-	XMLName xml.Name `xml:"t:Conversations"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Conversations"`
 
-	Conversation *ConversationRequestType `xml:"t:Conversation,omitempty" json:"Conversation,omitempty"`
+	Conversation *ConversationRequestType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Conversation,omitempty" json:"Conversation,omitempty"`
 }
 
 type ConversationNodeType struct {
-	XMLName xml.Name `xml:"t:ConversationNode"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationNode"`
 
-	InternetMessageId string `xml:"t:InternetMessageId,omitempty" json:"InternetMessageId,omitempty"`
+	InternetMessageId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types InternetMessageId,omitempty" json:"InternetMessageId,omitempty"`
 
-	ParentInternetMessageId string `xml:"t:ParentInternetMessageId,omitempty" json:"ParentInternetMessageId,omitempty"`
+	ParentInternetMessageId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ParentInternetMessageId,omitempty" json:"ParentInternetMessageId,omitempty"`
 
-	Items *NonEmptyArrayOfAllItemsType `xml:"t:Items,omitempty" json:"Items,omitempty"`
+	Items *NonEmptyArrayOfAllItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Items,omitempty" json:"Items,omitempty"`
 }
 
 type ArrayOfConversationNodesType struct {
-	XMLName xml.Name `xml:"t:ConversationNodes"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationNodes"`
 
-	ConversationNode *ConversationNodeType `xml:"t:ConversationNode,omitempty" json:"ConversationNode,omitempty"`
+	ConversationNode *ConversationNodeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationNode,omitempty" json:"ConversationNode,omitempty"`
 }
 
 type ConversationResponseType struct {
-	XMLName xml.Name `xml:"t:Conversation"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Conversation"`
 
-	ConversationId *ItemIdType `xml:"t:ConversationId,omitempty" json:"ConversationId,omitempty"`
+	ConversationId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationId,omitempty" json:"ConversationId,omitempty"`
 
-	SyncState []byte `xml:"t:SyncState,omitempty" json:"SyncState,omitempty"`
+	SyncState []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types SyncState,omitempty" json:"SyncState,omitempty"`
 
-	ConversationNodes *ArrayOfConversationNodesType `xml:"t:ConversationNodes,omitempty" json:"ConversationNodes,omitempty"`
+	ConversationNodes *ArrayOfConversationNodesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationNodes,omitempty" json:"ConversationNodes,omitempty"`
 
-	CanDelete bool `xml:"t:CanDelete,omitempty" json:"CanDelete,omitempty"`
+	CanDelete bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types CanDelete,omitempty" json:"CanDelete,omitempty"`
 }
 
 type ArrayOfHighlightTermsType struct {
-	Term []*HighlightTermType `xml:"t:Term,omitempty" json:"Term,omitempty"`
+	Term []*HighlightTermType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Term,omitempty" json:"Term,omitempty"`
 }
 
 type PersonaAttributionType struct {
-	XMLName xml.Name `xml:"t:Attribution"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attribution"`
 
-	Id string `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	SourceId *ItemIdType `xml:"t:SourceId,omitempty" json:"SourceId,omitempty"`
+	SourceId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SourceId,omitempty" json:"SourceId,omitempty"`
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	IsWritable bool `xml:"t:IsWritable,omitempty" json:"IsWritable,omitempty"`
+	IsWritable bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsWritable,omitempty" json:"IsWritable,omitempty"`
 
-	IsQuickContact bool `xml:"t:IsQuickContact,omitempty" json:"IsQuickContact,omitempty"`
+	IsQuickContact bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsQuickContact,omitempty" json:"IsQuickContact,omitempty"`
 
-	IsHidden bool `xml:"t:IsHidden,omitempty" json:"IsHidden,omitempty"`
+	IsHidden bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsHidden,omitempty" json:"IsHidden,omitempty"`
 
-	FolderId *FolderIdType `xml:"t:FolderId,omitempty" json:"FolderId,omitempty"`
+	FolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderId,omitempty" json:"FolderId,omitempty"`
 }
 
 type ArrayOfPersonaAttributionsType struct {
-	XMLName xml.Name `xml:"t:Attributions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attributions"`
 
-	Attribution []*PersonaAttributionType `xml:"t:Attribution,omitempty" json:"Attribution,omitempty"`
+	Attribution []*PersonaAttributionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attribution,omitempty" json:"Attribution,omitempty"`
 }
 
 type ArrayOfValueAttributionsType struct {
-	Attribution []string `xml:"t:Attribution,omitempty" json:"Attribution,omitempty"`
+	Attribution []string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attribution,omitempty" json:"Attribution,omitempty"`
 }
 
 type ArrayOfStringValueType struct {
-	XMLName xml.Name `xml:"t:Values"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Values"`
 
-	Value []string `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value []string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 }
 
 type StringAttributedValueType struct {
-	XMLName xml.Name `xml:"t:StringAttributedValue"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types StringAttributedValue"`
 
-	Value string `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 
-	Attributions *ArrayOfValueAttributionsType `xml:"t:Attributions,omitempty" json:"Attributions,omitempty"`
+	Attributions *ArrayOfValueAttributionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attributions,omitempty" json:"Attributions,omitempty"`
 }
 
 type BodyContentType struct {
-	XMLName xml.Name `xml:"t:Value"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value"`
 
-	Value string `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 
-	BodyType *BodyTypeType `xml:"t:BodyType,omitempty" json:"BodyType,omitempty"`
+	BodyType *BodyTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BodyType,omitempty" json:"BodyType,omitempty"`
 }
 
 type BodyContentAttributedValueType struct {
-	XMLName xml.Name `xml:"t:BodyContentAttributedValue"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types BodyContentAttributedValue"`
 
-	Value *BodyContentType `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value *BodyContentType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 
-	Attributions *ArrayOfValueAttributionsType `xml:"t:Attributions,omitempty" json:"Attributions,omitempty"`
+	Attributions *ArrayOfValueAttributionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attributions,omitempty" json:"Attributions,omitempty"`
 }
 
 type StringArrayAttributedValueType struct {
-	XMLName xml.Name `xml:"t:StringArrayAttributedValue"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types StringArrayAttributedValue"`
 
-	Values *ArrayOfStringValueType `xml:"t:Values,omitempty" json:"Values,omitempty"`
+	Values *ArrayOfStringValueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Values,omitempty" json:"Values,omitempty"`
 
-	Attributions *ArrayOfValueAttributionsType `xml:"t:Attributions,omitempty" json:"Attributions,omitempty"`
+	Attributions *ArrayOfValueAttributionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attributions,omitempty" json:"Attributions,omitempty"`
 }
 
 type EmailAddressAttributedValueType struct {
-	XMLName xml.Name `xml:"t:EmailAddressAttributedValue"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddressAttributedValue"`
 
-	Value *EmailAddressType `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 
-	Attributions *ArrayOfValueAttributionsType `xml:"t:Attributions,omitempty" json:"Attributions,omitempty"`
+	Attributions *ArrayOfValueAttributionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attributions,omitempty" json:"Attributions,omitempty"`
 }
 
 type PersonaPhoneNumberType struct {
-	Number string `xml:"t:Number,omitempty" json:"Number,omitempty"`
+	Number string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Number,omitempty" json:"Number,omitempty"`
 
-	Type string `xml:"t:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Type,omitempty" json:"Type,omitempty"`
 }
 
 type PhoneNumberAttributedValueType struct {
-	XMLName xml.Name `xml:"t:PhoneNumberAttributedValue"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneNumberAttributedValue"`
 
-	Value *PersonaPhoneNumberType `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value *PersonaPhoneNumberType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 
-	Attributions *ArrayOfValueAttributionsType `xml:"t:Attributions,omitempty" json:"Attributions,omitempty"`
+	Attributions *ArrayOfValueAttributionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attributions,omitempty" json:"Attributions,omitempty"`
 }
 
 type PersonaPostalAddressType struct {
-	Street string `xml:"t:Street,omitempty" json:"Street,omitempty"`
+	Street string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Street,omitempty" json:"Street,omitempty"`
 
-	City string `xml:"t:City,omitempty" json:"City,omitempty"`
+	City string `xml:"http://schemas.microsoft.com/exchange/services/2006/types City,omitempty" json:"City,omitempty"`
 
-	State string `xml:"t:State,omitempty" json:"State,omitempty"`
+	State string `xml:"http://schemas.microsoft.com/exchange/services/2006/types State,omitempty" json:"State,omitempty"`
 
-	Country string `xml:"t:Country,omitempty" json:"Country,omitempty"`
+	Country string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Country,omitempty" json:"Country,omitempty"`
 
-	PostalCode string `xml:"t:PostalCode,omitempty" json:"PostalCode,omitempty"`
+	PostalCode string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostalCode,omitempty" json:"PostalCode,omitempty"`
 
-	PostOfficeBox string `xml:"t:PostOfficeBox,omitempty" json:"PostOfficeBox,omitempty"`
+	PostOfficeBox string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostOfficeBox,omitempty" json:"PostOfficeBox,omitempty"`
 
-	Type string `xml:"t:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Type,omitempty" json:"Type,omitempty"`
 
-	Latitude float64 `xml:"t:Latitude,omitempty" json:"Latitude,omitempty"`
+	Latitude float64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Latitude,omitempty" json:"Latitude,omitempty"`
 
-	Longitude float64 `xml:"t:Longitude,omitempty" json:"Longitude,omitempty"`
+	Longitude float64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Longitude,omitempty" json:"Longitude,omitempty"`
 
-	Accuracy float64 `xml:"t:Accuracy,omitempty" json:"Accuracy,omitempty"`
+	Accuracy float64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Accuracy,omitempty" json:"Accuracy,omitempty"`
 
-	Altitude float64 `xml:"t:Altitude,omitempty" json:"Altitude,omitempty"`
+	Altitude float64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Altitude,omitempty" json:"Altitude,omitempty"`
 
-	AltitudeAccuracy float64 `xml:"t:AltitudeAccuracy,omitempty" json:"AltitudeAccuracy,omitempty"`
+	AltitudeAccuracy float64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types AltitudeAccuracy,omitempty" json:"AltitudeAccuracy,omitempty"`
 
-	FormattedAddress string `xml:"t:FormattedAddress,omitempty" json:"FormattedAddress,omitempty"`
+	FormattedAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FormattedAddress,omitempty" json:"FormattedAddress,omitempty"`
 
-	LocationUri string `xml:"t:LocationUri,omitempty" json:"LocationUri,omitempty"`
+	LocationUri string `xml:"http://schemas.microsoft.com/exchange/services/2006/types LocationUri,omitempty" json:"LocationUri,omitempty"`
 
-	LocationSource *LocationSourceType `xml:"t:LocationSource,omitempty" json:"LocationSource,omitempty"`
+	LocationSource *LocationSourceType `xml:"http://schemas.microsoft.com/exchange/services/2006/types LocationSource,omitempty" json:"LocationSource,omitempty"`
 }
 
 type PostalAddressAttributedValueType struct {
-	XMLName xml.Name `xml:"t:PostalAddressAttributedValue"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostalAddressAttributedValue"`
 
-	Value *PersonaPostalAddressType `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value *PersonaPostalAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 
-	Attributions *ArrayOfValueAttributionsType `xml:"t:Attributions,omitempty" json:"Attributions,omitempty"`
+	Attributions *ArrayOfValueAttributionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attributions,omitempty" json:"Attributions,omitempty"`
 }
 
 type ExtendedPropertyAttributedValueType struct {
-	XMLName xml.Name `xml:"t:ExtendedPropertyAttributedValue"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedPropertyAttributedValue"`
 
-	Value *ExtendedPropertyType `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value *ExtendedPropertyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 
-	Attributions *ArrayOfValueAttributionsType `xml:"t:Attributions,omitempty" json:"Attributions,omitempty"`
+	Attributions *ArrayOfValueAttributionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attributions,omitempty" json:"Attributions,omitempty"`
 }
 
 type ArrayOfStringAttributedValuesType struct {
-	StringAttributedValue []*StringAttributedValueType `xml:"t:StringAttributedValue,omitempty" json:"StringAttributedValue,omitempty"`
+	StringAttributedValue []*StringAttributedValueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types StringAttributedValue,omitempty" json:"StringAttributedValue,omitempty"`
 }
 
 type ArrayOfStringArrayAttributedValuesType struct {
-	StringArrayAttributedValue []*StringArrayAttributedValueType `xml:"t:StringArrayAttributedValue,omitempty" json:"StringArrayAttributedValue,omitempty"`
+	StringArrayAttributedValue []*StringArrayAttributedValueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types StringArrayAttributedValue,omitempty" json:"StringArrayAttributedValue,omitempty"`
 }
 
 type ArrayOfBodyContentAttributedValuesType struct {
-	XMLName xml.Name `xml:"t:Bodies"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Bodies"`
 
-	BodyContentAttributedValue []*BodyContentAttributedValueType `xml:"t:BodyContentAttributedValue,omitempty" json:"BodyContentAttributedValue,omitempty"`
+	BodyContentAttributedValue []*BodyContentAttributedValueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BodyContentAttributedValue,omitempty" json:"BodyContentAttributedValue,omitempty"`
 }
 
 type ArrayOfEmailAddressAttributedValuesType struct {
-	EmailAddressAttributedValue []*EmailAddressAttributedValueType `xml:"t:EmailAddressAttributedValue,omitempty" json:"EmailAddressAttributedValue,omitempty"`
+	EmailAddressAttributedValue []*EmailAddressAttributedValueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddressAttributedValue,omitempty" json:"EmailAddressAttributedValue,omitempty"`
 }
 
 type ArrayOfPhoneNumberAttributedValuesType struct {
-	PhoneNumberAttributedValue []*PhoneNumberAttributedValueType `xml:"t:PhoneNumberAttributedValue,omitempty" json:"PhoneNumberAttributedValue,omitempty"`
+	PhoneNumberAttributedValue []*PhoneNumberAttributedValueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneNumberAttributedValue,omitempty" json:"PhoneNumberAttributedValue,omitempty"`
 }
 
 type ArrayOfPostalAddressAttributedValuesType struct {
-	PostalAddressAttributedValue []*PostalAddressAttributedValueType `xml:"t:PostalAddressAttributedValue,omitempty" json:"PostalAddressAttributedValue,omitempty"`
+	PostalAddressAttributedValue []*PostalAddressAttributedValueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostalAddressAttributedValue,omitempty" json:"PostalAddressAttributedValue,omitempty"`
 }
 
 type ArrayOfExtendedPropertyAttributedValueType struct {
-	XMLName xml.Name `xml:"t:ExtendedProperties"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedProperties"`
 
-	ExtendedPropertyAttributedValue []*ExtendedPropertyAttributedValueType `xml:"t:ExtendedPropertyAttributedValue,omitempty" json:"ExtendedPropertyAttributedValue,omitempty"`
+	ExtendedPropertyAttributedValue []*ExtendedPropertyAttributedValueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedPropertyAttributedValue,omitempty" json:"ExtendedPropertyAttributedValue,omitempty"`
 }
 
 type InsightFiltersType struct {
-	Count int32 `xml:"t:Count,omitempty" json:"Count,omitempty"`
+	Count int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Count,omitempty" json:"Count,omitempty"`
 
-	Types *ArrayOfStringsType `xml:"t:Types,omitempty" json:"Types,omitempty"`
+	Types *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Types,omitempty" json:"Types,omitempty"`
 
-	KeyInsightsOnly bool `xml:"t:KeyInsightsOnly,omitempty" json:"KeyInsightsOnly,omitempty"`
+	KeyInsightsOnly bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types KeyInsightsOnly,omitempty" json:"KeyInsightsOnly,omitempty"`
 }
 
 type InsightValue struct {
-	InsightSource string `xml:"t:InsightSource,omitempty" json:"InsightSource,omitempty"`
+	InsightSource string `xml:"http://schemas.microsoft.com/exchange/services/2006/types InsightSource,omitempty" json:"InsightSource,omitempty"`
 
-	UpdatedUtcTicks int64 `xml:"t:UpdatedUtcTicks,omitempty" json:"UpdatedUtcTicks,omitempty"`
+	UpdatedUtcTicks int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types UpdatedUtcTicks,omitempty" json:"UpdatedUtcTicks,omitempty"`
 }
 
 type StringInsightValue struct {
 	*InsightValue
 
-	Data string `xml:"t:Data,omitempty" json:"Data,omitempty"`
+	Data string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Data,omitempty" json:"Data,omitempty"`
 }
 
 type DelveDocument struct {
 	*InsightValue
 
-	Rank float64 `xml:"t:Rank,omitempty" json:"Rank,omitempty"`
+	Rank float64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Rank,omitempty" json:"Rank,omitempty"`
 
-	Author string `xml:"t:Author,omitempty" json:"Author,omitempty"`
+	Author string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Author,omitempty" json:"Author,omitempty"`
 
-	Created string `xml:"t:Created,omitempty" json:"Created,omitempty"`
+	Created string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Created,omitempty" json:"Created,omitempty"`
 
-	LastModifiedTime string `xml:"t:LastModifiedTime,omitempty" json:"LastModifiedTime,omitempty"`
+	LastModifiedTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastModifiedTime,omitempty" json:"LastModifiedTime,omitempty"`
 
-	DefaultEncodingURL string `xml:"t:DefaultEncodingURL,omitempty" json:"DefaultEncodingURL,omitempty"`
+	DefaultEncodingURL string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DefaultEncodingURL,omitempty" json:"DefaultEncodingURL,omitempty"`
 
-	FileType string `xml:"t:FileType,omitempty" json:"FileType,omitempty"`
+	FileType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileType,omitempty" json:"FileType,omitempty"`
 
-	Title string `xml:"t:Title,omitempty" json:"Title,omitempty"`
+	Title string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Title,omitempty" json:"Title,omitempty"`
 
-	DocumentId string `xml:"t:DocumentId,omitempty" json:"DocumentId,omitempty"`
+	DocumentId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DocumentId,omitempty" json:"DocumentId,omitempty"`
 
-	PreviewURL string `xml:"t:PreviewURL,omitempty" json:"PreviewURL,omitempty"`
+	PreviewURL string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PreviewURL,omitempty" json:"PreviewURL,omitempty"`
 
-	LastEditor string `xml:"t:LastEditor,omitempty" json:"LastEditor,omitempty"`
+	LastEditor string `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastEditor,omitempty" json:"LastEditor,omitempty"`
 }
 
 type ProfileInsightValue struct {
 	*InsightValue
 
-	FullName string `xml:"t:FullName,omitempty" json:"FullName,omitempty"`
+	FullName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FullName,omitempty" json:"FullName,omitempty"`
 
-	FirstName string `xml:"t:FirstName,omitempty" json:"FirstName,omitempty"`
+	FirstName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FirstName,omitempty" json:"FirstName,omitempty"`
 
-	LastName string `xml:"t:LastName,omitempty" json:"LastName,omitempty"`
+	LastName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastName,omitempty" json:"LastName,omitempty"`
 
-	EmailAddress string `xml:"t:EmailAddress,omitempty" json:"EmailAddress,omitempty"`
+	EmailAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 
-	Avatar string `xml:"t:Avatar,omitempty" json:"Avatar,omitempty"`
+	Avatar string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Avatar,omitempty" json:"Avatar,omitempty"`
 
-	JoinedUtcTicks int64 `xml:"t:JoinedUtcTicks,omitempty" json:"JoinedUtcTicks,omitempty"`
+	JoinedUtcTicks int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types JoinedUtcTicks,omitempty" json:"JoinedUtcTicks,omitempty"`
 
-	ProfilePicture *UserProfilePicture `xml:"t:ProfilePicture,omitempty" json:"ProfilePicture,omitempty"`
+	ProfilePicture *UserProfilePicture `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProfilePicture,omitempty" json:"ProfilePicture,omitempty"`
 
-	Title string `xml:"t:Title,omitempty" json:"Title,omitempty"`
+	Title string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Title,omitempty" json:"Title,omitempty"`
 }
 
 type OutOfOfficeInsightValue struct {
 	*InsightValue
 
-	StartTime xsd.DateTime `xml:"t:StartTime,omitempty" json:"StartTime,omitempty"`
+	StartTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTime,omitempty" json:"StartTime,omitempty"`
 
-	EndTime xsd.DateTime `xml:"t:EndTime,omitempty" json:"EndTime,omitempty"`
+	EndTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndTime,omitempty" json:"EndTime,omitempty"`
 
-	Message string `xml:"t:Message,omitempty" json:"Message,omitempty"`
+	Message string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Message,omitempty" json:"Message,omitempty"`
 
-	Culture string `xml:"t:Culture,omitempty" json:"Culture,omitempty"`
+	Culture string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Culture,omitempty" json:"Culture,omitempty"`
 }
 
 type JobInsightValue struct {
-	XMLName xml.Name `xml:"t:Item"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item"`
 
 	*InsightValue
 
-	Company string `xml:"t:Company,omitempty" json:"Company,omitempty"`
+	Company string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Company,omitempty" json:"Company,omitempty"`
 
-	CompanyDescription string `xml:"t:CompanyDescription,omitempty" json:"CompanyDescription,omitempty"`
+	CompanyDescription string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompanyDescription,omitempty" json:"CompanyDescription,omitempty"`
 
-	CompanyTicker string `xml:"t:CompanyTicker,omitempty" json:"CompanyTicker,omitempty"`
+	CompanyTicker string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompanyTicker,omitempty" json:"CompanyTicker,omitempty"`
 
-	CompanyLogoUrl string `xml:"t:CompanyLogoUrl,omitempty" json:"CompanyLogoUrl,omitempty"`
+	CompanyLogoUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompanyLogoUrl,omitempty" json:"CompanyLogoUrl,omitempty"`
 
-	CompanyWebsiteUrl string `xml:"t:CompanyWebsiteUrl,omitempty" json:"CompanyWebsiteUrl,omitempty"`
+	CompanyWebsiteUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompanyWebsiteUrl,omitempty" json:"CompanyWebsiteUrl,omitempty"`
 
-	CompanyLinkedInUrl string `xml:"t:CompanyLinkedInUrl,omitempty" json:"CompanyLinkedInUrl,omitempty"`
+	CompanyLinkedInUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompanyLinkedInUrl,omitempty" json:"CompanyLinkedInUrl,omitempty"`
 
-	Title string `xml:"t:Title,omitempty" json:"Title,omitempty"`
+	Title string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Title,omitempty" json:"Title,omitempty"`
 
-	StartUtcTicks int64 `xml:"t:StartUtcTicks,omitempty" json:"StartUtcTicks,omitempty"`
+	StartUtcTicks int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartUtcTicks,omitempty" json:"StartUtcTicks,omitempty"`
 
-	EndUtcTicks int64 `xml:"t:EndUtcTicks,omitempty" json:"EndUtcTicks,omitempty"`
+	EndUtcTicks int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndUtcTicks,omitempty" json:"EndUtcTicks,omitempty"`
 }
 
 type CompanyInsightValue struct {
-	XMLName xml.Name `xml:"t:Item"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item"`
 
 	*InsightValue
 
-	Name string `xml:"t:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Name,omitempty" json:"Name,omitempty"`
 
-	SatoriId string `xml:"t:SatoriId,omitempty" json:"SatoriId,omitempty"`
+	SatoriId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SatoriId,omitempty" json:"SatoriId,omitempty"`
 
-	Description string `xml:"t:Description,omitempty" json:"Description,omitempty"`
+	Description string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Description,omitempty" json:"Description,omitempty"`
 
-	DescriptionAttribution string `xml:"t:DescriptionAttribution,omitempty" json:"DescriptionAttribution,omitempty"`
+	DescriptionAttribution string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DescriptionAttribution,omitempty" json:"DescriptionAttribution,omitempty"`
 
-	ImageUrl string `xml:"t:ImageUrl,omitempty" json:"ImageUrl,omitempty"`
+	ImageUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ImageUrl,omitempty" json:"ImageUrl,omitempty"`
 
-	ImageUrlAttribution string `xml:"t:ImageUrlAttribution,omitempty" json:"ImageUrlAttribution,omitempty"`
+	ImageUrlAttribution string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ImageUrlAttribution,omitempty" json:"ImageUrlAttribution,omitempty"`
 
-	YearFound string `xml:"t:YearFound,omitempty" json:"YearFound,omitempty"`
+	YearFound string `xml:"http://schemas.microsoft.com/exchange/services/2006/types YearFound,omitempty" json:"YearFound,omitempty"`
 
-	FinanceSymbol string `xml:"t:FinanceSymbol,omitempty" json:"FinanceSymbol,omitempty"`
+	FinanceSymbol string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FinanceSymbol,omitempty" json:"FinanceSymbol,omitempty"`
 
-	WebsiteUrl string `xml:"t:WebsiteUrl,omitempty" json:"WebsiteUrl,omitempty"`
+	WebsiteUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types WebsiteUrl,omitempty" json:"WebsiteUrl,omitempty"`
 }
 
 type UserProfilePicture struct {
 	*InsightValue
 
-	Blob string `xml:"t:Blob,omitempty" json:"Blob,omitempty"`
+	Blob string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Blob,omitempty" json:"Blob,omitempty"`
 
-	PhotoSize string `xml:"t:PhotoSize,omitempty" json:"PhotoSize,omitempty"`
+	PhotoSize string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhotoSize,omitempty" json:"PhotoSize,omitempty"`
 
-	Url string `xml:"t:Url,omitempty" json:"Url,omitempty"`
+	Url string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Url,omitempty" json:"Url,omitempty"`
 
-	ImageType string `xml:"t:ImageType,omitempty" json:"ImageType,omitempty"`
+	ImageType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ImageType,omitempty" json:"ImageType,omitempty"`
 }
 
 type EducationInsightValue struct {
 	*InsightValue
 
-	Institute string `xml:"t:Institute,omitempty" json:"Institute,omitempty"`
+	Institute string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Institute,omitempty" json:"Institute,omitempty"`
 
-	Degree string `xml:"t:Degree,omitempty" json:"Degree,omitempty"`
+	Degree string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Degree,omitempty" json:"Degree,omitempty"`
 
-	StartUtcTicks int64 `xml:"t:StartUtcTicks,omitempty" json:"StartUtcTicks,omitempty"`
+	StartUtcTicks int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartUtcTicks,omitempty" json:"StartUtcTicks,omitempty"`
 
-	EndUtcTicks int64 `xml:"t:EndUtcTicks,omitempty" json:"EndUtcTicks,omitempty"`
+	EndUtcTicks int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndUtcTicks,omitempty" json:"EndUtcTicks,omitempty"`
 }
 
 type SkillInsightValue struct {
-	XMLName xml.Name `xml:"t:Item"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item"`
 
 	*InsightValue
 
-	Name string `xml:"t:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Name,omitempty" json:"Name,omitempty"`
 
-	Strength int32 `xml:"t:Strength,omitempty" json:"Strength,omitempty"`
+	Strength int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Strength,omitempty" json:"Strength,omitempty"`
 }
 
 type MeetingInsightValue struct {
 	*InsightValue
 
-	Id string `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	Subject string `xml:"t:Subject,omitempty" json:"Subject,omitempty"`
+	Subject string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Subject,omitempty" json:"Subject,omitempty"`
 
-	StartUtcTicks int64 `xml:"t:StartUtcTicks,omitempty" json:"StartUtcTicks,omitempty"`
+	StartUtcTicks int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartUtcTicks,omitempty" json:"StartUtcTicks,omitempty"`
 
-	EndUtcTicks int64 `xml:"t:EndUtcTicks,omitempty" json:"EndUtcTicks,omitempty"`
+	EndUtcTicks int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndUtcTicks,omitempty" json:"EndUtcTicks,omitempty"`
 
-	Location string `xml:"t:Location,omitempty" json:"Location,omitempty"`
+	Location string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Location,omitempty" json:"Location,omitempty"`
 
-	Organizer *ProfileInsightValue `xml:"t:Organizer,omitempty" json:"Organizer,omitempty"`
+	Organizer *ProfileInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types Organizer,omitempty" json:"Organizer,omitempty"`
 
-	Attendees *ArrayOfProfileInsightValue `xml:"t:Attendees,omitempty" json:"Attendees,omitempty"`
+	Attendees *ArrayOfProfileInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attendees,omitempty" json:"Attendees,omitempty"`
 }
 
 type EmailInsightValue struct {
 	*InsightValue
 
-	Id string `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	ThreadId string `xml:"t:ThreadId,omitempty" json:"ThreadId,omitempty"`
+	ThreadId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ThreadId,omitempty" json:"ThreadId,omitempty"`
 
-	Subject string `xml:"t:Subject,omitempty" json:"Subject,omitempty"`
+	Subject string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Subject,omitempty" json:"Subject,omitempty"`
 
-	LastEmailDateUtcTicks int64 `xml:"t:LastEmailDateUtcTicks,omitempty" json:"LastEmailDateUtcTicks,omitempty"`
+	LastEmailDateUtcTicks int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastEmailDateUtcTicks,omitempty" json:"LastEmailDateUtcTicks,omitempty"`
 
-	Body string `xml:"t:Body,omitempty" json:"Body,omitempty"`
+	Body string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Body,omitempty" json:"Body,omitempty"`
 
-	LastEmailSender *ProfileInsightValue `xml:"t:LastEmailSender,omitempty" json:"LastEmailSender,omitempty"`
+	LastEmailSender *ProfileInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastEmailSender,omitempty" json:"LastEmailSender,omitempty"`
 
-	EmailsCount int32 `xml:"t:EmailsCount,omitempty" json:"EmailsCount,omitempty"`
+	EmailsCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailsCount,omitempty" json:"EmailsCount,omitempty"`
 }
 
 type ArrayOfInsightValue struct {
-	Item []*InsightValue `xml:"t:Item,omitempty" json:"Item,omitempty"`
+	Item []*InsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 }
 
 type ArrayOfSkillInsightValue struct {
-	XMLName xml.Name `xml:"t:Skills"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Skills"`
 
-	Item []*SkillInsightValue `xml:"t:Item,omitempty" json:"Item,omitempty"`
+	Item []*SkillInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 }
 
 type ArrayOfProfileInsightValue struct {
-	Item []*ProfileInsightValue `xml:"t:Item,omitempty" json:"Item,omitempty"`
+	Item []*ProfileInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 }
 
 type ArrayOfJobInsightValue struct {
-	XMLName xml.Name `xml:"t:CurrentJob"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types CurrentJob"`
 
-	Item []*JobInsightValue `xml:"t:Item,omitempty" json:"Item,omitempty"`
+	Item []*JobInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 }
 
 type ArrayOfCompanyInsightValue struct {
-	XMLName xml.Name `xml:"t:CompanyProfile"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompanyProfile"`
 
-	Item []*CompanyInsightValue `xml:"t:Item,omitempty" json:"Item,omitempty"`
+	Item []*CompanyInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 }
 
 type InsightContent struct {
-	XMLName xml.Name `xml:"t:Content"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Content"`
 }
 
 type SingleValueInsightContent struct {
 	*InsightContent
 
-	Item *InsightValue `xml:"t:Item,omitempty" json:"Item,omitempty"`
+	Item *InsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 }
 
 type MultiValueInsightContent struct {
 	*InsightContent
 
-	ItemList *ArrayOfInsightValue `xml:"t:ItemList,omitempty" json:"ItemList,omitempty"`
+	ItemList *ArrayOfInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemList,omitempty" json:"ItemList,omitempty"`
 }
 
 type Insight struct {
-	InsightType string `xml:"t:InsightType,omitempty" json:"InsightType,omitempty"`
+	InsightType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types InsightType,omitempty" json:"InsightType,omitempty"`
 
-	Rank float64 `xml:"t:Rank,omitempty" json:"Rank,omitempty"`
+	Rank float64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Rank,omitempty" json:"Rank,omitempty"`
 
-	Content *InsightContent `xml:"t:Content,omitempty" json:"Content,omitempty"`
+	Content *InsightContent `xml:"http://schemas.microsoft.com/exchange/services/2006/types Content,omitempty" json:"Content,omitempty"`
 
-	Text string `xml:"t:Text,omitempty" json:"Text,omitempty"`
+	Text string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Text,omitempty" json:"Text,omitempty"`
 
-	ItemList *ArrayOfInsightValue `xml:"t:ItemList,omitempty" json:"ItemList,omitempty"`
+	ItemList *ArrayOfInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemList,omitempty" json:"ItemList,omitempty"`
 
-	RequiresToken bool `xml:"t:RequiresToken,omitempty" json:"RequiresToken,omitempty"`
+	RequiresToken bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types RequiresToken,omitempty" json:"RequiresToken,omitempty"`
 }
 
 type ComputedInsightValueProperty struct {
-	XMLName xml.Name `xml:"t:Property"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Property"`
 
-	Key string `xml:"t:Key,omitempty" json:"Key,omitempty"`
+	Key string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Key,omitempty" json:"Key,omitempty"`
 
-	Value string `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 }
 
 type ArrayOfComputedInsightValueProperty struct {
-	XMLName xml.Name `xml:"t:Properties"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Properties"`
 
-	Property []*ComputedInsightValueProperty `xml:"t:Property,omitempty" json:"Property,omitempty"`
+	Property []*ComputedInsightValueProperty `xml:"http://schemas.microsoft.com/exchange/services/2006/types Property,omitempty" json:"Property,omitempty"`
 }
 
 type ComputedInsightValue struct {
 	*InsightValue
 
-	Properties *ArrayOfComputedInsightValueProperty `xml:"t:Properties,omitempty" json:"Properties,omitempty"`
+	Properties *ArrayOfComputedInsightValueProperty `xml:"http://schemas.microsoft.com/exchange/services/2006/types Properties,omitempty" json:"Properties,omitempty"`
 }
 
 type ArrayOfInsight struct {
-	XMLName xml.Name `xml:"t:Insights"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Insights"`
 
-	Insight []*Insight `xml:"t:Insight,omitempty" json:"Insight,omitempty"`
+	Insight []*Insight `xml:"http://schemas.microsoft.com/exchange/services/2006/types Insight,omitempty" json:"Insight,omitempty"`
 }
 
 type PersonResponseShapeType struct {
-	BaseShape *DefaultShapeNamesType `xml:"t:BaseShape,omitempty" json:"BaseShape,omitempty"`
+	BaseShape *DefaultShapeNamesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BaseShape,omitempty" json:"BaseShape,omitempty"`
 
-	AdditionalProperties *NonEmptyArrayOfPathsToElementType `xml:"t:AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
+	AdditionalProperties *NonEmptyArrayOfPathsToElementType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
 }
 
 type PersonType struct {
-	XMLName xml.Name `xml:"t:Person"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Person"`
 
-	FullName string `xml:"t:FullName,omitempty" json:"FullName,omitempty"`
+	FullName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FullName,omitempty" json:"FullName,omitempty"`
 
-	GivenName string `xml:"t:GivenName,omitempty" json:"GivenName,omitempty"`
+	GivenName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types GivenName,omitempty" json:"GivenName,omitempty"`
 
-	Surname string `xml:"t:Surname,omitempty" json:"Surname,omitempty"`
+	Surname string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Surname,omitempty" json:"Surname,omitempty"`
 
-	PhoneNumber string `xml:"t:PhoneNumber,omitempty" json:"PhoneNumber,omitempty"`
+	PhoneNumber string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneNumber,omitempty" json:"PhoneNumber,omitempty"`
 
-	SMSNumber string `xml:"t:SMSNumber,omitempty" json:"SMSNumber,omitempty"`
+	SMSNumber string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SMSNumber,omitempty" json:"SMSNumber,omitempty"`
 
-	EmailAddress string `xml:"t:EmailAddress,omitempty" json:"EmailAddress,omitempty"`
+	EmailAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 
-	Alias string `xml:"t:Alias,omitempty" json:"Alias,omitempty"`
+	Alias string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Alias,omitempty" json:"Alias,omitempty"`
 
-	Department string `xml:"t:Department,omitempty" json:"Department,omitempty"`
+	Department string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Department,omitempty" json:"Department,omitempty"`
 
-	LinkedInProfileLink string `xml:"t:LinkedInProfileLink,omitempty" json:"LinkedInProfileLink,omitempty"`
+	LinkedInProfileLink string `xml:"http://schemas.microsoft.com/exchange/services/2006/types LinkedInProfileLink,omitempty" json:"LinkedInProfileLink,omitempty"`
 
-	Skills *ArrayOfSkillInsightValue `xml:"t:Skills,omitempty" json:"Skills,omitempty"`
+	Skills *ArrayOfSkillInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types Skills,omitempty" json:"Skills,omitempty"`
 
-	ProfessionalBiography string `xml:"t:ProfessionalBiography,omitempty" json:"ProfessionalBiography,omitempty"`
+	ProfessionalBiography string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProfessionalBiography,omitempty" json:"ProfessionalBiography,omitempty"`
 
-	ManagementChain *ArrayOfProfileInsightValue `xml:"t:ManagementChain,omitempty" json:"ManagementChain,omitempty"`
+	ManagementChain *ArrayOfProfileInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types ManagementChain,omitempty" json:"ManagementChain,omitempty"`
 
-	DirectReports *ArrayOfProfileInsightValue `xml:"t:DirectReports,omitempty" json:"DirectReports,omitempty"`
+	DirectReports *ArrayOfProfileInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types DirectReports,omitempty" json:"DirectReports,omitempty"`
 
-	Peers *ArrayOfProfileInsightValue `xml:"t:Peers,omitempty" json:"Peers,omitempty"`
+	Peers *ArrayOfProfileInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types Peers,omitempty" json:"Peers,omitempty"`
 
-	TeamSize string `xml:"t:TeamSize,omitempty" json:"TeamSize,omitempty"`
+	TeamSize string `xml:"http://schemas.microsoft.com/exchange/services/2006/types TeamSize,omitempty" json:"TeamSize,omitempty"`
 
-	CurrentJob *ArrayOfJobInsightValue `xml:"t:CurrentJob,omitempty" json:"CurrentJob,omitempty"`
+	CurrentJob *ArrayOfJobInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types CurrentJob,omitempty" json:"CurrentJob,omitempty"`
 
-	Birthday string `xml:"t:Birthday,omitempty" json:"Birthday,omitempty"`
+	Birthday string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Birthday,omitempty" json:"Birthday,omitempty"`
 
-	Hometown string `xml:"t:Hometown,omitempty" json:"Hometown,omitempty"`
+	Hometown string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Hometown,omitempty" json:"Hometown,omitempty"`
 
-	CurrentLocation string `xml:"t:CurrentLocation,omitempty" json:"CurrentLocation,omitempty"`
+	CurrentLocation string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CurrentLocation,omitempty" json:"CurrentLocation,omitempty"`
 
-	CompanyProfile *ArrayOfCompanyInsightValue `xml:"t:CompanyProfile,omitempty" json:"CompanyProfile,omitempty"`
+	CompanyProfile *ArrayOfCompanyInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompanyProfile,omitempty" json:"CompanyProfile,omitempty"`
 
-	Office string `xml:"t:Office,omitempty" json:"Office,omitempty"`
+	Office string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Office,omitempty" json:"Office,omitempty"`
 
-	Headline string `xml:"t:Headline,omitempty" json:"Headline,omitempty"`
+	Headline string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Headline,omitempty" json:"Headline,omitempty"`
 
-	MutualConnections *ArrayOfProfileInsightValue `xml:"t:MutualConnections,omitempty" json:"MutualConnections,omitempty"`
+	MutualConnections *ArrayOfProfileInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types MutualConnections,omitempty" json:"MutualConnections,omitempty"`
 
-	Title string `xml:"t:Title,omitempty" json:"Title,omitempty"`
+	Title string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Title,omitempty" json:"Title,omitempty"`
 
-	MutualManager *ProfileInsightValue `xml:"t:MutualManager,omitempty" json:"MutualManager,omitempty"`
+	MutualManager *ProfileInsightValue `xml:"http://schemas.microsoft.com/exchange/services/2006/types MutualManager,omitempty" json:"MutualManager,omitempty"`
 
-	Insights *ArrayOfInsight `xml:"t:Insights,omitempty" json:"Insights,omitempty"`
+	Insights *ArrayOfInsight `xml:"http://schemas.microsoft.com/exchange/services/2006/types Insights,omitempty" json:"Insights,omitempty"`
 
-	UserProfilePicture *UserProfilePicture `xml:"t:UserProfilePicture,omitempty" json:"UserProfilePicture,omitempty"`
+	UserProfilePicture *UserProfilePicture `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserProfilePicture,omitempty" json:"UserProfilePicture,omitempty"`
 }
 
 type ArrayOfPersonType struct {
-	Person *PersonType `xml:"t:Person,omitempty" json:"Person,omitempty"`
+	Person *PersonType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Person,omitempty" json:"Person,omitempty"`
 }
 
 type PeopleTokenType struct {
-	XMLName xml.Name `xml:"t:PeopleToken"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PeopleToken"`
 
-	TokenSource *TokenSourceType `xml:"t:TokenSource,omitempty" json:"TokenSource,omitempty"`
+	TokenSource *TokenSourceType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TokenSource,omitempty" json:"TokenSource,omitempty"`
 
-	ExpirationDateTime xsd.DateTime `xml:"t:ExpirationDateTime,omitempty" json:"ExpirationDateTime,omitempty"`
+	ExpirationDateTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExpirationDateTime,omitempty" json:"ExpirationDateTime,omitempty"`
 
-	TokenValue string `xml:"t:TokenValue,omitempty" json:"TokenValue,omitempty"`
+	TokenValue string `xml:"http://schemas.microsoft.com/exchange/services/2006/types TokenValue,omitempty" json:"TokenValue,omitempty"`
 }
 
 type NonEmptyArrayOfPeopleTokenType struct {
-	PeopleToken []*PeopleTokenType `xml:"t:PeopleToken,omitempty" json:"PeopleToken,omitempty"`
+	PeopleToken []*PeopleTokenType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PeopleToken,omitempty" json:"PeopleToken,omitempty"`
 }
 
 type PersonaType struct {
-	PersonaId *ItemIdType `xml:"t:PersonaId,omitempty" json:"PersonaId,omitempty"`
+	PersonaId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PersonaId,omitempty" json:"PersonaId,omitempty"`
 
-	PersonaType string `xml:"t:PersonaType,omitempty" json:"PersonaType,omitempty"`
+	PersonaType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PersonaType,omitempty" json:"PersonaType,omitempty"`
 
-	PersonaObjectStatus string `xml:"t:PersonaObjectStatus,omitempty" json:"PersonaObjectStatus,omitempty"`
+	PersonaObjectStatus string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PersonaObjectStatus,omitempty" json:"PersonaObjectStatus,omitempty"`
 
-	CreationTime xsd.DateTime `xml:"t:CreationTime,omitempty" json:"CreationTime,omitempty"`
+	CreationTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreationTime,omitempty" json:"CreationTime,omitempty"`
 
-	Bodies *ArrayOfBodyContentAttributedValuesType `xml:"t:Bodies,omitempty" json:"Bodies,omitempty"`
+	Bodies *ArrayOfBodyContentAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Bodies,omitempty" json:"Bodies,omitempty"`
 
-	DisplayNameFirstLastSortKey string `xml:"t:DisplayNameFirstLastSortKey,omitempty" json:"DisplayNameFirstLastSortKey,omitempty"`
+	DisplayNameFirstLastSortKey string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayNameFirstLastSortKey,omitempty" json:"DisplayNameFirstLastSortKey,omitempty"`
 
-	DisplayNameLastFirstSortKey string `xml:"t:DisplayNameLastFirstSortKey,omitempty" json:"DisplayNameLastFirstSortKey,omitempty"`
+	DisplayNameLastFirstSortKey string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayNameLastFirstSortKey,omitempty" json:"DisplayNameLastFirstSortKey,omitempty"`
 
-	CompanyNameSortKey string `xml:"t:CompanyNameSortKey,omitempty" json:"CompanyNameSortKey,omitempty"`
+	CompanyNameSortKey string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompanyNameSortKey,omitempty" json:"CompanyNameSortKey,omitempty"`
 
-	HomeCitySortKey string `xml:"t:HomeCitySortKey,omitempty" json:"HomeCitySortKey,omitempty"`
+	HomeCitySortKey string `xml:"http://schemas.microsoft.com/exchange/services/2006/types HomeCitySortKey,omitempty" json:"HomeCitySortKey,omitempty"`
 
-	WorkCitySortKey string `xml:"t:WorkCitySortKey,omitempty" json:"WorkCitySortKey,omitempty"`
+	WorkCitySortKey string `xml:"http://schemas.microsoft.com/exchange/services/2006/types WorkCitySortKey,omitempty" json:"WorkCitySortKey,omitempty"`
 
-	DisplayNameFirstLastHeader string `xml:"t:DisplayNameFirstLastHeader,omitempty" json:"DisplayNameFirstLastHeader,omitempty"`
+	DisplayNameFirstLastHeader string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayNameFirstLastHeader,omitempty" json:"DisplayNameFirstLastHeader,omitempty"`
 
-	DisplayNameLastFirstHeader string `xml:"t:DisplayNameLastFirstHeader,omitempty" json:"DisplayNameLastFirstHeader,omitempty"`
+	DisplayNameLastFirstHeader string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayNameLastFirstHeader,omitempty" json:"DisplayNameLastFirstHeader,omitempty"`
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	DisplayNameFirstLast string `xml:"t:DisplayNameFirstLast,omitempty" json:"DisplayNameFirstLast,omitempty"`
+	DisplayNameFirstLast string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayNameFirstLast,omitempty" json:"DisplayNameFirstLast,omitempty"`
 
-	DisplayNameLastFirst string `xml:"t:DisplayNameLastFirst,omitempty" json:"DisplayNameLastFirst,omitempty"`
+	DisplayNameLastFirst string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayNameLastFirst,omitempty" json:"DisplayNameLastFirst,omitempty"`
 
-	FileAs string `xml:"t:FileAs,omitempty" json:"FileAs,omitempty"`
+	FileAs string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileAs,omitempty" json:"FileAs,omitempty"`
 
-	FileAsId string `xml:"t:FileAsId,omitempty" json:"FileAsId,omitempty"`
+	FileAsId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileAsId,omitempty" json:"FileAsId,omitempty"`
 
-	DisplayNamePrefix string `xml:"t:DisplayNamePrefix,omitempty" json:"DisplayNamePrefix,omitempty"`
+	DisplayNamePrefix string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayNamePrefix,omitempty" json:"DisplayNamePrefix,omitempty"`
 
-	GivenName string `xml:"t:GivenName,omitempty" json:"GivenName,omitempty"`
+	GivenName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types GivenName,omitempty" json:"GivenName,omitempty"`
 
-	MiddleName string `xml:"t:MiddleName,omitempty" json:"MiddleName,omitempty"`
+	MiddleName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MiddleName,omitempty" json:"MiddleName,omitempty"`
 
-	Surname string `xml:"t:Surname,omitempty" json:"Surname,omitempty"`
+	Surname string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Surname,omitempty" json:"Surname,omitempty"`
 
-	Generation string `xml:"t:Generation,omitempty" json:"Generation,omitempty"`
+	Generation string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Generation,omitempty" json:"Generation,omitempty"`
 
-	Nickname string `xml:"t:Nickname,omitempty" json:"Nickname,omitempty"`
+	Nickname string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Nickname,omitempty" json:"Nickname,omitempty"`
 
-	YomiCompanyName string `xml:"t:YomiCompanyName,omitempty" json:"YomiCompanyName,omitempty"`
+	YomiCompanyName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types YomiCompanyName,omitempty" json:"YomiCompanyName,omitempty"`
 
-	YomiFirstName string `xml:"t:YomiFirstName,omitempty" json:"YomiFirstName,omitempty"`
+	YomiFirstName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types YomiFirstName,omitempty" json:"YomiFirstName,omitempty"`
 
-	YomiLastName string `xml:"t:YomiLastName,omitempty" json:"YomiLastName,omitempty"`
+	YomiLastName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types YomiLastName,omitempty" json:"YomiLastName,omitempty"`
 
-	Title string `xml:"t:Title,omitempty" json:"Title,omitempty"`
+	Title string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Title,omitempty" json:"Title,omitempty"`
 
-	Department string `xml:"t:Department,omitempty" json:"Department,omitempty"`
+	Department string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Department,omitempty" json:"Department,omitempty"`
 
-	CompanyName string `xml:"t:CompanyName,omitempty" json:"CompanyName,omitempty"`
+	CompanyName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompanyName,omitempty" json:"CompanyName,omitempty"`
 
-	Location string `xml:"t:Location,omitempty" json:"Location,omitempty"`
+	Location string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Location,omitempty" json:"Location,omitempty"`
 
-	EmailAddress *EmailAddressType `xml:"t:EmailAddress,omitempty" json:"EmailAddress,omitempty"`
+	EmailAddress *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 
-	EmailAddresses *ArrayOfEmailAddressesType `xml:"t:EmailAddresses,omitempty" json:"EmailAddresses,omitempty"`
+	EmailAddresses *ArrayOfEmailAddressesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddresses,omitempty" json:"EmailAddresses,omitempty"`
 
-	PhoneNumber *PersonaPhoneNumberType `xml:"t:PhoneNumber,omitempty" json:"PhoneNumber,omitempty"`
+	PhoneNumber *PersonaPhoneNumberType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneNumber,omitempty" json:"PhoneNumber,omitempty"`
 
-	ImAddress string `xml:"t:ImAddress,omitempty" json:"ImAddress,omitempty"`
+	ImAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ImAddress,omitempty" json:"ImAddress,omitempty"`
 
-	HomeCity string `xml:"t:HomeCity,omitempty" json:"HomeCity,omitempty"`
+	HomeCity string `xml:"http://schemas.microsoft.com/exchange/services/2006/types HomeCity,omitempty" json:"HomeCity,omitempty"`
 
-	WorkCity string `xml:"t:WorkCity,omitempty" json:"WorkCity,omitempty"`
+	WorkCity string `xml:"http://schemas.microsoft.com/exchange/services/2006/types WorkCity,omitempty" json:"WorkCity,omitempty"`
 
-	RelevanceScore int32 `xml:"t:RelevanceScore,omitempty" json:"RelevanceScore,omitempty"`
+	RelevanceScore int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types RelevanceScore,omitempty" json:"RelevanceScore,omitempty"`
 
-	FolderIds *ArrayOfFolderIdType `xml:"t:FolderIds,omitempty" json:"FolderIds,omitempty"`
+	FolderIds *ArrayOfFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderIds,omitempty" json:"FolderIds,omitempty"`
 
-	Attributions *ArrayOfPersonaAttributionsType `xml:"t:Attributions,omitempty" json:"Attributions,omitempty"`
+	Attributions *ArrayOfPersonaAttributionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attributions,omitempty" json:"Attributions,omitempty"`
 
-	DisplayNames *ArrayOfStringAttributedValuesType `xml:"t:DisplayNames,omitempty" json:"DisplayNames,omitempty"`
+	DisplayNames *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayNames,omitempty" json:"DisplayNames,omitempty"`
 
-	FileAses *ArrayOfStringAttributedValuesType `xml:"t:FileAses,omitempty" json:"FileAses,omitempty"`
+	FileAses *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileAses,omitempty" json:"FileAses,omitempty"`
 
-	FileAsIds *ArrayOfStringAttributedValuesType `xml:"t:FileAsIds,omitempty" json:"FileAsIds,omitempty"`
+	FileAsIds *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileAsIds,omitempty" json:"FileAsIds,omitempty"`
 
-	DisplayNamePrefixes *ArrayOfStringAttributedValuesType `xml:"t:DisplayNamePrefixes,omitempty" json:"DisplayNamePrefixes,omitempty"`
+	DisplayNamePrefixes *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayNamePrefixes,omitempty" json:"DisplayNamePrefixes,omitempty"`
 
-	GivenNames *ArrayOfStringAttributedValuesType `xml:"t:GivenNames,omitempty" json:"GivenNames,omitempty"`
+	GivenNames *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GivenNames,omitempty" json:"GivenNames,omitempty"`
 
-	MiddleNames *ArrayOfStringAttributedValuesType `xml:"t:MiddleNames,omitempty" json:"MiddleNames,omitempty"`
+	MiddleNames *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MiddleNames,omitempty" json:"MiddleNames,omitempty"`
 
-	Surnames *ArrayOfStringAttributedValuesType `xml:"t:Surnames,omitempty" json:"Surnames,omitempty"`
+	Surnames *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Surnames,omitempty" json:"Surnames,omitempty"`
 
-	Generations *ArrayOfStringAttributedValuesType `xml:"t:Generations,omitempty" json:"Generations,omitempty"`
+	Generations *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Generations,omitempty" json:"Generations,omitempty"`
 
-	Nicknames *ArrayOfStringAttributedValuesType `xml:"t:Nicknames,omitempty" json:"Nicknames,omitempty"`
+	Nicknames *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Nicknames,omitempty" json:"Nicknames,omitempty"`
 
-	Initials *ArrayOfStringAttributedValuesType `xml:"t:Initials,omitempty" json:"Initials,omitempty"`
+	Initials *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Initials,omitempty" json:"Initials,omitempty"`
 
-	YomiCompanyNames *ArrayOfStringAttributedValuesType `xml:"t:YomiCompanyNames,omitempty" json:"YomiCompanyNames,omitempty"`
+	YomiCompanyNames *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types YomiCompanyNames,omitempty" json:"YomiCompanyNames,omitempty"`
 
-	YomiFirstNames *ArrayOfStringAttributedValuesType `xml:"t:YomiFirstNames,omitempty" json:"YomiFirstNames,omitempty"`
+	YomiFirstNames *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types YomiFirstNames,omitempty" json:"YomiFirstNames,omitempty"`
 
-	YomiLastNames *ArrayOfStringAttributedValuesType `xml:"t:YomiLastNames,omitempty" json:"YomiLastNames,omitempty"`
+	YomiLastNames *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types YomiLastNames,omitempty" json:"YomiLastNames,omitempty"`
 
-	BusinessPhoneNumbers *ArrayOfPhoneNumberAttributedValuesType `xml:"t:BusinessPhoneNumbers,omitempty" json:"BusinessPhoneNumbers,omitempty"`
+	BusinessPhoneNumbers *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BusinessPhoneNumbers,omitempty" json:"BusinessPhoneNumbers,omitempty"`
 
-	BusinessPhoneNumbers2 *ArrayOfPhoneNumberAttributedValuesType `xml:"t:BusinessPhoneNumbers2,omitempty" json:"BusinessPhoneNumbers2,omitempty"`
+	BusinessPhoneNumbers2 *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BusinessPhoneNumbers2,omitempty" json:"BusinessPhoneNumbers2,omitempty"`
 
-	HomePhones *ArrayOfPhoneNumberAttributedValuesType `xml:"t:HomePhones,omitempty" json:"HomePhones,omitempty"`
+	HomePhones *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types HomePhones,omitempty" json:"HomePhones,omitempty"`
 
-	HomePhones2 *ArrayOfPhoneNumberAttributedValuesType `xml:"t:HomePhones2,omitempty" json:"HomePhones2,omitempty"`
+	HomePhones2 *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types HomePhones2,omitempty" json:"HomePhones2,omitempty"`
 
-	MobilePhones *ArrayOfPhoneNumberAttributedValuesType `xml:"t:MobilePhones,omitempty" json:"MobilePhones,omitempty"`
+	MobilePhones *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MobilePhones,omitempty" json:"MobilePhones,omitempty"`
 
-	MobilePhones2 *ArrayOfPhoneNumberAttributedValuesType `xml:"t:MobilePhones2,omitempty" json:"MobilePhones2,omitempty"`
+	MobilePhones2 *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MobilePhones2,omitempty" json:"MobilePhones2,omitempty"`
 
-	AssistantPhoneNumbers *ArrayOfPhoneNumberAttributedValuesType `xml:"t:AssistantPhoneNumbers,omitempty" json:"AssistantPhoneNumbers,omitempty"`
+	AssistantPhoneNumbers *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AssistantPhoneNumbers,omitempty" json:"AssistantPhoneNumbers,omitempty"`
 
-	CallbackPhones *ArrayOfPhoneNumberAttributedValuesType `xml:"t:CallbackPhones,omitempty" json:"CallbackPhones,omitempty"`
+	CallbackPhones *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CallbackPhones,omitempty" json:"CallbackPhones,omitempty"`
 
-	CarPhones *ArrayOfPhoneNumberAttributedValuesType `xml:"t:CarPhones,omitempty" json:"CarPhones,omitempty"`
+	CarPhones *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CarPhones,omitempty" json:"CarPhones,omitempty"`
 
-	HomeFaxes *ArrayOfPhoneNumberAttributedValuesType `xml:"t:HomeFaxes,omitempty" json:"HomeFaxes,omitempty"`
+	HomeFaxes *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types HomeFaxes,omitempty" json:"HomeFaxes,omitempty"`
 
-	OrganizationMainPhones *ArrayOfPhoneNumberAttributedValuesType `xml:"t:OrganizationMainPhones,omitempty" json:"OrganizationMainPhones,omitempty"`
+	OrganizationMainPhones *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OrganizationMainPhones,omitempty" json:"OrganizationMainPhones,omitempty"`
 
-	OtherFaxes *ArrayOfPhoneNumberAttributedValuesType `xml:"t:OtherFaxes,omitempty" json:"OtherFaxes,omitempty"`
+	OtherFaxes *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OtherFaxes,omitempty" json:"OtherFaxes,omitempty"`
 
-	OtherTelephones *ArrayOfPhoneNumberAttributedValuesType `xml:"t:OtherTelephones,omitempty" json:"OtherTelephones,omitempty"`
+	OtherTelephones *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OtherTelephones,omitempty" json:"OtherTelephones,omitempty"`
 
-	OtherPhones2 *ArrayOfPhoneNumberAttributedValuesType `xml:"t:OtherPhones2,omitempty" json:"OtherPhones2,omitempty"`
+	OtherPhones2 *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OtherPhones2,omitempty" json:"OtherPhones2,omitempty"`
 
-	Pagers *ArrayOfPhoneNumberAttributedValuesType `xml:"t:Pagers,omitempty" json:"Pagers,omitempty"`
+	Pagers *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Pagers,omitempty" json:"Pagers,omitempty"`
 
-	RadioPhones *ArrayOfPhoneNumberAttributedValuesType `xml:"t:RadioPhones,omitempty" json:"RadioPhones,omitempty"`
+	RadioPhones *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RadioPhones,omitempty" json:"RadioPhones,omitempty"`
 
-	TelexNumbers *ArrayOfPhoneNumberAttributedValuesType `xml:"t:TelexNumbers,omitempty" json:"TelexNumbers,omitempty"`
+	TelexNumbers *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TelexNumbers,omitempty" json:"TelexNumbers,omitempty"`
 
-	TTYTDDPhoneNumbers *ArrayOfPhoneNumberAttributedValuesType `xml:"t:TTYTDDPhoneNumbers,omitempty" json:"TTYTDDPhoneNumbers,omitempty"`
+	TTYTDDPhoneNumbers *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TTYTDDPhoneNumbers,omitempty" json:"TTYTDDPhoneNumbers,omitempty"`
 
-	WorkFaxes *ArrayOfPhoneNumberAttributedValuesType `xml:"t:WorkFaxes,omitempty" json:"WorkFaxes,omitempty"`
+	WorkFaxes *ArrayOfPhoneNumberAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types WorkFaxes,omitempty" json:"WorkFaxes,omitempty"`
 
-	Emails1 *ArrayOfEmailAddressAttributedValuesType `xml:"t:Emails1,omitempty" json:"Emails1,omitempty"`
+	Emails1 *ArrayOfEmailAddressAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Emails1,omitempty" json:"Emails1,omitempty"`
 
-	Emails2 *ArrayOfEmailAddressAttributedValuesType `xml:"t:Emails2,omitempty" json:"Emails2,omitempty"`
+	Emails2 *ArrayOfEmailAddressAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Emails2,omitempty" json:"Emails2,omitempty"`
 
-	Emails3 *ArrayOfEmailAddressAttributedValuesType `xml:"t:Emails3,omitempty" json:"Emails3,omitempty"`
+	Emails3 *ArrayOfEmailAddressAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Emails3,omitempty" json:"Emails3,omitempty"`
 
-	BusinessHomePages *ArrayOfStringAttributedValuesType `xml:"t:BusinessHomePages,omitempty" json:"BusinessHomePages,omitempty"`
+	BusinessHomePages *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BusinessHomePages,omitempty" json:"BusinessHomePages,omitempty"`
 
-	PersonalHomePages *ArrayOfStringAttributedValuesType `xml:"t:PersonalHomePages,omitempty" json:"PersonalHomePages,omitempty"`
+	PersonalHomePages *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PersonalHomePages,omitempty" json:"PersonalHomePages,omitempty"`
 
-	OfficeLocations *ArrayOfStringAttributedValuesType `xml:"t:OfficeLocations,omitempty" json:"OfficeLocations,omitempty"`
+	OfficeLocations *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OfficeLocations,omitempty" json:"OfficeLocations,omitempty"`
 
-	ImAddresses *ArrayOfStringAttributedValuesType `xml:"t:ImAddresses,omitempty" json:"ImAddresses,omitempty"`
+	ImAddresses *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ImAddresses,omitempty" json:"ImAddresses,omitempty"`
 
-	ImAddresses2 *ArrayOfStringAttributedValuesType `xml:"t:ImAddresses2,omitempty" json:"ImAddresses2,omitempty"`
+	ImAddresses2 *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ImAddresses2,omitempty" json:"ImAddresses2,omitempty"`
 
-	ImAddresses3 *ArrayOfStringAttributedValuesType `xml:"t:ImAddresses3,omitempty" json:"ImAddresses3,omitempty"`
+	ImAddresses3 *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ImAddresses3,omitempty" json:"ImAddresses3,omitempty"`
 
-	BusinessAddresses *ArrayOfPostalAddressAttributedValuesType `xml:"t:BusinessAddresses,omitempty" json:"BusinessAddresses,omitempty"`
+	BusinessAddresses *ArrayOfPostalAddressAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BusinessAddresses,omitempty" json:"BusinessAddresses,omitempty"`
 
-	HomeAddresses *ArrayOfPostalAddressAttributedValuesType `xml:"t:HomeAddresses,omitempty" json:"HomeAddresses,omitempty"`
+	HomeAddresses *ArrayOfPostalAddressAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types HomeAddresses,omitempty" json:"HomeAddresses,omitempty"`
 
-	OtherAddresses *ArrayOfPostalAddressAttributedValuesType `xml:"t:OtherAddresses,omitempty" json:"OtherAddresses,omitempty"`
+	OtherAddresses *ArrayOfPostalAddressAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OtherAddresses,omitempty" json:"OtherAddresses,omitempty"`
 
-	Titles *ArrayOfStringAttributedValuesType `xml:"t:Titles,omitempty" json:"Titles,omitempty"`
+	Titles *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Titles,omitempty" json:"Titles,omitempty"`
 
-	Departments *ArrayOfStringAttributedValuesType `xml:"t:Departments,omitempty" json:"Departments,omitempty"`
+	Departments *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Departments,omitempty" json:"Departments,omitempty"`
 
-	CompanyNames *ArrayOfStringAttributedValuesType `xml:"t:CompanyNames,omitempty" json:"CompanyNames,omitempty"`
+	CompanyNames *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompanyNames,omitempty" json:"CompanyNames,omitempty"`
 
-	Managers *ArrayOfStringAttributedValuesType `xml:"t:Managers,omitempty" json:"Managers,omitempty"`
+	Managers *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Managers,omitempty" json:"Managers,omitempty"`
 
-	AssistantNames *ArrayOfStringAttributedValuesType `xml:"t:AssistantNames,omitempty" json:"AssistantNames,omitempty"`
+	AssistantNames *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AssistantNames,omitempty" json:"AssistantNames,omitempty"`
 
-	Professions *ArrayOfStringAttributedValuesType `xml:"t:Professions,omitempty" json:"Professions,omitempty"`
+	Professions *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Professions,omitempty" json:"Professions,omitempty"`
 
-	SpouseNames *ArrayOfStringAttributedValuesType `xml:"t:SpouseNames,omitempty" json:"SpouseNames,omitempty"`
+	SpouseNames *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SpouseNames,omitempty" json:"SpouseNames,omitempty"`
 
-	Children *ArrayOfStringArrayAttributedValuesType `xml:"t:Children,omitempty" json:"Children,omitempty"`
+	Children *ArrayOfStringArrayAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Children,omitempty" json:"Children,omitempty"`
 
-	Schools *ArrayOfStringAttributedValuesType `xml:"t:Schools,omitempty" json:"Schools,omitempty"`
+	Schools *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Schools,omitempty" json:"Schools,omitempty"`
 
-	Hobbies *ArrayOfStringAttributedValuesType `xml:"t:Hobbies,omitempty" json:"Hobbies,omitempty"`
+	Hobbies *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Hobbies,omitempty" json:"Hobbies,omitempty"`
 
-	WeddingAnniversaries *ArrayOfStringAttributedValuesType `xml:"t:WeddingAnniversaries,omitempty" json:"WeddingAnniversaries,omitempty"`
+	WeddingAnniversaries *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types WeddingAnniversaries,omitempty" json:"WeddingAnniversaries,omitempty"`
 
-	Birthdays *ArrayOfStringAttributedValuesType `xml:"t:Birthdays,omitempty" json:"Birthdays,omitempty"`
+	Birthdays *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Birthdays,omitempty" json:"Birthdays,omitempty"`
 
-	Locations *ArrayOfStringAttributedValuesType `xml:"t:Locations,omitempty" json:"Locations,omitempty"`
+	Locations *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Locations,omitempty" json:"Locations,omitempty"`
 
-	InlineLinks *ArrayOfStringAttributedValuesType `xml:"t:InlineLinks,omitempty" json:"InlineLinks,omitempty"`
+	InlineLinks *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types InlineLinks,omitempty" json:"InlineLinks,omitempty"`
 
-	ItemLinkIds *ArrayOfStringArrayAttributedValuesType `xml:"t:ItemLinkIds,omitempty" json:"ItemLinkIds,omitempty"`
+	ItemLinkIds *ArrayOfStringArrayAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemLinkIds,omitempty" json:"ItemLinkIds,omitempty"`
 
-	HasActiveDeals string `xml:"t:HasActiveDeals,omitempty" json:"HasActiveDeals,omitempty"`
+	HasActiveDeals string `xml:"http://schemas.microsoft.com/exchange/services/2006/types HasActiveDeals,omitempty" json:"HasActiveDeals,omitempty"`
 
-	IsBusinessContact string `xml:"t:IsBusinessContact,omitempty" json:"IsBusinessContact,omitempty"`
+	IsBusinessContact string `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsBusinessContact,omitempty" json:"IsBusinessContact,omitempty"`
 
-	AttributedHasActiveDeals *ArrayOfStringAttributedValuesType `xml:"t:AttributedHasActiveDeals,omitempty" json:"AttributedHasActiveDeals,omitempty"`
+	AttributedHasActiveDeals *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttributedHasActiveDeals,omitempty" json:"AttributedHasActiveDeals,omitempty"`
 
-	AttributedIsBusinessContact *ArrayOfStringAttributedValuesType `xml:"t:AttributedIsBusinessContact,omitempty" json:"AttributedIsBusinessContact,omitempty"`
+	AttributedIsBusinessContact *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttributedIsBusinessContact,omitempty" json:"AttributedIsBusinessContact,omitempty"`
 
-	SourceMailboxGuids *ArrayOfStringAttributedValuesType `xml:"t:SourceMailboxGuids,omitempty" json:"SourceMailboxGuids,omitempty"`
+	SourceMailboxGuids *ArrayOfStringAttributedValuesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SourceMailboxGuids,omitempty" json:"SourceMailboxGuids,omitempty"`
 
-	LastContactedDate xsd.DateTime `xml:"t:LastContactedDate,omitempty" json:"LastContactedDate,omitempty"`
+	LastContactedDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastContactedDate,omitempty" json:"LastContactedDate,omitempty"`
 
-	ExtendedProperties *ArrayOfExtendedPropertyAttributedValueType `xml:"t:ExtendedProperties,omitempty" json:"ExtendedProperties,omitempty"`
+	ExtendedProperties *ArrayOfExtendedPropertyAttributedValueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedProperties,omitempty" json:"ExtendedProperties,omitempty"`
 
-	ExternalDirectoryObjectId string `xml:"t:ExternalDirectoryObjectId,omitempty" json:"ExternalDirectoryObjectId,omitempty"`
+	ExternalDirectoryObjectId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExternalDirectoryObjectId,omitempty" json:"ExternalDirectoryObjectId,omitempty"`
 
-	MapiEntryId string `xml:"t:MapiEntryId,omitempty" json:"MapiEntryId,omitempty"`
+	MapiEntryId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MapiEntryId,omitempty" json:"MapiEntryId,omitempty"`
 
-	MapiEmailAddress string `xml:"t:MapiEmailAddress,omitempty" json:"MapiEmailAddress,omitempty"`
+	MapiEmailAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MapiEmailAddress,omitempty" json:"MapiEmailAddress,omitempty"`
 
-	MapiAddressType string `xml:"t:MapiAddressType,omitempty" json:"MapiAddressType,omitempty"`
+	MapiAddressType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MapiAddressType,omitempty" json:"MapiAddressType,omitempty"`
 
-	MapiSearchKey string `xml:"t:MapiSearchKey,omitempty" json:"MapiSearchKey,omitempty"`
+	MapiSearchKey string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MapiSearchKey,omitempty" json:"MapiSearchKey,omitempty"`
 
-	MapiTransmittableDisplayName string `xml:"t:MapiTransmittableDisplayName,omitempty" json:"MapiTransmittableDisplayName,omitempty"`
+	MapiTransmittableDisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MapiTransmittableDisplayName,omitempty" json:"MapiTransmittableDisplayName,omitempty"`
 
-	MapiSendRichInfo bool `xml:"t:MapiSendRichInfo,omitempty" json:"MapiSendRichInfo,omitempty"`
+	MapiSendRichInfo bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types MapiSendRichInfo,omitempty" json:"MapiSendRichInfo,omitempty"`
 }
 
 type ArrayOfPeopleType struct {
-	Persona *PersonaType `xml:"t:Persona,omitempty" json:"Persona,omitempty"`
+	Persona *PersonaType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Persona,omitempty" json:"Persona,omitempty"`
 }
 
 type MailboxLocatorType struct {
-	ExternalDirectoryObjectId string `xml:"t:ExternalDirectoryObjectId,omitempty" json:"ExternalDirectoryObjectId,omitempty"`
+	ExternalDirectoryObjectId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExternalDirectoryObjectId,omitempty" json:"ExternalDirectoryObjectId,omitempty"`
 
-	LegacyDn string `xml:"t:LegacyDn,omitempty" json:"LegacyDn,omitempty"`
+	LegacyDn string `xml:"http://schemas.microsoft.com/exchange/services/2006/types LegacyDn,omitempty" json:"LegacyDn,omitempty"`
 }
 
 type GroupLocatorType struct {
@@ -6377,129 +6377,129 @@ type UserLocatorType struct {
 }
 
 type ArrayOfItemsType struct {
-	XMLName xml.Name `xml:"t:Items"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Items"`
 
-	Item *ItemType `xml:"t:Item,omitempty" json:"Item,omitempty"`
+	Item *ItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 }
 
 type ArrayOfCalendarItemsType struct {
-	XMLName xml.Name `xml:"t:CalendarItems"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarItems"`
 
-	CalendarItem *CalendarItemType `xml:"t:CalendarItem,omitempty" json:"CalendarItem,omitempty"`
+	CalendarItem *CalendarItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarItem,omitempty" json:"CalendarItem,omitempty"`
 }
 
 type InstantSearchPayloadType struct {
-	XMLName xml.Name `xml:"t:Payload"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Payload"`
 
-	SearchSessionId string `xml:"t:SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
+	SearchSessionId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
 
-	SearchRequestId int64 `xml:"t:SearchRequestId,omitempty" json:"SearchRequestId,omitempty"`
+	SearchRequestId int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchRequestId,omitempty" json:"SearchRequestId,omitempty"`
 
-	ResultType *InstantSearchResultType `xml:"t:ResultType,omitempty" json:"ResultType,omitempty"`
+	ResultType *InstantSearchResultType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ResultType,omitempty" json:"ResultType,omitempty"`
 
-	Items *ArrayOfItemsType `xml:"t:Items,omitempty" json:"Items,omitempty"`
+	Items *ArrayOfItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Items,omitempty" json:"Items,omitempty"`
 
-	Conversations *ArrayOfConversationsType `xml:"t:Conversations,omitempty" json:"Conversations,omitempty"`
+	Conversations *ArrayOfConversationsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Conversations,omitempty" json:"Conversations,omitempty"`
 
-	CalendarItems *ArrayOfCalendarItemsType `xml:"t:CalendarItems,omitempty" json:"CalendarItems,omitempty"`
+	CalendarItems *ArrayOfCalendarItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarItems,omitempty" json:"CalendarItems,omitempty"`
 }
 
 type ArrayOfStringsType struct {
-	String []string `xml:"t:String,omitempty" json:"String,omitempty"`
+	String []string `xml:"http://schemas.microsoft.com/exchange/services/2006/types String,omitempty" json:"String,omitempty"`
 }
 
 type ArrayOfRealItemsType struct {
-	Item *ItemType `xml:"t:Item,omitempty" json:"Item,omitempty"`
+	Item *ItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 
-	Message *MessageType `xml:"t:Message,omitempty" json:"Message,omitempty"`
+	Message *MessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Message,omitempty" json:"Message,omitempty"`
 
-	SharingMessage *SharingMessageType `xml:"t:SharingMessage,omitempty" json:"SharingMessage,omitempty"`
+	SharingMessage *SharingMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharingMessage,omitempty" json:"SharingMessage,omitempty"`
 
-	CalendarItem *CalendarItemType `xml:"t:CalendarItem,omitempty" json:"CalendarItem,omitempty"`
+	CalendarItem *CalendarItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarItem,omitempty" json:"CalendarItem,omitempty"`
 
-	Contact *ContactItemType `xml:"t:Contact,omitempty" json:"Contact,omitempty"`
+	Contact *ContactItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Contact,omitempty" json:"Contact,omitempty"`
 
-	DistributionList *DistributionListType `xml:"t:DistributionList,omitempty" json:"DistributionList,omitempty"`
+	DistributionList *DistributionListType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistributionList,omitempty" json:"DistributionList,omitempty"`
 
-	MeetingMessage *MeetingMessageType `xml:"t:MeetingMessage,omitempty" json:"MeetingMessage,omitempty"`
+	MeetingMessage *MeetingMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingMessage,omitempty" json:"MeetingMessage,omitempty"`
 
-	MeetingRequest *MeetingRequestMessageType `xml:"t:MeetingRequest,omitempty" json:"MeetingRequest,omitempty"`
+	MeetingRequest *MeetingRequestMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingRequest,omitempty" json:"MeetingRequest,omitempty"`
 
-	MeetingResponse *MeetingResponseMessageType `xml:"t:MeetingResponse,omitempty" json:"MeetingResponse,omitempty"`
+	MeetingResponse *MeetingResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingResponse,omitempty" json:"MeetingResponse,omitempty"`
 
-	MeetingCancellation *MeetingCancellationMessageType `xml:"t:MeetingCancellation,omitempty" json:"MeetingCancellation,omitempty"`
+	MeetingCancellation *MeetingCancellationMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingCancellation,omitempty" json:"MeetingCancellation,omitempty"`
 
-	Task *TaskType `xml:"t:Task,omitempty" json:"Task,omitempty"`
+	Task *TaskType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Task,omitempty" json:"Task,omitempty"`
 
-	PostItem *PostItemType `xml:"t:PostItem,omitempty" json:"PostItem,omitempty"`
+	PostItem *PostItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostItem,omitempty" json:"PostItem,omitempty"`
 
-	RoleMember *RoleMemberItemType `xml:"t:RoleMember,omitempty" json:"RoleMember,omitempty"`
+	RoleMember *RoleMemberItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RoleMember,omitempty" json:"RoleMember,omitempty"`
 
-	Network *NetworkItemType `xml:"t:Network,omitempty" json:"Network,omitempty"`
+	Network *NetworkItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Network,omitempty" json:"Network,omitempty"`
 
-	Person *AbchPersonItemType `xml:"t:Person,omitempty" json:"Person,omitempty"`
+	Person *AbchPersonItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Person,omitempty" json:"Person,omitempty"`
 }
 
 type NonEmptyArrayOfAllItemsType struct {
-	Item *ItemType `xml:"t:Item,omitempty" json:"Item,omitempty"`
+	Item *ItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 
-	Message *MessageType `xml:"t:Message,omitempty" json:"Message,omitempty"`
+	Message *MessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Message,omitempty" json:"Message,omitempty"`
 
-	SharingMessage *SharingMessageType `xml:"t:SharingMessage,omitempty" json:"SharingMessage,omitempty"`
+	SharingMessage *SharingMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharingMessage,omitempty" json:"SharingMessage,omitempty"`
 
-	CalendarItem *CalendarItemType `xml:"t:CalendarItem,omitempty" json:"CalendarItem,omitempty"`
+	CalendarItem *CalendarItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarItem,omitempty" json:"CalendarItem,omitempty"`
 
-	Contact *ContactItemType `xml:"t:Contact,omitempty" json:"Contact,omitempty"`
+	Contact *ContactItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Contact,omitempty" json:"Contact,omitempty"`
 
-	DistributionList *DistributionListType `xml:"t:DistributionList,omitempty" json:"DistributionList,omitempty"`
+	DistributionList *DistributionListType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistributionList,omitempty" json:"DistributionList,omitempty"`
 
-	MeetingMessage *MeetingMessageType `xml:"t:MeetingMessage,omitempty" json:"MeetingMessage,omitempty"`
+	MeetingMessage *MeetingMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingMessage,omitempty" json:"MeetingMessage,omitempty"`
 
-	MeetingRequest *MeetingRequestMessageType `xml:"t:MeetingRequest,omitempty" json:"MeetingRequest,omitempty"`
+	MeetingRequest *MeetingRequestMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingRequest,omitempty" json:"MeetingRequest,omitempty"`
 
-	MeetingResponse *MeetingResponseMessageType `xml:"t:MeetingResponse,omitempty" json:"MeetingResponse,omitempty"`
+	MeetingResponse *MeetingResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingResponse,omitempty" json:"MeetingResponse,omitempty"`
 
-	MeetingCancellation *MeetingCancellationMessageType `xml:"t:MeetingCancellation,omitempty" json:"MeetingCancellation,omitempty"`
+	MeetingCancellation *MeetingCancellationMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingCancellation,omitempty" json:"MeetingCancellation,omitempty"`
 
-	Task *TaskType `xml:"t:Task,omitempty" json:"Task,omitempty"`
+	Task *TaskType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Task,omitempty" json:"Task,omitempty"`
 
-	PostItem *PostItemType `xml:"t:PostItem,omitempty" json:"PostItem,omitempty"`
+	PostItem *PostItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostItem,omitempty" json:"PostItem,omitempty"`
 
-	ReplyToItem *ReplyToItemType `xml:"t:ReplyToItem,omitempty" json:"ReplyToItem,omitempty"`
+	ReplyToItem *ReplyToItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReplyToItem,omitempty" json:"ReplyToItem,omitempty"`
 
-	ForwardItem *ForwardItemType `xml:"t:ForwardItem,omitempty" json:"ForwardItem,omitempty"`
+	ForwardItem *ForwardItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ForwardItem,omitempty" json:"ForwardItem,omitempty"`
 
-	ReplyAllToItem *ReplyAllToItemType `xml:"t:ReplyAllToItem,omitempty" json:"ReplyAllToItem,omitempty"`
+	ReplyAllToItem *ReplyAllToItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReplyAllToItem,omitempty" json:"ReplyAllToItem,omitempty"`
 
-	AcceptItem *AcceptItemType `xml:"t:AcceptItem,omitempty" json:"AcceptItem,omitempty"`
+	AcceptItem *AcceptItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AcceptItem,omitempty" json:"AcceptItem,omitempty"`
 
-	TentativelyAcceptItem *TentativelyAcceptItemType `xml:"t:TentativelyAcceptItem,omitempty" json:"TentativelyAcceptItem,omitempty"`
+	TentativelyAcceptItem *TentativelyAcceptItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TentativelyAcceptItem,omitempty" json:"TentativelyAcceptItem,omitempty"`
 
-	DeclineItem *DeclineItemType `xml:"t:DeclineItem,omitempty" json:"DeclineItem,omitempty"`
+	DeclineItem *DeclineItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeclineItem,omitempty" json:"DeclineItem,omitempty"`
 
-	CancelCalendarItem *CancelCalendarItemType `xml:"t:CancelCalendarItem,omitempty" json:"CancelCalendarItem,omitempty"`
+	CancelCalendarItem *CancelCalendarItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CancelCalendarItem,omitempty" json:"CancelCalendarItem,omitempty"`
 
-	RemoveItem *RemoveItemType `xml:"t:RemoveItem,omitempty" json:"RemoveItem,omitempty"`
+	RemoveItem *RemoveItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RemoveItem,omitempty" json:"RemoveItem,omitempty"`
 
-	SuppressReadReceipt *SuppressReadReceiptType `xml:"t:SuppressReadReceipt,omitempty" json:"SuppressReadReceipt,omitempty"`
+	SuppressReadReceipt *SuppressReadReceiptType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SuppressReadReceipt,omitempty" json:"SuppressReadReceipt,omitempty"`
 
-	PostReplyItem *PostReplyItemType `xml:"t:PostReplyItem,omitempty" json:"PostReplyItem,omitempty"`
+	PostReplyItem *PostReplyItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostReplyItem,omitempty" json:"PostReplyItem,omitempty"`
 
-	AcceptSharingInvitation *AcceptSharingInvitationType `xml:"t:AcceptSharingInvitation,omitempty" json:"AcceptSharingInvitation,omitempty"`
+	AcceptSharingInvitation *AcceptSharingInvitationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AcceptSharingInvitation,omitempty" json:"AcceptSharingInvitation,omitempty"`
 
-	RoleMember *RoleMemberItemType `xml:"t:RoleMember,omitempty" json:"RoleMember,omitempty"`
+	RoleMember *RoleMemberItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RoleMember,omitempty" json:"RoleMember,omitempty"`
 
-	Network *NetworkItemType `xml:"t:Network,omitempty" json:"Network,omitempty"`
+	Network *NetworkItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Network,omitempty" json:"Network,omitempty"`
 
-	Person *AbchPersonItemType `xml:"t:Person,omitempty" json:"Person,omitempty"`
+	Person *AbchPersonItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Person,omitempty" json:"Person,omitempty"`
 }
 
 type MeetingRegistrationResponseObjectType struct {
 	*WellKnownResponseObjectType
 
-	ProposedStart xsd.DateTime `xml:"t:ProposedStart,omitempty" json:"ProposedStart,omitempty"`
+	ProposedStart xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProposedStart,omitempty" json:"ProposedStart,omitempty"`
 
-	ProposedEnd xsd.DateTime `xml:"t:ProposedEnd,omitempty" json:"ProposedEnd,omitempty"`
+	ProposedEnd xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProposedEnd,omitempty" json:"ProposedEnd,omitempty"`
 }
 
 type AcceptItemType struct {
@@ -6515,7 +6515,7 @@ type DeclineItemType struct {
 }
 
 type ProposeNewTimeType struct {
-	XMLName xml.Name `xml:"t:ProposeNewTime"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProposeNewTime"`
 
 	*ResponseObjectType
 }
@@ -6525,7 +6525,7 @@ type RemoveItemType struct {
 }
 
 type AddItemToMyCalendarType struct {
-	XMLName xml.Name `xml:"t:AddItemToMyCalendar"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AddItemToMyCalendar"`
 
 	*ResponseObjectType
 }
@@ -6536,11 +6536,11 @@ type PostReplyItemBaseType struct {
 type PostReplyItemType struct {
 	*PostReplyItemBaseType
 
-	NewBodyContent *BodyType `xml:"t:NewBodyContent,omitempty" json:"NewBodyContent,omitempty"`
+	NewBodyContent *BodyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types NewBodyContent,omitempty" json:"NewBodyContent,omitempty"`
 }
 
 type MimeContentType struct {
-	XMLName xml.Name `xml:"t:MimeContent"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MimeContent"`
 
 	Value string `xml:",chardata" json:"-,"`
 
@@ -6556,145 +6556,145 @@ type MimeContentUTF8Type struct {
 type MessageType struct {
 	*ItemType
 
-	Sender *SingleRecipientType `xml:"t:Sender,omitempty" json:"Sender,omitempty"`
+	Sender *SingleRecipientType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Sender,omitempty" json:"Sender,omitempty"`
 
-	ToRecipients *ArrayOfRecipientsType `xml:"t:ToRecipients,omitempty" json:"ToRecipients,omitempty"`
+	ToRecipients *ArrayOfRecipientsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ToRecipients,omitempty" json:"ToRecipients,omitempty"`
 
-	CcRecipients *ArrayOfRecipientsType `xml:"t:CcRecipients,omitempty" json:"CcRecipients,omitempty"`
+	CcRecipients *ArrayOfRecipientsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CcRecipients,omitempty" json:"CcRecipients,omitempty"`
 
-	BccRecipients *ArrayOfRecipientsType `xml:"t:BccRecipients,omitempty" json:"BccRecipients,omitempty"`
+	BccRecipients *ArrayOfRecipientsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BccRecipients,omitempty" json:"BccRecipients,omitempty"`
 
-	IsReadReceiptRequested bool `xml:"t:IsReadReceiptRequested,omitempty" json:"IsReadReceiptRequested,omitempty"`
+	IsReadReceiptRequested bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsReadReceiptRequested,omitempty" json:"IsReadReceiptRequested,omitempty"`
 
-	IsDeliveryReceiptRequested bool `xml:"t:IsDeliveryReceiptRequested,omitempty" json:"IsDeliveryReceiptRequested,omitempty"`
+	IsDeliveryReceiptRequested bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsDeliveryReceiptRequested,omitempty" json:"IsDeliveryReceiptRequested,omitempty"`
 
-	ConversationIndex []byte `xml:"t:ConversationIndex,omitempty" json:"ConversationIndex,omitempty"`
+	ConversationIndex []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationIndex,omitempty" json:"ConversationIndex,omitempty"`
 
-	ConversationTopic string `xml:"t:ConversationTopic,omitempty" json:"ConversationTopic,omitempty"`
+	ConversationTopic string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationTopic,omitempty" json:"ConversationTopic,omitempty"`
 
-	From *SingleRecipientType `xml:"t:From,omitempty" json:"From,omitempty"`
+	From *SingleRecipientType `xml:"http://schemas.microsoft.com/exchange/services/2006/types From,omitempty" json:"From,omitempty"`
 
-	InternetMessageId string `xml:"t:InternetMessageId,omitempty" json:"InternetMessageId,omitempty"`
+	InternetMessageId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types InternetMessageId,omitempty" json:"InternetMessageId,omitempty"`
 
-	IsRead bool `xml:"t:IsRead,omitempty" json:"IsRead,omitempty"`
+	IsRead bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsRead,omitempty" json:"IsRead,omitempty"`
 
-	IsResponseRequested bool `xml:"t:IsResponseRequested,omitempty" json:"IsResponseRequested,omitempty"`
+	IsResponseRequested bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsResponseRequested,omitempty" json:"IsResponseRequested,omitempty"`
 
-	References string `xml:"t:References,omitempty" json:"References,omitempty"`
+	References string `xml:"http://schemas.microsoft.com/exchange/services/2006/types References,omitempty" json:"References,omitempty"`
 
-	ReplyTo *ArrayOfRecipientsType `xml:"t:ReplyTo,omitempty" json:"ReplyTo,omitempty"`
+	ReplyTo *ArrayOfRecipientsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReplyTo,omitempty" json:"ReplyTo,omitempty"`
 
-	ReceivedBy *SingleRecipientType `xml:"t:ReceivedBy,omitempty" json:"ReceivedBy,omitempty"`
+	ReceivedBy *SingleRecipientType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReceivedBy,omitempty" json:"ReceivedBy,omitempty"`
 
-	ReceivedRepresenting *SingleRecipientType `xml:"t:ReceivedRepresenting,omitempty" json:"ReceivedRepresenting,omitempty"`
+	ReceivedRepresenting *SingleRecipientType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReceivedRepresenting,omitempty" json:"ReceivedRepresenting,omitempty"`
 
-	ApprovalRequestData *ApprovalRequestDataType `xml:"t:ApprovalRequestData,omitempty" json:"ApprovalRequestData,omitempty"`
+	ApprovalRequestData *ApprovalRequestDataType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ApprovalRequestData,omitempty" json:"ApprovalRequestData,omitempty"`
 
-	VotingInformation *VotingInformationType `xml:"t:VotingInformation,omitempty" json:"VotingInformation,omitempty"`
+	VotingInformation *VotingInformationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types VotingInformation,omitempty" json:"VotingInformation,omitempty"`
 
-	ReminderMessageData *ReminderMessageDataType `xml:"t:ReminderMessageData,omitempty" json:"ReminderMessageData,omitempty"`
+	ReminderMessageData *ReminderMessageDataType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReminderMessageData,omitempty" json:"ReminderMessageData,omitempty"`
 
-	MessageSafety *MessageSafetyType `xml:"t:MessageSafety,omitempty" json:"MessageSafety,omitempty"`
+	MessageSafety *MessageSafetyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MessageSafety,omitempty" json:"MessageSafety,omitempty"`
 
-	SenderSMTPAddress *SmtpAddressType `xml:"t:SenderSMTPAddress,omitempty" json:"SenderSMTPAddress,omitempty"`
+	SenderSMTPAddress *SmtpAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SenderSMTPAddress,omitempty" json:"SenderSMTPAddress,omitempty"`
 
 	MailboxGuids struct {
-		MailboxGuid []*GuidType `xml:"t:MailboxGuid,omitempty" json:"MailboxGuid,omitempty"`
+		MailboxGuid []*GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxGuid,omitempty" json:"MailboxGuid,omitempty"`
 	} `MailboxGuids,omitempty" json:"MailboxGuids,omitempty"`
 
-	PublishedCalendarItemIcs string `xml:"t:PublishedCalendarItemIcs,omitempty" json:"PublishedCalendarItemIcs,omitempty"`
+	PublishedCalendarItemIcs string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PublishedCalendarItemIcs,omitempty" json:"PublishedCalendarItemIcs,omitempty"`
 
-	PublishedCalendarItemName string `xml:"t:PublishedCalendarItemName,omitempty" json:"PublishedCalendarItemName,omitempty"`
+	PublishedCalendarItemName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PublishedCalendarItemName,omitempty" json:"PublishedCalendarItemName,omitempty"`
 }
 
 type TaskType struct {
 	*ItemType
 
-	ActualWork int32 `xml:"t:ActualWork,omitempty" json:"ActualWork,omitempty"`
+	ActualWork int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ActualWork,omitempty" json:"ActualWork,omitempty"`
 
-	AssignedTime xsd.DateTime `xml:"t:AssignedTime,omitempty" json:"AssignedTime,omitempty"`
+	AssignedTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types AssignedTime,omitempty" json:"AssignedTime,omitempty"`
 
-	BillingInformation string `xml:"t:BillingInformation,omitempty" json:"BillingInformation,omitempty"`
+	BillingInformation string `xml:"http://schemas.microsoft.com/exchange/services/2006/types BillingInformation,omitempty" json:"BillingInformation,omitempty"`
 
-	ChangeCount int32 `xml:"t:ChangeCount,omitempty" json:"ChangeCount,omitempty"`
+	ChangeCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ChangeCount,omitempty" json:"ChangeCount,omitempty"`
 
-	Companies *ArrayOfStringsType `xml:"t:Companies,omitempty" json:"Companies,omitempty"`
+	Companies *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Companies,omitempty" json:"Companies,omitempty"`
 
-	CompleteDate xsd.DateTime `xml:"t:CompleteDate,omitempty" json:"CompleteDate,omitempty"`
+	CompleteDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompleteDate,omitempty" json:"CompleteDate,omitempty"`
 
-	Contacts *ArrayOfStringsType `xml:"t:Contacts,omitempty" json:"Contacts,omitempty"`
+	Contacts *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Contacts,omitempty" json:"Contacts,omitempty"`
 
-	DelegationState *TaskDelegateStateType `xml:"t:DelegationState,omitempty" json:"DelegationState,omitempty"`
+	DelegationState *TaskDelegateStateType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DelegationState,omitempty" json:"DelegationState,omitempty"`
 
-	Delegator string `xml:"t:Delegator,omitempty" json:"Delegator,omitempty"`
+	Delegator string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Delegator,omitempty" json:"Delegator,omitempty"`
 
-	DueDate xsd.DateTime `xml:"t:DueDate,omitempty" json:"DueDate,omitempty"`
+	DueDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types DueDate,omitempty" json:"DueDate,omitempty"`
 
-	IsAssignmentEditable int32 `xml:"t:IsAssignmentEditable,omitempty" json:"IsAssignmentEditable,omitempty"`
+	IsAssignmentEditable int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsAssignmentEditable,omitempty" json:"IsAssignmentEditable,omitempty"`
 
-	IsComplete bool `xml:"t:IsComplete,omitempty" json:"IsComplete,omitempty"`
+	IsComplete bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsComplete,omitempty" json:"IsComplete,omitempty"`
 
-	IsRecurring bool `xml:"t:IsRecurring,omitempty" json:"IsRecurring,omitempty"`
+	IsRecurring bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsRecurring,omitempty" json:"IsRecurring,omitempty"`
 
-	IsTeamTask bool `xml:"t:IsTeamTask,omitempty" json:"IsTeamTask,omitempty"`
+	IsTeamTask bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsTeamTask,omitempty" json:"IsTeamTask,omitempty"`
 
-	Mileage string `xml:"t:Mileage,omitempty" json:"Mileage,omitempty"`
+	Mileage string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mileage,omitempty" json:"Mileage,omitempty"`
 
-	Owner string `xml:"t:Owner,omitempty" json:"Owner,omitempty"`
+	Owner string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Owner,omitempty" json:"Owner,omitempty"`
 
-	PercentComplete float64 `xml:"t:PercentComplete,omitempty" json:"PercentComplete,omitempty"`
+	PercentComplete float64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types PercentComplete,omitempty" json:"PercentComplete,omitempty"`
 
-	Recurrence *TaskRecurrenceType `xml:"t:Recurrence,omitempty" json:"Recurrence,omitempty"`
+	Recurrence *TaskRecurrenceType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Recurrence,omitempty" json:"Recurrence,omitempty"`
 
-	StartDate xsd.DateTime `xml:"t:StartDate,omitempty" json:"StartDate,omitempty"`
+	StartDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartDate,omitempty" json:"StartDate,omitempty"`
 
-	Status *TaskStatusType `xml:"t:Status,omitempty" json:"Status,omitempty"`
+	Status *TaskStatusType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Status,omitempty" json:"Status,omitempty"`
 
-	StatusDescription string `xml:"t:StatusDescription,omitempty" json:"StatusDescription,omitempty"`
+	StatusDescription string `xml:"http://schemas.microsoft.com/exchange/services/2006/types StatusDescription,omitempty" json:"StatusDescription,omitempty"`
 
-	TotalWork int32 `xml:"t:TotalWork,omitempty" json:"TotalWork,omitempty"`
+	TotalWork int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types TotalWork,omitempty" json:"TotalWork,omitempty"`
 }
 
 type PostItemType struct {
 	*ItemType
 
-	ConversationIndex []byte `xml:"t:ConversationIndex,omitempty" json:"ConversationIndex,omitempty"`
+	ConversationIndex []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationIndex,omitempty" json:"ConversationIndex,omitempty"`
 
-	ConversationTopic string `xml:"t:ConversationTopic,omitempty" json:"ConversationTopic,omitempty"`
+	ConversationTopic string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationTopic,omitempty" json:"ConversationTopic,omitempty"`
 
-	From *SingleRecipientType `xml:"t:From,omitempty" json:"From,omitempty"`
+	From *SingleRecipientType `xml:"http://schemas.microsoft.com/exchange/services/2006/types From,omitempty" json:"From,omitempty"`
 
-	InternetMessageId string `xml:"t:InternetMessageId,omitempty" json:"InternetMessageId,omitempty"`
+	InternetMessageId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types InternetMessageId,omitempty" json:"InternetMessageId,omitempty"`
 
-	IsRead bool `xml:"t:IsRead,omitempty" json:"IsRead,omitempty"`
+	IsRead bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsRead,omitempty" json:"IsRead,omitempty"`
 
-	PostedTime xsd.DateTime `xml:"t:PostedTime,omitempty" json:"PostedTime,omitempty"`
+	PostedTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostedTime,omitempty" json:"PostedTime,omitempty"`
 
-	References string `xml:"t:References,omitempty" json:"References,omitempty"`
+	References string `xml:"http://schemas.microsoft.com/exchange/services/2006/types References,omitempty" json:"References,omitempty"`
 
-	Sender *SingleRecipientType `xml:"t:Sender,omitempty" json:"Sender,omitempty"`
+	Sender *SingleRecipientType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Sender,omitempty" json:"Sender,omitempty"`
 }
 
 type SharingMessageType struct {
 	*MessageType
 
-	SharingMessageAction *SharingMessageActionType `xml:"t:SharingMessageAction,omitempty" json:"SharingMessageAction,omitempty"`
+	SharingMessageAction *SharingMessageActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharingMessageAction,omitempty" json:"SharingMessageAction,omitempty"`
 
-	SharingMessageActions *ArrayOfSharingMessageActionType `xml:"t:SharingMessageActions,omitempty" json:"SharingMessageActions,omitempty"`
+	SharingMessageActions *ArrayOfSharingMessageActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharingMessageActions,omitempty" json:"SharingMessageActions,omitempty"`
 }
 
 type ArrayOfSharingMessageActionType struct {
-	XMLName xml.Name `xml:"t:SharingMessageActions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharingMessageActions"`
 
-	SharingMessageAction *SharingMessageActionType `xml:"t:SharingMessageAction,omitempty" json:"SharingMessageAction,omitempty"`
+	SharingMessageAction *SharingMessageActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharingMessageAction,omitempty" json:"SharingMessageAction,omitempty"`
 }
 
 type SharingMessageActionType struct {
-	Importance *SharingActionImportance `xml:"t:Importance,omitempty" json:"Importance,omitempty"`
+	Importance *SharingActionImportance `xml:"http://schemas.microsoft.com/exchange/services/2006/types Importance,omitempty" json:"Importance,omitempty"`
 
-	ActionType *SharingActionType `xml:"t:ActionType,omitempty" json:"ActionType,omitempty"`
+	ActionType *SharingActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ActionType,omitempty" json:"ActionType,omitempty"`
 
-	Action *SharingAction `xml:"t:Action,omitempty" json:"Action,omitempty"`
+	Action *SharingAction `xml:"http://schemas.microsoft.com/exchange/services/2006/types Action,omitempty" json:"Action,omitempty"`
 }
 
 type BasePagingType struct {
@@ -6720,13 +6720,13 @@ type FractionalPageViewType struct {
 type SeekToConditionPageViewType struct {
 	*BasePagingType
 
-	Condition *RestrictionType `xml:"t:Condition,omitempty" json:"Condition,omitempty"`
+	Condition *RestrictionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Condition,omitempty" json:"Condition,omitempty"`
 
 	BasePoint *IndexBasePointType `xml:"BasePoint,attr,omitempty" json:"BasePoint,omitempty"`
 }
 
 type CalendarViewType struct {
-	XMLName xml.Name `xml:"t:CalendarView"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarView"`
 
 	*BasePagingType
 
@@ -6736,7 +6736,7 @@ type CalendarViewType struct {
 }
 
 type ContactsViewType struct {
-	XMLName xml.Name `xml:"t:ContactsView"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactsView"`
 
 	*BasePagingType
 
@@ -6746,63 +6746,63 @@ type ContactsViewType struct {
 }
 
 type ResolutionType struct {
-	XMLName xml.Name `xml:"t:Resolution"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Resolution"`
 
-	Mailbox *EmailAddressType `xml:"t:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailbox,omitempty" json:"Mailbox,omitempty"`
 
-	Contact *ContactItemType `xml:"t:Contact,omitempty" json:"Contact,omitempty"`
+	Contact *ContactItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Contact,omitempty" json:"Contact,omitempty"`
 }
 
 type ArrayOfResolutionType struct {
-	XMLName xml.Name `xml:"t:ResolutionSet"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ResolutionSet"`
 
-	Resolution *ResolutionType `xml:"t:Resolution,omitempty" json:"Resolution,omitempty"`
+	Resolution *ResolutionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Resolution,omitempty" json:"Resolution,omitempty"`
 }
 
 type ArrayOfDLExpansionType struct {
-	XMLName xml.Name `xml:"t:DLExpansion"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DLExpansion"`
 
-	Mailbox []*EmailAddressType `xml:"t:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox []*EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailbox,omitempty" json:"Mailbox,omitempty"`
 }
 
 type NonEmptyArrayOfTimeZoneIdType struct {
-	XMLName xml.Name `xml:"t:Ids"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Ids"`
 
-	Id []string `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id []string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 }
 
 type ArrayOfTimeZoneDefinitionType struct {
-	XMLName xml.Name `xml:"t:TimeZoneDefinitions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeZoneDefinitions"`
 
-	TimeZoneDefinition *TimeZoneDefinitionType `xml:"t:TimeZoneDefinition,omitempty" json:"TimeZoneDefinition,omitempty"`
+	TimeZoneDefinition *TimeZoneDefinitionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeZoneDefinition,omitempty" json:"TimeZoneDefinition,omitempty"`
 }
 
 type OnlineMeetingSettingsType struct {
-	XMLName xml.Name `xml:"t:OnlineMeetingSettings"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types OnlineMeetingSettings"`
 
-	LobbyBypass *LobbyBypassType `xml:"t:LobbyBypass,omitempty" json:"LobbyBypass,omitempty"`
+	LobbyBypass *LobbyBypassType `xml:"http://schemas.microsoft.com/exchange/services/2006/types LobbyBypass,omitempty" json:"LobbyBypass,omitempty"`
 
-	AccessLevel *OnlineMeetingAccessLevelType `xml:"t:AccessLevel,omitempty" json:"AccessLevel,omitempty"`
+	AccessLevel *OnlineMeetingAccessLevelType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AccessLevel,omitempty" json:"AccessLevel,omitempty"`
 
-	Presenters *PresentersType `xml:"t:Presenters,omitempty" json:"Presenters,omitempty"`
+	Presenters *PresentersType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Presenters,omitempty" json:"Presenters,omitempty"`
 }
 
 type AttendeeType struct {
-	XMLName xml.Name `xml:"t:Attendee"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attendee"`
 
-	Mailbox *EmailAddressType `xml:"t:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailbox,omitempty" json:"Mailbox,omitempty"`
 
-	ResponseType *ResponseTypeType `xml:"t:ResponseType,omitempty" json:"ResponseType,omitempty"`
+	ResponseType *ResponseTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ResponseType,omitempty" json:"ResponseType,omitempty"`
 
-	LastResponseTime xsd.DateTime `xml:"t:LastResponseTime,omitempty" json:"LastResponseTime,omitempty"`
+	LastResponseTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastResponseTime,omitempty" json:"LastResponseTime,omitempty"`
 
-	ProposedStart xsd.DateTime `xml:"t:ProposedStart,omitempty" json:"ProposedStart,omitempty"`
+	ProposedStart xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProposedStart,omitempty" json:"ProposedStart,omitempty"`
 
-	ProposedEnd xsd.DateTime `xml:"t:ProposedEnd,omitempty" json:"ProposedEnd,omitempty"`
+	ProposedEnd xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProposedEnd,omitempty" json:"ProposedEnd,omitempty"`
 }
 
 type NonEmptyArrayOfAttendeesType struct {
-	Attendee []*AttendeeType `xml:"t:Attendee,omitempty" json:"Attendee,omitempty"`
+	Attendee []*AttendeeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Attendee,omitempty" json:"Attendee,omitempty"`
 }
 
 type OccurrenceItemIdType struct {
@@ -6824,21 +6824,21 @@ type RecurringMasterItemIdType struct {
 }
 
 type RecurringMasterItemIdRangesType struct {
-	XMLName xml.Name `xml:"t:RecurringMasterItemIdRanges"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecurringMasterItemIdRanges"`
 
 	*ItemIdType
 
-	Ranges *ArrayOfOccurrenceRangesType `xml:"t:Ranges,omitempty" json:"Ranges,omitempty"`
+	Ranges *ArrayOfOccurrenceRangesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Ranges,omitempty" json:"Ranges,omitempty"`
 }
 
 type ArrayOfOccurrenceRangesType struct {
-	XMLName xml.Name `xml:"t:Ranges"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Ranges"`
 
-	Range []*OccurrencesRangeType `xml:"t:Range,omitempty" json:"Range,omitempty"`
+	Range []*OccurrencesRangeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Range,omitempty" json:"Range,omitempty"`
 }
 
 type OccurrencesRangeType struct {
-	XMLName xml.Name `xml:"t:Range"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Range"`
 
 	Start xsd.DateTime `xml:"Start,attr,omitempty" json:"Start,omitempty"`
 
@@ -6855,7 +6855,7 @@ type RecurrencePatternBaseType struct {
 type IntervalRecurrencePatternBaseType struct {
 	*RecurrencePatternBaseType
 
-	Interval int32 `xml:"t:Interval,omitempty" json:"Interval,omitempty"`
+	Interval int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Interval,omitempty" json:"Interval,omitempty"`
 }
 
 type RegeneratingPatternBaseType struct {
@@ -6881,41 +6881,41 @@ type YearlyRegeneratingPatternType struct {
 type RelativeYearlyRecurrencePatternType struct {
 	*RecurrencePatternBaseType
 
-	DaysOfWeek *DayOfWeekType `xml:"t:DaysOfWeek,omitempty" json:"DaysOfWeek,omitempty"`
+	DaysOfWeek *DayOfWeekType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DaysOfWeek,omitempty" json:"DaysOfWeek,omitempty"`
 
-	DayOfWeekIndex *DayOfWeekIndexType `xml:"t:DayOfWeekIndex,omitempty" json:"DayOfWeekIndex,omitempty"`
+	DayOfWeekIndex *DayOfWeekIndexType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DayOfWeekIndex,omitempty" json:"DayOfWeekIndex,omitempty"`
 
-	Month *MonthNamesType `xml:"t:Month,omitempty" json:"Month,omitempty"`
+	Month *MonthNamesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Month,omitempty" json:"Month,omitempty"`
 }
 
 type AbsoluteYearlyRecurrencePatternType struct {
 	*RecurrencePatternBaseType
 
-	DayOfMonth int32 `xml:"t:DayOfMonth,omitempty" json:"DayOfMonth,omitempty"`
+	DayOfMonth int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types DayOfMonth,omitempty" json:"DayOfMonth,omitempty"`
 
-	Month *MonthNamesType `xml:"t:Month,omitempty" json:"Month,omitempty"`
+	Month *MonthNamesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Month,omitempty" json:"Month,omitempty"`
 }
 
 type RelativeMonthlyRecurrencePatternType struct {
 	*IntervalRecurrencePatternBaseType
 
-	DaysOfWeek *DayOfWeekType `xml:"t:DaysOfWeek,omitempty" json:"DaysOfWeek,omitempty"`
+	DaysOfWeek *DayOfWeekType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DaysOfWeek,omitempty" json:"DaysOfWeek,omitempty"`
 
-	DayOfWeekIndex *DayOfWeekIndexType `xml:"t:DayOfWeekIndex,omitempty" json:"DayOfWeekIndex,omitempty"`
+	DayOfWeekIndex *DayOfWeekIndexType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DayOfWeekIndex,omitempty" json:"DayOfWeekIndex,omitempty"`
 }
 
 type AbsoluteMonthlyRecurrencePatternType struct {
 	*IntervalRecurrencePatternBaseType
 
-	DayOfMonth int32 `xml:"t:DayOfMonth,omitempty" json:"DayOfMonth,omitempty"`
+	DayOfMonth int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types DayOfMonth,omitempty" json:"DayOfMonth,omitempty"`
 }
 
 type WeeklyRecurrencePatternType struct {
 	*IntervalRecurrencePatternBaseType
 
-	DaysOfWeek *DaysOfWeekType `xml:"t:DaysOfWeek,omitempty" json:"DaysOfWeek,omitempty"`
+	DaysOfWeek *DaysOfWeekType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DaysOfWeek,omitempty" json:"DaysOfWeek,omitempty"`
 
-	FirstDayOfWeek *DayOfWeekType `xml:"t:FirstDayOfWeek,omitempty" json:"FirstDayOfWeek,omitempty"`
+	FirstDayOfWeek *DayOfWeekType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FirstDayOfWeek,omitempty" json:"FirstDayOfWeek,omitempty"`
 }
 
 type DailyRecurrencePatternType struct {
@@ -6923,35 +6923,35 @@ type DailyRecurrencePatternType struct {
 }
 
 type EnhancedLocationType struct {
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	Annotation string `xml:"t:Annotation,omitempty" json:"Annotation,omitempty"`
+	Annotation string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Annotation,omitempty" json:"Annotation,omitempty"`
 
-	PostalAddress *PersonaPostalAddressType `xml:"t:PostalAddress,omitempty" json:"PostalAddress,omitempty"`
+	PostalAddress *PersonaPostalAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostalAddress,omitempty" json:"PostalAddress,omitempty"`
 }
 
 type TimeChangeType struct {
-	Offset *Duration `xml:"t:Offset,omitempty" json:"Offset,omitempty"`
+	Offset *Duration `xml:"http://schemas.microsoft.com/exchange/services/2006/types Offset,omitempty" json:"Offset,omitempty"`
 
-	Time xsd.Time `xml:"t:Time,omitempty" json:"Time,omitempty"`
+	Time xsd.Time `xml:"http://schemas.microsoft.com/exchange/services/2006/types Time,omitempty" json:"Time,omitempty"`
 
 	TimeZoneName string `xml:"TimeZoneName,attr,omitempty" json:"TimeZoneName,omitempty"`
 }
 
 type TimeZoneType struct {
-	BaseOffset *Duration `xml:"t:BaseOffset,omitempty" json:"BaseOffset,omitempty"`
+	BaseOffset *Duration `xml:"http://schemas.microsoft.com/exchange/services/2006/types BaseOffset,omitempty" json:"BaseOffset,omitempty"`
 
 	TimeZoneName string `xml:"TimeZoneName,attr,omitempty" json:"TimeZoneName,omitempty"`
 }
 
 type TimeZoneContextType struct {
-	XMLName xml.Name `xml:"t:TimeZoneContext"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeZoneContext"`
 
-	TimeZoneDefinition *TimeZoneDefinitionType `xml:"t:TimeZoneDefinition,omitempty" json:"TimeZoneDefinition,omitempty"`
+	TimeZoneDefinition *TimeZoneDefinitionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeZoneDefinition,omitempty" json:"TimeZoneDefinition,omitempty"`
 }
 
 type TransitionTargetType struct {
-	XMLName xml.Name `xml:"t:To"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types To"`
 
 	Value string `xml:",chardata" json:"-,"`
 
@@ -6959,51 +6959,51 @@ type TransitionTargetType struct {
 }
 
 type TransitionType struct {
-	XMLName xml.Name `xml:"t:Transition"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Transition"`
 
-	To *TransitionTargetType `xml:"t:To,omitempty" json:"To,omitempty"`
+	To *TransitionTargetType `xml:"http://schemas.microsoft.com/exchange/services/2006/types To,omitempty" json:"To,omitempty"`
 }
 
 type AbsoluteDateTransitionType struct {
-	XMLName xml.Name `xml:"t:AbsoluteDateTransition"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AbsoluteDateTransition"`
 
 	*TransitionType
 
-	DateTime xsd.DateTime `xml:"t:DateTime,omitempty" json:"DateTime,omitempty"`
+	DateTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types DateTime,omitempty" json:"DateTime,omitempty"`
 }
 
 type RecurringTimeTransitionType struct {
 	*TransitionType
 
-	TimeOffset *Duration `xml:"t:TimeOffset,omitempty" json:"TimeOffset,omitempty"`
+	TimeOffset *Duration `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeOffset,omitempty" json:"TimeOffset,omitempty"`
 
-	Month int32 `xml:"t:Month,omitempty" json:"Month,omitempty"`
+	Month int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Month,omitempty" json:"Month,omitempty"`
 }
 
 type RecurringDateTransitionType struct {
-	XMLName xml.Name `xml:"t:RecurringDateTransition"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecurringDateTransition"`
 
 	*RecurringTimeTransitionType
 
-	Day int32 `xml:"t:Day,omitempty" json:"Day,omitempty"`
+	Day int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Day,omitempty" json:"Day,omitempty"`
 }
 
 type RecurringDayTransitionType struct {
-	XMLName xml.Name `xml:"t:RecurringDayTransition"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecurringDayTransition"`
 
 	*RecurringTimeTransitionType
 
-	DayOfWeek *DayOfWeekType `xml:"t:DayOfWeek,omitempty" json:"DayOfWeek,omitempty"`
+	DayOfWeek *DayOfWeekType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DayOfWeek,omitempty" json:"DayOfWeek,omitempty"`
 
-	Occurrence int32 `xml:"t:Occurrence,omitempty" json:"Occurrence,omitempty"`
+	Occurrence int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Occurrence,omitempty" json:"Occurrence,omitempty"`
 }
 
 type TimeZoneDefinitionType struct {
-	Periods *NonEmptyArrayOfPeriodsType `xml:"t:Periods,omitempty" json:"Periods,omitempty"`
+	Periods *NonEmptyArrayOfPeriodsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Periods,omitempty" json:"Periods,omitempty"`
 
-	TransitionsGroups *ArrayOfTransitionsGroupsType `xml:"t:TransitionsGroups,omitempty" json:"TransitionsGroups,omitempty"`
+	TransitionsGroups *ArrayOfTransitionsGroupsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TransitionsGroups,omitempty" json:"TransitionsGroups,omitempty"`
 
-	Transitions *ArrayOfTransitionsType `xml:"t:Transitions,omitempty" json:"Transitions,omitempty"`
+	Transitions *ArrayOfTransitionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Transitions,omitempty" json:"Transitions,omitempty"`
 
 	Id string `xml:"Id,attr,omitempty" json:"Id,omitempty"`
 
@@ -7011,13 +7011,13 @@ type TimeZoneDefinitionType struct {
 }
 
 type NonEmptyArrayOfPeriodsType struct {
-	XMLName xml.Name `xml:"t:Periods"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Periods"`
 
-	Period []*PeriodType `xml:"t:Period,omitempty" json:"Period,omitempty"`
+	Period []*PeriodType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Period,omitempty" json:"Period,omitempty"`
 }
 
 type PeriodType struct {
-	XMLName xml.Name `xml:"t:Period"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Period"`
 
 	Bias *Duration `xml:"Bias,attr,omitempty" json:"Bias,omitempty"`
 
@@ -7027,9 +7027,9 @@ type PeriodType struct {
 }
 
 type ArrayOfTransitionsGroupsType struct {
-	XMLName xml.Name `xml:"t:TransitionsGroups"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types TransitionsGroups"`
 
-	TransitionsGroup []*ArrayOfTransitionsType `xml:"t:TransitionsGroup,omitempty" json:"TransitionsGroup,omitempty"`
+	TransitionsGroup []*ArrayOfTransitionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TransitionsGroup,omitempty" json:"TransitionsGroup,omitempty"`
 }
 
 type ArrayOfTransitionsType struct {
@@ -7039,7 +7039,7 @@ type ArrayOfTransitionsType struct {
 }
 
 type RecurrenceRangeBaseType struct {
-	StartDate xsd.Date `xml:"t:StartDate,omitempty" json:"StartDate,omitempty"`
+	StartDate xsd.Date `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartDate,omitempty" json:"StartDate,omitempty"`
 }
 
 type NoEndRecurrenceRangeType struct {
@@ -7049,362 +7049,362 @@ type NoEndRecurrenceRangeType struct {
 type EndDateRecurrenceRangeType struct {
 	*RecurrenceRangeBaseType
 
-	EndDate xsd.Date `xml:"t:EndDate,omitempty" json:"EndDate,omitempty"`
+	EndDate xsd.Date `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndDate,omitempty" json:"EndDate,omitempty"`
 }
 
 type NumberedRecurrenceRangeType struct {
 	*RecurrenceRangeBaseType
 
-	NumberOfOccurrences int32 `xml:"t:NumberOfOccurrences,omitempty" json:"NumberOfOccurrences,omitempty"`
+	NumberOfOccurrences int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types NumberOfOccurrences,omitempty" json:"NumberOfOccurrences,omitempty"`
 }
 
 type RecurrenceType struct {
 }
 
 type TaskRecurrenceType struct {
-	XMLName xml.Name `xml:"t:Recurrence"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Recurrence"`
 }
 
 type OccurrenceInfoType struct {
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 
-	Start xsd.DateTime `xml:"t:Start,omitempty" json:"Start,omitempty"`
+	Start xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types Start,omitempty" json:"Start,omitempty"`
 
-	End xsd.DateTime `xml:"t:End,omitempty" json:"End,omitempty"`
+	End xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types End,omitempty" json:"End,omitempty"`
 
-	OriginalStart xsd.DateTime `xml:"t:OriginalStart,omitempty" json:"OriginalStart,omitempty"`
+	OriginalStart xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types OriginalStart,omitempty" json:"OriginalStart,omitempty"`
 }
 
 type NonEmptyArrayOfOccurrenceInfoType struct {
-	Occurrence []*OccurrenceInfoType `xml:"t:Occurrence,omitempty" json:"Occurrence,omitempty"`
+	Occurrence []*OccurrenceInfoType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Occurrence,omitempty" json:"Occurrence,omitempty"`
 }
 
 type DeletedOccurrenceInfoType struct {
-	XMLName xml.Name `xml:"t:DeletedOccurrence"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeletedOccurrence"`
 
-	Start xsd.DateTime `xml:"t:Start,omitempty" json:"Start,omitempty"`
+	Start xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types Start,omitempty" json:"Start,omitempty"`
 }
 
 type NonEmptyArrayOfDeletedOccurrencesType struct {
-	DeletedOccurrence []*DeletedOccurrenceInfoType `xml:"t:DeletedOccurrence,omitempty" json:"DeletedOccurrence,omitempty"`
+	DeletedOccurrence []*DeletedOccurrenceInfoType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeletedOccurrence,omitempty" json:"DeletedOccurrence,omitempty"`
 }
 
 type CalendarItemType struct {
 	*ItemType
 
-	UID string `xml:"t:UID,omitempty" json:"UID,omitempty"`
+	UID string `xml:"http://schemas.microsoft.com/exchange/services/2006/types UID,omitempty" json:"UID,omitempty"`
 
-	RecurrenceId xsd.DateTime `xml:"t:RecurrenceId,omitempty" json:"RecurrenceId,omitempty"`
+	RecurrenceId xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecurrenceId,omitempty" json:"RecurrenceId,omitempty"`
 
-	DateTimeStamp xsd.DateTime `xml:"t:DateTimeStamp,omitempty" json:"DateTimeStamp,omitempty"`
+	DateTimeStamp xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types DateTimeStamp,omitempty" json:"DateTimeStamp,omitempty"`
 
-	Start xsd.DateTime `xml:"t:Start,omitempty" json:"Start,omitempty"`
+	Start xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types Start,omitempty" json:"Start,omitempty"`
 
-	End xsd.DateTime `xml:"t:End,omitempty" json:"End,omitempty"`
+	End xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types End,omitempty" json:"End,omitempty"`
 
-	OriginalStart xsd.DateTime `xml:"t:OriginalStart,omitempty" json:"OriginalStart,omitempty"`
+	OriginalStart xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types OriginalStart,omitempty" json:"OriginalStart,omitempty"`
 
-	IsAllDayEvent bool `xml:"t:IsAllDayEvent,omitempty" json:"IsAllDayEvent,omitempty"`
+	IsAllDayEvent bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsAllDayEvent,omitempty" json:"IsAllDayEvent,omitempty"`
 
-	LegacyFreeBusyStatus *LegacyFreeBusyType `xml:"t:LegacyFreeBusyStatus,omitempty" json:"LegacyFreeBusyStatus,omitempty"`
+	LegacyFreeBusyStatus *LegacyFreeBusyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types LegacyFreeBusyStatus,omitempty" json:"LegacyFreeBusyStatus,omitempty"`
 
-	Location string `xml:"t:Location,omitempty" json:"Location,omitempty"`
+	Location string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Location,omitempty" json:"Location,omitempty"`
 
-	When string `xml:"t:When,omitempty" json:"When,omitempty"`
+	When string `xml:"http://schemas.microsoft.com/exchange/services/2006/types When,omitempty" json:"When,omitempty"`
 
-	IsMeeting bool `xml:"t:IsMeeting,omitempty" json:"IsMeeting,omitempty"`
+	IsMeeting bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsMeeting,omitempty" json:"IsMeeting,omitempty"`
 
-	IsCancelled bool `xml:"t:IsCancelled,omitempty" json:"IsCancelled,omitempty"`
+	IsCancelled bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsCancelled,omitempty" json:"IsCancelled,omitempty"`
 
-	IsRecurring bool `xml:"t:IsRecurring,omitempty" json:"IsRecurring,omitempty"`
+	IsRecurring bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsRecurring,omitempty" json:"IsRecurring,omitempty"`
 
-	MeetingRequestWasSent bool `xml:"t:MeetingRequestWasSent,omitempty" json:"MeetingRequestWasSent,omitempty"`
+	MeetingRequestWasSent bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingRequestWasSent,omitempty" json:"MeetingRequestWasSent,omitempty"`
 
-	IsResponseRequested bool `xml:"t:IsResponseRequested,omitempty" json:"IsResponseRequested,omitempty"`
+	IsResponseRequested bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsResponseRequested,omitempty" json:"IsResponseRequested,omitempty"`
 
-	CalendarItemType *CalendarItemTypeType `xml:"t:CalendarItemType,omitempty" json:"CalendarItemType,omitempty"`
+	CalendarItemType *CalendarItemTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarItemType,omitempty" json:"CalendarItemType,omitempty"`
 
-	MyResponseType *ResponseTypeType `xml:"t:MyResponseType,omitempty" json:"MyResponseType,omitempty"`
+	MyResponseType *ResponseTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MyResponseType,omitempty" json:"MyResponseType,omitempty"`
 
-	Organizer *SingleRecipientType `xml:"t:Organizer,omitempty" json:"Organizer,omitempty"`
+	Organizer *SingleRecipientType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Organizer,omitempty" json:"Organizer,omitempty"`
 
-	RequiredAttendees *NonEmptyArrayOfAttendeesType `xml:"t:RequiredAttendees,omitempty" json:"RequiredAttendees,omitempty"`
+	RequiredAttendees *NonEmptyArrayOfAttendeesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RequiredAttendees,omitempty" json:"RequiredAttendees,omitempty"`
 
-	OptionalAttendees *NonEmptyArrayOfAttendeesType `xml:"t:OptionalAttendees,omitempty" json:"OptionalAttendees,omitempty"`
+	OptionalAttendees *NonEmptyArrayOfAttendeesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OptionalAttendees,omitempty" json:"OptionalAttendees,omitempty"`
 
-	Resources *NonEmptyArrayOfAttendeesType `xml:"t:Resources,omitempty" json:"Resources,omitempty"`
+	Resources *NonEmptyArrayOfAttendeesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Resources,omitempty" json:"Resources,omitempty"`
 
-	InboxReminders *ArrayOfInboxReminderType `xml:"t:InboxReminders,omitempty" json:"InboxReminders,omitempty"`
+	InboxReminders *ArrayOfInboxReminderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types InboxReminders,omitempty" json:"InboxReminders,omitempty"`
 
-	ConflictingMeetingCount int32 `xml:"t:ConflictingMeetingCount,omitempty" json:"ConflictingMeetingCount,omitempty"`
+	ConflictingMeetingCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConflictingMeetingCount,omitempty" json:"ConflictingMeetingCount,omitempty"`
 
-	AdjacentMeetingCount int32 `xml:"t:AdjacentMeetingCount,omitempty" json:"AdjacentMeetingCount,omitempty"`
+	AdjacentMeetingCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types AdjacentMeetingCount,omitempty" json:"AdjacentMeetingCount,omitempty"`
 
-	ConflictingMeetings *NonEmptyArrayOfAllItemsType `xml:"t:ConflictingMeetings,omitempty" json:"ConflictingMeetings,omitempty"`
+	ConflictingMeetings *NonEmptyArrayOfAllItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConflictingMeetings,omitempty" json:"ConflictingMeetings,omitempty"`
 
-	AdjacentMeetings *NonEmptyArrayOfAllItemsType `xml:"t:AdjacentMeetings,omitempty" json:"AdjacentMeetings,omitempty"`
+	AdjacentMeetings *NonEmptyArrayOfAllItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AdjacentMeetings,omitempty" json:"AdjacentMeetings,omitempty"`
 
-	Duration string `xml:"t:Duration,omitempty" json:"Duration,omitempty"`
+	Duration string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Duration,omitempty" json:"Duration,omitempty"`
 
-	TimeZone string `xml:"t:TimeZone,omitempty" json:"TimeZone,omitempty"`
+	TimeZone string `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeZone,omitempty" json:"TimeZone,omitempty"`
 
-	AppointmentReplyTime xsd.DateTime `xml:"t:AppointmentReplyTime,omitempty" json:"AppointmentReplyTime,omitempty"`
+	AppointmentReplyTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppointmentReplyTime,omitempty" json:"AppointmentReplyTime,omitempty"`
 
-	AppointmentSequenceNumber int32 `xml:"t:AppointmentSequenceNumber,omitempty" json:"AppointmentSequenceNumber,omitempty"`
+	AppointmentSequenceNumber int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppointmentSequenceNumber,omitempty" json:"AppointmentSequenceNumber,omitempty"`
 
-	AppointmentState int32 `xml:"t:AppointmentState,omitempty" json:"AppointmentState,omitempty"`
+	AppointmentState int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppointmentState,omitempty" json:"AppointmentState,omitempty"`
 
-	Recurrence *RecurrenceType `xml:"t:Recurrence,omitempty" json:"Recurrence,omitempty"`
+	Recurrence *RecurrenceType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Recurrence,omitempty" json:"Recurrence,omitempty"`
 
-	FirstOccurrence *OccurrenceInfoType `xml:"t:FirstOccurrence,omitempty" json:"FirstOccurrence,omitempty"`
+	FirstOccurrence *OccurrenceInfoType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FirstOccurrence,omitempty" json:"FirstOccurrence,omitempty"`
 
-	LastOccurrence *OccurrenceInfoType `xml:"t:LastOccurrence,omitempty" json:"LastOccurrence,omitempty"`
+	LastOccurrence *OccurrenceInfoType `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastOccurrence,omitempty" json:"LastOccurrence,omitempty"`
 
-	ModifiedOccurrences *NonEmptyArrayOfOccurrenceInfoType `xml:"t:ModifiedOccurrences,omitempty" json:"ModifiedOccurrences,omitempty"`
+	ModifiedOccurrences *NonEmptyArrayOfOccurrenceInfoType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ModifiedOccurrences,omitempty" json:"ModifiedOccurrences,omitempty"`
 
-	DeletedOccurrences *NonEmptyArrayOfDeletedOccurrencesType `xml:"t:DeletedOccurrences,omitempty" json:"DeletedOccurrences,omitempty"`
+	DeletedOccurrences *NonEmptyArrayOfDeletedOccurrencesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeletedOccurrences,omitempty" json:"DeletedOccurrences,omitempty"`
 
-	MeetingTimeZone *TimeZoneType `xml:"t:MeetingTimeZone,omitempty" json:"MeetingTimeZone,omitempty"`
+	MeetingTimeZone *TimeZoneType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingTimeZone,omitempty" json:"MeetingTimeZone,omitempty"`
 
-	StartTimeZone *TimeZoneDefinitionType `xml:"t:StartTimeZone,omitempty" json:"StartTimeZone,omitempty"`
+	StartTimeZone *TimeZoneDefinitionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTimeZone,omitempty" json:"StartTimeZone,omitempty"`
 
-	EndTimeZone *TimeZoneDefinitionType `xml:"t:EndTimeZone,omitempty" json:"EndTimeZone,omitempty"`
+	EndTimeZone *TimeZoneDefinitionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndTimeZone,omitempty" json:"EndTimeZone,omitempty"`
 
-	ConferenceType int32 `xml:"t:ConferenceType,omitempty" json:"ConferenceType,omitempty"`
+	ConferenceType int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConferenceType,omitempty" json:"ConferenceType,omitempty"`
 
-	AllowNewTimeProposal bool `xml:"t:AllowNewTimeProposal,omitempty" json:"AllowNewTimeProposal,omitempty"`
+	AllowNewTimeProposal bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types AllowNewTimeProposal,omitempty" json:"AllowNewTimeProposal,omitempty"`
 
-	IsOnlineMeeting bool `xml:"t:IsOnlineMeeting,omitempty" json:"IsOnlineMeeting,omitempty"`
+	IsOnlineMeeting bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsOnlineMeeting,omitempty" json:"IsOnlineMeeting,omitempty"`
 
-	MeetingWorkspaceUrl string `xml:"t:MeetingWorkspaceUrl,omitempty" json:"MeetingWorkspaceUrl,omitempty"`
+	MeetingWorkspaceUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingWorkspaceUrl,omitempty" json:"MeetingWorkspaceUrl,omitempty"`
 
-	NetShowUrl string `xml:"t:NetShowUrl,omitempty" json:"NetShowUrl,omitempty"`
+	NetShowUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types NetShowUrl,omitempty" json:"NetShowUrl,omitempty"`
 
-	EnhancedLocation *EnhancedLocationType `xml:"t:EnhancedLocation,omitempty" json:"EnhancedLocation,omitempty"`
+	EnhancedLocation *EnhancedLocationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EnhancedLocation,omitempty" json:"EnhancedLocation,omitempty"`
 
-	StartWallClock xsd.DateTime `xml:"t:StartWallClock,omitempty" json:"StartWallClock,omitempty"`
+	StartWallClock xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartWallClock,omitempty" json:"StartWallClock,omitempty"`
 
-	EndWallClock xsd.DateTime `xml:"t:EndWallClock,omitempty" json:"EndWallClock,omitempty"`
+	EndWallClock xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndWallClock,omitempty" json:"EndWallClock,omitempty"`
 
-	StartTimeZoneId string `xml:"t:StartTimeZoneId,omitempty" json:"StartTimeZoneId,omitempty"`
+	StartTimeZoneId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTimeZoneId,omitempty" json:"StartTimeZoneId,omitempty"`
 
-	EndTimeZoneId string `xml:"t:EndTimeZoneId,omitempty" json:"EndTimeZoneId,omitempty"`
+	EndTimeZoneId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndTimeZoneId,omitempty" json:"EndTimeZoneId,omitempty"`
 
-	IntendedFreeBusyStatus *LegacyFreeBusyType `xml:"t:IntendedFreeBusyStatus,omitempty" json:"IntendedFreeBusyStatus,omitempty"`
+	IntendedFreeBusyStatus *LegacyFreeBusyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types IntendedFreeBusyStatus,omitempty" json:"IntendedFreeBusyStatus,omitempty"`
 
-	JoinOnlineMeetingUrl string `xml:"t:JoinOnlineMeetingUrl,omitempty" json:"JoinOnlineMeetingUrl,omitempty"`
+	JoinOnlineMeetingUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types JoinOnlineMeetingUrl,omitempty" json:"JoinOnlineMeetingUrl,omitempty"`
 
-	OnlineMeetingSettings *OnlineMeetingSettingsType `xml:"t:OnlineMeetingSettings,omitempty" json:"OnlineMeetingSettings,omitempty"`
+	OnlineMeetingSettings *OnlineMeetingSettingsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OnlineMeetingSettings,omitempty" json:"OnlineMeetingSettings,omitempty"`
 
-	IsOrganizer bool `xml:"t:IsOrganizer,omitempty" json:"IsOrganizer,omitempty"`
+	IsOrganizer bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsOrganizer,omitempty" json:"IsOrganizer,omitempty"`
 
-	CalendarActivityData *CalendarActivityDataType `xml:"t:CalendarActivityData,omitempty" json:"CalendarActivityData,omitempty"`
+	CalendarActivityData *CalendarActivityDataType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarActivityData,omitempty" json:"CalendarActivityData,omitempty"`
 
-	DoNotForwardMeeting bool `xml:"t:DoNotForwardMeeting,omitempty" json:"DoNotForwardMeeting,omitempty"`
+	DoNotForwardMeeting bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types DoNotForwardMeeting,omitempty" json:"DoNotForwardMeeting,omitempty"`
 }
 
 type MeetingMessageType struct {
 	*MessageType
 
-	AssociatedCalendarItemId *ItemIdType `xml:"t:AssociatedCalendarItemId,omitempty" json:"AssociatedCalendarItemId,omitempty"`
+	AssociatedCalendarItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AssociatedCalendarItemId,omitempty" json:"AssociatedCalendarItemId,omitempty"`
 
-	IsDelegated bool `xml:"t:IsDelegated,omitempty" json:"IsDelegated,omitempty"`
+	IsDelegated bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsDelegated,omitempty" json:"IsDelegated,omitempty"`
 
-	IsOutOfDate bool `xml:"t:IsOutOfDate,omitempty" json:"IsOutOfDate,omitempty"`
+	IsOutOfDate bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsOutOfDate,omitempty" json:"IsOutOfDate,omitempty"`
 
-	HasBeenProcessed bool `xml:"t:HasBeenProcessed,omitempty" json:"HasBeenProcessed,omitempty"`
+	HasBeenProcessed bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HasBeenProcessed,omitempty" json:"HasBeenProcessed,omitempty"`
 
-	ResponseType *ResponseTypeType `xml:"t:ResponseType,omitempty" json:"ResponseType,omitempty"`
+	ResponseType *ResponseTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ResponseType,omitempty" json:"ResponseType,omitempty"`
 
-	UID string `xml:"t:UID,omitempty" json:"UID,omitempty"`
+	UID string `xml:"http://schemas.microsoft.com/exchange/services/2006/types UID,omitempty" json:"UID,omitempty"`
 
-	RecurrenceId xsd.DateTime `xml:"t:RecurrenceId,omitempty" json:"RecurrenceId,omitempty"`
+	RecurrenceId xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecurrenceId,omitempty" json:"RecurrenceId,omitempty"`
 
-	DateTimeStamp xsd.DateTime `xml:"t:DateTimeStamp,omitempty" json:"DateTimeStamp,omitempty"`
+	DateTimeStamp xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types DateTimeStamp,omitempty" json:"DateTimeStamp,omitempty"`
 
-	IsOrganizer bool `xml:"t:IsOrganizer,omitempty" json:"IsOrganizer,omitempty"`
+	IsOrganizer bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsOrganizer,omitempty" json:"IsOrganizer,omitempty"`
 }
 
 type ChangeHighlightsType struct {
-	XMLName xml.Name `xml:"t:ChangeHighlights"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ChangeHighlights"`
 
-	HasLocationChanged bool `xml:"t:HasLocationChanged,omitempty" json:"HasLocationChanged,omitempty"`
+	HasLocationChanged bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HasLocationChanged,omitempty" json:"HasLocationChanged,omitempty"`
 
-	Location string `xml:"t:Location,omitempty" json:"Location,omitempty"`
+	Location string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Location,omitempty" json:"Location,omitempty"`
 
-	HasStartTimeChanged bool `xml:"t:HasStartTimeChanged,omitempty" json:"HasStartTimeChanged,omitempty"`
+	HasStartTimeChanged bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HasStartTimeChanged,omitempty" json:"HasStartTimeChanged,omitempty"`
 
-	Start xsd.DateTime `xml:"t:Start,omitempty" json:"Start,omitempty"`
+	Start xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types Start,omitempty" json:"Start,omitempty"`
 
-	HasEndTimeChanged bool `xml:"t:HasEndTimeChanged,omitempty" json:"HasEndTimeChanged,omitempty"`
+	HasEndTimeChanged bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HasEndTimeChanged,omitempty" json:"HasEndTimeChanged,omitempty"`
 
-	End xsd.DateTime `xml:"t:End,omitempty" json:"End,omitempty"`
+	End xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types End,omitempty" json:"End,omitempty"`
 }
 
 type MeetingRequestMessageType struct {
 	*MeetingMessageType
 
-	MeetingRequestType *MeetingRequestTypeType `xml:"t:MeetingRequestType,omitempty" json:"MeetingRequestType,omitempty"`
+	MeetingRequestType *MeetingRequestTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingRequestType,omitempty" json:"MeetingRequestType,omitempty"`
 
-	IntendedFreeBusyStatus *LegacyFreeBusyType `xml:"t:IntendedFreeBusyStatus,omitempty" json:"IntendedFreeBusyStatus,omitempty"`
+	IntendedFreeBusyStatus *LegacyFreeBusyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types IntendedFreeBusyStatus,omitempty" json:"IntendedFreeBusyStatus,omitempty"`
 
-	Start xsd.DateTime `xml:"t:Start,omitempty" json:"Start,omitempty"`
+	Start xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types Start,omitempty" json:"Start,omitempty"`
 
-	End xsd.DateTime `xml:"t:End,omitempty" json:"End,omitempty"`
+	End xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types End,omitempty" json:"End,omitempty"`
 
-	OriginalStart xsd.DateTime `xml:"t:OriginalStart,omitempty" json:"OriginalStart,omitempty"`
+	OriginalStart xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types OriginalStart,omitempty" json:"OriginalStart,omitempty"`
 
-	IsAllDayEvent bool `xml:"t:IsAllDayEvent,omitempty" json:"IsAllDayEvent,omitempty"`
+	IsAllDayEvent bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsAllDayEvent,omitempty" json:"IsAllDayEvent,omitempty"`
 
-	LegacyFreeBusyStatus *LegacyFreeBusyType `xml:"t:LegacyFreeBusyStatus,omitempty" json:"LegacyFreeBusyStatus,omitempty"`
+	LegacyFreeBusyStatus *LegacyFreeBusyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types LegacyFreeBusyStatus,omitempty" json:"LegacyFreeBusyStatus,omitempty"`
 
-	Location string `xml:"t:Location,omitempty" json:"Location,omitempty"`
+	Location string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Location,omitempty" json:"Location,omitempty"`
 
-	When string `xml:"t:When,omitempty" json:"When,omitempty"`
+	When string `xml:"http://schemas.microsoft.com/exchange/services/2006/types When,omitempty" json:"When,omitempty"`
 
-	IsMeeting bool `xml:"t:IsMeeting,omitempty" json:"IsMeeting,omitempty"`
+	IsMeeting bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsMeeting,omitempty" json:"IsMeeting,omitempty"`
 
-	IsCancelled bool `xml:"t:IsCancelled,omitempty" json:"IsCancelled,omitempty"`
+	IsCancelled bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsCancelled,omitempty" json:"IsCancelled,omitempty"`
 
-	IsRecurring bool `xml:"t:IsRecurring,omitempty" json:"IsRecurring,omitempty"`
+	IsRecurring bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsRecurring,omitempty" json:"IsRecurring,omitempty"`
 
-	MeetingRequestWasSent bool `xml:"t:MeetingRequestWasSent,omitempty" json:"MeetingRequestWasSent,omitempty"`
+	MeetingRequestWasSent bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingRequestWasSent,omitempty" json:"MeetingRequestWasSent,omitempty"`
 
-	CalendarItemType *CalendarItemTypeType `xml:"t:CalendarItemType,omitempty" json:"CalendarItemType,omitempty"`
+	CalendarItemType *CalendarItemTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarItemType,omitempty" json:"CalendarItemType,omitempty"`
 
-	MyResponseType *ResponseTypeType `xml:"t:MyResponseType,omitempty" json:"MyResponseType,omitempty"`
+	MyResponseType *ResponseTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MyResponseType,omitempty" json:"MyResponseType,omitempty"`
 
-	Organizer *SingleRecipientType `xml:"t:Organizer,omitempty" json:"Organizer,omitempty"`
+	Organizer *SingleRecipientType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Organizer,omitempty" json:"Organizer,omitempty"`
 
-	RequiredAttendees *NonEmptyArrayOfAttendeesType `xml:"t:RequiredAttendees,omitempty" json:"RequiredAttendees,omitempty"`
+	RequiredAttendees *NonEmptyArrayOfAttendeesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RequiredAttendees,omitempty" json:"RequiredAttendees,omitempty"`
 
-	OptionalAttendees *NonEmptyArrayOfAttendeesType `xml:"t:OptionalAttendees,omitempty" json:"OptionalAttendees,omitempty"`
+	OptionalAttendees *NonEmptyArrayOfAttendeesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OptionalAttendees,omitempty" json:"OptionalAttendees,omitempty"`
 
-	Resources *NonEmptyArrayOfAttendeesType `xml:"t:Resources,omitempty" json:"Resources,omitempty"`
+	Resources *NonEmptyArrayOfAttendeesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Resources,omitempty" json:"Resources,omitempty"`
 
-	ConflictingMeetingCount int32 `xml:"t:ConflictingMeetingCount,omitempty" json:"ConflictingMeetingCount,omitempty"`
+	ConflictingMeetingCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConflictingMeetingCount,omitempty" json:"ConflictingMeetingCount,omitempty"`
 
-	AdjacentMeetingCount int32 `xml:"t:AdjacentMeetingCount,omitempty" json:"AdjacentMeetingCount,omitempty"`
+	AdjacentMeetingCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types AdjacentMeetingCount,omitempty" json:"AdjacentMeetingCount,omitempty"`
 
-	ConflictingMeetings *NonEmptyArrayOfAllItemsType `xml:"t:ConflictingMeetings,omitempty" json:"ConflictingMeetings,omitempty"`
+	ConflictingMeetings *NonEmptyArrayOfAllItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConflictingMeetings,omitempty" json:"ConflictingMeetings,omitempty"`
 
-	AdjacentMeetings *NonEmptyArrayOfAllItemsType `xml:"t:AdjacentMeetings,omitempty" json:"AdjacentMeetings,omitempty"`
+	AdjacentMeetings *NonEmptyArrayOfAllItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AdjacentMeetings,omitempty" json:"AdjacentMeetings,omitempty"`
 
-	Duration string `xml:"t:Duration,omitempty" json:"Duration,omitempty"`
+	Duration string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Duration,omitempty" json:"Duration,omitempty"`
 
-	TimeZone string `xml:"t:TimeZone,omitempty" json:"TimeZone,omitempty"`
+	TimeZone string `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeZone,omitempty" json:"TimeZone,omitempty"`
 
-	AppointmentReplyTime xsd.DateTime `xml:"t:AppointmentReplyTime,omitempty" json:"AppointmentReplyTime,omitempty"`
+	AppointmentReplyTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppointmentReplyTime,omitempty" json:"AppointmentReplyTime,omitempty"`
 
-	AppointmentSequenceNumber int32 `xml:"t:AppointmentSequenceNumber,omitempty" json:"AppointmentSequenceNumber,omitempty"`
+	AppointmentSequenceNumber int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppointmentSequenceNumber,omitempty" json:"AppointmentSequenceNumber,omitempty"`
 
-	AppointmentState int32 `xml:"t:AppointmentState,omitempty" json:"AppointmentState,omitempty"`
+	AppointmentState int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppointmentState,omitempty" json:"AppointmentState,omitempty"`
 
-	Recurrence *RecurrenceType `xml:"t:Recurrence,omitempty" json:"Recurrence,omitempty"`
+	Recurrence *RecurrenceType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Recurrence,omitempty" json:"Recurrence,omitempty"`
 
-	FirstOccurrence *OccurrenceInfoType `xml:"t:FirstOccurrence,omitempty" json:"FirstOccurrence,omitempty"`
+	FirstOccurrence *OccurrenceInfoType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FirstOccurrence,omitempty" json:"FirstOccurrence,omitempty"`
 
-	LastOccurrence *OccurrenceInfoType `xml:"t:LastOccurrence,omitempty" json:"LastOccurrence,omitempty"`
+	LastOccurrence *OccurrenceInfoType `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastOccurrence,omitempty" json:"LastOccurrence,omitempty"`
 
-	ModifiedOccurrences *NonEmptyArrayOfOccurrenceInfoType `xml:"t:ModifiedOccurrences,omitempty" json:"ModifiedOccurrences,omitempty"`
+	ModifiedOccurrences *NonEmptyArrayOfOccurrenceInfoType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ModifiedOccurrences,omitempty" json:"ModifiedOccurrences,omitempty"`
 
-	DeletedOccurrences *NonEmptyArrayOfDeletedOccurrencesType `xml:"t:DeletedOccurrences,omitempty" json:"DeletedOccurrences,omitempty"`
+	DeletedOccurrences *NonEmptyArrayOfDeletedOccurrencesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeletedOccurrences,omitempty" json:"DeletedOccurrences,omitempty"`
 
-	MeetingTimeZone *TimeZoneType `xml:"t:MeetingTimeZone,omitempty" json:"MeetingTimeZone,omitempty"`
+	MeetingTimeZone *TimeZoneType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingTimeZone,omitempty" json:"MeetingTimeZone,omitempty"`
 
-	StartTimeZone *TimeZoneDefinitionType `xml:"t:StartTimeZone,omitempty" json:"StartTimeZone,omitempty"`
+	StartTimeZone *TimeZoneDefinitionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTimeZone,omitempty" json:"StartTimeZone,omitempty"`
 
-	EndTimeZone *TimeZoneDefinitionType `xml:"t:EndTimeZone,omitempty" json:"EndTimeZone,omitempty"`
+	EndTimeZone *TimeZoneDefinitionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndTimeZone,omitempty" json:"EndTimeZone,omitempty"`
 
-	ConferenceType int32 `xml:"t:ConferenceType,omitempty" json:"ConferenceType,omitempty"`
+	ConferenceType int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConferenceType,omitempty" json:"ConferenceType,omitempty"`
 
-	AllowNewTimeProposal bool `xml:"t:AllowNewTimeProposal,omitempty" json:"AllowNewTimeProposal,omitempty"`
+	AllowNewTimeProposal bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types AllowNewTimeProposal,omitempty" json:"AllowNewTimeProposal,omitempty"`
 
-	IsOnlineMeeting bool `xml:"t:IsOnlineMeeting,omitempty" json:"IsOnlineMeeting,omitempty"`
+	IsOnlineMeeting bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsOnlineMeeting,omitempty" json:"IsOnlineMeeting,omitempty"`
 
-	MeetingWorkspaceUrl string `xml:"t:MeetingWorkspaceUrl,omitempty" json:"MeetingWorkspaceUrl,omitempty"`
+	MeetingWorkspaceUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingWorkspaceUrl,omitempty" json:"MeetingWorkspaceUrl,omitempty"`
 
-	NetShowUrl string `xml:"t:NetShowUrl,omitempty" json:"NetShowUrl,omitempty"`
+	NetShowUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types NetShowUrl,omitempty" json:"NetShowUrl,omitempty"`
 
-	EnhancedLocation *EnhancedLocationType `xml:"t:EnhancedLocation,omitempty" json:"EnhancedLocation,omitempty"`
+	EnhancedLocation *EnhancedLocationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EnhancedLocation,omitempty" json:"EnhancedLocation,omitempty"`
 
-	ChangeHighlights *ChangeHighlightsType `xml:"t:ChangeHighlights,omitempty" json:"ChangeHighlights,omitempty"`
+	ChangeHighlights *ChangeHighlightsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ChangeHighlights,omitempty" json:"ChangeHighlights,omitempty"`
 
-	StartWallClock xsd.DateTime `xml:"t:StartWallClock,omitempty" json:"StartWallClock,omitempty"`
+	StartWallClock xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartWallClock,omitempty" json:"StartWallClock,omitempty"`
 
-	EndWallClock xsd.DateTime `xml:"t:EndWallClock,omitempty" json:"EndWallClock,omitempty"`
+	EndWallClock xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndWallClock,omitempty" json:"EndWallClock,omitempty"`
 
-	StartTimeZoneId string `xml:"t:StartTimeZoneId,omitempty" json:"StartTimeZoneId,omitempty"`
+	StartTimeZoneId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTimeZoneId,omitempty" json:"StartTimeZoneId,omitempty"`
 
-	EndTimeZoneId string `xml:"t:EndTimeZoneId,omitempty" json:"EndTimeZoneId,omitempty"`
+	EndTimeZoneId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndTimeZoneId,omitempty" json:"EndTimeZoneId,omitempty"`
 
-	DoNotForwardMeeting bool `xml:"t:DoNotForwardMeeting,omitempty" json:"DoNotForwardMeeting,omitempty"`
+	DoNotForwardMeeting bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types DoNotForwardMeeting,omitempty" json:"DoNotForwardMeeting,omitempty"`
 }
 
 type MeetingResponseMessageType struct {
 	*MeetingMessageType
 
-	Start xsd.DateTime `xml:"t:Start,omitempty" json:"Start,omitempty"`
+	Start xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types Start,omitempty" json:"Start,omitempty"`
 
-	End xsd.DateTime `xml:"t:End,omitempty" json:"End,omitempty"`
+	End xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types End,omitempty" json:"End,omitempty"`
 
-	Location string `xml:"t:Location,omitempty" json:"Location,omitempty"`
+	Location string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Location,omitempty" json:"Location,omitempty"`
 
-	Recurrence *RecurrenceType `xml:"t:Recurrence,omitempty" json:"Recurrence,omitempty"`
+	Recurrence *RecurrenceType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Recurrence,omitempty" json:"Recurrence,omitempty"`
 
-	CalendarItemType string `xml:"t:CalendarItemType,omitempty" json:"CalendarItemType,omitempty"`
+	CalendarItemType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarItemType,omitempty" json:"CalendarItemType,omitempty"`
 
-	ProposedStart xsd.DateTime `xml:"t:ProposedStart,omitempty" json:"ProposedStart,omitempty"`
+	ProposedStart xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProposedStart,omitempty" json:"ProposedStart,omitempty"`
 
-	ProposedEnd xsd.DateTime `xml:"t:ProposedEnd,omitempty" json:"ProposedEnd,omitempty"`
+	ProposedEnd xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProposedEnd,omitempty" json:"ProposedEnd,omitempty"`
 
-	EnhancedLocation *EnhancedLocationType `xml:"t:EnhancedLocation,omitempty" json:"EnhancedLocation,omitempty"`
+	EnhancedLocation *EnhancedLocationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EnhancedLocation,omitempty" json:"EnhancedLocation,omitempty"`
 }
 
 type MeetingCancellationMessageType struct {
 	*MeetingMessageType
 
-	Start xsd.DateTime `xml:"t:Start,omitempty" json:"Start,omitempty"`
+	Start xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types Start,omitempty" json:"Start,omitempty"`
 
-	End xsd.DateTime `xml:"t:End,omitempty" json:"End,omitempty"`
+	End xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types End,omitempty" json:"End,omitempty"`
 
-	Location string `xml:"t:Location,omitempty" json:"Location,omitempty"`
+	Location string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Location,omitempty" json:"Location,omitempty"`
 
-	Recurrence *RecurrenceType `xml:"t:Recurrence,omitempty" json:"Recurrence,omitempty"`
+	Recurrence *RecurrenceType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Recurrence,omitempty" json:"Recurrence,omitempty"`
 
-	CalendarItemType string `xml:"t:CalendarItemType,omitempty" json:"CalendarItemType,omitempty"`
+	CalendarItemType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarItemType,omitempty" json:"CalendarItemType,omitempty"`
 
-	EnhancedLocation *EnhancedLocationType `xml:"t:EnhancedLocation,omitempty" json:"EnhancedLocation,omitempty"`
+	EnhancedLocation *EnhancedLocationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EnhancedLocation,omitempty" json:"EnhancedLocation,omitempty"`
 
-	DoNotForwardMeeting bool `xml:"t:DoNotForwardMeeting,omitempty" json:"DoNotForwardMeeting,omitempty"`
+	DoNotForwardMeeting bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types DoNotForwardMeeting,omitempty" json:"DoNotForwardMeeting,omitempty"`
 }
 
 type CompleteNameType struct {
-	XMLName xml.Name `xml:"t:CompleteName"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompleteName"`
 
-	Title string `xml:"t:Title,omitempty" json:"Title,omitempty"`
+	Title string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Title,omitempty" json:"Title,omitempty"`
 
-	FirstName string `xml:"t:FirstName,omitempty" json:"FirstName,omitempty"`
+	FirstName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FirstName,omitempty" json:"FirstName,omitempty"`
 
-	MiddleName string `xml:"t:MiddleName,omitempty" json:"MiddleName,omitempty"`
+	MiddleName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MiddleName,omitempty" json:"MiddleName,omitempty"`
 
-	LastName string `xml:"t:LastName,omitempty" json:"LastName,omitempty"`
+	LastName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastName,omitempty" json:"LastName,omitempty"`
 
-	Suffix string `xml:"t:Suffix,omitempty" json:"Suffix,omitempty"`
+	Suffix string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Suffix,omitempty" json:"Suffix,omitempty"`
 
-	Initials string `xml:"t:Initials,omitempty" json:"Initials,omitempty"`
+	Initials string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Initials,omitempty" json:"Initials,omitempty"`
 
-	FullName string `xml:"t:FullName,omitempty" json:"FullName,omitempty"`
+	FullName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FullName,omitempty" json:"FullName,omitempty"`
 
-	Nickname string `xml:"t:Nickname,omitempty" json:"Nickname,omitempty"`
+	Nickname string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Nickname,omitempty" json:"Nickname,omitempty"`
 
-	YomiFirstName string `xml:"t:YomiFirstName,omitempty" json:"YomiFirstName,omitempty"`
+	YomiFirstName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types YomiFirstName,omitempty" json:"YomiFirstName,omitempty"`
 
-	YomiLastName string `xml:"t:YomiLastName,omitempty" json:"YomiLastName,omitempty"`
+	YomiLastName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types YomiLastName,omitempty" json:"YomiLastName,omitempty"`
 }
 
 type ImAddressDictionaryEntryType struct {
-	XMLName xml.Name `xml:"t:Entry"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Entry"`
 
 	Value string `xml:",chardata" json:"-,"`
 
@@ -7412,29 +7412,29 @@ type ImAddressDictionaryEntryType struct {
 }
 
 type ContactUrlDictionaryEntryType struct {
-	XMLName xml.Name `xml:"t:Url"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Url"`
 
-	Type *ContactUrlKeyType `xml:"t:Type,omitempty" json:"Type,omitempty"`
+	Type *ContactUrlKeyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Type,omitempty" json:"Type,omitempty"`
 
-	Name string `xml:"t:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Name,omitempty" json:"Name,omitempty"`
 
-	Address string `xml:"t:Address,omitempty" json:"Address,omitempty"`
+	Address string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Address,omitempty" json:"Address,omitempty"`
 }
 
 type AbchEmailAddressDictionaryEntryType struct {
-	XMLName xml.Name `xml:"t:Email"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Email"`
 
-	Type *AbchEmailAddressTypeType `xml:"t:Type,omitempty" json:"Type,omitempty"`
+	Type *AbchEmailAddressTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Type,omitempty" json:"Type,omitempty"`
 
-	Address string `xml:"t:Address,omitempty" json:"Address,omitempty"`
+	Address string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Address,omitempty" json:"Address,omitempty"`
 
-	IsMessengerEnabled bool `xml:"t:IsMessengerEnabled,omitempty" json:"IsMessengerEnabled,omitempty"`
+	IsMessengerEnabled bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsMessengerEnabled,omitempty" json:"IsMessengerEnabled,omitempty"`
 
-	Capabilities int64 `xml:"t:Capabilities,omitempty" json:"Capabilities,omitempty"`
+	Capabilities int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Capabilities,omitempty" json:"Capabilities,omitempty"`
 }
 
 type EmailAddressDictionaryEntryType struct {
-	XMLName xml.Name `xml:"t:Entry"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Entry"`
 
 	Value string `xml:",chardata" json:"-,"`
 
@@ -7448,7 +7448,7 @@ type EmailAddressDictionaryEntryType struct {
 }
 
 type PhoneNumberDictionaryEntryType struct {
-	XMLName xml.Name `xml:"t:Entry"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Entry"`
 
 	Value string `xml:",chardata" json:"-,"`
 
@@ -7456,69 +7456,69 @@ type PhoneNumberDictionaryEntryType struct {
 }
 
 type PhysicalAddressDictionaryEntryType struct {
-	XMLName xml.Name `xml:"t:Entry"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Entry"`
 
-	Street string `xml:"t:Street,omitempty" json:"Street,omitempty"`
+	Street string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Street,omitempty" json:"Street,omitempty"`
 
-	City string `xml:"t:City,omitempty" json:"City,omitempty"`
+	City string `xml:"http://schemas.microsoft.com/exchange/services/2006/types City,omitempty" json:"City,omitempty"`
 
-	State string `xml:"t:State,omitempty" json:"State,omitempty"`
+	State string `xml:"http://schemas.microsoft.com/exchange/services/2006/types State,omitempty" json:"State,omitempty"`
 
-	CountryOrRegion string `xml:"t:CountryOrRegion,omitempty" json:"CountryOrRegion,omitempty"`
+	CountryOrRegion string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CountryOrRegion,omitempty" json:"CountryOrRegion,omitempty"`
 
-	PostalCode string `xml:"t:PostalCode,omitempty" json:"PostalCode,omitempty"`
+	PostalCode string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostalCode,omitempty" json:"PostalCode,omitempty"`
 
 	Key *PhysicalAddressKeyType `xml:"Key,attr,omitempty" json:"Key,omitempty"`
 }
 
 type ContactUrlDictionaryType struct {
-	XMLName xml.Name `xml:"t:Urls"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Urls"`
 
-	Url []*ContactUrlDictionaryEntryType `xml:"t:Url,omitempty" json:"Url,omitempty"`
+	Url []*ContactUrlDictionaryEntryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Url,omitempty" json:"Url,omitempty"`
 }
 
 type AbchEmailAddressDictionaryType struct {
-	XMLName xml.Name `xml:"t:AbchEmailAddresses"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AbchEmailAddresses"`
 
-	Email []*AbchEmailAddressDictionaryEntryType `xml:"t:Email,omitempty" json:"Email,omitempty"`
+	Email []*AbchEmailAddressDictionaryEntryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Email,omitempty" json:"Email,omitempty"`
 }
 
 type ImAddressDictionaryType struct {
-	XMLName xml.Name `xml:"t:ImAddresses"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ImAddresses"`
 
-	Entry []*ImAddressDictionaryEntryType `xml:"t:Entry,omitempty" json:"Entry,omitempty"`
+	Entry []*ImAddressDictionaryEntryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Entry,omitempty" json:"Entry,omitempty"`
 }
 
 type EmailAddressDictionaryType struct {
-	XMLName xml.Name `xml:"t:EmailAddresses"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddresses"`
 
-	Entry []*EmailAddressDictionaryEntryType `xml:"t:Entry,omitempty" json:"Entry,omitempty"`
+	Entry []*EmailAddressDictionaryEntryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Entry,omitempty" json:"Entry,omitempty"`
 }
 
 type PhoneNumberDictionaryType struct {
-	XMLName xml.Name `xml:"t:PhoneNumbers"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneNumbers"`
 
-	Entry []*PhoneNumberDictionaryEntryType `xml:"t:Entry,omitempty" json:"Entry,omitempty"`
+	Entry []*PhoneNumberDictionaryEntryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Entry,omitempty" json:"Entry,omitempty"`
 }
 
 type PhysicalAddressDictionaryType struct {
-	XMLName xml.Name `xml:"t:PhysicalAddresses"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhysicalAddresses"`
 
-	Entry []*PhysicalAddressDictionaryEntryType `xml:"t:Entry,omitempty" json:"Entry,omitempty"`
+	Entry []*PhysicalAddressDictionaryEntryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Entry,omitempty" json:"Entry,omitempty"`
 }
 
 type MembersListType struct {
-	XMLName xml.Name `xml:"t:Members"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Members"`
 
-	Member []*MemberType `xml:"t:Member,omitempty" json:"Member,omitempty"`
+	Member []*MemberType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Member,omitempty" json:"Member,omitempty"`
 }
 
 type MemberType struct {
-	XMLName xml.Name `xml:"t:Member"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Member"`
 
-	Mailbox *EmailAddressType `xml:"t:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailbox,omitempty" json:"Mailbox,omitempty"`
 
-	Status *MemberStatusType `xml:"t:Status,omitempty" json:"Status,omitempty"`
+	Status *MemberStatusType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Status,omitempty" json:"Status,omitempty"`
 
 	Key string `xml:"Key,attr,omitempty" json:"Key,omitempty"`
 }
@@ -7526,336 +7526,336 @@ type MemberType struct {
 type RoleMemberItemType struct {
 	*ItemType
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	Type *RoleMemberTypeType `xml:"t:Type,omitempty" json:"Type,omitempty"`
+	Type *RoleMemberTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Type,omitempty" json:"Type,omitempty"`
 
-	MemberId string `xml:"t:MemberId,omitempty" json:"MemberId,omitempty"`
+	MemberId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MemberId,omitempty" json:"MemberId,omitempty"`
 }
 
 type NetworkItemType struct {
 	*ItemType
 
-	DomainId int32 `xml:"t:DomainId,omitempty" json:"DomainId,omitempty"`
+	DomainId int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types DomainId,omitempty" json:"DomainId,omitempty"`
 
-	DomainTag string `xml:"t:DomainTag,omitempty" json:"DomainTag,omitempty"`
+	DomainTag string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DomainTag,omitempty" json:"DomainTag,omitempty"`
 
-	UserTileUrl string `xml:"t:UserTileUrl,omitempty" json:"UserTileUrl,omitempty"`
+	UserTileUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserTileUrl,omitempty" json:"UserTileUrl,omitempty"`
 
-	ProfileUrl string `xml:"t:ProfileUrl,omitempty" json:"ProfileUrl,omitempty"`
+	ProfileUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProfileUrl,omitempty" json:"ProfileUrl,omitempty"`
 
-	Settings int32 `xml:"t:Settings,omitempty" json:"Settings,omitempty"`
+	Settings int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Settings,omitempty" json:"Settings,omitempty"`
 
-	IsDefault bool `xml:"t:IsDefault,omitempty" json:"IsDefault,omitempty"`
+	IsDefault bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsDefault,omitempty" json:"IsDefault,omitempty"`
 
-	AutoLinkError string `xml:"t:AutoLinkError,omitempty" json:"AutoLinkError,omitempty"`
+	AutoLinkError string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AutoLinkError,omitempty" json:"AutoLinkError,omitempty"`
 
-	AutoLinkSuccess string `xml:"t:AutoLinkSuccess,omitempty" json:"AutoLinkSuccess,omitempty"`
+	AutoLinkSuccess string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AutoLinkSuccess,omitempty" json:"AutoLinkSuccess,omitempty"`
 
-	UserEmail string `xml:"t:UserEmail,omitempty" json:"UserEmail,omitempty"`
+	UserEmail string `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserEmail,omitempty" json:"UserEmail,omitempty"`
 
-	ClientPublishSecret string `xml:"t:ClientPublishSecret,omitempty" json:"ClientPublishSecret,omitempty"`
+	ClientPublishSecret string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ClientPublishSecret,omitempty" json:"ClientPublishSecret,omitempty"`
 
-	ClientToken string `xml:"t:ClientToken,omitempty" json:"ClientToken,omitempty"`
+	ClientToken string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ClientToken,omitempty" json:"ClientToken,omitempty"`
 
-	ClientToken2 string `xml:"t:ClientToken2,omitempty" json:"ClientToken2,omitempty"`
+	ClientToken2 string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ClientToken2,omitempty" json:"ClientToken2,omitempty"`
 
-	ContactSyncError string `xml:"t:ContactSyncError,omitempty" json:"ContactSyncError,omitempty"`
+	ContactSyncError string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactSyncError,omitempty" json:"ContactSyncError,omitempty"`
 
-	ContactSyncSuccess string `xml:"t:ContactSyncSuccess,omitempty" json:"ContactSyncSuccess,omitempty"`
+	ContactSyncSuccess string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactSyncSuccess,omitempty" json:"ContactSyncSuccess,omitempty"`
 
-	ErrorOffers int32 `xml:"t:ErrorOffers,omitempty" json:"ErrorOffers,omitempty"`
+	ErrorOffers int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ErrorOffers,omitempty" json:"ErrorOffers,omitempty"`
 
-	FirstAuthErrorDates string `xml:"t:FirstAuthErrorDates,omitempty" json:"FirstAuthErrorDates,omitempty"`
+	FirstAuthErrorDates string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FirstAuthErrorDates,omitempty" json:"FirstAuthErrorDates,omitempty"`
 
-	LastVersionSaved int32 `xml:"t:LastVersionSaved,omitempty" json:"LastVersionSaved,omitempty"`
+	LastVersionSaved int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastVersionSaved,omitempty" json:"LastVersionSaved,omitempty"`
 
-	LastWelcomeContact string `xml:"t:LastWelcomeContact,omitempty" json:"LastWelcomeContact,omitempty"`
+	LastWelcomeContact string `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastWelcomeContact,omitempty" json:"LastWelcomeContact,omitempty"`
 
-	Offers int32 `xml:"t:Offers,omitempty" json:"Offers,omitempty"`
+	Offers int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Offers,omitempty" json:"Offers,omitempty"`
 
-	PsaLastChanged xsd.DateTime `xml:"t:PsaLastChanged,omitempty" json:"PsaLastChanged,omitempty"`
+	PsaLastChanged xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types PsaLastChanged,omitempty" json:"PsaLastChanged,omitempty"`
 
-	RefreshToken2 string `xml:"t:RefreshToken2,omitempty" json:"RefreshToken2,omitempty"`
+	RefreshToken2 string `xml:"http://schemas.microsoft.com/exchange/services/2006/types RefreshToken2,omitempty" json:"RefreshToken2,omitempty"`
 
-	RefreshTokenExpiry2 string `xml:"t:RefreshTokenExpiry2,omitempty" json:"RefreshTokenExpiry2,omitempty"`
+	RefreshTokenExpiry2 string `xml:"http://schemas.microsoft.com/exchange/services/2006/types RefreshTokenExpiry2,omitempty" json:"RefreshTokenExpiry2,omitempty"`
 
-	SessionHandle string `xml:"t:SessionHandle,omitempty" json:"SessionHandle,omitempty"`
+	SessionHandle string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SessionHandle,omitempty" json:"SessionHandle,omitempty"`
 
-	RejectedOffers int32 `xml:"t:RejectedOffers,omitempty" json:"RejectedOffers,omitempty"`
+	RejectedOffers int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types RejectedOffers,omitempty" json:"RejectedOffers,omitempty"`
 
-	SyncEnabled bool `xml:"t:SyncEnabled,omitempty" json:"SyncEnabled,omitempty"`
+	SyncEnabled bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types SyncEnabled,omitempty" json:"SyncEnabled,omitempty"`
 
-	TokenRefreshLastAttempted xsd.DateTime `xml:"t:TokenRefreshLastAttempted,omitempty" json:"TokenRefreshLastAttempted,omitempty"`
+	TokenRefreshLastAttempted xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types TokenRefreshLastAttempted,omitempty" json:"TokenRefreshLastAttempted,omitempty"`
 
-	TokenRefreshLastCompleted xsd.DateTime `xml:"t:TokenRefreshLastCompleted,omitempty" json:"TokenRefreshLastCompleted,omitempty"`
+	TokenRefreshLastCompleted xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types TokenRefreshLastCompleted,omitempty" json:"TokenRefreshLastCompleted,omitempty"`
 
-	PsaState string `xml:"t:PsaState,omitempty" json:"PsaState,omitempty"`
+	PsaState string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PsaState,omitempty" json:"PsaState,omitempty"`
 
-	SourceEntryID []byte `xml:"t:SourceEntryID,omitempty" json:"SourceEntryID,omitempty"`
+	SourceEntryID []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types SourceEntryID,omitempty" json:"SourceEntryID,omitempty"`
 
-	AccountName string `xml:"t:AccountName,omitempty" json:"AccountName,omitempty"`
+	AccountName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AccountName,omitempty" json:"AccountName,omitempty"`
 
-	LastSync xsd.DateTime `xml:"t:LastSync,omitempty" json:"LastSync,omitempty"`
+	LastSync xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastSync,omitempty" json:"LastSync,omitempty"`
 }
 
 type AbchPersonItemType struct {
 	*ItemType
 
-	AntiLinkInfo string `xml:"t:AntiLinkInfo,omitempty" json:"AntiLinkInfo,omitempty"`
+	AntiLinkInfo string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AntiLinkInfo,omitempty" json:"AntiLinkInfo,omitempty"`
 
-	PersonId *GuidType `xml:"t:PersonId,omitempty" json:"PersonId,omitempty"`
+	PersonId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PersonId,omitempty" json:"PersonId,omitempty"`
 
-	ContactHandles *ArrayOfAbchPersonContactHandlesType `xml:"t:ContactHandles,omitempty" json:"ContactHandles,omitempty"`
+	ContactHandles *ArrayOfAbchPersonContactHandlesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactHandles,omitempty" json:"ContactHandles,omitempty"`
 
-	ContactCategories *ArrayOfStringsType `xml:"t:ContactCategories,omitempty" json:"ContactCategories,omitempty"`
+	ContactCategories *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactCategories,omitempty" json:"ContactCategories,omitempty"`
 
-	RelevanceOrder1 string `xml:"t:RelevanceOrder1,omitempty" json:"RelevanceOrder1,omitempty"`
+	RelevanceOrder1 string `xml:"http://schemas.microsoft.com/exchange/services/2006/types RelevanceOrder1,omitempty" json:"RelevanceOrder1,omitempty"`
 
-	RelevanceOrder2 string `xml:"t:RelevanceOrder2,omitempty" json:"RelevanceOrder2,omitempty"`
+	RelevanceOrder2 string `xml:"http://schemas.microsoft.com/exchange/services/2006/types RelevanceOrder2,omitempty" json:"RelevanceOrder2,omitempty"`
 
-	TrustLevel int32 `xml:"t:TrustLevel,omitempty" json:"TrustLevel,omitempty"`
+	TrustLevel int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types TrustLevel,omitempty" json:"TrustLevel,omitempty"`
 
-	FavoriteOrder int32 `xml:"t:FavoriteOrder,omitempty" json:"FavoriteOrder,omitempty"`
+	FavoriteOrder int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types FavoriteOrder,omitempty" json:"FavoriteOrder,omitempty"`
 
-	ExchangePersonIdGuid *GuidType `xml:"t:ExchangePersonIdGuid,omitempty" json:"ExchangePersonIdGuid,omitempty"`
+	ExchangePersonIdGuid *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExchangePersonIdGuid,omitempty" json:"ExchangePersonIdGuid,omitempty"`
 }
 
 type ArrayOfAbchPersonContactHandlesType struct {
-	XMLName xml.Name `xml:"t:ContactHandles"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactHandles"`
 
-	ContactHandle []*AbchPersonContactHandle `xml:"t:ContactHandle,omitempty" json:"ContactHandle,omitempty"`
+	ContactHandle []*AbchPersonContactHandle `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactHandle,omitempty" json:"ContactHandle,omitempty"`
 }
 
 type AbchPersonContactHandle struct {
-	XMLName xml.Name `xml:"t:ContactHandle"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactHandle"`
 
-	SourceId string `xml:"t:SourceId,omitempty" json:"SourceId,omitempty"`
+	SourceId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SourceId,omitempty" json:"SourceId,omitempty"`
 
-	ObjectId string `xml:"t:ObjectId,omitempty" json:"ObjectId,omitempty"`
+	ObjectId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ObjectId,omitempty" json:"ObjectId,omitempty"`
 
-	AccountName string `xml:"t:AccountName,omitempty" json:"AccountName,omitempty"`
+	AccountName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AccountName,omitempty" json:"AccountName,omitempty"`
 }
 
 type ArrayOfGuidType struct {
-	Guid []*GuidType `xml:"t:Guid,omitempty" json:"Guid,omitempty"`
+	Guid []*GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Guid,omitempty" json:"Guid,omitempty"`
 }
 
 type ContactItemType struct {
 	*ItemType
 
-	FileAs string `xml:"t:FileAs,omitempty" json:"FileAs,omitempty"`
+	FileAs string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileAs,omitempty" json:"FileAs,omitempty"`
 
-	FileAsMapping *FileAsMappingType `xml:"t:FileAsMapping,omitempty" json:"FileAsMapping,omitempty"`
+	FileAsMapping *FileAsMappingType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileAsMapping,omitempty" json:"FileAsMapping,omitempty"`
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	GivenName string `xml:"t:GivenName,omitempty" json:"GivenName,omitempty"`
+	GivenName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types GivenName,omitempty" json:"GivenName,omitempty"`
 
-	Initials string `xml:"t:Initials,omitempty" json:"Initials,omitempty"`
+	Initials string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Initials,omitempty" json:"Initials,omitempty"`
 
-	MiddleName string `xml:"t:MiddleName,omitempty" json:"MiddleName,omitempty"`
+	MiddleName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MiddleName,omitempty" json:"MiddleName,omitempty"`
 
-	Nickname string `xml:"t:Nickname,omitempty" json:"Nickname,omitempty"`
+	Nickname string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Nickname,omitempty" json:"Nickname,omitempty"`
 
-	CompleteName *CompleteNameType `xml:"t:CompleteName,omitempty" json:"CompleteName,omitempty"`
+	CompleteName *CompleteNameType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompleteName,omitempty" json:"CompleteName,omitempty"`
 
-	CompanyName string `xml:"t:CompanyName,omitempty" json:"CompanyName,omitempty"`
+	CompanyName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CompanyName,omitempty" json:"CompanyName,omitempty"`
 
-	EmailAddresses *EmailAddressDictionaryType `xml:"t:EmailAddresses,omitempty" json:"EmailAddresses,omitempty"`
+	EmailAddresses *EmailAddressDictionaryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddresses,omitempty" json:"EmailAddresses,omitempty"`
 
-	AbchEmailAddresses *AbchEmailAddressDictionaryType `xml:"t:AbchEmailAddresses,omitempty" json:"AbchEmailAddresses,omitempty"`
+	AbchEmailAddresses *AbchEmailAddressDictionaryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AbchEmailAddresses,omitempty" json:"AbchEmailAddresses,omitempty"`
 
-	PhysicalAddresses *PhysicalAddressDictionaryType `xml:"t:PhysicalAddresses,omitempty" json:"PhysicalAddresses,omitempty"`
+	PhysicalAddresses *PhysicalAddressDictionaryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhysicalAddresses,omitempty" json:"PhysicalAddresses,omitempty"`
 
-	PhoneNumbers *PhoneNumberDictionaryType `xml:"t:PhoneNumbers,omitempty" json:"PhoneNumbers,omitempty"`
+	PhoneNumbers *PhoneNumberDictionaryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneNumbers,omitempty" json:"PhoneNumbers,omitempty"`
 
-	AssistantName string `xml:"t:AssistantName,omitempty" json:"AssistantName,omitempty"`
+	AssistantName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AssistantName,omitempty" json:"AssistantName,omitempty"`
 
-	Birthday xsd.DateTime `xml:"t:Birthday,omitempty" json:"Birthday,omitempty"`
+	Birthday xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types Birthday,omitempty" json:"Birthday,omitempty"`
 
-	BusinessHomePage AnyURI `xml:"t:BusinessHomePage,omitempty" json:"BusinessHomePage,omitempty"`
+	BusinessHomePage AnyURI `xml:"http://schemas.microsoft.com/exchange/services/2006/types BusinessHomePage,omitempty" json:"BusinessHomePage,omitempty"`
 
-	Children *ArrayOfStringsType `xml:"t:Children,omitempty" json:"Children,omitempty"`
+	Children *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Children,omitempty" json:"Children,omitempty"`
 
-	Companies *ArrayOfStringsType `xml:"t:Companies,omitempty" json:"Companies,omitempty"`
+	Companies *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Companies,omitempty" json:"Companies,omitempty"`
 
-	ContactSource *ContactSourceType `xml:"t:ContactSource,omitempty" json:"ContactSource,omitempty"`
+	ContactSource *ContactSourceType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactSource,omitempty" json:"ContactSource,omitempty"`
 
-	Department string `xml:"t:Department,omitempty" json:"Department,omitempty"`
+	Department string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Department,omitempty" json:"Department,omitempty"`
 
-	Generation string `xml:"t:Generation,omitempty" json:"Generation,omitempty"`
+	Generation string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Generation,omitempty" json:"Generation,omitempty"`
 
-	ImAddresses *ImAddressDictionaryType `xml:"t:ImAddresses,omitempty" json:"ImAddresses,omitempty"`
+	ImAddresses *ImAddressDictionaryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ImAddresses,omitempty" json:"ImAddresses,omitempty"`
 
-	JobTitle string `xml:"t:JobTitle,omitempty" json:"JobTitle,omitempty"`
+	JobTitle string `xml:"http://schemas.microsoft.com/exchange/services/2006/types JobTitle,omitempty" json:"JobTitle,omitempty"`
 
-	Manager string `xml:"t:Manager,omitempty" json:"Manager,omitempty"`
+	Manager string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Manager,omitempty" json:"Manager,omitempty"`
 
-	Mileage string `xml:"t:Mileage,omitempty" json:"Mileage,omitempty"`
+	Mileage string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mileage,omitempty" json:"Mileage,omitempty"`
 
-	OfficeLocation string `xml:"t:OfficeLocation,omitempty" json:"OfficeLocation,omitempty"`
+	OfficeLocation string `xml:"http://schemas.microsoft.com/exchange/services/2006/types OfficeLocation,omitempty" json:"OfficeLocation,omitempty"`
 
-	PostalAddressIndex *PhysicalAddressIndexType `xml:"t:PostalAddressIndex,omitempty" json:"PostalAddressIndex,omitempty"`
+	PostalAddressIndex *PhysicalAddressIndexType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PostalAddressIndex,omitempty" json:"PostalAddressIndex,omitempty"`
 
-	Profession string `xml:"t:Profession,omitempty" json:"Profession,omitempty"`
+	Profession string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Profession,omitempty" json:"Profession,omitempty"`
 
-	SpouseName string `xml:"t:SpouseName,omitempty" json:"SpouseName,omitempty"`
+	SpouseName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SpouseName,omitempty" json:"SpouseName,omitempty"`
 
-	Surname string `xml:"t:Surname,omitempty" json:"Surname,omitempty"`
+	Surname string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Surname,omitempty" json:"Surname,omitempty"`
 
-	WeddingAnniversary xsd.DateTime `xml:"t:WeddingAnniversary,omitempty" json:"WeddingAnniversary,omitempty"`
+	WeddingAnniversary xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types WeddingAnniversary,omitempty" json:"WeddingAnniversary,omitempty"`
 
-	HasPicture bool `xml:"t:HasPicture,omitempty" json:"HasPicture,omitempty"`
+	HasPicture bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HasPicture,omitempty" json:"HasPicture,omitempty"`
 
-	PhoneticFullName string `xml:"t:PhoneticFullName,omitempty" json:"PhoneticFullName,omitempty"`
+	PhoneticFullName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneticFullName,omitempty" json:"PhoneticFullName,omitempty"`
 
-	PhoneticFirstName string `xml:"t:PhoneticFirstName,omitempty" json:"PhoneticFirstName,omitempty"`
+	PhoneticFirstName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneticFirstName,omitempty" json:"PhoneticFirstName,omitempty"`
 
-	PhoneticLastName string `xml:"t:PhoneticLastName,omitempty" json:"PhoneticLastName,omitempty"`
+	PhoneticLastName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneticLastName,omitempty" json:"PhoneticLastName,omitempty"`
 
-	Alias string `xml:"t:Alias,omitempty" json:"Alias,omitempty"`
+	Alias string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Alias,omitempty" json:"Alias,omitempty"`
 
-	Notes string `xml:"t:Notes,omitempty" json:"Notes,omitempty"`
+	Notes string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Notes,omitempty" json:"Notes,omitempty"`
 
-	Photo []byte `xml:"t:Photo,omitempty" json:"Photo,omitempty"`
+	Photo []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types Photo,omitempty" json:"Photo,omitempty"`
 
-	UserSMIMECertificate *ArrayOfBinaryType `xml:"t:UserSMIMECertificate,omitempty" json:"UserSMIMECertificate,omitempty"`
+	UserSMIMECertificate *ArrayOfBinaryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserSMIMECertificate,omitempty" json:"UserSMIMECertificate,omitempty"`
 
-	MSExchangeCertificate *ArrayOfBinaryType `xml:"t:MSExchangeCertificate,omitempty" json:"MSExchangeCertificate,omitempty"`
+	MSExchangeCertificate *ArrayOfBinaryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MSExchangeCertificate,omitempty" json:"MSExchangeCertificate,omitempty"`
 
-	DirectoryId string `xml:"t:DirectoryId,omitempty" json:"DirectoryId,omitempty"`
+	DirectoryId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DirectoryId,omitempty" json:"DirectoryId,omitempty"`
 
-	ManagerMailbox *SingleRecipientType `xml:"t:ManagerMailbox,omitempty" json:"ManagerMailbox,omitempty"`
+	ManagerMailbox *SingleRecipientType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ManagerMailbox,omitempty" json:"ManagerMailbox,omitempty"`
 
-	DirectReports *ArrayOfRecipientsType `xml:"t:DirectReports,omitempty" json:"DirectReports,omitempty"`
+	DirectReports *ArrayOfRecipientsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DirectReports,omitempty" json:"DirectReports,omitempty"`
 
-	AccountName string `xml:"t:AccountName,omitempty" json:"AccountName,omitempty"`
+	AccountName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AccountName,omitempty" json:"AccountName,omitempty"`
 
-	IsAutoUpdateDisabled bool `xml:"t:IsAutoUpdateDisabled,omitempty" json:"IsAutoUpdateDisabled,omitempty"`
+	IsAutoUpdateDisabled bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsAutoUpdateDisabled,omitempty" json:"IsAutoUpdateDisabled,omitempty"`
 
-	IsMessengerEnabled bool `xml:"t:IsMessengerEnabled,omitempty" json:"IsMessengerEnabled,omitempty"`
+	IsMessengerEnabled bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsMessengerEnabled,omitempty" json:"IsMessengerEnabled,omitempty"`
 
-	Comment string `xml:"t:Comment,omitempty" json:"Comment,omitempty"`
+	Comment string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Comment,omitempty" json:"Comment,omitempty"`
 
-	ContactShortId int32 `xml:"t:ContactShortId,omitempty" json:"ContactShortId,omitempty"`
+	ContactShortId int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactShortId,omitempty" json:"ContactShortId,omitempty"`
 
-	ContactType string `xml:"t:ContactType,omitempty" json:"ContactType,omitempty"`
+	ContactType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactType,omitempty" json:"ContactType,omitempty"`
 
-	Gender string `xml:"t:Gender,omitempty" json:"Gender,omitempty"`
+	Gender string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Gender,omitempty" json:"Gender,omitempty"`
 
-	IsHidden bool `xml:"t:IsHidden,omitempty" json:"IsHidden,omitempty"`
+	IsHidden bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsHidden,omitempty" json:"IsHidden,omitempty"`
 
-	ObjectId string `xml:"t:ObjectId,omitempty" json:"ObjectId,omitempty"`
+	ObjectId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ObjectId,omitempty" json:"ObjectId,omitempty"`
 
-	PassportId int64 `xml:"t:PassportId,omitempty" json:"PassportId,omitempty"`
+	PassportId int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types PassportId,omitempty" json:"PassportId,omitempty"`
 
-	IsPrivate bool `xml:"t:IsPrivate,omitempty" json:"IsPrivate,omitempty"`
+	IsPrivate bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsPrivate,omitempty" json:"IsPrivate,omitempty"`
 
-	SourceId string `xml:"t:SourceId,omitempty" json:"SourceId,omitempty"`
+	SourceId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SourceId,omitempty" json:"SourceId,omitempty"`
 
-	TrustLevel int32 `xml:"t:TrustLevel,omitempty" json:"TrustLevel,omitempty"`
+	TrustLevel int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types TrustLevel,omitempty" json:"TrustLevel,omitempty"`
 
-	CreatedBy string `xml:"t:CreatedBy,omitempty" json:"CreatedBy,omitempty"`
+	CreatedBy string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreatedBy,omitempty" json:"CreatedBy,omitempty"`
 
-	Urls *ContactUrlDictionaryType `xml:"t:Urls,omitempty" json:"Urls,omitempty"`
+	Urls *ContactUrlDictionaryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Urls,omitempty" json:"Urls,omitempty"`
 
-	Cid int64 `xml:"t:Cid,omitempty" json:"Cid,omitempty"`
+	Cid int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Cid,omitempty" json:"Cid,omitempty"`
 
-	SkypeAuthCertificate string `xml:"t:SkypeAuthCertificate,omitempty" json:"SkypeAuthCertificate,omitempty"`
+	SkypeAuthCertificate string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SkypeAuthCertificate,omitempty" json:"SkypeAuthCertificate,omitempty"`
 
-	SkypeContext string `xml:"t:SkypeContext,omitempty" json:"SkypeContext,omitempty"`
+	SkypeContext string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SkypeContext,omitempty" json:"SkypeContext,omitempty"`
 
-	SkypeId string `xml:"t:SkypeId,omitempty" json:"SkypeId,omitempty"`
+	SkypeId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SkypeId,omitempty" json:"SkypeId,omitempty"`
 
-	SkypeRelationship string `xml:"t:SkypeRelationship,omitempty" json:"SkypeRelationship,omitempty"`
+	SkypeRelationship string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SkypeRelationship,omitempty" json:"SkypeRelationship,omitempty"`
 
-	YomiNickname string `xml:"t:YomiNickname,omitempty" json:"YomiNickname,omitempty"`
+	YomiNickname string `xml:"http://schemas.microsoft.com/exchange/services/2006/types YomiNickname,omitempty" json:"YomiNickname,omitempty"`
 
-	XboxLiveTag string `xml:"t:XboxLiveTag,omitempty" json:"XboxLiveTag,omitempty"`
+	XboxLiveTag string `xml:"http://schemas.microsoft.com/exchange/services/2006/types XboxLiveTag,omitempty" json:"XboxLiveTag,omitempty"`
 
-	InviteFree bool `xml:"t:InviteFree,omitempty" json:"InviteFree,omitempty"`
+	InviteFree bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types InviteFree,omitempty" json:"InviteFree,omitempty"`
 
-	HidePresenceAndProfile bool `xml:"t:HidePresenceAndProfile,omitempty" json:"HidePresenceAndProfile,omitempty"`
+	HidePresenceAndProfile bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HidePresenceAndProfile,omitempty" json:"HidePresenceAndProfile,omitempty"`
 
-	IsPendingOutbound bool `xml:"t:IsPendingOutbound,omitempty" json:"IsPendingOutbound,omitempty"`
+	IsPendingOutbound bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsPendingOutbound,omitempty" json:"IsPendingOutbound,omitempty"`
 
-	SupportGroupFeeds bool `xml:"t:SupportGroupFeeds,omitempty" json:"SupportGroupFeeds,omitempty"`
+	SupportGroupFeeds bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types SupportGroupFeeds,omitempty" json:"SupportGroupFeeds,omitempty"`
 
-	UserTileHash string `xml:"t:UserTileHash,omitempty" json:"UserTileHash,omitempty"`
+	UserTileHash string `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserTileHash,omitempty" json:"UserTileHash,omitempty"`
 
-	UnifiedInbox bool `xml:"t:UnifiedInbox,omitempty" json:"UnifiedInbox,omitempty"`
+	UnifiedInbox bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types UnifiedInbox,omitempty" json:"UnifiedInbox,omitempty"`
 
-	Mris *ArrayOfStringsType `xml:"t:Mris,omitempty" json:"Mris,omitempty"`
+	Mris *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mris,omitempty" json:"Mris,omitempty"`
 
-	Wlid string `xml:"t:Wlid,omitempty" json:"Wlid,omitempty"`
+	Wlid string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Wlid,omitempty" json:"Wlid,omitempty"`
 
-	AbchContactId *GuidType `xml:"t:AbchContactId,omitempty" json:"AbchContactId,omitempty"`
+	AbchContactId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AbchContactId,omitempty" json:"AbchContactId,omitempty"`
 
-	NotInBirthdayCalendar bool `xml:"t:NotInBirthdayCalendar,omitempty" json:"NotInBirthdayCalendar,omitempty"`
+	NotInBirthdayCalendar bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types NotInBirthdayCalendar,omitempty" json:"NotInBirthdayCalendar,omitempty"`
 
-	ShellContactType string `xml:"t:ShellContactType,omitempty" json:"ShellContactType,omitempty"`
+	ShellContactType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ShellContactType,omitempty" json:"ShellContactType,omitempty"`
 
-	ImMri string `xml:"t:ImMri,omitempty" json:"ImMri,omitempty"`
+	ImMri string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ImMri,omitempty" json:"ImMri,omitempty"`
 
-	PresenceTrustLevel int32 `xml:"t:PresenceTrustLevel,omitempty" json:"PresenceTrustLevel,omitempty"`
+	PresenceTrustLevel int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types PresenceTrustLevel,omitempty" json:"PresenceTrustLevel,omitempty"`
 
-	OtherMri string `xml:"t:OtherMri,omitempty" json:"OtherMri,omitempty"`
+	OtherMri string `xml:"http://schemas.microsoft.com/exchange/services/2006/types OtherMri,omitempty" json:"OtherMri,omitempty"`
 
-	ProfileLastChanged string `xml:"t:ProfileLastChanged,omitempty" json:"ProfileLastChanged,omitempty"`
+	ProfileLastChanged string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProfileLastChanged,omitempty" json:"ProfileLastChanged,omitempty"`
 
-	MobileIMEnabled bool `xml:"t:MobileIMEnabled,omitempty" json:"MobileIMEnabled,omitempty"`
+	MobileIMEnabled bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types MobileIMEnabled,omitempty" json:"MobileIMEnabled,omitempty"`
 
-	PartnerNetworkProfilePhotoUrl string `xml:"t:PartnerNetworkProfilePhotoUrl,omitempty" json:"PartnerNetworkProfilePhotoUrl,omitempty"`
+	PartnerNetworkProfilePhotoUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PartnerNetworkProfilePhotoUrl,omitempty" json:"PartnerNetworkProfilePhotoUrl,omitempty"`
 
-	PartnerNetworkThumbnailPhotoUrl string `xml:"t:PartnerNetworkThumbnailPhotoUrl,omitempty" json:"PartnerNetworkThumbnailPhotoUrl,omitempty"`
+	PartnerNetworkThumbnailPhotoUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PartnerNetworkThumbnailPhotoUrl,omitempty" json:"PartnerNetworkThumbnailPhotoUrl,omitempty"`
 
-	PersonId string `xml:"t:PersonId,omitempty" json:"PersonId,omitempty"`
+	PersonId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PersonId,omitempty" json:"PersonId,omitempty"`
 
-	ConversationGuid *GuidType `xml:"t:ConversationGuid,omitempty" json:"ConversationGuid,omitempty"`
+	ConversationGuid *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConversationGuid,omitempty" json:"ConversationGuid,omitempty"`
 }
 
 type ArrayOfBinaryType struct {
-	Base64Binary [][]byte `xml:"t:Base64Binary,omitempty" json:"Base64Binary,omitempty"`
+	Base64Binary [][]byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types Base64Binary,omitempty" json:"Base64Binary,omitempty"`
 }
 
 type DistributionListType struct {
 	*ItemType
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	FileAs string `xml:"t:FileAs,omitempty" json:"FileAs,omitempty"`
+	FileAs string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileAs,omitempty" json:"FileAs,omitempty"`
 
-	ContactSource *ContactSourceType `xml:"t:ContactSource,omitempty" json:"ContactSource,omitempty"`
+	ContactSource *ContactSourceType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactSource,omitempty" json:"ContactSource,omitempty"`
 
-	Members *MembersListType `xml:"t:Members,omitempty" json:"Members,omitempty"`
+	Members *MembersListType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Members,omitempty" json:"Members,omitempty"`
 }
 
 type SearchParametersType struct {
-	XMLName xml.Name `xml:"t:SearchParameters"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchParameters"`
 
-	Restriction *RestrictionType `xml:"t:Restriction,omitempty" json:"Restriction,omitempty"`
+	Restriction *RestrictionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Restriction,omitempty" json:"Restriction,omitempty"`
 
-	BaseFolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"t:BaseFolderIds,omitempty" json:"BaseFolderIds,omitempty"`
+	BaseFolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BaseFolderIds,omitempty" json:"BaseFolderIds,omitempty"`
 
 	Traversal *SearchFolderTraversalType `xml:"Traversal,attr,omitempty" json:"Traversal,omitempty"`
 }
 
 type ConstantValueType struct {
-	Value string `xml:"Value,attr,omitempty" json:"t:Value,omitempty"`
+	Value string `xml:"Value,attr,omitempty" json:"Value,omitempty"`
 }
 
 type SearchExpressionType struct {
 }
 
 type AggregateOnType struct {
-	XMLName xml.Name `xml:"t:AggregateOn"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AggregateOn"`
 
-	FieldURI *PathToUnindexedFieldType `xml:"t:FieldURI,omitempty" json:"FieldURI,omitempty"`
+	FieldURI *PathToUnindexedFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FieldURI,omitempty" json:"FieldURI,omitempty"`
 
-	IndexedFieldURI *PathToIndexedFieldType `xml:"t:IndexedFieldURI,omitempty" json:"IndexedFieldURI,omitempty"`
+	IndexedFieldURI *PathToIndexedFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types IndexedFieldURI,omitempty" json:"IndexedFieldURI,omitempty"`
 
-	ExtendedFieldURI *PathToExtendedFieldType `xml:"t:ExtendedFieldURI,omitempty" json:"ExtendedFieldURI,omitempty"`
+	ExtendedFieldURI *PathToExtendedFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedFieldURI,omitempty" json:"ExtendedFieldURI,omitempty"`
 
 	Aggregate *AggregateType `xml:"Aggregate,attr,omitempty" json:"Aggregate,omitempty"`
 }
@@ -7865,71 +7865,71 @@ type BaseGroupByType struct {
 }
 
 type GroupByType struct {
-	XMLName xml.Name `xml:"t:GroupBy"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupBy"`
 
 	*BaseGroupByType
 
-	AggregateOn *AggregateOnType `xml:"t:AggregateOn,omitempty" json:"AggregateOn,omitempty"`
+	AggregateOn *AggregateOnType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AggregateOn,omitempty" json:"AggregateOn,omitempty"`
 
-	UseCollapsibleGroups bool `xml:"t:UseCollapsibleGroups,omitempty" json:"UseCollapsibleGroups,omitempty"`
+	UseCollapsibleGroups bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types UseCollapsibleGroups,omitempty" json:"UseCollapsibleGroups,omitempty"`
 
-	ItemsPerGroup *NonNegativeInteger `xml:"t:ItemsPerGroup,omitempty" json:"ItemsPerGroup,omitempty"`
+	ItemsPerGroup *NonNegativeInteger `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemsPerGroup,omitempty" json:"ItemsPerGroup,omitempty"`
 
-	MaxItemsPerGroup *NonNegativeInteger `xml:"t:MaxItemsPerGroup,omitempty" json:"MaxItemsPerGroup,omitempty"`
+	MaxItemsPerGroup *NonNegativeInteger `xml:"http://schemas.microsoft.com/exchange/services/2006/types MaxItemsPerGroup,omitempty" json:"MaxItemsPerGroup,omitempty"`
 
-	GroupsToExpand *ArrayOfGroupIdType `xml:"t:GroupsToExpand,omitempty" json:"GroupsToExpand,omitempty"`
+	GroupsToExpand *ArrayOfGroupIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupsToExpand,omitempty" json:"GroupsToExpand,omitempty"`
 
-	FieldURI *PathToUnindexedFieldType `xml:"t:FieldURI,omitempty" json:"FieldURI,omitempty"`
+	FieldURI *PathToUnindexedFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FieldURI,omitempty" json:"FieldURI,omitempty"`
 
-	IndexedFieldURI *PathToIndexedFieldType `xml:"t:IndexedFieldURI,omitempty" json:"IndexedFieldURI,omitempty"`
+	IndexedFieldURI *PathToIndexedFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types IndexedFieldURI,omitempty" json:"IndexedFieldURI,omitempty"`
 
-	ExtendedFieldURI *PathToExtendedFieldType `xml:"t:ExtendedFieldURI,omitempty" json:"ExtendedFieldURI,omitempty"`
+	ExtendedFieldURI *PathToExtendedFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedFieldURI,omitempty" json:"ExtendedFieldURI,omitempty"`
 }
 
 type DistinguishedGroupByType struct {
-	XMLName xml.Name `xml:"t:DistinguishedGroupBy"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistinguishedGroupBy"`
 
 	*BaseGroupByType
 
-	StandardGroupBy *StandardGroupByType `xml:"t:StandardGroupBy,omitempty" json:"StandardGroupBy,omitempty"`
+	StandardGroupBy *StandardGroupByType `xml:"http://schemas.microsoft.com/exchange/services/2006/types StandardGroupBy,omitempty" json:"StandardGroupBy,omitempty"`
 }
 
 type ArrayOfGroupIdType struct {
-	XMLName xml.Name `xml:"t:GroupsToExpand"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupsToExpand"`
 
-	GroupId []byte `xml:"t:GroupId,omitempty" json:"GroupId,omitempty"`
+	GroupId []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupId,omitempty" json:"GroupId,omitempty"`
 }
 
 type GroupedItemsType struct {
-	XMLName xml.Name `xml:"t:GroupedItems"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupedItems"`
 
-	GroupIndex string `xml:"t:GroupIndex,omitempty" json:"GroupIndex,omitempty"`
+	GroupIndex string `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupIndex,omitempty" json:"GroupIndex,omitempty"`
 
-	Items *ArrayOfRealItemsType `xml:"t:Items,omitempty" json:"Items,omitempty"`
+	Items *ArrayOfRealItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Items,omitempty" json:"Items,omitempty"`
 
-	GroupSummary *GroupSummaryType `xml:"t:GroupSummary,omitempty" json:"GroupSummary,omitempty"`
+	GroupSummary *GroupSummaryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupSummary,omitempty" json:"GroupSummary,omitempty"`
 }
 
 type ArrayOfGroupedItemsType struct {
-	XMLName xml.Name `xml:"t:Groups"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Groups"`
 
-	GroupedItems []*GroupedItemsType `xml:"t:GroupedItems,omitempty" json:"GroupedItems,omitempty"`
+	GroupedItems []*GroupedItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupedItems,omitempty" json:"GroupedItems,omitempty"`
 }
 
 type GroupSummaryType struct {
-	XMLName xml.Name `xml:"t:GroupSummary"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupSummary"`
 
-	GroupCount int32 `xml:"t:GroupCount,omitempty" json:"GroupCount,omitempty"`
+	GroupCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupCount,omitempty" json:"GroupCount,omitempty"`
 
-	UnreadCount int32 `xml:"t:UnreadCount,omitempty" json:"UnreadCount,omitempty"`
+	UnreadCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types UnreadCount,omitempty" json:"UnreadCount,omitempty"`
 
-	InstanceKey []byte `xml:"t:InstanceKey,omitempty" json:"InstanceKey,omitempty"`
+	InstanceKey []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types InstanceKey,omitempty" json:"InstanceKey,omitempty"`
 
-	GroupByValue string `xml:"t:GroupByValue,omitempty" json:"GroupByValue,omitempty"`
+	GroupByValue string `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupByValue,omitempty" json:"GroupByValue,omitempty"`
 }
 
 type ExistsType struct {
-	XMLName xml.Name `xml:"t:Exists"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Exists"`
 
 	*SearchExpressionType
 
@@ -7937,11 +7937,11 @@ type ExistsType struct {
 }
 
 type FieldURIOrConstantType struct {
-	XMLName xml.Name `xml:"t:FieldURIOrConstant"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types FieldURIOrConstant"`
 
 	Path *Path `xml:"Path,omitempty" json:"Path,omitempty"`
 
-	Constant *ConstantValueType `xml:"t:Constant,omitempty" json:"Constant,omitempty"`
+	Constant *ConstantValueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Constant,omitempty" json:"Constant,omitempty"`
 }
 
 type TwoOperandExpressionType struct {
@@ -7949,69 +7949,69 @@ type TwoOperandExpressionType struct {
 
 	Path *Path `xml:"Path,omitempty" json:"Path,omitempty"`
 
-	FieldURIOrConstant *FieldURIOrConstantType `xml:"t:FieldURIOrConstant,omitempty" json:"FieldURIOrConstant,omitempty"`
+	FieldURIOrConstant *FieldURIOrConstantType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FieldURIOrConstant,omitempty" json:"FieldURIOrConstant,omitempty"`
 }
 
 type ExcludesValueType struct {
-	XMLName xml.Name `xml:"t:Bitmask"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Bitmask"`
 
-	Value *ExcludesAttributeType `xml:"Value,attr,omitempty" json:"t:Value,omitempty"`
+	Value *ExcludesAttributeType `xml:"Value,attr,omitempty" json:"Value,omitempty"`
 }
 
 type ExcludesType struct {
-	XMLName xml.Name `xml:"t:Excludes"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Excludes"`
 
 	*SearchExpressionType
 
 	Path *Path `xml:"Path,omitempty" json:"Path,omitempty"`
 
-	Bitmask *ExcludesValueType `xml:"t:Bitmask,omitempty" json:"Bitmask,omitempty"`
+	Bitmask *ExcludesValueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Bitmask,omitempty" json:"Bitmask,omitempty"`
 }
 
 type IsEqualToType struct {
-	XMLName xml.Name `xml:"t:IsEqualTo"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsEqualTo"`
 
 	*TwoOperandExpressionType
 }
 
 type IsNotEqualToType struct {
-	XMLName xml.Name `xml:"t:IsNotEqualTo"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsNotEqualTo"`
 
 	*TwoOperandExpressionType
 }
 
 type IsGreaterThanType struct {
-	XMLName xml.Name `xml:"t:IsGreaterThan"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsGreaterThan"`
 
 	*TwoOperandExpressionType
 }
 
 type IsGreaterThanOrEqualToType struct {
-	XMLName xml.Name `xml:"t:IsGreaterThanOrEqualTo"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsGreaterThanOrEqualTo"`
 
 	*TwoOperandExpressionType
 }
 
 type IsLessThanType struct {
-	XMLName xml.Name `xml:"t:IsLessThan"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsLessThan"`
 
 	*TwoOperandExpressionType
 }
 
 type IsLessThanOrEqualToType struct {
-	XMLName xml.Name `xml:"t:IsLessThanOrEqualTo"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsLessThanOrEqualTo"`
 
 	*TwoOperandExpressionType
 }
 
 type ContainsExpressionType struct {
-	XMLName xml.Name `xml:"t:Contains"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Contains"`
 
 	*SearchExpressionType
 
 	Path *Path `xml:"Path,omitempty" json:"Path,omitempty"`
 
-	Constant *ConstantValueType `xml:"t:Constant,omitempty" json:"Constant,omitempty"`
+	Constant *ConstantValueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Constant,omitempty" json:"Constant,omitempty"`
 
 	ContainmentMode *ContainmentModeType `xml:"ContainmentMode,attr,omitempty" json:"ContainmentMode,omitempty"`
 
@@ -8019,7 +8019,7 @@ type ContainsExpressionType struct {
 }
 
 type NotType struct {
-	XMLName xml.Name `xml:"t:Not"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Not"`
 
 	*SearchExpressionType
 
@@ -8033,25 +8033,25 @@ type MultipleOperandBooleanExpressionType struct {
 }
 
 type AndType struct {
-	XMLName xml.Name `xml:"t:And"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types And"`
 
 	*MultipleOperandBooleanExpressionType
 }
 
 type OrType struct {
-	XMLName xml.Name `xml:"t:Or"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Or"`
 
 	*MultipleOperandBooleanExpressionType
 }
 
 type NearType struct {
-	XMLName xml.Name `xml:"t:Near"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Near"`
 
 	*MultipleOperandBooleanExpressionType
 
-	Distance uint32 `xml:"t:Distance,omitempty" json:"Distance,omitempty"`
+	Distance uint32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Distance,omitempty" json:"Distance,omitempty"`
 
-	Ordered bool `xml:"t:Ordered,omitempty" json:"Ordered,omitempty"`
+	Ordered bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types Ordered,omitempty" json:"Ordered,omitempty"`
 }
 
 type RestrictionType struct {
@@ -8065,341 +8065,341 @@ type FieldOrderType struct {
 }
 
 type NonEmptyArrayOfFieldOrdersType struct {
-	FieldOrder []*FieldOrderType `xml:"t:FieldOrder,omitempty" json:"FieldOrder,omitempty"`
+	FieldOrder []*FieldOrderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FieldOrder,omitempty" json:"FieldOrder,omitempty"`
 }
 
 type NonEmptyArrayOfFolderNamesType struct {
-	XMLName xml.Name `xml:"t:FolderNames"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderNames"`
 
-	FolderName []string `xml:"t:FolderName,omitempty" json:"FolderName,omitempty"`
+	FolderName []string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderName,omitempty" json:"FolderName,omitempty"`
 }
 
 type BaseNotificationEventType struct {
-	XMLName xml.Name `xml:"t:StatusEvent"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types StatusEvent"`
 
-	Watermark *WatermarkType `xml:"t:Watermark,omitempty" json:"Watermark,omitempty"`
+	Watermark *WatermarkType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Watermark,omitempty" json:"Watermark,omitempty"`
 }
 
 type BaseObjectChangedEventType struct {
 	*BaseNotificationEventType
 
-	TimeStamp xsd.DateTime `xml:"t:TimeStamp,omitempty" json:"TimeStamp,omitempty"`
+	TimeStamp xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeStamp,omitempty" json:"TimeStamp,omitempty"`
 
-	ParentFolderId *FolderIdType `xml:"t:ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
+	ParentFolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
 
-	FolderId *FolderIdType `xml:"t:FolderId,omitempty" json:"FolderId,omitempty"`
+	FolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderId,omitempty" json:"FolderId,omitempty"`
 
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 }
 
 type ModifiedEventType struct {
-	XMLName xml.Name `xml:"t:ModifiedEvent"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ModifiedEvent"`
 
 	*BaseObjectChangedEventType
 
-	UnreadCount int32 `xml:"t:UnreadCount,omitempty" json:"UnreadCount,omitempty"`
+	UnreadCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types UnreadCount,omitempty" json:"UnreadCount,omitempty"`
 }
 
 type MovedCopiedEventType struct {
 	*BaseObjectChangedEventType
 
-	OldParentFolderId *FolderIdType `xml:"t:OldParentFolderId,omitempty" json:"OldParentFolderId,omitempty"`
+	OldParentFolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OldParentFolderId,omitempty" json:"OldParentFolderId,omitempty"`
 
-	OldFolderId *FolderIdType `xml:"t:OldFolderId,omitempty" json:"OldFolderId,omitempty"`
+	OldFolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OldFolderId,omitempty" json:"OldFolderId,omitempty"`
 
-	OldItemId *ItemIdType `xml:"t:OldItemId,omitempty" json:"OldItemId,omitempty"`
+	OldItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OldItemId,omitempty" json:"OldItemId,omitempty"`
 }
 
 type NotificationType struct {
-	SubscriptionId *SubscriptionIdType `xml:"t:SubscriptionId,omitempty" json:"SubscriptionId,omitempty"`
+	SubscriptionId *SubscriptionIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SubscriptionId,omitempty" json:"SubscriptionId,omitempty"`
 
-	PreviousWatermark *WatermarkType `xml:"t:PreviousWatermark,omitempty" json:"PreviousWatermark,omitempty"`
+	PreviousWatermark *WatermarkType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PreviousWatermark,omitempty" json:"PreviousWatermark,omitempty"`
 
-	MoreEvents bool `xml:"t:MoreEvents,omitempty" json:"MoreEvents,omitempty"`
+	MoreEvents bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types MoreEvents,omitempty" json:"MoreEvents,omitempty"`
 
-	CopiedEvent *MovedCopiedEventType `xml:"t:CopiedEvent,omitempty" json:"CopiedEvent,omitempty"`
+	CopiedEvent *MovedCopiedEventType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CopiedEvent,omitempty" json:"CopiedEvent,omitempty"`
 
-	CreatedEvent *BaseObjectChangedEventType `xml:"t:CreatedEvent,omitempty" json:"CreatedEvent,omitempty"`
+	CreatedEvent *BaseObjectChangedEventType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreatedEvent,omitempty" json:"CreatedEvent,omitempty"`
 
-	DeletedEvent *BaseObjectChangedEventType `xml:"t:DeletedEvent,omitempty" json:"DeletedEvent,omitempty"`
+	DeletedEvent *BaseObjectChangedEventType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeletedEvent,omitempty" json:"DeletedEvent,omitempty"`
 
-	ModifiedEvent *ModifiedEventType `xml:"t:ModifiedEvent,omitempty" json:"ModifiedEvent,omitempty"`
+	ModifiedEvent *ModifiedEventType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ModifiedEvent,omitempty" json:"ModifiedEvent,omitempty"`
 
-	MovedEvent *MovedCopiedEventType `xml:"t:MovedEvent,omitempty" json:"MovedEvent,omitempty"`
+	MovedEvent *MovedCopiedEventType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MovedEvent,omitempty" json:"MovedEvent,omitempty"`
 
-	NewMailEvent *BaseObjectChangedEventType `xml:"t:NewMailEvent,omitempty" json:"NewMailEvent,omitempty"`
+	NewMailEvent *BaseObjectChangedEventType `xml:"http://schemas.microsoft.com/exchange/services/2006/types NewMailEvent,omitempty" json:"NewMailEvent,omitempty"`
 
-	StatusEvent *BaseNotificationEventType `xml:"t:StatusEvent,omitempty" json:"StatusEvent,omitempty"`
+	StatusEvent *BaseNotificationEventType `xml:"http://schemas.microsoft.com/exchange/services/2006/types StatusEvent,omitempty" json:"StatusEvent,omitempty"`
 
-	FreeBusyChangedEvent *BaseObjectChangedEventType `xml:"t:FreeBusyChangedEvent,omitempty" json:"FreeBusyChangedEvent,omitempty"`
+	FreeBusyChangedEvent *BaseObjectChangedEventType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FreeBusyChangedEvent,omitempty" json:"FreeBusyChangedEvent,omitempty"`
 }
 
 type NonEmptyArrayOfNotificationEventTypesType struct {
-	EventType *NotificationEventTypeType `xml:"t:EventType,omitempty" json:"EventType,omitempty"`
+	EventType *NotificationEventTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EventType,omitempty" json:"EventType,omitempty"`
 }
 
 type BaseSubscriptionRequestType struct {
-	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"t:FolderIds,omitempty" json:"FolderIds,omitempty"`
+	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderIds,omitempty" json:"FolderIds,omitempty"`
 
-	EventTypes *NonEmptyArrayOfNotificationEventTypesType `xml:"t:EventTypes,omitempty" json:"EventTypes,omitempty"`
+	EventTypes *NonEmptyArrayOfNotificationEventTypesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EventTypes,omitempty" json:"EventTypes,omitempty"`
 
-	Watermark *WatermarkType `xml:"t:Watermark,omitempty" json:"Watermark,omitempty"`
+	Watermark *WatermarkType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Watermark,omitempty" json:"Watermark,omitempty"`
 
 	SubscribeToAllFolders bool `xml:"SubscribeToAllFolders,attr,omitempty" json:"SubscribeToAllFolders,omitempty"`
 }
 
 type PushSubscriptionRequestType struct {
-	XMLName xml.Name `xml:"t:PushSubscriptionRequest"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PushSubscriptionRequest"`
 
 	*BaseSubscriptionRequestType
 
-	StatusFrequency *SubscriptionStatusFrequencyType `xml:"t:StatusFrequency,omitempty" json:"StatusFrequency,omitempty"`
+	StatusFrequency *SubscriptionStatusFrequencyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types StatusFrequency,omitempty" json:"StatusFrequency,omitempty"`
 
-	URL string `xml:"t:URL,omitempty" json:"URL,omitempty"`
+	URL string `xml:"http://schemas.microsoft.com/exchange/services/2006/types URL,omitempty" json:"URL,omitempty"`
 
-	CallerData string `xml:"t:CallerData,omitempty" json:"CallerData,omitempty"`
+	CallerData string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CallerData,omitempty" json:"CallerData,omitempty"`
 }
 
 type PullSubscriptionRequestType struct {
-	XMLName xml.Name `xml:"t:PullSubscriptionRequest"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PullSubscriptionRequest"`
 
 	*BaseSubscriptionRequestType
 
-	Timeout *SubscriptionTimeoutType `xml:"t:Timeout,omitempty" json:"Timeout,omitempty"`
+	Timeout *SubscriptionTimeoutType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Timeout,omitempty" json:"Timeout,omitempty"`
 }
 
 type StreamingSubscriptionRequestType struct {
-	XMLName xml.Name `xml:"t:StreamingSubscriptionRequest"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types StreamingSubscriptionRequest"`
 
-	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"t:FolderIds,omitempty" json:"FolderIds,omitempty"`
+	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderIds,omitempty" json:"FolderIds,omitempty"`
 
-	EventTypes *NonEmptyArrayOfNotificationEventTypesType `xml:"t:EventTypes,omitempty" json:"EventTypes,omitempty"`
+	EventTypes *NonEmptyArrayOfNotificationEventTypesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EventTypes,omitempty" json:"EventTypes,omitempty"`
 
 	SubscribeToAllFolders bool `xml:"SubscribeToAllFolders,attr,omitempty" json:"SubscribeToAllFolders,omitempty"`
 }
 
 type NonEmptyArrayOfSubscriptionIdsType struct {
-	SubscriptionId []*SubscriptionIdType `xml:"t:SubscriptionId,omitempty" json:"SubscriptionId,omitempty"`
+	SubscriptionId []*SubscriptionIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SubscriptionId,omitempty" json:"SubscriptionId,omitempty"`
 }
 
 type NonEmptyArrayOfNotificationsType struct {
-	XMLName xml.Name `xml:"t:Notifications"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Notifications"`
 
-	Notification []*NotificationType `xml:"t:Notification,omitempty" json:"Notification,omitempty"`
+	Notification []*NotificationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Notification,omitempty" json:"Notification,omitempty"`
 }
 
 type SyncFolderItemsDeleteType struct {
-	XMLName xml.Name `xml:"t:Delete"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Delete"`
 
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 }
 
 type SyncFolderItemsReadFlagType struct {
-	XMLName xml.Name `xml:"t:ReadFlagChange"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReadFlagChange"`
 
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 
-	IsRead bool `xml:"t:IsRead,omitempty" json:"IsRead,omitempty"`
+	IsRead bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsRead,omitempty" json:"IsRead,omitempty"`
 }
 
 type SyncFolderItemsChangesType struct {
-	XMLName xml.Name `xml:"t:Changes"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Changes"`
 
-	Create *SyncFolderItemsCreateOrUpdateType `xml:"t:Create,omitempty" json:"Create,omitempty"`
+	Create *SyncFolderItemsCreateOrUpdateType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Create,omitempty" json:"Create,omitempty"`
 
-	Update *SyncFolderItemsCreateOrUpdateType `xml:"t:Update,omitempty" json:"Update,omitempty"`
+	Update *SyncFolderItemsCreateOrUpdateType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Update,omitempty" json:"Update,omitempty"`
 
-	Delete *SyncFolderItemsDeleteType `xml:"t:Delete,omitempty" json:"Delete,omitempty"`
+	Delete *SyncFolderItemsDeleteType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Delete,omitempty" json:"Delete,omitempty"`
 
-	ReadFlagChange *SyncFolderItemsReadFlagType `xml:"t:ReadFlagChange,omitempty" json:"ReadFlagChange,omitempty"`
+	ReadFlagChange *SyncFolderItemsReadFlagType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReadFlagChange,omitempty" json:"ReadFlagChange,omitempty"`
 }
 
 type SyncFolderHierarchyCreateOrUpdateType struct {
-	Folder *FolderType `xml:"t:Folder,omitempty" json:"Folder,omitempty"`
+	Folder *FolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Folder,omitempty" json:"Folder,omitempty"`
 
-	CalendarFolder *CalendarFolderType `xml:"t:CalendarFolder,omitempty" json:"CalendarFolder,omitempty"`
+	CalendarFolder *CalendarFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarFolder,omitempty" json:"CalendarFolder,omitempty"`
 
-	ContactsFolder *ContactsFolderType `xml:"t:ContactsFolder,omitempty" json:"ContactsFolder,omitempty"`
+	ContactsFolder *ContactsFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactsFolder,omitempty" json:"ContactsFolder,omitempty"`
 
-	SearchFolder *SearchFolderType `xml:"t:SearchFolder,omitempty" json:"SearchFolder,omitempty"`
+	SearchFolder *SearchFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchFolder,omitempty" json:"SearchFolder,omitempty"`
 
-	TasksFolder *TasksFolderType `xml:"t:TasksFolder,omitempty" json:"TasksFolder,omitempty"`
+	TasksFolder *TasksFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TasksFolder,omitempty" json:"TasksFolder,omitempty"`
 }
 
 type SyncFolderHierarchyDeleteType struct {
-	XMLName xml.Name `xml:"t:Delete"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Delete"`
 
-	FolderId *FolderIdType `xml:"t:FolderId,omitempty" json:"FolderId,omitempty"`
+	FolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderId,omitempty" json:"FolderId,omitempty"`
 }
 
 type SyncFolderHierarchyChangesType struct {
-	XMLName xml.Name `xml:"t:Changes"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Changes"`
 
-	Create *SyncFolderHierarchyCreateOrUpdateType `xml:"t:Create,omitempty" json:"Create,omitempty"`
+	Create *SyncFolderHierarchyCreateOrUpdateType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Create,omitempty" json:"Create,omitempty"`
 
-	Update *SyncFolderHierarchyCreateOrUpdateType `xml:"t:Update,omitempty" json:"Update,omitempty"`
+	Update *SyncFolderHierarchyCreateOrUpdateType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Update,omitempty" json:"Update,omitempty"`
 
-	Delete *SyncFolderHierarchyDeleteType `xml:"t:Delete,omitempty" json:"Delete,omitempty"`
+	Delete *SyncFolderHierarchyDeleteType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Delete,omitempty" json:"Delete,omitempty"`
 }
 
 type RequestTypeHeader struct {
-	RequestType *AvailabilityProxyRequestType `xml:"t:RequestType,omitempty" json:"RequestType,omitempty"`
+	RequestType *AvailabilityProxyRequestType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RequestType,omitempty" json:"RequestType,omitempty"`
 }
 
 type CalendarEventDetails struct {
-	ID string `xml:"t:ID,omitempty" json:"ID,omitempty"`
+	ID string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ID,omitempty" json:"ID,omitempty"`
 
-	Subject string `xml:"t:Subject,omitempty" json:"Subject,omitempty"`
+	Subject string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Subject,omitempty" json:"Subject,omitempty"`
 
-	Location string `xml:"t:Location,omitempty" json:"Location,omitempty"`
+	Location string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Location,omitempty" json:"Location,omitempty"`
 
-	IsMeeting bool `xml:"t:IsMeeting,omitempty" json:"IsMeeting,omitempty"`
+	IsMeeting bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsMeeting,omitempty" json:"IsMeeting,omitempty"`
 
-	IsRecurring bool `xml:"t:IsRecurring,omitempty" json:"IsRecurring,omitempty"`
+	IsRecurring bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsRecurring,omitempty" json:"IsRecurring,omitempty"`
 
-	IsException bool `xml:"t:IsException,omitempty" json:"IsException,omitempty"`
+	IsException bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsException,omitempty" json:"IsException,omitempty"`
 
-	IsReminderSet bool `xml:"t:IsReminderSet,omitempty" json:"IsReminderSet,omitempty"`
+	IsReminderSet bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsReminderSet,omitempty" json:"IsReminderSet,omitempty"`
 
-	IsPrivate bool `xml:"t:IsPrivate,omitempty" json:"IsPrivate,omitempty"`
+	IsPrivate bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsPrivate,omitempty" json:"IsPrivate,omitempty"`
 }
 
 type CalendarEvent struct {
-	StartTime xsd.DateTime `xml:"t:StartTime,omitempty" json:"StartTime,omitempty"`
+	StartTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTime,omitempty" json:"StartTime,omitempty"`
 
-	EndTime xsd.DateTime `xml:"t:EndTime,omitempty" json:"EndTime,omitempty"`
+	EndTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndTime,omitempty" json:"EndTime,omitempty"`
 
-	BusyType *LegacyFreeBusyType `xml:"t:BusyType,omitempty" json:"BusyType,omitempty"`
+	BusyType *LegacyFreeBusyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BusyType,omitempty" json:"BusyType,omitempty"`
 
-	CalendarEventDetails *CalendarEventDetails `xml:"t:CalendarEventDetails,omitempty" json:"CalendarEventDetails,omitempty"`
+	CalendarEventDetails *CalendarEventDetails `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarEventDetails,omitempty" json:"CalendarEventDetails,omitempty"`
 }
 
 type ArrayOfCalendarEvent struct {
-	XMLName xml.Name `xml:"t:CalendarEventArray"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarEventArray"`
 
-	CalendarEvent []*CalendarEvent `xml:"t:CalendarEvent,omitempty" json:"CalendarEvent,omitempty"`
+	CalendarEvent []*CalendarEvent `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarEvent,omitempty" json:"CalendarEvent,omitempty"`
 }
 
 type Duration struct {
-	StartTime xsd.DateTime `xml:"t:StartTime,omitempty" json:"StartTime,omitempty"`
+	StartTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTime,omitempty" json:"StartTime,omitempty"`
 
-	EndTime xsd.DateTime `xml:"t:EndTime,omitempty" json:"EndTime,omitempty"`
+	EndTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndTime,omitempty" json:"EndTime,omitempty"`
 }
 
 type EmailAddress struct {
-	Name string `xml:"t:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Name,omitempty" json:"Name,omitempty"`
 
-	Address string `xml:"t:Address,omitempty" json:"Address,omitempty"`
+	Address string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Address,omitempty" json:"Address,omitempty"`
 
-	RoutingType string `xml:"t:RoutingType,omitempty" json:"RoutingType,omitempty"`
+	RoutingType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types RoutingType,omitempty" json:"RoutingType,omitempty"`
 }
 
 type FreeBusyViewOptionsType struct {
-	XMLName xml.Name `xml:"t:FreeBusyViewOptions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types FreeBusyViewOptions"`
 
-	TimeWindow *Duration `xml:"t:TimeWindow,omitempty" json:"TimeWindow,omitempty"`
+	TimeWindow *Duration `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeWindow,omitempty" json:"TimeWindow,omitempty"`
 
-	MergedFreeBusyIntervalInMinutes int32 `xml:"t:MergedFreeBusyIntervalInMinutes,omitempty" json:"MergedFreeBusyIntervalInMinutes,omitempty"`
+	MergedFreeBusyIntervalInMinutes int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MergedFreeBusyIntervalInMinutes,omitempty" json:"MergedFreeBusyIntervalInMinutes,omitempty"`
 
-	RequestedView *FreeBusyViewType `xml:"t:RequestedView,omitempty" json:"RequestedView,omitempty"`
+	RequestedView *FreeBusyViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RequestedView,omitempty" json:"RequestedView,omitempty"`
 }
 
 type WorkingPeriod struct {
-	DayOfWeek *DaysOfWeekType `xml:"t:DayOfWeek,omitempty" json:"DayOfWeek,omitempty"`
+	DayOfWeek *DaysOfWeekType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DayOfWeek,omitempty" json:"DayOfWeek,omitempty"`
 
-	StartTimeInMinutes int32 `xml:"t:StartTimeInMinutes,omitempty" json:"StartTimeInMinutes,omitempty"`
+	StartTimeInMinutes int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTimeInMinutes,omitempty" json:"StartTimeInMinutes,omitempty"`
 
-	EndTimeInMinutes int32 `xml:"t:EndTimeInMinutes,omitempty" json:"EndTimeInMinutes,omitempty"`
+	EndTimeInMinutes int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndTimeInMinutes,omitempty" json:"EndTimeInMinutes,omitempty"`
 }
 
 type ArrayOfWorkingPeriod struct {
-	XMLName xml.Name `xml:"t:WorkingPeriodArray"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types WorkingPeriodArray"`
 
-	WorkingPeriod []*WorkingPeriod `xml:"t:WorkingPeriod,omitempty" json:"WorkingPeriod,omitempty"`
+	WorkingPeriod []*WorkingPeriod `xml:"http://schemas.microsoft.com/exchange/services/2006/types WorkingPeriod,omitempty" json:"WorkingPeriod,omitempty"`
 }
 
 type SerializableTimeZoneTime struct {
-	Bias int32 `xml:"t:Bias,omitempty" json:"Bias,omitempty"`
+	Bias int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Bias,omitempty" json:"Bias,omitempty"`
 
-	Time string `xml:"t:Time,omitempty" json:"Time,omitempty"`
+	Time string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Time,omitempty" json:"Time,omitempty"`
 
-	DayOrder int16 `xml:"t:DayOrder,omitempty" json:"DayOrder,omitempty"`
+	DayOrder int16 `xml:"http://schemas.microsoft.com/exchange/services/2006/types DayOrder,omitempty" json:"DayOrder,omitempty"`
 
-	Month int16 `xml:"t:Month,omitempty" json:"Month,omitempty"`
+	Month int16 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Month,omitempty" json:"Month,omitempty"`
 
-	DayOfWeek *DayOfWeekType `xml:"t:DayOfWeek,omitempty" json:"DayOfWeek,omitempty"`
+	DayOfWeek *DayOfWeekType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DayOfWeek,omitempty" json:"DayOfWeek,omitempty"`
 
-	Year string `xml:"t:Year,omitempty" json:"Year,omitempty"`
+	Year string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Year,omitempty" json:"Year,omitempty"`
 }
 
 type SerializableTimeZone struct {
-	Bias int32 `xml:"t:Bias,omitempty" json:"Bias,omitempty"`
+	Bias int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Bias,omitempty" json:"Bias,omitempty"`
 
-	StandardTime *SerializableTimeZoneTime `xml:"t:StandardTime,omitempty" json:"StandardTime,omitempty"`
+	StandardTime *SerializableTimeZoneTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StandardTime,omitempty" json:"StandardTime,omitempty"`
 
-	DaylightTime *SerializableTimeZoneTime `xml:"t:DaylightTime,omitempty" json:"DaylightTime,omitempty"`
+	DaylightTime *SerializableTimeZoneTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types DaylightTime,omitempty" json:"DaylightTime,omitempty"`
 }
 
 type WorkingHours struct {
-	TimeZone *SerializableTimeZone `xml:"t:TimeZone,omitempty" json:"TimeZone,omitempty"`
+	TimeZone *SerializableTimeZone `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeZone,omitempty" json:"TimeZone,omitempty"`
 
-	WorkingPeriodArray *ArrayOfWorkingPeriod `xml:"t:WorkingPeriodArray,omitempty" json:"WorkingPeriodArray,omitempty"`
+	WorkingPeriodArray *ArrayOfWorkingPeriod `xml:"http://schemas.microsoft.com/exchange/services/2006/types WorkingPeriodArray,omitempty" json:"WorkingPeriodArray,omitempty"`
 }
 
 type FreeBusyView struct {
-	FreeBusyViewType *FreeBusyViewType `xml:"t:FreeBusyViewType,omitempty" json:"FreeBusyViewType,omitempty"`
+	FreeBusyViewType *FreeBusyViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FreeBusyViewType,omitempty" json:"FreeBusyViewType,omitempty"`
 
-	MergedFreeBusy string `xml:"t:MergedFreeBusy,omitempty" json:"MergedFreeBusy,omitempty"`
+	MergedFreeBusy string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MergedFreeBusy,omitempty" json:"MergedFreeBusy,omitempty"`
 
-	CalendarEventArray *ArrayOfCalendarEvent `xml:"t:CalendarEventArray,omitempty" json:"CalendarEventArray,omitempty"`
+	CalendarEventArray *ArrayOfCalendarEvent `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarEventArray,omitempty" json:"CalendarEventArray,omitempty"`
 
-	WorkingHours *WorkingHours `xml:"t:WorkingHours,omitempty" json:"WorkingHours,omitempty"`
+	WorkingHours *WorkingHours `xml:"http://schemas.microsoft.com/exchange/services/2006/types WorkingHours,omitempty" json:"WorkingHours,omitempty"`
 }
 
 type MailboxData struct {
-	Email *EmailAddress `xml:"t:Email,omitempty" json:"Email,omitempty"`
+	Email *EmailAddress `xml:"http://schemas.microsoft.com/exchange/services/2006/types Email,omitempty" json:"Email,omitempty"`
 
-	AttendeeType *MeetingAttendeeType `xml:"t:AttendeeType,omitempty" json:"AttendeeType,omitempty"`
+	AttendeeType *MeetingAttendeeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttendeeType,omitempty" json:"AttendeeType,omitempty"`
 
-	ExcludeConflicts bool `xml:"t:ExcludeConflicts,omitempty" json:"ExcludeConflicts,omitempty"`
+	ExcludeConflicts bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExcludeConflicts,omitempty" json:"ExcludeConflicts,omitempty"`
 }
 
 type ArrayOfMailboxData struct {
-	XMLName xml.Name `xml:"t:MailboxDataArray"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxDataArray"`
 
-	MailboxData []*MailboxData `xml:"t:MailboxData,omitempty" json:"MailboxData,omitempty"`
+	MailboxData []*MailboxData `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxData,omitempty" json:"MailboxData,omitempty"`
 }
 
 type SuggestionsViewOptionsType struct {
-	XMLName xml.Name `xml:"t:SuggestionsViewOptions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SuggestionsViewOptions"`
 
-	GoodThreshold int32 `xml:"t:GoodThreshold,omitempty" json:"GoodThreshold,omitempty"`
+	GoodThreshold int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types GoodThreshold,omitempty" json:"GoodThreshold,omitempty"`
 
-	MaximumResultsByDay int32 `xml:"t:MaximumResultsByDay,omitempty" json:"MaximumResultsByDay,omitempty"`
+	MaximumResultsByDay int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MaximumResultsByDay,omitempty" json:"MaximumResultsByDay,omitempty"`
 
-	MaximumNonWorkHourResultsByDay int32 `xml:"t:MaximumNonWorkHourResultsByDay,omitempty" json:"MaximumNonWorkHourResultsByDay,omitempty"`
+	MaximumNonWorkHourResultsByDay int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MaximumNonWorkHourResultsByDay,omitempty" json:"MaximumNonWorkHourResultsByDay,omitempty"`
 
-	MeetingDurationInMinutes int32 `xml:"t:MeetingDurationInMinutes,omitempty" json:"MeetingDurationInMinutes,omitempty"`
+	MeetingDurationInMinutes int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingDurationInMinutes,omitempty" json:"MeetingDurationInMinutes,omitempty"`
 
-	MinimumSuggestionQuality *SuggestionQuality `xml:"t:MinimumSuggestionQuality,omitempty" json:"MinimumSuggestionQuality,omitempty"`
+	MinimumSuggestionQuality *SuggestionQuality `xml:"http://schemas.microsoft.com/exchange/services/2006/types MinimumSuggestionQuality,omitempty" json:"MinimumSuggestionQuality,omitempty"`
 
-	DetailedSuggestionsWindow *Duration `xml:"t:DetailedSuggestionsWindow,omitempty" json:"DetailedSuggestionsWindow,omitempty"`
+	DetailedSuggestionsWindow *Duration `xml:"http://schemas.microsoft.com/exchange/services/2006/types DetailedSuggestionsWindow,omitempty" json:"DetailedSuggestionsWindow,omitempty"`
 
-	CurrentMeetingTime xsd.DateTime `xml:"t:CurrentMeetingTime,omitempty" json:"CurrentMeetingTime,omitempty"`
+	CurrentMeetingTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types CurrentMeetingTime,omitempty" json:"CurrentMeetingTime,omitempty"`
 
-	GlobalObjectId string `xml:"t:GlobalObjectId,omitempty" json:"GlobalObjectId,omitempty"`
+	GlobalObjectId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types GlobalObjectId,omitempty" json:"GlobalObjectId,omitempty"`
 }
 
 type ArrayOfAttendeeConflictData struct {
-	XMLName xml.Name `xml:"t:AttendeeConflictDataArray"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttendeeConflictDataArray"`
 
-	UnknownAttendeeConflictData *UnknownAttendeeConflictData `xml:"t:UnknownAttendeeConflictData,omitempty" json:"UnknownAttendeeConflictData,omitempty"`
+	UnknownAttendeeConflictData *UnknownAttendeeConflictData `xml:"http://schemas.microsoft.com/exchange/services/2006/types UnknownAttendeeConflictData,omitempty" json:"UnknownAttendeeConflictData,omitempty"`
 
-	IndividualAttendeeConflictData *IndividualAttendeeConflictData `xml:"t:IndividualAttendeeConflictData,omitempty" json:"IndividualAttendeeConflictData,omitempty"`
+	IndividualAttendeeConflictData *IndividualAttendeeConflictData `xml:"http://schemas.microsoft.com/exchange/services/2006/types IndividualAttendeeConflictData,omitempty" json:"IndividualAttendeeConflictData,omitempty"`
 
-	TooBigGroupAttendeeConflictData *TooBigGroupAttendeeConflictData `xml:"t:TooBigGroupAttendeeConflictData,omitempty" json:"TooBigGroupAttendeeConflictData,omitempty"`
+	TooBigGroupAttendeeConflictData *TooBigGroupAttendeeConflictData `xml:"http://schemas.microsoft.com/exchange/services/2006/types TooBigGroupAttendeeConflictData,omitempty" json:"TooBigGroupAttendeeConflictData,omitempty"`
 
-	GroupAttendeeConflictData *GroupAttendeeConflictData `xml:"t:GroupAttendeeConflictData,omitempty" json:"GroupAttendeeConflictData,omitempty"`
+	GroupAttendeeConflictData *GroupAttendeeConflictData `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupAttendeeConflictData,omitempty" json:"GroupAttendeeConflictData,omitempty"`
 }
 
 type AttendeeConflictData struct {
@@ -8416,89 +8416,89 @@ type TooBigGroupAttendeeConflictData struct {
 type IndividualAttendeeConflictData struct {
 	*AttendeeConflictData
 
-	BusyType *LegacyFreeBusyType `xml:"t:BusyType,omitempty" json:"BusyType,omitempty"`
+	BusyType *LegacyFreeBusyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BusyType,omitempty" json:"BusyType,omitempty"`
 }
 
 type GroupAttendeeConflictData struct {
 	*AttendeeConflictData
 
-	NumberOfMembers int32 `xml:"t:NumberOfMembers,omitempty" json:"NumberOfMembers,omitempty"`
+	NumberOfMembers int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types NumberOfMembers,omitempty" json:"NumberOfMembers,omitempty"`
 
-	NumberOfMembersAvailable int32 `xml:"t:NumberOfMembersAvailable,omitempty" json:"NumberOfMembersAvailable,omitempty"`
+	NumberOfMembersAvailable int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types NumberOfMembersAvailable,omitempty" json:"NumberOfMembersAvailable,omitempty"`
 
-	NumberOfMembersWithConflict int32 `xml:"t:NumberOfMembersWithConflict,omitempty" json:"NumberOfMembersWithConflict,omitempty"`
+	NumberOfMembersWithConflict int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types NumberOfMembersWithConflict,omitempty" json:"NumberOfMembersWithConflict,omitempty"`
 
-	NumberOfMembersWithNoData int32 `xml:"t:NumberOfMembersWithNoData,omitempty" json:"NumberOfMembersWithNoData,omitempty"`
+	NumberOfMembersWithNoData int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types NumberOfMembersWithNoData,omitempty" json:"NumberOfMembersWithNoData,omitempty"`
 }
 
 type Suggestion struct {
-	MeetingTime xsd.DateTime `xml:"t:MeetingTime,omitempty" json:"MeetingTime,omitempty"`
+	MeetingTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingTime,omitempty" json:"MeetingTime,omitempty"`
 
-	IsWorkTime bool `xml:"t:IsWorkTime,omitempty" json:"IsWorkTime,omitempty"`
+	IsWorkTime bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsWorkTime,omitempty" json:"IsWorkTime,omitempty"`
 
-	SuggestionQuality *SuggestionQuality `xml:"t:SuggestionQuality,omitempty" json:"SuggestionQuality,omitempty"`
+	SuggestionQuality *SuggestionQuality `xml:"http://schemas.microsoft.com/exchange/services/2006/types SuggestionQuality,omitempty" json:"SuggestionQuality,omitempty"`
 
-	AttendeeConflictDataArray *ArrayOfAttendeeConflictData `xml:"t:AttendeeConflictDataArray,omitempty" json:"AttendeeConflictDataArray,omitempty"`
+	AttendeeConflictDataArray *ArrayOfAttendeeConflictData `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttendeeConflictDataArray,omitempty" json:"AttendeeConflictDataArray,omitempty"`
 }
 
 type ArrayOfSuggestion struct {
-	XMLName xml.Name `xml:"t:SuggestionArray"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SuggestionArray"`
 
-	Suggestion []*Suggestion `xml:"t:Suggestion,omitempty" json:"Suggestion,omitempty"`
+	Suggestion []*Suggestion `xml:"http://schemas.microsoft.com/exchange/services/2006/types Suggestion,omitempty" json:"Suggestion,omitempty"`
 }
 
 type SuggestionDayResult struct {
-	Date xsd.DateTime `xml:"t:Date,omitempty" json:"Date,omitempty"`
+	Date xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types Date,omitempty" json:"Date,omitempty"`
 
-	DayQuality *SuggestionQuality `xml:"t:DayQuality,omitempty" json:"DayQuality,omitempty"`
+	DayQuality *SuggestionQuality `xml:"http://schemas.microsoft.com/exchange/services/2006/types DayQuality,omitempty" json:"DayQuality,omitempty"`
 
-	SuggestionArray *ArrayOfSuggestion `xml:"t:SuggestionArray,omitempty" json:"SuggestionArray,omitempty"`
+	SuggestionArray *ArrayOfSuggestion `xml:"http://schemas.microsoft.com/exchange/services/2006/types SuggestionArray,omitempty" json:"SuggestionArray,omitempty"`
 }
 
 type ArrayOfSuggestionDayResult struct {
-	XMLName xml.Name `xml:"t:SuggestionDayResultArray"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SuggestionDayResultArray"`
 
-	SuggestionDayResult []*SuggestionDayResult `xml:"t:SuggestionDayResult,omitempty" json:"SuggestionDayResult,omitempty"`
+	SuggestionDayResult []*SuggestionDayResult `xml:"http://schemas.microsoft.com/exchange/services/2006/types SuggestionDayResult,omitempty" json:"SuggestionDayResult,omitempty"`
 }
 
 type ReplyBody struct {
-	Message string `xml:"t:Message,omitempty" json:"Message,omitempty"`
+	Message string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Message,omitempty" json:"Message,omitempty"`
 
 	EmptyString string `xml:",attr,omitempty" json:",omitempty"`
 }
 
 type ArrayOfEventIDType struct {
-	XMLName xml.Name `xml:"t:EventsToDeleteIDs"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types EventsToDeleteIDs"`
 
-	EventToDeleteID string `xml:"t:EventToDeleteID,omitempty" json:"EventToDeleteID,omitempty"`
+	EventToDeleteID string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EventToDeleteID,omitempty" json:"EventToDeleteID,omitempty"`
 }
 
 type UserOofSettings struct {
-	OofState *OofState `xml:"t:OofState,omitempty" json:"OofState,omitempty"`
+	OofState *OofState `xml:"http://schemas.microsoft.com/exchange/services/2006/types OofState,omitempty" json:"OofState,omitempty"`
 
-	ExternalAudience *ExternalAudience `xml:"t:ExternalAudience,omitempty" json:"ExternalAudience,omitempty"`
+	ExternalAudience *ExternalAudience `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExternalAudience,omitempty" json:"ExternalAudience,omitempty"`
 
-	Duration *Duration `xml:"t:Duration,omitempty" json:"Duration,omitempty"`
+	Duration *Duration `xml:"http://schemas.microsoft.com/exchange/services/2006/types Duration,omitempty" json:"Duration,omitempty"`
 
-	InternalReply *ReplyBody `xml:"t:InternalReply,omitempty" json:"InternalReply,omitempty"`
+	InternalReply *ReplyBody `xml:"http://schemas.microsoft.com/exchange/services/2006/types InternalReply,omitempty" json:"InternalReply,omitempty"`
 
-	ExternalReply *ReplyBody `xml:"t:ExternalReply,omitempty" json:"ExternalReply,omitempty"`
+	ExternalReply *ReplyBody `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExternalReply,omitempty" json:"ExternalReply,omitempty"`
 
-	DeclineMeetingReply *ReplyBody `xml:"t:DeclineMeetingReply,omitempty" json:"DeclineMeetingReply,omitempty"`
+	DeclineMeetingReply *ReplyBody `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeclineMeetingReply,omitempty" json:"DeclineMeetingReply,omitempty"`
 
-	DeclineEventsForScheduledOOF bool `xml:"t:DeclineEventsForScheduledOOF,omitempty" json:"DeclineEventsForScheduledOOF,omitempty"`
+	DeclineEventsForScheduledOOF bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeclineEventsForScheduledOOF,omitempty" json:"DeclineEventsForScheduledOOF,omitempty"`
 
-	DeclineAllEventsForScheduledOOF bool `xml:"t:DeclineAllEventsForScheduledOOF,omitempty" json:"DeclineAllEventsForScheduledOOF,omitempty"`
+	DeclineAllEventsForScheduledOOF bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeclineAllEventsForScheduledOOF,omitempty" json:"DeclineAllEventsForScheduledOOF,omitempty"`
 
-	CreateOOFEvent bool `xml:"t:CreateOOFEvent,omitempty" json:"CreateOOFEvent,omitempty"`
+	CreateOOFEvent bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreateOOFEvent,omitempty" json:"CreateOOFEvent,omitempty"`
 
-	OOFEventSubject string `xml:"t:OOFEventSubject,omitempty" json:"OOFEventSubject,omitempty"`
+	OOFEventSubject string `xml:"http://schemas.microsoft.com/exchange/services/2006/types OOFEventSubject,omitempty" json:"OOFEventSubject,omitempty"`
 
-	AutoDeclineFutureRequestsWhenOOF bool `xml:"t:AutoDeclineFutureRequestsWhenOOF,omitempty" json:"AutoDeclineFutureRequestsWhenOOF,omitempty"`
+	AutoDeclineFutureRequestsWhenOOF bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types AutoDeclineFutureRequestsWhenOOF,omitempty" json:"AutoDeclineFutureRequestsWhenOOF,omitempty"`
 
-	OOFEventID string `xml:"t:OOFEventID,omitempty" json:"OOFEventID,omitempty"`
+	OOFEventID string `xml:"http://schemas.microsoft.com/exchange/services/2006/types OOFEventID,omitempty" json:"OOFEventID,omitempty"`
 
-	EventsToDeleteIDs *ArrayOfEventIDType `xml:"t:EventsToDeleteIDs,omitempty" json:"EventsToDeleteIDs,omitempty"`
+	EventsToDeleteIDs *ArrayOfEventIDType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EventsToDeleteIDs,omitempty" json:"EventsToDeleteIDs,omitempty"`
 }
 
 type Value struct {
@@ -8508,61 +8508,61 @@ type Value struct {
 }
 
 type ApprovalRequestDataType struct {
-	XMLName xml.Name `xml:"t:ApprovalRequestData"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ApprovalRequestData"`
 
-	IsUndecidedApprovalRequest bool `xml:"t:IsUndecidedApprovalRequest,omitempty" json:"IsUndecidedApprovalRequest,omitempty"`
+	IsUndecidedApprovalRequest bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsUndecidedApprovalRequest,omitempty" json:"IsUndecidedApprovalRequest,omitempty"`
 
-	ApprovalDecision int32 `xml:"t:ApprovalDecision,omitempty" json:"ApprovalDecision,omitempty"`
+	ApprovalDecision int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ApprovalDecision,omitempty" json:"ApprovalDecision,omitempty"`
 
-	ApprovalDecisionMaker string `xml:"t:ApprovalDecisionMaker,omitempty" json:"ApprovalDecisionMaker,omitempty"`
+	ApprovalDecisionMaker string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ApprovalDecisionMaker,omitempty" json:"ApprovalDecisionMaker,omitempty"`
 
-	ApprovalDecisionTime xsd.DateTime `xml:"t:ApprovalDecisionTime,omitempty" json:"ApprovalDecisionTime,omitempty"`
+	ApprovalDecisionTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ApprovalDecisionTime,omitempty" json:"ApprovalDecisionTime,omitempty"`
 }
 
 type ReminderMessageDataType struct {
-	XMLName xml.Name `xml:"t:ReminderMessageData"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReminderMessageData"`
 
-	ReminderText string `xml:"t:ReminderText,omitempty" json:"ReminderText,omitempty"`
+	ReminderText string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReminderText,omitempty" json:"ReminderText,omitempty"`
 
-	Location string `xml:"t:Location,omitempty" json:"Location,omitempty"`
+	Location string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Location,omitempty" json:"Location,omitempty"`
 
-	StartTime xsd.DateTime `xml:"t:StartTime,omitempty" json:"StartTime,omitempty"`
+	StartTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTime,omitempty" json:"StartTime,omitempty"`
 
-	EndTime xsd.DateTime `xml:"t:EndTime,omitempty" json:"EndTime,omitempty"`
+	EndTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndTime,omitempty" json:"EndTime,omitempty"`
 
-	AssociatedCalendarItemId *ItemIdType `xml:"t:AssociatedCalendarItemId,omitempty" json:"AssociatedCalendarItemId,omitempty"`
+	AssociatedCalendarItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AssociatedCalendarItemId,omitempty" json:"AssociatedCalendarItemId,omitempty"`
 }
 
 type MessageSafetyType struct {
-	XMLName xml.Name `xml:"t:MessageSafety"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MessageSafety"`
 
-	MessageSafetyLevel int32 `xml:"t:MessageSafetyLevel,omitempty" json:"MessageSafetyLevel,omitempty"`
+	MessageSafetyLevel int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MessageSafetyLevel,omitempty" json:"MessageSafetyLevel,omitempty"`
 
-	MessageSafetyReason int32 `xml:"t:MessageSafetyReason,omitempty" json:"MessageSafetyReason,omitempty"`
+	MessageSafetyReason int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MessageSafetyReason,omitempty" json:"MessageSafetyReason,omitempty"`
 
-	Info string `xml:"t:Info,omitempty" json:"Info,omitempty"`
+	Info string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Info,omitempty" json:"Info,omitempty"`
 }
 
 type VotingOptionDataType struct {
-	XMLName xml.Name `xml:"t:VotingOptionData"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types VotingOptionData"`
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	SendPrompt *SendPromptType `xml:"t:SendPrompt,omitempty" json:"SendPrompt,omitempty"`
+	SendPrompt *SendPromptType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SendPrompt,omitempty" json:"SendPrompt,omitempty"`
 }
 
 type ArrayOfVotingOptionDataType struct {
-	XMLName xml.Name `xml:"t:UserOptions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserOptions"`
 
-	VotingOptionData []*VotingOptionDataType `xml:"t:VotingOptionData,omitempty" json:"VotingOptionData,omitempty"`
+	VotingOptionData []*VotingOptionDataType `xml:"http://schemas.microsoft.com/exchange/services/2006/types VotingOptionData,omitempty" json:"VotingOptionData,omitempty"`
 }
 
 type VotingInformationType struct {
-	XMLName xml.Name `xml:"t:VotingInformation"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types VotingInformation"`
 
-	UserOptions *ArrayOfVotingOptionDataType `xml:"t:UserOptions,omitempty" json:"UserOptions,omitempty"`
+	UserOptions *ArrayOfVotingOptionDataType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserOptions,omitempty" json:"UserOptions,omitempty"`
 
-	VotingResponse string `xml:"t:VotingResponse,omitempty" json:"VotingResponse,omitempty"`
+	VotingResponse string `xml:"http://schemas.microsoft.com/exchange/services/2006/types VotingResponse,omitempty" json:"VotingResponse,omitempty"`
 }
 
 type AlternateIdBaseType struct {
@@ -8570,7 +8570,7 @@ type AlternateIdBaseType struct {
 }
 
 type AlternateIdType struct {
-	XMLName xml.Name `xml:"t:AlternateId"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AlternateId"`
 
 	*AlternateIdBaseType
 
@@ -8582,7 +8582,7 @@ type AlternateIdType struct {
 }
 
 type AlternatePublicFolderIdType struct {
-	XMLName xml.Name `xml:"t:AlternatePublicFolderId"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AlternatePublicFolderId"`
 
 	*AlternateIdBaseType
 
@@ -8590,7 +8590,7 @@ type AlternatePublicFolderIdType struct {
 }
 
 type AlternatePublicFolderItemIdType struct {
-	XMLName xml.Name `xml:"t:AlternatePublicFolderItemId"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AlternatePublicFolderItemId"`
 
 	*AlternatePublicFolderIdType
 
@@ -8598,163 +8598,163 @@ type AlternatePublicFolderItemIdType struct {
 }
 
 type NonEmptyArrayOfAlternateIdsType struct {
-	XMLName xml.Name `xml:"t:SourceIds"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SourceIds"`
 
-	AlternateId *AlternateIdType `xml:"t:AlternateId,omitempty" json:"AlternateId,omitempty"`
+	AlternateId *AlternateIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AlternateId,omitempty" json:"AlternateId,omitempty"`
 
-	AlternatePublicFolderId *AlternatePublicFolderIdType `xml:"t:AlternatePublicFolderId,omitempty" json:"AlternatePublicFolderId,omitempty"`
+	AlternatePublicFolderId *AlternatePublicFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AlternatePublicFolderId,omitempty" json:"AlternatePublicFolderId,omitempty"`
 
-	AlternatePublicFolderItemId *AlternatePublicFolderItemIdType `xml:"t:AlternatePublicFolderItemId,omitempty" json:"AlternatePublicFolderItemId,omitempty"`
+	AlternatePublicFolderItemId *AlternatePublicFolderItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AlternatePublicFolderItemId,omitempty" json:"AlternatePublicFolderItemId,omitempty"`
 }
 
 type UserIdType struct {
-	SID string `xml:"t:SID,omitempty" json:"SID,omitempty"`
+	SID string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SID,omitempty" json:"SID,omitempty"`
 
-	PrimarySmtpAddress string `xml:"t:PrimarySmtpAddress,omitempty" json:"PrimarySmtpAddress,omitempty"`
+	PrimarySmtpAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PrimarySmtpAddress,omitempty" json:"PrimarySmtpAddress,omitempty"`
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	DistinguishedUser *DistinguishedUserType `xml:"t:DistinguishedUser,omitempty" json:"DistinguishedUser,omitempty"`
+	DistinguishedUser *DistinguishedUserType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DistinguishedUser,omitempty" json:"DistinguishedUser,omitempty"`
 
-	ExternalUserIdentity string `xml:"t:ExternalUserIdentity,omitempty" json:"ExternalUserIdentity,omitempty"`
+	ExternalUserIdentity string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExternalUserIdentity,omitempty" json:"ExternalUserIdentity,omitempty"`
 }
 
 type ArrayOfPermissionsType struct {
-	XMLName xml.Name `xml:"t:Permissions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Permissions"`
 
-	Permission *PermissionType `xml:"t:Permission,omitempty" json:"Permission,omitempty"`
+	Permission *PermissionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Permission,omitempty" json:"Permission,omitempty"`
 }
 
 type ArrayOfCalendarPermissionsType struct {
-	XMLName xml.Name `xml:"t:CalendarPermissions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarPermissions"`
 
-	CalendarPermission *CalendarPermissionType `xml:"t:CalendarPermission,omitempty" json:"CalendarPermission,omitempty"`
+	CalendarPermission *CalendarPermissionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarPermission,omitempty" json:"CalendarPermission,omitempty"`
 }
 
 type ArrayOfUnknownEntriesType struct {
-	UnknownEntry string `xml:"t:UnknownEntry,omitempty" json:"UnknownEntry,omitempty"`
+	UnknownEntry string `xml:"http://schemas.microsoft.com/exchange/services/2006/types UnknownEntry,omitempty" json:"UnknownEntry,omitempty"`
 }
 
 type BasePermissionType struct {
-	UserId *UserIdType `xml:"t:UserId,omitempty" json:"UserId,omitempty"`
+	UserId *UserIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserId,omitempty" json:"UserId,omitempty"`
 
-	CanCreateItems bool `xml:"t:CanCreateItems,omitempty" json:"CanCreateItems,omitempty"`
+	CanCreateItems bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types CanCreateItems,omitempty" json:"CanCreateItems,omitempty"`
 
-	CanCreateSubFolders bool `xml:"t:CanCreateSubFolders,omitempty" json:"CanCreateSubFolders,omitempty"`
+	CanCreateSubFolders bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types CanCreateSubFolders,omitempty" json:"CanCreateSubFolders,omitempty"`
 
-	IsFolderOwner bool `xml:"t:IsFolderOwner,omitempty" json:"IsFolderOwner,omitempty"`
+	IsFolderOwner bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsFolderOwner,omitempty" json:"IsFolderOwner,omitempty"`
 
-	IsFolderVisible bool `xml:"t:IsFolderVisible,omitempty" json:"IsFolderVisible,omitempty"`
+	IsFolderVisible bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsFolderVisible,omitempty" json:"IsFolderVisible,omitempty"`
 
-	IsFolderContact bool `xml:"t:IsFolderContact,omitempty" json:"IsFolderContact,omitempty"`
+	IsFolderContact bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsFolderContact,omitempty" json:"IsFolderContact,omitempty"`
 
-	EditItems *PermissionActionType `xml:"t:EditItems,omitempty" json:"EditItems,omitempty"`
+	EditItems *PermissionActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EditItems,omitempty" json:"EditItems,omitempty"`
 
-	DeleteItems *PermissionActionType `xml:"t:DeleteItems,omitempty" json:"DeleteItems,omitempty"`
+	DeleteItems *PermissionActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeleteItems,omitempty" json:"DeleteItems,omitempty"`
 }
 
 type PermissionType struct {
-	XMLName xml.Name `xml:"t:Permission"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Permission"`
 
 	*BasePermissionType
 
-	ReadItems *PermissionReadAccessType `xml:"t:ReadItems,omitempty" json:"ReadItems,omitempty"`
+	ReadItems *PermissionReadAccessType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReadItems,omitempty" json:"ReadItems,omitempty"`
 
-	PermissionLevel *PermissionLevelType `xml:"t:PermissionLevel,omitempty" json:"PermissionLevel,omitempty"`
+	PermissionLevel *PermissionLevelType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PermissionLevel,omitempty" json:"PermissionLevel,omitempty"`
 }
 
 type CalendarPermissionType struct {
-	XMLName xml.Name `xml:"t:CalendarPermission"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarPermission"`
 
 	*BasePermissionType
 
-	ReadItems *CalendarPermissionReadAccessType `xml:"t:ReadItems,omitempty" json:"ReadItems,omitempty"`
+	ReadItems *CalendarPermissionReadAccessType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReadItems,omitempty" json:"ReadItems,omitempty"`
 
-	CalendarPermissionLevel *CalendarPermissionLevelType `xml:"t:CalendarPermissionLevel,omitempty" json:"CalendarPermissionLevel,omitempty"`
+	CalendarPermissionLevel *CalendarPermissionLevelType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarPermissionLevel,omitempty" json:"CalendarPermissionLevel,omitempty"`
 }
 
 type PermissionSetType struct {
-	Permissions *ArrayOfPermissionsType `xml:"t:Permissions,omitempty" json:"Permissions,omitempty"`
+	Permissions *ArrayOfPermissionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Permissions,omitempty" json:"Permissions,omitempty"`
 
-	UnknownEntries *ArrayOfUnknownEntriesType `xml:"t:UnknownEntries,omitempty" json:"UnknownEntries,omitempty"`
+	UnknownEntries *ArrayOfUnknownEntriesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UnknownEntries,omitempty" json:"UnknownEntries,omitempty"`
 }
 
 type CalendarPermissionSetType struct {
-	XMLName xml.Name `xml:"t:PermissionSet"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PermissionSet"`
 
-	CalendarPermissions *ArrayOfCalendarPermissionsType `xml:"t:CalendarPermissions,omitempty" json:"CalendarPermissions,omitempty"`
+	CalendarPermissions *ArrayOfCalendarPermissionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarPermissions,omitempty" json:"CalendarPermissions,omitempty"`
 
-	UnknownEntries *ArrayOfUnknownEntriesType `xml:"t:UnknownEntries,omitempty" json:"UnknownEntries,omitempty"`
+	UnknownEntries *ArrayOfUnknownEntriesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UnknownEntries,omitempty" json:"UnknownEntries,omitempty"`
 }
 
 type EffectiveRightsType struct {
-	CreateAssociated bool `xml:"t:CreateAssociated,omitempty" json:"CreateAssociated,omitempty"`
+	CreateAssociated bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreateAssociated,omitempty" json:"CreateAssociated,omitempty"`
 
-	CreateContents bool `xml:"t:CreateContents,omitempty" json:"CreateContents,omitempty"`
+	CreateContents bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreateContents,omitempty" json:"CreateContents,omitempty"`
 
-	CreateHierarchy bool `xml:"t:CreateHierarchy,omitempty" json:"CreateHierarchy,omitempty"`
+	CreateHierarchy bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreateHierarchy,omitempty" json:"CreateHierarchy,omitempty"`
 
-	Delete bool `xml:"t:Delete,omitempty" json:"Delete,omitempty"`
+	Delete bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types Delete,omitempty" json:"Delete,omitempty"`
 
-	Modify bool `xml:"t:Modify,omitempty" json:"Modify,omitempty"`
+	Modify bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types Modify,omitempty" json:"Modify,omitempty"`
 
-	Read bool `xml:"t:Read,omitempty" json:"Read,omitempty"`
+	Read bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types Read,omitempty" json:"Read,omitempty"`
 
-	ViewPrivateItems bool `xml:"t:ViewPrivateItems,omitempty" json:"ViewPrivateItems,omitempty"`
+	ViewPrivateItems bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ViewPrivateItems,omitempty" json:"ViewPrivateItems,omitempty"`
 }
 
 type ArrayOfDelegateUserType struct {
-	DelegateUser []*DelegateUserType `xml:"t:DelegateUser,omitempty" json:"DelegateUser,omitempty"`
+	DelegateUser []*DelegateUserType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DelegateUser,omitempty" json:"DelegateUser,omitempty"`
 }
 
 type ArrayOfUserIdType struct {
-	UserId []*UserIdType `xml:"t:UserId,omitempty" json:"UserId,omitempty"`
+	UserId []*UserIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserId,omitempty" json:"UserId,omitempty"`
 }
 
 type DelegateUserType struct {
-	UserId *UserIdType `xml:"t:UserId,omitempty" json:"UserId,omitempty"`
+	UserId *UserIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserId,omitempty" json:"UserId,omitempty"`
 
-	DelegatePermissions *DelegatePermissionsType `xml:"t:DelegatePermissions,omitempty" json:"DelegatePermissions,omitempty"`
+	DelegatePermissions *DelegatePermissionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DelegatePermissions,omitempty" json:"DelegatePermissions,omitempty"`
 
-	ReceiveCopiesOfMeetingMessages bool `xml:"t:ReceiveCopiesOfMeetingMessages,omitempty" json:"ReceiveCopiesOfMeetingMessages,omitempty"`
+	ReceiveCopiesOfMeetingMessages bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReceiveCopiesOfMeetingMessages,omitempty" json:"ReceiveCopiesOfMeetingMessages,omitempty"`
 
-	ViewPrivateItems bool `xml:"t:ViewPrivateItems,omitempty" json:"ViewPrivateItems,omitempty"`
+	ViewPrivateItems bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ViewPrivateItems,omitempty" json:"ViewPrivateItems,omitempty"`
 }
 
 type DelegatePermissionsType struct {
-	XMLName xml.Name `xml:"t:DelegatePermissions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DelegatePermissions"`
 
-	CalendarFolderPermissionLevel *DelegateFolderPermissionLevelType `xml:"t:CalendarFolderPermissionLevel,omitempty" json:"CalendarFolderPermissionLevel,omitempty"`
+	CalendarFolderPermissionLevel *DelegateFolderPermissionLevelType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CalendarFolderPermissionLevel,omitempty" json:"CalendarFolderPermissionLevel,omitempty"`
 
-	TasksFolderPermissionLevel *DelegateFolderPermissionLevelType `xml:"t:TasksFolderPermissionLevel,omitempty" json:"TasksFolderPermissionLevel,omitempty"`
+	TasksFolderPermissionLevel *DelegateFolderPermissionLevelType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TasksFolderPermissionLevel,omitempty" json:"TasksFolderPermissionLevel,omitempty"`
 
-	InboxFolderPermissionLevel *DelegateFolderPermissionLevelType `xml:"t:InboxFolderPermissionLevel,omitempty" json:"InboxFolderPermissionLevel,omitempty"`
+	InboxFolderPermissionLevel *DelegateFolderPermissionLevelType `xml:"http://schemas.microsoft.com/exchange/services/2006/types InboxFolderPermissionLevel,omitempty" json:"InboxFolderPermissionLevel,omitempty"`
 
-	ContactsFolderPermissionLevel *DelegateFolderPermissionLevelType `xml:"t:ContactsFolderPermissionLevel,omitempty" json:"ContactsFolderPermissionLevel,omitempty"`
+	ContactsFolderPermissionLevel *DelegateFolderPermissionLevelType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContactsFolderPermissionLevel,omitempty" json:"ContactsFolderPermissionLevel,omitempty"`
 
-	NotesFolderPermissionLevel *DelegateFolderPermissionLevelType `xml:"t:NotesFolderPermissionLevel,omitempty" json:"NotesFolderPermissionLevel,omitempty"`
+	NotesFolderPermissionLevel *DelegateFolderPermissionLevelType `xml:"http://schemas.microsoft.com/exchange/services/2006/types NotesFolderPermissionLevel,omitempty" json:"NotesFolderPermissionLevel,omitempty"`
 
-	JournalFolderPermissionLevel *DelegateFolderPermissionLevelType `xml:"t:JournalFolderPermissionLevel,omitempty" json:"JournalFolderPermissionLevel,omitempty"`
+	JournalFolderPermissionLevel *DelegateFolderPermissionLevelType `xml:"http://schemas.microsoft.com/exchange/services/2006/types JournalFolderPermissionLevel,omitempty" json:"JournalFolderPermissionLevel,omitempty"`
 }
 
 type ConflictResultsType struct {
-	Count int32 `xml:"t:Count,omitempty" json:"Count,omitempty"`
+	Count int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Count,omitempty" json:"Count,omitempty"`
 }
 
 type OutOfOfficeMailTip struct {
-	XMLName xml.Name `xml:"t:OutOfOffice"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types OutOfOffice"`
 
-	ReplyBody *ReplyBody `xml:"t:ReplyBody,omitempty" json:"ReplyBody,omitempty"`
+	ReplyBody *ReplyBody `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReplyBody,omitempty" json:"ReplyBody,omitempty"`
 
-	Duration *Duration `xml:"t:Duration,omitempty" json:"Duration,omitempty"`
+	Duration *Duration `xml:"http://schemas.microsoft.com/exchange/services/2006/types Duration,omitempty" json:"Duration,omitempty"`
 }
 
 type SmtpDomainList struct {
-	Domain []*SmtpDomain `xml:"t:Domain,omitempty" json:"Domain,omitempty"`
+	Domain []*SmtpDomain `xml:"http://schemas.microsoft.com/exchange/services/2006/types Domain,omitempty" json:"Domain,omitempty"`
 }
 
 type SmtpDomain struct {
-	XMLName xml.Name `xml:"t:Domain"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Domain"`
 
 	Name string `xml:"Name,attr,omitempty" json:"Name,omitempty"`
 
@@ -8762,122 +8762,122 @@ type SmtpDomain struct {
 }
 
 type MailTips struct {
-	RecipientAddress *EmailAddressType `xml:"t:RecipientAddress,omitempty" json:"RecipientAddress,omitempty"`
+	RecipientAddress *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecipientAddress,omitempty" json:"RecipientAddress,omitempty"`
 
-	PendingMailTips *MailTipTypes `xml:"t:PendingMailTips,omitempty" json:"PendingMailTips,omitempty"`
+	PendingMailTips *MailTipTypes `xml:"http://schemas.microsoft.com/exchange/services/2006/types PendingMailTips,omitempty" json:"PendingMailTips,omitempty"`
 
-	OutOfOffice *OutOfOfficeMailTip `xml:"t:OutOfOffice,omitempty" json:"OutOfOffice,omitempty"`
+	OutOfOffice *OutOfOfficeMailTip `xml:"http://schemas.microsoft.com/exchange/services/2006/types OutOfOffice,omitempty" json:"OutOfOffice,omitempty"`
 
-	MailboxFull bool `xml:"t:MailboxFull,omitempty" json:"MailboxFull,omitempty"`
+	MailboxFull bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxFull,omitempty" json:"MailboxFull,omitempty"`
 
-	CustomMailTip string `xml:"t:CustomMailTip,omitempty" json:"CustomMailTip,omitempty"`
+	CustomMailTip string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CustomMailTip,omitempty" json:"CustomMailTip,omitempty"`
 
-	TotalMemberCount int32 `xml:"t:TotalMemberCount,omitempty" json:"TotalMemberCount,omitempty"`
+	TotalMemberCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types TotalMemberCount,omitempty" json:"TotalMemberCount,omitempty"`
 
-	ExternalMemberCount int32 `xml:"t:ExternalMemberCount,omitempty" json:"ExternalMemberCount,omitempty"`
+	ExternalMemberCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExternalMemberCount,omitempty" json:"ExternalMemberCount,omitempty"`
 
-	MaxMessageSize int32 `xml:"t:MaxMessageSize,omitempty" json:"MaxMessageSize,omitempty"`
+	MaxMessageSize int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MaxMessageSize,omitempty" json:"MaxMessageSize,omitempty"`
 
-	DeliveryRestricted bool `xml:"t:DeliveryRestricted,omitempty" json:"DeliveryRestricted,omitempty"`
+	DeliveryRestricted bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeliveryRestricted,omitempty" json:"DeliveryRestricted,omitempty"`
 
-	IsModerated bool `xml:"t:IsModerated,omitempty" json:"IsModerated,omitempty"`
+	IsModerated bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsModerated,omitempty" json:"IsModerated,omitempty"`
 
-	InvalidRecipient bool `xml:"t:InvalidRecipient,omitempty" json:"InvalidRecipient,omitempty"`
+	InvalidRecipient bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types InvalidRecipient,omitempty" json:"InvalidRecipient,omitempty"`
 
-	Scope int32 `xml:"t:Scope,omitempty" json:"Scope,omitempty"`
+	Scope int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Scope,omitempty" json:"Scope,omitempty"`
 
-	RecipientSuggestions *ArrayOfRecipientSuggestionsType `xml:"t:RecipientSuggestions,omitempty" json:"RecipientSuggestions,omitempty"`
+	RecipientSuggestions *ArrayOfRecipientSuggestionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecipientSuggestions,omitempty" json:"RecipientSuggestions,omitempty"`
 
-	PreferAccessibleContent bool `xml:"t:PreferAccessibleContent,omitempty" json:"PreferAccessibleContent,omitempty"`
+	PreferAccessibleContent bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types PreferAccessibleContent,omitempty" json:"PreferAccessibleContent,omitempty"`
 }
 
 type ArrayOfRecipientSuggestionsType struct {
-	XMLName xml.Name `xml:"t:RecipientSuggestions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecipientSuggestions"`
 
-	RecipientSuggestion *RecipientSuggestionType `xml:"t:RecipientSuggestion,omitempty" json:"RecipientSuggestion,omitempty"`
+	RecipientSuggestion *RecipientSuggestionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecipientSuggestion,omitempty" json:"RecipientSuggestion,omitempty"`
 }
 
 type RecipientSuggestionType struct {
-	XMLName xml.Name `xml:"t:RecipientSuggestion"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecipientSuggestion"`
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	EmailAddress string `xml:"t:EmailAddress,omitempty" json:"EmailAddress,omitempty"`
+	EmailAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 }
 
 type ServiceConfiguration struct {
 }
 
 type MailTipsServiceConfiguration struct {
-	XMLName xml.Name `xml:"t:MailTipsConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailTipsConfiguration"`
 
 	*ServiceConfiguration
 
-	MailTipsEnabled bool `xml:"t:MailTipsEnabled,omitempty" json:"MailTipsEnabled,omitempty"`
+	MailTipsEnabled bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailTipsEnabled,omitempty" json:"MailTipsEnabled,omitempty"`
 
-	MaxRecipientsPerGetMailTipsRequest int32 `xml:"t:MaxRecipientsPerGetMailTipsRequest,omitempty" json:"MaxRecipientsPerGetMailTipsRequest,omitempty"`
+	MaxRecipientsPerGetMailTipsRequest int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MaxRecipientsPerGetMailTipsRequest,omitempty" json:"MaxRecipientsPerGetMailTipsRequest,omitempty"`
 
-	MaxMessageSize int32 `xml:"t:MaxMessageSize,omitempty" json:"MaxMessageSize,omitempty"`
+	MaxMessageSize int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MaxMessageSize,omitempty" json:"MaxMessageSize,omitempty"`
 
-	LargeAudienceThreshold int32 `xml:"t:LargeAudienceThreshold,omitempty" json:"LargeAudienceThreshold,omitempty"`
+	LargeAudienceThreshold int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types LargeAudienceThreshold,omitempty" json:"LargeAudienceThreshold,omitempty"`
 
-	ShowExternalRecipientCount bool `xml:"t:ShowExternalRecipientCount,omitempty" json:"ShowExternalRecipientCount,omitempty"`
+	ShowExternalRecipientCount bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ShowExternalRecipientCount,omitempty" json:"ShowExternalRecipientCount,omitempty"`
 
-	InternalDomains *SmtpDomainList `xml:"t:InternalDomains,omitempty" json:"InternalDomains,omitempty"`
+	InternalDomains *SmtpDomainList `xml:"http://schemas.microsoft.com/exchange/services/2006/types InternalDomains,omitempty" json:"InternalDomains,omitempty"`
 
-	PolicyTipsEnabled bool `xml:"t:PolicyTipsEnabled,omitempty" json:"PolicyTipsEnabled,omitempty"`
+	PolicyTipsEnabled bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types PolicyTipsEnabled,omitempty" json:"PolicyTipsEnabled,omitempty"`
 
-	LargeAudienceCap int32 `xml:"t:LargeAudienceCap,omitempty" json:"LargeAudienceCap,omitempty"`
+	LargeAudienceCap int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types LargeAudienceCap,omitempty" json:"LargeAudienceCap,omitempty"`
 }
 
 type UnifiedMessageServiceConfiguration struct {
-	XMLName xml.Name `xml:"t:UnifiedMessagingConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types UnifiedMessagingConfiguration"`
 
 	*ServiceConfiguration
 
-	UmEnabled bool `xml:"t:UmEnabled,omitempty" json:"UmEnabled,omitempty"`
+	UmEnabled bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types UmEnabled,omitempty" json:"UmEnabled,omitempty"`
 
-	PlayOnPhoneDialString string `xml:"t:PlayOnPhoneDialString,omitempty" json:"PlayOnPhoneDialString,omitempty"`
+	PlayOnPhoneDialString string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PlayOnPhoneDialString,omitempty" json:"PlayOnPhoneDialString,omitempty"`
 
-	PlayOnPhoneEnabled bool `xml:"t:PlayOnPhoneEnabled,omitempty" json:"PlayOnPhoneEnabled,omitempty"`
+	PlayOnPhoneEnabled bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types PlayOnPhoneEnabled,omitempty" json:"PlayOnPhoneEnabled,omitempty"`
 }
 
 type SharePointURLsServiceConfiguration struct {
-	XMLName xml.Name `xml:"t:SharePointURLsConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharePointURLsConfiguration"`
 
 	*ServiceConfiguration
 
-	InternalSPMySiteHostURL string `xml:"t:InternalSPMySiteHostURL,omitempty" json:"InternalSPMySiteHostURL,omitempty"`
+	InternalSPMySiteHostURL string `xml:"http://schemas.microsoft.com/exchange/services/2006/types InternalSPMySiteHostURL,omitempty" json:"InternalSPMySiteHostURL,omitempty"`
 
-	ExternalSPMySiteHostURL string `xml:"t:ExternalSPMySiteHostURL,omitempty" json:"ExternalSPMySiteHostURL,omitempty"`
+	ExternalSPMySiteHostURL string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExternalSPMySiteHostURL,omitempty" json:"ExternalSPMySiteHostURL,omitempty"`
 }
 
 type OfficeIntegrationConfiguration struct {
 	*ServiceConfiguration
 
-	OfficeSidebarURL string `xml:"t:OfficeSidebarURL,omitempty" json:"OfficeSidebarURL,omitempty"`
+	OfficeSidebarURL string `xml:"http://schemas.microsoft.com/exchange/services/2006/types OfficeSidebarURL,omitempty" json:"OfficeSidebarURL,omitempty"`
 }
 
 type ConfigurationRequestDetailsType struct {
-	XMLName xml.Name `xml:"t:ConfigurationRequestDetails"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConfigurationRequestDetails"`
 }
 
 type ArrayOfSmtpAddressType struct {
-	SmtpAddress *NonEmptyStringType `xml:"t:SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
+	SmtpAddress *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
 }
 
 type ArrayOfEncryptedSharedFolderDataType struct {
-	XMLName xml.Name `xml:"t:EncryptedSharedFolderDataCollection"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types EncryptedSharedFolderDataCollection"`
 
-	EncryptedSharedFolderData *EncryptedSharedFolderDataType `xml:"t:EncryptedSharedFolderData,omitempty" json:"EncryptedSharedFolderData,omitempty"`
+	EncryptedSharedFolderData *EncryptedSharedFolderDataType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EncryptedSharedFolderData,omitempty" json:"EncryptedSharedFolderData,omitempty"`
 }
 
 type EncryptedSharedFolderDataType struct {
-	XMLName xml.Name `xml:"t:EncryptedSharedFolderData"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types EncryptedSharedFolderData"`
 
-	Token *EncryptedDataContainerType `xml:"t:Token,omitempty" json:"Token,omitempty"`
+	Token *EncryptedDataContainerType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Token,omitempty" json:"Token,omitempty"`
 
-	Data *EncryptedDataContainerType `xml:"t:Data,omitempty" json:"Data,omitempty"`
+	Data *EncryptedDataContainerType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Data,omitempty" json:"Data,omitempty"`
 }
 
 type EncryptedDataContainerType struct {
@@ -8885,19 +8885,19 @@ type EncryptedDataContainerType struct {
 }
 
 type ArrayOfInvalidRecipientsType struct {
-	XMLName xml.Name `xml:"t:InvalidRecipients"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types InvalidRecipients"`
 
-	InvalidRecipient *InvalidRecipientType `xml:"t:InvalidRecipient,omitempty" json:"InvalidRecipient,omitempty"`
+	InvalidRecipient *InvalidRecipientType `xml:"http://schemas.microsoft.com/exchange/services/2006/types InvalidRecipient,omitempty" json:"InvalidRecipient,omitempty"`
 }
 
 type InvalidRecipientType struct {
-	XMLName xml.Name `xml:"t:InvalidRecipient"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types InvalidRecipient"`
 
-	SmtpAddress *NonEmptyStringType `xml:"t:SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
+	SmtpAddress *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
 
-	ResponseCode *InvalidRecipientResponseCodeType `xml:"t:ResponseCode,omitempty" json:"ResponseCode,omitempty"`
+	ResponseCode *InvalidRecipientResponseCodeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ResponseCode,omitempty" json:"ResponseCode,omitempty"`
 
-	MessageText string `xml:"t:MessageText,omitempty" json:"MessageText,omitempty"`
+	MessageText string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MessageText,omitempty" json:"MessageText,omitempty"`
 }
 
 type AcceptSharingInvitationType struct {
@@ -8909,15 +8909,15 @@ type PhoneCallIdType struct {
 }
 
 type PhoneCallInformationType struct {
-	XMLName xml.Name `xml:"t:PhoneCallInformation"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneCallInformation"`
 
-	PhoneCallState *PhoneCallStateType `xml:"t:PhoneCallState,omitempty" json:"PhoneCallState,omitempty"`
+	PhoneCallState *PhoneCallStateType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PhoneCallState,omitempty" json:"PhoneCallState,omitempty"`
 
-	ConnectionFailureCause *ConnectionFailureCauseType `xml:"t:ConnectionFailureCause,omitempty" json:"ConnectionFailureCause,omitempty"`
+	ConnectionFailureCause *ConnectionFailureCauseType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConnectionFailureCause,omitempty" json:"ConnectionFailureCause,omitempty"`
 
-	SIPResponseText string `xml:"t:SIPResponseText,omitempty" json:"SIPResponseText,omitempty"`
+	SIPResponseText string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SIPResponseText,omitempty" json:"SIPResponseText,omitempty"`
 
-	SIPResponseCode int32 `xml:"t:SIPResponseCode,omitempty" json:"SIPResponseCode,omitempty"`
+	SIPResponseCode int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types SIPResponseCode,omitempty" json:"SIPResponseCode,omitempty"`
 }
 
 type UserConfigurationNameType struct {
@@ -8927,61 +8927,61 @@ type UserConfigurationNameType struct {
 }
 
 type UserConfigurationDictionaryObjectType struct {
-	Type *UserConfigurationDictionaryObjectTypesType `xml:"t:Type,omitempty" json:"Type,omitempty"`
+	Type *UserConfigurationDictionaryObjectTypesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Type,omitempty" json:"Type,omitempty"`
 
-	Value []string `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value []string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 }
 
 type UserConfigurationDictionaryEntryType struct {
-	XMLName xml.Name `xml:"t:DictionaryEntry"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DictionaryEntry"`
 
-	DictionaryKey *UserConfigurationDictionaryObjectType `xml:"t:DictionaryKey,omitempty" json:"DictionaryKey,omitempty"`
+	DictionaryKey *UserConfigurationDictionaryObjectType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DictionaryKey,omitempty" json:"DictionaryKey,omitempty"`
 
-	DictionaryValue *UserConfigurationDictionaryObjectType `xml:"t:DictionaryValue,omitempty" json:"DictionaryValue,omitempty"`
+	DictionaryValue *UserConfigurationDictionaryObjectType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DictionaryValue,omitempty" json:"DictionaryValue,omitempty"`
 }
 
 type UserConfigurationDictionaryType struct {
-	XMLName xml.Name `xml:"t:Dictionary"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Dictionary"`
 
-	DictionaryEntry []*UserConfigurationDictionaryEntryType `xml:"t:DictionaryEntry,omitempty" json:"DictionaryEntry,omitempty"`
+	DictionaryEntry []*UserConfigurationDictionaryEntryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DictionaryEntry,omitempty" json:"DictionaryEntry,omitempty"`
 }
 
 type UserConfigurationType struct {
-	UserConfigurationName *UserConfigurationNameType `xml:"t:UserConfigurationName,omitempty" json:"UserConfigurationName,omitempty"`
+	UserConfigurationName *UserConfigurationNameType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserConfigurationName,omitempty" json:"UserConfigurationName,omitempty"`
 
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 
-	Dictionary *UserConfigurationDictionaryType `xml:"t:Dictionary,omitempty" json:"Dictionary,omitempty"`
+	Dictionary *UserConfigurationDictionaryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Dictionary,omitempty" json:"Dictionary,omitempty"`
 
-	XmlData []byte `xml:"t:XmlData,omitempty" json:"XmlData,omitempty"`
+	XmlData []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types XmlData,omitempty" json:"XmlData,omitempty"`
 
-	BinaryData []byte `xml:"t:BinaryData,omitempty" json:"BinaryData,omitempty"`
+	BinaryData []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types BinaryData,omitempty" json:"BinaryData,omitempty"`
 }
 
 type ProtectionRulesServiceConfiguration struct {
-	XMLName xml.Name `xml:"t:ProtectionRulesConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProtectionRulesConfiguration"`
 
 	*ServiceConfiguration
 
-	Rules *ArrayOfProtectionRulesType `xml:"t:Rules,omitempty" json:"Rules,omitempty"`
+	Rules *ArrayOfProtectionRulesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Rules,omitempty" json:"Rules,omitempty"`
 
-	InternalDomains *SmtpDomainList `xml:"t:InternalDomains,omitempty" json:"InternalDomains,omitempty"`
+	InternalDomains *SmtpDomainList `xml:"http://schemas.microsoft.com/exchange/services/2006/types InternalDomains,omitempty" json:"InternalDomains,omitempty"`
 
 	RefreshInterval int32 `xml:"RefreshInterval,attr,omitempty" json:"RefreshInterval,omitempty"`
 }
 
 type ArrayOfProtectionRulesType struct {
-	XMLName xml.Name `xml:"t:Rules"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Rules"`
 
-	Rule []*ProtectionRuleType `xml:"t:Rule,omitempty" json:"Rule,omitempty"`
+	Rule []*ProtectionRuleType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Rule,omitempty" json:"Rule,omitempty"`
 }
 
 type ProtectionRuleType struct {
-	XMLName xml.Name `xml:"t:Rule"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Rule"`
 
-	Condition *ProtectionRuleConditionType `xml:"t:Condition,omitempty" json:"Condition,omitempty"`
+	Condition *ProtectionRuleConditionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Condition,omitempty" json:"Condition,omitempty"`
 
-	Action *ProtectionRuleActionType `xml:"t:Action,omitempty" json:"Action,omitempty"`
+	Action *ProtectionRuleActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Action,omitempty" json:"Action,omitempty"`
 
 	Name string `xml:"Name,attr,omitempty" json:"Name,omitempty"`
 
@@ -8991,372 +8991,372 @@ type ProtectionRuleType struct {
 }
 
 type ProtectionRuleConditionType struct {
-	XMLName xml.Name `xml:"t:Condition"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Condition"`
 
-	AllInternal *ProtectionRuleAllInternalType `xml:"t:AllInternal,omitempty" json:"AllInternal,omitempty"`
+	AllInternal *ProtectionRuleAllInternalType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AllInternal,omitempty" json:"AllInternal,omitempty"`
 
-	And *ProtectionRuleAndType `xml:"t:And,omitempty" json:"And,omitempty"`
+	And *ProtectionRuleAndType `xml:"http://schemas.microsoft.com/exchange/services/2006/types And,omitempty" json:"And,omitempty"`
 
-	RecipientIs *ProtectionRuleRecipientIsType `xml:"t:RecipientIs,omitempty" json:"RecipientIs,omitempty"`
+	RecipientIs *ProtectionRuleRecipientIsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecipientIs,omitempty" json:"RecipientIs,omitempty"`
 
-	SenderDepartments *ProtectionRuleSenderDepartmentsType `xml:"t:SenderDepartments,omitempty" json:"SenderDepartments,omitempty"`
+	SenderDepartments *ProtectionRuleSenderDepartmentsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SenderDepartments,omitempty" json:"SenderDepartments,omitempty"`
 
-	True *ProtectionRuleTrueType `xml:"t:True,omitempty" json:"True,omitempty"`
+	True *ProtectionRuleTrueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types True,omitempty" json:"True,omitempty"`
 }
 
 type ProtectionRuleAndType struct {
-	AllInternal *ProtectionRuleAllInternalType `xml:"t:AllInternal,omitempty" json:"AllInternal,omitempty"`
+	AllInternal *ProtectionRuleAllInternalType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AllInternal,omitempty" json:"AllInternal,omitempty"`
 
-	And *ProtectionRuleAndType `xml:"t:And,omitempty" json:"And,omitempty"`
+	And *ProtectionRuleAndType `xml:"http://schemas.microsoft.com/exchange/services/2006/types And,omitempty" json:"And,omitempty"`
 
-	RecipientIs *ProtectionRuleRecipientIsType `xml:"t:RecipientIs,omitempty" json:"RecipientIs,omitempty"`
+	RecipientIs *ProtectionRuleRecipientIsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecipientIs,omitempty" json:"RecipientIs,omitempty"`
 
-	SenderDepartments *ProtectionRuleSenderDepartmentsType `xml:"t:SenderDepartments,omitempty" json:"SenderDepartments,omitempty"`
+	SenderDepartments *ProtectionRuleSenderDepartmentsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SenderDepartments,omitempty" json:"SenderDepartments,omitempty"`
 
-	True *ProtectionRuleTrueType `xml:"t:True,omitempty" json:"True,omitempty"`
+	True *ProtectionRuleTrueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types True,omitempty" json:"True,omitempty"`
 }
 
 type ProtectionRuleRecipientIsType struct {
-	Value []*ProtectionRuleValueType `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value []*ProtectionRuleValueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 }
 
 type ProtectionRuleSenderDepartmentsType struct {
-	Value []*ProtectionRuleValueType `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value []*ProtectionRuleValueType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 }
 
 type ProtectionRuleActionType struct {
-	XMLName xml.Name `xml:"t:Action"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Action"`
 
-	Argument []*ProtectionRuleArgumentType `xml:"t:Argument,omitempty" json:"Argument,omitempty"`
+	Argument []*ProtectionRuleArgumentType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Argument,omitempty" json:"Argument,omitempty"`
 
 	Name *ProtectionRuleActionKindType `xml:"Name,attr,omitempty" json:"Name,omitempty"`
 }
 
 type ProtectionRuleArgumentType struct {
-	XMLName xml.Name `xml:"t:Argument"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Argument"`
 
-	Value string `xml:"Value,attr,omitempty" json:"t:Value,omitempty"`
+	Value string `xml:"Value,attr,omitempty" json:"Value,omitempty"`
 }
 
 type PolicyNudgeRulesServiceConfiguration struct {
-	XMLName xml.Name `xml:"t:PolicyNudgeRulesConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PolicyNudgeRulesConfiguration"`
 
 	Items []string `xml:",any" json:"items,omitempty"`
 }
 
 type ArrayOfFolderIdType struct {
-	FolderId *FolderIdType `xml:"t:FolderId,omitempty" json:"FolderId,omitempty"`
+	FolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderId,omitempty" json:"FolderId,omitempty"`
 }
 
 type FindMessageTrackingSearchResultType struct {
-	XMLName xml.Name `xml:"t:MessageTrackingSearchResult"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MessageTrackingSearchResult"`
 
-	Subject string `xml:"t:Subject,omitempty" json:"Subject,omitempty"`
+	Subject string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Subject,omitempty" json:"Subject,omitempty"`
 
-	Sender *EmailAddressType `xml:"t:Sender,omitempty" json:"Sender,omitempty"`
+	Sender *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Sender,omitempty" json:"Sender,omitempty"`
 
-	PurportedSender *EmailAddressType `xml:"t:PurportedSender,omitempty" json:"PurportedSender,omitempty"`
+	PurportedSender *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PurportedSender,omitempty" json:"PurportedSender,omitempty"`
 
-	Recipients *ArrayOfRecipientsType `xml:"t:Recipients,omitempty" json:"Recipients,omitempty"`
+	Recipients *ArrayOfRecipientsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Recipients,omitempty" json:"Recipients,omitempty"`
 
-	SubmittedTime xsd.DateTime `xml:"t:SubmittedTime,omitempty" json:"SubmittedTime,omitempty"`
+	SubmittedTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types SubmittedTime,omitempty" json:"SubmittedTime,omitempty"`
 
-	MessageTrackingReportId *NonEmptyStringType `xml:"t:MessageTrackingReportId,omitempty" json:"MessageTrackingReportId,omitempty"`
+	MessageTrackingReportId *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MessageTrackingReportId,omitempty" json:"MessageTrackingReportId,omitempty"`
 
-	PreviousHopServer *NonEmptyStringType `xml:"t:PreviousHopServer,omitempty" json:"PreviousHopServer,omitempty"`
+	PreviousHopServer *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PreviousHopServer,omitempty" json:"PreviousHopServer,omitempty"`
 
-	FirstHopServer *NonEmptyStringType `xml:"t:FirstHopServer,omitempty" json:"FirstHopServer,omitempty"`
+	FirstHopServer *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FirstHopServer,omitempty" json:"FirstHopServer,omitempty"`
 
-	Properties *ArrayOfTrackingPropertiesType `xml:"t:Properties,omitempty" json:"Properties,omitempty"`
+	Properties *ArrayOfTrackingPropertiesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Properties,omitempty" json:"Properties,omitempty"`
 }
 
 type ArrayOfFindMessageTrackingSearchResultType struct {
-	XMLName xml.Name `xml:"t:MessageTrackingSearchResults"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MessageTrackingSearchResults"`
 
-	MessageTrackingSearchResult *FindMessageTrackingSearchResultType `xml:"t:MessageTrackingSearchResult,omitempty" json:"MessageTrackingSearchResult,omitempty"`
+	MessageTrackingSearchResult *FindMessageTrackingSearchResultType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MessageTrackingSearchResult,omitempty" json:"MessageTrackingSearchResult,omitempty"`
 }
 
 type RecipientTrackingEventType struct {
-	XMLName xml.Name `xml:"t:RecipientTrackingEvent"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecipientTrackingEvent"`
 
-	Date xsd.DateTime `xml:"t:Date,omitempty" json:"Date,omitempty"`
+	Date xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types Date,omitempty" json:"Date,omitempty"`
 
-	Recipient *EmailAddressType `xml:"t:Recipient,omitempty" json:"Recipient,omitempty"`
+	Recipient *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Recipient,omitempty" json:"Recipient,omitempty"`
 
-	DeliveryStatus string `xml:"t:DeliveryStatus,omitempty" json:"DeliveryStatus,omitempty"`
+	DeliveryStatus string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeliveryStatus,omitempty" json:"DeliveryStatus,omitempty"`
 
-	EventDescription string `xml:"t:EventDescription,omitempty" json:"EventDescription,omitempty"`
+	EventDescription string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EventDescription,omitempty" json:"EventDescription,omitempty"`
 
-	EventData *ArrayOfStringsType `xml:"t:EventData,omitempty" json:"EventData,omitempty"`
+	EventData *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EventData,omitempty" json:"EventData,omitempty"`
 
-	Server *NonEmptyStringType `xml:"t:Server,omitempty" json:"Server,omitempty"`
+	Server *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Server,omitempty" json:"Server,omitempty"`
 
-	InternalId *NonNegativeInteger `xml:"t:InternalId,omitempty" json:"InternalId,omitempty"`
+	InternalId *NonNegativeInteger `xml:"http://schemas.microsoft.com/exchange/services/2006/types InternalId,omitempty" json:"InternalId,omitempty"`
 
-	BccRecipient bool `xml:"t:BccRecipient,omitempty" json:"BccRecipient,omitempty"`
+	BccRecipient bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types BccRecipient,omitempty" json:"BccRecipient,omitempty"`
 
-	HiddenRecipient bool `xml:"t:HiddenRecipient,omitempty" json:"HiddenRecipient,omitempty"`
+	HiddenRecipient bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HiddenRecipient,omitempty" json:"HiddenRecipient,omitempty"`
 
-	UniquePathId *NonEmptyStringType `xml:"t:UniquePathId,omitempty" json:"UniquePathId,omitempty"`
+	UniquePathId *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UniquePathId,omitempty" json:"UniquePathId,omitempty"`
 
-	RootAddress *NonEmptyStringType `xml:"t:RootAddress,omitempty" json:"RootAddress,omitempty"`
+	RootAddress *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RootAddress,omitempty" json:"RootAddress,omitempty"`
 
-	Properties *ArrayOfTrackingPropertiesType `xml:"t:Properties,omitempty" json:"Properties,omitempty"`
+	Properties *ArrayOfTrackingPropertiesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Properties,omitempty" json:"Properties,omitempty"`
 }
 
 type MessageTrackingReportType struct {
-	XMLName xml.Name `xml:"t:MessageTrackingReport"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MessageTrackingReport"`
 
-	Sender *EmailAddressType `xml:"t:Sender,omitempty" json:"Sender,omitempty"`
+	Sender *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Sender,omitempty" json:"Sender,omitempty"`
 
-	PurportedSender *EmailAddressType `xml:"t:PurportedSender,omitempty" json:"PurportedSender,omitempty"`
+	PurportedSender *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PurportedSender,omitempty" json:"PurportedSender,omitempty"`
 
-	Subject string `xml:"t:Subject,omitempty" json:"Subject,omitempty"`
+	Subject string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Subject,omitempty" json:"Subject,omitempty"`
 
-	SubmitTime xsd.DateTime `xml:"t:SubmitTime,omitempty" json:"SubmitTime,omitempty"`
+	SubmitTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types SubmitTime,omitempty" json:"SubmitTime,omitempty"`
 
-	OriginalRecipients *ArrayOfEmailAddressesType `xml:"t:OriginalRecipients,omitempty" json:"OriginalRecipients,omitempty"`
+	OriginalRecipients *ArrayOfEmailAddressesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OriginalRecipients,omitempty" json:"OriginalRecipients,omitempty"`
 
-	RecipientTrackingEvents *ArrayOfRecipientTrackingEventType `xml:"t:RecipientTrackingEvents,omitempty" json:"RecipientTrackingEvents,omitempty"`
+	RecipientTrackingEvents *ArrayOfRecipientTrackingEventType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecipientTrackingEvents,omitempty" json:"RecipientTrackingEvents,omitempty"`
 
-	Properties *ArrayOfTrackingPropertiesType `xml:"t:Properties,omitempty" json:"Properties,omitempty"`
+	Properties *ArrayOfTrackingPropertiesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Properties,omitempty" json:"Properties,omitempty"`
 }
 
 type TrackingPropertyType struct {
-	Name string `xml:"t:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Name,omitempty" json:"Name,omitempty"`
 
-	Value string `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 }
 
 type ArrayOfTrackingPropertiesType struct {
-	TrackingPropertyType *TrackingPropertyType `xml:"t:TrackingPropertyType,omitempty" json:"TrackingPropertyType,omitempty"`
+	TrackingPropertyType *TrackingPropertyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TrackingPropertyType,omitempty" json:"TrackingPropertyType,omitempty"`
 }
 
 type ArrayOfArraysOfTrackingPropertiesType struct {
-	ArrayOfTrackingPropertiesType *ArrayOfTrackingPropertiesType `xml:"t:ArrayOfTrackingPropertiesType,omitempty" json:"ArrayOfTrackingPropertiesType,omitempty"`
+	ArrayOfTrackingPropertiesType *ArrayOfTrackingPropertiesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ArrayOfTrackingPropertiesType,omitempty" json:"ArrayOfTrackingPropertiesType,omitempty"`
 }
 
 type ArrayOfRecipientTrackingEventType struct {
-	XMLName xml.Name `xml:"t:RecipientTrackingEvents"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecipientTrackingEvents"`
 
-	RecipientTrackingEvent *RecipientTrackingEventType `xml:"t:RecipientTrackingEvent,omitempty" json:"RecipientTrackingEvent,omitempty"`
+	RecipientTrackingEvent *RecipientTrackingEventType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RecipientTrackingEvent,omitempty" json:"RecipientTrackingEvent,omitempty"`
 }
 
 type RulePredicateSizeRangeType struct {
-	XMLName xml.Name `xml:"t:WithinSizeRange"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types WithinSizeRange"`
 
-	MinimumSize int32 `xml:"t:MinimumSize,omitempty" json:"MinimumSize,omitempty"`
+	MinimumSize int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MinimumSize,omitempty" json:"MinimumSize,omitempty"`
 
-	MaximumSize int32 `xml:"t:MaximumSize,omitempty" json:"MaximumSize,omitempty"`
+	MaximumSize int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MaximumSize,omitempty" json:"MaximumSize,omitempty"`
 }
 
 type RulePredicateDateRangeType struct {
-	XMLName xml.Name `xml:"t:WithinDateRange"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types WithinDateRange"`
 
-	StartDateTime xsd.DateTime `xml:"t:StartDateTime,omitempty" json:"StartDateTime,omitempty"`
+	StartDateTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartDateTime,omitempty" json:"StartDateTime,omitempty"`
 
-	EndDateTime xsd.DateTime `xml:"t:EndDateTime,omitempty" json:"EndDateTime,omitempty"`
+	EndDateTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndDateTime,omitempty" json:"EndDateTime,omitempty"`
 }
 
 type RulePredicatesType struct {
-	Categories *ArrayOfStringsType `xml:"t:Categories,omitempty" json:"Categories,omitempty"`
+	Categories *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Categories,omitempty" json:"Categories,omitempty"`
 
-	ContainsBodyStrings *ArrayOfStringsType `xml:"t:ContainsBodyStrings,omitempty" json:"ContainsBodyStrings,omitempty"`
+	ContainsBodyStrings *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContainsBodyStrings,omitempty" json:"ContainsBodyStrings,omitempty"`
 
-	ContainsHeaderStrings *ArrayOfStringsType `xml:"t:ContainsHeaderStrings,omitempty" json:"ContainsHeaderStrings,omitempty"`
+	ContainsHeaderStrings *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContainsHeaderStrings,omitempty" json:"ContainsHeaderStrings,omitempty"`
 
-	ContainsRecipientStrings *ArrayOfStringsType `xml:"t:ContainsRecipientStrings,omitempty" json:"ContainsRecipientStrings,omitempty"`
+	ContainsRecipientStrings *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContainsRecipientStrings,omitempty" json:"ContainsRecipientStrings,omitempty"`
 
-	ContainsSenderStrings *ArrayOfStringsType `xml:"t:ContainsSenderStrings,omitempty" json:"ContainsSenderStrings,omitempty"`
+	ContainsSenderStrings *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContainsSenderStrings,omitempty" json:"ContainsSenderStrings,omitempty"`
 
-	ContainsSubjectOrBodyStrings *ArrayOfStringsType `xml:"t:ContainsSubjectOrBodyStrings,omitempty" json:"ContainsSubjectOrBodyStrings,omitempty"`
+	ContainsSubjectOrBodyStrings *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContainsSubjectOrBodyStrings,omitempty" json:"ContainsSubjectOrBodyStrings,omitempty"`
 
-	ContainsSubjectStrings *ArrayOfStringsType `xml:"t:ContainsSubjectStrings,omitempty" json:"ContainsSubjectStrings,omitempty"`
+	ContainsSubjectStrings *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContainsSubjectStrings,omitempty" json:"ContainsSubjectStrings,omitempty"`
 
-	FlaggedForAction *FlaggedForActionType `xml:"t:FlaggedForAction,omitempty" json:"FlaggedForAction,omitempty"`
+	FlaggedForAction *FlaggedForActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FlaggedForAction,omitempty" json:"FlaggedForAction,omitempty"`
 
-	FromAddresses *ArrayOfEmailAddressesType `xml:"t:FromAddresses,omitempty" json:"FromAddresses,omitempty"`
+	FromAddresses *ArrayOfEmailAddressesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FromAddresses,omitempty" json:"FromAddresses,omitempty"`
 
-	FromConnectedAccounts *ArrayOfStringsType `xml:"t:FromConnectedAccounts,omitempty" json:"FromConnectedAccounts,omitempty"`
+	FromConnectedAccounts *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FromConnectedAccounts,omitempty" json:"FromConnectedAccounts,omitempty"`
 
-	HasAttachments bool `xml:"t:HasAttachments,omitempty" json:"HasAttachments,omitempty"`
+	HasAttachments bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HasAttachments,omitempty" json:"HasAttachments,omitempty"`
 
-	Importance *ImportanceChoicesType `xml:"t:Importance,omitempty" json:"Importance,omitempty"`
+	Importance *ImportanceChoicesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Importance,omitempty" json:"Importance,omitempty"`
 
-	IsApprovalRequest bool `xml:"t:IsApprovalRequest,omitempty" json:"IsApprovalRequest,omitempty"`
+	IsApprovalRequest bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsApprovalRequest,omitempty" json:"IsApprovalRequest,omitempty"`
 
-	IsAutomaticForward bool `xml:"t:IsAutomaticForward,omitempty" json:"IsAutomaticForward,omitempty"`
+	IsAutomaticForward bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsAutomaticForward,omitempty" json:"IsAutomaticForward,omitempty"`
 
-	IsAutomaticReply bool `xml:"t:IsAutomaticReply,omitempty" json:"IsAutomaticReply,omitempty"`
+	IsAutomaticReply bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsAutomaticReply,omitempty" json:"IsAutomaticReply,omitempty"`
 
-	IsEncrypted bool `xml:"t:IsEncrypted,omitempty" json:"IsEncrypted,omitempty"`
+	IsEncrypted bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsEncrypted,omitempty" json:"IsEncrypted,omitempty"`
 
-	IsMeetingRequest bool `xml:"t:IsMeetingRequest,omitempty" json:"IsMeetingRequest,omitempty"`
+	IsMeetingRequest bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsMeetingRequest,omitempty" json:"IsMeetingRequest,omitempty"`
 
-	IsMeetingResponse bool `xml:"t:IsMeetingResponse,omitempty" json:"IsMeetingResponse,omitempty"`
+	IsMeetingResponse bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsMeetingResponse,omitempty" json:"IsMeetingResponse,omitempty"`
 
-	IsNDR bool `xml:"t:IsNDR,omitempty" json:"IsNDR,omitempty"`
+	IsNDR bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsNDR,omitempty" json:"IsNDR,omitempty"`
 
-	IsPermissionControlled bool `xml:"t:IsPermissionControlled,omitempty" json:"IsPermissionControlled,omitempty"`
+	IsPermissionControlled bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsPermissionControlled,omitempty" json:"IsPermissionControlled,omitempty"`
 
-	IsReadReceipt bool `xml:"t:IsReadReceipt,omitempty" json:"IsReadReceipt,omitempty"`
+	IsReadReceipt bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsReadReceipt,omitempty" json:"IsReadReceipt,omitempty"`
 
-	IsSigned bool `xml:"t:IsSigned,omitempty" json:"IsSigned,omitempty"`
+	IsSigned bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsSigned,omitempty" json:"IsSigned,omitempty"`
 
-	IsVoicemail bool `xml:"t:IsVoicemail,omitempty" json:"IsVoicemail,omitempty"`
+	IsVoicemail bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsVoicemail,omitempty" json:"IsVoicemail,omitempty"`
 
-	ItemClasses *ArrayOfStringsType `xml:"t:ItemClasses,omitempty" json:"ItemClasses,omitempty"`
+	ItemClasses *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemClasses,omitempty" json:"ItemClasses,omitempty"`
 
-	MessageClassifications *ArrayOfStringsType `xml:"t:MessageClassifications,omitempty" json:"MessageClassifications,omitempty"`
+	MessageClassifications *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MessageClassifications,omitempty" json:"MessageClassifications,omitempty"`
 
-	NotSentToMe bool `xml:"t:NotSentToMe,omitempty" json:"NotSentToMe,omitempty"`
+	NotSentToMe bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types NotSentToMe,omitempty" json:"NotSentToMe,omitempty"`
 
-	SentCcMe bool `xml:"t:SentCcMe,omitempty" json:"SentCcMe,omitempty"`
+	SentCcMe bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types SentCcMe,omitempty" json:"SentCcMe,omitempty"`
 
-	SentOnlyToMe bool `xml:"t:SentOnlyToMe,omitempty" json:"SentOnlyToMe,omitempty"`
+	SentOnlyToMe bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types SentOnlyToMe,omitempty" json:"SentOnlyToMe,omitempty"`
 
-	SentToAddresses *ArrayOfEmailAddressesType `xml:"t:SentToAddresses,omitempty" json:"SentToAddresses,omitempty"`
+	SentToAddresses *ArrayOfEmailAddressesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SentToAddresses,omitempty" json:"SentToAddresses,omitempty"`
 
-	SentToMe bool `xml:"t:SentToMe,omitempty" json:"SentToMe,omitempty"`
+	SentToMe bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types SentToMe,omitempty" json:"SentToMe,omitempty"`
 
-	SentToOrCcMe bool `xml:"t:SentToOrCcMe,omitempty" json:"SentToOrCcMe,omitempty"`
+	SentToOrCcMe bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types SentToOrCcMe,omitempty" json:"SentToOrCcMe,omitempty"`
 
-	Sensitivity *SensitivityChoicesType `xml:"t:Sensitivity,omitempty" json:"Sensitivity,omitempty"`
+	Sensitivity *SensitivityChoicesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Sensitivity,omitempty" json:"Sensitivity,omitempty"`
 
-	WithinDateRange *RulePredicateDateRangeType `xml:"t:WithinDateRange,omitempty" json:"WithinDateRange,omitempty"`
+	WithinDateRange *RulePredicateDateRangeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types WithinDateRange,omitempty" json:"WithinDateRange,omitempty"`
 
-	WithinSizeRange *RulePredicateSizeRangeType `xml:"t:WithinSizeRange,omitempty" json:"WithinSizeRange,omitempty"`
+	WithinSizeRange *RulePredicateSizeRangeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types WithinSizeRange,omitempty" json:"WithinSizeRange,omitempty"`
 }
 
 type RuleActionsType struct {
-	XMLName xml.Name `xml:"t:Actions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Actions"`
 
-	AssignCategories *ArrayOfStringsType `xml:"t:AssignCategories,omitempty" json:"AssignCategories,omitempty"`
+	AssignCategories *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AssignCategories,omitempty" json:"AssignCategories,omitempty"`
 
-	CopyToFolder *TargetFolderIdType `xml:"t:CopyToFolder,omitempty" json:"CopyToFolder,omitempty"`
+	CopyToFolder *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CopyToFolder,omitempty" json:"CopyToFolder,omitempty"`
 
-	Delete bool `xml:"t:Delete,omitempty" json:"Delete,omitempty"`
+	Delete bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types Delete,omitempty" json:"Delete,omitempty"`
 
-	ForwardAsAttachmentToRecipients *ArrayOfEmailAddressesType `xml:"t:ForwardAsAttachmentToRecipients,omitempty" json:"ForwardAsAttachmentToRecipients,omitempty"`
+	ForwardAsAttachmentToRecipients *ArrayOfEmailAddressesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ForwardAsAttachmentToRecipients,omitempty" json:"ForwardAsAttachmentToRecipients,omitempty"`
 
-	ForwardToRecipients *ArrayOfEmailAddressesType `xml:"t:ForwardToRecipients,omitempty" json:"ForwardToRecipients,omitempty"`
+	ForwardToRecipients *ArrayOfEmailAddressesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ForwardToRecipients,omitempty" json:"ForwardToRecipients,omitempty"`
 
-	MarkImportance *ImportanceChoicesType `xml:"t:MarkImportance,omitempty" json:"MarkImportance,omitempty"`
+	MarkImportance *ImportanceChoicesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MarkImportance,omitempty" json:"MarkImportance,omitempty"`
 
-	MarkAsRead bool `xml:"t:MarkAsRead,omitempty" json:"MarkAsRead,omitempty"`
+	MarkAsRead bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types MarkAsRead,omitempty" json:"MarkAsRead,omitempty"`
 
-	MoveToFolder *TargetFolderIdType `xml:"t:MoveToFolder,omitempty" json:"MoveToFolder,omitempty"`
+	MoveToFolder *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MoveToFolder,omitempty" json:"MoveToFolder,omitempty"`
 
-	PermanentDelete bool `xml:"t:PermanentDelete,omitempty" json:"PermanentDelete,omitempty"`
+	PermanentDelete bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types PermanentDelete,omitempty" json:"PermanentDelete,omitempty"`
 
-	RedirectToRecipients *ArrayOfEmailAddressesType `xml:"t:RedirectToRecipients,omitempty" json:"RedirectToRecipients,omitempty"`
+	RedirectToRecipients *ArrayOfEmailAddressesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RedirectToRecipients,omitempty" json:"RedirectToRecipients,omitempty"`
 
-	SendSMSAlertToRecipients *ArrayOfEmailAddressesType `xml:"t:SendSMSAlertToRecipients,omitempty" json:"SendSMSAlertToRecipients,omitempty"`
+	SendSMSAlertToRecipients *ArrayOfEmailAddressesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SendSMSAlertToRecipients,omitempty" json:"SendSMSAlertToRecipients,omitempty"`
 
-	ServerReplyWithMessage *ItemIdType `xml:"t:ServerReplyWithMessage,omitempty" json:"ServerReplyWithMessage,omitempty"`
+	ServerReplyWithMessage *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ServerReplyWithMessage,omitempty" json:"ServerReplyWithMessage,omitempty"`
 
-	StopProcessingRules bool `xml:"t:StopProcessingRules,omitempty" json:"StopProcessingRules,omitempty"`
+	StopProcessingRules bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types StopProcessingRules,omitempty" json:"StopProcessingRules,omitempty"`
 }
 
 type RuleType struct {
-	RuleId string `xml:"t:RuleId,omitempty" json:"RuleId,omitempty"`
+	RuleId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types RuleId,omitempty" json:"RuleId,omitempty"`
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	Priority int32 `xml:"t:Priority,omitempty" json:"Priority,omitempty"`
+	Priority int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Priority,omitempty" json:"Priority,omitempty"`
 
-	IsEnabled bool `xml:"t:IsEnabled,omitempty" json:"IsEnabled,omitempty"`
+	IsEnabled bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsEnabled,omitempty" json:"IsEnabled,omitempty"`
 
-	IsNotSupported bool `xml:"t:IsNotSupported,omitempty" json:"IsNotSupported,omitempty"`
+	IsNotSupported bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsNotSupported,omitempty" json:"IsNotSupported,omitempty"`
 
-	IsInError bool `xml:"t:IsInError,omitempty" json:"IsInError,omitempty"`
+	IsInError bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsInError,omitempty" json:"IsInError,omitempty"`
 
-	Conditions *RulePredicatesType `xml:"t:Conditions,omitempty" json:"Conditions,omitempty"`
+	Conditions *RulePredicatesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Conditions,omitempty" json:"Conditions,omitempty"`
 
-	Exceptions *RulePredicatesType `xml:"t:Exceptions,omitempty" json:"Exceptions,omitempty"`
+	Exceptions *RulePredicatesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Exceptions,omitempty" json:"Exceptions,omitempty"`
 
-	Actions *RuleActionsType `xml:"t:Actions,omitempty" json:"Actions,omitempty"`
+	Actions *RuleActionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Actions,omitempty" json:"Actions,omitempty"`
 }
 
 type ArrayOfRulesType struct {
-	XMLName xml.Name `xml:"t:InboxRules"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types InboxRules"`
 
-	Rule []*RuleType `xml:"t:Rule,omitempty" json:"Rule,omitempty"`
+	Rule []*RuleType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Rule,omitempty" json:"Rule,omitempty"`
 }
 
 type RuleValidationErrorType struct {
-	XMLName xml.Name `xml:"t:Error"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Error"`
 
-	FieldURI *RuleFieldURIType `xml:"t:FieldURI,omitempty" json:"FieldURI,omitempty"`
+	FieldURI *RuleFieldURIType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FieldURI,omitempty" json:"FieldURI,omitempty"`
 
-	ErrorCode *RuleValidationErrorCodeType `xml:"t:ErrorCode,omitempty" json:"ErrorCode,omitempty"`
+	ErrorCode *RuleValidationErrorCodeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ErrorCode,omitempty" json:"ErrorCode,omitempty"`
 
-	ErrorMessage string `xml:"t:ErrorMessage,omitempty" json:"ErrorMessage,omitempty"`
+	ErrorMessage string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ErrorMessage,omitempty" json:"ErrorMessage,omitempty"`
 
-	FieldValue string `xml:"t:FieldValue,omitempty" json:"FieldValue,omitempty"`
+	FieldValue string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FieldValue,omitempty" json:"FieldValue,omitempty"`
 }
 
 type ArrayOfRuleValidationErrorsType struct {
-	XMLName xml.Name `xml:"t:ValidationErrors"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ValidationErrors"`
 
-	Error []*RuleValidationErrorType `xml:"t:Error,omitempty" json:"Error,omitempty"`
+	Error []*RuleValidationErrorType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Error,omitempty" json:"Error,omitempty"`
 }
 
 type RuleOperationType struct {
 }
 
 type ArrayOfRuleOperationsType struct {
-	XMLName xml.Name `xml:"t:Operations"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Operations"`
 
-	CreateRuleOperation *CreateRuleOperationType `xml:"t:CreateRuleOperation,omitempty" json:"CreateRuleOperation,omitempty"`
+	CreateRuleOperation *CreateRuleOperationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreateRuleOperation,omitempty" json:"CreateRuleOperation,omitempty"`
 
-	SetRuleOperation *SetRuleOperationType `xml:"t:SetRuleOperation,omitempty" json:"SetRuleOperation,omitempty"`
+	SetRuleOperation *SetRuleOperationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SetRuleOperation,omitempty" json:"SetRuleOperation,omitempty"`
 
-	DeleteRuleOperation *DeleteRuleOperationType `xml:"t:DeleteRuleOperation,omitempty" json:"DeleteRuleOperation,omitempty"`
+	DeleteRuleOperation *DeleteRuleOperationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeleteRuleOperation,omitempty" json:"DeleteRuleOperation,omitempty"`
 }
 
 type CreateRuleOperationType struct {
-	XMLName xml.Name `xml:"t:CreateRuleOperation"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreateRuleOperation"`
 
 	*RuleOperationType
 
-	Rule *RuleType `xml:"t:Rule,omitempty" json:"Rule,omitempty"`
+	Rule *RuleType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Rule,omitempty" json:"Rule,omitempty"`
 }
 
 type SetRuleOperationType struct {
-	XMLName xml.Name `xml:"t:SetRuleOperation"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SetRuleOperation"`
 
 	*RuleOperationType
 
-	Rule *RuleType `xml:"t:Rule,omitempty" json:"Rule,omitempty"`
+	Rule *RuleType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Rule,omitempty" json:"Rule,omitempty"`
 }
 
 type DeleteRuleOperationType struct {
-	XMLName xml.Name `xml:"t:DeleteRuleOperation"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeleteRuleOperation"`
 
 	*RuleOperationType
 
-	RuleId string `xml:"t:RuleId,omitempty" json:"RuleId,omitempty"`
+	RuleId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types RuleId,omitempty" json:"RuleId,omitempty"`
 }
 
 type RuleOperationErrorType struct {
-	XMLName xml.Name `xml:"t:RuleOperationError"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RuleOperationError"`
 
-	OperationIndex int32 `xml:"t:OperationIndex,omitempty" json:"OperationIndex,omitempty"`
+	OperationIndex int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types OperationIndex,omitempty" json:"OperationIndex,omitempty"`
 
-	ValidationErrors *ArrayOfRuleValidationErrorsType `xml:"t:ValidationErrors,omitempty" json:"ValidationErrors,omitempty"`
+	ValidationErrors *ArrayOfRuleValidationErrorsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ValidationErrors,omitempty" json:"ValidationErrors,omitempty"`
 }
 
 type ArrayOfRuleOperationErrorsType struct {
-	XMLName xml.Name `xml:"t:RuleOperationErrors"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RuleOperationErrors"`
 
-	RuleOperationError []*RuleOperationErrorType `xml:"t:RuleOperationError,omitempty" json:"RuleOperationError,omitempty"`
+	RuleOperationError []*RuleOperationErrorType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RuleOperationError,omitempty" json:"RuleOperationError,omitempty"`
 }
 
 type ArrayOfSearchItemKindsType struct {
-	XMLName xml.Name `xml:"t:MessageTypes"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MessageTypes"`
 
-	SearchItemKind []*SearchItemKindType `xml:"t:SearchItemKind,omitempty" json:"SearchItemKind,omitempty"`
+	SearchItemKind []*SearchItemKindType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchItemKind,omitempty" json:"SearchItemKind,omitempty"`
 }
 
 type UserMailboxType struct {
@@ -9366,425 +9366,425 @@ type UserMailboxType struct {
 }
 
 type ArrayOfUserMailboxesType struct {
-	XMLName xml.Name `xml:"t:Mailboxes"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailboxes"`
 
-	UserMailbox []*UserMailboxType `xml:"t:UserMailbox,omitempty" json:"UserMailbox,omitempty"`
+	UserMailbox []*UserMailboxType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserMailbox,omitempty" json:"UserMailbox,omitempty"`
 }
 
 type SearchableMailboxType struct {
-	XMLName xml.Name `xml:"t:SearchableMailbox"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchableMailbox"`
 
-	Guid *GuidType `xml:"t:Guid,omitempty" json:"Guid,omitempty"`
+	Guid *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Guid,omitempty" json:"Guid,omitempty"`
 
-	PrimarySmtpAddress string `xml:"t:PrimarySmtpAddress,omitempty" json:"PrimarySmtpAddress,omitempty"`
+	PrimarySmtpAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PrimarySmtpAddress,omitempty" json:"PrimarySmtpAddress,omitempty"`
 
-	IsExternalMailbox bool `xml:"t:IsExternalMailbox,omitempty" json:"IsExternalMailbox,omitempty"`
+	IsExternalMailbox bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsExternalMailbox,omitempty" json:"IsExternalMailbox,omitempty"`
 
-	ExternalEmailAddress string `xml:"t:ExternalEmailAddress,omitempty" json:"ExternalEmailAddress,omitempty"`
+	ExternalEmailAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExternalEmailAddress,omitempty" json:"ExternalEmailAddress,omitempty"`
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	IsMembershipGroup bool `xml:"t:IsMembershipGroup,omitempty" json:"IsMembershipGroup,omitempty"`
+	IsMembershipGroup bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsMembershipGroup,omitempty" json:"IsMembershipGroup,omitempty"`
 
-	ReferenceId string `xml:"t:ReferenceId,omitempty" json:"ReferenceId,omitempty"`
+	ReferenceId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReferenceId,omitempty" json:"ReferenceId,omitempty"`
 }
 
 type ArrayOfSearchableMailboxesType struct {
-	SearchableMailbox []*SearchableMailboxType `xml:"t:SearchableMailbox,omitempty" json:"SearchableMailbox,omitempty"`
+	SearchableMailbox []*SearchableMailboxType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchableMailbox,omitempty" json:"SearchableMailbox,omitempty"`
 }
 
 type KeywordStatisticsSearchResultType struct {
-	Keyword string `xml:"t:Keyword,omitempty" json:"Keyword,omitempty"`
+	Keyword string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Keyword,omitempty" json:"Keyword,omitempty"`
 
-	ItemHits int32 `xml:"t:ItemHits,omitempty" json:"ItemHits,omitempty"`
+	ItemHits int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemHits,omitempty" json:"ItemHits,omitempty"`
 
-	Size int64 `xml:"t:Size,omitempty" json:"Size,omitempty"`
+	Size int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Size,omitempty" json:"Size,omitempty"`
 }
 
 type ArrayOfKeywordStatisticsSearchResultsType struct {
-	XMLName xml.Name `xml:"t:KeywordStats"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types KeywordStats"`
 
-	KeywordStat []*KeywordStatisticsSearchResultType `xml:"t:KeywordStat,omitempty" json:"KeywordStat,omitempty"`
+	KeywordStat []*KeywordStatisticsSearchResultType `xml:"http://schemas.microsoft.com/exchange/services/2006/types KeywordStat,omitempty" json:"KeywordStat,omitempty"`
 }
 
 type MailboxStatisticsSearchResultType struct {
-	XMLName xml.Name `xml:"t:MailboxStatisticsSearchResult"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxStatisticsSearchResult"`
 
-	UserMailbox *UserMailboxType `xml:"t:UserMailbox,omitempty" json:"UserMailbox,omitempty"`
+	UserMailbox *UserMailboxType `xml:"http://schemas.microsoft.com/exchange/services/2006/types UserMailbox,omitempty" json:"UserMailbox,omitempty"`
 
-	KeywordStatisticsSearchResult *KeywordStatisticsSearchResultType `xml:"t:KeywordStatisticsSearchResult,omitempty" json:"KeywordStatisticsSearchResult,omitempty"`
+	KeywordStatisticsSearchResult *KeywordStatisticsSearchResultType `xml:"http://schemas.microsoft.com/exchange/services/2006/types KeywordStatisticsSearchResult,omitempty" json:"KeywordStatisticsSearchResult,omitempty"`
 }
 
 type ExtendedAttributeType struct {
-	XMLName xml.Name `xml:"t:ExtendedAttribute"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedAttribute"`
 
-	Name string `xml:"t:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Name,omitempty" json:"Name,omitempty"`
 
-	Value string `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 }
 
 type ArrayOfExtendedAttributesType struct {
-	XMLName xml.Name `xml:"t:ExtendedAttributes"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedAttributes"`
 
-	ExtendedAttribute []*ExtendedAttributeType `xml:"t:ExtendedAttribute,omitempty" json:"ExtendedAttribute,omitempty"`
+	ExtendedAttribute []*ExtendedAttributeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedAttribute,omitempty" json:"ExtendedAttribute,omitempty"`
 }
 
 type MailboxSearchScopeType struct {
-	XMLName xml.Name `xml:"t:MailboxSearchScope"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxSearchScope"`
 
-	Mailbox string `xml:"t:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailbox,omitempty" json:"Mailbox,omitempty"`
 
-	SearchScope *MailboxSearchLocationType `xml:"t:SearchScope,omitempty" json:"SearchScope,omitempty"`
+	SearchScope *MailboxSearchLocationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchScope,omitempty" json:"SearchScope,omitempty"`
 
-	ExtendedAttributes *ArrayOfExtendedAttributesType `xml:"t:ExtendedAttributes,omitempty" json:"ExtendedAttributes,omitempty"`
+	ExtendedAttributes *ArrayOfExtendedAttributesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedAttributes,omitempty" json:"ExtendedAttributes,omitempty"`
 }
 
 type NonEmptyArrayOfMailboxSearchScopesType struct {
-	XMLName xml.Name `xml:"t:MailboxSearchScopes"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxSearchScopes"`
 
-	MailboxSearchScope []*MailboxSearchScopeType `xml:"t:MailboxSearchScope,omitempty" json:"MailboxSearchScope,omitempty"`
+	MailboxSearchScope []*MailboxSearchScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxSearchScope,omitempty" json:"MailboxSearchScope,omitempty"`
 }
 
 type MailboxQueryType struct {
-	XMLName xml.Name `xml:"t:MailboxQuery"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxQuery"`
 
-	Query string `xml:"t:Query,omitempty" json:"Query,omitempty"`
+	Query string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Query,omitempty" json:"Query,omitempty"`
 
-	MailboxSearchScopes *NonEmptyArrayOfMailboxSearchScopesType `xml:"t:MailboxSearchScopes,omitempty" json:"MailboxSearchScopes,omitempty"`
+	MailboxSearchScopes *NonEmptyArrayOfMailboxSearchScopesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxSearchScopes,omitempty" json:"MailboxSearchScopes,omitempty"`
 }
 
 type PreviewItemMailboxType struct {
-	XMLName xml.Name `xml:"t:Mailbox"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailbox"`
 
-	MailboxId string `xml:"t:MailboxId,omitempty" json:"MailboxId,omitempty"`
+	MailboxId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxId,omitempty" json:"MailboxId,omitempty"`
 
-	PrimarySmtpAddress string `xml:"t:PrimarySmtpAddress,omitempty" json:"PrimarySmtpAddress,omitempty"`
+	PrimarySmtpAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PrimarySmtpAddress,omitempty" json:"PrimarySmtpAddress,omitempty"`
 }
 
 type NonEmptyArrayOfMailboxQueriesType struct {
-	MailboxQuery []*MailboxQueryType `xml:"t:MailboxQuery,omitempty" json:"MailboxQuery,omitempty"`
+	MailboxQuery []*MailboxQueryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxQuery,omitempty" json:"MailboxQuery,omitempty"`
 }
 
 type NonEmptyArrayOfExtendedFieldURIsType struct {
-	ExtendedFieldURI *PathToExtendedFieldType `xml:"t:ExtendedFieldURI,omitempty" json:"ExtendedFieldURI,omitempty"`
+	ExtendedFieldURI *PathToExtendedFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedFieldURI,omitempty" json:"ExtendedFieldURI,omitempty"`
 }
 
 type PreviewItemResponseShapeType struct {
-	XMLName xml.Name `xml:"t:PreviewItemResponseShape"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PreviewItemResponseShape"`
 
-	BaseShape *PreviewItemBaseShapeType `xml:"t:BaseShape,omitempty" json:"BaseShape,omitempty"`
+	BaseShape *PreviewItemBaseShapeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BaseShape,omitempty" json:"BaseShape,omitempty"`
 
-	AdditionalProperties *NonEmptyArrayOfExtendedFieldURIsType `xml:"t:AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
+	AdditionalProperties *NonEmptyArrayOfExtendedFieldURIsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
 }
 
 type SearchPreviewItemType struct {
-	XMLName xml.Name `xml:"t:SearchPreviewItem"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchPreviewItem"`
 
-	Id *ItemIdType `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	Mailbox *PreviewItemMailboxType `xml:"t:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox *PreviewItemMailboxType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailbox,omitempty" json:"Mailbox,omitempty"`
 
-	ParentId *ItemIdType `xml:"t:ParentId,omitempty" json:"ParentId,omitempty"`
+	ParentId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ParentId,omitempty" json:"ParentId,omitempty"`
 
-	ItemClass *ItemClassType `xml:"t:ItemClass,omitempty" json:"ItemClass,omitempty"`
+	ItemClass *ItemClassType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemClass,omitempty" json:"ItemClass,omitempty"`
 
-	UniqueHash string `xml:"t:UniqueHash,omitempty" json:"UniqueHash,omitempty"`
+	UniqueHash string `xml:"http://schemas.microsoft.com/exchange/services/2006/types UniqueHash,omitempty" json:"UniqueHash,omitempty"`
 
-	SortValue string `xml:"t:SortValue,omitempty" json:"SortValue,omitempty"`
+	SortValue string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SortValue,omitempty" json:"SortValue,omitempty"`
 
-	OwaLink string `xml:"t:OwaLink,omitempty" json:"OwaLink,omitempty"`
+	OwaLink string `xml:"http://schemas.microsoft.com/exchange/services/2006/types OwaLink,omitempty" json:"OwaLink,omitempty"`
 
-	Sender string `xml:"t:Sender,omitempty" json:"Sender,omitempty"`
+	Sender string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Sender,omitempty" json:"Sender,omitempty"`
 
-	ToRecipients *ArrayOfSmtpAddressType `xml:"t:ToRecipients,omitempty" json:"ToRecipients,omitempty"`
+	ToRecipients *ArrayOfSmtpAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ToRecipients,omitempty" json:"ToRecipients,omitempty"`
 
-	CcRecipients *ArrayOfSmtpAddressType `xml:"t:CcRecipients,omitempty" json:"CcRecipients,omitempty"`
+	CcRecipients *ArrayOfSmtpAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CcRecipients,omitempty" json:"CcRecipients,omitempty"`
 
-	BccRecipients *ArrayOfSmtpAddressType `xml:"t:BccRecipients,omitempty" json:"BccRecipients,omitempty"`
+	BccRecipients *ArrayOfSmtpAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types BccRecipients,omitempty" json:"BccRecipients,omitempty"`
 
-	CreatedTime xsd.DateTime `xml:"t:CreatedTime,omitempty" json:"CreatedTime,omitempty"`
+	CreatedTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreatedTime,omitempty" json:"CreatedTime,omitempty"`
 
-	ReceivedTime xsd.DateTime `xml:"t:ReceivedTime,omitempty" json:"ReceivedTime,omitempty"`
+	ReceivedTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReceivedTime,omitempty" json:"ReceivedTime,omitempty"`
 
-	SentTime xsd.DateTime `xml:"t:SentTime,omitempty" json:"SentTime,omitempty"`
+	SentTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types SentTime,omitempty" json:"SentTime,omitempty"`
 
-	Subject string `xml:"t:Subject,omitempty" json:"Subject,omitempty"`
+	Subject string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Subject,omitempty" json:"Subject,omitempty"`
 
-	Size int64 `xml:"t:Size,omitempty" json:"Size,omitempty"`
+	Size int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Size,omitempty" json:"Size,omitempty"`
 
-	Preview string `xml:"t:Preview,omitempty" json:"Preview,omitempty"`
+	Preview string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Preview,omitempty" json:"Preview,omitempty"`
 
-	Importance *ImportanceChoicesType `xml:"t:Importance,omitempty" json:"Importance,omitempty"`
+	Importance *ImportanceChoicesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Importance,omitempty" json:"Importance,omitempty"`
 
-	Read bool `xml:"t:Read,omitempty" json:"Read,omitempty"`
+	Read bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types Read,omitempty" json:"Read,omitempty"`
 
-	HasAttachment bool `xml:"t:HasAttachment,omitempty" json:"HasAttachment,omitempty"`
+	HasAttachment bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HasAttachment,omitempty" json:"HasAttachment,omitempty"`
 
-	ExtendedProperties *NonEmptyArrayOfExtendedPropertyType `xml:"t:ExtendedProperties,omitempty" json:"ExtendedProperties,omitempty"`
+	ExtendedProperties *NonEmptyArrayOfExtendedPropertyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedProperties,omitempty" json:"ExtendedProperties,omitempty"`
 }
 
 type ArrayOfSearchPreviewItemsType struct {
-	XMLName xml.Name `xml:"t:Items"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Items"`
 
-	SearchPreviewItem []*SearchPreviewItemType `xml:"t:SearchPreviewItem,omitempty" json:"SearchPreviewItem,omitempty"`
+	SearchPreviewItem []*SearchPreviewItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchPreviewItem,omitempty" json:"SearchPreviewItem,omitempty"`
 }
 
 type FailedSearchMailboxType struct {
-	XMLName xml.Name `xml:"t:FailedMailbox"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types FailedMailbox"`
 
-	Mailbox string `xml:"t:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailbox,omitempty" json:"Mailbox,omitempty"`
 
-	ErrorCode int32 `xml:"t:ErrorCode,omitempty" json:"ErrorCode,omitempty"`
+	ErrorCode int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ErrorCode,omitempty" json:"ErrorCode,omitempty"`
 
-	ErrorMessage string `xml:"t:ErrorMessage,omitempty" json:"ErrorMessage,omitempty"`
+	ErrorMessage string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ErrorMessage,omitempty" json:"ErrorMessage,omitempty"`
 
-	IsArchive bool `xml:"t:IsArchive,omitempty" json:"IsArchive,omitempty"`
+	IsArchive bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsArchive,omitempty" json:"IsArchive,omitempty"`
 }
 
 type ArrayOfFailedSearchMailboxesType struct {
-	FailedMailbox []*FailedSearchMailboxType `xml:"t:FailedMailbox,omitempty" json:"FailedMailbox,omitempty"`
+	FailedMailbox []*FailedSearchMailboxType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FailedMailbox,omitempty" json:"FailedMailbox,omitempty"`
 }
 
 type SearchMailboxesResultType struct {
-	XMLName xml.Name `xml:"t:SearchMailboxesResult"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchMailboxesResult"`
 
-	SearchQueries *NonEmptyArrayOfMailboxQueriesType `xml:"t:SearchQueries,omitempty" json:"SearchQueries,omitempty"`
+	SearchQueries *NonEmptyArrayOfMailboxQueriesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchQueries,omitempty" json:"SearchQueries,omitempty"`
 
-	ResultType *SearchResultType `xml:"t:ResultType,omitempty" json:"ResultType,omitempty"`
+	ResultType *SearchResultType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ResultType,omitempty" json:"ResultType,omitempty"`
 
-	ItemCount int64 `xml:"t:ItemCount,omitempty" json:"ItemCount,omitempty"`
+	ItemCount int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemCount,omitempty" json:"ItemCount,omitempty"`
 
-	Size int64 `xml:"t:Size,omitempty" json:"Size,omitempty"`
+	Size int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Size,omitempty" json:"Size,omitempty"`
 
-	PageItemCount int32 `xml:"t:PageItemCount,omitempty" json:"PageItemCount,omitempty"`
+	PageItemCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types PageItemCount,omitempty" json:"PageItemCount,omitempty"`
 
-	PageItemSize int64 `xml:"t:PageItemSize,omitempty" json:"PageItemSize,omitempty"`
+	PageItemSize int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types PageItemSize,omitempty" json:"PageItemSize,omitempty"`
 
-	KeywordStats *ArrayOfKeywordStatisticsSearchResultsType `xml:"t:KeywordStats,omitempty" json:"KeywordStats,omitempty"`
+	KeywordStats *ArrayOfKeywordStatisticsSearchResultsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types KeywordStats,omitempty" json:"KeywordStats,omitempty"`
 
-	Items *ArrayOfSearchPreviewItemsType `xml:"t:Items,omitempty" json:"Items,omitempty"`
+	Items *ArrayOfSearchPreviewItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Items,omitempty" json:"Items,omitempty"`
 
-	FailedMailboxes *ArrayOfFailedSearchMailboxesType `xml:"t:FailedMailboxes,omitempty" json:"FailedMailboxes,omitempty"`
+	FailedMailboxes *ArrayOfFailedSearchMailboxesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FailedMailboxes,omitempty" json:"FailedMailboxes,omitempty"`
 
-	Refiners *ArrayOfSearchRefinerItemsType `xml:"t:Refiners,omitempty" json:"Refiners,omitempty"`
+	Refiners *ArrayOfSearchRefinerItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Refiners,omitempty" json:"Refiners,omitempty"`
 
-	MailboxStats *ArrayOfMailboxStatisticsItemsType `xml:"t:MailboxStats,omitempty" json:"MailboxStats,omitempty"`
+	MailboxStats *ArrayOfMailboxStatisticsItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxStats,omitempty" json:"MailboxStats,omitempty"`
 }
 
 type SearchRefinerItemType struct {
-	XMLName xml.Name `xml:"t:Refiner"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Refiner"`
 
-	Name string `xml:"t:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Name,omitempty" json:"Name,omitempty"`
 
-	Value string `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 
-	Count int64 `xml:"t:Count,omitempty" json:"Count,omitempty"`
+	Count int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Count,omitempty" json:"Count,omitempty"`
 
-	Token string `xml:"t:Token,omitempty" json:"Token,omitempty"`
+	Token string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Token,omitempty" json:"Token,omitempty"`
 }
 
 type ArrayOfSearchRefinerItemsType struct {
-	XMLName xml.Name `xml:"t:Refiners"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Refiners"`
 
-	Refiner []*SearchRefinerItemType `xml:"t:Refiner,omitempty" json:"Refiner,omitempty"`
+	Refiner []*SearchRefinerItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Refiner,omitempty" json:"Refiner,omitempty"`
 }
 
 type OneDriveItemType struct {
 	*ItemType
 
-	ResourceId string `xml:"t:ResourceId,omitempty" json:"ResourceId,omitempty"`
+	ResourceId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ResourceId,omitempty" json:"ResourceId,omitempty"`
 }
 
 type FileItemType struct {
 	*ItemType
 
-	FileName string `xml:"t:FileName,omitempty" json:"FileName,omitempty"`
+	FileName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileName,omitempty" json:"FileName,omitempty"`
 
-	FileExtension string `xml:"t:FileExtension,omitempty" json:"FileExtension,omitempty"`
+	FileExtension string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileExtension,omitempty" json:"FileExtension,omitempty"`
 
-	FileSize int64 `xml:"t:FileSize,omitempty" json:"FileSize,omitempty"`
+	FileSize int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileSize,omitempty" json:"FileSize,omitempty"`
 
-	FileCreatedTime string `xml:"t:FileCreatedTime,omitempty" json:"FileCreatedTime,omitempty"`
+	FileCreatedTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileCreatedTime,omitempty" json:"FileCreatedTime,omitempty"`
 
-	FileModifiedTime string `xml:"t:FileModifiedTime,omitempty" json:"FileModifiedTime,omitempty"`
+	FileModifiedTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileModifiedTime,omitempty" json:"FileModifiedTime,omitempty"`
 
-	StorageProviderContext string `xml:"t:StorageProviderContext,omitempty" json:"StorageProviderContext,omitempty"`
+	StorageProviderContext string `xml:"http://schemas.microsoft.com/exchange/services/2006/types StorageProviderContext,omitempty" json:"StorageProviderContext,omitempty"`
 
-	FileID string `xml:"t:FileID,omitempty" json:"FileID,omitempty"`
+	FileID string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileID,omitempty" json:"FileID,omitempty"`
 
-	ItemReferenceId string `xml:"t:ItemReferenceId,omitempty" json:"ItemReferenceId,omitempty"`
+	ItemReferenceId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemReferenceId,omitempty" json:"ItemReferenceId,omitempty"`
 
-	ReferenceId string `xml:"t:ReferenceId,omitempty" json:"ReferenceId,omitempty"`
+	ReferenceId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReferenceId,omitempty" json:"ReferenceId,omitempty"`
 
-	Sender string `xml:"t:Sender,omitempty" json:"Sender,omitempty"`
+	Sender string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Sender,omitempty" json:"Sender,omitempty"`
 
-	ItemReceivedTime string `xml:"t:ItemReceivedTime,omitempty" json:"ItemReceivedTime,omitempty"`
+	ItemReceivedTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemReceivedTime,omitempty" json:"ItemReceivedTime,omitempty"`
 
-	ItemPath string `xml:"t:ItemPath,omitempty" json:"ItemPath,omitempty"`
+	ItemPath string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemPath,omitempty" json:"ItemPath,omitempty"`
 
-	ItemSentTime string `xml:"t:ItemSentTime,omitempty" json:"ItemSentTime,omitempty"`
+	ItemSentTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemSentTime,omitempty" json:"ItemSentTime,omitempty"`
 
-	FileContexts *ArrayOfStringsType `xml:"t:FileContexts,omitempty" json:"FileContexts,omitempty"`
+	FileContexts *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileContexts,omitempty" json:"FileContexts,omitempty"`
 
-	VisualizationContainerUrl string `xml:"t:VisualizationContainerUrl,omitempty" json:"VisualizationContainerUrl,omitempty"`
+	VisualizationContainerUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types VisualizationContainerUrl,omitempty" json:"VisualizationContainerUrl,omitempty"`
 
-	VisualizationContainerTitle string `xml:"t:VisualizationContainerTitle,omitempty" json:"VisualizationContainerTitle,omitempty"`
+	VisualizationContainerTitle string `xml:"http://schemas.microsoft.com/exchange/services/2006/types VisualizationContainerTitle,omitempty" json:"VisualizationContainerTitle,omitempty"`
 
-	VisualizationAccessUrl string `xml:"t:VisualizationAccessUrl,omitempty" json:"VisualizationAccessUrl,omitempty"`
+	VisualizationAccessUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types VisualizationAccessUrl,omitempty" json:"VisualizationAccessUrl,omitempty"`
 
-	ReferenceAttachmentProviderEndpoint string `xml:"t:ReferenceAttachmentProviderEndpoint,omitempty" json:"ReferenceAttachmentProviderEndpoint,omitempty"`
+	ReferenceAttachmentProviderEndpoint string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReferenceAttachmentProviderEndpoint,omitempty" json:"ReferenceAttachmentProviderEndpoint,omitempty"`
 
-	ReferenceAttachmentProviderType string `xml:"t:ReferenceAttachmentProviderType,omitempty" json:"ReferenceAttachmentProviderType,omitempty"`
+	ReferenceAttachmentProviderType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReferenceAttachmentProviderType,omitempty" json:"ReferenceAttachmentProviderType,omitempty"`
 
-	ItemConversationId string `xml:"t:ItemConversationId,omitempty" json:"ItemConversationId,omitempty"`
+	ItemConversationId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemConversationId,omitempty" json:"ItemConversationId,omitempty"`
 
-	SharepointItemListId *GuidType `xml:"t:SharepointItemListId,omitempty" json:"SharepointItemListId,omitempty"`
+	SharepointItemListId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharepointItemListId,omitempty" json:"SharepointItemListId,omitempty"`
 
-	SharepointItemListItemId string `xml:"t:SharepointItemListItemId,omitempty" json:"SharepointItemListItemId,omitempty"`
+	SharepointItemListItemId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharepointItemListItemId,omitempty" json:"SharepointItemListItemId,omitempty"`
 
-	SharepointItemSiteId *GuidType `xml:"t:SharepointItemSiteId,omitempty" json:"SharepointItemSiteId,omitempty"`
+	SharepointItemSiteId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharepointItemSiteId,omitempty" json:"SharepointItemSiteId,omitempty"`
 
-	SharepointItemSitePath string `xml:"t:SharepointItemSitePath,omitempty" json:"SharepointItemSitePath,omitempty"`
+	SharepointItemSitePath string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharepointItemSitePath,omitempty" json:"SharepointItemSitePath,omitempty"`
 
-	SharepointItemWebId *GuidType `xml:"t:SharepointItemWebId,omitempty" json:"SharepointItemWebId,omitempty"`
+	SharepointItemWebId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharepointItemWebId,omitempty" json:"SharepointItemWebId,omitempty"`
 
-	AttachmentId string `xml:"t:AttachmentId,omitempty" json:"AttachmentId,omitempty"`
+	AttachmentId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttachmentId,omitempty" json:"AttachmentId,omitempty"`
 }
 
 type DocumentFileItemType struct {
 	*FileItemType
 
-	Author *ArrayOfStringsType `xml:"t:Author,omitempty" json:"Author,omitempty"`
+	Author *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Author,omitempty" json:"Author,omitempty"`
 
-	Title string `xml:"t:Title,omitempty" json:"Title,omitempty"`
+	Title string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Title,omitempty" json:"Title,omitempty"`
 
-	LastModifiedBy string `xml:"t:LastModifiedBy,omitempty" json:"LastModifiedBy,omitempty"`
+	LastModifiedBy string `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastModifiedBy,omitempty" json:"LastModifiedBy,omitempty"`
 }
 
 type DelveItemType struct {
 	*ItemType
 
-	GraphNodeLogicalId string `xml:"t:GraphNodeLogicalId,omitempty" json:"GraphNodeLogicalId,omitempty"`
+	GraphNodeLogicalId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types GraphNodeLogicalId,omitempty" json:"GraphNodeLogicalId,omitempty"`
 }
 
 type MailboxStatisticsItemType struct {
-	XMLName xml.Name `xml:"t:MailboxStat"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxStat"`
 
-	MailboxId string `xml:"t:MailboxId,omitempty" json:"MailboxId,omitempty"`
+	MailboxId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxId,omitempty" json:"MailboxId,omitempty"`
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	ItemCount int64 `xml:"t:ItemCount,omitempty" json:"ItemCount,omitempty"`
+	ItemCount int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemCount,omitempty" json:"ItemCount,omitempty"`
 
-	Size int64 `xml:"t:Size,omitempty" json:"Size,omitempty"`
+	Size int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Size,omitempty" json:"Size,omitempty"`
 }
 
 type ArrayOfMailboxStatisticsItemsType struct {
-	XMLName xml.Name `xml:"t:MailboxStats"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxStats"`
 
-	MailboxStat []*MailboxStatisticsItemType `xml:"t:MailboxStat,omitempty" json:"MailboxStat,omitempty"`
+	MailboxStat []*MailboxStatisticsItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxStat,omitempty" json:"MailboxStat,omitempty"`
 }
 
 type MailboxHoldStatusType struct {
-	XMLName xml.Name `xml:"t:MailboxHoldStatus"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxHoldStatus"`
 
-	Mailbox string `xml:"t:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailbox,omitempty" json:"Mailbox,omitempty"`
 
-	Status *HoldStatusType `xml:"t:Status,omitempty" json:"Status,omitempty"`
+	Status *HoldStatusType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Status,omitempty" json:"Status,omitempty"`
 
-	AdditionalInfo string `xml:"t:AdditionalInfo,omitempty" json:"AdditionalInfo,omitempty"`
+	AdditionalInfo string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AdditionalInfo,omitempty" json:"AdditionalInfo,omitempty"`
 }
 
 type ArrayOfMailboxHoldStatusType struct {
-	XMLName xml.Name `xml:"t:MailboxHoldStatuses"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxHoldStatuses"`
 
-	MailboxHoldStatus []*MailboxHoldStatusType `xml:"t:MailboxHoldStatus,omitempty" json:"MailboxHoldStatus,omitempty"`
+	MailboxHoldStatus []*MailboxHoldStatusType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxHoldStatus,omitempty" json:"MailboxHoldStatus,omitempty"`
 }
 
 type MailboxHoldResultType struct {
-	HoldId string `xml:"t:HoldId,omitempty" json:"HoldId,omitempty"`
+	HoldId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types HoldId,omitempty" json:"HoldId,omitempty"`
 
-	Query string `xml:"t:Query,omitempty" json:"Query,omitempty"`
+	Query string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Query,omitempty" json:"Query,omitempty"`
 
-	MailboxHoldStatuses *ArrayOfMailboxHoldStatusType `xml:"t:MailboxHoldStatuses,omitempty" json:"MailboxHoldStatuses,omitempty"`
+	MailboxHoldStatuses *ArrayOfMailboxHoldStatusType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxHoldStatuses,omitempty" json:"MailboxHoldStatuses,omitempty"`
 }
 
 type NonEmptyArrayOfLegacyDNsType struct {
-	LegacyDN []string `xml:"t:LegacyDN,omitempty" json:"LegacyDN,omitempty"`
+	LegacyDN []string `xml:"http://schemas.microsoft.com/exchange/services/2006/types LegacyDN,omitempty" json:"LegacyDN,omitempty"`
 }
 
 type NonIndexableItemStatisticType struct {
-	XMLName xml.Name `xml:"t:NonIndexableItemStatistic"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types NonIndexableItemStatistic"`
 
-	Mailbox string `xml:"t:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mailbox,omitempty" json:"Mailbox,omitempty"`
 
-	ItemCount int64 `xml:"t:ItemCount,omitempty" json:"ItemCount,omitempty"`
+	ItemCount int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemCount,omitempty" json:"ItemCount,omitempty"`
 
-	ErrorMessage string `xml:"t:ErrorMessage,omitempty" json:"ErrorMessage,omitempty"`
+	ErrorMessage string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ErrorMessage,omitempty" json:"ErrorMessage,omitempty"`
 }
 
 type ArrayOfNonIndexableItemStatisticsType struct {
-	XMLName xml.Name `xml:"t:NonIndexableItemStatistics"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types NonIndexableItemStatistics"`
 
-	NonIndexableItemStatistic []*NonIndexableItemStatisticType `xml:"t:NonIndexableItemStatistic,omitempty" json:"NonIndexableItemStatistic,omitempty"`
+	NonIndexableItemStatistic []*NonIndexableItemStatisticType `xml:"http://schemas.microsoft.com/exchange/services/2006/types NonIndexableItemStatistic,omitempty" json:"NonIndexableItemStatistic,omitempty"`
 }
 
 type NonIndexableItemDetailType struct {
-	XMLName xml.Name `xml:"t:NonIndexableItemDetail"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types NonIndexableItemDetail"`
 
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 
-	ErrorCode *ItemIndexErrorType `xml:"t:ErrorCode,omitempty" json:"ErrorCode,omitempty"`
+	ErrorCode *ItemIndexErrorType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ErrorCode,omitempty" json:"ErrorCode,omitempty"`
 
-	ErrorDescription string `xml:"t:ErrorDescription,omitempty" json:"ErrorDescription,omitempty"`
+	ErrorDescription string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ErrorDescription,omitempty" json:"ErrorDescription,omitempty"`
 
-	IsPartiallyIndexed bool `xml:"t:IsPartiallyIndexed,omitempty" json:"IsPartiallyIndexed,omitempty"`
+	IsPartiallyIndexed bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsPartiallyIndexed,omitempty" json:"IsPartiallyIndexed,omitempty"`
 
-	IsPermanentFailure bool `xml:"t:IsPermanentFailure,omitempty" json:"IsPermanentFailure,omitempty"`
+	IsPermanentFailure bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsPermanentFailure,omitempty" json:"IsPermanentFailure,omitempty"`
 
-	SortValue string `xml:"t:SortValue,omitempty" json:"SortValue,omitempty"`
+	SortValue string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SortValue,omitempty" json:"SortValue,omitempty"`
 
-	AttemptCount int32 `xml:"t:AttemptCount,omitempty" json:"AttemptCount,omitempty"`
+	AttemptCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttemptCount,omitempty" json:"AttemptCount,omitempty"`
 
-	LastAttemptTime xsd.DateTime `xml:"t:LastAttemptTime,omitempty" json:"LastAttemptTime,omitempty"`
+	LastAttemptTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types LastAttemptTime,omitempty" json:"LastAttemptTime,omitempty"`
 
-	AdditionalInfo string `xml:"t:AdditionalInfo,omitempty" json:"AdditionalInfo,omitempty"`
+	AdditionalInfo string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AdditionalInfo,omitempty" json:"AdditionalInfo,omitempty"`
 }
 
 type ArrayOfNonIndexableItemDetailsType struct {
-	XMLName xml.Name `xml:"t:Items"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Items"`
 
-	NonIndexableItemDetail []*NonIndexableItemDetailType `xml:"t:NonIndexableItemDetail,omitempty" json:"NonIndexableItemDetail,omitempty"`
+	NonIndexableItemDetail []*NonIndexableItemDetailType `xml:"http://schemas.microsoft.com/exchange/services/2006/types NonIndexableItemDetail,omitempty" json:"NonIndexableItemDetail,omitempty"`
 }
 
 type NonIndexableItemDetailResultType struct {
-	XMLName xml.Name `xml:"t:NonIndexableItemDetailsResult"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types NonIndexableItemDetailsResult"`
 
-	Items *ArrayOfNonIndexableItemDetailsType `xml:"t:Items,omitempty" json:"Items,omitempty"`
+	Items *ArrayOfNonIndexableItemDetailsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Items,omitempty" json:"Items,omitempty"`
 
-	FailedMailboxes *ArrayOfFailedSearchMailboxesType `xml:"t:FailedMailboxes,omitempty" json:"FailedMailboxes,omitempty"`
+	FailedMailboxes *ArrayOfFailedSearchMailboxesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FailedMailboxes,omitempty" json:"FailedMailboxes,omitempty"`
 }
 
 type DiscoverySearchConfigurationType struct {
-	XMLName xml.Name `xml:"t:DiscoverySearchConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DiscoverySearchConfiguration"`
 
-	SearchId string `xml:"t:SearchId,omitempty" json:"SearchId,omitempty"`
+	SearchId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchId,omitempty" json:"SearchId,omitempty"`
 
-	SearchQuery string `xml:"t:SearchQuery,omitempty" json:"SearchQuery,omitempty"`
+	SearchQuery string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchQuery,omitempty" json:"SearchQuery,omitempty"`
 
-	SearchableMailboxes *ArrayOfSearchableMailboxesType `xml:"t:SearchableMailboxes,omitempty" json:"SearchableMailboxes,omitempty"`
+	SearchableMailboxes *ArrayOfSearchableMailboxesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchableMailboxes,omitempty" json:"SearchableMailboxes,omitempty"`
 
-	InPlaceHoldIdentity string `xml:"t:InPlaceHoldIdentity,omitempty" json:"InPlaceHoldIdentity,omitempty"`
+	InPlaceHoldIdentity string `xml:"http://schemas.microsoft.com/exchange/services/2006/types InPlaceHoldIdentity,omitempty" json:"InPlaceHoldIdentity,omitempty"`
 
-	ManagedByOrganization string `xml:"t:ManagedByOrganization,omitempty" json:"ManagedByOrganization,omitempty"`
+	ManagedByOrganization string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ManagedByOrganization,omitempty" json:"ManagedByOrganization,omitempty"`
 
-	Language string `xml:"t:Language,omitempty" json:"Language,omitempty"`
+	Language string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Language,omitempty" json:"Language,omitempty"`
 }
 
 type ArrayOfDiscoverySearchConfigurationType struct {
-	XMLName xml.Name `xml:"t:DiscoverySearchConfigurations"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DiscoverySearchConfigurations"`
 
-	DiscoverySearchConfiguration []*DiscoverySearchConfigurationType `xml:"t:DiscoverySearchConfiguration,omitempty" json:"DiscoverySearchConfiguration,omitempty"`
+	DiscoverySearchConfiguration []*DiscoverySearchConfigurationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DiscoverySearchConfiguration,omitempty" json:"DiscoverySearchConfiguration,omitempty"`
 }
 
 type RetentionTagType struct {
@@ -9794,41 +9794,41 @@ type RetentionTagType struct {
 }
 
 type RetentionPolicyTagType struct {
-	XMLName xml.Name `xml:"t:RetentionPolicyTag"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RetentionPolicyTag"`
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	RetentionId *GuidType `xml:"t:RetentionId,omitempty" json:"RetentionId,omitempty"`
+	RetentionId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RetentionId,omitempty" json:"RetentionId,omitempty"`
 
-	RetentionPeriod int32 `xml:"t:RetentionPeriod,omitempty" json:"RetentionPeriod,omitempty"`
+	RetentionPeriod int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types RetentionPeriod,omitempty" json:"RetentionPeriod,omitempty"`
 
-	Type *ElcFolderType `xml:"t:Type,omitempty" json:"Type,omitempty"`
+	Type *ElcFolderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Type,omitempty" json:"Type,omitempty"`
 
-	RetentionAction *RetentionActionType `xml:"t:RetentionAction,omitempty" json:"RetentionAction,omitempty"`
+	RetentionAction *RetentionActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RetentionAction,omitempty" json:"RetentionAction,omitempty"`
 
-	Description string `xml:"t:Description,omitempty" json:"Description,omitempty"`
+	Description string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Description,omitempty" json:"Description,omitempty"`
 
-	IsVisible bool `xml:"t:IsVisible,omitempty" json:"IsVisible,omitempty"`
+	IsVisible bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsVisible,omitempty" json:"IsVisible,omitempty"`
 
-	OptedInto bool `xml:"t:OptedInto,omitempty" json:"OptedInto,omitempty"`
+	OptedInto bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types OptedInto,omitempty" json:"OptedInto,omitempty"`
 
-	IsArchive bool `xml:"t:IsArchive,omitempty" json:"IsArchive,omitempty"`
+	IsArchive bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsArchive,omitempty" json:"IsArchive,omitempty"`
 
-	ParentLabelIdentity string `xml:"t:ParentLabelIdentity,omitempty" json:"ParentLabelIdentity,omitempty"`
+	ParentLabelIdentity string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ParentLabelIdentity,omitempty" json:"ParentLabelIdentity,omitempty"`
 
-	Priority int32 `xml:"t:Priority,omitempty" json:"Priority,omitempty"`
+	Priority int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Priority,omitempty" json:"Priority,omitempty"`
 }
 
 type ArrayOfRetentionPolicyTagsType struct {
-	XMLName xml.Name `xml:"t:RetentionPolicyTags"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types RetentionPolicyTags"`
 
-	RetentionPolicyTag []*RetentionPolicyTagType `xml:"t:RetentionPolicyTag,omitempty" json:"RetentionPolicyTag,omitempty"`
+	RetentionPolicyTag []*RetentionPolicyTagType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RetentionPolicyTag,omitempty" json:"RetentionPolicyTag,omitempty"`
 }
 
 type ClientExtensionType struct {
-	SpecificUsers *ArrayOfStringsType `xml:"t:SpecificUsers,omitempty" json:"SpecificUsers,omitempty"`
+	SpecificUsers *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SpecificUsers,omitempty" json:"SpecificUsers,omitempty"`
 
-	Manifest []byte `xml:"t:Manifest,omitempty" json:"Manifest,omitempty"`
+	Manifest []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types Manifest,omitempty" json:"Manifest,omitempty"`
 
 	IsAvailable bool `xml:"IsAvailable,attr,omitempty" json:"IsAvailable,omitempty"`
 
@@ -9854,817 +9854,817 @@ type ClientExtensionType struct {
 }
 
 type ImGroupType struct {
-	DisplayName *NonEmptyStringType `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	GroupType *NonEmptyStringType `xml:"t:GroupType,omitempty" json:"GroupType,omitempty"`
+	GroupType *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupType,omitempty" json:"GroupType,omitempty"`
 
-	ExchangeStoreId *ItemIdType `xml:"t:ExchangeStoreId,omitempty" json:"ExchangeStoreId,omitempty"`
+	ExchangeStoreId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExchangeStoreId,omitempty" json:"ExchangeStoreId,omitempty"`
 
-	MemberCorrelationKey *NonEmptyArrayOfItemIdsType `xml:"t:MemberCorrelationKey,omitempty" json:"MemberCorrelationKey,omitempty"`
+	MemberCorrelationKey *NonEmptyArrayOfItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MemberCorrelationKey,omitempty" json:"MemberCorrelationKey,omitempty"`
 
-	ExtendedProperties *NonEmptyArrayOfExtendedPropertyType `xml:"t:ExtendedProperties,omitempty" json:"ExtendedProperties,omitempty"`
+	ExtendedProperties *NonEmptyArrayOfExtendedPropertyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedProperties,omitempty" json:"ExtendedProperties,omitempty"`
 
-	SmtpAddress string `xml:"t:SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
+	SmtpAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
 }
 
 type ArrayOfImGroupType struct {
-	XMLName xml.Name `xml:"t:Groups"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Groups"`
 
-	ImGroup *ImGroupType `xml:"t:ImGroup,omitempty" json:"ImGroup,omitempty"`
+	ImGroup *ImGroupType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ImGroup,omitempty" json:"ImGroup,omitempty"`
 }
 
 type ImItemListType struct {
-	Groups *ArrayOfImGroupType `xml:"t:Groups,omitempty" json:"Groups,omitempty"`
+	Groups *ArrayOfImGroupType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Groups,omitempty" json:"Groups,omitempty"`
 
-	Personas *ArrayOfPeopleType `xml:"t:Personas,omitempty" json:"Personas,omitempty"`
+	Personas *ArrayOfPeopleType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Personas,omitempty" json:"Personas,omitempty"`
 }
 
 type NonEmptyArrayOfExtendedFieldURIs struct {
-	ExtendedProperty *PathToExtendedFieldType `xml:"t:ExtendedProperty,omitempty" json:"ExtendedProperty,omitempty"`
+	ExtendedProperty *PathToExtendedFieldType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedProperty,omitempty" json:"ExtendedProperty,omitempty"`
 }
 
 type NonEmptyStateDefinitionType struct {
-	DeletedOccurrenceStateDefinition *DeletedOccurrenceStateDefinitionType `xml:"t:DeletedOccurrenceStateDefinition,omitempty" json:"DeletedOccurrenceStateDefinition,omitempty"`
+	DeletedOccurrenceStateDefinition *DeletedOccurrenceStateDefinitionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeletedOccurrenceStateDefinition,omitempty" json:"DeletedOccurrenceStateDefinition,omitempty"`
 
-	DeleteFromFolderStateDefinition *DeleteFromFolderStateDefinitionType `xml:"t:DeleteFromFolderStateDefinition,omitempty" json:"DeleteFromFolderStateDefinition,omitempty"`
+	DeleteFromFolderStateDefinition *DeleteFromFolderStateDefinitionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeleteFromFolderStateDefinition,omitempty" json:"DeleteFromFolderStateDefinition,omitempty"`
 
-	LocationBasedStateDefinition *LocationBasedStateDefinitionType `xml:"t:LocationBasedStateDefinition,omitempty" json:"LocationBasedStateDefinition,omitempty"`
+	LocationBasedStateDefinition *LocationBasedStateDefinitionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types LocationBasedStateDefinition,omitempty" json:"LocationBasedStateDefinition,omitempty"`
 }
 
 type BaseCalendarItemStateDefinitionType struct {
 }
 
 type DeletedOccurrenceStateDefinitionType struct {
-	XMLName xml.Name `xml:"t:DeletedOccurrenceStateDefinition"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeletedOccurrenceStateDefinition"`
 
 	*BaseCalendarItemStateDefinitionType
 
-	OccurrenceDate xsd.DateTime `xml:"t:OccurrenceDate,omitempty" json:"OccurrenceDate,omitempty"`
+	OccurrenceDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types OccurrenceDate,omitempty" json:"OccurrenceDate,omitempty"`
 
-	IsOccurrencePresent bool `xml:"t:IsOccurrencePresent,omitempty" json:"IsOccurrencePresent,omitempty"`
+	IsOccurrencePresent bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsOccurrencePresent,omitempty" json:"IsOccurrencePresent,omitempty"`
 }
 
 type DeleteFromFolderStateDefinitionType struct {
-	XMLName xml.Name `xml:"t:DeleteFromFolderStateDefinition"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeleteFromFolderStateDefinition"`
 
 	*BaseCalendarItemStateDefinitionType
 }
 
 type LocationBasedStateDefinitionType struct {
-	XMLName xml.Name `xml:"t:LocationBasedStateDefinition"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types LocationBasedStateDefinition"`
 
 	*BaseCalendarItemStateDefinitionType
 
-	OrganizerLocation string `xml:"t:OrganizerLocation,omitempty" json:"OrganizerLocation,omitempty"`
+	OrganizerLocation string `xml:"http://schemas.microsoft.com/exchange/services/2006/types OrganizerLocation,omitempty" json:"OrganizerLocation,omitempty"`
 
-	AttendeeLocation string `xml:"t:AttendeeLocation,omitempty" json:"AttendeeLocation,omitempty"`
+	AttendeeLocation string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttendeeLocation,omitempty" json:"AttendeeLocation,omitempty"`
 }
 
 type MeetingSpaceType struct {
-	Id string `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	ChangeKey string `xml:"t:ChangeKey,omitempty" json:"ChangeKey,omitempty"`
+	ChangeKey string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ChangeKey,omitempty" json:"ChangeKey,omitempty"`
 
-	Type *MeetingSpaceTypeEnum `xml:"t:Type,omitempty" json:"Type,omitempty"`
+	Type *MeetingSpaceTypeEnum `xml:"http://schemas.microsoft.com/exchange/services/2006/types Type,omitempty" json:"Type,omitempty"`
 
-	Version string `xml:"t:Version,omitempty" json:"Version,omitempty"`
+	Version string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Version,omitempty" json:"Version,omitempty"`
 
-	JoinUrl string `xml:"t:JoinUrl,omitempty" json:"JoinUrl,omitempty"`
+	JoinUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types JoinUrl,omitempty" json:"JoinUrl,omitempty"`
 
-	DateTimeCreated string `xml:"t:DateTimeCreated,omitempty" json:"DateTimeCreated,omitempty"`
+	DateTimeCreated string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DateTimeCreated,omitempty" json:"DateTimeCreated,omitempty"`
 
-	DateTimeModified string `xml:"t:DateTimeModified,omitempty" json:"DateTimeModified,omitempty"`
+	DateTimeModified string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DateTimeModified,omitempty" json:"DateTimeModified,omitempty"`
 
-	ExpiryTime string `xml:"t:ExpiryTime,omitempty" json:"ExpiryTime,omitempty"`
+	ExpiryTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExpiryTime,omitempty" json:"ExpiryTime,omitempty"`
 
-	Meadata string `xml:"t:Meadata,omitempty" json:"Meadata,omitempty"`
+	Meadata string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Meadata,omitempty" json:"Meadata,omitempty"`
 
-	Tag string `xml:"t:Tag,omitempty" json:"Tag,omitempty"`
+	Tag string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Tag,omitempty" json:"Tag,omitempty"`
 }
 
 type ParticipantActivity struct {
-	Id *GuidType `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	CreatedBy string `xml:"t:CreatedBy,omitempty" json:"CreatedBy,omitempty"`
+	CreatedBy string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreatedBy,omitempty" json:"CreatedBy,omitempty"`
 
-	StartTime string `xml:"t:StartTime,omitempty" json:"StartTime,omitempty"`
+	StartTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTime,omitempty" json:"StartTime,omitempty"`
 
-	EndTime string `xml:"t:EndTime,omitempty" json:"EndTime,omitempty"`
+	EndTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndTime,omitempty" json:"EndTime,omitempty"`
 
-	ClientVersion string `xml:"t:ClientVersion,omitempty" json:"ClientVersion,omitempty"`
+	ClientVersion string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ClientVersion,omitempty" json:"ClientVersion,omitempty"`
 
-	Role *ParticipantActivityRole `xml:"t:Role,omitempty" json:"Role,omitempty"`
+	Role *ParticipantActivityRole `xml:"http://schemas.microsoft.com/exchange/services/2006/types Role,omitempty" json:"Role,omitempty"`
 
-	MediaType *ParticipantActivityMediaType `xml:"t:MediaType,omitempty" json:"MediaType,omitempty"`
+	MediaType *ParticipantActivityMediaType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MediaType,omitempty" json:"MediaType,omitempty"`
 
-	MediaDetails string `xml:"t:MediaDetails,omitempty" json:"MediaDetails,omitempty"`
+	MediaDetails string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MediaDetails,omitempty" json:"MediaDetails,omitempty"`
 }
 
 type NonEmptyArrayOfParticipantActivities struct {
-	ParticipantActivity []*ParticipantActivity `xml:"t:ParticipantActivity,omitempty" json:"ParticipantActivity,omitempty"`
+	ParticipantActivity []*ParticipantActivity `xml:"http://schemas.microsoft.com/exchange/services/2006/types ParticipantActivity,omitempty" json:"ParticipantActivity,omitempty"`
 }
 
 type ContentActivity struct {
-	Id *GuidType `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	SharedBy string `xml:"t:SharedBy,omitempty" json:"SharedBy,omitempty"`
+	SharedBy string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SharedBy,omitempty" json:"SharedBy,omitempty"`
 
-	ContentLocation string `xml:"t:ContentLocation,omitempty" json:"ContentLocation,omitempty"`
+	ContentLocation string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContentLocation,omitempty" json:"ContentLocation,omitempty"`
 
-	StartTime string `xml:"t:StartTime,omitempty" json:"StartTime,omitempty"`
+	StartTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTime,omitempty" json:"StartTime,omitempty"`
 
-	EndTime string `xml:"t:EndTime,omitempty" json:"EndTime,omitempty"`
+	EndTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndTime,omitempty" json:"EndTime,omitempty"`
 
-	Type *ContentActivityType `xml:"t:Type,omitempty" json:"Type,omitempty"`
+	Type *ContentActivityType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Type,omitempty" json:"Type,omitempty"`
 
-	MediaType *ContentActivityMediaType `xml:"t:MediaType,omitempty" json:"MediaType,omitempty"`
+	MediaType *ContentActivityMediaType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MediaType,omitempty" json:"MediaType,omitempty"`
 
-	Acl *ContentActivityAcl `xml:"t:Acl,omitempty" json:"Acl,omitempty"`
+	Acl *ContentActivityAcl `xml:"http://schemas.microsoft.com/exchange/services/2006/types Acl,omitempty" json:"Acl,omitempty"`
 }
 
 type NonEmptyArrayOfContentActivities struct {
-	ContentActivity []*ContentActivity `xml:"t:ContentActivity,omitempty" json:"ContentActivity,omitempty"`
+	ContentActivity []*ContentActivity `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContentActivity,omitempty" json:"ContentActivity,omitempty"`
 }
 
 type MeetingInstanceType struct {
-	Id string `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	ChangeKey string `xml:"t:ChangeKey,omitempty" json:"ChangeKey,omitempty"`
+	ChangeKey string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ChangeKey,omitempty" json:"ChangeKey,omitempty"`
 
-	Version string `xml:"t:Version,omitempty" json:"Version,omitempty"`
+	Version string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Version,omitempty" json:"Version,omitempty"`
 
-	JoinUrl string `xml:"t:JoinUrl,omitempty" json:"JoinUrl,omitempty"`
+	JoinUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types JoinUrl,omitempty" json:"JoinUrl,omitempty"`
 
-	DateTimeCreated string `xml:"t:DateTimeCreated,omitempty" json:"DateTimeCreated,omitempty"`
+	DateTimeCreated string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DateTimeCreated,omitempty" json:"DateTimeCreated,omitempty"`
 
-	DateTimeModified string `xml:"t:DateTimeModified,omitempty" json:"DateTimeModified,omitempty"`
+	DateTimeModified string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DateTimeModified,omitempty" json:"DateTimeModified,omitempty"`
 
-	Meadata string `xml:"t:Meadata,omitempty" json:"Meadata,omitempty"`
+	Meadata string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Meadata,omitempty" json:"Meadata,omitempty"`
 
-	Tag string `xml:"t:Tag,omitempty" json:"Tag,omitempty"`
+	Tag string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Tag,omitempty" json:"Tag,omitempty"`
 
-	ParentGoid string `xml:"t:ParentGoid,omitempty" json:"ParentGoid,omitempty"`
+	ParentGoid string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ParentGoid,omitempty" json:"ParentGoid,omitempty"`
 
-	ParticipantActivities *NonEmptyArrayOfParticipantActivities `xml:"t:ParticipantActivities,omitempty" json:"ParticipantActivities,omitempty"`
+	ParticipantActivities *NonEmptyArrayOfParticipantActivities `xml:"http://schemas.microsoft.com/exchange/services/2006/types ParticipantActivities,omitempty" json:"ParticipantActivities,omitempty"`
 
-	ContentActivities *NonEmptyArrayOfContentActivities `xml:"t:ContentActivities,omitempty" json:"ContentActivities,omitempty"`
+	ContentActivities *NonEmptyArrayOfContentActivities `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContentActivities,omitempty" json:"ContentActivities,omitempty"`
 }
 
 type SearchFolderScopeType struct {
-	FolderId *FolderIdType `xml:"t:FolderId,omitempty" json:"FolderId,omitempty"`
+	FolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderId,omitempty" json:"FolderId,omitempty"`
 
-	WellKnownFolder *DistinguishedFolderIdType `xml:"t:WellKnownFolder,omitempty" json:"WellKnownFolder,omitempty"`
+	WellKnownFolder *DistinguishedFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types WellKnownFolder,omitempty" json:"WellKnownFolder,omitempty"`
 }
 
 type PrimaryMailboxSearchScopeType struct {
-	XMLName xml.Name `xml:"t:PrimaryMailboxSearchScope"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types PrimaryMailboxSearchScope"`
 
-	FolderScope *SearchFolderScopeType `xml:"t:FolderScope,omitempty" json:"FolderScope,omitempty"`
+	FolderScope *SearchFolderScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderScope,omitempty" json:"FolderScope,omitempty"`
 
-	IsDeepTraversal bool `xml:"t:IsDeepTraversal,omitempty" json:"IsDeepTraversal,omitempty"`
+	IsDeepTraversal bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsDeepTraversal,omitempty" json:"IsDeepTraversal,omitempty"`
 }
 
 type LargeArchiveSearchScopeType struct {
-	XMLName xml.Name `xml:"t:LargeArchiveSearchScope"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types LargeArchiveSearchScope"`
 
-	ArchiveTypes *SearchScopeArchivesType `xml:"t:ArchiveTypes,omitempty" json:"ArchiveTypes,omitempty"`
+	ArchiveTypes *SearchScopeArchivesType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ArchiveTypes,omitempty" json:"ArchiveTypes,omitempty"`
 }
 
 type GroupSearchScopeType struct {
-	XMLName xml.Name `xml:"t:GroupSearchScope"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupSearchScope"`
 
-	GroupTypes *SearchScopeGroupsType `xml:"t:GroupTypes,omitempty" json:"GroupTypes,omitempty"`
+	GroupTypes *SearchScopeGroupsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupTypes,omitempty" json:"GroupTypes,omitempty"`
 }
 
 type SingleLargeArchiveSearchScopeType struct {
-	XMLName xml.Name `xml:"t:SingleLargeArchiveSearchScope"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SingleLargeArchiveSearchScope"`
 
-	MailboxGuid *GuidType `xml:"t:MailboxGuid,omitempty" json:"MailboxGuid,omitempty"`
+	MailboxGuid *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxGuid,omitempty" json:"MailboxGuid,omitempty"`
 
-	FolderScope *SearchFolderScopeType `xml:"t:FolderScope,omitempty" json:"FolderScope,omitempty"`
+	FolderScope *SearchFolderScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderScope,omitempty" json:"FolderScope,omitempty"`
 
-	IsDeepTraversal bool `xml:"t:IsDeepTraversal,omitempty" json:"IsDeepTraversal,omitempty"`
+	IsDeepTraversal bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsDeepTraversal,omitempty" json:"IsDeepTraversal,omitempty"`
 }
 
 type OneDriveSearchScopeType struct {
-	XMLName xml.Name `xml:"t:OneDriveSearchScope"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types OneDriveSearchScope"`
 
-	OneDriveView *OneDriveViewType `xml:"t:OneDriveView,omitempty" json:"OneDriveView,omitempty"`
+	OneDriveView *OneDriveViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OneDriveView,omitempty" json:"OneDriveView,omitempty"`
 }
 
 type DelveSearchScopeType struct {
-	XMLName xml.Name `xml:"t:DelveSearchScope"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types DelveSearchScope"`
 
-	DelveView *DelveViewType `xml:"t:DelveView,omitempty" json:"DelveView,omitempty"`
+	DelveView *DelveViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DelveView,omitempty" json:"DelveView,omitempty"`
 }
 
 type CustomSearchScopeType struct {
-	XMLName xml.Name `xml:"t:CustomSearchScope"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types CustomSearchScope"`
 
-	MailboxGuid *GuidType `xml:"t:MailboxGuid,omitempty" json:"MailboxGuid,omitempty"`
+	MailboxGuid *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxGuid,omitempty" json:"MailboxGuid,omitempty"`
 
-	FolderScope *SearchFolderScopeType `xml:"t:FolderScope,omitempty" json:"FolderScope,omitempty"`
+	FolderScope *SearchFolderScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderScope,omitempty" json:"FolderScope,omitempty"`
 
-	IsDeepTraversal bool `xml:"t:IsDeepTraversal,omitempty" json:"IsDeepTraversal,omitempty"`
+	IsDeepTraversal bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsDeepTraversal,omitempty" json:"IsDeepTraversal,omitempty"`
 }
 
 type ArrayOfSearchScopeType struct {
-	PrimaryMailboxSearchScope *PrimaryMailboxSearchScopeType `xml:"t:PrimaryMailboxSearchScope,omitempty" json:"PrimaryMailboxSearchScope,omitempty"`
+	PrimaryMailboxSearchScope *PrimaryMailboxSearchScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types PrimaryMailboxSearchScope,omitempty" json:"PrimaryMailboxSearchScope,omitempty"`
 
-	LargeArchiveSearchScope *LargeArchiveSearchScopeType `xml:"t:LargeArchiveSearchScope,omitempty" json:"LargeArchiveSearchScope,omitempty"`
+	LargeArchiveSearchScope *LargeArchiveSearchScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types LargeArchiveSearchScope,omitempty" json:"LargeArchiveSearchScope,omitempty"`
 
-	GroupSearchScope *GroupSearchScopeType `xml:"t:GroupSearchScope,omitempty" json:"GroupSearchScope,omitempty"`
+	GroupSearchScope *GroupSearchScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types GroupSearchScope,omitempty" json:"GroupSearchScope,omitempty"`
 
-	CustomSearchScope *CustomSearchScopeType `xml:"t:CustomSearchScope,omitempty" json:"CustomSearchScope,omitempty"`
+	CustomSearchScope *CustomSearchScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CustomSearchScope,omitempty" json:"CustomSearchScope,omitempty"`
 
-	OneDriveSearchScope *OneDriveSearchScopeType `xml:"t:OneDriveSearchScope,omitempty" json:"OneDriveSearchScope,omitempty"`
+	OneDriveSearchScope *OneDriveSearchScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OneDriveSearchScope,omitempty" json:"OneDriveSearchScope,omitempty"`
 
-	SingleLargeArchiveSearchScope *SingleLargeArchiveSearchScopeType `xml:"t:SingleLargeArchiveSearchScope,omitempty" json:"SingleLargeArchiveSearchScope,omitempty"`
+	SingleLargeArchiveSearchScope *SingleLargeArchiveSearchScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SingleLargeArchiveSearchScope,omitempty" json:"SingleLargeArchiveSearchScope,omitempty"`
 
-	DelveSearchScope *DelveSearchScopeType `xml:"t:DelveSearchScope,omitempty" json:"DelveSearchScope,omitempty"`
+	DelveSearchScope *DelveSearchScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DelveSearchScope,omitempty" json:"DelveSearchScope,omitempty"`
 }
 
 type DynamicRefinerQueryType struct {
-	RefinerQuery string `xml:"t:RefinerQuery,omitempty" json:"RefinerQuery,omitempty"`
+	RefinerQuery string `xml:"http://schemas.microsoft.com/exchange/services/2006/types RefinerQuery,omitempty" json:"RefinerQuery,omitempty"`
 
-	TDRefinerId int32 `xml:"t:TDRefinerId,omitempty" json:"TDRefinerId,omitempty"`
+	TDRefinerId int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types TDRefinerId,omitempty" json:"TDRefinerId,omitempty"`
 }
 
 type ExtendedKeywordDefinitionType struct {
-	XMLName xml.Name `xml:"t:ExtendedKeywordDefinition"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtendedKeywordDefinition"`
 
-	Keyword string `xml:"t:Keyword,omitempty" json:"Keyword,omitempty"`
+	Keyword string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Keyword,omitempty" json:"Keyword,omitempty"`
 
-	Properties *NonEmptyArrayOfExtendedFieldURIsType `xml:"t:Properties,omitempty" json:"Properties,omitempty"`
+	Properties *NonEmptyArrayOfExtendedFieldURIsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Properties,omitempty" json:"Properties,omitempty"`
 }
 
 type SuggestionType struct {
-	XMLName xml.Name `xml:"t:Suggestion"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Suggestion"`
 
-	SuggestedQuery string `xml:"t:SuggestedQuery,omitempty" json:"SuggestedQuery,omitempty"`
+	SuggestedQuery string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SuggestedQuery,omitempty" json:"SuggestedQuery,omitempty"`
 
-	DisplayText string `xml:"t:DisplayText,omitempty" json:"DisplayText,omitempty"`
+	DisplayText string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayText,omitempty" json:"DisplayText,omitempty"`
 
-	SuggestionType *SuggestionKindType `xml:"t:SuggestionType,omitempty" json:"SuggestionType,omitempty"`
+	SuggestionType *SuggestionKindType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SuggestionType,omitempty" json:"SuggestionType,omitempty"`
 
-	Trigger string `xml:"t:Trigger,omitempty" json:"Trigger,omitempty"`
+	Trigger string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Trigger,omitempty" json:"Trigger,omitempty"`
 
-	TDSuggestionId int32 `xml:"t:TDSuggestionId,omitempty" json:"TDSuggestionId,omitempty"`
+	TDSuggestionId int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types TDSuggestionId,omitempty" json:"TDSuggestionId,omitempty"`
 
-	IsDeletable bool `xml:"t:IsDeletable,omitempty" json:"IsDeletable,omitempty"`
+	IsDeletable bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsDeletable,omitempty" json:"IsDeletable,omitempty"`
 }
 
 type PeopleSuggestionType struct {
 	*SuggestionType
 
-	PrimarySmtpAddress string `xml:"t:PrimarySmtpAddress,omitempty" json:"PrimarySmtpAddress,omitempty"`
+	PrimarySmtpAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PrimarySmtpAddress,omitempty" json:"PrimarySmtpAddress,omitempty"`
 
-	PersonType string `xml:"t:PersonType,omitempty" json:"PersonType,omitempty"`
+	PersonType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types PersonType,omitempty" json:"PersonType,omitempty"`
 }
 
 type FileSuggestionType struct {
 	*SuggestionType
 
-	FileName string `xml:"t:FileName,omitempty" json:"FileName,omitempty"`
+	FileName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileName,omitempty" json:"FileName,omitempty"`
 
-	FileExtension string `xml:"t:FileExtension,omitempty" json:"FileExtension,omitempty"`
+	FileExtension string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileExtension,omitempty" json:"FileExtension,omitempty"`
 
-	FileReferenceId string `xml:"t:FileReferenceId,omitempty" json:"FileReferenceId,omitempty"`
+	FileReferenceId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileReferenceId,omitempty" json:"FileReferenceId,omitempty"`
 
-	FileTitle string `xml:"t:FileTitle,omitempty" json:"FileTitle,omitempty"`
+	FileTitle string `xml:"http://schemas.microsoft.com/exchange/services/2006/types FileTitle,omitempty" json:"FileTitle,omitempty"`
 
-	ContainerTitle string `xml:"t:ContainerTitle,omitempty" json:"ContainerTitle,omitempty"`
+	ContainerTitle string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContainerTitle,omitempty" json:"ContainerTitle,omitempty"`
 
-	ContainerUrl string `xml:"t:ContainerUrl,omitempty" json:"ContainerUrl,omitempty"`
+	ContainerUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContainerUrl,omitempty" json:"ContainerUrl,omitempty"`
 }
 
 type SearchSuggestionsType struct {
-	XMLName xml.Name `xml:"t:SearchSuggestions"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchSuggestions"`
 
-	TDSuggestionsBatchId int64 `xml:"t:TDSuggestionsBatchId,omitempty" json:"TDSuggestionsBatchId,omitempty"`
+	TDSuggestionsBatchId int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types TDSuggestionsBatchId,omitempty" json:"TDSuggestionsBatchId,omitempty"`
 
-	TDSuggestionsInstanceId *GuidType `xml:"t:TDSuggestionsInstanceId,omitempty" json:"TDSuggestionsInstanceId,omitempty"`
+	TDSuggestionsInstanceId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types TDSuggestionsInstanceId,omitempty" json:"TDSuggestionsInstanceId,omitempty"`
 
 	Suggestions struct {
-		Suggestion []*SuggestionType `xml:"t:Suggestion,omitempty" json:"Suggestion,omitempty"`
+		Suggestion []*SuggestionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Suggestion,omitempty" json:"Suggestion,omitempty"`
 	} `Suggestions,omitempty" json:"Suggestions,omitempty"`
 
-	DiagnosticsData *SearchDiagnosticsType `xml:"t:DiagnosticsData,omitempty" json:"DiagnosticsData,omitempty"`
+	DiagnosticsData *SearchDiagnosticsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DiagnosticsData,omitempty" json:"DiagnosticsData,omitempty"`
 }
 
 type DeleteSearchSuggestionResponseType struct {
-	XMLName xml.Name `xml:"t:Response"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Response"`
 
-	Success bool `xml:"t:Success,omitempty" json:"Success,omitempty"`
+	Success bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types Success,omitempty" json:"Success,omitempty"`
 
-	StatusMessage string `xml:"t:StatusMessage,omitempty" json:"StatusMessage,omitempty"`
+	StatusMessage string `xml:"http://schemas.microsoft.com/exchange/services/2006/types StatusMessage,omitempty" json:"StatusMessage,omitempty"`
 
-	DiagnosticsData *SearchDiagnosticsType `xml:"t:DiagnosticsData,omitempty" json:"DiagnosticsData,omitempty"`
+	DiagnosticsData *SearchDiagnosticsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DiagnosticsData,omitempty" json:"DiagnosticsData,omitempty"`
 }
 
 type SearchDiagnosticsStepType struct {
-	StartTime string `xml:"t:StartTime,omitempty" json:"StartTime,omitempty"`
+	StartTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTime,omitempty" json:"StartTime,omitempty"`
 
-	StepTime int64 `xml:"t:StepTime,omitempty" json:"StepTime,omitempty"`
+	StepTime int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types StepTime,omitempty" json:"StepTime,omitempty"`
 
-	StepType string `xml:"t:StepType,omitempty" json:"StepType,omitempty"`
+	StepType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types StepType,omitempty" json:"StepType,omitempty"`
 
 	AdditionalEntries struct {
-		Entry []string `xml:"t:Entry,omitempty" json:"Entry,omitempty"`
+		Entry []string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Entry,omitempty" json:"Entry,omitempty"`
 	} `AdditionalEntries,omitempty" json:"AdditionalEntries,omitempty"`
 }
 
 type SearchRefinerType struct {
-	XMLName xml.Name `xml:"t:SearchRefiner"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchRefiner"`
 
-	RefinerType *RefinerTypeType `xml:"t:RefinerType,omitempty" json:"RefinerType,omitempty"`
+	RefinerType *RefinerTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types RefinerType,omitempty" json:"RefinerType,omitempty"`
 
-	Refiner *DynamicRefinerQueryType `xml:"t:Refiner,omitempty" json:"Refiner,omitempty"`
+	Refiner *DynamicRefinerQueryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Refiner,omitempty" json:"Refiner,omitempty"`
 
-	ResultCount int64 `xml:"t:ResultCount,omitempty" json:"ResultCount,omitempty"`
+	ResultCount int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ResultCount,omitempty" json:"ResultCount,omitempty"`
 }
 
 type FolderRefinerType struct {
 	*SearchRefinerType
 
-	FolderId *FolderIdType `xml:"t:FolderId,omitempty" json:"FolderId,omitempty"`
+	FolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FolderId,omitempty" json:"FolderId,omitempty"`
 }
 
 type PeopleRefinerType struct {
 	*SearchRefinerType
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	SmtpAddress *SmtpAddressType `xml:"t:SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
+	SmtpAddress *SmtpAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
 }
 
 type MailboxRefinerType struct {
 	*SearchRefinerType
 
-	MailboxDisplayName string `xml:"t:MailboxDisplayName,omitempty" json:"MailboxDisplayName,omitempty"`
+	MailboxDisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxDisplayName,omitempty" json:"MailboxDisplayName,omitempty"`
 }
 
 type AttachmentRefinerType struct {
 	*SearchRefinerType
 
-	HasAttachment bool `xml:"t:HasAttachment,omitempty" json:"HasAttachment,omitempty"`
+	HasAttachment bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types HasAttachment,omitempty" json:"HasAttachment,omitempty"`
 }
 
 type HashtagRefinerType struct {
 	*SearchRefinerType
 
-	DisplayName string `xml:"t:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DisplayName,omitempty" json:"DisplayName,omitempty"`
 }
 
 type SearchDiagnosticsType struct {
 }
 
 type MailboxInformationType struct {
-	XMLName xml.Name `xml:"t:MailboxInformation"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxInformation"`
 }
 
 type ExecuteSearchQueryIdType struct {
-	XMLName xml.Name `xml:"t:QueryId"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types QueryId"`
 
 	Id *GuidType `xml:"Id,attr,omitempty" json:"Id,omitempty"`
 }
 
 type SearchResultsType struct {
-	XMLName xml.Name `xml:"t:SearchResults"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchResults"`
 
 	Items struct {
-		Item []*ItemType `xml:"t:Item,omitempty" json:"Item,omitempty"`
+		Item []*ItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Item,omitempty" json:"Item,omitempty"`
 	} `Items,omitempty" json:"Items,omitempty"`
 
 	Conversations struct {
-		Conversation []*ConversationType `xml:"t:Conversation,omitempty" json:"Conversation,omitempty"`
+		Conversation []*ConversationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Conversation,omitempty" json:"Conversation,omitempty"`
 	} `Conversations,omitempty" json:"Conversations,omitempty"`
 
 	People struct {
-		Persona []*PersonaType `xml:"t:Persona,omitempty" json:"Persona,omitempty"`
+		Persona []*PersonaType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Persona,omitempty" json:"Persona,omitempty"`
 	} `People,omitempty" json:"People,omitempty"`
 
-	MoreResultsAvailable bool `xml:"t:MoreResultsAvailable,omitempty" json:"MoreResultsAvailable,omitempty"`
+	MoreResultsAvailable bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types MoreResultsAvailable,omitempty" json:"MoreResultsAvailable,omitempty"`
 
-	RefinerTelemetryBatchId int32 `xml:"t:RefinerTelemetryBatchId,omitempty" json:"RefinerTelemetryBatchId,omitempty"`
+	RefinerTelemetryBatchId int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types RefinerTelemetryBatchId,omitempty" json:"RefinerTelemetryBatchId,omitempty"`
 
 	SearchRefiners struct {
-		SearchRefiner []*SearchRefinerType `xml:"t:SearchRefiner,omitempty" json:"SearchRefiner,omitempty"`
+		SearchRefiner []*SearchRefinerType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchRefiner,omitempty" json:"SearchRefiner,omitempty"`
 	} `SearchRefiners,omitempty" json:"SearchRefiners,omitempty"`
 
-	DiagnosticsData *SearchDiagnosticsType `xml:"t:DiagnosticsData,omitempty" json:"DiagnosticsData,omitempty"`
+	DiagnosticsData *SearchDiagnosticsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types DiagnosticsData,omitempty" json:"DiagnosticsData,omitempty"`
 
-	SearchResultsCount int32 `xml:"t:SearchResultsCount,omitempty" json:"SearchResultsCount,omitempty"`
+	SearchResultsCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchResultsCount,omitempty" json:"SearchResultsCount,omitempty"`
 
-	TotalResultsCount int32 `xml:"t:TotalResultsCount,omitempty" json:"TotalResultsCount,omitempty"`
+	TotalResultsCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types TotalResultsCount,omitempty" json:"TotalResultsCount,omitempty"`
 
-	SearchTerms *ArrayOfStringsType `xml:"t:SearchTerms,omitempty" json:"SearchTerms,omitempty"`
+	SearchTerms *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchTerms,omitempty" json:"SearchTerms,omitempty"`
 
-	QueryId *ExecuteSearchQueryIdType `xml:"t:QueryId,omitempty" json:"QueryId,omitempty"`
+	QueryId *ExecuteSearchQueryIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types QueryId,omitempty" json:"QueryId,omitempty"`
 
 	MailboxesInformation struct {
-		MailboxInformation []*MailboxInformationType `xml:"t:MailboxInformation,omitempty" json:"MailboxInformation,omitempty"`
+		MailboxInformation []*MailboxInformationType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MailboxInformation,omitempty" json:"MailboxInformation,omitempty"`
 	} `MailboxesInformation,omitempty" json:"MailboxesInformation,omitempty"`
 }
 
 type SearchResultItemIdType struct {
 	*ItemIdType
 
-	EntryId []byte `xml:"t:EntryId,omitempty" json:"EntryId,omitempty"`
+	EntryId []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types EntryId,omitempty" json:"EntryId,omitempty"`
 
-	OutlookItemId []byte `xml:"t:OutlookItemId,omitempty" json:"OutlookItemId,omitempty"`
+	OutlookItemId []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types OutlookItemId,omitempty" json:"OutlookItemId,omitempty"`
 }
 
 type SearchResultConversationIdType struct {
 	*ItemIdType
 
-	OutlookConversationId []byte `xml:"t:OutlookConversationId,omitempty" json:"OutlookConversationId,omitempty"`
+	OutlookConversationId []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types OutlookConversationId,omitempty" json:"OutlookConversationId,omitempty"`
 }
 
 type ArrayOfWorkHours struct {
-	WorkHours *WorkHoursType `xml:"t:WorkHours,omitempty" json:"WorkHours,omitempty"`
+	WorkHours *WorkHoursType `xml:"http://schemas.microsoft.com/exchange/services/2006/types WorkHours,omitempty" json:"WorkHours,omitempty"`
 }
 
 type WorkHoursType struct {
-	XMLName xml.Name `xml:"t:WorkHours"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types WorkHours"`
 
-	WorkDay *SystemDayOfWeek `xml:"t:WorkDay,omitempty" json:"WorkDay,omitempty"`
+	WorkDay *SystemDayOfWeek `xml:"http://schemas.microsoft.com/exchange/services/2006/types WorkDay,omitempty" json:"WorkDay,omitempty"`
 
-	TimeSlots *ArrayOfWorkTimeSlot `xml:"t:TimeSlots,omitempty" json:"TimeSlots,omitempty"`
+	TimeSlots *ArrayOfWorkTimeSlot `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeSlots,omitempty" json:"TimeSlots,omitempty"`
 }
 
 type ArrayOfWorkTimeSlot struct {
-	XMLName xml.Name `xml:"t:TimeSlots"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeSlots"`
 
-	TimeSlot []*WorkTimeSlot `xml:"t:TimeSlot,omitempty" json:"TimeSlot,omitempty"`
+	TimeSlot []*WorkTimeSlot `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeSlot,omitempty" json:"TimeSlot,omitempty"`
 }
 
 type WorkTimeSlot struct {
-	XMLName xml.Name `xml:"t:TimeSlot"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeSlot"`
 
-	StartTimeInMinutes int32 `xml:"t:StartTimeInMinutes,omitempty" json:"StartTimeInMinutes,omitempty"`
+	StartTimeInMinutes int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTimeInMinutes,omitempty" json:"StartTimeInMinutes,omitempty"`
 
-	EndTimeInMinutes int32 `xml:"t:EndTimeInMinutes,omitempty" json:"EndTimeInMinutes,omitempty"`
+	EndTimeInMinutes int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndTimeInMinutes,omitempty" json:"EndTimeInMinutes,omitempty"`
 }
 
 type AnalyzedQuery struct {
-	QueryLanguage string `xml:"t:QueryLanguage,omitempty" json:"QueryLanguage,omitempty"`
+	QueryLanguage string `xml:"http://schemas.microsoft.com/exchange/services/2006/types QueryLanguage,omitempty" json:"QueryLanguage,omitempty"`
 
-	SearchRestrictions *RestrictionType `xml:"t:SearchRestrictions,omitempty" json:"SearchRestrictions,omitempty"`
+	SearchRestrictions *RestrictionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchRestrictions,omitempty" json:"SearchRestrictions,omitempty"`
 }
 
 type ContextPropertyType struct {
-	XMLName xml.Name `xml:"t:ContextProperty"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContextProperty"`
 
-	Key string `xml:"t:Key,omitempty" json:"Key,omitempty"`
+	Key string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Key,omitempty" json:"Key,omitempty"`
 
-	Value string `xml:"t:Value,omitempty" json:"Value,omitempty"`
+	Value string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Value,omitempty" json:"Value,omitempty"`
 }
 
 type ArrayOfContextProperty struct {
-	ContextProperty []*ContextPropertyType `xml:"t:ContextProperty,omitempty" json:"ContextProperty,omitempty"`
+	ContextProperty []*ContextPropertyType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ContextProperty,omitempty" json:"ContextProperty,omitempty"`
 }
 
 type ArrayOfEntityFeedbackEntry struct {
-	EntityFeedbackEntry []*EntityFeedbackEntryType `xml:"t:EntityFeedbackEntry,omitempty" json:"EntityFeedbackEntry,omitempty"`
+	EntityFeedbackEntry []*EntityFeedbackEntryType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EntityFeedbackEntry,omitempty" json:"EntityFeedbackEntry,omitempty"`
 }
 
 type EntityFeedbackEntryType struct {
-	XMLName xml.Name `xml:"t:EntityFeedbackEntry"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types EntityFeedbackEntry"`
 
-	ClientEventTimeUtc xsd.DateTime `xml:"t:ClientEventTimeUtc,omitempty" json:"ClientEventTimeUtc,omitempty"`
+	ClientEventTimeUtc xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ClientEventTimeUtc,omitempty" json:"ClientEventTimeUtc,omitempty"`
 
-	ClientEventTimeLocal xsd.DateTime `xml:"t:ClientEventTimeLocal,omitempty" json:"ClientEventTimeLocal,omitempty"`
+	ClientEventTimeLocal xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types ClientEventTimeLocal,omitempty" json:"ClientEventTimeLocal,omitempty"`
 
-	ClientSessionId *GuidType `xml:"t:ClientSessionId,omitempty" json:"ClientSessionId,omitempty"`
+	ClientSessionId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ClientSessionId,omitempty" json:"ClientSessionId,omitempty"`
 
-	ClientVersion string `xml:"t:ClientVersion,omitempty" json:"ClientVersion,omitempty"`
+	ClientVersion string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ClientVersion,omitempty" json:"ClientVersion,omitempty"`
 
-	ClientId *ClientIdType `xml:"t:ClientId,omitempty" json:"ClientId,omitempty"`
+	ClientId *ClientIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ClientId,omitempty" json:"ClientId,omitempty"`
 
-	EntrySequenceNumber int32 `xml:"t:EntrySequenceNumber,omitempty" json:"EntrySequenceNumber,omitempty"`
+	EntrySequenceNumber int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types EntrySequenceNumber,omitempty" json:"EntrySequenceNumber,omitempty"`
 
-	TransactionId string `xml:"t:TransactionId,omitempty" json:"TransactionId,omitempty"`
+	TransactionId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types TransactionId,omitempty" json:"TransactionId,omitempty"`
 
-	EventType string `xml:"t:EventType,omitempty" json:"EventType,omitempty"`
+	EventType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EventType,omitempty" json:"EventType,omitempty"`
 
-	TargetEntityList string `xml:"t:TargetEntityList,omitempty" json:"TargetEntityList,omitempty"`
+	TargetEntityList string `xml:"http://schemas.microsoft.com/exchange/services/2006/types TargetEntityList,omitempty" json:"TargetEntityList,omitempty"`
 
-	EntityAddSource *EntityFeedbackEntityAddSourceType `xml:"t:EntityAddSource,omitempty" json:"EntityAddSource,omitempty"`
+	EntityAddSource *EntityFeedbackEntityAddSourceType `xml:"http://schemas.microsoft.com/exchange/services/2006/types EntityAddSource,omitempty" json:"EntityAddSource,omitempty"`
 
-	JsonPropertyBag string `xml:"t:JsonPropertyBag,omitempty" json:"JsonPropertyBag,omitempty"`
+	JsonPropertyBag string `xml:"http://schemas.microsoft.com/exchange/services/2006/types JsonPropertyBag,omitempty" json:"JsonPropertyBag,omitempty"`
 }
 
 type ArrayOfInboxReminderType struct {
-	XMLName xml.Name `xml:"t:InboxReminders"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types InboxReminders"`
 
-	InboxReminder []*InboxReminderType `xml:"t:InboxReminder,omitempty" json:"InboxReminder,omitempty"`
+	InboxReminder []*InboxReminderType `xml:"http://schemas.microsoft.com/exchange/services/2006/types InboxReminder,omitempty" json:"InboxReminder,omitempty"`
 }
 
 type InboxReminderType struct {
-	XMLName xml.Name `xml:"t:InboxReminder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types InboxReminder"`
 
-	Id *GuidType `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	ReminderOffset int32 `xml:"t:ReminderOffset,omitempty" json:"ReminderOffset,omitempty"`
+	ReminderOffset int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReminderOffset,omitempty" json:"ReminderOffset,omitempty"`
 
-	Message string `xml:"t:Message,omitempty" json:"Message,omitempty"`
+	Message string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Message,omitempty" json:"Message,omitempty"`
 
-	IsOrganizerReminder bool `xml:"t:IsOrganizerReminder,omitempty" json:"IsOrganizerReminder,omitempty"`
+	IsOrganizerReminder bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsOrganizerReminder,omitempty" json:"IsOrganizerReminder,omitempty"`
 
-	OccurrenceChange *EmailReminderChangeType `xml:"t:OccurrenceChange,omitempty" json:"OccurrenceChange,omitempty"`
+	OccurrenceChange *EmailReminderChangeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OccurrenceChange,omitempty" json:"OccurrenceChange,omitempty"`
 
-	SendOption *EmailReminderSendOption `xml:"t:SendOption,omitempty" json:"SendOption,omitempty"`
+	SendOption *EmailReminderSendOption `xml:"http://schemas.microsoft.com/exchange/services/2006/types SendOption,omitempty" json:"SendOption,omitempty"`
 }
 
 type InsightContextItem struct {
-	XMLName xml.Name `xml:"t:Context"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Context"`
 
-	Name string `xml:"t:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Name,omitempty" json:"Name,omitempty"`
 
-	Val string `xml:"t:Val,omitempty" json:"Val,omitempty"`
+	Val string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Val,omitempty" json:"Val,omitempty"`
 }
 
 type ArrayOfInsightContextItem struct {
-	XMLName xml.Name `xml:"t:Context"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Context"`
 
-	Context []*InsightContextItem `xml:"t:Context,omitempty" json:"Context,omitempty"`
+	Context []*InsightContextItem `xml:"http://schemas.microsoft.com/exchange/services/2006/types Context,omitempty" json:"Context,omitempty"`
 }
 
 type InsightItemType struct {
-	XMLName xml.Name `xml:"t:Insight"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Insight"`
 
-	ItemId *ItemIdType `xml:"t:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ItemId,omitempty" json:"ItemId,omitempty"`
 
-	InsightId *GuidType `xml:"t:InsightId,omitempty" json:"InsightId,omitempty"`
+	InsightId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types InsightId,omitempty" json:"InsightId,omitempty"`
 
-	Type string `xml:"t:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Type,omitempty" json:"Type,omitempty"`
 
-	StartTimeUtc xsd.DateTime `xml:"t:StartTimeUtc,omitempty" json:"StartTimeUtc,omitempty"`
+	StartTimeUtc xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types StartTimeUtc,omitempty" json:"StartTimeUtc,omitempty"`
 
-	EndTimeUtc xsd.DateTime `xml:"t:EndTimeUtc,omitempty" json:"EndTimeUtc,omitempty"`
+	EndTimeUtc xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndTimeUtc,omitempty" json:"EndTimeUtc,omitempty"`
 
-	Status *InsightStatusType `xml:"t:Status,omitempty" json:"Status,omitempty"`
+	Status *InsightStatusType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Status,omitempty" json:"Status,omitempty"`
 
-	Version string `xml:"t:Version,omitempty" json:"Version,omitempty"`
+	Version string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Version,omitempty" json:"Version,omitempty"`
 
-	Context *ArrayOfInsightContextItem `xml:"t:Context,omitempty" json:"Context,omitempty"`
+	Context *ArrayOfInsightContextItem `xml:"http://schemas.microsoft.com/exchange/services/2006/types Context,omitempty" json:"Context,omitempty"`
 
-	Text string `xml:"t:Text,omitempty" json:"Text,omitempty"`
+	Text string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Text,omitempty" json:"Text,omitempty"`
 
-	ApplicationsIds *ArrayOfStringsType `xml:"t:ApplicationsIds,omitempty" json:"ApplicationsIds,omitempty"`
+	ApplicationsIds *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ApplicationsIds,omitempty" json:"ApplicationsIds,omitempty"`
 
-	SuggestedActions string `xml:"t:SuggestedActions,omitempty" json:"SuggestedActions,omitempty"`
+	SuggestedActions string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SuggestedActions,omitempty" json:"SuggestedActions,omitempty"`
 
-	AppContexts *ArrayOfStringsType `xml:"t:AppContexts,omitempty" json:"AppContexts,omitempty"`
+	AppContexts *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppContexts,omitempty" json:"AppContexts,omitempty"`
 }
 
 type ArrayOfInsightItemType struct {
-	Insight []*InsightItemType `xml:"t:Insight,omitempty" json:"Insight,omitempty"`
+	Insight []*InsightItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Insight,omitempty" json:"Insight,omitempty"`
 }
 
 type ResponseMessageInfoType struct {
-	MessageText string `xml:"t:MessageText,omitempty" json:"MessageText,omitempty"`
+	MessageText string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MessageText,omitempty" json:"MessageText,omitempty"`
 
-	ResponseCode string `xml:"t:ResponseCode,omitempty" json:"ResponseCode,omitempty"`
+	ResponseCode string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ResponseCode,omitempty" json:"ResponseCode,omitempty"`
 
 	ResponseClass *ResponseClassType `xml:"ResponseClass,attr,omitempty" json:"ResponseClass,omitempty"`
 }
 
 type BaseAvailabilityCalendarViewType struct {
-	FreeBusyViewType *FreeBusyViewType `xml:"t:FreeBusyViewType,omitempty" json:"FreeBusyViewType,omitempty"`
+	FreeBusyViewType *FreeBusyViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/types FreeBusyViewType,omitempty" json:"FreeBusyViewType,omitempty"`
 }
 
 type ArrayOfPeopleQuerySource struct {
-	XMLName xml.Name `xml:"t:QuerySources"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types QuerySources"`
 
-	Source []string `xml:"t:Source,omitempty" json:"Source,omitempty"`
+	Source []string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Source,omitempty" json:"Source,omitempty"`
 }
 
 type CalendarActivityDataType struct {
-	ActivityAction string `xml:"t:ActivityAction,omitempty" json:"ActivityAction,omitempty"`
+	ActivityAction string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ActivityAction,omitempty" json:"ActivityAction,omitempty"`
 
-	ClientId string `xml:"t:ClientId,omitempty" json:"ClientId,omitempty"`
+	ClientId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ClientId,omitempty" json:"ClientId,omitempty"`
 
-	CasRequestId *GuidType `xml:"t:CasRequestId,omitempty" json:"CasRequestId,omitempty"`
+	CasRequestId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CasRequestId,omitempty" json:"CasRequestId,omitempty"`
 
-	IndexSelected int32 `xml:"t:IndexSelected,omitempty" json:"IndexSelected,omitempty"`
+	IndexSelected int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types IndexSelected,omitempty" json:"IndexSelected,omitempty"`
 }
 
 type MentionActionType struct {
-	XMLName xml.Name `xml:"t:MentionAction"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MentionAction"`
 
-	Id string `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	CreatedBy *EmailAddressExtendedType `xml:"t:CreatedBy,omitempty" json:"CreatedBy,omitempty"`
+	CreatedBy *EmailAddressExtendedType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreatedBy,omitempty" json:"CreatedBy,omitempty"`
 
-	CreatedDateTime string `xml:"t:CreatedDateTime,omitempty" json:"CreatedDateTime,omitempty"`
+	CreatedDateTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreatedDateTime,omitempty" json:"CreatedDateTime,omitempty"`
 
-	ServerCreatedDateTime string `xml:"t:ServerCreatedDateTime,omitempty" json:"ServerCreatedDateTime,omitempty"`
+	ServerCreatedDateTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ServerCreatedDateTime,omitempty" json:"ServerCreatedDateTime,omitempty"`
 
-	DeepLink string `xml:"t:DeepLink,omitempty" json:"DeepLink,omitempty"`
+	DeepLink string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeepLink,omitempty" json:"DeepLink,omitempty"`
 
-	Application string `xml:"t:Application,omitempty" json:"Application,omitempty"`
+	Application string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Application,omitempty" json:"Application,omitempty"`
 
-	Mentioned *EmailAddressExtendedType `xml:"t:Mentioned,omitempty" json:"Mentioned,omitempty"`
+	Mentioned *EmailAddressExtendedType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Mentioned,omitempty" json:"Mentioned,omitempty"`
 
-	MentionText string `xml:"t:MentionText,omitempty" json:"MentionText,omitempty"`
+	MentionText string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MentionText,omitempty" json:"MentionText,omitempty"`
 
-	ClientReference string `xml:"t:ClientReference,omitempty" json:"ClientReference,omitempty"`
+	ClientReference string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ClientReference,omitempty" json:"ClientReference,omitempty"`
 }
 
 type NonEmptyArrayOfMentionActionsType struct {
-	XMLName xml.Name `xml:"t:MentionsEx"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MentionsEx"`
 
-	MentionAction []*MentionActionType `xml:"t:MentionAction,omitempty" json:"MentionAction,omitempty"`
+	MentionAction []*MentionActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/types MentionAction,omitempty" json:"MentionAction,omitempty"`
 }
 
 type AppliedHashtagType struct {
-	XMLName xml.Name `xml:"t:AppliedHashtag"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppliedHashtag"`
 
-	Id string `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	CreatedBy *EmailAddressExtendedType `xml:"t:CreatedBy,omitempty" json:"CreatedBy,omitempty"`
+	CreatedBy *EmailAddressExtendedType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreatedBy,omitempty" json:"CreatedBy,omitempty"`
 
-	CreatedDateTime string `xml:"t:CreatedDateTime,omitempty" json:"CreatedDateTime,omitempty"`
+	CreatedDateTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreatedDateTime,omitempty" json:"CreatedDateTime,omitempty"`
 
-	ServerCreatedDateTime string `xml:"t:ServerCreatedDateTime,omitempty" json:"ServerCreatedDateTime,omitempty"`
+	ServerCreatedDateTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ServerCreatedDateTime,omitempty" json:"ServerCreatedDateTime,omitempty"`
 
-	DeepLink string `xml:"t:DeepLink,omitempty" json:"DeepLink,omitempty"`
+	DeepLink string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeepLink,omitempty" json:"DeepLink,omitempty"`
 
-	Application string `xml:"t:Application,omitempty" json:"Application,omitempty"`
+	Application string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Application,omitempty" json:"Application,omitempty"`
 
-	Tag string `xml:"t:Tag,omitempty" json:"Tag,omitempty"`
+	Tag string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Tag,omitempty" json:"Tag,omitempty"`
 
-	IsAutoTagged bool `xml:"t:IsAutoTagged,omitempty" json:"IsAutoTagged,omitempty"`
+	IsAutoTagged bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsAutoTagged,omitempty" json:"IsAutoTagged,omitempty"`
 
-	IsInlined bool `xml:"t:IsInlined,omitempty" json:"IsInlined,omitempty"`
+	IsInlined bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsInlined,omitempty" json:"IsInlined,omitempty"`
 }
 
 type AppliedHashtagsPreviewType struct {
-	XMLName xml.Name `xml:"t:AppliedHashtagsPreview"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppliedHashtagsPreview"`
 
-	Hashtags *ArrayOfStringsType `xml:"t:Hashtags,omitempty" json:"Hashtags,omitempty"`
+	Hashtags *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Hashtags,omitempty" json:"Hashtags,omitempty"`
 }
 
 type NonEmptyArrayOfAppliedHashtagType struct {
-	XMLName xml.Name `xml:"t:AppliedHashtags"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppliedHashtags"`
 
-	AppliedHashtag []*AppliedHashtagType `xml:"t:AppliedHashtag,omitempty" json:"AppliedHashtag,omitempty"`
+	AppliedHashtag []*AppliedHashtagType `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppliedHashtag,omitempty" json:"AppliedHashtag,omitempty"`
 }
 
 type LikeType struct {
-	XMLName xml.Name `xml:"t:Like"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Like"`
 
-	Id string `xml:"t:Id,omitempty" json:"Id,omitempty"`
+	Id string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Id,omitempty" json:"Id,omitempty"`
 
-	CreatedBy *EmailAddressExtendedType `xml:"t:CreatedBy,omitempty" json:"CreatedBy,omitempty"`
+	CreatedBy *EmailAddressExtendedType `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreatedBy,omitempty" json:"CreatedBy,omitempty"`
 
-	CreatedDateTime string `xml:"t:CreatedDateTime,omitempty" json:"CreatedDateTime,omitempty"`
+	CreatedDateTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CreatedDateTime,omitempty" json:"CreatedDateTime,omitempty"`
 
-	ServerCreatedDateTime string `xml:"t:ServerCreatedDateTime,omitempty" json:"ServerCreatedDateTime,omitempty"`
+	ServerCreatedDateTime string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ServerCreatedDateTime,omitempty" json:"ServerCreatedDateTime,omitempty"`
 
-	DeepLink string `xml:"t:DeepLink,omitempty" json:"DeepLink,omitempty"`
+	DeepLink string `xml:"http://schemas.microsoft.com/exchange/services/2006/types DeepLink,omitempty" json:"DeepLink,omitempty"`
 
-	Application string `xml:"t:Application,omitempty" json:"Application,omitempty"`
+	Application string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Application,omitempty" json:"Application,omitempty"`
 }
 
 type LikesPreviewType struct {
-	XMLName xml.Name `xml:"t:LikesPreview"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types LikesPreview"`
 
-	LikeCount int32 `xml:"t:LikeCount,omitempty" json:"LikeCount,omitempty"`
+	LikeCount int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types LikeCount,omitempty" json:"LikeCount,omitempty"`
 }
 
 type MentionsPreviewType struct {
-	XMLName xml.Name `xml:"t:MentionsPreview"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types MentionsPreview"`
 
-	IsMentioned bool `xml:"t:IsMentioned,omitempty" json:"IsMentioned,omitempty"`
+	IsMentioned bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsMentioned,omitempty" json:"IsMentioned,omitempty"`
 }
 
 type NonEmptyArrayOfLikeType struct {
-	XMLName xml.Name `xml:"t:Likes"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Likes"`
 
-	Like []*LikeType `xml:"t:Like,omitempty" json:"Like,omitempty"`
+	Like []*LikeType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Like,omitempty" json:"Like,omitempty"`
 }
 
 type AttendeeAvailability struct {
-	EmailAddress string `xml:"t:EmailAddress,omitempty" json:"EmailAddress,omitempty"`
+	EmailAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 
-	Availability *AvailabilityStatusType `xml:"t:Availability,omitempty" json:"Availability,omitempty"`
+	Availability *AvailabilityStatusType `xml:"http://schemas.microsoft.com/exchange/services/2006/types Availability,omitempty" json:"Availability,omitempty"`
 }
 
 type ArrayOfMeetingLocation struct {
-	XMLName xml.Name `xml:"t:Locations"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Locations"`
 
-	MeetingLocation []*MeetingLocation `xml:"t:MeetingLocation,omitempty" json:"MeetingLocation,omitempty"`
+	MeetingLocation []*MeetingLocation `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingLocation,omitempty" json:"MeetingLocation,omitempty"`
 }
 
 type ArrayOfAttendeeAvailability struct {
-	XMLName xml.Name `xml:"t:AttendeeAvailabilities"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttendeeAvailabilities"`
 
-	AttendeeAvailability []*AttendeeAvailability `xml:"t:AttendeeAvailability,omitempty" json:"AttendeeAvailability,omitempty"`
+	AttendeeAvailability []*AttendeeAvailability `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttendeeAvailability,omitempty" json:"AttendeeAvailability,omitempty"`
 }
 
 type MeetingTimeCandidate struct {
-	MeetingTimeslot *TimeSlot `xml:"t:MeetingTimeslot,omitempty" json:"MeetingTimeslot,omitempty"`
+	MeetingTimeslot *TimeSlot `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingTimeslot,omitempty" json:"MeetingTimeslot,omitempty"`
 
-	Confidence float64 `xml:"t:Confidence,omitempty" json:"Confidence,omitempty"`
+	Confidence float64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Confidence,omitempty" json:"Confidence,omitempty"`
 
-	Score int32 `xml:"t:Score,omitempty" json:"Score,omitempty"`
+	Score int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types Score,omitempty" json:"Score,omitempty"`
 
-	OrganizerAvailability *AvailabilityStatusType `xml:"t:OrganizerAvailability,omitempty" json:"OrganizerAvailability,omitempty"`
+	OrganizerAvailability *AvailabilityStatusType `xml:"http://schemas.microsoft.com/exchange/services/2006/types OrganizerAvailability,omitempty" json:"OrganizerAvailability,omitempty"`
 
-	AttendeeAvailabilities *ArrayOfAttendeeAvailability `xml:"t:AttendeeAvailabilities,omitempty" json:"AttendeeAvailabilities,omitempty"`
+	AttendeeAvailabilities *ArrayOfAttendeeAvailability `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttendeeAvailabilities,omitempty" json:"AttendeeAvailabilities,omitempty"`
 
-	Locations *ArrayOfMeetingLocation `xml:"t:Locations,omitempty" json:"Locations,omitempty"`
+	Locations *ArrayOfMeetingLocation `xml:"http://schemas.microsoft.com/exchange/services/2006/types Locations,omitempty" json:"Locations,omitempty"`
 
-	SuggestionHint string `xml:"t:SuggestionHint,omitempty" json:"SuggestionHint,omitempty"`
+	SuggestionHint string `xml:"http://schemas.microsoft.com/exchange/services/2006/types SuggestionHint,omitempty" json:"SuggestionHint,omitempty"`
 }
 
 type ArrayOfMeetingTimeCandidate struct {
-	MeetingTimeCandidate []*MeetingTimeCandidate `xml:"t:MeetingTimeCandidate,omitempty" json:"MeetingTimeCandidate,omitempty"`
+	MeetingTimeCandidate []*MeetingTimeCandidate `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingTimeCandidate,omitempty" json:"MeetingTimeCandidate,omitempty"`
 }
 
 type MeetingTimeCandidatesConstraintItem struct {
-	Email string `xml:"t:Email,omitempty" json:"Email,omitempty"`
+	Email string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Email,omitempty" json:"Email,omitempty"`
 }
 
 type AttendeeConstraintItem struct {
-	XMLName xml.Name `xml:"t:AttendeeItem"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttendeeItem"`
 
 	*MeetingTimeCandidatesConstraintItem
 
-	IsRequired bool `xml:"t:IsRequired,omitempty" json:"IsRequired,omitempty"`
+	IsRequired bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsRequired,omitempty" json:"IsRequired,omitempty"`
 }
 
 type LocationConstraintItem struct {
-	XMLName xml.Name `xml:"t:LocationItem"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types LocationItem"`
 
 	*MeetingTimeCandidatesConstraintItem
 
-	Name string `xml:"t:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://schemas.microsoft.com/exchange/services/2006/types Name,omitempty" json:"Name,omitempty"`
 
-	ResolveAvailability bool `xml:"t:ResolveAvailability,omitempty" json:"ResolveAvailability,omitempty"`
+	ResolveAvailability bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ResolveAvailability,omitempty" json:"ResolveAvailability,omitempty"`
 }
 
 type ArrayOfLocationConstraintItems struct {
-	XMLName xml.Name `xml:"t:LocationEntries"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types LocationEntries"`
 
-	LocationItem []*LocationConstraintItem `xml:"t:LocationItem,omitempty" json:"LocationItem,omitempty"`
+	LocationItem []*LocationConstraintItem `xml:"http://schemas.microsoft.com/exchange/services/2006/types LocationItem,omitempty" json:"LocationItem,omitempty"`
 }
 
 type ArrayOfAttendeeConstraintItems struct {
-	XMLName xml.Name `xml:"t:AttendeeEntries"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttendeeEntries"`
 
-	AttendeeItem []*AttendeeConstraintItem `xml:"t:AttendeeItem,omitempty" json:"AttendeeItem,omitempty"`
+	AttendeeItem []*AttendeeConstraintItem `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttendeeItem,omitempty" json:"AttendeeItem,omitempty"`
 }
 
 type ArrayOfTimeSlot struct {
-	XMLName xml.Name `xml:"t:SearchWindows"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchWindows"`
 
-	TimeSlot []*TimeSlot `xml:"t:TimeSlot,omitempty" json:"TimeSlot,omitempty"`
+	TimeSlot []*TimeSlot `xml:"http://schemas.microsoft.com/exchange/services/2006/types TimeSlot,omitempty" json:"TimeSlot,omitempty"`
 }
 
 type FindMeetingTimesAttendeeConstraints struct {
-	XMLName xml.Name `xml:"t:AttendeeConstraints"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttendeeConstraints"`
 
-	AttendeeEntries *ArrayOfAttendeeConstraintItems `xml:"t:AttendeeEntries,omitempty" json:"AttendeeEntries,omitempty"`
+	AttendeeEntries *ArrayOfAttendeeConstraintItems `xml:"http://schemas.microsoft.com/exchange/services/2006/types AttendeeEntries,omitempty" json:"AttendeeEntries,omitempty"`
 }
 
 type FindMeetingTimesLocationConstraints struct {
-	XMLName xml.Name `xml:"t:LocationConstraints"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types LocationConstraints"`
 
-	LocationEntries *ArrayOfLocationConstraintItems `xml:"t:LocationEntries,omitempty" json:"LocationEntries,omitempty"`
+	LocationEntries *ArrayOfLocationConstraintItems `xml:"http://schemas.microsoft.com/exchange/services/2006/types LocationEntries,omitempty" json:"LocationEntries,omitempty"`
 
-	IsRequired bool `xml:"t:IsRequired,omitempty" json:"IsRequired,omitempty"`
+	IsRequired bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsRequired,omitempty" json:"IsRequired,omitempty"`
 
-	SuggestLocation bool `xml:"t:SuggestLocation,omitempty" json:"SuggestLocation,omitempty"`
+	SuggestLocation bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types SuggestLocation,omitempty" json:"SuggestLocation,omitempty"`
 }
 
 type FindMeetingTimesSearchConstraints struct {
-	XMLName xml.Name `xml:"t:SearchConstraints"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchConstraints"`
 
-	SearchWindows *ArrayOfTimeSlot `xml:"t:SearchWindows,omitempty" json:"SearchWindows,omitempty"`
+	SearchWindows *ArrayOfTimeSlot `xml:"http://schemas.microsoft.com/exchange/services/2006/types SearchWindows,omitempty" json:"SearchWindows,omitempty"`
 
-	MeetingDurationInMinutes int32 `xml:"t:MeetingDurationInMinutes,omitempty" json:"MeetingDurationInMinutes,omitempty"`
+	MeetingDurationInMinutes int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MeetingDurationInMinutes,omitempty" json:"MeetingDurationInMinutes,omitempty"`
 
-	ActivityDomain *ActivityDomainType `xml:"t:ActivityDomain,omitempty" json:"ActivityDomain,omitempty"`
+	ActivityDomain *ActivityDomainType `xml:"http://schemas.microsoft.com/exchange/services/2006/types ActivityDomain,omitempty" json:"ActivityDomain,omitempty"`
 }
 
 type FindMeetingTimesConstraints struct {
-	XMLName xml.Name `xml:"t:Constraints"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Constraints"`
 
-	MaxCandidates int32 `xml:"t:MaxCandidates,omitempty" json:"MaxCandidates,omitempty"`
+	MaxCandidates int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MaxCandidates,omitempty" json:"MaxCandidates,omitempty"`
 
-	IsOrganizerOptional bool `xml:"t:IsOrganizerOptional,omitempty" json:"IsOrganizerOptional,omitempty"`
+	IsOrganizerOptional bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsOrganizerOptional,omitempty" json:"IsOrganizerOptional,omitempty"`
 
-	ReturnSuggestionHints bool `xml:"t:ReturnSuggestionHints,omitempty" json:"ReturnSuggestionHints,omitempty"`
+	ReturnSuggestionHints bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types ReturnSuggestionHints,omitempty" json:"ReturnSuggestionHints,omitempty"`
 
-	AppName string `xml:"t:AppName,omitempty" json:"AppName,omitempty"`
+	AppName string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppName,omitempty" json:"AppName,omitempty"`
 
-	AppScenario string `xml:"t:AppScenario,omitempty" json:"AppScenario,omitempty"`
+	AppScenario string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppScenario,omitempty" json:"AppScenario,omitempty"`
 
-	MinimumAttendeePercentage float64 `xml:"t:MinimumAttendeePercentage,omitempty" json:"MinimumAttendeePercentage,omitempty"`
+	MinimumAttendeePercentage float64 `xml:"http://schemas.microsoft.com/exchange/services/2006/types MinimumAttendeePercentage,omitempty" json:"MinimumAttendeePercentage,omitempty"`
 }
 
 type OfficeClientType struct {
@@ -10674,51 +10674,51 @@ type OfficeClientType struct {
 }
 
 type ArrayOfAppsType struct {
-	XMLName xml.Name `xml:"t:Apps"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Apps"`
 
-	App []*AppType `xml:"t:App,omitempty" json:"App,omitempty"`
+	App []*AppType `xml:"http://schemas.microsoft.com/exchange/services/2006/types App,omitempty" json:"App,omitempty"`
 
-	Metadata *Metadata `xml:"t:Metadata,omitempty" json:"Metadata,omitempty"`
+	Metadata *Metadata `xml:"http://schemas.microsoft.com/exchange/services/2006/types Metadata,omitempty" json:"Metadata,omitempty"`
 }
 
 type AppType struct {
-	XMLName xml.Name `xml:"t:App"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types App"`
 
-	Metadata *AppMetadata `xml:"t:Metadata,omitempty" json:"Metadata,omitempty"`
+	Metadata *AppMetadata `xml:"http://schemas.microsoft.com/exchange/services/2006/types Metadata,omitempty" json:"Metadata,omitempty"`
 
-	Manifest []byte `xml:"t:Manifest,omitempty" json:"Manifest,omitempty"`
+	Manifest []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/types Manifest,omitempty" json:"Manifest,omitempty"`
 }
 
 type Metadata struct {
-	CustomApps string `xml:"t:CustomApps,omitempty" json:"CustomApps,omitempty"`
+	CustomApps string `xml:"http://schemas.microsoft.com/exchange/services/2006/types CustomApps,omitempty" json:"CustomApps,omitempty"`
 }
 
 type AppMetadata struct {
-	XMLName xml.Name `xml:"t:Metadata"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/types Metadata"`
 
-	EndNodeUrl string `xml:"t:EndNodeUrl,omitempty" json:"EndNodeUrl,omitempty"`
+	EndNodeUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types EndNodeUrl,omitempty" json:"EndNodeUrl,omitempty"`
 
-	AppStatus string `xml:"t:AppStatus,omitempty" json:"AppStatus,omitempty"`
+	AppStatus string `xml:"http://schemas.microsoft.com/exchange/services/2006/types AppStatus,omitempty" json:"AppStatus,omitempty"`
 
-	ActionUrl string `xml:"t:ActionUrl,omitempty" json:"ActionUrl,omitempty"`
+	ActionUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ActionUrl,omitempty" json:"ActionUrl,omitempty"`
 
-	ProductId string `xml:"t:ProductId,omitempty" json:"ProductId,omitempty"`
+	ProductId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ProductId,omitempty" json:"ProductId,omitempty"`
 
-	EnabledStatus bool `xml:"t:EnabledStatus,omitempty" json:"EnabledStatus,omitempty"`
+	EnabledStatus bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types EnabledStatus,omitempty" json:"EnabledStatus,omitempty"`
 
-	ConsentState string `xml:"t:ConsentState,omitempty" json:"ConsentState,omitempty"`
+	ConsentState string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ConsentState,omitempty" json:"ConsentState,omitempty"`
 
-	ExtensionType string `xml:"t:ExtensionType,omitempty" json:"ExtensionType,omitempty"`
+	ExtensionType string `xml:"http://schemas.microsoft.com/exchange/services/2006/types ExtensionType,omitempty" json:"ExtensionType,omitempty"`
 
-	MarketplaceAssetId string `xml:"t:MarketplaceAssetId,omitempty" json:"MarketplaceAssetId,omitempty"`
+	MarketplaceAssetId string `xml:"http://schemas.microsoft.com/exchange/services/2006/types MarketplaceAssetId,omitempty" json:"MarketplaceAssetId,omitempty"`
 
-	LicenseStatus string `xml:"t:LicenseStatus,omitempty" json:"LicenseStatus,omitempty"`
+	LicenseStatus string `xml:"http://schemas.microsoft.com/exchange/services/2006/types LicenseStatus,omitempty" json:"LicenseStatus,omitempty"`
 
-	TrialExpirationDate xsd.DateTime `xml:"t:TrialExpirationDate,omitempty" json:"TrialExpirationDate,omitempty"`
+	TrialExpirationDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/types TrialExpirationDate,omitempty" json:"TrialExpirationDate,omitempty"`
 
-	InstalledBy string `xml:"t:InstalledBy,omitempty" json:"InstalledBy,omitempty"`
+	InstalledBy string `xml:"http://schemas.microsoft.com/exchange/services/2006/types InstalledBy,omitempty" json:"InstalledBy,omitempty"`
 
-	IsMandatory bool `xml:"t:IsMandatory,omitempty" json:"IsMandatory,omitempty"`
+	IsMandatory bool `xml:"http://schemas.microsoft.com/exchange/services/2006/types IsMandatory,omitempty" json:"IsMandatory,omitempty"`
 }
 
 // Represents the message keys that can be returned by response error messages
@@ -12286,11 +12286,11 @@ type GetPrivateCatalogAddIns GetPrivateCatalogAddInsType
 type GetPrivateCatalogAddInsResponse GetPrivateCatalogAddInsResponseType
 
 type ResponseMessageType struct {
-	MessageText string `xml:"m:MessageText,omitempty" json:"MessageText,omitempty"`
+	MessageText string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MessageText,omitempty" json:"MessageText,omitempty"`
 
-	ResponseCode *ResponseCodeType `xml:"m:ResponseCode,omitempty" json:"ResponseCode,omitempty"`
+	ResponseCode *ResponseCodeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResponseCode,omitempty" json:"ResponseCode,omitempty"`
 
-	DescriptiveLinkKey int32 `xml:"m:DescriptiveLinkKey,omitempty" json:"DescriptiveLinkKey,omitempty"`
+	DescriptiveLinkKey int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DescriptiveLinkKey,omitempty" json:"DescriptiveLinkKey,omitempty"`
 
 	MessageXml struct {
 	} `MessageXml,omitempty" json:"MessageXml,omitempty"`
@@ -12299,250 +12299,250 @@ type ResponseMessageType struct {
 }
 
 type ArrayOfResponseMessagesType struct {
-	XMLName xml.Name `xml:"m:ResponseMessages"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResponseMessages"`
 
-	CreateItemResponseMessage *ItemInfoResponseMessageType `xml:"m:CreateItemResponseMessage,omitempty" json:"CreateItemResponseMessage,omitempty"`
+	CreateItemResponseMessage *ItemInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateItemResponseMessage,omitempty" json:"CreateItemResponseMessage,omitempty"`
 
-	DeleteItemResponseMessage *DeleteItemResponseMessageType `xml:"m:DeleteItemResponseMessage,omitempty" json:"DeleteItemResponseMessage,omitempty"`
+	DeleteItemResponseMessage *DeleteItemResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteItemResponseMessage,omitempty" json:"DeleteItemResponseMessage,omitempty"`
 
-	GetItemResponseMessage *ItemInfoResponseMessageType `xml:"m:GetItemResponseMessage,omitempty" json:"GetItemResponseMessage,omitempty"`
+	GetItemResponseMessage *ItemInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetItemResponseMessage,omitempty" json:"GetItemResponseMessage,omitempty"`
 
-	UpdateItemResponseMessage *UpdateItemResponseMessageType `xml:"m:UpdateItemResponseMessage,omitempty" json:"UpdateItemResponseMessage,omitempty"`
+	UpdateItemResponseMessage *UpdateItemResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateItemResponseMessage,omitempty" json:"UpdateItemResponseMessage,omitempty"`
 
-	UpdateItemInRecoverableItemsResponseMessage *UpdateItemInRecoverableItemsResponseMessageType `xml:"m:UpdateItemInRecoverableItemsResponseMessage,omitempty" json:"UpdateItemInRecoverableItemsResponseMessage,omitempty"`
+	UpdateItemInRecoverableItemsResponseMessage *UpdateItemInRecoverableItemsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateItemInRecoverableItemsResponseMessage,omitempty" json:"UpdateItemInRecoverableItemsResponseMessage,omitempty"`
 
-	SendItemResponseMessage *ResponseMessageType `xml:"m:SendItemResponseMessage,omitempty" json:"SendItemResponseMessage,omitempty"`
+	SendItemResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SendItemResponseMessage,omitempty" json:"SendItemResponseMessage,omitempty"`
 
-	DeleteFolderResponseMessage *ResponseMessageType `xml:"m:DeleteFolderResponseMessage,omitempty" json:"DeleteFolderResponseMessage,omitempty"`
+	DeleteFolderResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteFolderResponseMessage,omitempty" json:"DeleteFolderResponseMessage,omitempty"`
 
-	EmptyFolderResponseMessage *ResponseMessageType `xml:"m:EmptyFolderResponseMessage,omitempty" json:"EmptyFolderResponseMessage,omitempty"`
+	EmptyFolderResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages EmptyFolderResponseMessage,omitempty" json:"EmptyFolderResponseMessage,omitempty"`
 
-	CreateFolderResponseMessage *FolderInfoResponseMessageType `xml:"m:CreateFolderResponseMessage,omitempty" json:"CreateFolderResponseMessage,omitempty"`
+	CreateFolderResponseMessage *FolderInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateFolderResponseMessage,omitempty" json:"CreateFolderResponseMessage,omitempty"`
 
-	GetFolderResponseMessage *FolderInfoResponseMessageType `xml:"m:GetFolderResponseMessage,omitempty" json:"GetFolderResponseMessage,omitempty"`
+	GetFolderResponseMessage *FolderInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetFolderResponseMessage,omitempty" json:"GetFolderResponseMessage,omitempty"`
 
-	FindFolderResponseMessage *FindFolderResponseMessageType `xml:"m:FindFolderResponseMessage,omitempty" json:"FindFolderResponseMessage,omitempty"`
+	FindFolderResponseMessage *FindFolderResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindFolderResponseMessage,omitempty" json:"FindFolderResponseMessage,omitempty"`
 
-	UpdateFolderResponseMessage *FolderInfoResponseMessageType `xml:"m:UpdateFolderResponseMessage,omitempty" json:"UpdateFolderResponseMessage,omitempty"`
+	UpdateFolderResponseMessage *FolderInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateFolderResponseMessage,omitempty" json:"UpdateFolderResponseMessage,omitempty"`
 
-	MoveFolderResponseMessage *FolderInfoResponseMessageType `xml:"m:MoveFolderResponseMessage,omitempty" json:"MoveFolderResponseMessage,omitempty"`
+	MoveFolderResponseMessage *FolderInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MoveFolderResponseMessage,omitempty" json:"MoveFolderResponseMessage,omitempty"`
 
-	CopyFolderResponseMessage *FolderInfoResponseMessageType `xml:"m:CopyFolderResponseMessage,omitempty" json:"CopyFolderResponseMessage,omitempty"`
+	CopyFolderResponseMessage *FolderInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CopyFolderResponseMessage,omitempty" json:"CopyFolderResponseMessage,omitempty"`
 
-	CreateFolderPathResponseMessage *FolderInfoResponseMessageType `xml:"m:CreateFolderPathResponseMessage,omitempty" json:"CreateFolderPathResponseMessage,omitempty"`
+	CreateFolderPathResponseMessage *FolderInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateFolderPathResponseMessage,omitempty" json:"CreateFolderPathResponseMessage,omitempty"`
 
-	CreateAttachmentResponseMessage *AttachmentInfoResponseMessageType `xml:"m:CreateAttachmentResponseMessage,omitempty" json:"CreateAttachmentResponseMessage,omitempty"`
+	CreateAttachmentResponseMessage *AttachmentInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateAttachmentResponseMessage,omitempty" json:"CreateAttachmentResponseMessage,omitempty"`
 
-	DeleteAttachmentResponseMessage *DeleteAttachmentResponseMessageType `xml:"m:DeleteAttachmentResponseMessage,omitempty" json:"DeleteAttachmentResponseMessage,omitempty"`
+	DeleteAttachmentResponseMessage *DeleteAttachmentResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteAttachmentResponseMessage,omitempty" json:"DeleteAttachmentResponseMessage,omitempty"`
 
-	GetAttachmentResponseMessage *AttachmentInfoResponseMessageType `xml:"m:GetAttachmentResponseMessage,omitempty" json:"GetAttachmentResponseMessage,omitempty"`
+	GetAttachmentResponseMessage *AttachmentInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetAttachmentResponseMessage,omitempty" json:"GetAttachmentResponseMessage,omitempty"`
 
-	UploadItemsResponseMessage *UploadItemsResponseMessageType `xml:"m:UploadItemsResponseMessage,omitempty" json:"UploadItemsResponseMessage,omitempty"`
+	UploadItemsResponseMessage *UploadItemsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UploadItemsResponseMessage,omitempty" json:"UploadItemsResponseMessage,omitempty"`
 
-	ExportItemsResponseMessage *ExportItemsResponseMessageType `xml:"m:ExportItemsResponseMessage,omitempty" json:"ExportItemsResponseMessage,omitempty"`
+	ExportItemsResponseMessage *ExportItemsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExportItemsResponseMessage,omitempty" json:"ExportItemsResponseMessage,omitempty"`
 
-	MarkAllItemsAsReadResponseMessage *ResponseMessageType `xml:"m:MarkAllItemsAsReadResponseMessage,omitempty" json:"MarkAllItemsAsReadResponseMessage,omitempty"`
+	MarkAllItemsAsReadResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MarkAllItemsAsReadResponseMessage,omitempty" json:"MarkAllItemsAsReadResponseMessage,omitempty"`
 
-	GetClientAccessTokenResponseMessage *GetClientAccessTokenResponseMessageType `xml:"m:GetClientAccessTokenResponseMessage,omitempty" json:"GetClientAccessTokenResponseMessage,omitempty"`
+	GetClientAccessTokenResponseMessage *GetClientAccessTokenResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetClientAccessTokenResponseMessage,omitempty" json:"GetClientAccessTokenResponseMessage,omitempty"`
 
-	GetAppManifestsResponseMessage *ResponseMessageType `xml:"m:GetAppManifestsResponseMessage,omitempty" json:"GetAppManifestsResponseMessage,omitempty"`
+	GetAppManifestsResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetAppManifestsResponseMessage,omitempty" json:"GetAppManifestsResponseMessage,omitempty"`
 
-	SetClientExtensionResponseMessage *ResponseMessageType `xml:"m:SetClientExtensionResponseMessage,omitempty" json:"SetClientExtensionResponseMessage,omitempty"`
+	SetClientExtensionResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetClientExtensionResponseMessage,omitempty" json:"SetClientExtensionResponseMessage,omitempty"`
 
-	GetOMEConfigurationResponseMessage *ResponseMessageType `xml:"m:GetOMEConfigurationResponseMessage,omitempty" json:"GetOMEConfigurationResponseMessage,omitempty"`
+	GetOMEConfigurationResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetOMEConfigurationResponseMessage,omitempty" json:"GetOMEConfigurationResponseMessage,omitempty"`
 
-	SetOMEConfigurationResponseMessage *ResponseMessageType `xml:"m:SetOMEConfigurationResponseMessage,omitempty" json:"SetOMEConfigurationResponseMessage,omitempty"`
+	SetOMEConfigurationResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetOMEConfigurationResponseMessage,omitempty" json:"SetOMEConfigurationResponseMessage,omitempty"`
 
-	FindItemResponseMessage *FindItemResponseMessageType `xml:"m:FindItemResponseMessage,omitempty" json:"FindItemResponseMessage,omitempty"`
+	FindItemResponseMessage *FindItemResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindItemResponseMessage,omitempty" json:"FindItemResponseMessage,omitempty"`
 
-	MoveItemResponseMessage *ItemInfoResponseMessageType `xml:"m:MoveItemResponseMessage,omitempty" json:"MoveItemResponseMessage,omitempty"`
+	MoveItemResponseMessage *ItemInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MoveItemResponseMessage,omitempty" json:"MoveItemResponseMessage,omitempty"`
 
-	ArchiveItemResponseMessage *ItemInfoResponseMessageType `xml:"m:ArchiveItemResponseMessage,omitempty" json:"ArchiveItemResponseMessage,omitempty"`
+	ArchiveItemResponseMessage *ItemInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ArchiveItemResponseMessage,omitempty" json:"ArchiveItemResponseMessage,omitempty"`
 
-	CopyItemResponseMessage *ItemInfoResponseMessageType `xml:"m:CopyItemResponseMessage,omitempty" json:"CopyItemResponseMessage,omitempty"`
+	CopyItemResponseMessage *ItemInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CopyItemResponseMessage,omitempty" json:"CopyItemResponseMessage,omitempty"`
 
-	ResolveNamesResponseMessage *ResolveNamesResponseMessageType `xml:"m:ResolveNamesResponseMessage,omitempty" json:"ResolveNamesResponseMessage,omitempty"`
+	ResolveNamesResponseMessage *ResolveNamesResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResolveNamesResponseMessage,omitempty" json:"ResolveNamesResponseMessage,omitempty"`
 
-	ExpandDLResponseMessage *ExpandDLResponseMessageType `xml:"m:ExpandDLResponseMessage,omitempty" json:"ExpandDLResponseMessage,omitempty"`
+	ExpandDLResponseMessage *ExpandDLResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExpandDLResponseMessage,omitempty" json:"ExpandDLResponseMessage,omitempty"`
 
-	GetServerTimeZonesResponseMessage *GetServerTimeZonesResponseMessageType `xml:"m:GetServerTimeZonesResponseMessage,omitempty" json:"GetServerTimeZonesResponseMessage,omitempty"`
+	GetServerTimeZonesResponseMessage *GetServerTimeZonesResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetServerTimeZonesResponseMessage,omitempty" json:"GetServerTimeZonesResponseMessage,omitempty"`
 
-	GetEventsResponseMessage *GetEventsResponseMessageType `xml:"m:GetEventsResponseMessage,omitempty" json:"GetEventsResponseMessage,omitempty"`
+	GetEventsResponseMessage *GetEventsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetEventsResponseMessage,omitempty" json:"GetEventsResponseMessage,omitempty"`
 
-	GetStreamingEventsResponseMessage *GetStreamingEventsResponseMessageType `xml:"m:GetStreamingEventsResponseMessage,omitempty" json:"GetStreamingEventsResponseMessage,omitempty"`
+	GetStreamingEventsResponseMessage *GetStreamingEventsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetStreamingEventsResponseMessage,omitempty" json:"GetStreamingEventsResponseMessage,omitempty"`
 
-	SubscribeResponseMessage *SubscribeResponseMessageType `xml:"m:SubscribeResponseMessage,omitempty" json:"SubscribeResponseMessage,omitempty"`
+	SubscribeResponseMessage *SubscribeResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SubscribeResponseMessage,omitempty" json:"SubscribeResponseMessage,omitempty"`
 
-	UnsubscribeResponseMessage *ResponseMessageType `xml:"m:UnsubscribeResponseMessage,omitempty" json:"UnsubscribeResponseMessage,omitempty"`
+	UnsubscribeResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UnsubscribeResponseMessage,omitempty" json:"UnsubscribeResponseMessage,omitempty"`
 
-	SendNotificationResponseMessage *SendNotificationResponseMessageType `xml:"m:SendNotificationResponseMessage,omitempty" json:"SendNotificationResponseMessage,omitempty"`
+	SendNotificationResponseMessage *SendNotificationResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SendNotificationResponseMessage,omitempty" json:"SendNotificationResponseMessage,omitempty"`
 
-	SyncFolderHierarchyResponseMessage *SyncFolderHierarchyResponseMessageType `xml:"m:SyncFolderHierarchyResponseMessage,omitempty" json:"SyncFolderHierarchyResponseMessage,omitempty"`
+	SyncFolderHierarchyResponseMessage *SyncFolderHierarchyResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncFolderHierarchyResponseMessage,omitempty" json:"SyncFolderHierarchyResponseMessage,omitempty"`
 
-	SyncFolderItemsResponseMessage *SyncFolderItemsResponseMessageType `xml:"m:SyncFolderItemsResponseMessage,omitempty" json:"SyncFolderItemsResponseMessage,omitempty"`
+	SyncFolderItemsResponseMessage *SyncFolderItemsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncFolderItemsResponseMessage,omitempty" json:"SyncFolderItemsResponseMessage,omitempty"`
 
-	CreateManagedFolderResponseMessage *FolderInfoResponseMessageType `xml:"m:CreateManagedFolderResponseMessage,omitempty" json:"CreateManagedFolderResponseMessage,omitempty"`
+	CreateManagedFolderResponseMessage *FolderInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateManagedFolderResponseMessage,omitempty" json:"CreateManagedFolderResponseMessage,omitempty"`
 
-	ConvertIdResponseMessage *ConvertIdResponseMessageType `xml:"m:ConvertIdResponseMessage,omitempty" json:"ConvertIdResponseMessage,omitempty"`
+	ConvertIdResponseMessage *ConvertIdResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConvertIdResponseMessage,omitempty" json:"ConvertIdResponseMessage,omitempty"`
 
-	GetSharingMetadataResponseMessage *GetSharingMetadataResponseMessageType `xml:"m:GetSharingMetadataResponseMessage,omitempty" json:"GetSharingMetadataResponseMessage,omitempty"`
+	GetSharingMetadataResponseMessage *GetSharingMetadataResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSharingMetadataResponseMessage,omitempty" json:"GetSharingMetadataResponseMessage,omitempty"`
 
-	RefreshSharingFolderResponseMessage *RefreshSharingFolderResponseMessageType `xml:"m:RefreshSharingFolderResponseMessage,omitempty" json:"RefreshSharingFolderResponseMessage,omitempty"`
+	RefreshSharingFolderResponseMessage *RefreshSharingFolderResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RefreshSharingFolderResponseMessage,omitempty" json:"RefreshSharingFolderResponseMessage,omitempty"`
 
-	GetSharingFolderResponseMessage *GetSharingFolderResponseMessageType `xml:"m:GetSharingFolderResponseMessage,omitempty" json:"GetSharingFolderResponseMessage,omitempty"`
+	GetSharingFolderResponseMessage *GetSharingFolderResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSharingFolderResponseMessage,omitempty" json:"GetSharingFolderResponseMessage,omitempty"`
 
-	CreateUserConfigurationResponseMessage *ResponseMessageType `xml:"m:CreateUserConfigurationResponseMessage,omitempty" json:"CreateUserConfigurationResponseMessage,omitempty"`
+	CreateUserConfigurationResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateUserConfigurationResponseMessage,omitempty" json:"CreateUserConfigurationResponseMessage,omitempty"`
 
-	DeleteUserConfigurationResponseMessage *ResponseMessageType `xml:"m:DeleteUserConfigurationResponseMessage,omitempty" json:"DeleteUserConfigurationResponseMessage,omitempty"`
+	DeleteUserConfigurationResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteUserConfigurationResponseMessage,omitempty" json:"DeleteUserConfigurationResponseMessage,omitempty"`
 
-	GetUserConfigurationResponseMessage *GetUserConfigurationResponseMessageType `xml:"m:GetUserConfigurationResponseMessage,omitempty" json:"GetUserConfigurationResponseMessage,omitempty"`
+	GetUserConfigurationResponseMessage *GetUserConfigurationResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetUserConfigurationResponseMessage,omitempty" json:"GetUserConfigurationResponseMessage,omitempty"`
 
-	GetSpecificUserConfigurationResponseMessage *GetSpecificUserConfigurationResponseMessageType `xml:"m:GetSpecificUserConfigurationResponseMessage,omitempty" json:"GetSpecificUserConfigurationResponseMessage,omitempty"`
+	GetSpecificUserConfigurationResponseMessage *GetSpecificUserConfigurationResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSpecificUserConfigurationResponseMessage,omitempty" json:"GetSpecificUserConfigurationResponseMessage,omitempty"`
 
-	UpdateUserConfigurationResponseMessage *ResponseMessageType `xml:"m:UpdateUserConfigurationResponseMessage,omitempty" json:"UpdateUserConfigurationResponseMessage,omitempty"`
+	UpdateUserConfigurationResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateUserConfigurationResponseMessage,omitempty" json:"UpdateUserConfigurationResponseMessage,omitempty"`
 
-	GetRoomListsResponse *GetRoomListsResponseMessageType `xml:"m:GetRoomListsResponse,omitempty" json:"GetRoomListsResponse,omitempty"`
+	GetRoomListsResponse *GetRoomListsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetRoomListsResponse,omitempty" json:"GetRoomListsResponse,omitempty"`
 
-	GetRoomsResponse *GetRoomsResponseMessageType `xml:"m:GetRoomsResponse,omitempty" json:"GetRoomsResponse,omitempty"`
+	GetRoomsResponse *GetRoomsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetRoomsResponse,omitempty" json:"GetRoomsResponse,omitempty"`
 
-	GetRemindersResponse *GetRemindersResponseMessageType `xml:"m:GetRemindersResponse,omitempty" json:"GetRemindersResponse,omitempty"`
+	GetRemindersResponse *GetRemindersResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetRemindersResponse,omitempty" json:"GetRemindersResponse,omitempty"`
 
-	PerformReminderActionResponse *PerformReminderActionResponseMessageType `xml:"m:PerformReminderActionResponse,omitempty" json:"PerformReminderActionResponse,omitempty"`
+	PerformReminderActionResponse *PerformReminderActionResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PerformReminderActionResponse,omitempty" json:"PerformReminderActionResponse,omitempty"`
 
-	ApplyConversationActionResponseMessage *ApplyConversationActionResponseMessageType `xml:"m:ApplyConversationActionResponseMessage,omitempty" json:"ApplyConversationActionResponseMessage,omitempty"`
+	ApplyConversationActionResponseMessage *ApplyConversationActionResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ApplyConversationActionResponseMessage,omitempty" json:"ApplyConversationActionResponseMessage,omitempty"`
 
-	FindMailboxStatisticsByKeywordsResponseMessage *FindMailboxStatisticsByKeywordsResponseMessageType `xml:"m:FindMailboxStatisticsByKeywordsResponseMessage,omitempty" json:"FindMailboxStatisticsByKeywordsResponseMessage,omitempty"`
+	FindMailboxStatisticsByKeywordsResponseMessage *FindMailboxStatisticsByKeywordsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindMailboxStatisticsByKeywordsResponseMessage,omitempty" json:"FindMailboxStatisticsByKeywordsResponseMessage,omitempty"`
 
-	GetSearchableMailboxesResponseMessage *GetSearchableMailboxesResponseMessageType `xml:"m:GetSearchableMailboxesResponseMessage,omitempty" json:"GetSearchableMailboxesResponseMessage,omitempty"`
+	GetSearchableMailboxesResponseMessage *GetSearchableMailboxesResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSearchableMailboxesResponseMessage,omitempty" json:"GetSearchableMailboxesResponseMessage,omitempty"`
 
-	SearchMailboxesResponseMessage *SearchMailboxesResponseMessageType `xml:"m:SearchMailboxesResponseMessage,omitempty" json:"SearchMailboxesResponseMessage,omitempty"`
+	SearchMailboxesResponseMessage *SearchMailboxesResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchMailboxesResponseMessage,omitempty" json:"SearchMailboxesResponseMessage,omitempty"`
 
-	GetDiscoverySearchConfigurationResponseMessage *GetDiscoverySearchConfigurationResponseMessageType `xml:"m:GetDiscoverySearchConfigurationResponseMessage,omitempty" json:"GetDiscoverySearchConfigurationResponseMessage,omitempty"`
+	GetDiscoverySearchConfigurationResponseMessage *GetDiscoverySearchConfigurationResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetDiscoverySearchConfigurationResponseMessage,omitempty" json:"GetDiscoverySearchConfigurationResponseMessage,omitempty"`
 
-	GetHoldOnMailboxesResponseMessage *GetHoldOnMailboxesResponseMessageType `xml:"m:GetHoldOnMailboxesResponseMessage,omitempty" json:"GetHoldOnMailboxesResponseMessage,omitempty"`
+	GetHoldOnMailboxesResponseMessage *GetHoldOnMailboxesResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetHoldOnMailboxesResponseMessage,omitempty" json:"GetHoldOnMailboxesResponseMessage,omitempty"`
 
-	SetHoldOnMailboxesResponseMessage *SetHoldOnMailboxesResponseMessageType `xml:"m:SetHoldOnMailboxesResponseMessage,omitempty" json:"SetHoldOnMailboxesResponseMessage,omitempty"`
+	SetHoldOnMailboxesResponseMessage *SetHoldOnMailboxesResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetHoldOnMailboxesResponseMessage,omitempty" json:"SetHoldOnMailboxesResponseMessage,omitempty"`
 
-	GetNonIndexableItemStatisticsResponseMessage *GetNonIndexableItemStatisticsResponseMessageType `xml:"m:GetNonIndexableItemStatisticsResponseMessage,omitempty" json:"GetNonIndexableItemStatisticsResponseMessage,omitempty"`
+	GetNonIndexableItemStatisticsResponseMessage *GetNonIndexableItemStatisticsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetNonIndexableItemStatisticsResponseMessage,omitempty" json:"GetNonIndexableItemStatisticsResponseMessage,omitempty"`
 
-	GetNonIndexableItemDetailsResponseMessage *GetNonIndexableItemDetailsResponseMessageType `xml:"m:GetNonIndexableItemDetailsResponseMessage,omitempty" json:"GetNonIndexableItemDetailsResponseMessage,omitempty"`
+	GetNonIndexableItemDetailsResponseMessage *GetNonIndexableItemDetailsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetNonIndexableItemDetailsResponseMessage,omitempty" json:"GetNonIndexableItemDetailsResponseMessage,omitempty"`
 
-	FindPeopleResponseMessage *FindPeopleResponseMessageType `xml:"m:FindPeopleResponseMessage,omitempty" json:"FindPeopleResponseMessage,omitempty"`
+	FindPeopleResponseMessage *FindPeopleResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindPeopleResponseMessage,omitempty" json:"FindPeopleResponseMessage,omitempty"`
 
-	FindTagsResponseMessage *FindTagsResponseMessageType `xml:"m:FindTagsResponseMessage,omitempty" json:"FindTagsResponseMessage,omitempty"`
+	FindTagsResponseMessage *FindTagsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindTagsResponseMessage,omitempty" json:"FindTagsResponseMessage,omitempty"`
 
-	AddTagResponseMessage *AddTagResponseMessageType `xml:"m:AddTagResponseMessage,omitempty" json:"AddTagResponseMessage,omitempty"`
+	AddTagResponseMessage *AddTagResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddTagResponseMessage,omitempty" json:"AddTagResponseMessage,omitempty"`
 
-	HideTagResponseMessage *HideTagResponseMessageType `xml:"m:HideTagResponseMessage,omitempty" json:"HideTagResponseMessage,omitempty"`
+	HideTagResponseMessage *HideTagResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages HideTagResponseMessage,omitempty" json:"HideTagResponseMessage,omitempty"`
 
-	GetPasswordExpirationDateResponse *GetPasswordExpirationDateResponseMessageType `xml:"m:GetPasswordExpirationDateResponse,omitempty" json:"GetPasswordExpirationDateResponse,omitempty"`
+	GetPasswordExpirationDateResponse *GetPasswordExpirationDateResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetPasswordExpirationDateResponse,omitempty" json:"GetPasswordExpirationDateResponse,omitempty"`
 
-	GetPersonaResponseMessage *GetPersonaResponseMessageType `xml:"m:GetPersonaResponseMessage,omitempty" json:"GetPersonaResponseMessage,omitempty"`
+	GetPersonaResponseMessage *GetPersonaResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetPersonaResponseMessage,omitempty" json:"GetPersonaResponseMessage,omitempty"`
 
-	GetConversationItemsResponseMessage *GetConversationItemsResponseMessageType `xml:"m:GetConversationItemsResponseMessage,omitempty" json:"GetConversationItemsResponseMessage,omitempty"`
+	GetConversationItemsResponseMessage *GetConversationItemsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetConversationItemsResponseMessage,omitempty" json:"GetConversationItemsResponseMessage,omitempty"`
 
-	GetUserRetentionPolicyTagsResponseMessage *GetUserRetentionPolicyTagsResponseMessageType `xml:"m:GetUserRetentionPolicyTagsResponseMessage,omitempty" json:"GetUserRetentionPolicyTagsResponseMessage,omitempty"`
+	GetUserRetentionPolicyTagsResponseMessage *GetUserRetentionPolicyTagsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetUserRetentionPolicyTagsResponseMessage,omitempty" json:"GetUserRetentionPolicyTagsResponseMessage,omitempty"`
 
-	GetUserPhotoResponseMessage *GetUserPhotoResponseMessageType `xml:"m:GetUserPhotoResponseMessage,omitempty" json:"GetUserPhotoResponseMessage,omitempty"`
+	GetUserPhotoResponseMessage *GetUserPhotoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetUserPhotoResponseMessage,omitempty" json:"GetUserPhotoResponseMessage,omitempty"`
 
-	MarkAsJunkResponseMessage *MarkAsJunkResponseMessageType `xml:"m:MarkAsJunkResponseMessage,omitempty" json:"MarkAsJunkResponseMessage,omitempty"`
+	MarkAsJunkResponseMessage *MarkAsJunkResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MarkAsJunkResponseMessage,omitempty" json:"MarkAsJunkResponseMessage,omitempty"`
 
-	ReportMessageResponseMessage *ReportMessageResponseMessageType `xml:"m:ReportMessageResponseMessage,omitempty" json:"ReportMessageResponseMessage,omitempty"`
+	ReportMessageResponseMessage *ReportMessageResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ReportMessageResponseMessage,omitempty" json:"ReportMessageResponseMessage,omitempty"`
 
-	PostModernGroupItemResponseMessage *ItemInfoResponseMessageType `xml:"m:PostModernGroupItemResponseMessage,omitempty" json:"PostModernGroupItemResponseMessage,omitempty"`
+	PostModernGroupItemResponseMessage *ItemInfoResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PostModernGroupItemResponseMessage,omitempty" json:"PostModernGroupItemResponseMessage,omitempty"`
 
-	GetLastPrivateCatalogUpdateResponseMessage *ResponseMessageType `xml:"m:GetLastPrivateCatalogUpdateResponseMessage,omitempty" json:"GetLastPrivateCatalogUpdateResponseMessage,omitempty"`
+	GetLastPrivateCatalogUpdateResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetLastPrivateCatalogUpdateResponseMessage,omitempty" json:"GetLastPrivateCatalogUpdateResponseMessage,omitempty"`
 
-	GetPrivateCatalogAddInsResponseMessage *ResponseMessageType `xml:"m:GetPrivateCatalogAddInsResponseMessage,omitempty" json:"GetPrivateCatalogAddInsResponseMessage,omitempty"`
+	GetPrivateCatalogAddInsResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetPrivateCatalogAddInsResponseMessage,omitempty" json:"GetPrivateCatalogAddInsResponseMessage,omitempty"`
 }
 
 type BaseResponseMessageType struct {
-	ResponseMessages *ArrayOfResponseMessagesType `xml:"m:ResponseMessages,omitempty" json:"ResponseMessages,omitempty"`
+	ResponseMessages *ArrayOfResponseMessagesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResponseMessages,omitempty" json:"ResponseMessages,omitempty"`
 }
 
 type BaseRequestType struct {
 }
 
 type GetFolderType struct {
-	XMLName xml.Name `xml:"m:GetFolder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetFolder"`
 
 	*BaseRequestType
 
-	FolderShape *FolderResponseShapeType `xml:"m:FolderShape,omitempty" json:"FolderShape,omitempty"`
+	FolderShape *FolderResponseShapeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FolderShape,omitempty" json:"FolderShape,omitempty"`
 
-	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"m:FolderIds,omitempty" json:"FolderIds,omitempty"`
+	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FolderIds,omitempty" json:"FolderIds,omitempty"`
 }
 
 type UploadItemsType struct {
-	XMLName xml.Name `xml:"m:UploadItems"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UploadItems"`
 
 	*BaseRequestType
 
-	Items *NonEmptyArrayOfUploadItemsType `xml:"m:Items,omitempty" json:"Items,omitempty"`
+	Items *NonEmptyArrayOfUploadItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Items,omitempty" json:"Items,omitempty"`
 }
 
 type UploadItemsResponseMessageType struct {
-	XMLName xml.Name `xml:"m:UploadItemsResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UploadItemsResponseMessage"`
 
 	*ResponseMessageType
 
-	ItemId *ItemIdType `xml:"m:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemId,omitempty" json:"ItemId,omitempty"`
 }
 
 type UploadItemsResponseType struct {
-	XMLName xml.Name `xml:"m:UploadItemsResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UploadItemsResponse"`
 
 	*BaseResponseMessageType
 }
 
 type ExportItemsType struct {
-	XMLName xml.Name `xml:"m:ExportItems"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExportItems"`
 
 	*BaseRequestType
 
-	ItemIds *NonEmptyArrayOfItemIdsType `xml:"m:ItemIds,omitempty" json:"ItemIds,omitempty"`
+	ItemIds *NonEmptyArrayOfItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemIds,omitempty" json:"ItemIds,omitempty"`
 }
 
 type ExportItemsResponseMessageType struct {
-	XMLName xml.Name `xml:"m:ExportItemsResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExportItemsResponseMessage"`
 
 	*ResponseMessageType
 
-	ItemId *ItemIdType `xml:"m:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemId,omitempty" json:"ItemId,omitempty"`
 
-	Data []byte `xml:"m:Data,omitempty" json:"Data,omitempty"`
+	Data []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Data,omitempty" json:"Data,omitempty"`
 }
 
 type ExportItemsResponseType struct {
-	XMLName xml.Name `xml:"m:ExportItemsResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExportItemsResponse"`
 
 	*BaseResponseMessageType
 }
 
 type CreateFolderType struct {
-	XMLName xml.Name `xml:"m:CreateFolder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateFolder"`
 
 	*BaseRequestType
 
-	ParentFolderId *TargetFolderIdType `xml:"m:ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
+	ParentFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
 
-	Folders *NonEmptyArrayOfFoldersType `xml:"m:Folders,omitempty" json:"Folders,omitempty"`
+	Folders *NonEmptyArrayOfFoldersType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Folders,omitempty" json:"Folders,omitempty"`
 }
 
 type FindFolderType struct {
-	XMLName xml.Name `xml:"m:FindFolder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindFolder"`
 
 	*BaseRequestType
 
-	FolderShape *FolderResponseShapeType `xml:"m:FolderShape,omitempty" json:"FolderShape,omitempty"`
+	FolderShape *FolderResponseShapeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FolderShape,omitempty" json:"FolderShape,omitempty"`
 
-	Restriction *RestrictionType `xml:"m:Restriction,omitempty" json:"Restriction,omitempty"`
+	Restriction *RestrictionType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Restriction,omitempty" json:"Restriction,omitempty"`
 
-	ParentFolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"m:ParentFolderIds,omitempty" json:"ParentFolderIds,omitempty"`
+	ParentFolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ParentFolderIds,omitempty" json:"ParentFolderIds,omitempty"`
 
-	IndexedPageFolderView *IndexedPageViewType `xml:"m:IndexedPageFolderView,omitempty" json:"IndexedPageFolderView,omitempty"`
+	IndexedPageFolderView *IndexedPageViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IndexedPageFolderView,omitempty" json:"IndexedPageFolderView,omitempty"`
 
-	FractionalPageFolderView *FractionalPageViewType `xml:"m:FractionalPageFolderView,omitempty" json:"FractionalPageFolderView,omitempty"`
+	FractionalPageFolderView *FractionalPageViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FractionalPageFolderView,omitempty" json:"FractionalPageFolderView,omitempty"`
 
 	Traversal *FolderQueryTraversalType `xml:"Traversal,attr,omitempty" json:"Traversal,omitempty"`
 }
@@ -12550,45 +12550,45 @@ type FindFolderType struct {
 type FolderInfoResponseMessageType struct {
 	*ResponseMessageType
 
-	Folders *ArrayOfFoldersType `xml:"m:Folders,omitempty" json:"Folders,omitempty"`
+	Folders *ArrayOfFoldersType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Folders,omitempty" json:"Folders,omitempty"`
 }
 
 type FindFolderResponseMessageType struct {
-	XMLName xml.Name `xml:"m:FindFolderResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindFolderResponseMessage"`
 
 	*ResponseMessageType
 
-	RootFolder *FindFolderParentType `xml:"m:RootFolder,omitempty" json:"RootFolder,omitempty"`
+	RootFolder *FindFolderParentType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RootFolder,omitempty" json:"RootFolder,omitempty"`
 }
 
 type FindFolderResponseType struct {
-	XMLName xml.Name `xml:"m:FindFolderResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindFolderResponse"`
 
 	*BaseResponseMessageType
 }
 
 type DeleteFolderType struct {
-	XMLName xml.Name `xml:"m:DeleteFolder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteFolder"`
 
 	*BaseRequestType
 
-	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"m:FolderIds,omitempty" json:"FolderIds,omitempty"`
+	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FolderIds,omitempty" json:"FolderIds,omitempty"`
 
 	DeleteType *DisposalType `xml:"DeleteType,attr,omitempty" json:"DeleteType,omitempty"`
 }
 
 type DeleteFolderResponseType struct {
-	XMLName xml.Name `xml:"m:DeleteFolderResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteFolderResponse"`
 
 	*BaseResponseMessageType
 }
 
 type EmptyFolderType struct {
-	XMLName xml.Name `xml:"m:EmptyFolder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages EmptyFolder"`
 
 	*BaseRequestType
 
-	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"m:FolderIds,omitempty" json:"FolderIds,omitempty"`
+	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FolderIds,omitempty" json:"FolderIds,omitempty"`
 
 	DeleteType *DisposalType `xml:"DeleteType,attr,omitempty" json:"DeleteType,omitempty"`
 
@@ -12596,7 +12596,7 @@ type EmptyFolderType struct {
 }
 
 type EmptyFolderResponseType struct {
-	XMLName xml.Name `xml:"m:EmptyFolderResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages EmptyFolderResponse"`
 
 	*BaseResponseMessageType
 }
@@ -12604,95 +12604,95 @@ type EmptyFolderResponseType struct {
 type BaseMoveCopyFolderType struct {
 	*BaseRequestType
 
-	ToFolderId *TargetFolderIdType `xml:"m:ToFolderId,omitempty" json:"ToFolderId,omitempty"`
+	ToFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ToFolderId,omitempty" json:"ToFolderId,omitempty"`
 
-	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"m:FolderIds,omitempty" json:"FolderIds,omitempty"`
+	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FolderIds,omitempty" json:"FolderIds,omitempty"`
 }
 
 type MoveFolderType struct {
-	XMLName xml.Name `xml:"m:MoveFolder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MoveFolder"`
 
 	*BaseMoveCopyFolderType
 }
 
 type CopyFolderType struct {
-	XMLName xml.Name `xml:"m:CopyFolder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CopyFolder"`
 
 	*BaseMoveCopyFolderType
 }
 
 type UpdateFolderType struct {
-	XMLName xml.Name `xml:"m:UpdateFolder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateFolder"`
 
 	*BaseRequestType
 
-	FolderChanges *NonEmptyArrayOfFolderChangesType `xml:"m:FolderChanges,omitempty" json:"FolderChanges,omitempty"`
+	FolderChanges *NonEmptyArrayOfFolderChangesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FolderChanges,omitempty" json:"FolderChanges,omitempty"`
 }
 
 type CreateFolderResponseType struct {
-	XMLName xml.Name `xml:"m:CreateFolderResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateFolderResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetFolderResponseType struct {
-	XMLName xml.Name `xml:"m:GetFolderResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetFolderResponse"`
 
 	*BaseResponseMessageType
 }
 
 type UpdateFolderResponseType struct {
-	XMLName xml.Name `xml:"m:UpdateFolderResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateFolderResponse"`
 
 	*BaseResponseMessageType
 }
 
 type MoveFolderResponseType struct {
-	XMLName xml.Name `xml:"m:MoveFolderResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MoveFolderResponse"`
 
 	*BaseResponseMessageType
 }
 
 type CopyFolderResponseType struct {
-	XMLName xml.Name `xml:"m:CopyFolderResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CopyFolderResponse"`
 
 	*BaseResponseMessageType
 }
 
 type CreateFolderPathType struct {
-	XMLName xml.Name `xml:"m:CreateFolderPath"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateFolderPath"`
 
 	*BaseRequestType
 
-	ParentFolderId *TargetFolderIdType `xml:"m:ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
+	ParentFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
 
-	RelativeFolderPath *NonEmptyArrayOfFoldersType `xml:"m:RelativeFolderPath,omitempty" json:"RelativeFolderPath,omitempty"`
+	RelativeFolderPath *NonEmptyArrayOfFoldersType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RelativeFolderPath,omitempty" json:"RelativeFolderPath,omitempty"`
 }
 
 type CreateFolderPathResponseType struct {
-	XMLName xml.Name `xml:"m:CreateFolderPathResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateFolderPathResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetItemType struct {
-	XMLName xml.Name `xml:"m:GetItem"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetItem"`
 
 	*BaseRequestType
 
-	ItemShape *ItemResponseShapeType `xml:"m:ItemShape,omitempty" json:"ItemShape,omitempty"`
+	ItemShape *ItemResponseShapeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemShape,omitempty" json:"ItemShape,omitempty"`
 
-	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"m:ItemIds,omitempty" json:"ItemIds,omitempty"`
+	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemIds,omitempty" json:"ItemIds,omitempty"`
 }
 
 type CreateItemType struct {
-	XMLName xml.Name `xml:"m:CreateItem"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateItem"`
 
 	*BaseRequestType
 
-	SavedItemFolderId *TargetFolderIdType `xml:"m:SavedItemFolderId,omitempty" json:"SavedItemFolderId,omitempty"`
+	SavedItemFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SavedItemFolderId,omitempty" json:"SavedItemFolderId,omitempty"`
 
-	Items *NonEmptyArrayOfAllItemsType `xml:"m:Items,omitempty" json:"Items,omitempty"`
+	Items *NonEmptyArrayOfAllItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Items,omitempty" json:"Items,omitempty"`
 
 	MessageDisposition *MessageDispositionType `xml:"MessageDisposition,attr,omitempty" json:"MessageDisposition,omitempty"`
 
@@ -12700,13 +12700,13 @@ type CreateItemType struct {
 }
 
 type UpdateItemType struct {
-	XMLName xml.Name `xml:"m:UpdateItem"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateItem"`
 
 	*BaseRequestType
 
-	SavedItemFolderId *TargetFolderIdType `xml:"m:SavedItemFolderId,omitempty" json:"SavedItemFolderId,omitempty"`
+	SavedItemFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SavedItemFolderId,omitempty" json:"SavedItemFolderId,omitempty"`
 
-	ItemChanges *NonEmptyArrayOfItemChangesType `xml:"m:ItemChanges,omitempty" json:"ItemChanges,omitempty"`
+	ItemChanges *NonEmptyArrayOfItemChangesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemChanges,omitempty" json:"ItemChanges,omitempty"`
 
 	ConflictResolution *ConflictResolutionType `xml:"ConflictResolution,attr,omitempty" json:"ConflictResolution,omitempty"`
 
@@ -12720,47 +12720,47 @@ type UpdateItemType struct {
 type ItemInfoResponseMessageType struct {
 	*ResponseMessageType
 
-	Items *ArrayOfRealItemsType `xml:"m:Items,omitempty" json:"Items,omitempty"`
+	Items *ArrayOfRealItemsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Items,omitempty" json:"Items,omitempty"`
 }
 
 type UpdateItemResponseMessageType struct {
-	XMLName xml.Name `xml:"m:UpdateItemResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateItemResponseMessage"`
 
 	*ItemInfoResponseMessageType
 
-	ConflictResults *ConflictResultsType `xml:"m:ConflictResults,omitempty" json:"ConflictResults,omitempty"`
+	ConflictResults *ConflictResultsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConflictResults,omitempty" json:"ConflictResults,omitempty"`
 }
 
 type UpdateItemInRecoverableItemsType struct {
-	XMLName xml.Name `xml:"m:UpdateItemInRecoverableItems"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateItemInRecoverableItems"`
 
 	*BaseRequestType
 
-	ItemId *ItemIdType `xml:"m:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemId,omitempty" json:"ItemId,omitempty"`
 
-	Updates *NonEmptyArrayOfItemChangeDescriptionsType `xml:"m:Updates,omitempty" json:"Updates,omitempty"`
+	Updates *NonEmptyArrayOfItemChangeDescriptionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Updates,omitempty" json:"Updates,omitempty"`
 
-	Attachments *NonEmptyArrayOfAttachmentsType `xml:"m:Attachments,omitempty" json:"Attachments,omitempty"`
+	Attachments *NonEmptyArrayOfAttachmentsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Attachments,omitempty" json:"Attachments,omitempty"`
 
-	MakeItemImmutable bool `xml:"m:MakeItemImmutable,omitempty" json:"MakeItemImmutable,omitempty"`
+	MakeItemImmutable bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MakeItemImmutable,omitempty" json:"MakeItemImmutable,omitempty"`
 }
 
 type UpdateItemInRecoverableItemsResponseMessageType struct {
-	XMLName xml.Name `xml:"m:UpdateItemInRecoverableItemsResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateItemInRecoverableItemsResponseMessage"`
 
 	*ItemInfoResponseMessageType
 
-	Attachments *ArrayOfAttachmentsType `xml:"m:Attachments,omitempty" json:"Attachments,omitempty"`
+	Attachments *ArrayOfAttachmentsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Attachments,omitempty" json:"Attachments,omitempty"`
 
-	ConflictResults *ConflictResultsType `xml:"m:ConflictResults,omitempty" json:"ConflictResults,omitempty"`
+	ConflictResults *ConflictResultsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConflictResults,omitempty" json:"ConflictResults,omitempty"`
 }
 
 type DeleteItemType struct {
-	XMLName xml.Name `xml:"m:DeleteItem"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteItem"`
 
 	*BaseRequestType
 
-	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"m:ItemIds,omitempty" json:"ItemIds,omitempty"`
+	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemIds,omitempty" json:"ItemIds,omitempty"`
 
 	DeleteType *DisposalType `xml:"DeleteType,attr,omitempty" json:"DeleteType,omitempty"`
 
@@ -12774,63 +12774,63 @@ type DeleteItemType struct {
 type AttachmentInfoResponseMessageType struct {
 	*ResponseMessageType
 
-	Attachments *ArrayOfAttachmentsType `xml:"m:Attachments,omitempty" json:"Attachments,omitempty"`
+	Attachments *ArrayOfAttachmentsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Attachments,omitempty" json:"Attachments,omitempty"`
 }
 
 type DeleteAttachmentResponseMessageType struct {
-	XMLName xml.Name `xml:"m:DeleteAttachmentResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteAttachmentResponseMessage"`
 
 	*ResponseMessageType
 
-	RootItemId *RootItemIdType `xml:"m:RootItemId,omitempty" json:"RootItemId,omitempty"`
+	RootItemId *RootItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RootItemId,omitempty" json:"RootItemId,omitempty"`
 }
 
 type BaseMoveCopyItemType struct {
 	*BaseRequestType
 
-	ToFolderId *TargetFolderIdType `xml:"m:ToFolderId,omitempty" json:"ToFolderId,omitempty"`
+	ToFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ToFolderId,omitempty" json:"ToFolderId,omitempty"`
 
-	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"m:ItemIds,omitempty" json:"ItemIds,omitempty"`
+	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemIds,omitempty" json:"ItemIds,omitempty"`
 
-	ReturnNewItemIds bool `xml:"m:ReturnNewItemIds,omitempty" json:"ReturnNewItemIds,omitempty"`
+	ReturnNewItemIds bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ReturnNewItemIds,omitempty" json:"ReturnNewItemIds,omitempty"`
 }
 
 type MoveItemType struct {
-	XMLName xml.Name `xml:"m:MoveItem"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MoveItem"`
 
 	*BaseMoveCopyItemType
 }
 
 type CopyItemType struct {
-	XMLName xml.Name `xml:"m:CopyItem"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CopyItem"`
 
 	*BaseMoveCopyItemType
 }
 
 type ArchiveItemType struct {
-	XMLName xml.Name `xml:"m:ArchiveItem"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ArchiveItem"`
 
 	*BaseRequestType
 
-	ArchiveSourceFolderId *TargetFolderIdType `xml:"m:ArchiveSourceFolderId,omitempty" json:"ArchiveSourceFolderId,omitempty"`
+	ArchiveSourceFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ArchiveSourceFolderId,omitempty" json:"ArchiveSourceFolderId,omitempty"`
 
-	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"m:ItemIds,omitempty" json:"ItemIds,omitempty"`
+	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemIds,omitempty" json:"ItemIds,omitempty"`
 }
 
 type SendItemType struct {
-	XMLName xml.Name `xml:"m:SendItem"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SendItem"`
 
 	*BaseRequestType
 
-	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"m:ItemIds,omitempty" json:"ItemIds,omitempty"`
+	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemIds,omitempty" json:"ItemIds,omitempty"`
 
-	SavedItemFolderId *TargetFolderIdType `xml:"m:SavedItemFolderId,omitempty" json:"SavedItemFolderId,omitempty"`
+	SavedItemFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SavedItemFolderId,omitempty" json:"SavedItemFolderId,omitempty"`
 
 	SaveItemToFolder bool `xml:"SaveItemToFolder,attr,omitempty" json:"SaveItemToFolder,omitempty"`
 }
 
 type SendItemResponseType struct {
-	XMLName xml.Name `xml:"m:SendItemResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SendItemResponse"`
 
 	*BaseResponseMessageType
 }
@@ -12846,55 +12846,55 @@ type QueryStringType struct {
 }
 
 type FindItemType struct {
-	XMLName xml.Name `xml:"m:FindItem"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindItem"`
 
 	*BaseRequestType
 
-	ItemShape *ItemResponseShapeType `xml:"m:ItemShape,omitempty" json:"ItemShape,omitempty"`
+	ItemShape *ItemResponseShapeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemShape,omitempty" json:"ItemShape,omitempty"`
 
-	Restriction *RestrictionType `xml:"m:Restriction,omitempty" json:"Restriction,omitempty"`
+	Restriction *RestrictionType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Restriction,omitempty" json:"Restriction,omitempty"`
 
-	SortOrder *NonEmptyArrayOfFieldOrdersType `xml:"m:SortOrder,omitempty" json:"SortOrder,omitempty"`
+	SortOrder *NonEmptyArrayOfFieldOrdersType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SortOrder,omitempty" json:"SortOrder,omitempty"`
 
-	ParentFolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"m:ParentFolderIds,omitempty" json:"ParentFolderIds,omitempty"`
+	ParentFolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ParentFolderIds,omitempty" json:"ParentFolderIds,omitempty"`
 
-	QueryString *QueryStringType `xml:"m:QueryString,omitempty" json:"QueryString,omitempty"`
+	QueryString *QueryStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages QueryString,omitempty" json:"QueryString,omitempty"`
 
-	IndexedPageItemView *IndexedPageViewType `xml:"m:IndexedPageItemView,omitempty" json:"IndexedPageItemView,omitempty"`
+	IndexedPageItemView *IndexedPageViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IndexedPageItemView,omitempty" json:"IndexedPageItemView,omitempty"`
 
-	FractionalPageItemView *FractionalPageViewType `xml:"m:FractionalPageItemView,omitempty" json:"FractionalPageItemView,omitempty"`
+	FractionalPageItemView *FractionalPageViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FractionalPageItemView,omitempty" json:"FractionalPageItemView,omitempty"`
 
-	SeekToConditionPageItemView *SeekToConditionPageViewType `xml:"m:SeekToConditionPageItemView,omitempty" json:"SeekToConditionPageItemView,omitempty"`
+	SeekToConditionPageItemView *SeekToConditionPageViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SeekToConditionPageItemView,omitempty" json:"SeekToConditionPageItemView,omitempty"`
 
-	CalendarView *CalendarViewType `xml:"m:CalendarView,omitempty" json:"CalendarView,omitempty"`
+	CalendarView *CalendarViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CalendarView,omitempty" json:"CalendarView,omitempty"`
 
-	ContactsView *ContactsViewType `xml:"m:ContactsView,omitempty" json:"ContactsView,omitempty"`
+	ContactsView *ContactsViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ContactsView,omitempty" json:"ContactsView,omitempty"`
 
-	GroupBy *GroupByType `xml:"m:GroupBy,omitempty" json:"GroupBy,omitempty"`
+	GroupBy *GroupByType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GroupBy,omitempty" json:"GroupBy,omitempty"`
 
-	DistinguishedGroupBy *DistinguishedGroupByType `xml:"m:DistinguishedGroupBy,omitempty" json:"DistinguishedGroupBy,omitempty"`
+	DistinguishedGroupBy *DistinguishedGroupByType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DistinguishedGroupBy,omitempty" json:"DistinguishedGroupBy,omitempty"`
 
 	Traversal *ItemQueryTraversalType `xml:"Traversal,attr,omitempty" json:"Traversal,omitempty"`
 }
 
 type FindConversationType struct {
-	XMLName xml.Name `xml:"m:FindConversation"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindConversation"`
 
 	*BaseRequestType
 
-	SortOrder *NonEmptyArrayOfFieldOrdersType `xml:"m:SortOrder,omitempty" json:"SortOrder,omitempty"`
+	SortOrder *NonEmptyArrayOfFieldOrdersType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SortOrder,omitempty" json:"SortOrder,omitempty"`
 
-	ParentFolderId *TargetFolderIdType `xml:"m:ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
+	ParentFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
 
-	MailboxScope *MailboxSearchLocationType `xml:"m:MailboxScope,omitempty" json:"MailboxScope,omitempty"`
+	MailboxScope *MailboxSearchLocationType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MailboxScope,omitempty" json:"MailboxScope,omitempty"`
 
-	QueryString *QueryStringType `xml:"m:QueryString,omitempty" json:"QueryString,omitempty"`
+	QueryString *QueryStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages QueryString,omitempty" json:"QueryString,omitempty"`
 
-	ConversationShape *ConversationResponseShapeType `xml:"m:ConversationShape,omitempty" json:"ConversationShape,omitempty"`
+	ConversationShape *ConversationResponseShapeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConversationShape,omitempty" json:"ConversationShape,omitempty"`
 
-	IndexedPageItemView *IndexedPageViewType `xml:"m:IndexedPageItemView,omitempty" json:"IndexedPageItemView,omitempty"`
+	IndexedPageItemView *IndexedPageViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IndexedPageItemView,omitempty" json:"IndexedPageItemView,omitempty"`
 
-	SeekToConditionPageItemView *SeekToConditionPageViewType `xml:"m:SeekToConditionPageItemView,omitempty" json:"SeekToConditionPageItemView,omitempty"`
+	SeekToConditionPageItemView *SeekToConditionPageViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SeekToConditionPageItemView,omitempty" json:"SeekToConditionPageItemView,omitempty"`
 
 	Traversal *ConversationQueryTraversalType `xml:"Traversal,attr,omitempty" json:"Traversal,omitempty"`
 
@@ -12902,387 +12902,387 @@ type FindConversationType struct {
 }
 
 type FindConversationResponseMessageType struct {
-	XMLName xml.Name `xml:"m:FindConversationResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindConversationResponse"`
 
 	*ResponseMessageType
 
-	Conversations *ArrayOfConversationsType `xml:"m:Conversations,omitempty" json:"Conversations,omitempty"`
+	Conversations *ArrayOfConversationsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Conversations,omitempty" json:"Conversations,omitempty"`
 
-	HighlightTerms *ArrayOfHighlightTermsType `xml:"m:HighlightTerms,omitempty" json:"HighlightTerms,omitempty"`
+	HighlightTerms *ArrayOfHighlightTermsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages HighlightTerms,omitempty" json:"HighlightTerms,omitempty"`
 
-	TotalConversationsInView int32 `xml:"m:TotalConversationsInView,omitempty" json:"TotalConversationsInView,omitempty"`
+	TotalConversationsInView int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages TotalConversationsInView,omitempty" json:"TotalConversationsInView,omitempty"`
 
-	IndexedOffset int32 `xml:"m:IndexedOffset,omitempty" json:"IndexedOffset,omitempty"`
+	IndexedOffset int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IndexedOffset,omitempty" json:"IndexedOffset,omitempty"`
 }
 
 type PerformInstantSearchRequest struct {
-	XMLName xml.Name `xml:"m:PerformInstantSearch"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PerformInstantSearch"`
 
 	*BaseRequestType
 
-	SearchSessionId string `xml:"m:SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
+	SearchSessionId string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
 
-	ItemType *InstantSearchItemType `xml:"m:ItemType,omitempty" json:"ItemType,omitempty"`
+	ItemType *InstantSearchItemType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemType,omitempty" json:"ItemType,omitempty"`
 
-	QueryOptions *QueryOptionsType `xml:"m:QueryOptions,omitempty" json:"QueryOptions,omitempty"`
+	QueryOptions *QueryOptionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages QueryOptions,omitempty" json:"QueryOptions,omitempty"`
 
-	SearchRequestId int64 `xml:"m:SearchRequestId,omitempty" json:"SearchRequestId,omitempty"`
+	SearchRequestId int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchRequestId,omitempty" json:"SearchRequestId,omitempty"`
 
-	KqlQuery string `xml:"m:KqlQuery,omitempty" json:"KqlQuery,omitempty"`
+	KqlQuery string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages KqlQuery,omitempty" json:"KqlQuery,omitempty"`
 
-	FolderScope *ArrayOfFolderIdType `xml:"m:FolderScope,omitempty" json:"FolderScope,omitempty"`
+	FolderScope *ArrayOfFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FolderScope,omitempty" json:"FolderScope,omitempty"`
 
-	DistinguishedFolderScope *ArrayOfDistinguishedFolderIdType `xml:"m:DistinguishedFolderScope,omitempty" json:"DistinguishedFolderScope,omitempty"`
+	DistinguishedFolderScope *ArrayOfDistinguishedFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DistinguishedFolderScope,omitempty" json:"DistinguishedFolderScope,omitempty"`
 
-	IsDeepTraversal bool `xml:"m:IsDeepTraversal,omitempty" json:"IsDeepTraversal,omitempty"`
+	IsDeepTraversal bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IsDeepTraversal,omitempty" json:"IsDeepTraversal,omitempty"`
 
-	WaitOnSearchResults bool `xml:"m:WaitOnSearchResults,omitempty" json:"WaitOnSearchResults,omitempty"`
+	WaitOnSearchResults bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages WaitOnSearchResults,omitempty" json:"WaitOnSearchResults,omitempty"`
 }
 
 type PerformInstantSearchResponse struct {
 	*ResponseMessageType
 
-	Payload *InstantSearchPayloadType `xml:"m:Payload,omitempty" json:"Payload,omitempty"`
+	Payload *InstantSearchPayloadType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Payload,omitempty" json:"Payload,omitempty"`
 }
 
 type EndInstantSearchSessionRequest struct {
-	XMLName xml.Name `xml:"m:EndInstantSearchSession"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages EndInstantSearchSession"`
 
 	*BaseRequestType
 
-	SessionId string `xml:"m:SessionId,omitempty" json:"SessionId,omitempty"`
+	SessionId string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SessionId,omitempty" json:"SessionId,omitempty"`
 }
 
 type ApplyConversationActionType struct {
-	XMLName xml.Name `xml:"m:ApplyConversationAction"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ApplyConversationAction"`
 
 	*BaseRequestType
 
-	ConversationActions *NonEmptyArrayOfApplyConversationActionType `xml:"m:ConversationActions,omitempty" json:"ConversationActions,omitempty"`
+	ConversationActions *NonEmptyArrayOfApplyConversationActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConversationActions,omitempty" json:"ConversationActions,omitempty"`
 }
 
 type ApplyConversationActionResponseType struct {
-	XMLName xml.Name `xml:"m:ApplyConversationActionResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ApplyConversationActionResponse"`
 
 	*BaseResponseMessageType
 }
 
 type ApplyConversationActionResponseMessageType struct {
-	XMLName xml.Name `xml:"m:ApplyConversationActionResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ApplyConversationActionResponseMessage"`
 
 	*ResponseMessageType
 }
 
 type FindPeopleType struct {
-	XMLName xml.Name `xml:"m:FindPeople"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindPeople"`
 
 	*BaseRequestType
 
-	PersonaShape *PersonaResponseShapeType `xml:"m:PersonaShape,omitempty" json:"PersonaShape,omitempty"`
+	PersonaShape *PersonaResponseShapeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PersonaShape,omitempty" json:"PersonaShape,omitempty"`
 
-	IndexedPageItemView *IndexedPageViewType `xml:"m:IndexedPageItemView,omitempty" json:"IndexedPageItemView,omitempty"`
+	IndexedPageItemView *IndexedPageViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IndexedPageItemView,omitempty" json:"IndexedPageItemView,omitempty"`
 
-	Restriction *RestrictionType `xml:"m:Restriction,omitempty" json:"Restriction,omitempty"`
+	Restriction *RestrictionType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Restriction,omitempty" json:"Restriction,omitempty"`
 
-	AggregationRestriction *RestrictionType `xml:"m:AggregationRestriction,omitempty" json:"AggregationRestriction,omitempty"`
+	AggregationRestriction *RestrictionType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AggregationRestriction,omitempty" json:"AggregationRestriction,omitempty"`
 
-	SortOrder *NonEmptyArrayOfFieldOrdersType `xml:"m:SortOrder,omitempty" json:"SortOrder,omitempty"`
+	SortOrder *NonEmptyArrayOfFieldOrdersType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SortOrder,omitempty" json:"SortOrder,omitempty"`
 
-	ParentFolderId *TargetFolderIdType `xml:"m:ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
+	ParentFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
 
-	QueryString string `xml:"m:QueryString,omitempty" json:"QueryString,omitempty"`
+	QueryString string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages QueryString,omitempty" json:"QueryString,omitempty"`
 
-	SearchPeopleSuggestionIndex bool `xml:"m:SearchPeopleSuggestionIndex,omitempty" json:"SearchPeopleSuggestionIndex,omitempty"`
+	SearchPeopleSuggestionIndex bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchPeopleSuggestionIndex,omitempty" json:"SearchPeopleSuggestionIndex,omitempty"`
 
-	TopicQueryString string `xml:"m:TopicQueryString,omitempty" json:"TopicQueryString,omitempty"`
+	TopicQueryString string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages TopicQueryString,omitempty" json:"TopicQueryString,omitempty"`
 
-	Context *ArrayOfContextProperty `xml:"m:Context,omitempty" json:"Context,omitempty"`
+	Context *ArrayOfContextProperty `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Context,omitempty" json:"Context,omitempty"`
 
-	QuerySources *ArrayOfPeopleQuerySource `xml:"m:QuerySources,omitempty" json:"QuerySources,omitempty"`
+	QuerySources *ArrayOfPeopleQuerySource `xml:"http://schemas.microsoft.com/exchange/services/2006/messages QuerySources,omitempty" json:"QuerySources,omitempty"`
 }
 
 type FindPeopleResponseMessageType struct {
 	*ResponseMessageType
 
-	People *ArrayOfPeopleType `xml:"m:People,omitempty" json:"People,omitempty"`
+	People *ArrayOfPeopleType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages People,omitempty" json:"People,omitempty"`
 
-	TotalNumberOfPeopleInView int32 `xml:"m:TotalNumberOfPeopleInView,omitempty" json:"TotalNumberOfPeopleInView,omitempty"`
+	TotalNumberOfPeopleInView int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages TotalNumberOfPeopleInView,omitempty" json:"TotalNumberOfPeopleInView,omitempty"`
 
-	FirstMatchingRowIndex int32 `xml:"m:FirstMatchingRowIndex,omitempty" json:"FirstMatchingRowIndex,omitempty"`
+	FirstMatchingRowIndex int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FirstMatchingRowIndex,omitempty" json:"FirstMatchingRowIndex,omitempty"`
 
-	FirstLoadedRowIndex int32 `xml:"m:FirstLoadedRowIndex,omitempty" json:"FirstLoadedRowIndex,omitempty"`
+	FirstLoadedRowIndex int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FirstLoadedRowIndex,omitempty" json:"FirstLoadedRowIndex,omitempty"`
 
-	TransactionId *GuidType `xml:"m:TransactionId,omitempty" json:"TransactionId,omitempty"`
+	TransactionId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages TransactionId,omitempty" json:"TransactionId,omitempty"`
 }
 
 type FindTagsType struct {
-	XMLName xml.Name `xml:"m:FindTags"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindTags"`
 
 	*BaseRequestType
 
-	IndexedPageItemView *IndexedPageViewType `xml:"m:IndexedPageItemView,omitempty" json:"IndexedPageItemView,omitempty"`
+	IndexedPageItemView *IndexedPageViewType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IndexedPageItemView,omitempty" json:"IndexedPageItemView,omitempty"`
 
-	SortOrder *NonEmptyArrayOfFieldOrdersType `xml:"m:SortOrder,omitempty" json:"SortOrder,omitempty"`
+	SortOrder *NonEmptyArrayOfFieldOrdersType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SortOrder,omitempty" json:"SortOrder,omitempty"`
 
-	QueryString string `xml:"m:QueryString,omitempty" json:"QueryString,omitempty"`
+	QueryString string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages QueryString,omitempty" json:"QueryString,omitempty"`
 
-	Context *ArrayOfContextProperty `xml:"m:Context,omitempty" json:"Context,omitempty"`
+	Context *ArrayOfContextProperty `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Context,omitempty" json:"Context,omitempty"`
 }
 
 type FindTagsResponseMessageType struct {
 	*ResponseMessageType
 
-	Tags *ArrayOfStringsType `xml:"m:Tags,omitempty" json:"Tags,omitempty"`
+	Tags *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Tags,omitempty" json:"Tags,omitempty"`
 }
 
 type AddTagType struct {
-	XMLName xml.Name `xml:"m:AddTag"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddTag"`
 
 	*BaseRequestType
 
-	Tag string `xml:"m:Tag,omitempty" json:"Tag,omitempty"`
+	Tag string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Tag,omitempty" json:"Tag,omitempty"`
 
-	AppName string `xml:"m:AppName,omitempty" json:"AppName,omitempty"`
+	AppName string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AppName,omitempty" json:"AppName,omitempty"`
 }
 
 type AddTagResponseMessageType struct {
 	*ResponseMessageType
 
-	WasSuccessful bool `xml:"m:WasSuccessful,omitempty" json:"WasSuccessful,omitempty"`
+	WasSuccessful bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages WasSuccessful,omitempty" json:"WasSuccessful,omitempty"`
 }
 
 type HideTagType struct {
-	XMLName xml.Name `xml:"m:HideTag"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages HideTag"`
 
 	*BaseRequestType
 
-	Tag string `xml:"m:Tag,omitempty" json:"Tag,omitempty"`
+	Tag string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Tag,omitempty" json:"Tag,omitempty"`
 }
 
 type HideTagResponseMessageType struct {
 	*ResponseMessageType
 
-	WasSuccessful bool `xml:"m:WasSuccessful,omitempty" json:"WasSuccessful,omitempty"`
+	WasSuccessful bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages WasSuccessful,omitempty" json:"WasSuccessful,omitempty"`
 }
 
 type GetPersonaType struct {
-	XMLName xml.Name `xml:"m:GetPersona"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetPersona"`
 
 	*BaseRequestType
 
-	PersonaId *ItemIdType `xml:"m:PersonaId,omitempty" json:"PersonaId,omitempty"`
+	PersonaId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PersonaId,omitempty" json:"PersonaId,omitempty"`
 
-	EmailAddress *EmailAddressType `xml:"m:EmailAddress,omitempty" json:"EmailAddress,omitempty"`
+	EmailAddress *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 
-	ParentFolderId *TargetFolderIdType `xml:"m:ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
+	ParentFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ParentFolderId,omitempty" json:"ParentFolderId,omitempty"`
 
-	ItemLinkId string `xml:"m:ItemLinkId,omitempty" json:"ItemLinkId,omitempty"`
+	ItemLinkId string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemLinkId,omitempty" json:"ItemLinkId,omitempty"`
 
-	AdditionalProperties *NonEmptyArrayOfPathsToElementType `xml:"m:AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
+	AdditionalProperties *NonEmptyArrayOfPathsToElementType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AdditionalProperties,omitempty" json:"AdditionalProperties,omitempty"`
 }
 
 type GetPersonaResponseMessageType struct {
 	*ResponseMessageType
 
-	Persona *PersonaType `xml:"m:Persona,omitempty" json:"Persona,omitempty"`
+	Persona *PersonaType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Persona,omitempty" json:"Persona,omitempty"`
 }
 
 type CreateAttachmentType struct {
-	XMLName xml.Name `xml:"m:CreateAttachment"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateAttachment"`
 
 	*BaseRequestType
 
-	ParentItemId *ItemIdType `xml:"m:ParentItemId,omitempty" json:"ParentItemId,omitempty"`
+	ParentItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ParentItemId,omitempty" json:"ParentItemId,omitempty"`
 
-	Attachments *NonEmptyArrayOfAttachmentsType `xml:"m:Attachments,omitempty" json:"Attachments,omitempty"`
+	Attachments *NonEmptyArrayOfAttachmentsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Attachments,omitempty" json:"Attachments,omitempty"`
 }
 
 type CreateAttachmentResponseType struct {
-	XMLName xml.Name `xml:"m:CreateAttachmentResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateAttachmentResponse"`
 
 	*BaseResponseMessageType
 }
 
 type DeleteAttachmentType struct {
-	XMLName xml.Name `xml:"m:DeleteAttachment"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteAttachment"`
 
 	*BaseRequestType
 
-	AttachmentIds *NonEmptyArrayOfRequestAttachmentIdsType `xml:"m:AttachmentIds,omitempty" json:"AttachmentIds,omitempty"`
+	AttachmentIds *NonEmptyArrayOfRequestAttachmentIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AttachmentIds,omitempty" json:"AttachmentIds,omitempty"`
 }
 
 type DeleteAttachmentResponseType struct {
-	XMLName xml.Name `xml:"m:DeleteAttachmentResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteAttachmentResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetAttachmentType struct {
-	XMLName xml.Name `xml:"m:GetAttachment"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetAttachment"`
 
 	*BaseRequestType
 
-	AttachmentShape *AttachmentResponseShapeType `xml:"m:AttachmentShape,omitempty" json:"AttachmentShape,omitempty"`
+	AttachmentShape *AttachmentResponseShapeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AttachmentShape,omitempty" json:"AttachmentShape,omitempty"`
 
-	AttachmentIds *NonEmptyArrayOfRequestAttachmentIdsType `xml:"m:AttachmentIds,omitempty" json:"AttachmentIds,omitempty"`
+	AttachmentIds *NonEmptyArrayOfRequestAttachmentIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AttachmentIds,omitempty" json:"AttachmentIds,omitempty"`
 }
 
 type GetAttachmentResponseType struct {
-	XMLName xml.Name `xml:"m:GetAttachmentResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetAttachmentResponse"`
 
 	*BaseResponseMessageType
 }
 
 type CreateItemResponseType struct {
-	XMLName xml.Name `xml:"m:CreateItemResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateItemResponse"`
 
 	*BaseResponseMessageType
 }
 
 type UpdateItemResponseType struct {
-	XMLName xml.Name `xml:"m:UpdateItemResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateItemResponse"`
 
 	*BaseResponseMessageType
 }
 
 type UpdateItemInRecoverableItemsResponseType struct {
-	XMLName xml.Name `xml:"m:UpdateItemInRecoverableItemsResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateItemInRecoverableItemsResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetItemResponseType struct {
-	XMLName xml.Name `xml:"m:GetItemResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetItemResponse"`
 
 	*BaseResponseMessageType
 }
 
 type MoveItemResponseType struct {
-	XMLName xml.Name `xml:"m:MoveItemResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MoveItemResponse"`
 
 	*BaseResponseMessageType
 }
 
 type CopyItemResponseType struct {
-	XMLName xml.Name `xml:"m:CopyItemResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CopyItemResponse"`
 
 	*BaseResponseMessageType
 }
 
 type DeleteItemResponseType struct {
-	XMLName xml.Name `xml:"m:DeleteItemResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteItemResponse"`
 
 	*BaseResponseMessageType
 }
 
 type DeleteItemResponseMessageType struct {
-	XMLName xml.Name `xml:"m:DeleteItemResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteItemResponseMessage"`
 
 	*ResponseMessageType
 }
 
 type FindItemResponseMessageType struct {
-	XMLName xml.Name `xml:"m:FindItemResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindItemResponseMessage"`
 
 	*ResponseMessageType
 
-	RootFolder *FindItemParentType `xml:"m:RootFolder,omitempty" json:"RootFolder,omitempty"`
+	RootFolder *FindItemParentType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RootFolder,omitempty" json:"RootFolder,omitempty"`
 
-	HighlightTerms *ArrayOfHighlightTermsType `xml:"m:HighlightTerms,omitempty" json:"HighlightTerms,omitempty"`
+	HighlightTerms *ArrayOfHighlightTermsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages HighlightTerms,omitempty" json:"HighlightTerms,omitempty"`
 }
 
 type FindItemResponseType struct {
-	XMLName xml.Name `xml:"m:FindItemResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindItemResponse"`
 
 	*BaseResponseMessageType
 }
 
 type ArchiveItemResponseType struct {
-	XMLName xml.Name `xml:"m:ArchiveItemResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ArchiveItemResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetClientAccessTokenType struct {
-	XMLName xml.Name `xml:"m:GetClientAccessToken"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetClientAccessToken"`
 
 	*BaseRequestType
 
-	TokenRequests *NonEmptyArrayOfClientAccessTokenRequestsType `xml:"m:TokenRequests,omitempty" json:"TokenRequests,omitempty"`
+	TokenRequests *NonEmptyArrayOfClientAccessTokenRequestsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages TokenRequests,omitempty" json:"TokenRequests,omitempty"`
 }
 
 type GetClientAccessTokenResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetClientAccessTokenResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetClientAccessTokenResponseMessage"`
 
 	*ResponseMessageType
 
-	Token *ClientAccessTokenType `xml:"m:Token,omitempty" json:"Token,omitempty"`
+	Token *ClientAccessTokenType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Token,omitempty" json:"Token,omitempty"`
 }
 
 type GetClientAccessTokenResponseType struct {
-	XMLName xml.Name `xml:"m:GetClientAccessTokenResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetClientAccessTokenResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetFocusedOtherOverridesRequestType struct {
-	XMLName xml.Name `xml:"m:GetFocusedOtherOverrides"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetFocusedOtherOverrides"`
 
 	*BaseRequestType
 }
 
 type GetFocusedOtherOverridesResponseType struct {
-	XMLName xml.Name `xml:"m:GetFocusedOtherOverridesResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetFocusedOtherOverridesResponse"`
 
 	*BaseResponseMessageType
 
-	Overrides *ArrayOfInferenceClassificationOverridesType `xml:"m:Overrides,omitempty" json:"Overrides,omitempty"`
+	Overrides *ArrayOfInferenceClassificationOverridesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Overrides,omitempty" json:"Overrides,omitempty"`
 }
 
 type CreateOrUpdateFocusedOtherOverrideRequestType struct {
-	XMLName xml.Name `xml:"m:CreateOrUpdateFocusedOtherOverride"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateOrUpdateFocusedOtherOverride"`
 
 	*BaseRequestType
 
-	SenderSmtpAddress string `xml:"m:SenderSmtpAddress,omitempty" json:"SenderSmtpAddress,omitempty"`
+	SenderSmtpAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SenderSmtpAddress,omitempty" json:"SenderSmtpAddress,omitempty"`
 
-	SenderDisplayName string `xml:"m:SenderDisplayName,omitempty" json:"SenderDisplayName,omitempty"`
+	SenderDisplayName string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SenderDisplayName,omitempty" json:"SenderDisplayName,omitempty"`
 
-	AlwaysClassifyAs *InferenceClassificationType `xml:"m:AlwaysClassifyAs,omitempty" json:"AlwaysClassifyAs,omitempty"`
+	AlwaysClassifyAs *InferenceClassificationType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AlwaysClassifyAs,omitempty" json:"AlwaysClassifyAs,omitempty"`
 }
 
 type CreateOrUpdateFocusedOtherOverrideResponseType struct {
-	XMLName xml.Name `xml:"m:CreateOrUpdateFocusedOtherOverrideResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateOrUpdateFocusedOtherOverrideResponse"`
 
 	*BaseResponseMessageType
 
-	Override *InferenceClassificationOverrideType `xml:"m:Override,omitempty" json:"Override,omitempty"`
+	Override *InferenceClassificationOverrideType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Override,omitempty" json:"Override,omitempty"`
 }
 
 type DeleteFocusedOtherOverrideRequestType struct {
-	XMLName xml.Name `xml:"m:DeleteFocusedOtherOverride"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteFocusedOtherOverride"`
 
 	*BaseRequestType
 
-	Id *GuidType `xml:"m:Id,omitempty" json:"Id,omitempty"`
+	Id *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Id,omitempty" json:"Id,omitempty"`
 }
 
 type DeleteFocusedOtherOverrideResponseType struct {
-	XMLName xml.Name `xml:"m:DeleteFocusedOtherOverrideResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteFocusedOtherOverrideResponse"`
 
 	*BaseResponseMessageType
 
-	Override *InferenceClassificationOverrideType `xml:"m:Override,omitempty" json:"Override,omitempty"`
+	Override *InferenceClassificationOverrideType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Override,omitempty" json:"Override,omitempty"`
 }
 
 type ResolveNamesType struct {
-	XMLName xml.Name `xml:"m:ResolveNames"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResolveNames"`
 
 	*BaseRequestType
 
-	ParentFolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"m:ParentFolderIds,omitempty" json:"ParentFolderIds,omitempty"`
+	ParentFolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ParentFolderIds,omitempty" json:"ParentFolderIds,omitempty"`
 
-	UnresolvedEntry *NonEmptyStringType `xml:"m:UnresolvedEntry,omitempty" json:"UnresolvedEntry,omitempty"`
+	UnresolvedEntry *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UnresolvedEntry,omitempty" json:"UnresolvedEntry,omitempty"`
 
 	ReturnFullContactData bool `xml:"ReturnFullContactData,attr,omitempty" json:"ReturnFullContactData,omitempty"`
 
@@ -13292,363 +13292,363 @@ type ResolveNamesType struct {
 }
 
 type ResolveNamesResponseMessageType struct {
-	XMLName xml.Name `xml:"m:ResolveNamesResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResolveNamesResponseMessage"`
 
 	*ResponseMessageType
 
-	ResolutionSet *ArrayOfResolutionType `xml:"m:ResolutionSet,omitempty" json:"ResolutionSet,omitempty"`
+	ResolutionSet *ArrayOfResolutionType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResolutionSet,omitempty" json:"ResolutionSet,omitempty"`
 }
 
 type ResolveNamesResponseType struct {
-	XMLName xml.Name `xml:"m:ResolveNamesResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResolveNamesResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetPasswordExpirationDateType struct {
-	XMLName xml.Name `xml:"m:GetPasswordExpirationDate"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetPasswordExpirationDate"`
 
 	*BaseRequestType
 
-	MailboxSmtpAddress string `xml:"m:MailboxSmtpAddress,omitempty" json:"MailboxSmtpAddress,omitempty"`
+	MailboxSmtpAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MailboxSmtpAddress,omitempty" json:"MailboxSmtpAddress,omitempty"`
 }
 
 type GetPasswordExpirationDateResponseMessageType struct {
 	*ResponseMessageType
 
-	PasswordExpirationDate xsd.DateTime `xml:"m:PasswordExpirationDate,omitempty" json:"PasswordExpirationDate,omitempty"`
+	PasswordExpirationDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PasswordExpirationDate,omitempty" json:"PasswordExpirationDate,omitempty"`
 }
 
 type GetMailTipsType struct {
-	XMLName xml.Name `xml:"m:GetMailTips"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetMailTips"`
 
 	*BaseRequestType
 
-	SendingAs *EmailAddressType `xml:"m:SendingAs,omitempty" json:"SendingAs,omitempty"`
+	SendingAs *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SendingAs,omitempty" json:"SendingAs,omitempty"`
 
-	Recipients *ArrayOfRecipientsType `xml:"m:Recipients,omitempty" json:"Recipients,omitempty"`
+	Recipients *ArrayOfRecipientsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Recipients,omitempty" json:"Recipients,omitempty"`
 
-	MailTipsRequested *MailTipTypes `xml:"m:MailTipsRequested,omitempty" json:"MailTipsRequested,omitempty"`
+	MailTipsRequested *MailTipTypes `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MailTipsRequested,omitempty" json:"MailTipsRequested,omitempty"`
 }
 
 type GetMailTipsResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetMailTipsResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetMailTipsResponse"`
 
 	*ResponseMessageType
 
-	ResponseMessages *ArrayOfMailTipsResponseMessageType `xml:"m:ResponseMessages,omitempty" json:"ResponseMessages,omitempty"`
+	ResponseMessages *ArrayOfMailTipsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResponseMessages,omitempty" json:"ResponseMessages,omitempty"`
 }
 
 type ArrayOfMailTipsResponseMessageType struct {
-	XMLName xml.Name `xml:"m:ResponseMessages"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResponseMessages"`
 
-	MailTipsResponseMessageType []*MailTipsResponseMessageType `xml:"m:MailTipsResponseMessageType,omitempty" json:"MailTipsResponseMessageType,omitempty"`
+	MailTipsResponseMessageType []*MailTipsResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MailTipsResponseMessageType,omitempty" json:"MailTipsResponseMessageType,omitempty"`
 }
 
 type MailTipsResponseMessageType struct {
 	*ResponseMessageType
 
-	MailTips *MailTips `xml:"m:MailTips,omitempty" json:"MailTips,omitempty"`
+	MailTips *MailTips `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MailTips,omitempty" json:"MailTips,omitempty"`
 }
 
 type PlayOnPhoneType struct {
-	XMLName xml.Name `xml:"m:PlayOnPhone"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PlayOnPhone"`
 
 	*BaseRequestType
 
-	ItemId *ItemIdType `xml:"m:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemId,omitempty" json:"ItemId,omitempty"`
 
-	DialString string `xml:"m:DialString,omitempty" json:"DialString,omitempty"`
+	DialString string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DialString,omitempty" json:"DialString,omitempty"`
 }
 
 type PlayOnPhoneResponseMessageType struct {
-	XMLName xml.Name `xml:"m:PlayOnPhoneResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PlayOnPhoneResponse"`
 
 	*ResponseMessageType
 
-	PhoneCallId *PhoneCallIdType `xml:"m:PhoneCallId,omitempty" json:"PhoneCallId,omitempty"`
+	PhoneCallId *PhoneCallIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PhoneCallId,omitempty" json:"PhoneCallId,omitempty"`
 }
 
 type GetPhoneCallInformationType struct {
-	XMLName xml.Name `xml:"m:GetPhoneCallInformation"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetPhoneCallInformation"`
 
 	*BaseRequestType
 
-	PhoneCallId *PhoneCallIdType `xml:"m:PhoneCallId,omitempty" json:"PhoneCallId,omitempty"`
+	PhoneCallId *PhoneCallIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PhoneCallId,omitempty" json:"PhoneCallId,omitempty"`
 }
 
 type GetPhoneCallInformationResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetPhoneCallInformationResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetPhoneCallInformationResponse"`
 
 	*ResponseMessageType
 
-	PhoneCallInformation *PhoneCallInformationType `xml:"m:PhoneCallInformation,omitempty" json:"PhoneCallInformation,omitempty"`
+	PhoneCallInformation *PhoneCallInformationType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PhoneCallInformation,omitempty" json:"PhoneCallInformation,omitempty"`
 }
 
 type DisconnectPhoneCallType struct {
-	XMLName xml.Name `xml:"m:DisconnectPhoneCall"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DisconnectPhoneCall"`
 
 	*BaseRequestType
 
-	PhoneCallId *PhoneCallIdType `xml:"m:PhoneCallId,omitempty" json:"PhoneCallId,omitempty"`
+	PhoneCallId *PhoneCallIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PhoneCallId,omitempty" json:"PhoneCallId,omitempty"`
 }
 
 type DisconnectPhoneCallResponseMessageType struct {
-	XMLName xml.Name `xml:"m:DisconnectPhoneCallResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DisconnectPhoneCallResponse"`
 
 	*ResponseMessageType
 }
 
 type ExpandDLType struct {
-	XMLName xml.Name `xml:"m:ExpandDL"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExpandDL"`
 
 	*BaseRequestType
 
-	Mailbox *EmailAddressType `xml:"m:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Mailbox,omitempty" json:"Mailbox,omitempty"`
 }
 
 type ExpandDLResponseMessageType struct {
-	XMLName xml.Name `xml:"m:ExpandDLResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExpandDLResponseMessage"`
 
 	*ResponseMessageType
 
-	DLExpansion *ArrayOfDLExpansionType `xml:"m:DLExpansion,omitempty" json:"DLExpansion,omitempty"`
+	DLExpansion *ArrayOfDLExpansionType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DLExpansion,omitempty" json:"DLExpansion,omitempty"`
 }
 
 type ExpandDLResponseType struct {
-	XMLName xml.Name `xml:"m:ExpandDLResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExpandDLResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetServerTimeZonesType struct {
-	XMLName xml.Name `xml:"m:GetServerTimeZones"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetServerTimeZones"`
 
 	*BaseRequestType
 
-	Ids *NonEmptyArrayOfTimeZoneIdType `xml:"m:Ids,omitempty" json:"Ids,omitempty"`
+	Ids *NonEmptyArrayOfTimeZoneIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Ids,omitempty" json:"Ids,omitempty"`
 
 	ReturnFullTimeZoneData bool `xml:"ReturnFullTimeZoneData,attr,omitempty" json:"ReturnFullTimeZoneData,omitempty"`
 }
 
 type GetServerTimeZonesResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetServerTimeZonesResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetServerTimeZonesResponseMessage"`
 
 	*ResponseMessageType
 
-	TimeZoneDefinitions *ArrayOfTimeZoneDefinitionType `xml:"m:TimeZoneDefinitions,omitempty" json:"TimeZoneDefinitions,omitempty"`
+	TimeZoneDefinitions *ArrayOfTimeZoneDefinitionType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages TimeZoneDefinitions,omitempty" json:"TimeZoneDefinitions,omitempty"`
 }
 
 type GetServerTimeZonesResponseType struct {
-	XMLName xml.Name `xml:"m:GetServerTimeZonesResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetServerTimeZonesResponse"`
 
 	*BaseResponseMessageType
 }
 
 type CreateManagedFolderRequestType struct {
-	XMLName xml.Name `xml:"m:CreateManagedFolder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateManagedFolder"`
 
 	*BaseRequestType
 
-	FolderNames *NonEmptyArrayOfFolderNamesType `xml:"m:FolderNames,omitempty" json:"FolderNames,omitempty"`
+	FolderNames *NonEmptyArrayOfFolderNamesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FolderNames,omitempty" json:"FolderNames,omitempty"`
 
-	Mailbox *EmailAddressType `xml:"m:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Mailbox,omitempty" json:"Mailbox,omitempty"`
 }
 
 type CreateManagedFolderResponseType struct {
-	XMLName xml.Name `xml:"m:CreateManagedFolderResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateManagedFolderResponse"`
 
 	*BaseResponseMessageType
 }
 
 type SubscribeType struct {
-	XMLName xml.Name `xml:"m:Subscribe"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Subscribe"`
 
 	*BaseRequestType
 
-	PullSubscriptionRequest *PullSubscriptionRequestType `xml:"m:PullSubscriptionRequest,omitempty" json:"PullSubscriptionRequest,omitempty"`
+	PullSubscriptionRequest *PullSubscriptionRequestType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PullSubscriptionRequest,omitempty" json:"PullSubscriptionRequest,omitempty"`
 
-	PushSubscriptionRequest *PushSubscriptionRequestType `xml:"m:PushSubscriptionRequest,omitempty" json:"PushSubscriptionRequest,omitempty"`
+	PushSubscriptionRequest *PushSubscriptionRequestType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PushSubscriptionRequest,omitempty" json:"PushSubscriptionRequest,omitempty"`
 
-	StreamingSubscriptionRequest *StreamingSubscriptionRequestType `xml:"m:StreamingSubscriptionRequest,omitempty" json:"StreamingSubscriptionRequest,omitempty"`
+	StreamingSubscriptionRequest *StreamingSubscriptionRequestType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages StreamingSubscriptionRequest,omitempty" json:"StreamingSubscriptionRequest,omitempty"`
 }
 
 type SubscribeResponseMessageType struct {
-	XMLName xml.Name `xml:"m:SubscribeResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SubscribeResponseMessage"`
 
 	*ResponseMessageType
 
-	SubscriptionId *SubscriptionIdType `xml:"m:SubscriptionId,omitempty" json:"SubscriptionId,omitempty"`
+	SubscriptionId *SubscriptionIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SubscriptionId,omitempty" json:"SubscriptionId,omitempty"`
 
-	Watermark *WatermarkType `xml:"m:Watermark,omitempty" json:"Watermark,omitempty"`
+	Watermark *WatermarkType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Watermark,omitempty" json:"Watermark,omitempty"`
 }
 
 type SubscribeResponseType struct {
-	XMLName xml.Name `xml:"m:SubscribeResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SubscribeResponse"`
 
 	*BaseResponseMessageType
 }
 
 type UnsubscribeType struct {
-	XMLName xml.Name `xml:"m:Unsubscribe"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Unsubscribe"`
 
 	*BaseRequestType
 
-	SubscriptionId *SubscriptionIdType `xml:"m:SubscriptionId,omitempty" json:"SubscriptionId,omitempty"`
+	SubscriptionId *SubscriptionIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SubscriptionId,omitempty" json:"SubscriptionId,omitempty"`
 }
 
 type UnsubscribeResponseType struct {
-	XMLName xml.Name `xml:"m:UnsubscribeResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UnsubscribeResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetEventsType struct {
-	XMLName xml.Name `xml:"m:GetEvents"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetEvents"`
 
 	*BaseRequestType
 
-	SubscriptionId *SubscriptionIdType `xml:"m:SubscriptionId,omitempty" json:"SubscriptionId,omitempty"`
+	SubscriptionId *SubscriptionIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SubscriptionId,omitempty" json:"SubscriptionId,omitempty"`
 
-	Watermark *WatermarkType `xml:"m:Watermark,omitempty" json:"Watermark,omitempty"`
+	Watermark *WatermarkType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Watermark,omitempty" json:"Watermark,omitempty"`
 }
 
 type GetEventsResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetEventsResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetEventsResponseMessage"`
 
 	*ResponseMessageType
 
-	Notification *NotificationType `xml:"m:Notification,omitempty" json:"Notification,omitempty"`
+	Notification *NotificationType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Notification,omitempty" json:"Notification,omitempty"`
 }
 
 type GetEventsResponseType struct {
-	XMLName xml.Name `xml:"m:GetEventsResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetEventsResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetStreamingEventsType struct {
-	XMLName xml.Name `xml:"m:GetStreamingEvents"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetStreamingEvents"`
 
 	*BaseRequestType
 
-	SubscriptionIds *NonEmptyArrayOfSubscriptionIdsType `xml:"m:SubscriptionIds,omitempty" json:"SubscriptionIds,omitempty"`
+	SubscriptionIds *NonEmptyArrayOfSubscriptionIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SubscriptionIds,omitempty" json:"SubscriptionIds,omitempty"`
 
-	ConnectionTimeout *StreamingSubscriptionConnectionTimeoutType `xml:"m:ConnectionTimeout,omitempty" json:"ConnectionTimeout,omitempty"`
+	ConnectionTimeout *StreamingSubscriptionConnectionTimeoutType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConnectionTimeout,omitempty" json:"ConnectionTimeout,omitempty"`
 }
 
 type GetStreamingEventsResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetStreamingEventsResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetStreamingEventsResponseMessage"`
 
 	*ResponseMessageType
 
-	Notifications *NonEmptyArrayOfNotificationsType `xml:"m:Notifications,omitempty" json:"Notifications,omitempty"`
+	Notifications *NonEmptyArrayOfNotificationsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Notifications,omitempty" json:"Notifications,omitempty"`
 
-	ErrorSubscriptionIds *NonEmptyArrayOfSubscriptionIdsType `xml:"m:ErrorSubscriptionIds,omitempty" json:"ErrorSubscriptionIds,omitempty"`
+	ErrorSubscriptionIds *NonEmptyArrayOfSubscriptionIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ErrorSubscriptionIds,omitempty" json:"ErrorSubscriptionIds,omitempty"`
 
-	ConnectionStatus *ConnectionStatusType `xml:"m:ConnectionStatus,omitempty" json:"ConnectionStatus,omitempty"`
+	ConnectionStatus *ConnectionStatusType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConnectionStatus,omitempty" json:"ConnectionStatus,omitempty"`
 }
 
 type GetStreamingEventsResponseType struct {
-	XMLName xml.Name `xml:"m:GetStreamingEventsResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetStreamingEventsResponse"`
 
 	*BaseResponseMessageType
 }
 
 type SendNotificationResponseMessageType struct {
-	XMLName xml.Name `xml:"m:SendNotificationResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SendNotificationResponseMessage"`
 
 	*ResponseMessageType
 
-	Notification *NotificationType `xml:"m:Notification,omitempty" json:"Notification,omitempty"`
+	Notification *NotificationType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Notification,omitempty" json:"Notification,omitempty"`
 }
 
 type SendNotificationResponseType struct {
-	XMLName xml.Name `xml:"m:SendNotification"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SendNotification"`
 
 	*BaseResponseMessageType
 }
 
 type SendNotificationResultType struct {
-	XMLName xml.Name `xml:"m:SendNotificationResult"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SendNotificationResult"`
 
-	SubscriptionStatus *SubscriptionStatusType `xml:"m:SubscriptionStatus,omitempty" json:"SubscriptionStatus,omitempty"`
+	SubscriptionStatus *SubscriptionStatusType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SubscriptionStatus,omitempty" json:"SubscriptionStatus,omitempty"`
 }
 
 type SyncFolderHierarchyType struct {
-	XMLName xml.Name `xml:"m:SyncFolderHierarchy"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncFolderHierarchy"`
 
 	*BaseRequestType
 
-	FolderShape *FolderResponseShapeType `xml:"m:FolderShape,omitempty" json:"FolderShape,omitempty"`
+	FolderShape *FolderResponseShapeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FolderShape,omitempty" json:"FolderShape,omitempty"`
 
-	SyncFolderId *TargetFolderIdType `xml:"m:SyncFolderId,omitempty" json:"SyncFolderId,omitempty"`
+	SyncFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncFolderId,omitempty" json:"SyncFolderId,omitempty"`
 
-	SyncState string `xml:"m:SyncState,omitempty" json:"SyncState,omitempty"`
+	SyncState string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncState,omitempty" json:"SyncState,omitempty"`
 }
 
 type SyncFolderHierarchyResponseMessageType struct {
-	XMLName xml.Name `xml:"m:SyncFolderHierarchyResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncFolderHierarchyResponseMessage"`
 
 	*ResponseMessageType
 
-	SyncState string `xml:"m:SyncState,omitempty" json:"SyncState,omitempty"`
+	SyncState string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncState,omitempty" json:"SyncState,omitempty"`
 
-	IncludesLastFolderInRange bool `xml:"m:IncludesLastFolderInRange,omitempty" json:"IncludesLastFolderInRange,omitempty"`
+	IncludesLastFolderInRange bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IncludesLastFolderInRange,omitempty" json:"IncludesLastFolderInRange,omitempty"`
 
-	Changes *SyncFolderHierarchyChangesType `xml:"m:Changes,omitempty" json:"Changes,omitempty"`
+	Changes *SyncFolderHierarchyChangesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Changes,omitempty" json:"Changes,omitempty"`
 }
 
 type SyncFolderHierarchyResponseType struct {
-	XMLName xml.Name `xml:"m:SyncFolderHierarchyResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncFolderHierarchyResponse"`
 
 	*BaseResponseMessageType
 }
 
 type SyncFolderItemsType struct {
-	XMLName xml.Name `xml:"m:SyncFolderItems"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncFolderItems"`
 
 	*BaseRequestType
 
-	ItemShape *ItemResponseShapeType `xml:"m:ItemShape,omitempty" json:"ItemShape,omitempty"`
+	ItemShape *ItemResponseShapeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemShape,omitempty" json:"ItemShape,omitempty"`
 
-	SyncFolderId *TargetFolderIdType `xml:"m:SyncFolderId,omitempty" json:"SyncFolderId,omitempty"`
+	SyncFolderId *TargetFolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncFolderId,omitempty" json:"SyncFolderId,omitempty"`
 
-	SyncState string `xml:"m:SyncState,omitempty" json:"SyncState,omitempty"`
+	SyncState string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncState,omitempty" json:"SyncState,omitempty"`
 
-	Ignore *ArrayOfBaseItemIdsType `xml:"m:Ignore,omitempty" json:"Ignore,omitempty"`
+	Ignore *ArrayOfBaseItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Ignore,omitempty" json:"Ignore,omitempty"`
 
-	MaxChangesReturned *MaxSyncChangesReturnedType `xml:"m:MaxChangesReturned,omitempty" json:"MaxChangesReturned,omitempty"`
+	MaxChangesReturned *MaxSyncChangesReturnedType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MaxChangesReturned,omitempty" json:"MaxChangesReturned,omitempty"`
 
-	SyncScope *SyncFolderItemsScopeType `xml:"m:SyncScope,omitempty" json:"SyncScope,omitempty"`
+	SyncScope *SyncFolderItemsScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncScope,omitempty" json:"SyncScope,omitempty"`
 }
 
 type SyncFolderItemsResponseMessageType struct {
-	XMLName xml.Name `xml:"m:SyncFolderItemsResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncFolderItemsResponseMessage"`
 
 	*ResponseMessageType
 
-	SyncState string `xml:"m:SyncState,omitempty" json:"SyncState,omitempty"`
+	SyncState string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncState,omitempty" json:"SyncState,omitempty"`
 
-	IncludesLastItemInRange bool `xml:"m:IncludesLastItemInRange,omitempty" json:"IncludesLastItemInRange,omitempty"`
+	IncludesLastItemInRange bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IncludesLastItemInRange,omitempty" json:"IncludesLastItemInRange,omitempty"`
 
-	Changes *SyncFolderItemsChangesType `xml:"m:Changes,omitempty" json:"Changes,omitempty"`
+	Changes *SyncFolderItemsChangesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Changes,omitempty" json:"Changes,omitempty"`
 }
 
 type SyncFolderItemsResponseType struct {
-	XMLName xml.Name `xml:"m:SyncFolderItemsResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SyncFolderItemsResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetUserAvailabilityRequestType struct {
-	XMLName xml.Name `xml:"m:GetUserAvailabilityRequest"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetUserAvailabilityRequest"`
 
 	*BaseRequestType
 
 	TimeZone *TimeZone `xml:"TimeZone,omitempty" json:"TimeZone,omitempty"`
 
-	MailboxDataArray *ArrayOfMailboxData `xml:"m:MailboxDataArray,omitempty" json:"MailboxDataArray,omitempty"`
+	MailboxDataArray *ArrayOfMailboxData `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MailboxDataArray,omitempty" json:"MailboxDataArray,omitempty"`
 
 	FreeBusyViewOptions *FreeBusyViewOptions `xml:"FreeBusyViewOptions,omitempty" json:"FreeBusyViewOptions,omitempty"`
 
@@ -13656,33 +13656,33 @@ type GetUserAvailabilityRequestType struct {
 }
 
 type FreeBusyResponseType struct {
-	XMLName xml.Name `xml:"m:FreeBusyResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FreeBusyResponse"`
 
-	ResponseMessage *ResponseMessageType `xml:"m:ResponseMessage,omitempty" json:"ResponseMessage,omitempty"`
+	ResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResponseMessage,omitempty" json:"ResponseMessage,omitempty"`
 
-	FreeBusyView *FreeBusyView `xml:"m:FreeBusyView,omitempty" json:"FreeBusyView,omitempty"`
+	FreeBusyView *FreeBusyView `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FreeBusyView,omitempty" json:"FreeBusyView,omitempty"`
 }
 
 type ArrayOfFreeBusyResponse struct {
-	XMLName xml.Name `xml:"m:FreeBusyResponseArray"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FreeBusyResponseArray"`
 
-	FreeBusyResponse []*FreeBusyResponseType `xml:"m:FreeBusyResponse,omitempty" json:"FreeBusyResponse,omitempty"`
+	FreeBusyResponse []*FreeBusyResponseType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FreeBusyResponse,omitempty" json:"FreeBusyResponse,omitempty"`
 }
 
 type SuggestionsResponseType struct {
-	XMLName xml.Name `xml:"m:SuggestionsResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SuggestionsResponse"`
 
-	ResponseMessage *ResponseMessageType `xml:"m:ResponseMessage,omitempty" json:"ResponseMessage,omitempty"`
+	ResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResponseMessage,omitempty" json:"ResponseMessage,omitempty"`
 
-	SuggestionDayResultArray *ArrayOfSuggestionDayResult `xml:"m:SuggestionDayResultArray,omitempty" json:"SuggestionDayResultArray,omitempty"`
+	SuggestionDayResultArray *ArrayOfSuggestionDayResult `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SuggestionDayResultArray,omitempty" json:"SuggestionDayResultArray,omitempty"`
 }
 
 type GetUserAvailabilityResponseType struct {
-	XMLName xml.Name `xml:"m:GetUserAvailabilityResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetUserAvailabilityResponse"`
 
-	FreeBusyResponseArray *ArrayOfFreeBusyResponse `xml:"m:FreeBusyResponseArray,omitempty" json:"FreeBusyResponseArray,omitempty"`
+	FreeBusyResponseArray *ArrayOfFreeBusyResponse `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FreeBusyResponseArray,omitempty" json:"FreeBusyResponseArray,omitempty"`
 
-	SuggestionsResponse *SuggestionsResponseType `xml:"m:SuggestionsResponse,omitempty" json:"SuggestionsResponse,omitempty"`
+	SuggestionsResponse *SuggestionsResponseType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SuggestionsResponse,omitempty" json:"SuggestionsResponse,omitempty"`
 }
 
 type GetUserOofSettingsRequest struct {
@@ -13692,11 +13692,11 @@ type GetUserOofSettingsRequest struct {
 }
 
 type GetUserOofSettingsResponse struct {
-	ResponseMessage *ResponseMessageType `xml:"m:ResponseMessage,omitempty" json:"ResponseMessage,omitempty"`
+	ResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResponseMessage,omitempty" json:"ResponseMessage,omitempty"`
 
 	OofSettings *OofSettings `xml:"OofSettings,omitempty" json:"OofSettings,omitempty"`
 
-	AllowExternalOof *ExternalAudience `xml:"m:AllowExternalOof,omitempty" json:"AllowExternalOof,omitempty"`
+	AllowExternalOof *ExternalAudience `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AllowExternalOof,omitempty" json:"AllowExternalOof,omitempty"`
 }
 
 type SetUserOofSettingsRequest struct {
@@ -13708,147 +13708,147 @@ type SetUserOofSettingsRequest struct {
 }
 
 type SetUserOofSettingsResponse struct {
-	ResponseMessage *ResponseMessageType `xml:"m:ResponseMessage,omitempty" json:"ResponseMessage,omitempty"`
+	ResponseMessage *ResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResponseMessage,omitempty" json:"ResponseMessage,omitempty"`
 }
 
 type ConvertIdType struct {
-	XMLName xml.Name `xml:"m:ConvertId"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConvertId"`
 
 	*BaseRequestType
 
-	SourceIds *NonEmptyArrayOfAlternateIdsType `xml:"m:SourceIds,omitempty" json:"SourceIds,omitempty"`
+	SourceIds *NonEmptyArrayOfAlternateIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SourceIds,omitempty" json:"SourceIds,omitempty"`
 
 	DestinationFormat *IdFormatType `xml:"DestinationFormat,attr,omitempty" json:"DestinationFormat,omitempty"`
 }
 
 type ConvertIdResponseType struct {
-	XMLName xml.Name `xml:"m:ConvertIdResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConvertIdResponse"`
 
 	*BaseResponseMessageType
 }
 
 type ConvertIdResponseMessageType struct {
-	XMLName xml.Name `xml:"m:ConvertIdResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConvertIdResponseMessage"`
 
 	*ResponseMessageType
 
-	AlternateId *AlternateIdBaseType `xml:"m:AlternateId,omitempty" json:"AlternateId,omitempty"`
+	AlternateId *AlternateIdBaseType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AlternateId,omitempty" json:"AlternateId,omitempty"`
 }
 
 type GetDelegateType struct {
-	XMLName xml.Name `xml:"m:GetDelegate"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetDelegate"`
 
 	*BaseDelegateType
 
-	UserIds *ArrayOfUserIdType `xml:"m:UserIds,omitempty" json:"UserIds,omitempty"`
+	UserIds *ArrayOfUserIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UserIds,omitempty" json:"UserIds,omitempty"`
 
 	IncludePermissions bool `xml:"IncludePermissions,attr,omitempty" json:"IncludePermissions,omitempty"`
 }
 
 type GetDelegateResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetDelegateResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetDelegateResponse"`
 
 	*BaseDelegateResponseMessageType
 
-	DeliverMeetingRequests *DeliverMeetingRequestsType `xml:"m:DeliverMeetingRequests,omitempty" json:"DeliverMeetingRequests,omitempty"`
+	DeliverMeetingRequests *DeliverMeetingRequestsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeliverMeetingRequests,omitempty" json:"DeliverMeetingRequests,omitempty"`
 }
 
 type ArrayOfDelegateUserResponseMessageType struct {
-	XMLName xml.Name `xml:"m:ResponseMessages"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResponseMessages"`
 
-	DelegateUserResponseMessageType []*DelegateUserResponseMessageType `xml:"m:DelegateUserResponseMessageType,omitempty" json:"DelegateUserResponseMessageType,omitempty"`
+	DelegateUserResponseMessageType []*DelegateUserResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DelegateUserResponseMessageType,omitempty" json:"DelegateUserResponseMessageType,omitempty"`
 }
 
 type DelegateUserResponseMessageType struct {
 	*ResponseMessageType
 
-	DelegateUser *DelegateUserType `xml:"m:DelegateUser,omitempty" json:"DelegateUser,omitempty"`
+	DelegateUser *DelegateUserType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DelegateUser,omitempty" json:"DelegateUser,omitempty"`
 }
 
 type AddDelegateType struct {
-	XMLName xml.Name `xml:"m:AddDelegate"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddDelegate"`
 
 	*BaseDelegateType
 
-	DelegateUsers *ArrayOfDelegateUserType `xml:"m:DelegateUsers,omitempty" json:"DelegateUsers,omitempty"`
+	DelegateUsers *ArrayOfDelegateUserType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DelegateUsers,omitempty" json:"DelegateUsers,omitempty"`
 
-	DeliverMeetingRequests *DeliverMeetingRequestsType `xml:"m:DeliverMeetingRequests,omitempty" json:"DeliverMeetingRequests,omitempty"`
+	DeliverMeetingRequests *DeliverMeetingRequestsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeliverMeetingRequests,omitempty" json:"DeliverMeetingRequests,omitempty"`
 }
 
 type BaseDelegateResponseMessageType struct {
 	*ResponseMessageType
 
-	ResponseMessages *ArrayOfDelegateUserResponseMessageType `xml:"m:ResponseMessages,omitempty" json:"ResponseMessages,omitempty"`
+	ResponseMessages *ArrayOfDelegateUserResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResponseMessages,omitempty" json:"ResponseMessages,omitempty"`
 }
 
 type BaseDelegateType struct {
 	*BaseRequestType
 
-	Mailbox *EmailAddressType `xml:"m:Mailbox,omitempty" json:"Mailbox,omitempty"`
+	Mailbox *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Mailbox,omitempty" json:"Mailbox,omitempty"`
 }
 
 type AddDelegateResponseMessageType struct {
-	XMLName xml.Name `xml:"m:AddDelegateResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddDelegateResponse"`
 
 	*BaseDelegateResponseMessageType
 }
 
 type RemoveDelegateType struct {
-	XMLName xml.Name `xml:"m:RemoveDelegate"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveDelegate"`
 
 	*BaseDelegateType
 
-	UserIds *ArrayOfUserIdType `xml:"m:UserIds,omitempty" json:"UserIds,omitempty"`
+	UserIds *ArrayOfUserIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UserIds,omitempty" json:"UserIds,omitempty"`
 }
 
 type RemoveDelegateResponseMessageType struct {
-	XMLName xml.Name `xml:"m:RemoveDelegateResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveDelegateResponse"`
 
 	*BaseDelegateResponseMessageType
 }
 
 type UpdateDelegateType struct {
-	XMLName xml.Name `xml:"m:UpdateDelegate"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateDelegate"`
 
 	*BaseDelegateType
 
-	DelegateUsers *ArrayOfDelegateUserType `xml:"m:DelegateUsers,omitempty" json:"DelegateUsers,omitempty"`
+	DelegateUsers *ArrayOfDelegateUserType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DelegateUsers,omitempty" json:"DelegateUsers,omitempty"`
 
-	DeliverMeetingRequests *DeliverMeetingRequestsType `xml:"m:DeliverMeetingRequests,omitempty" json:"DeliverMeetingRequests,omitempty"`
+	DeliverMeetingRequests *DeliverMeetingRequestsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeliverMeetingRequests,omitempty" json:"DeliverMeetingRequests,omitempty"`
 }
 
 type UpdateDelegateResponseMessageType struct {
-	XMLName xml.Name `xml:"m:UpdateDelegateResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateDelegateResponse"`
 
 	*BaseDelegateResponseMessageType
 }
 
 type GetSharingMetadataType struct {
-	XMLName xml.Name `xml:"m:GetSharingMetadata"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSharingMetadata"`
 
 	*BaseRequestType
 
-	IdOfFolderToShare *FolderIdType `xml:"m:IdOfFolderToShare,omitempty" json:"IdOfFolderToShare,omitempty"`
+	IdOfFolderToShare *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IdOfFolderToShare,omitempty" json:"IdOfFolderToShare,omitempty"`
 
-	SenderSmtpAddress *NonEmptyStringType `xml:"m:SenderSmtpAddress,omitempty" json:"SenderSmtpAddress,omitempty"`
+	SenderSmtpAddress *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SenderSmtpAddress,omitempty" json:"SenderSmtpAddress,omitempty"`
 
-	Recipients *ArrayOfSmtpAddressType `xml:"m:Recipients,omitempty" json:"Recipients,omitempty"`
+	Recipients *ArrayOfSmtpAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Recipients,omitempty" json:"Recipients,omitempty"`
 }
 
 type GetSharingMetadataResponseMessageType struct {
 	*ResponseMessageType
 
-	EncryptedSharedFolderDataCollection *ArrayOfEncryptedSharedFolderDataType `xml:"m:EncryptedSharedFolderDataCollection,omitempty" json:"EncryptedSharedFolderDataCollection,omitempty"`
+	EncryptedSharedFolderDataCollection *ArrayOfEncryptedSharedFolderDataType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages EncryptedSharedFolderDataCollection,omitempty" json:"EncryptedSharedFolderDataCollection,omitempty"`
 
-	InvalidRecipients *ArrayOfInvalidRecipientsType `xml:"m:InvalidRecipients,omitempty" json:"InvalidRecipients,omitempty"`
+	InvalidRecipients *ArrayOfInvalidRecipientsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages InvalidRecipients,omitempty" json:"InvalidRecipients,omitempty"`
 }
 
 type RefreshSharingFolderType struct {
-	XMLName xml.Name `xml:"m:RefreshSharingFolder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RefreshSharingFolder"`
 
 	*BaseRequestType
 
-	SharingFolderId *FolderIdType `xml:"m:SharingFolderId,omitempty" json:"SharingFolderId,omitempty"`
+	SharingFolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SharingFolderId,omitempty" json:"SharingFolderId,omitempty"`
 }
 
 type RefreshSharingFolderResponseMessageType struct {
@@ -13856,147 +13856,147 @@ type RefreshSharingFolderResponseMessageType struct {
 }
 
 type GetSharingFolderType struct {
-	XMLName xml.Name `xml:"m:GetSharingFolder"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSharingFolder"`
 
 	*BaseRequestType
 
-	SmtpAddress *NonEmptyStringType `xml:"m:SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
+	SmtpAddress *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
 
-	DataType *SharingDataType `xml:"m:DataType,omitempty" json:"DataType,omitempty"`
+	DataType *SharingDataType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DataType,omitempty" json:"DataType,omitempty"`
 
-	SharedFolderId *NonEmptyStringType `xml:"m:SharedFolderId,omitempty" json:"SharedFolderId,omitempty"`
+	SharedFolderId *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SharedFolderId,omitempty" json:"SharedFolderId,omitempty"`
 }
 
 type GetSharingFolderResponseMessageType struct {
 	*ResponseMessageType
 
-	SharingFolderId *FolderIdType `xml:"m:SharingFolderId,omitempty" json:"SharingFolderId,omitempty"`
+	SharingFolderId *FolderIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SharingFolderId,omitempty" json:"SharingFolderId,omitempty"`
 }
 
 type CreateUserConfigurationType struct {
-	XMLName xml.Name `xml:"m:CreateUserConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateUserConfiguration"`
 
 	*BaseRequestType
 
-	UserConfiguration *UserConfigurationType `xml:"m:UserConfiguration,omitempty" json:"UserConfiguration,omitempty"`
+	UserConfiguration *UserConfigurationType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UserConfiguration,omitempty" json:"UserConfiguration,omitempty"`
 }
 
 type CreateUserConfigurationResponseType struct {
-	XMLName xml.Name `xml:"m:CreateUserConfigurationResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateUserConfigurationResponse"`
 
 	*BaseResponseMessageType
 }
 
 type DeleteUserConfigurationType struct {
-	XMLName xml.Name `xml:"m:DeleteUserConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteUserConfiguration"`
 
 	*BaseRequestType
 
-	UserConfigurationName *UserConfigurationNameType `xml:"m:UserConfigurationName,omitempty" json:"UserConfigurationName,omitempty"`
+	UserConfigurationName *UserConfigurationNameType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UserConfigurationName,omitempty" json:"UserConfigurationName,omitempty"`
 }
 
 type DeleteUserConfigurationResponseType struct {
-	XMLName xml.Name `xml:"m:DeleteUserConfigurationResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteUserConfigurationResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetUserConfigurationType struct {
-	XMLName xml.Name `xml:"m:GetUserConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetUserConfiguration"`
 
 	*BaseRequestType
 
-	UserConfigurationName *UserConfigurationNameType `xml:"m:UserConfigurationName,omitempty" json:"UserConfigurationName,omitempty"`
+	UserConfigurationName *UserConfigurationNameType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UserConfigurationName,omitempty" json:"UserConfigurationName,omitempty"`
 
-	UserConfigurationProperties *UserConfigurationPropertyType `xml:"m:UserConfigurationProperties,omitempty" json:"UserConfigurationProperties,omitempty"`
+	UserConfigurationProperties *UserConfigurationPropertyType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UserConfigurationProperties,omitempty" json:"UserConfigurationProperties,omitempty"`
 }
 
 type GetUserConfigurationResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetUserConfigurationResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetUserConfigurationResponseMessage"`
 
 	*ResponseMessageType
 
-	UserConfiguration *UserConfigurationType `xml:"m:UserConfiguration,omitempty" json:"UserConfiguration,omitempty"`
+	UserConfiguration *UserConfigurationType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UserConfiguration,omitempty" json:"UserConfiguration,omitempty"`
 }
 
 type GetUserConfigurationResponseType struct {
-	XMLName xml.Name `xml:"m:GetUserConfigurationResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetUserConfigurationResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetSpecificUserConfigurationType struct {
-	XMLName xml.Name `xml:"m:GetSpecificUserConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSpecificUserConfiguration"`
 
 	*BaseRequestType
 
-	UserConfigurationName *UserConfigurationNameType `xml:"m:UserConfigurationName,omitempty" json:"UserConfigurationName,omitempty"`
+	UserConfigurationName *UserConfigurationNameType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UserConfigurationName,omitempty" json:"UserConfigurationName,omitempty"`
 
-	UserConfigurationProperties *UserConfigurationPropertyType `xml:"m:UserConfigurationProperties,omitempty" json:"UserConfigurationProperties,omitempty"`
+	UserConfigurationProperties *UserConfigurationPropertyType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UserConfigurationProperties,omitempty" json:"UserConfigurationProperties,omitempty"`
 }
 
 type GetSpecificUserConfigurationResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetSpecificUserConfigurationResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSpecificUserConfigurationResponseMessage"`
 
 	*ResponseMessageType
 
-	UserConfiguration *UserConfigurationType `xml:"m:UserConfiguration,omitempty" json:"UserConfiguration,omitempty"`
+	UserConfiguration *UserConfigurationType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UserConfiguration,omitempty" json:"UserConfiguration,omitempty"`
 }
 
 type GetSpecificUserConfigurationResponseType struct {
-	XMLName xml.Name `xml:"m:GetSpecificUserConfigurationResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSpecificUserConfigurationResponse"`
 
 	*BaseResponseMessageType
 }
 
 type UpdateUserConfigurationType struct {
-	XMLName xml.Name `xml:"m:UpdateUserConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateUserConfiguration"`
 
 	*BaseRequestType
 
-	UserConfiguration *UserConfigurationType `xml:"m:UserConfiguration,omitempty" json:"UserConfiguration,omitempty"`
+	UserConfiguration *UserConfigurationType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UserConfiguration,omitempty" json:"UserConfiguration,omitempty"`
 }
 
 type UpdateUserConfigurationResponseType struct {
-	XMLName xml.Name `xml:"m:UpdateUserConfigurationResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateUserConfigurationResponse"`
 
 	*BaseResponseMessageType
 }
 
 type SetTeamMailboxRequestType struct {
-	XMLName xml.Name `xml:"m:SetTeamMailbox"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetTeamMailbox"`
 
 	*BaseRequestType
 
-	EmailAddress *EmailAddressType `xml:"m:EmailAddress,omitempty" json:"EmailAddress,omitempty"`
+	EmailAddress *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 
-	SharePointSiteUrl string `xml:"m:SharePointSiteUrl,omitempty" json:"SharePointSiteUrl,omitempty"`
+	SharePointSiteUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SharePointSiteUrl,omitempty" json:"SharePointSiteUrl,omitempty"`
 
-	State *TeamMailboxLifecycleStateType `xml:"m:State,omitempty" json:"State,omitempty"`
+	State *TeamMailboxLifecycleStateType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages State,omitempty" json:"State,omitempty"`
 }
 
 type UnpinTeamMailboxRequestType struct {
-	XMLName xml.Name `xml:"m:UnpinTeamMailbox"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UnpinTeamMailbox"`
 
 	*BaseRequestType
 
-	EmailAddress *EmailAddressType `xml:"m:EmailAddress,omitempty" json:"EmailAddress,omitempty"`
+	EmailAddress *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 }
 
 type SetTeamMailboxResponseMessageType struct {
-	XMLName xml.Name `xml:"m:SetTeamMailboxResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetTeamMailboxResponse"`
 
 	*ResponseMessageType
 }
 
 type UnpinTeamMailboxResponseMessageType struct {
-	XMLName xml.Name `xml:"m:UnpinTeamMailboxResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UnpinTeamMailboxResponse"`
 
 	*ResponseMessageType
 }
 
 type GetRoomListsType struct {
-	XMLName xml.Name `xml:"m:GetRoomLists"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetRoomLists"`
 
 	*BaseRequestType
 }
@@ -14004,31 +14004,31 @@ type GetRoomListsType struct {
 type GetRoomListsResponseMessageType struct {
 	*ResponseMessageType
 
-	RoomLists *ArrayOfEmailAddressesType `xml:"m:RoomLists,omitempty" json:"RoomLists,omitempty"`
+	RoomLists *ArrayOfEmailAddressesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RoomLists,omitempty" json:"RoomLists,omitempty"`
 }
 
 type GetRoomsType struct {
-	XMLName xml.Name `xml:"m:GetRooms"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetRooms"`
 
 	*BaseRequestType
 
-	RoomList *EmailAddressType `xml:"m:RoomList,omitempty" json:"RoomList,omitempty"`
+	RoomList *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RoomList,omitempty" json:"RoomList,omitempty"`
 }
 
 type GetRoomsResponseMessageType struct {
 	*ResponseMessageType
 
-	Rooms *ArrayOfRoomsType `xml:"m:Rooms,omitempty" json:"Rooms,omitempty"`
+	Rooms *ArrayOfRoomsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Rooms,omitempty" json:"Rooms,omitempty"`
 }
 
 type GetRemindersType struct {
-	XMLName xml.Name `xml:"m:GetReminders"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetReminders"`
 
 	*BaseRequestType
 
-	BeginTime xsd.DateTime `xml:"m:BeginTime,omitempty" json:"BeginTime,omitempty"`
+	BeginTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/messages BeginTime,omitempty" json:"BeginTime,omitempty"`
 
-	EndTime xsd.DateTime `xml:"m:EndTime,omitempty" json:"EndTime,omitempty"`
+	EndTime xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/messages EndTime,omitempty" json:"EndTime,omitempty"`
 
 	MaxItems int32 `xml:"MaxItems,omitempty" json:"MaxItems,omitempty"`
 
@@ -14038,485 +14038,485 @@ type GetRemindersType struct {
 type GetRemindersResponseMessageType struct {
 	*ResponseMessageType
 
-	Reminders *ArrayOfRemindersType `xml:"m:Reminders,omitempty" json:"Reminders,omitempty"`
+	Reminders *ArrayOfRemindersType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Reminders,omitempty" json:"Reminders,omitempty"`
 }
 
 type PerformReminderActionType struct {
-	XMLName xml.Name `xml:"m:PerformReminderAction"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PerformReminderAction"`
 
 	*BaseRequestType
 
-	ReminderItemActions *NonEmptyArrayOfReminderItemActionType `xml:"m:ReminderItemActions,omitempty" json:"ReminderItemActions,omitempty"`
+	ReminderItemActions *NonEmptyArrayOfReminderItemActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ReminderItemActions,omitempty" json:"ReminderItemActions,omitempty"`
 }
 
 type PerformReminderActionResponseMessageType struct {
 	*ResponseMessageType
 
-	UpdatedItemIds *NonEmptyArrayOfItemIdsType `xml:"m:UpdatedItemIds,omitempty" json:"UpdatedItemIds,omitempty"`
+	UpdatedItemIds *NonEmptyArrayOfItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdatedItemIds,omitempty" json:"UpdatedItemIds,omitempty"`
 }
 
 type ArrayOfServiceConfigurationType struct {
-	XMLName xml.Name `xml:"m:RequestedConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RequestedConfiguration"`
 
-	ConfigurationName *ServiceConfigurationType `xml:"m:ConfigurationName,omitempty" json:"ConfigurationName,omitempty"`
+	ConfigurationName *ServiceConfigurationType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConfigurationName,omitempty" json:"ConfigurationName,omitempty"`
 }
 
 type GetServiceConfigurationType struct {
-	XMLName xml.Name `xml:"m:GetServiceConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetServiceConfiguration"`
 
 	*BaseRequestType
 
-	ActingAs *EmailAddressType `xml:"m:ActingAs,omitempty" json:"ActingAs,omitempty"`
+	ActingAs *EmailAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ActingAs,omitempty" json:"ActingAs,omitempty"`
 
-	RequestedConfiguration *ArrayOfServiceConfigurationType `xml:"m:RequestedConfiguration,omitempty" json:"RequestedConfiguration,omitempty"`
+	RequestedConfiguration *ArrayOfServiceConfigurationType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RequestedConfiguration,omitempty" json:"RequestedConfiguration,omitempty"`
 
-	ConfigurationRequestDetails *ConfigurationRequestDetailsType `xml:"m:ConfigurationRequestDetails,omitempty" json:"ConfigurationRequestDetails,omitempty"`
+	ConfigurationRequestDetails *ConfigurationRequestDetailsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConfigurationRequestDetails,omitempty" json:"ConfigurationRequestDetails,omitempty"`
 }
 
 type GetServiceConfigurationResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetServiceConfigurationResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetServiceConfigurationResponse"`
 
 	*ResponseMessageType
 
-	ResponseMessages *ArrayOfServiceConfigurationResponseMessageType `xml:"m:ResponseMessages,omitempty" json:"ResponseMessages,omitempty"`
+	ResponseMessages *ArrayOfServiceConfigurationResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResponseMessages,omitempty" json:"ResponseMessages,omitempty"`
 }
 
 type ArrayOfServiceConfigurationResponseMessageType struct {
-	XMLName xml.Name `xml:"m:ResponseMessages"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResponseMessages"`
 
-	ServiceConfigurationResponseMessageType []*ServiceConfigurationResponseMessageType `xml:"m:ServiceConfigurationResponseMessageType,omitempty" json:"ServiceConfigurationResponseMessageType,omitempty"`
+	ServiceConfigurationResponseMessageType []*ServiceConfigurationResponseMessageType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ServiceConfigurationResponseMessageType,omitempty" json:"ServiceConfigurationResponseMessageType,omitempty"`
 }
 
 type ServiceConfigurationResponseMessageType struct {
 	*ResponseMessageType
 
-	MailTipsConfiguration *MailTipsServiceConfiguration `xml:"m:MailTipsConfiguration,omitempty" json:"MailTipsConfiguration,omitempty"`
+	MailTipsConfiguration *MailTipsServiceConfiguration `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MailTipsConfiguration,omitempty" json:"MailTipsConfiguration,omitempty"`
 
-	UnifiedMessagingConfiguration *UnifiedMessageServiceConfiguration `xml:"m:UnifiedMessagingConfiguration,omitempty" json:"UnifiedMessagingConfiguration,omitempty"`
+	UnifiedMessagingConfiguration *UnifiedMessageServiceConfiguration `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UnifiedMessagingConfiguration,omitempty" json:"UnifiedMessagingConfiguration,omitempty"`
 
-	ProtectionRulesConfiguration *ProtectionRulesServiceConfiguration `xml:"m:ProtectionRulesConfiguration,omitempty" json:"ProtectionRulesConfiguration,omitempty"`
+	ProtectionRulesConfiguration *ProtectionRulesServiceConfiguration `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ProtectionRulesConfiguration,omitempty" json:"ProtectionRulesConfiguration,omitempty"`
 
-	PolicyNudgeRulesConfiguration *PolicyNudgeRulesServiceConfiguration `xml:"m:PolicyNudgeRulesConfiguration,omitempty" json:"PolicyNudgeRulesConfiguration,omitempty"`
+	PolicyNudgeRulesConfiguration *PolicyNudgeRulesServiceConfiguration `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PolicyNudgeRulesConfiguration,omitempty" json:"PolicyNudgeRulesConfiguration,omitempty"`
 
-	SharePointURLsConfiguration *SharePointURLsServiceConfiguration `xml:"m:SharePointURLsConfiguration,omitempty" json:"SharePointURLsConfiguration,omitempty"`
+	SharePointURLsConfiguration *SharePointURLsServiceConfiguration `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SharePointURLsConfiguration,omitempty" json:"SharePointURLsConfiguration,omitempty"`
 }
 
 type FindMessageTrackingReportRequestType struct {
-	XMLName xml.Name `xml:"m:FindMessageTrackingReport"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindMessageTrackingReport"`
 
 	*BaseRequestType
 }
 
 type FindMessageTrackingReportResponseMessageType struct {
-	XMLName xml.Name `xml:"m:FindMessageTrackingReportResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindMessageTrackingReportResponse"`
 
 	*ResponseMessageType
 
-	Diagnostics *ArrayOfStringsType `xml:"m:Diagnostics,omitempty" json:"Diagnostics,omitempty"`
+	Diagnostics *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Diagnostics,omitempty" json:"Diagnostics,omitempty"`
 
-	MessageTrackingSearchResults *ArrayOfFindMessageTrackingSearchResultType `xml:"m:MessageTrackingSearchResults,omitempty" json:"MessageTrackingSearchResults,omitempty"`
+	MessageTrackingSearchResults *ArrayOfFindMessageTrackingSearchResultType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MessageTrackingSearchResults,omitempty" json:"MessageTrackingSearchResults,omitempty"`
 
-	ExecutedSearchScope string `xml:"m:ExecutedSearchScope,omitempty" json:"ExecutedSearchScope,omitempty"`
+	ExecutedSearchScope string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExecutedSearchScope,omitempty" json:"ExecutedSearchScope,omitempty"`
 
-	Errors *ArrayOfArraysOfTrackingPropertiesType `xml:"m:Errors,omitempty" json:"Errors,omitempty"`
+	Errors *ArrayOfArraysOfTrackingPropertiesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Errors,omitempty" json:"Errors,omitempty"`
 
-	Properties *ArrayOfTrackingPropertiesType `xml:"m:Properties,omitempty" json:"Properties,omitempty"`
+	Properties *ArrayOfTrackingPropertiesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Properties,omitempty" json:"Properties,omitempty"`
 }
 
 type GetMessageTrackingReportRequestType struct {
-	XMLName xml.Name `xml:"m:GetMessageTrackingReport"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetMessageTrackingReport"`
 
 	*BaseRequestType
 }
 
 type GetMessageTrackingReportResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetMessageTrackingReportResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetMessageTrackingReportResponse"`
 
 	*ResponseMessageType
 
-	MessageTrackingReport *MessageTrackingReportType `xml:"m:MessageTrackingReport,omitempty" json:"MessageTrackingReport,omitempty"`
+	MessageTrackingReport *MessageTrackingReportType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MessageTrackingReport,omitempty" json:"MessageTrackingReport,omitempty"`
 
-	Diagnostics *ArrayOfStringsType `xml:"m:Diagnostics,omitempty" json:"Diagnostics,omitempty"`
+	Diagnostics *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Diagnostics,omitempty" json:"Diagnostics,omitempty"`
 
-	Errors *ArrayOfArraysOfTrackingPropertiesType `xml:"m:Errors,omitempty" json:"Errors,omitempty"`
+	Errors *ArrayOfArraysOfTrackingPropertiesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Errors,omitempty" json:"Errors,omitempty"`
 
-	Properties *ArrayOfTrackingPropertiesType `xml:"m:Properties,omitempty" json:"Properties,omitempty"`
+	Properties *ArrayOfTrackingPropertiesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Properties,omitempty" json:"Properties,omitempty"`
 }
 
 type GetInboxRulesRequestType struct {
-	XMLName xml.Name `xml:"m:GetInboxRules"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetInboxRules"`
 
 	*BaseRequestType
 
-	MailboxSmtpAddress string `xml:"m:MailboxSmtpAddress,omitempty" json:"MailboxSmtpAddress,omitempty"`
+	MailboxSmtpAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MailboxSmtpAddress,omitempty" json:"MailboxSmtpAddress,omitempty"`
 }
 
 type GetInboxRulesResponseType struct {
-	XMLName xml.Name `xml:"m:GetInboxRulesResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetInboxRulesResponse"`
 
 	*ResponseMessageType
 
-	OutlookRuleBlobExists bool `xml:"m:OutlookRuleBlobExists,omitempty" json:"OutlookRuleBlobExists,omitempty"`
+	OutlookRuleBlobExists bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages OutlookRuleBlobExists,omitempty" json:"OutlookRuleBlobExists,omitempty"`
 
-	InboxRules *ArrayOfRulesType `xml:"m:InboxRules,omitempty" json:"InboxRules,omitempty"`
+	InboxRules *ArrayOfRulesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages InboxRules,omitempty" json:"InboxRules,omitempty"`
 }
 
 type UpdateInboxRulesRequestType struct {
-	XMLName xml.Name `xml:"m:UpdateInboxRules"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateInboxRules"`
 
 	*BaseRequestType
 
-	MailboxSmtpAddress string `xml:"m:MailboxSmtpAddress,omitempty" json:"MailboxSmtpAddress,omitempty"`
+	MailboxSmtpAddress string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MailboxSmtpAddress,omitempty" json:"MailboxSmtpAddress,omitempty"`
 
-	RemoveOutlookRuleBlob bool `xml:"m:RemoveOutlookRuleBlob,omitempty" json:"RemoveOutlookRuleBlob,omitempty"`
+	RemoveOutlookRuleBlob bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveOutlookRuleBlob,omitempty" json:"RemoveOutlookRuleBlob,omitempty"`
 
-	Operations *ArrayOfRuleOperationsType `xml:"m:Operations,omitempty" json:"Operations,omitempty"`
+	Operations *ArrayOfRuleOperationsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Operations,omitempty" json:"Operations,omitempty"`
 }
 
 type UpdateInboxRulesResponseType struct {
-	XMLName xml.Name `xml:"m:UpdateInboxRulesResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateInboxRulesResponse"`
 
 	*ResponseMessageType
 
-	RuleOperationErrors *ArrayOfRuleOperationErrorsType `xml:"m:RuleOperationErrors,omitempty" json:"RuleOperationErrors,omitempty"`
+	RuleOperationErrors *ArrayOfRuleOperationErrorsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RuleOperationErrors,omitempty" json:"RuleOperationErrors,omitempty"`
 }
 
 type FindMailboxStatisticsByKeywordsType struct {
-	XMLName xml.Name `xml:"m:FindMailboxStatisticsByKeywords"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindMailboxStatisticsByKeywords"`
 
 	*BaseRequestType
 
-	Mailboxes *ArrayOfUserMailboxesType `xml:"m:Mailboxes,omitempty" json:"Mailboxes,omitempty"`
+	Mailboxes *ArrayOfUserMailboxesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Mailboxes,omitempty" json:"Mailboxes,omitempty"`
 
-	Keywords *ArrayOfStringsType `xml:"m:Keywords,omitempty" json:"Keywords,omitempty"`
+	Keywords *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Keywords,omitempty" json:"Keywords,omitempty"`
 
-	Language string `xml:"m:Language,omitempty" json:"Language,omitempty"`
+	Language string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Language,omitempty" json:"Language,omitempty"`
 
-	Senders *ArrayOfSmtpAddressType `xml:"m:Senders,omitempty" json:"Senders,omitempty"`
+	Senders *ArrayOfSmtpAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Senders,omitempty" json:"Senders,omitempty"`
 
-	Recipients *ArrayOfSmtpAddressType `xml:"m:Recipients,omitempty" json:"Recipients,omitempty"`
+	Recipients *ArrayOfSmtpAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Recipients,omitempty" json:"Recipients,omitempty"`
 
-	FromDate xsd.DateTime `xml:"m:FromDate,omitempty" json:"FromDate,omitempty"`
+	FromDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FromDate,omitempty" json:"FromDate,omitempty"`
 
-	ToDate xsd.DateTime `xml:"m:ToDate,omitempty" json:"ToDate,omitempty"`
+	ToDate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ToDate,omitempty" json:"ToDate,omitempty"`
 
-	MessageTypes *ArrayOfSearchItemKindsType `xml:"m:MessageTypes,omitempty" json:"MessageTypes,omitempty"`
+	MessageTypes *ArrayOfSearchItemKindsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MessageTypes,omitempty" json:"MessageTypes,omitempty"`
 
-	SearchDumpster bool `xml:"m:SearchDumpster,omitempty" json:"SearchDumpster,omitempty"`
+	SearchDumpster bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchDumpster,omitempty" json:"SearchDumpster,omitempty"`
 
-	IncludePersonalArchive bool `xml:"m:IncludePersonalArchive,omitempty" json:"IncludePersonalArchive,omitempty"`
+	IncludePersonalArchive bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IncludePersonalArchive,omitempty" json:"IncludePersonalArchive,omitempty"`
 
-	IncludeUnsearchableItems bool `xml:"m:IncludeUnsearchableItems,omitempty" json:"IncludeUnsearchableItems,omitempty"`
+	IncludeUnsearchableItems bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IncludeUnsearchableItems,omitempty" json:"IncludeUnsearchableItems,omitempty"`
 }
 
 type FindMailboxStatisticsByKeywordsResponseType struct {
-	XMLName xml.Name `xml:"m:FindMailboxStatisticsByKeywordsResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindMailboxStatisticsByKeywordsResponse"`
 
 	*BaseResponseMessageType
 }
 
 type FindMailboxStatisticsByKeywordsResponseMessageType struct {
-	XMLName xml.Name `xml:"m:FindMailboxStatisticsByKeywordsResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindMailboxStatisticsByKeywordsResponseMessage"`
 
 	*ResponseMessageType
 
-	MailboxStatisticsSearchResult *MailboxStatisticsSearchResultType `xml:"m:MailboxStatisticsSearchResult,omitempty" json:"MailboxStatisticsSearchResult,omitempty"`
+	MailboxStatisticsSearchResult *MailboxStatisticsSearchResultType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MailboxStatisticsSearchResult,omitempty" json:"MailboxStatisticsSearchResult,omitempty"`
 }
 
 type GetSearchableMailboxesType struct {
-	XMLName xml.Name `xml:"m:GetSearchableMailboxes"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSearchableMailboxes"`
 
 	*BaseRequestType
 
-	SearchFilter string `xml:"m:SearchFilter,omitempty" json:"SearchFilter,omitempty"`
+	SearchFilter string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchFilter,omitempty" json:"SearchFilter,omitempty"`
 
-	ExpandGroupMembership bool `xml:"m:ExpandGroupMembership,omitempty" json:"ExpandGroupMembership,omitempty"`
+	ExpandGroupMembership bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExpandGroupMembership,omitempty" json:"ExpandGroupMembership,omitempty"`
 }
 
 type GetSearchableMailboxesResponseMessageType struct {
 	*ResponseMessageType
 
-	SearchableMailboxes *ArrayOfSearchableMailboxesType `xml:"m:SearchableMailboxes,omitempty" json:"SearchableMailboxes,omitempty"`
+	SearchableMailboxes *ArrayOfSearchableMailboxesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchableMailboxes,omitempty" json:"SearchableMailboxes,omitempty"`
 
-	FailedMailboxes *ArrayOfFailedSearchMailboxesType `xml:"m:FailedMailboxes,omitempty" json:"FailedMailboxes,omitempty"`
+	FailedMailboxes *ArrayOfFailedSearchMailboxesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FailedMailboxes,omitempty" json:"FailedMailboxes,omitempty"`
 }
 
 type SearchMailboxesType struct {
-	XMLName xml.Name `xml:"m:SearchMailboxes"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchMailboxes"`
 
 	*BaseRequestType
 
-	SearchQueries *NonEmptyArrayOfMailboxQueriesType `xml:"m:SearchQueries,omitempty" json:"SearchQueries,omitempty"`
+	SearchQueries *NonEmptyArrayOfMailboxQueriesType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchQueries,omitempty" json:"SearchQueries,omitempty"`
 
-	ResultType *SearchResultType `xml:"m:ResultType,omitempty" json:"ResultType,omitempty"`
+	ResultType *SearchResultType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResultType,omitempty" json:"ResultType,omitempty"`
 
-	PreviewItemResponseShape *PreviewItemResponseShapeType `xml:"m:PreviewItemResponseShape,omitempty" json:"PreviewItemResponseShape,omitempty"`
+	PreviewItemResponseShape *PreviewItemResponseShapeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PreviewItemResponseShape,omitempty" json:"PreviewItemResponseShape,omitempty"`
 
-	SortBy *FieldOrderType `xml:"m:SortBy,omitempty" json:"SortBy,omitempty"`
+	SortBy *FieldOrderType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SortBy,omitempty" json:"SortBy,omitempty"`
 
-	Language string `xml:"m:Language,omitempty" json:"Language,omitempty"`
+	Language string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Language,omitempty" json:"Language,omitempty"`
 
-	Deduplication bool `xml:"m:Deduplication,omitempty" json:"Deduplication,omitempty"`
+	Deduplication bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Deduplication,omitempty" json:"Deduplication,omitempty"`
 
-	PageSize int32 `xml:"m:PageSize,omitempty" json:"PageSize,omitempty"`
+	PageSize int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PageSize,omitempty" json:"PageSize,omitempty"`
 
-	PageItemReference string `xml:"m:PageItemReference,omitempty" json:"PageItemReference,omitempty"`
+	PageItemReference string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PageItemReference,omitempty" json:"PageItemReference,omitempty"`
 
-	PageDirection *SearchPageDirectionType `xml:"m:PageDirection,omitempty" json:"PageDirection,omitempty"`
+	PageDirection *SearchPageDirectionType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PageDirection,omitempty" json:"PageDirection,omitempty"`
 }
 
 type SearchMailboxesResponseType struct {
-	XMLName xml.Name `xml:"m:SearchMailboxesResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchMailboxesResponse"`
 
 	*BaseResponseMessageType
 }
 
 type SearchMailboxesResponseMessageType struct {
-	XMLName xml.Name `xml:"m:SearchMailboxesResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchMailboxesResponseMessage"`
 
 	*ResponseMessageType
 
-	SearchMailboxesResult *SearchMailboxesResultType `xml:"m:SearchMailboxesResult,omitempty" json:"SearchMailboxesResult,omitempty"`
+	SearchMailboxesResult *SearchMailboxesResultType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchMailboxesResult,omitempty" json:"SearchMailboxesResult,omitempty"`
 }
 
 type GetDiscoverySearchConfigurationType struct {
-	XMLName xml.Name `xml:"m:GetDiscoverySearchConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetDiscoverySearchConfiguration"`
 
 	*BaseRequestType
 
-	SearchId string `xml:"m:SearchId,omitempty" json:"SearchId,omitempty"`
+	SearchId string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchId,omitempty" json:"SearchId,omitempty"`
 
-	ExpandGroupMembership bool `xml:"m:ExpandGroupMembership,omitempty" json:"ExpandGroupMembership,omitempty"`
+	ExpandGroupMembership bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExpandGroupMembership,omitempty" json:"ExpandGroupMembership,omitempty"`
 
-	InPlaceHoldConfigurationOnly bool `xml:"m:InPlaceHoldConfigurationOnly,omitempty" json:"InPlaceHoldConfigurationOnly,omitempty"`
+	InPlaceHoldConfigurationOnly bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages InPlaceHoldConfigurationOnly,omitempty" json:"InPlaceHoldConfigurationOnly,omitempty"`
 }
 
 type GetDiscoverySearchConfigurationResponseMessageType struct {
 	*ResponseMessageType
 
-	DiscoverySearchConfigurations *ArrayOfDiscoverySearchConfigurationType `xml:"m:DiscoverySearchConfigurations,omitempty" json:"DiscoverySearchConfigurations,omitempty"`
+	DiscoverySearchConfigurations *ArrayOfDiscoverySearchConfigurationType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DiscoverySearchConfigurations,omitempty" json:"DiscoverySearchConfigurations,omitempty"`
 }
 
 type GetHoldOnMailboxesType struct {
-	XMLName xml.Name `xml:"m:GetHoldOnMailboxes"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetHoldOnMailboxes"`
 
 	*BaseRequestType
 
-	HoldId string `xml:"m:HoldId,omitempty" json:"HoldId,omitempty"`
+	HoldId string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages HoldId,omitempty" json:"HoldId,omitempty"`
 }
 
 type GetHoldOnMailboxesResponseMessageType struct {
 	*ResponseMessageType
 
-	MailboxHoldResult *MailboxHoldResultType `xml:"m:MailboxHoldResult,omitempty" json:"MailboxHoldResult,omitempty"`
+	MailboxHoldResult *MailboxHoldResultType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MailboxHoldResult,omitempty" json:"MailboxHoldResult,omitempty"`
 }
 
 type SetHoldOnMailboxesType struct {
-	XMLName xml.Name `xml:"m:SetHoldOnMailboxes"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetHoldOnMailboxes"`
 
 	*BaseRequestType
 
-	ActionType *HoldActionType `xml:"m:ActionType,omitempty" json:"ActionType,omitempty"`
+	ActionType *HoldActionType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ActionType,omitempty" json:"ActionType,omitempty"`
 
-	HoldId string `xml:"m:HoldId,omitempty" json:"HoldId,omitempty"`
+	HoldId string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages HoldId,omitempty" json:"HoldId,omitempty"`
 
-	Query string `xml:"m:Query,omitempty" json:"Query,omitempty"`
+	Query string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Query,omitempty" json:"Query,omitempty"`
 
-	Mailboxes *ArrayOfStringsType `xml:"m:Mailboxes,omitempty" json:"Mailboxes,omitempty"`
+	Mailboxes *ArrayOfStringsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Mailboxes,omitempty" json:"Mailboxes,omitempty"`
 
-	Language string `xml:"m:Language,omitempty" json:"Language,omitempty"`
+	Language string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Language,omitempty" json:"Language,omitempty"`
 
-	IncludeNonIndexableItems bool `xml:"m:IncludeNonIndexableItems,omitempty" json:"IncludeNonIndexableItems,omitempty"`
+	IncludeNonIndexableItems bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IncludeNonIndexableItems,omitempty" json:"IncludeNonIndexableItems,omitempty"`
 
-	Deduplication bool `xml:"m:Deduplication,omitempty" json:"Deduplication,omitempty"`
+	Deduplication bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Deduplication,omitempty" json:"Deduplication,omitempty"`
 
-	InPlaceHoldIdentity string `xml:"m:InPlaceHoldIdentity,omitempty" json:"InPlaceHoldIdentity,omitempty"`
+	InPlaceHoldIdentity string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages InPlaceHoldIdentity,omitempty" json:"InPlaceHoldIdentity,omitempty"`
 
-	ItemHoldPeriod string `xml:"m:ItemHoldPeriod,omitempty" json:"ItemHoldPeriod,omitempty"`
+	ItemHoldPeriod string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemHoldPeriod,omitempty" json:"ItemHoldPeriod,omitempty"`
 }
 
 type SetHoldOnMailboxesResponseMessageType struct {
 	*ResponseMessageType
 
-	MailboxHoldResult *MailboxHoldResultType `xml:"m:MailboxHoldResult,omitempty" json:"MailboxHoldResult,omitempty"`
+	MailboxHoldResult *MailboxHoldResultType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MailboxHoldResult,omitempty" json:"MailboxHoldResult,omitempty"`
 }
 
 type GetNonIndexableItemStatisticsType struct {
-	XMLName xml.Name `xml:"m:GetNonIndexableItemStatistics"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetNonIndexableItemStatistics"`
 
 	*BaseRequestType
 
-	Mailboxes *NonEmptyArrayOfLegacyDNsType `xml:"m:Mailboxes,omitempty" json:"Mailboxes,omitempty"`
+	Mailboxes *NonEmptyArrayOfLegacyDNsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Mailboxes,omitempty" json:"Mailboxes,omitempty"`
 
-	SearchArchiveOnly bool `xml:"m:SearchArchiveOnly,omitempty" json:"SearchArchiveOnly,omitempty"`
+	SearchArchiveOnly bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchArchiveOnly,omitempty" json:"SearchArchiveOnly,omitempty"`
 }
 
 type GetNonIndexableItemStatisticsResponseMessageType struct {
 	*ResponseMessageType
 
-	NonIndexableItemStatistics *ArrayOfNonIndexableItemStatisticsType `xml:"m:NonIndexableItemStatistics,omitempty" json:"NonIndexableItemStatistics,omitempty"`
+	NonIndexableItemStatistics *ArrayOfNonIndexableItemStatisticsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages NonIndexableItemStatistics,omitempty" json:"NonIndexableItemStatistics,omitempty"`
 }
 
 type GetNonIndexableItemDetailsType struct {
-	XMLName xml.Name `xml:"m:GetNonIndexableItemDetails"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetNonIndexableItemDetails"`
 
 	*BaseRequestType
 
-	Mailboxes *NonEmptyArrayOfLegacyDNsType `xml:"m:Mailboxes,omitempty" json:"Mailboxes,omitempty"`
+	Mailboxes *NonEmptyArrayOfLegacyDNsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Mailboxes,omitempty" json:"Mailboxes,omitempty"`
 
-	PageSize int32 `xml:"m:PageSize,omitempty" json:"PageSize,omitempty"`
+	PageSize int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PageSize,omitempty" json:"PageSize,omitempty"`
 
-	PageItemReference string `xml:"m:PageItemReference,omitempty" json:"PageItemReference,omitempty"`
+	PageItemReference string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PageItemReference,omitempty" json:"PageItemReference,omitempty"`
 
-	PageDirection *SearchPageDirectionType `xml:"m:PageDirection,omitempty" json:"PageDirection,omitempty"`
+	PageDirection *SearchPageDirectionType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PageDirection,omitempty" json:"PageDirection,omitempty"`
 
-	SearchArchiveOnly bool `xml:"m:SearchArchiveOnly,omitempty" json:"SearchArchiveOnly,omitempty"`
+	SearchArchiveOnly bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchArchiveOnly,omitempty" json:"SearchArchiveOnly,omitempty"`
 }
 
 type GetNonIndexableItemDetailsResponseMessageType struct {
 	*ResponseMessageType
 
-	NonIndexableItemDetailsResult *NonIndexableItemDetailResultType `xml:"m:NonIndexableItemDetailsResult,omitempty" json:"NonIndexableItemDetailsResult,omitempty"`
+	NonIndexableItemDetailsResult *NonIndexableItemDetailResultType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages NonIndexableItemDetailsResult,omitempty" json:"NonIndexableItemDetailsResult,omitempty"`
 }
 
 type MarkAllItemsAsReadType struct {
-	XMLName xml.Name `xml:"m:MarkAllItemsAsRead"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MarkAllItemsAsRead"`
 
 	*BaseRequestType
 
-	ReadFlag bool `xml:"m:ReadFlag,omitempty" json:"ReadFlag,omitempty"`
+	ReadFlag bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ReadFlag,omitempty" json:"ReadFlag,omitempty"`
 
-	SuppressReadReceipts bool `xml:"m:SuppressReadReceipts,omitempty" json:"SuppressReadReceipts,omitempty"`
+	SuppressReadReceipts bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SuppressReadReceipts,omitempty" json:"SuppressReadReceipts,omitempty"`
 
-	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"m:FolderIds,omitempty" json:"FolderIds,omitempty"`
+	FolderIds *NonEmptyArrayOfBaseFolderIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FolderIds,omitempty" json:"FolderIds,omitempty"`
 }
 
 type MarkAllItemsAsReadResponseType struct {
-	XMLName xml.Name `xml:"m:MarkAllItemsAsReadResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MarkAllItemsAsReadResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetConversationItemsType struct {
-	XMLName xml.Name `xml:"m:GetConversationItems"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetConversationItems"`
 
 	*BaseRequestType
 
-	ItemShape *ItemResponseShapeType `xml:"m:ItemShape,omitempty" json:"ItemShape,omitempty"`
+	ItemShape *ItemResponseShapeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemShape,omitempty" json:"ItemShape,omitempty"`
 
-	FoldersToIgnore *NonEmptyArrayOfBaseFolderIdsType `xml:"m:FoldersToIgnore,omitempty" json:"FoldersToIgnore,omitempty"`
+	FoldersToIgnore *NonEmptyArrayOfBaseFolderIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FoldersToIgnore,omitempty" json:"FoldersToIgnore,omitempty"`
 
-	MaxItemsToReturn int32 `xml:"m:MaxItemsToReturn,omitempty" json:"MaxItemsToReturn,omitempty"`
+	MaxItemsToReturn int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MaxItemsToReturn,omitempty" json:"MaxItemsToReturn,omitempty"`
 
-	SortOrder *ConversationNodeSortOrder `xml:"m:SortOrder,omitempty" json:"SortOrder,omitempty"`
+	SortOrder *ConversationNodeSortOrder `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SortOrder,omitempty" json:"SortOrder,omitempty"`
 
-	MailboxScope *MailboxSearchLocationType `xml:"m:MailboxScope,omitempty" json:"MailboxScope,omitempty"`
+	MailboxScope *MailboxSearchLocationType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MailboxScope,omitempty" json:"MailboxScope,omitempty"`
 
-	Conversations *ArrayOfConversationRequestsType `xml:"m:Conversations,omitempty" json:"Conversations,omitempty"`
+	Conversations *ArrayOfConversationRequestsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Conversations,omitempty" json:"Conversations,omitempty"`
 }
 
 type GetConversationItemsResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetConversationItemsResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetConversationItemsResponseMessage"`
 
 	*ResponseMessageType
 
-	Conversation *ConversationResponseType `xml:"m:Conversation,omitempty" json:"Conversation,omitempty"`
+	Conversation *ConversationResponseType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Conversation,omitempty" json:"Conversation,omitempty"`
 }
 
 type GetConversationItemsResponseType struct {
-	XMLName xml.Name `xml:"m:GetConversationItemsResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetConversationItemsResponse"`
 
 	*BaseResponseMessageType
 }
 
 type GetOMEConfigurationType struct {
-	XMLName xml.Name `xml:"m:GetOMEConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetOMEConfiguration"`
 
 	*BaseRequestType
 }
 
 type OMEConfigurationResponseType struct {
-	XMLName xml.Name `xml:"m:GetOMEConfigurationResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetOMEConfigurationResponse"`
 
 	*ResponseMessageType
 
-	Xml string `xml:"m:Xml,omitempty" json:"Xml,omitempty"`
+	Xml string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Xml,omitempty" json:"Xml,omitempty"`
 }
 
 type SetOMEConfigurationType struct {
-	XMLName xml.Name `xml:"m:SetOMEConfiguration"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetOMEConfiguration"`
 
 	*BaseRequestType
 
-	Xml string `xml:"m:Xml,omitempty" json:"Xml,omitempty"`
+	Xml string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Xml,omitempty" json:"Xml,omitempty"`
 }
 
 type SetOMEConfigurationResponseType struct {
-	XMLName xml.Name `xml:"m:SetOMEConfigurationResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetOMEConfigurationResponse"`
 
 	*ResponseMessageType
 }
 
 type GetAppManifestsType struct {
-	XMLName xml.Name `xml:"m:GetAppManifests"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetAppManifests"`
 
 	*BaseRequestType
 
-	ApiVersionSupported string `xml:"m:ApiVersionSupported,omitempty" json:"ApiVersionSupported,omitempty"`
+	ApiVersionSupported string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ApiVersionSupported,omitempty" json:"ApiVersionSupported,omitempty"`
 
-	SchemaVersionSupported string `xml:"m:SchemaVersionSupported,omitempty" json:"SchemaVersionSupported,omitempty"`
+	SchemaVersionSupported string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SchemaVersionSupported,omitempty" json:"SchemaVersionSupported,omitempty"`
 
-	IncludeAllInstalledAddIns bool `xml:"m:IncludeAllInstalledAddIns,omitempty" json:"IncludeAllInstalledAddIns,omitempty"`
+	IncludeAllInstalledAddIns bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IncludeAllInstalledAddIns,omitempty" json:"IncludeAllInstalledAddIns,omitempty"`
 
-	IncludeEntitlementData bool `xml:"m:IncludeEntitlementData,omitempty" json:"IncludeEntitlementData,omitempty"`
+	IncludeEntitlementData bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IncludeEntitlementData,omitempty" json:"IncludeEntitlementData,omitempty"`
 
-	IncludeManifestData bool `xml:"m:IncludeManifestData,omitempty" json:"IncludeManifestData,omitempty"`
+	IncludeManifestData bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IncludeManifestData,omitempty" json:"IncludeManifestData,omitempty"`
 
-	IncludeCustomAppsData bool `xml:"m:IncludeCustomAppsData,omitempty" json:"IncludeCustomAppsData,omitempty"`
+	IncludeCustomAppsData bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IncludeCustomAppsData,omitempty" json:"IncludeCustomAppsData,omitempty"`
 
-	ExtensionIds *ListOfExtensionIdsType `xml:"m:ExtensionIds,omitempty" json:"ExtensionIds,omitempty"`
+	ExtensionIds *ListOfExtensionIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExtensionIds,omitempty" json:"ExtensionIds,omitempty"`
 
-	AddIns *ArrayOfPrivateCatalogAddInsType `xml:"m:AddIns,omitempty" json:"AddIns,omitempty"`
+	AddIns *ArrayOfPrivateCatalogAddInsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddIns,omitempty" json:"AddIns,omitempty"`
 }
 
 type GetAppManifestsResponseType struct {
-	XMLName xml.Name `xml:"m:GetAppManifestsResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetAppManifestsResponse"`
 
 	*ResponseMessageType
 
-	Apps *ArrayOfAppsType `xml:"m:Apps,omitempty" json:"Apps,omitempty"`
+	Apps *ArrayOfAppsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Apps,omitempty" json:"Apps,omitempty"`
 
-	Manifests *ArrayOfAppManifestsType `xml:"m:Manifests,omitempty" json:"Manifests,omitempty"`
+	Manifests *ArrayOfAppManifestsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Manifests,omitempty" json:"Manifests,omitempty"`
 }
 
 type ArrayOfAppManifestsType struct {
-	XMLName xml.Name `xml:"m:Manifests"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Manifests"`
 
-	Manifest [][]byte `xml:"m:Manifest,omitempty" json:"Manifest,omitempty"`
+	Manifest [][]byte `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Manifest,omitempty" json:"Manifest,omitempty"`
 }
 
 type GetAppMarketplaceUrlType struct {
-	XMLName xml.Name `xml:"m:GetAppMarketplaceUrl"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetAppMarketplaceUrl"`
 
 	*BaseRequestType
 }
 
 type GetAppMarketplaceUrlResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetAppMarketplaceUrlResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetAppMarketplaceUrlResponse"`
 
 	*ResponseMessageType
 
-	AppMarketplaceUrl string `xml:"m:AppMarketplaceUrl,omitempty" json:"AppMarketplaceUrl,omitempty"`
+	AppMarketplaceUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AppMarketplaceUrl,omitempty" json:"AppMarketplaceUrl,omitempty"`
 
-	ConnectorsManagementUrl string `xml:"m:ConnectorsManagementUrl,omitempty" json:"ConnectorsManagementUrl,omitempty"`
+	ConnectorsManagementUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConnectorsManagementUrl,omitempty" json:"ConnectorsManagementUrl,omitempty"`
 }
 
 type MarkAsJunkType struct {
-	XMLName xml.Name `xml:"m:MarkAsJunk"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MarkAsJunk"`
 
 	*BaseRequestType
 
-	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"m:ItemIds,omitempty" json:"ItemIds,omitempty"`
+	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemIds,omitempty" json:"ItemIds,omitempty"`
 
 	IsJunk bool `xml:"IsJunk,attr,omitempty" json:"IsJunk,omitempty"`
 
@@ -14524,317 +14524,317 @@ type MarkAsJunkType struct {
 }
 
 type MarkAsJunkResponseType struct {
-	XMLName xml.Name `xml:"m:MarkAsJunkResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MarkAsJunkResponse"`
 
 	*BaseResponseMessageType
 }
 
 type MarkAsJunkResponseMessageType struct {
-	XMLName xml.Name `xml:"m:MarkAsJunkResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MarkAsJunkResponseMessage"`
 
 	*ResponseMessageType
 }
 
 type ReportMessageType struct {
-	XMLName xml.Name `xml:"m:ReportMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ReportMessage"`
 
 	*BaseRequestType
 
-	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"m:ItemIds,omitempty" json:"ItemIds,omitempty"`
+	ItemIds *NonEmptyArrayOfBaseItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemIds,omitempty" json:"ItemIds,omitempty"`
 
 	ReportAction *ReportMessageActionType `xml:"ReportAction,attr,omitempty" json:"ReportAction,omitempty"`
 }
 
 type ReportMessageResponseType struct {
-	XMLName xml.Name `xml:"m:ReportMessageResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ReportMessageResponse"`
 
 	*BaseResponseMessageType
 }
 
 type ReportMessageResponseMessageType struct {
-	XMLName xml.Name `xml:"m:ReportMessageResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ReportMessageResponseMessage"`
 
 	*ResponseMessageType
 }
 
 type InstallAppType struct {
-	XMLName xml.Name `xml:"m:InstallApp"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages InstallApp"`
 
 	*BaseRequestType
 
-	Manifest []byte `xml:"m:Manifest,omitempty" json:"Manifest,omitempty"`
+	Manifest []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Manifest,omitempty" json:"Manifest,omitempty"`
 
-	MarketplaceAssetId string `xml:"m:MarketplaceAssetId,omitempty" json:"MarketplaceAssetId,omitempty"`
+	MarketplaceAssetId string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MarketplaceAssetId,omitempty" json:"MarketplaceAssetId,omitempty"`
 
-	MarketplaceContentMarket string `xml:"m:MarketplaceContentMarket,omitempty" json:"MarketplaceContentMarket,omitempty"`
+	MarketplaceContentMarket string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MarketplaceContentMarket,omitempty" json:"MarketplaceContentMarket,omitempty"`
 
-	SendWelcomeEmail bool `xml:"m:SendWelcomeEmail,omitempty" json:"SendWelcomeEmail,omitempty"`
+	SendWelcomeEmail bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SendWelcomeEmail,omitempty" json:"SendWelcomeEmail,omitempty"`
 
-	ManifestUrl string `xml:"m:ManifestUrl,omitempty" json:"ManifestUrl,omitempty"`
+	ManifestUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ManifestUrl,omitempty" json:"ManifestUrl,omitempty"`
 
-	MarketplaceCorrelationId string `xml:"m:MarketplaceCorrelationId,omitempty" json:"MarketplaceCorrelationId,omitempty"`
+	MarketplaceCorrelationId string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MarketplaceCorrelationId,omitempty" json:"MarketplaceCorrelationId,omitempty"`
 
-	CampaignId string `xml:"m:CampaignId,omitempty" json:"CampaignId,omitempty"`
+	CampaignId string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CampaignId,omitempty" json:"CampaignId,omitempty"`
 }
 
 type InstallAppResponseType struct {
-	XMLName xml.Name `xml:"m:InstallAppResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages InstallAppResponse"`
 
 	*ResponseMessageType
 
-	WasFirstInstall bool `xml:"m:WasFirstInstall,omitempty" json:"WasFirstInstall,omitempty"`
+	WasFirstInstall bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages WasFirstInstall,omitempty" json:"WasFirstInstall,omitempty"`
 
-	Extension *InstalledAppType `xml:"m:Extension,omitempty" json:"Extension,omitempty"`
+	Extension *InstalledAppType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Extension,omitempty" json:"Extension,omitempty"`
 }
 
 type UninstallAppType struct {
-	XMLName xml.Name `xml:"m:UninstallApp"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UninstallApp"`
 
 	*BaseRequestType
 
-	ID string `xml:"m:ID,omitempty" json:"ID,omitempty"`
+	ID string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ID,omitempty" json:"ID,omitempty"`
 }
 
 type UninstallAppResponseType struct {
-	XMLName xml.Name `xml:"m:UninstallAppResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UninstallAppResponse"`
 
 	*ResponseMessageType
 }
 
 type DisableAppType struct {
-	XMLName xml.Name `xml:"m:DisableApp"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DisableApp"`
 
 	*BaseRequestType
 
-	ID string `xml:"m:ID,omitempty" json:"ID,omitempty"`
+	ID string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ID,omitempty" json:"ID,omitempty"`
 
-	DisableReason *DisableReasonType `xml:"m:DisableReason,omitempty" json:"DisableReason,omitempty"`
+	DisableReason *DisableReasonType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DisableReason,omitempty" json:"DisableReason,omitempty"`
 }
 
 type DisableAppResponseType struct {
-	XMLName xml.Name `xml:"m:DisableAppResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DisableAppResponse"`
 
 	*ResponseMessageType
 }
 
 type AddNewImContactToGroupType struct {
-	XMLName xml.Name `xml:"m:AddNewImContactToGroup"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddNewImContactToGroup"`
 
 	*BaseRequestType
 
-	ImAddress *NonEmptyStringType `xml:"m:ImAddress,omitempty" json:"ImAddress,omitempty"`
+	ImAddress *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ImAddress,omitempty" json:"ImAddress,omitempty"`
 
-	DisplayName *NonEmptyStringType `xml:"m:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DisplayName,omitempty" json:"DisplayName,omitempty"`
 
-	GroupId *ItemIdType `xml:"m:GroupId,omitempty" json:"GroupId,omitempty"`
+	GroupId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GroupId,omitempty" json:"GroupId,omitempty"`
 }
 
 type AddNewImContactToGroupResponseMessageType struct {
-	XMLName xml.Name `xml:"m:AddNewImContactToGroupResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddNewImContactToGroupResponse"`
 
 	*ResponseMessageType
 
-	Persona *PersonaType `xml:"m:Persona,omitempty" json:"Persona,omitempty"`
+	Persona *PersonaType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Persona,omitempty" json:"Persona,omitempty"`
 }
 
 type AddNewTelUriContactToGroupType struct {
-	XMLName xml.Name `xml:"m:AddNewTelUriContactToGroup"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddNewTelUriContactToGroup"`
 
 	*BaseRequestType
 
-	TelUriAddress *NonEmptyStringType `xml:"m:TelUriAddress,omitempty" json:"TelUriAddress,omitempty"`
+	TelUriAddress *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages TelUriAddress,omitempty" json:"TelUriAddress,omitempty"`
 
-	ImContactSipUriAddress *NonEmptyStringType `xml:"m:ImContactSipUriAddress,omitempty" json:"ImContactSipUriAddress,omitempty"`
+	ImContactSipUriAddress *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ImContactSipUriAddress,omitempty" json:"ImContactSipUriAddress,omitempty"`
 
-	ImTelephoneNumber *NonEmptyStringType `xml:"m:ImTelephoneNumber,omitempty" json:"ImTelephoneNumber,omitempty"`
+	ImTelephoneNumber *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ImTelephoneNumber,omitempty" json:"ImTelephoneNumber,omitempty"`
 
-	GroupId *ItemIdType `xml:"m:GroupId,omitempty" json:"GroupId,omitempty"`
+	GroupId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GroupId,omitempty" json:"GroupId,omitempty"`
 }
 
 type AddNewTelUriContactToGroupResponseMessageType struct {
-	XMLName xml.Name `xml:"m:AddNewTelUriContactToGroupResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddNewTelUriContactToGroupResponse"`
 
 	*ResponseMessageType
 
-	Persona *PersonaType `xml:"m:Persona,omitempty" json:"Persona,omitempty"`
+	Persona *PersonaType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Persona,omitempty" json:"Persona,omitempty"`
 }
 
 type AddImContactToGroupType struct {
-	XMLName xml.Name `xml:"m:AddImContactToGroup"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddImContactToGroup"`
 
 	*BaseRequestType
 
-	ContactId *ItemIdType `xml:"m:ContactId,omitempty" json:"ContactId,omitempty"`
+	ContactId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ContactId,omitempty" json:"ContactId,omitempty"`
 
-	GroupId *ItemIdType `xml:"m:GroupId,omitempty" json:"GroupId,omitempty"`
+	GroupId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GroupId,omitempty" json:"GroupId,omitempty"`
 }
 
 type AddImContactToGroupResponseMessageType struct {
-	XMLName xml.Name `xml:"m:AddImContactToGroupResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddImContactToGroupResponse"`
 
 	*ResponseMessageType
 }
 
 type RemoveImContactFromGroupType struct {
-	XMLName xml.Name `xml:"m:RemoveImContactFromGroup"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveImContactFromGroup"`
 
 	*BaseRequestType
 
-	ContactId *ItemIdType `xml:"m:ContactId,omitempty" json:"ContactId,omitempty"`
+	ContactId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ContactId,omitempty" json:"ContactId,omitempty"`
 
-	GroupId *ItemIdType `xml:"m:GroupId,omitempty" json:"GroupId,omitempty"`
+	GroupId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GroupId,omitempty" json:"GroupId,omitempty"`
 }
 
 type RemoveImContactFromGroupResponseMessageType struct {
-	XMLName xml.Name `xml:"m:RemoveImContactFromGroupResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveImContactFromGroupResponse"`
 
 	*ResponseMessageType
 }
 
 type AddImGroupType struct {
-	XMLName xml.Name `xml:"m:AddImGroup"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddImGroup"`
 
 	*BaseRequestType
 
-	DisplayName *NonEmptyStringType `xml:"m:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DisplayName,omitempty" json:"DisplayName,omitempty"`
 }
 
 type AddImGroupResponseMessageType struct {
-	XMLName xml.Name `xml:"m:AddImGroupResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddImGroupResponse"`
 
 	*ResponseMessageType
 
-	ImGroup *ImGroupType `xml:"m:ImGroup,omitempty" json:"ImGroup,omitempty"`
+	ImGroup *ImGroupType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ImGroup,omitempty" json:"ImGroup,omitempty"`
 }
 
 type AddDistributionGroupToImListType struct {
-	XMLName xml.Name `xml:"m:AddDistributionGroupToImList"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddDistributionGroupToImList"`
 
 	*BaseRequestType
 
-	SmtpAddress *NonEmptyStringType `xml:"m:SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
+	SmtpAddress *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SmtpAddress,omitempty" json:"SmtpAddress,omitempty"`
 
-	DisplayName *NonEmptyStringType `xml:"m:DisplayName,omitempty" json:"DisplayName,omitempty"`
+	DisplayName *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DisplayName,omitempty" json:"DisplayName,omitempty"`
 }
 
 type AddDistributionGroupToImListResponseMessageType struct {
-	XMLName xml.Name `xml:"m:AddDistributionGroupToImListResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddDistributionGroupToImListResponse"`
 
 	*ResponseMessageType
 
-	ImGroup *ImGroupType `xml:"m:ImGroup,omitempty" json:"ImGroup,omitempty"`
+	ImGroup *ImGroupType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ImGroup,omitempty" json:"ImGroup,omitempty"`
 }
 
 type GetImItemListType struct {
-	XMLName xml.Name `xml:"m:GetImItemList"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetImItemList"`
 
 	*BaseRequestType
 
-	ExtendedProperties *NonEmptyArrayOfExtendedFieldURIs `xml:"m:ExtendedProperties,omitempty" json:"ExtendedProperties,omitempty"`
+	ExtendedProperties *NonEmptyArrayOfExtendedFieldURIs `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExtendedProperties,omitempty" json:"ExtendedProperties,omitempty"`
 }
 
 type GetImItemListResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetImItemListResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetImItemListResponse"`
 
 	*ResponseMessageType
 
-	ImItemList *ImItemListType `xml:"m:ImItemList,omitempty" json:"ImItemList,omitempty"`
+	ImItemList *ImItemListType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ImItemList,omitempty" json:"ImItemList,omitempty"`
 }
 
 type GetImItemsType struct {
-	XMLName xml.Name `xml:"m:GetImItems"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetImItems"`
 
 	*BaseRequestType
 
-	ContactIds *NonEmptyArrayOfBaseItemIdsType `xml:"m:ContactIds,omitempty" json:"ContactIds,omitempty"`
+	ContactIds *NonEmptyArrayOfBaseItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ContactIds,omitempty" json:"ContactIds,omitempty"`
 
-	GroupIds *NonEmptyArrayOfBaseItemIdsType `xml:"m:GroupIds,omitempty" json:"GroupIds,omitempty"`
+	GroupIds *NonEmptyArrayOfBaseItemIdsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GroupIds,omitempty" json:"GroupIds,omitempty"`
 
-	ExtendedProperties *NonEmptyArrayOfExtendedFieldURIs `xml:"m:ExtendedProperties,omitempty" json:"ExtendedProperties,omitempty"`
+	ExtendedProperties *NonEmptyArrayOfExtendedFieldURIs `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExtendedProperties,omitempty" json:"ExtendedProperties,omitempty"`
 }
 
 type GetImItemsResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetImItemsResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetImItemsResponse"`
 
 	*ResponseMessageType
 
-	ImItemList *ImItemListType `xml:"m:ImItemList,omitempty" json:"ImItemList,omitempty"`
+	ImItemList *ImItemListType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ImItemList,omitempty" json:"ImItemList,omitempty"`
 }
 
 type RemoveContactFromImListType struct {
-	XMLName xml.Name `xml:"m:RemoveContactFromImList"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveContactFromImList"`
 
 	*BaseRequestType
 
-	ContactId *ItemIdType `xml:"m:ContactId,omitempty" json:"ContactId,omitempty"`
+	ContactId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ContactId,omitempty" json:"ContactId,omitempty"`
 }
 
 type RemoveContactFromImListResponseMessageType struct {
-	XMLName xml.Name `xml:"m:RemoveContactFromImListResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveContactFromImListResponse"`
 
 	*ResponseMessageType
 }
 
 type RemoveDistributionGroupFromImListType struct {
-	XMLName xml.Name `xml:"m:RemoveDistributionGroupFromImList"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveDistributionGroupFromImList"`
 
 	*BaseRequestType
 
-	GroupId *ItemIdType `xml:"m:GroupId,omitempty" json:"GroupId,omitempty"`
+	GroupId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GroupId,omitempty" json:"GroupId,omitempty"`
 }
 
 type RemoveDistributionGroupFromImListResponseMessageType struct {
-	XMLName xml.Name `xml:"m:RemoveDistributionGroupFromImListResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveDistributionGroupFromImListResponse"`
 
 	*ResponseMessageType
 }
 
 type RemoveImGroupType struct {
-	XMLName xml.Name `xml:"m:RemoveImGroup"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveImGroup"`
 
 	*BaseRequestType
 
-	GroupId *ItemIdType `xml:"m:GroupId,omitempty" json:"GroupId,omitempty"`
+	GroupId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GroupId,omitempty" json:"GroupId,omitempty"`
 }
 
 type RemoveImGroupResponseMessageType struct {
-	XMLName xml.Name `xml:"m:RemoveImGroupResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RemoveImGroupResponse"`
 
 	*ResponseMessageType
 }
 
 type SetImGroupType struct {
-	XMLName xml.Name `xml:"m:SetImGroup"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetImGroup"`
 
 	*BaseRequestType
 
-	GroupId *ItemIdType `xml:"m:GroupId,omitempty" json:"GroupId,omitempty"`
+	GroupId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GroupId,omitempty" json:"GroupId,omitempty"`
 
-	NewDisplayName *NonEmptyStringType `xml:"m:NewDisplayName,omitempty" json:"NewDisplayName,omitempty"`
+	NewDisplayName *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages NewDisplayName,omitempty" json:"NewDisplayName,omitempty"`
 }
 
 type SetImGroupResponseMessageType struct {
-	XMLName xml.Name `xml:"m:SetImGroupResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetImGroupResponse"`
 
 	*ResponseMessageType
 }
 
 type SetImListMigrationCompletedType struct {
-	XMLName xml.Name `xml:"m:SetImListMigrationCompleted"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetImListMigrationCompleted"`
 
 	*BaseRequestType
 
-	ImListMigrationCompleted bool `xml:"m:ImListMigrationCompleted,omitempty" json:"ImListMigrationCompleted,omitempty"`
+	ImListMigrationCompleted bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ImListMigrationCompleted,omitempty" json:"ImListMigrationCompleted,omitempty"`
 }
 
 type SetImListMigrationCompletedResponseMessageType struct {
-	XMLName xml.Name `xml:"m:SetImListMigrationCompletedResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetImListMigrationCompletedResponse"`
 
 	*ResponseMessageType
 }
 
 type GetUserRetentionPolicyTagsType struct {
-	XMLName xml.Name `xml:"m:GetUserRetentionPolicyTags"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetUserRetentionPolicyTags"`
 
 	*BaseRequestType
 }
@@ -14842,27 +14842,27 @@ type GetUserRetentionPolicyTagsType struct {
 type GetUserRetentionPolicyTagsResponseMessageType struct {
 	*ResponseMessageType
 
-	RetentionPolicyTags *ArrayOfRetentionPolicyTagsType `xml:"m:RetentionPolicyTags,omitempty" json:"RetentionPolicyTags,omitempty"`
+	RetentionPolicyTags *ArrayOfRetentionPolicyTagsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RetentionPolicyTags,omitempty" json:"RetentionPolicyTags,omitempty"`
 }
 
 type GetUserPhotoType struct {
-	XMLName xml.Name `xml:"m:GetUserPhoto"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetUserPhoto"`
 
 	*BaseRequestType
 
-	Email string `xml:"m:Email,omitempty" json:"Email,omitempty"`
+	Email string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Email,omitempty" json:"Email,omitempty"`
 
-	SizeRequested *UserPhotoSizeType `xml:"m:SizeRequested,omitempty" json:"SizeRequested,omitempty"`
+	SizeRequested *UserPhotoSizeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SizeRequested,omitempty" json:"SizeRequested,omitempty"`
 
-	TypeRequested *UserPhotoTypeType `xml:"m:TypeRequested,omitempty" json:"TypeRequested,omitempty"`
+	TypeRequested *UserPhotoTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages TypeRequested,omitempty" json:"TypeRequested,omitempty"`
 }
 
 type GetUserPhotoResponseMessageType struct {
 	*ResponseMessageType
 
-	HasChanged bool `xml:"m:HasChanged,omitempty" json:"HasChanged,omitempty"`
+	HasChanged bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages HasChanged,omitempty" json:"HasChanged,omitempty"`
 
-	PictureData []byte `xml:"m:PictureData,omitempty" json:"PictureData,omitempty"`
+	PictureData []byte `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PictureData,omitempty" json:"PictureData,omitempty"`
 }
 
 type GetUserPhotoResponseType struct {
@@ -14870,259 +14870,259 @@ type GetUserPhotoResponseType struct {
 }
 
 type GetMeetingSpaceType struct {
-	XMLName xml.Name `xml:"m:GetMeetingSpace"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetMeetingSpace"`
 
 	*BaseRequestType
 
-	ItemId *ItemIdType `xml:"m:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemId,omitempty" json:"ItemId,omitempty"`
 }
 
 type GetMeetingSpaceResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetMeetingSpaceResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetMeetingSpaceResponseMessage"`
 
 	*ResponseMessageType
 
-	MeetingSpace *MeetingSpaceType `xml:"m:MeetingSpace,omitempty" json:"MeetingSpace,omitempty"`
+	MeetingSpace *MeetingSpaceType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MeetingSpace,omitempty" json:"MeetingSpace,omitempty"`
 }
 
 type CreateMeetingSpaceType struct {
-	XMLName xml.Name `xml:"m:CreateMeetingSpace"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateMeetingSpace"`
 
 	*BaseRequestType
 
-	MeetingSpace *MeetingSpaceType `xml:"m:MeetingSpace,omitempty" json:"MeetingSpace,omitempty"`
+	MeetingSpace *MeetingSpaceType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MeetingSpace,omitempty" json:"MeetingSpace,omitempty"`
 }
 
 type CreateMeetingSpaceResponseMessageType struct {
-	XMLName xml.Name `xml:"m:CreateMeetingSpaceResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateMeetingSpaceResponseMessage"`
 
 	*ResponseMessageType
 
-	MeetingSpace *MeetingSpaceType `xml:"m:MeetingSpace,omitempty" json:"MeetingSpace,omitempty"`
+	MeetingSpace *MeetingSpaceType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MeetingSpace,omitempty" json:"MeetingSpace,omitempty"`
 }
 
 type UpdateMeetingSpaceType struct {
-	XMLName xml.Name `xml:"m:UpdateMeetingSpace"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateMeetingSpace"`
 
 	*BaseRequestType
 
-	ItemId *ItemIdType `xml:"m:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemId,omitempty" json:"ItemId,omitempty"`
 
-	MeetingSpace *MeetingSpaceType `xml:"m:MeetingSpace,omitempty" json:"MeetingSpace,omitempty"`
+	MeetingSpace *MeetingSpaceType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MeetingSpace,omitempty" json:"MeetingSpace,omitempty"`
 }
 
 type UpdateMeetingSpaceResponseMessageType struct {
-	XMLName xml.Name `xml:"m:UpdateMeetingSpaceResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateMeetingSpaceResponseMessage"`
 
 	*ResponseMessageType
 
-	MeetingSpace *MeetingSpaceType `xml:"m:MeetingSpace,omitempty" json:"MeetingSpace,omitempty"`
+	MeetingSpace *MeetingSpaceType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MeetingSpace,omitempty" json:"MeetingSpace,omitempty"`
 }
 
 type FindMeetingSpaceByJoinUrlType struct {
-	XMLName xml.Name `xml:"m:FindMeetingSpaceByJoinUrl"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindMeetingSpaceByJoinUrl"`
 
 	*BaseRequestType
 
-	JoinUrl string `xml:"m:JoinUrl,omitempty" json:"JoinUrl,omitempty"`
+	JoinUrl string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages JoinUrl,omitempty" json:"JoinUrl,omitempty"`
 }
 
 type FindMeetingSpaceByJoinUrlResponseMessageType struct {
-	XMLName xml.Name `xml:"m:FindMeetingSpaceByJoinUrlResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindMeetingSpaceByJoinUrlResponseMessage"`
 
 	*ResponseMessageType
 
-	MeetingSpace *MeetingSpaceType `xml:"m:MeetingSpace,omitempty" json:"MeetingSpace,omitempty"`
+	MeetingSpace *MeetingSpaceType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MeetingSpace,omitempty" json:"MeetingSpace,omitempty"`
 }
 
 type DeleteMeetingSpaceType struct {
-	XMLName xml.Name `xml:"m:DeleteMeetingSpace"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteMeetingSpace"`
 
 	*BaseRequestType
 
-	ItemId *ItemIdType `xml:"m:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemId,omitempty" json:"ItemId,omitempty"`
 }
 
 type DeleteMeetingSpaceResponseMessageType struct {
-	XMLName xml.Name `xml:"m:DeleteMeetingSpaceResponseMessage"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteMeetingSpaceResponseMessage"`
 
 	*ResponseMessageType
 }
 
 type GetMeetingInstanceRequestType struct {
-	XMLName xml.Name `xml:"m:GetMeetingInstanceRequest"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetMeetingInstanceRequest"`
 
 	*BaseRequestType
 
-	ItemId *ItemIdType `xml:"m:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemId,omitempty" json:"ItemId,omitempty"`
 }
 
 type GetMeetingInstanceResponseMessageType struct {
-	XMLName xml.Name `xml:"m:GetMeetingInstanceResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetMeetingInstanceResponse"`
 
 	*ResponseMessageType
 
-	MeetingInstance *MeetingInstanceType `xml:"m:MeetingInstance,omitempty" json:"MeetingInstance,omitempty"`
+	MeetingInstance *MeetingInstanceType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MeetingInstance,omitempty" json:"MeetingInstance,omitempty"`
 }
 
 type CreateMeetingInstanceRequestType struct {
-	XMLName xml.Name `xml:"m:CreateMeetingInstanceRequest"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateMeetingInstanceRequest"`
 
 	*BaseRequestType
 
-	MeetingInstance *MeetingInstanceType `xml:"m:MeetingInstance,omitempty" json:"MeetingInstance,omitempty"`
+	MeetingInstance *MeetingInstanceType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MeetingInstance,omitempty" json:"MeetingInstance,omitempty"`
 }
 
 type CreateMeetingInstanceResponseMessageType struct {
-	XMLName xml.Name `xml:"m:CreateMeetingInstanceResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CreateMeetingInstanceResponse"`
 
 	*ResponseMessageType
 
-	MeetingInstance *MeetingInstanceType `xml:"m:MeetingInstance,omitempty" json:"MeetingInstance,omitempty"`
+	MeetingInstance *MeetingInstanceType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MeetingInstance,omitempty" json:"MeetingInstance,omitempty"`
 }
 
 type UpdateMeetingInstanceRequestType struct {
-	XMLName xml.Name `xml:"m:UpdateMeetingInstanceRequest"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateMeetingInstanceRequest"`
 
 	*BaseRequestType
 
-	ItemId *ItemIdType `xml:"m:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemId,omitempty" json:"ItemId,omitempty"`
 
-	MeetingInstance *MeetingInstanceType `xml:"m:MeetingInstance,omitempty" json:"MeetingInstance,omitempty"`
+	MeetingInstance *MeetingInstanceType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MeetingInstance,omitempty" json:"MeetingInstance,omitempty"`
 
-	ContentActivitiesToAdd *NonEmptyArrayOfContentActivities `xml:"m:ContentActivitiesToAdd,omitempty" json:"ContentActivitiesToAdd,omitempty"`
+	ContentActivitiesToAdd *NonEmptyArrayOfContentActivities `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ContentActivitiesToAdd,omitempty" json:"ContentActivitiesToAdd,omitempty"`
 
-	ParticipantActivitiesToAdd *NonEmptyArrayOfParticipantActivities `xml:"m:ParticipantActivitiesToAdd,omitempty" json:"ParticipantActivitiesToAdd,omitempty"`
+	ParticipantActivitiesToAdd *NonEmptyArrayOfParticipantActivities `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ParticipantActivitiesToAdd,omitempty" json:"ParticipantActivitiesToAdd,omitempty"`
 }
 
 type UpdateMeetingInstanceResponseMessageType struct {
-	XMLName xml.Name `xml:"m:UpdateMeetingInstanceResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages UpdateMeetingInstanceResponse"`
 
 	*ResponseMessageType
 
-	MeetingInstance *MeetingInstanceType `xml:"m:MeetingInstance,omitempty" json:"MeetingInstance,omitempty"`
+	MeetingInstance *MeetingInstanceType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MeetingInstance,omitempty" json:"MeetingInstance,omitempty"`
 }
 
 type DeleteMeetingInstanceRequestType struct {
-	XMLName xml.Name `xml:"m:DeleteMeetingInstanceRequest"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteMeetingInstanceRequest"`
 
 	*BaseRequestType
 
-	ItemId *ItemIdType `xml:"m:ItemId,omitempty" json:"ItemId,omitempty"`
+	ItemId *ItemIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemId,omitempty" json:"ItemId,omitempty"`
 }
 
 type DeleteMeetingInstanceResponseMessageType struct {
-	XMLName xml.Name `xml:"m:DeleteMeetingInstanceResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteMeetingInstanceResponse"`
 
 	*ResponseMessageType
 }
 
 type SetUserPhotoType struct {
-	XMLName xml.Name `xml:"m:SetUserPhoto"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetUserPhoto"`
 
 	*BaseRequestType
 
-	Email *NonEmptyStringType `xml:"m:Email,omitempty" json:"Email,omitempty"`
+	Email *NonEmptyStringType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Email,omitempty" json:"Email,omitempty"`
 
-	Content string `xml:"m:Content,omitempty" json:"Content,omitempty"`
+	Content string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Content,omitempty" json:"Content,omitempty"`
 
-	TypeRequested *UserPhotoTypeType `xml:"m:TypeRequested,omitempty" json:"TypeRequested,omitempty"`
+	TypeRequested *UserPhotoTypeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages TypeRequested,omitempty" json:"TypeRequested,omitempty"`
 }
 
 type SetUserPhotoResponseMessageType struct {
-	XMLName xml.Name `xml:"m:SetUserPhotoResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SetUserPhotoResponse"`
 
 	*BaseResponseMessageType
 }
 
 type RegisterConsentType struct {
-	XMLName xml.Name `xml:"m:RegisterConsent"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RegisterConsent"`
 
 	*BaseRequestType
 
-	Id string `xml:"m:Id,omitempty" json:"Id,omitempty"`
+	Id string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Id,omitempty" json:"Id,omitempty"`
 
-	ConsentState *ConsentStateType `xml:"m:ConsentState,omitempty" json:"ConsentState,omitempty"`
+	ConsentState *ConsentStateType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ConsentState,omitempty" json:"ConsentState,omitempty"`
 }
 
 type RegisterConsentResponseMessageType struct {
-	XMLName xml.Name `xml:"m:RegisterConsentResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RegisterConsentResponse"`
 
 	*ResponseMessageType
 }
 
 type FindAvailableMeetingTimesType struct {
-	XMLName xml.Name `xml:"m:FindAvailableMeetingTimes"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindAvailableMeetingTimes"`
 
 	*BaseRequestType
 
-	Attendees *ArrayOfSmtpAddressType `xml:"m:Attendees,omitempty" json:"Attendees,omitempty"`
+	Attendees *ArrayOfSmtpAddressType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Attendees,omitempty" json:"Attendees,omitempty"`
 
-	SearchWindowStart xsd.DateTime `xml:"m:SearchWindowStart,omitempty" json:"SearchWindowStart,omitempty"`
+	SearchWindowStart xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchWindowStart,omitempty" json:"SearchWindowStart,omitempty"`
 
-	SearchWindowDuration *Duration `xml:"m:SearchWindowDuration,omitempty" json:"SearchWindowDuration,omitempty"`
+	SearchWindowDuration *Duration `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchWindowDuration,omitempty" json:"SearchWindowDuration,omitempty"`
 
-	MeetingDurationInMinutes int32 `xml:"m:MeetingDurationInMinutes,omitempty" json:"MeetingDurationInMinutes,omitempty"`
+	MeetingDurationInMinutes int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MeetingDurationInMinutes,omitempty" json:"MeetingDurationInMinutes,omitempty"`
 
-	Location string `xml:"m:Location,omitempty" json:"Location,omitempty"`
+	Location string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Location,omitempty" json:"Location,omitempty"`
 
-	MaxCandidates int32 `xml:"m:MaxCandidates,omitempty" json:"MaxCandidates,omitempty"`
+	MaxCandidates int32 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MaxCandidates,omitempty" json:"MaxCandidates,omitempty"`
 
-	ActivityDomain *ActivityDomainType `xml:"m:ActivityDomain,omitempty" json:"ActivityDomain,omitempty"`
+	ActivityDomain *ActivityDomainType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ActivityDomain,omitempty" json:"ActivityDomain,omitempty"`
 }
 
 type FindAvailableMeetingTimesResponseMessageType struct {
-	XMLName xml.Name `xml:"m:FindAvailableMeetingTimesResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindAvailableMeetingTimesResponse"`
 
 	*ResponseMessageType
 
-	MeetingTimeCandidates *ArrayOfMeetingTimeCandidate `xml:"m:MeetingTimeCandidates,omitempty" json:"MeetingTimeCandidates,omitempty"`
+	MeetingTimeCandidates *ArrayOfMeetingTimeCandidate `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MeetingTimeCandidates,omitempty" json:"MeetingTimeCandidates,omitempty"`
 
-	EmptySuggestionsHint *EmptySuggestionReason `xml:"m:EmptySuggestionsHint,omitempty" json:"EmptySuggestionsHint,omitempty"`
+	EmptySuggestionsHint *EmptySuggestionReason `xml:"http://schemas.microsoft.com/exchange/services/2006/messages EmptySuggestionsHint,omitempty" json:"EmptySuggestionsHint,omitempty"`
 }
 
 type FindMeetingTimeCandidatesType struct {
-	XMLName xml.Name `xml:"m:FindMeetingTimeCandidates"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindMeetingTimeCandidates"`
 
 	*BaseRequestType
 
-	AttendeeConstraints *FindMeetingTimesAttendeeConstraints `xml:"m:AttendeeConstraints,omitempty" json:"AttendeeConstraints,omitempty"`
+	AttendeeConstraints *FindMeetingTimesAttendeeConstraints `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AttendeeConstraints,omitempty" json:"AttendeeConstraints,omitempty"`
 
-	LocationConstraints *FindMeetingTimesLocationConstraints `xml:"m:LocationConstraints,omitempty" json:"LocationConstraints,omitempty"`
+	LocationConstraints *FindMeetingTimesLocationConstraints `xml:"http://schemas.microsoft.com/exchange/services/2006/messages LocationConstraints,omitempty" json:"LocationConstraints,omitempty"`
 
-	SearchConstraints *FindMeetingTimesSearchConstraints `xml:"m:SearchConstraints,omitempty" json:"SearchConstraints,omitempty"`
+	SearchConstraints *FindMeetingTimesSearchConstraints `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchConstraints,omitempty" json:"SearchConstraints,omitempty"`
 
-	Constraints *FindMeetingTimesConstraints `xml:"m:Constraints,omitempty" json:"Constraints,omitempty"`
+	Constraints *FindMeetingTimesConstraints `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Constraints,omitempty" json:"Constraints,omitempty"`
 }
 
 type FindMeetingTimeCandidatesResponseMessageType struct {
-	XMLName xml.Name `xml:"m:FindMeetingTimeCandidatesResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages FindMeetingTimeCandidatesResponse"`
 
 	*ResponseMessageType
 
-	MeetingTimeCandidates *ArrayOfMeetingTimeCandidate `xml:"m:MeetingTimeCandidates,omitempty" json:"MeetingTimeCandidates,omitempty"`
+	MeetingTimeCandidates *ArrayOfMeetingTimeCandidate `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MeetingTimeCandidates,omitempty" json:"MeetingTimeCandidates,omitempty"`
 }
 
 type StartSearchSession struct {
 	*BaseRequestType
 
-	SearchSessionId *GuidType `xml:"m:SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
+	SearchSessionId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
 
-	WarmupOptions *WarmupOptionsType `xml:"m:WarmupOptions,omitempty" json:"WarmupOptions,omitempty"`
+	WarmupOptions *WarmupOptionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages WarmupOptions,omitempty" json:"WarmupOptions,omitempty"`
 
-	SuggestionTypes *SuggestionKindType `xml:"m:SuggestionTypes,omitempty" json:"SuggestionTypes,omitempty"`
+	SuggestionTypes *SuggestionKindType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SuggestionTypes,omitempty" json:"SuggestionTypes,omitempty"`
 
-	SearchScope *ArrayOfSearchScopeType `xml:"m:SearchScope,omitempty" json:"SearchScope,omitempty"`
+	SearchScope *ArrayOfSearchScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchScope,omitempty" json:"SearchScope,omitempty"`
 
-	IdFormat *IdFormatType `xml:"m:IdFormat,omitempty" json:"IdFormat,omitempty"`
+	IdFormat *IdFormatType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IdFormat,omitempty" json:"IdFormat,omitempty"`
 
-	ApplicationId string `xml:"m:ApplicationId,omitempty" json:"ApplicationId,omitempty"`
+	ApplicationId string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ApplicationId,omitempty" json:"ApplicationId,omitempty"`
 
-	Scenario string `xml:"m:Scenario,omitempty" json:"Scenario,omitempty"`
+	Scenario string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Scenario,omitempty" json:"Scenario,omitempty"`
 }
 
 type StartSearchSessionResponseMessage struct {
-	XMLName xml.Name `xml:"m:StartSearchSessionResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages StartSearchSessionResponse"`
 
 	*ResponseMessageType
 }
@@ -15130,165 +15130,165 @@ type StartSearchSessionResponseMessage struct {
 type GetSearchSuggestions struct {
 	*BaseRequestType
 
-	SearchSessionId *GuidType `xml:"m:SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
+	SearchSessionId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
 
-	Query string `xml:"m:Query,omitempty" json:"Query,omitempty"`
+	Query string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Query,omitempty" json:"Query,omitempty"`
 
-	SuggestionTypes *SuggestionKindType `xml:"m:SuggestionTypes,omitempty" json:"SuggestionTypes,omitempty"`
+	SuggestionTypes *SuggestionKindType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SuggestionTypes,omitempty" json:"SuggestionTypes,omitempty"`
 
-	SuggestionsPrimer bool `xml:"m:SuggestionsPrimer,omitempty" json:"SuggestionsPrimer,omitempty"`
+	SuggestionsPrimer bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SuggestionsPrimer,omitempty" json:"SuggestionsPrimer,omitempty"`
 
-	MaxSuggestionsCountPerSuggestionType int64 `xml:"m:MaxSuggestionsCountPerSuggestionType,omitempty" json:"MaxSuggestionsCountPerSuggestionType,omitempty"`
+	MaxSuggestionsCountPerSuggestionType int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MaxSuggestionsCountPerSuggestionType,omitempty" json:"MaxSuggestionsCountPerSuggestionType,omitempty"`
 
-	SearchScope *ArrayOfSearchScopeType `xml:"m:SearchScope,omitempty" json:"SearchScope,omitempty"`
+	SearchScope *ArrayOfSearchScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchScope,omitempty" json:"SearchScope,omitempty"`
 
-	Scenario string `xml:"m:Scenario,omitempty" json:"Scenario,omitempty"`
+	Scenario string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Scenario,omitempty" json:"Scenario,omitempty"`
 }
 
 type GetSearchSuggestionsResponseMessage struct {
-	XMLName xml.Name `xml:"m:GetSearchSuggestionsResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetSearchSuggestionsResponse"`
 
 	*ResponseMessageType
 
-	SearchSuggestions *SearchSuggestionsType `xml:"m:SearchSuggestions,omitempty" json:"SearchSuggestions,omitempty"`
+	SearchSuggestions *SearchSuggestionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchSuggestions,omitempty" json:"SearchSuggestions,omitempty"`
 }
 
 type DeleteSearchSuggestion struct {
 	*BaseRequestType
 
-	SearchSessionId *GuidType `xml:"m:SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
+	SearchSessionId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
 
-	Query string `xml:"m:Query,omitempty" json:"Query,omitempty"`
+	Query string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Query,omitempty" json:"Query,omitempty"`
 
-	SuggestionTypes *SuggestionKindType `xml:"m:SuggestionTypes,omitempty" json:"SuggestionTypes,omitempty"`
+	SuggestionTypes *SuggestionKindType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SuggestionTypes,omitempty" json:"SuggestionTypes,omitempty"`
 
-	SearchScope *ArrayOfSearchScopeType `xml:"m:SearchScope,omitempty" json:"SearchScope,omitempty"`
+	SearchScope *ArrayOfSearchScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchScope,omitempty" json:"SearchScope,omitempty"`
 
-	Scenario string `xml:"m:Scenario,omitempty" json:"Scenario,omitempty"`
+	Scenario string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Scenario,omitempty" json:"Scenario,omitempty"`
 }
 
 type DeleteSearchSuggestionResponseMessageType struct {
-	XMLName xml.Name `xml:"m:DeleteSearchSuggestionResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages DeleteSearchSuggestionResponse"`
 
 	*ResponseMessageType
 
-	Response *DeleteSearchSuggestionResponseType `xml:"m:Response,omitempty" json:"Response,omitempty"`
+	Response *DeleteSearchSuggestionResponseType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Response,omitempty" json:"Response,omitempty"`
 }
 
 type ExecuteSearch struct {
 	*BaseRequestType
 
-	ApplicationId *SearchApplicationIdType `xml:"m:ApplicationId,omitempty" json:"ApplicationId,omitempty"`
+	ApplicationId *SearchApplicationIdType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ApplicationId,omitempty" json:"ApplicationId,omitempty"`
 
-	Scenario string `xml:"m:Scenario,omitempty" json:"Scenario,omitempty"`
+	Scenario string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Scenario,omitempty" json:"Scenario,omitempty"`
 
-	SearchSessionId *GuidType `xml:"m:SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
+	SearchSessionId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
 
-	SearchScope *ArrayOfSearchScopeType `xml:"m:SearchScope,omitempty" json:"SearchScope,omitempty"`
+	SearchScope *ArrayOfSearchScopeType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchScope,omitempty" json:"SearchScope,omitempty"`
 
-	Query string `xml:"m:Query,omitempty" json:"Query,omitempty"`
+	Query string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Query,omitempty" json:"Query,omitempty"`
 
-	AnalyzedQuery *AnalyzedQuery `xml:"m:AnalyzedQuery,omitempty" json:"AnalyzedQuery,omitempty"`
+	AnalyzedQuery *AnalyzedQuery `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AnalyzedQuery,omitempty" json:"AnalyzedQuery,omitempty"`
 
-	ResultRowCount int64 `xml:"m:ResultRowCount,omitempty" json:"ResultRowCount,omitempty"`
+	ResultRowCount int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResultRowCount,omitempty" json:"ResultRowCount,omitempty"`
 
-	ResultRowOffset int64 `xml:"m:ResultRowOffset,omitempty" json:"ResultRowOffset,omitempty"`
+	ResultRowOffset int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ResultRowOffset,omitempty" json:"ResultRowOffset,omitempty"`
 
-	MaxResultsCountHint int64 `xml:"m:MaxResultsCountHint,omitempty" json:"MaxResultsCountHint,omitempty"`
+	MaxResultsCountHint int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MaxResultsCountHint,omitempty" json:"MaxResultsCountHint,omitempty"`
 
-	MaxPreviewLength int64 `xml:"m:MaxPreviewLength,omitempty" json:"MaxPreviewLength,omitempty"`
+	MaxPreviewLength int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MaxPreviewLength,omitempty" json:"MaxPreviewLength,omitempty"`
 
 	SearchRefiners struct {
-		SearchRefiner []*DynamicRefinerQueryType `xml:"m:SearchRefiner,omitempty" json:"SearchRefiner,omitempty"`
+		SearchRefiner []*DynamicRefinerQueryType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchRefiner,omitempty" json:"SearchRefiner,omitempty"`
 	} `SearchRefiners,omitempty" json:"SearchRefiners,omitempty"`
 
 	ExtendedKeywords struct {
-		ExtendedKeywordDefinition []*ExtendedKeywordDefinitionType `xml:"m:ExtendedKeywordDefinition,omitempty" json:"ExtendedKeywordDefinition,omitempty"`
+		ExtendedKeywordDefinition []*ExtendedKeywordDefinitionType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExtendedKeywordDefinition,omitempty" json:"ExtendedKeywordDefinition,omitempty"`
 	} `ExtendedKeywords,omitempty" json:"ExtendedKeywords,omitempty"`
 
-	RetrieveRefiners bool `xml:"m:RetrieveRefiners,omitempty" json:"RetrieveRefiners,omitempty"`
+	RetrieveRefiners bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages RetrieveRefiners,omitempty" json:"RetrieveRefiners,omitempty"`
 
-	MaxRefinersCountPerRefinerType int64 `xml:"m:MaxRefinersCountPerRefinerType,omitempty" json:"MaxRefinersCountPerRefinerType,omitempty"`
+	MaxRefinersCountPerRefinerType int64 `xml:"http://schemas.microsoft.com/exchange/services/2006/messages MaxRefinersCountPerRefinerType,omitempty" json:"MaxRefinersCountPerRefinerType,omitempty"`
 
-	IdFormat *IdFormatType `xml:"m:IdFormat,omitempty" json:"IdFormat,omitempty"`
+	IdFormat *IdFormatType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IdFormat,omitempty" json:"IdFormat,omitempty"`
 
-	ItemTypes *ItemTypesFilterType `xml:"m:ItemTypes,omitempty" json:"ItemTypes,omitempty"`
+	ItemTypes *ItemTypesFilterType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ItemTypes,omitempty" json:"ItemTypes,omitempty"`
 
-	PropertySetName *SearchResultsPropertySetNameType `xml:"m:PropertySetName,omitempty" json:"PropertySetName,omitempty"`
+	PropertySetName *SearchResultsPropertySetNameType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages PropertySetName,omitempty" json:"PropertySetName,omitempty"`
 
-	SearchRestrictions *RestrictionType `xml:"m:SearchRestrictions,omitempty" json:"SearchRestrictions,omitempty"`
+	SearchRestrictions *RestrictionType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchRestrictions,omitempty" json:"SearchRestrictions,omitempty"`
 
-	IncludeDeleted bool `xml:"m:IncludeDeleted,omitempty" json:"IncludeDeleted,omitempty"`
+	IncludeDeleted bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages IncludeDeleted,omitempty" json:"IncludeDeleted,omitempty"`
 
-	SortOrder *ExecuteSearchSortOrderType `xml:"m:SortOrder,omitempty" json:"SortOrder,omitempty"`
+	SortOrder *ExecuteSearchSortOrderType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SortOrder,omitempty" json:"SortOrder,omitempty"`
 
-	KeywordMatchOption *MatchOptionsType `xml:"m:KeywordMatchOption,omitempty" json:"KeywordMatchOption,omitempty"`
+	KeywordMatchOption *MatchOptionsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages KeywordMatchOption,omitempty" json:"KeywordMatchOption,omitempty"`
 
-	ReturnAdditionalIds bool `xml:"m:ReturnAdditionalIds,omitempty" json:"ReturnAdditionalIds,omitempty"`
+	ReturnAdditionalIds bool `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ReturnAdditionalIds,omitempty" json:"ReturnAdditionalIds,omitempty"`
 }
 
 type ExecuteSearchResponseMessage struct {
-	XMLName xml.Name `xml:"m:ExecuteSearchResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages ExecuteSearchResponse"`
 
 	*ResponseMessageType
 
-	SearchResults *SearchResultsType `xml:"m:SearchResults,omitempty" json:"SearchResults,omitempty"`
+	SearchResults *SearchResultsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchResults,omitempty" json:"SearchResults,omitempty"`
 }
 
 type EndSearchSession struct {
 	*BaseRequestType
 
-	SearchSessionId *GuidType `xml:"m:SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
+	SearchSessionId *GuidType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages SearchSessionId,omitempty" json:"SearchSessionId,omitempty"`
 }
 
 type EndSearchSessionResponseMessage struct {
-	XMLName xml.Name `xml:"m:EndSearchSessionResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages EndSearchSessionResponse"`
 
 	*ResponseMessageType
 }
 
 type GetLastPrivateCatalogUpdateType struct {
-	XMLName xml.Name `xml:"m:GetLastPrivateCatalogUpdate"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetLastPrivateCatalogUpdate"`
 
 	*BaseRequestType
 
-	Client *OfficeClientType `xml:"m:Client,omitempty" json:"Client,omitempty"`
+	Client *OfficeClientType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Client,omitempty" json:"Client,omitempty"`
 }
 
 type GetLastPrivateCatalogUpdateResponseType struct {
-	XMLName xml.Name `xml:"m:GetLastPrivateCatalogUpdateResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetLastPrivateCatalogUpdateResponse"`
 
 	*ResponseMessageType
 
-	LastUpdate xsd.DateTime `xml:"m:LastUpdate,omitempty" json:"LastUpdate,omitempty"`
+	LastUpdate xsd.DateTime `xml:"http://schemas.microsoft.com/exchange/services/2006/messages LastUpdate,omitempty" json:"LastUpdate,omitempty"`
 
-	CatalogHash string `xml:"m:CatalogHash,omitempty" json:"CatalogHash,omitempty"`
+	CatalogHash string `xml:"http://schemas.microsoft.com/exchange/services/2006/messages CatalogHash,omitempty" json:"CatalogHash,omitempty"`
 }
 
 type GetPrivateCatalogAddInsType struct {
-	XMLName xml.Name `xml:"m:GetPrivateCatalogAddIns"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetPrivateCatalogAddIns"`
 
 	*BaseRequestType
 
-	Client *OfficeClientType `xml:"m:Client,omitempty" json:"Client,omitempty"`
+	Client *OfficeClientType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages Client,omitempty" json:"Client,omitempty"`
 }
 
 type GetPrivateCatalogAddInsResponseType struct {
-	XMLName xml.Name `xml:"m:GetPrivateCatalogAddInsResponse"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages GetPrivateCatalogAddInsResponse"`
 
 	*ResponseMessageType
 
-	AddIns *ArrayOfPrivateCatalogAddInsType `xml:"m:AddIns,omitempty" json:"AddIns,omitempty"`
+	AddIns *ArrayOfPrivateCatalogAddInsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddIns,omitempty" json:"AddIns,omitempty"`
 }
 
 type ArrayOfPrivateCatalogAddInsType struct {
-	AddIn []*PrivateCatalogAddInsType `xml:"m:AddIn,omitempty" json:"AddIn,omitempty"`
+	AddIn []*PrivateCatalogAddInsType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddIn,omitempty" json:"AddIn,omitempty"`
 }
 
 type PrivateCatalogAddInsType struct {
-	XMLName xml.Name `xml:"m:AddIn"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages AddIn"`
 
-	StoreInfo *PrivateCatalogAddInStoreInfoType `xml:"m:StoreInfo,omitempty" json:"StoreInfo,omitempty"`
+	StoreInfo *PrivateCatalogAddInStoreInfoType `xml:"http://schemas.microsoft.com/exchange/services/2006/messages StoreInfo,omitempty" json:"StoreInfo,omitempty"`
 
 	ProductId string `xml:"ProductId,attr,omitempty" json:"ProductId,omitempty"`
 
@@ -15298,7 +15298,7 @@ type PrivateCatalogAddInsType struct {
 }
 
 type PrivateCatalogAddInStoreInfoType struct {
-	XMLName xml.Name `xml:"m:StoreInfo"`
+	XMLName xml.Name `xml:"http://schemas.microsoft.com/exchange/services/2006/messages StoreInfo"`
 
 	AssetId string `xml:"AssetId,attr,omitempty" json:"AssetId,omitempty"`
 

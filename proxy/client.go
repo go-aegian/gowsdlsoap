@@ -96,7 +96,8 @@ func (s *Client) CallWithFaultDetail(soapAction string, request, response interf
 func (s *Client) call(ctx context.Context, soapAction string, request, response interface{}, faultDetail soap.FaultError,
 	retAttachments *[]soap.MIMEMultipartAttachment) error {
 
-	soapRequest := soap.NewEnvelope(s.xmlns)
+	soapRequest := soap.NewEnvelope()
+	// soapRequest := soap.NewEnvelope(s.xmlns)
 
 	defer func(msg interface{}) {
 		if s.opts.LogRequests {
@@ -199,7 +200,8 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 
 	// xml Decoder (used with and without MTOM) cannot handle namespace prefixes (yet),
 	// so use a namespace-less response envelope
-	soapResponse := soap.NewEnvelopeResponse(s.xmlns)
+	soapResponse := soap.NewEnvelopeResponse()
+	// soapResponse := soap.NewEnvelopeResponse(s.xmlns)
 	soapResponse.Body = soap.BodyResponse{
 		Content: response,
 		Fault: &soap.Fault{
@@ -253,3 +255,5 @@ func LogXml(logType string, message interface{}) {
 
 	fmt.Printf("\n%s:\n%s\n\n", logType, string(marshalledRequest))
 }
+
+func String(v string) *string { return &v }

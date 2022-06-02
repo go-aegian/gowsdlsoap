@@ -57,7 +57,7 @@ func TestClient_Call(t *testing.T) {
 		}
 
 		soapEnv := soap.NewEnvelopeResponse()
-		soapEnv.Body = soap.BodyResponse{Content: pingResponse}
+		soapEnv.Body.Content = &pingResponse
 
 		response, err := xml.Marshal(soapEnv)
 		if err != nil {

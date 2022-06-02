@@ -78,867 +78,867 @@ const (
 )
 
 type Ping struct {
-	XMLName xml.Name `xml:"tns:Ping"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Ping"`
 }
 
 type PingResponse struct {
-	XMLName xml.Name `xml:"tns:PingResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ PingResponse"`
 
-	PingResult string `xml:"tns:PingResult,omitempty" json:"PingResult,omitempty"`
+	PingResult string `xml:"http://raido.aviolinx.com/api/ PingResult,omitempty" json:"PingResult,omitempty"`
 }
 
 type GetVersion struct {
-	XMLName xml.Name `xml:"tns:GetVersion"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetVersion"`
 }
 
 type GetVersionResponse struct {
-	XMLName xml.Name `xml:"tns:GetVersionResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetVersionResponse"`
 
-	GetVersionResult string `xml:"tns:GetVersionResult,omitempty" json:"GetVersionResult,omitempty"`
+	GetVersionResult string `xml:"http://raido.aviolinx.com/api/ GetVersionResult,omitempty" json:"GetVersionResult,omitempty"`
 }
 
 type AuthenticateUser struct {
-	XMLName xml.Name `xml:"tns:AuthenticateUser"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ AuthenticateUser"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	SystemUser *string `xml:"tns:SystemUser,omitempty" json:"SystemUser,omitempty"`
+	SystemUser *string `xml:"http://raido.aviolinx.com/api/ SystemUser,omitempty" json:"SystemUser,omitempty"`
 
-	SystemUserPassword *string `xml:"tns:SystemUserPassword,omitempty" json:"SystemUserPassword,omitempty"`
+	SystemUserPassword *string `xml:"http://raido.aviolinx.com/api/ SystemUserPassword,omitempty" json:"SystemUserPassword,omitempty"`
 }
 
 type AuthenticateUserResponse struct {
-	XMLName xml.Name `xml:"tns:AuthenticateUserResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ AuthenticateUserResponse"`
 
-	AuthenticateUserResult bool `xml:"tns:AuthenticateUserResult,omitempty" json:"AuthenticateUserResult,omitempty"`
+	AuthenticateUserResult bool `xml:"http://raido.aviolinx.com/api/ AuthenticateUserResult,omitempty" json:"AuthenticateUserResult,omitempty"`
 }
 
 type GetSchedules struct {
-	XMLName xml.Name `xml:"tns:GetSchedules"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetSchedules"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	ScheduleRequestFilter *ScheduleRequestFilter `xml:"tns:ScheduleRequestFilter,omitempty" json:"ScheduleRequestFilter,omitempty"`
+	ScheduleRequestFilter *ScheduleRequestFilter `xml:"http://raido.aviolinx.com/api/ ScheduleRequestFilter,omitempty" json:"ScheduleRequestFilter,omitempty"`
 
-	ScheduleRequestData *ScheduleRequestData `xml:"tns:ScheduleRequestData,omitempty" json:"ScheduleRequestData,omitempty"`
+	ScheduleRequestData *ScheduleRequestData `xml:"http://raido.aviolinx.com/api/ ScheduleRequestData,omitempty" json:"ScheduleRequestData,omitempty"`
 }
 
 type GetSchedulesResponse struct {
-	XMLName xml.Name `xml:"tns:GetSchedulesResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetSchedulesResponse"`
 
-	GetSchedulesResult *ArrayOfSchedule `xml:"tns:GetSchedulesResult,omitempty" json:"GetSchedulesResult,omitempty"`
+	GetSchedulesResult *ArrayOfSchedule `xml:"http://raido.aviolinx.com/api/ GetSchedulesResult,omitempty" json:"GetSchedulesResult,omitempty"`
 }
 
 type GetFlights struct {
-	XMLName xml.Name `xml:"tns:GetFlights"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetFlights"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	FlightRequestFilter *FlightRequestFilter `xml:"tns:FlightRequestFilter,omitempty" json:"FlightRequestFilter,omitempty"`
+	FlightRequestFilter *FlightRequestFilter `xml:"http://raido.aviolinx.com/api/ FlightRequestFilter,omitempty" json:"FlightRequestFilter,omitempty"`
 
-	FlightRequestData *FlightRequestData `xml:"tns:FlightRequestData,omitempty" json:"FlightRequestData,omitempty"`
+	FlightRequestData *FlightRequestData `xml:"http://raido.aviolinx.com/api/ FlightRequestData,omitempty" json:"FlightRequestData,omitempty"`
 }
 
 type GetFlightsResponse struct {
-	XMLName xml.Name `xml:"tns:GetFlightsResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetFlightsResponse"`
 
-	GetFlightsResult *ArrayOfFlight `xml:"tns:GetFlightsResult,omitempty" json:"GetFlightsResult,omitempty"`
+	GetFlightsResult *ArrayOfFlight `xml:"http://raido.aviolinx.com/api/ GetFlightsResult,omitempty" json:"GetFlightsResult,omitempty"`
 }
 
 type GetMaintenances struct {
-	XMLName xml.Name `xml:"tns:GetMaintenances"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetMaintenances"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	MaintenanceRequestFilter *MaintenanceRequestFilter `xml:"tns:MaintenanceRequestFilter,omitempty" json:"MaintenanceRequestFilter,omitempty"`
+	MaintenanceRequestFilter *MaintenanceRequestFilter `xml:"http://raido.aviolinx.com/api/ MaintenanceRequestFilter,omitempty" json:"MaintenanceRequestFilter,omitempty"`
 
-	MaintenanceRequestData *MaintenanceRequestData `xml:"tns:MaintenanceRequestData,omitempty" json:"MaintenanceRequestData,omitempty"`
+	MaintenanceRequestData *MaintenanceRequestData `xml:"http://raido.aviolinx.com/api/ MaintenanceRequestData,omitempty" json:"MaintenanceRequestData,omitempty"`
 }
 
 type GetMaintenancesResponse struct {
-	XMLName xml.Name `xml:"tns:GetMaintenancesResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetMaintenancesResponse"`
 
-	GetMaintenancesResult *ArrayOfMaintenance `xml:"tns:GetMaintenancesResult,omitempty" json:"GetMaintenancesResult,omitempty"`
+	GetMaintenancesResult *ArrayOfMaintenance `xml:"http://raido.aviolinx.com/api/ GetMaintenancesResult,omitempty" json:"GetMaintenancesResult,omitempty"`
 }
 
 type GetCrews struct {
-	XMLName xml.Name `xml:"tns:GetCrews"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetCrews"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	CrewRequestFilter *CrewRequestFilter `xml:"tns:CrewRequestFilter,omitempty" json:"CrewRequestFilter,omitempty"`
+	CrewRequestFilter *CrewRequestFilter `xml:"http://raido.aviolinx.com/api/ CrewRequestFilter,omitempty" json:"CrewRequestFilter,omitempty"`
 
-	CrewRequestData *CrewRequestData `xml:"tns:CrewRequestData,omitempty" json:"CrewRequestData,omitempty"`
+	CrewRequestData *CrewRequestData `xml:"http://raido.aviolinx.com/api/ CrewRequestData,omitempty" json:"CrewRequestData,omitempty"`
 }
 
 type GetCrewsResponse struct {
-	XMLName xml.Name `xml:"tns:GetCrewsResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetCrewsResponse"`
 
-	GetCrewsResult *ArrayOfCrew `xml:"tns:GetCrewsResult,omitempty" json:"GetCrewsResult,omitempty"`
+	GetCrewsResult *ArrayOfCrew `xml:"http://raido.aviolinx.com/api/ GetCrewsResult,omitempty" json:"GetCrewsResult,omitempty"`
 }
 
 type GetUsers struct {
-	XMLName xml.Name `xml:"tns:GetUsers"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetUsers"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	UserRequestFilter *UserRequestFilter `xml:"tns:UserRequestFilter,omitempty" json:"UserRequestFilter,omitempty"`
+	UserRequestFilter *UserRequestFilter `xml:"http://raido.aviolinx.com/api/ UserRequestFilter,omitempty" json:"UserRequestFilter,omitempty"`
 
-	UserRequestData *UserRequestData `xml:"tns:UserRequestData,omitempty" json:"UserRequestData,omitempty"`
+	UserRequestData *UserRequestData `xml:"http://raido.aviolinx.com/api/ UserRequestData,omitempty" json:"UserRequestData,omitempty"`
 }
 
 type GetUsersResponse struct {
-	XMLName xml.Name `xml:"tns:GetUsersResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetUsersResponse"`
 
-	GetUsersResult *ArrayOfUser `xml:"tns:GetUsersResult,omitempty" json:"GetUsersResult,omitempty"`
+	GetUsersResult *ArrayOfUser `xml:"http://raido.aviolinx.com/api/ GetUsersResult,omitempty" json:"GetUsersResult,omitempty"`
 }
 
 type GetRosters struct {
-	XMLName xml.Name `xml:"tns:GetRosters"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetRosters"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	RosterRequestFilter *RosterRequestFilter `xml:"tns:RosterRequestFilter,omitempty" json:"RosterRequestFilter,omitempty"`
+	RosterRequestFilter *RosterRequestFilter `xml:"http://raido.aviolinx.com/api/ RosterRequestFilter,omitempty" json:"RosterRequestFilter,omitempty"`
 
-	RosterRequestData *RosterRequestData `xml:"tns:RosterRequestData,omitempty" json:"RosterRequestData,omitempty"`
+	RosterRequestData *RosterRequestData `xml:"http://raido.aviolinx.com/api/ RosterRequestData,omitempty" json:"RosterRequestData,omitempty"`
 }
 
 type GetRostersResponse struct {
-	XMLName xml.Name `xml:"tns:GetRostersResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetRostersResponse"`
 
-	GetRostersResult *ArrayOfCrew `xml:"tns:GetRostersResult,omitempty" json:"GetRostersResult,omitempty"`
+	GetRostersResult *ArrayOfCrew `xml:"http://raido.aviolinx.com/api/ GetRostersResult,omitempty" json:"GetRostersResult,omitempty"`
 }
 
 type GetPairings struct {
-	XMLName xml.Name `xml:"tns:GetPairings"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetPairings"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	PairingRequestFilter *PairingRequestFilter `xml:"tns:PairingRequestFilter,omitempty" json:"PairingRequestFilter,omitempty"`
+	PairingRequestFilter *PairingRequestFilter `xml:"http://raido.aviolinx.com/api/ PairingRequestFilter,omitempty" json:"PairingRequestFilter,omitempty"`
 
-	PairingRequestData *PairingRequestData `xml:"tns:PairingRequestData,omitempty" json:"PairingRequestData,omitempty"`
+	PairingRequestData *PairingRequestData `xml:"http://raido.aviolinx.com/api/ PairingRequestData,omitempty" json:"PairingRequestData,omitempty"`
 }
 
 type GetPairingsResponse struct {
-	XMLName xml.Name `xml:"tns:GetPairingsResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetPairingsResponse"`
 
-	GetPairingsResult *ArrayOfPairing `xml:"tns:GetPairingsResult,omitempty" json:"GetPairingsResult,omitempty"`
+	GetPairingsResult *ArrayOfPairing `xml:"http://raido.aviolinx.com/api/ GetPairingsResult,omitempty" json:"GetPairingsResult,omitempty"`
 }
 
 type GetAircrafts struct {
-	XMLName xml.Name `xml:"tns:GetAircrafts"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetAircrafts"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	AircraftRequestFilter *AircraftRequestFilter `xml:"tns:AircraftRequestFilter,omitempty" json:"AircraftRequestFilter,omitempty"`
+	AircraftRequestFilter *AircraftRequestFilter `xml:"http://raido.aviolinx.com/api/ AircraftRequestFilter,omitempty" json:"AircraftRequestFilter,omitempty"`
 
-	AircraftRequestData *AircraftRequestData `xml:"tns:AircraftRequestData,omitempty" json:"AircraftRequestData,omitempty"`
+	AircraftRequestData *AircraftRequestData `xml:"http://raido.aviolinx.com/api/ AircraftRequestData,omitempty" json:"AircraftRequestData,omitempty"`
 }
 
 type GetAircraftsResponse struct {
-	XMLName xml.Name `xml:"tns:GetAircraftsResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetAircraftsResponse"`
 
-	GetAircraftsResult *ArrayOfAircraft `xml:"tns:GetAircraftsResult,omitempty" json:"GetAircraftsResult,omitempty"`
+	GetAircraftsResult *ArrayOfAircraft `xml:"http://raido.aviolinx.com/api/ GetAircraftsResult,omitempty" json:"GetAircraftsResult,omitempty"`
 }
 
 type GetAccumulatedValues struct {
-	XMLName xml.Name `xml:"tns:GetAccumulatedValues"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetAccumulatedValues"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	AccumulatedValuesRequestFilter *AccumulatedValuesRequestFilter `xml:"tns:AccumulatedValuesRequestFilter,omitempty" json:"AccumulatedValuesRequestFilter,omitempty"`
+	AccumulatedValuesRequestFilter *AccumulatedValuesRequestFilter `xml:"http://raido.aviolinx.com/api/ AccumulatedValuesRequestFilter,omitempty" json:"AccumulatedValuesRequestFilter,omitempty"`
 
-	AccumulatedValuesRequestData *AccumulatedValuesRequestData `xml:"tns:AccumulatedValuesRequestData,omitempty" json:"AccumulatedValuesRequestData,omitempty"`
+	AccumulatedValuesRequestData *AccumulatedValuesRequestData `xml:"http://raido.aviolinx.com/api/ AccumulatedValuesRequestData,omitempty" json:"AccumulatedValuesRequestData,omitempty"`
 }
 
 type GetAccumulatedValuesResponse struct {
-	XMLName xml.Name `xml:"tns:GetAccumulatedValuesResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetAccumulatedValuesResponse"`
 
-	GetAccumulatedValuesResult *ArrayOfAccumulatedValue `xml:"tns:GetAccumulatedValuesResult,omitempty" json:"GetAccumulatedValuesResult,omitempty"`
+	GetAccumulatedValuesResult *ArrayOfAccumulatedValue `xml:"http://raido.aviolinx.com/api/ GetAccumulatedValuesResult,omitempty" json:"GetAccumulatedValuesResult,omitempty"`
 }
 
 type GetCrewRevisions struct {
-	XMLName xml.Name `xml:"tns:GetCrewRevisions"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetCrewRevisions"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	RevisionsRequestFilter *RevisionsRequestFilter `xml:"tns:RevisionsRequestFilter,omitempty" json:"RevisionsRequestFilter,omitempty"`
+	RevisionsRequestFilter *RevisionsRequestFilter `xml:"http://raido.aviolinx.com/api/ RevisionsRequestFilter,omitempty" json:"RevisionsRequestFilter,omitempty"`
 
-	RevisionsRequestData *RevisionsRequestData `xml:"tns:RevisionsRequestData,omitempty" json:"RevisionsRequestData,omitempty"`
+	RevisionsRequestData *RevisionsRequestData `xml:"http://raido.aviolinx.com/api/ RevisionsRequestData,omitempty" json:"RevisionsRequestData,omitempty"`
 }
 
 type GetCrewRevisionsResponse struct {
-	XMLName xml.Name `xml:"tns:GetCrewRevisionsResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetCrewRevisionsResponse"`
 
-	GetCrewRevisionsResult *ArrayOfCrew `xml:"tns:GetCrewRevisionsResult,omitempty" json:"GetCrewRevisionsResult,omitempty"`
+	GetCrewRevisionsResult *ArrayOfCrew `xml:"http://raido.aviolinx.com/api/ GetCrewRevisionsResult,omitempty" json:"GetCrewRevisionsResult,omitempty"`
 }
 
 type GetAirports struct {
-	XMLName xml.Name `xml:"tns:GetAirports"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetAirports"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	AirportRequestFilter *AirportRequestFilter `xml:"tns:AirportRequestFilter,omitempty" json:"AirportRequestFilter,omitempty"`
+	AirportRequestFilter *AirportRequestFilter `xml:"http://raido.aviolinx.com/api/ AirportRequestFilter,omitempty" json:"AirportRequestFilter,omitempty"`
 
-	AirportRequestData *AirportRequestData `xml:"tns:AirportRequestData,omitempty" json:"AirportRequestData,omitempty"`
+	AirportRequestData *AirportRequestData `xml:"http://raido.aviolinx.com/api/ AirportRequestData,omitempty" json:"AirportRequestData,omitempty"`
 }
 
 type GetAirportsResponse struct {
-	XMLName xml.Name `xml:"tns:GetAirportsResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetAirportsResponse"`
 
-	GetAirportsResult *ArrayOfAirport `xml:"tns:GetAirportsResult,omitempty" json:"GetAirportsResult,omitempty"`
+	GetAirportsResult *ArrayOfAirport `xml:"http://raido.aviolinx.com/api/ GetAirportsResult,omitempty" json:"GetAirportsResult,omitempty"`
 }
 
 type GetHotelBookings struct {
-	XMLName xml.Name `xml:"tns:GetHotelBookings"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetHotelBookings"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	From xsd.DateTime `xml:"tns:From,omitempty" json:"From,omitempty"`
+	From xsd.DateTime `xml:"http://raido.aviolinx.com/api/ From,omitempty" json:"From,omitempty"`
 
-	To xsd.DateTime `xml:"tns:To,omitempty" json:"To,omitempty"`
+	To xsd.DateTime `xml:"http://raido.aviolinx.com/api/ To,omitempty" json:"To,omitempty"`
 
-	CrewNumber *string `xml:"tns:CrewNumber,omitempty" json:"CrewNumber,omitempty"`
+	CrewNumber *string `xml:"http://raido.aviolinx.com/api/ CrewNumber,omitempty" json:"CrewNumber,omitempty"`
 }
 
 type GetHotelBookingsResponse struct {
-	XMLName xml.Name `xml:"tns:GetHotelBookingsResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetHotelBookingsResponse"`
 
-	GetHotelBookingsResult *ArrayOfHotelBooking `xml:"tns:GetHotelBookingsResult,omitempty" json:"GetHotelBookingsResult,omitempty"`
+	GetHotelBookingsResult *ArrayOfHotelBooking `xml:"http://raido.aviolinx.com/api/ GetHotelBookingsResult,omitempty" json:"GetHotelBookingsResult,omitempty"`
 }
 
 type SetCrewRevision struct {
-	XMLName xml.Name `xml:"tns:SetCrewRevision"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetCrewRevision"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	CrewNumber *string `xml:"tns:CrewNumber,omitempty" json:"CrewNumber,omitempty"`
+	CrewNumber *string `xml:"http://raido.aviolinx.com/api/ CrewNumber,omitempty" json:"CrewNumber,omitempty"`
 
-	UniqueId *string `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId *string `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 }
 
 type SetCrewRevisionResponse struct {
-	XMLName xml.Name `xml:"tns:SetCrewRevisionResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetCrewRevisionResponse"`
 
-	SetCrewRevisionResult bool `xml:"tns:SetCrewRevisionResult,omitempty" json:"SetCrewRevisionResult,omitempty"`
+	SetCrewRevisionResult bool `xml:"http://raido.aviolinx.com/api/ SetCrewRevisionResult,omitempty" json:"SetCrewRevisionResult,omitempty"`
 }
 
 type GetConfigurationData struct {
-	XMLName xml.Name `xml:"tns:GetConfigurationData"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetConfigurationData"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	ConfigurationRequestData *ConfigurationRequestData `xml:"tns:ConfigurationRequestData,omitempty" json:"ConfigurationRequestData,omitempty"`
+	ConfigurationRequestData *ConfigurationRequestData `xml:"http://raido.aviolinx.com/api/ ConfigurationRequestData,omitempty" json:"ConfigurationRequestData,omitempty"`
 
-	ConfigurationDataFilter *ConfigurationDataFilter `xml:"tns:ConfigurationDataFilter,omitempty" json:"ConfigurationDataFilter,omitempty"`
+	ConfigurationDataFilter *ConfigurationDataFilter `xml:"http://raido.aviolinx.com/api/ ConfigurationDataFilter,omitempty" json:"ConfigurationDataFilter,omitempty"`
 }
 
 type GetConfigurationDataResponse struct {
-	XMLName xml.Name `xml:"tns:GetConfigurationDataResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetConfigurationDataResponse"`
 
-	GetConfigurationDataResult *ConfigurationData `xml:"tns:GetConfigurationDataResult,omitempty" json:"GetConfigurationDataResult,omitempty"`
+	GetConfigurationDataResult *ConfigurationData `xml:"http://raido.aviolinx.com/api/ GetConfigurationDataResult,omitempty" json:"GetConfigurationDataResult,omitempty"`
 }
 
 type GetRosterTransactions struct {
-	XMLName xml.Name `xml:"tns:GetRosterTransactions"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetRosterTransactions"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	RosterTransactionRequestFilter *RosterTransactionRequestFilter `xml:"tns:RosterTransactionRequestFilter,omitempty" json:"RosterTransactionRequestFilter,omitempty"`
+	RosterTransactionRequestFilter *RosterTransactionRequestFilter `xml:"http://raido.aviolinx.com/api/ RosterTransactionRequestFilter,omitempty" json:"RosterTransactionRequestFilter,omitempty"`
 
-	RosterTransactionRequestData *RosterTransactionRequestData `xml:"tns:RosterTransactionRequestData,omitempty" json:"RosterTransactionRequestData,omitempty"`
+	RosterTransactionRequestData *RosterTransactionRequestData `xml:"http://raido.aviolinx.com/api/ RosterTransactionRequestData,omitempty" json:"RosterTransactionRequestData,omitempty"`
 }
 
 type GetRosterTransactionsResponse struct {
-	XMLName xml.Name `xml:"tns:GetRosterTransactionsResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetRosterTransactionsResponse"`
 
-	GetRosterTransactionsResult *ArrayOfCrew `xml:"tns:GetRosterTransactionsResult,omitempty" json:"GetRosterTransactionsResult,omitempty"`
+	GetRosterTransactionsResult *ArrayOfCrew `xml:"http://raido.aviolinx.com/api/ GetRosterTransactionsResult,omitempty" json:"GetRosterTransactionsResult,omitempty"`
 }
 
 type SetRosterDesignator struct {
-	XMLName xml.Name `xml:"tns:SetRosterDesignator"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetRosterDesignator"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	FlightNumber string `xml:"tns:FlightNumber,omitempty" json:"FlightNumber,omitempty"`
+	FlightNumber string `xml:"http://raido.aviolinx.com/api/ FlightNumber,omitempty" json:"FlightNumber,omitempty"`
 
-	Callsign string `xml:"tns:Callsign,omitempty" json:"Callsign,omitempty"`
+	Callsign string `xml:"http://raido.aviolinx.com/api/ Callsign,omitempty" json:"Callsign,omitempty"`
 
-	FlightDate xsd.DateTime `xml:"tns:FlightDate,omitempty" json:"FlightDate,omitempty"`
+	FlightDate xsd.DateTime `xml:"http://raido.aviolinx.com/api/ FlightDate,omitempty" json:"FlightDate,omitempty"`
 
-	DepartureAirport *string `xml:"tns:DepartureAirport,omitempty" json:"DepartureAirport,omitempty"`
+	DepartureAirport *string `xml:"http://raido.aviolinx.com/api/ DepartureAirport,omitempty" json:"DepartureAirport,omitempty"`
 
-	ArrivalAirport *string `xml:"tns:ArrivalAirport,omitempty" json:"ArrivalAirport,omitempty"`
+	ArrivalAirport *string `xml:"http://raido.aviolinx.com/api/ ArrivalAirport,omitempty" json:"ArrivalAirport,omitempty"`
 
-	CrewNumber *string `xml:"tns:CrewNumber,omitempty" json:"CrewNumber,omitempty"`
+	CrewNumber *string `xml:"http://raido.aviolinx.com/api/ CrewNumber,omitempty" json:"CrewNumber,omitempty"`
 
-	RosterDesignator *string `xml:"tns:RosterDesignator,omitempty" json:"RosterDesignator,omitempty"`
+	RosterDesignator *string `xml:"http://raido.aviolinx.com/api/ RosterDesignator,omitempty" json:"RosterDesignator,omitempty"`
 }
 
 type SetRosterDesignatorResponse struct {
-	XMLName xml.Name `xml:"tns:SetRosterDesignatorResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetRosterDesignatorResponse"`
 
-	SetRosterDesignatorResult bool `xml:"tns:SetRosterDesignatorResult,omitempty" json:"SetRosterDesignatorResult,omitempty"`
+	SetRosterDesignatorResult bool `xml:"http://raido.aviolinx.com/api/ SetRosterDesignatorResult,omitempty" json:"SetRosterDesignatorResult,omitempty"`
 }
 
 type SetFlightData struct {
-	XMLName xml.Name `xml:"tns:SetFlightData"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetFlightData"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	FlightNumber string `xml:"tns:FlightNumber,omitempty" json:"FlightNumber,omitempty"`
+	FlightNumber string `xml:"http://raido.aviolinx.com/api/ FlightNumber,omitempty" json:"FlightNumber,omitempty"`
 
-	Callsign string `xml:"tns:Callsign,omitempty" json:"Callsign,omitempty"`
+	Callsign string `xml:"http://raido.aviolinx.com/api/ Callsign,omitempty" json:"Callsign,omitempty"`
 
-	FlightDate xsd.DateTime `xml:"tns:FlightDate,omitempty" json:"FlightDate,omitempty"`
+	FlightDate xsd.DateTime `xml:"http://raido.aviolinx.com/api/ FlightDate,omitempty" json:"FlightDate,omitempty"`
 
-	UniqueId *int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId *int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	DepartureAirport *string `xml:"tns:DepartureAirport,omitempty" json:"DepartureAirport,omitempty"`
+	DepartureAirport *string `xml:"http://raido.aviolinx.com/api/ DepartureAirport,omitempty" json:"DepartureAirport,omitempty"`
 
-	ArrivalAirport *string `xml:"tns:ArrivalAirport,omitempty" json:"ArrivalAirport,omitempty"`
+	ArrivalAirport *string `xml:"http://raido.aviolinx.com/api/ ArrivalAirport,omitempty" json:"ArrivalAirport,omitempty"`
 
-	Times *ArrayOfTime `xml:"tns:Times,omitempty" json:"Times,omitempty"`
+	Times *ArrayOfTime `xml:"http://raido.aviolinx.com/api/ Times,omitempty" json:"Times,omitempty"`
 
-	Delays *Delays `xml:"tns:Delays,omitempty" json:"Delays,omitempty"`
+	Delays *Delays `xml:"http://raido.aviolinx.com/api/ Delays,omitempty" json:"Delays,omitempty"`
 
-	Loads *Loads `xml:"tns:Loads,omitempty" json:"Loads,omitempty"`
+	Loads *Loads `xml:"http://raido.aviolinx.com/api/ Loads,omitempty" json:"Loads,omitempty"`
 
-	Notes *ArrayOfNote `xml:"tns:Notes,omitempty" json:"Notes,omitempty"`
+	Notes *ArrayOfNote `xml:"http://raido.aviolinx.com/api/ Notes,omitempty" json:"Notes,omitempty"`
 
-	Fuels *ArrayOfFuel `xml:"tns:Fuels,omitempty" json:"Fuels,omitempty"`
+	Fuels *ArrayOfFuel `xml:"http://raido.aviolinx.com/api/ Fuels,omitempty" json:"Fuels,omitempty"`
 
-	ProjectCodes *ArrayOfProjectCode `xml:"tns:ProjectCodes,omitempty" json:"ProjectCodes,omitempty"`
+	ProjectCodes *ArrayOfProjectCode `xml:"http://raido.aviolinx.com/api/ ProjectCodes,omitempty" json:"ProjectCodes,omitempty"`
 
-	VoyageReport *VoyageReport `xml:"tns:VoyageReport,omitempty" json:"VoyageReport,omitempty"`
+	VoyageReport *VoyageReport `xml:"http://raido.aviolinx.com/api/ VoyageReport,omitempty" json:"VoyageReport,omitempty"`
 
-	Flightplan *Flightplan `xml:"tns:Flightplan,omitempty" json:"Flightplan,omitempty"`
+	Flightplan *Flightplan `xml:"http://raido.aviolinx.com/api/ Flightplan,omitempty" json:"Flightplan,omitempty"`
 
-	Airports *Airports `xml:"tns:Airports,omitempty" json:"Airports,omitempty"`
+	Airports *Airports `xml:"http://raido.aviolinx.com/api/ Airports,omitempty" json:"Airports,omitempty"`
 }
 
 type SetFlightDataResponse struct {
-	XMLName xml.Name `xml:"tns:SetFlightDataResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetFlightDataResponse"`
 
-	SetFlightDataResult bool `xml:"tns:SetFlightDataResult,omitempty" json:"SetFlightDataResult,omitempty"`
+	SetFlightDataResult bool `xml:"http://raido.aviolinx.com/api/ SetFlightDataResult,omitempty" json:"SetFlightDataResult,omitempty"`
 }
 
 type SetRosterData struct {
-	XMLName xml.Name `xml:"tns:SetRosterData"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetRosterData"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	FlightNumber string `xml:"tns:FlightNumber,omitempty" json:"FlightNumber,omitempty"`
+	FlightNumber string `xml:"http://raido.aviolinx.com/api/ FlightNumber,omitempty" json:"FlightNumber,omitempty"`
 
-	Callsign string `xml:"tns:Callsign,omitempty" json:"Callsign,omitempty"`
+	Callsign string `xml:"http://raido.aviolinx.com/api/ Callsign,omitempty" json:"Callsign,omitempty"`
 
-	FlightDate xsd.DateTime `xml:"tns:FlightDate,omitempty" json:"FlightDate,omitempty"`
+	FlightDate xsd.DateTime `xml:"http://raido.aviolinx.com/api/ FlightDate,omitempty" json:"FlightDate,omitempty"`
 
-	UniqueId *int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId *int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	DepartureAirport *string `xml:"tns:DepartureAirport,omitempty" json:"DepartureAirport,omitempty"`
+	DepartureAirport *string `xml:"http://raido.aviolinx.com/api/ DepartureAirport,omitempty" json:"DepartureAirport,omitempty"`
 
-	ArrivalAirport *string `xml:"tns:ArrivalAirport,omitempty" json:"ArrivalAirport,omitempty"`
+	ArrivalAirport *string `xml:"http://raido.aviolinx.com/api/ ArrivalAirport,omitempty" json:"ArrivalAirport,omitempty"`
 
-	CrewNumber *string `xml:"tns:CrewNumber,omitempty" json:"CrewNumber,omitempty"`
+	CrewNumber *string `xml:"http://raido.aviolinx.com/api/ CrewNumber,omitempty" json:"CrewNumber,omitempty"`
 
-	DeadHeadBookingNumber *string `xml:"tns:DeadHeadBookingNumber,omitempty" json:"DeadHeadBookingNumber,omitempty"`
+	DeadHeadBookingNumber *string `xml:"http://raido.aviolinx.com/api/ DeadHeadBookingNumber,omitempty" json:"DeadHeadBookingNumber,omitempty"`
 
-	Designators *ArrayOfRosterDesignator `xml:"tns:Designators,omitempty" json:"Designators,omitempty"`
+	Designators *ArrayOfRosterDesignator `xml:"http://raido.aviolinx.com/api/ Designators,omitempty" json:"Designators,omitempty"`
 
-	RosterTime *RosterTime `xml:"tns:RosterTime,omitempty" json:"RosterTime,omitempty"`
+	RosterTime *RosterTime `xml:"http://raido.aviolinx.com/api/ RosterTime,omitempty" json:"RosterTime,omitempty"`
 
-	Times *ArrayOfTime `xml:"tns:Times,omitempty" json:"Times,omitempty"`
+	Times *ArrayOfTime `xml:"http://raido.aviolinx.com/api/ Times,omitempty" json:"Times,omitempty"`
 
-	LegalExceptions *ArrayOfRosterLegalException `xml:"tns:LegalExceptions,omitempty" json:"LegalExceptions,omitempty"`
+	LegalExceptions *ArrayOfRosterLegalException `xml:"http://raido.aviolinx.com/api/ LegalExceptions,omitempty" json:"LegalExceptions,omitempty"`
 }
 
 type SetRosterDataResponse struct {
-	XMLName xml.Name `xml:"tns:SetRosterDataResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetRosterDataResponse"`
 
-	SetRosterDataResult bool `xml:"tns:SetRosterDataResult,omitempty" json:"SetRosterDataResult,omitempty"`
+	SetRosterDataResult bool `xml:"http://raido.aviolinx.com/api/ SetRosterDataResult,omitempty" json:"SetRosterDataResult,omitempty"`
 }
 
 type SetCrewDocument struct {
-	XMLName xml.Name `xml:"tns:SetCrewDocument"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetCrewDocument"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	CrewNumber *string `xml:"tns:CrewNumber,omitempty" json:"CrewNumber,omitempty"`
+	CrewNumber *string `xml:"http://raido.aviolinx.com/api/ CrewNumber,omitempty" json:"CrewNumber,omitempty"`
 
-	Documents *ArrayOfDocument `xml:"tns:Documents,omitempty" json:"Documents,omitempty"`
+	Documents *ArrayOfDocument `xml:"http://raido.aviolinx.com/api/ Documents,omitempty" json:"Documents,omitempty"`
 }
 
 type SetCrewDocumentResponse struct {
-	XMLName xml.Name `xml:"tns:SetCrewDocumentResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetCrewDocumentResponse"`
 
-	SetCrewDocumentResult bool `xml:"tns:SetCrewDocumentResult,omitempty" json:"SetCrewDocumentResult,omitempty"`
+	SetCrewDocumentResult bool `xml:"http://raido.aviolinx.com/api/ SetCrewDocumentResult,omitempty" json:"SetCrewDocumentResult,omitempty"`
 }
 
 type SetRosters struct {
-	XMLName xml.Name `xml:"tns:SetRosters"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetRosters"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	SetRostersFilter *SetRostersFilter `xml:"tns:SetRostersFilter,omitempty" json:"SetRostersFilter,omitempty"`
+	SetRostersFilter *SetRostersFilter `xml:"http://raido.aviolinx.com/api/ SetRostersFilter,omitempty" json:"SetRostersFilter,omitempty"`
 
-	Crews *ArrayOfCrew `xml:"tns:Crews,omitempty" json:"Crews,omitempty"`
+	Crews *ArrayOfCrew `xml:"http://raido.aviolinx.com/api/ Crews,omitempty" json:"Crews,omitempty"`
 }
 
 type SetRostersResponse struct {
-	XMLName xml.Name `xml:"tns:SetRostersResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetRostersResponse"`
 
-	SetRostersResult bool `xml:"tns:SetRostersResult,omitempty" json:"SetRostersResult,omitempty"`
+	SetRostersResult bool `xml:"http://raido.aviolinx.com/api/ SetRostersResult,omitempty" json:"SetRostersResult,omitempty"`
 }
 
 type SetRoster struct {
-	XMLName xml.Name `xml:"tns:SetRoster"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetRoster"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	CrewNumber *string `xml:"tns:CrewNumber,omitempty" json:"CrewNumber,omitempty"`
+	CrewNumber *string `xml:"http://raido.aviolinx.com/api/ CrewNumber,omitempty" json:"CrewNumber,omitempty"`
 
-	RosterActivities *ArrayOfRosterActivity `xml:"tns:RosterActivities,omitempty" json:"RosterActivities,omitempty"`
+	RosterActivities *ArrayOfRosterActivity `xml:"http://raido.aviolinx.com/api/ RosterActivities,omitempty" json:"RosterActivities,omitempty"`
 
-	Pairings *ArrayOfPairing `xml:"tns:Pairings,omitempty" json:"Pairings,omitempty"`
+	Pairings *ArrayOfPairing `xml:"http://raido.aviolinx.com/api/ Pairings,omitempty" json:"Pairings,omitempty"`
 }
 
 type SetRosterResponse struct {
-	XMLName xml.Name `xml:"tns:SetRosterResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetRosterResponse"`
 
-	SetRosterResult bool `xml:"tns:SetRosterResult,omitempty" json:"SetRosterResult,omitempty"`
+	SetRosterResult bool `xml:"http://raido.aviolinx.com/api/ SetRosterResult,omitempty" json:"SetRosterResult,omitempty"`
 }
 
 type SetCrew struct {
-	XMLName xml.Name `xml:"tns:SetCrew"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetCrew"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	EmployeeNumber string `xml:"tns:EmployeeNumber,omitempty" json:"EmployeeNumber,omitempty"`
+	EmployeeNumber string `xml:"http://raido.aviolinx.com/api/ EmployeeNumber,omitempty" json:"EmployeeNumber,omitempty"`
 
-	FirstName *string `xml:"tns:FirstName,omitempty" json:"FirstName,omitempty"`
+	FirstName *string `xml:"http://raido.aviolinx.com/api/ FirstName,omitempty" json:"FirstName,omitempty"`
 
-	MiddleName *string `xml:"tns:MiddleName,omitempty" json:"MiddleName,omitempty"`
+	MiddleName *string `xml:"http://raido.aviolinx.com/api/ MiddleName,omitempty" json:"MiddleName,omitempty"`
 
-	LastName *string `xml:"tns:LastName,omitempty" json:"LastName,omitempty"`
+	LastName *string `xml:"http://raido.aviolinx.com/api/ LastName,omitempty" json:"LastName,omitempty"`
 
-	NickName *string `xml:"tns:NickName,omitempty" json:"NickName,omitempty"`
+	NickName *string `xml:"http://raido.aviolinx.com/api/ NickName,omitempty" json:"NickName,omitempty"`
 
-	SocialSecurityNumber *string `xml:"tns:SocialSecurityNumber,omitempty" json:"SocialSecurityNumber,omitempty"`
+	SocialSecurityNumber *string `xml:"http://raido.aviolinx.com/api/ SocialSecurityNumber,omitempty" json:"SocialSecurityNumber,omitempty"`
 
-	ShortCode1 *string `xml:"tns:ShortCode1,omitempty" json:"ShortCode1,omitempty"`
+	ShortCode1 *string `xml:"http://raido.aviolinx.com/api/ ShortCode1,omitempty" json:"ShortCode1,omitempty"`
 
-	ShortCode2 *string `xml:"tns:ShortCode2,omitempty" json:"ShortCode2,omitempty"`
+	ShortCode2 *string `xml:"http://raido.aviolinx.com/api/ ShortCode2,omitempty" json:"ShortCode2,omitempty"`
 
-	BirthDate *xsd.DateTime `xml:"tns:BirthDate,omitempty" json:"BirthDate,omitempty"`
+	BirthDate *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ BirthDate,omitempty" json:"BirthDate,omitempty"`
 
-	Gender *string `xml:"tns:Gender,omitempty" json:"Gender,omitempty"`
+	Gender *string `xml:"http://raido.aviolinx.com/api/ Gender,omitempty" json:"Gender,omitempty"`
 
-	Type *string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type *string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	Active *bool `xml:"tns:Active,omitempty" json:"Active,omitempty"`
+	Active *bool `xml:"http://raido.aviolinx.com/api/ Active,omitempty" json:"Active,omitempty"`
 
-	Groups *string `xml:"tns:Groups,omitempty" json:"Groups,omitempty"`
+	Groups *string `xml:"http://raido.aviolinx.com/api/ Groups,omitempty" json:"Groups,omitempty"`
 
-	Seniority *int32 `xml:"tns:Seniority,omitempty" json:"Seniority,omitempty"`
+	Seniority *int32 `xml:"http://raido.aviolinx.com/api/ Seniority,omitempty" json:"Seniority,omitempty"`
 
-	Bases *ArrayOfBase `xml:"tns:Bases,omitempty" json:"Bases,omitempty"`
+	Bases *ArrayOfBase `xml:"http://raido.aviolinx.com/api/ Bases,omitempty" json:"Bases,omitempty"`
 
-	QualRankData *ArrayOfQualRank `xml:"tns:QualRankData,omitempty" json:"QualRankData,omitempty"`
+	QualRankData *ArrayOfQualRank `xml:"http://raido.aviolinx.com/api/ QualRankData,omitempty" json:"QualRankData,omitempty"`
 
-	Phones *ArrayOfPhone `xml:"tns:Phones,omitempty" json:"Phones,omitempty"`
+	Phones *ArrayOfPhone `xml:"http://raido.aviolinx.com/api/ Phones,omitempty" json:"Phones,omitempty"`
 
-	Addresses *ArrayOfAddress `xml:"tns:Addresses,omitempty" json:"Addresses,omitempty"`
+	Addresses *ArrayOfAddress `xml:"http://raido.aviolinx.com/api/ Addresses,omitempty" json:"Addresses,omitempty"`
 
-	Emails *ArrayOfEmail `xml:"tns:Emails,omitempty" json:"Emails,omitempty"`
+	Emails *ArrayOfEmail `xml:"http://raido.aviolinx.com/api/ Emails,omitempty" json:"Emails,omitempty"`
 
-	Documents *ArrayOfDocument `xml:"tns:Documents,omitempty" json:"Documents,omitempty"`
+	Documents *ArrayOfDocument `xml:"http://raido.aviolinx.com/api/ Documents,omitempty" json:"Documents,omitempty"`
 
-	ContractsData *ContractsData `xml:"tns:ContractsData,omitempty" json:"ContractsData,omitempty"`
+	ContractsData *ContractsData `xml:"http://raido.aviolinx.com/api/ ContractsData,omitempty" json:"ContractsData,omitempty"`
 
-	SpecialRoles *ArrayOfSpecialRole `xml:"tns:SpecialRoles,omitempty" json:"SpecialRoles,omitempty"`
+	SpecialRoles *ArrayOfSpecialRole `xml:"http://raido.aviolinx.com/api/ SpecialRoles,omitempty" json:"SpecialRoles,omitempty"`
 
-	SystemUser *string `xml:"tns:SystemUser,omitempty" json:"SystemUser,omitempty"`
+	SystemUser *string `xml:"http://raido.aviolinx.com/api/ SystemUser,omitempty" json:"SystemUser,omitempty"`
 }
 
 type SetCrewResponse struct {
-	XMLName xml.Name `xml:"tns:SetCrewResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetCrewResponse"`
 
-	SetCrewResult bool `xml:"tns:SetCrewResult,omitempty" json:"SetCrewResult,omitempty"`
+	SetCrewResult bool `xml:"http://raido.aviolinx.com/api/ SetCrewResult,omitempty" json:"SetCrewResult,omitempty"`
 }
 
 type SetUser struct {
-	XMLName xml.Name `xml:"tns:SetUser"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetUser"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	SystemUser *string `xml:"tns:SystemUser,omitempty" json:"SystemUser,omitempty"`
+	SystemUser *string `xml:"http://raido.aviolinx.com/api/ SystemUser,omitempty" json:"SystemUser,omitempty"`
 
-	SystemUserPassword *string `xml:"tns:SystemUserPassword,omitempty" json:"SystemUserPassword,omitempty"`
+	SystemUserPassword *string `xml:"http://raido.aviolinx.com/api/ SystemUserPassword,omitempty" json:"SystemUserPassword,omitempty"`
 
-	FirstName *string `xml:"tns:FirstName,omitempty" json:"FirstName,omitempty"`
+	FirstName *string `xml:"http://raido.aviolinx.com/api/ FirstName,omitempty" json:"FirstName,omitempty"`
 
-	LastName *string `xml:"tns:LastName,omitempty" json:"LastName,omitempty"`
+	LastName *string `xml:"http://raido.aviolinx.com/api/ LastName,omitempty" json:"LastName,omitempty"`
 
-	Email *string `xml:"tns:Email,omitempty" json:"Email,omitempty"`
+	Email *string `xml:"http://raido.aviolinx.com/api/ Email,omitempty" json:"Email,omitempty"`
 
-	TypeB *string `xml:"tns:TypeB,omitempty" json:"TypeB,omitempty"`
+	TypeB *string `xml:"http://raido.aviolinx.com/api/ TypeB,omitempty" json:"TypeB,omitempty"`
 
-	Phone *string `xml:"tns:Phone,omitempty" json:"Phone,omitempty"`
+	Phone *string `xml:"http://raido.aviolinx.com/api/ Phone,omitempty" json:"Phone,omitempty"`
 
-	Mobile *string `xml:"tns:Mobile,omitempty" json:"Mobile,omitempty"`
+	Mobile *string `xml:"http://raido.aviolinx.com/api/ Mobile,omitempty" json:"Mobile,omitempty"`
 
-	VOIP *string `xml:"tns:VOIP,omitempty" json:"VOIP,omitempty"`
+	VOIP *string `xml:"http://raido.aviolinx.com/api/ VOIP,omitempty" json:"VOIP,omitempty"`
 
-	ADUser *string `xml:"tns:ADUser,omitempty" json:"ADUser,omitempty"`
+	ADUser *string `xml:"http://raido.aviolinx.com/api/ ADUser,omitempty" json:"ADUser,omitempty"`
 
-	Active *bool `xml:"tns:Active,omitempty" json:"Active,omitempty"`
+	Active *bool `xml:"http://raido.aviolinx.com/api/ Active,omitempty" json:"Active,omitempty"`
 
-	Groups *string `xml:"tns:Groups,omitempty" json:"Groups,omitempty"`
+	Groups *string `xml:"http://raido.aviolinx.com/api/ Groups,omitempty" json:"Groups,omitempty"`
 }
 
 type SetUserResponse struct {
-	XMLName xml.Name `xml:"tns:SetUserResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetUserResponse"`
 
-	SetUserResult bool `xml:"tns:SetUserResult,omitempty" json:"SetUserResult,omitempty"`
+	SetUserResult bool `xml:"http://raido.aviolinx.com/api/ SetUserResult,omitempty" json:"SetUserResult,omitempty"`
 }
 
 type SetMaintenance struct {
-	XMLName xml.Name `xml:"tns:SetMaintenance"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetMaintenance"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	UniqueId int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	ExternalReferenceId *int32 `xml:"tns:ExternalReferenceId,omitempty" json:"ExternalReferenceId,omitempty"`
+	ExternalReferenceId *int32 `xml:"http://raido.aviolinx.com/api/ ExternalReferenceId,omitempty" json:"ExternalReferenceId,omitempty"`
 
-	MaintenanceType *MaintenanceType `xml:"tns:MaintenanceType,omitempty" json:"MaintenanceType,omitempty"`
+	MaintenanceType *MaintenanceType `xml:"http://raido.aviolinx.com/api/ MaintenanceType,omitempty" json:"MaintenanceType,omitempty"`
 
-	StartTime xsd.DateTime `xml:"tns:StartTime,omitempty" json:"StartTime,omitempty"`
+	StartTime xsd.DateTime `xml:"http://raido.aviolinx.com/api/ StartTime,omitempty" json:"StartTime,omitempty"`
 
-	EndTime xsd.DateTime `xml:"tns:EndTime,omitempty" json:"EndTime,omitempty"`
+	EndTime xsd.DateTime `xml:"http://raido.aviolinx.com/api/ EndTime,omitempty" json:"EndTime,omitempty"`
 
-	Type *string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type *string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	AirportCode *string `xml:"tns:AirportCode,omitempty" json:"AirportCode,omitempty"`
+	AirportCode *string `xml:"http://raido.aviolinx.com/api/ AirportCode,omitempty" json:"AirportCode,omitempty"`
 
-	AircraftRegistration *string `xml:"tns:AircraftRegistration,omitempty" json:"AircraftRegistration,omitempty"`
+	AircraftRegistration *string `xml:"http://raido.aviolinx.com/api/ AircraftRegistration,omitempty" json:"AircraftRegistration,omitempty"`
 
-	Name *string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name *string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	Notes *ArrayOfNote `xml:"tns:Notes,omitempty" json:"Notes,omitempty"`
+	Notes *ArrayOfNote `xml:"http://raido.aviolinx.com/api/ Notes,omitempty" json:"Notes,omitempty"`
 
-	Times *ArrayOfTime `xml:"tns:Times,omitempty" json:"Times,omitempty"`
+	Times *ArrayOfTime `xml:"http://raido.aviolinx.com/api/ Times,omitempty" json:"Times,omitempty"`
 }
 
 type SetMaintenanceResponse struct {
-	XMLName xml.Name `xml:"tns:SetMaintenanceResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetMaintenanceResponse"`
 
-	SetMaintenanceResult bool `xml:"tns:SetMaintenanceResult,omitempty" json:"SetMaintenanceResult,omitempty"`
+	SetMaintenanceResult bool `xml:"http://raido.aviolinx.com/api/ SetMaintenanceResult,omitempty" json:"SetMaintenanceResult,omitempty"`
 }
 
 type DeleteMaintenance struct {
-	XMLName xml.Name `xml:"tns:DeleteMaintenance"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ DeleteMaintenance"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	UniqueId int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	MaintenanceType *MaintenanceType `xml:"tns:MaintenanceType,omitempty" json:"MaintenanceType,omitempty"`
+	MaintenanceType *MaintenanceType `xml:"http://raido.aviolinx.com/api/ MaintenanceType,omitempty" json:"MaintenanceType,omitempty"`
 
-	StartTime xsd.DateTime `xml:"tns:StartTime,omitempty" json:"StartTime,omitempty"`
+	StartTime xsd.DateTime `xml:"http://raido.aviolinx.com/api/ StartTime,omitempty" json:"StartTime,omitempty"`
 
-	EndTime xsd.DateTime `xml:"tns:EndTime,omitempty" json:"EndTime,omitempty"`
+	EndTime xsd.DateTime `xml:"http://raido.aviolinx.com/api/ EndTime,omitempty" json:"EndTime,omitempty"`
 
-	Type *string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type *string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	AirportCode *string `xml:"tns:AirportCode,omitempty" json:"AirportCode,omitempty"`
+	AirportCode *string `xml:"http://raido.aviolinx.com/api/ AirportCode,omitempty" json:"AirportCode,omitempty"`
 
-	AircraftRegistration *string `xml:"tns:AircraftRegistration,omitempty" json:"AircraftRegistration,omitempty"`
+	AircraftRegistration *string `xml:"http://raido.aviolinx.com/api/ AircraftRegistration,omitempty" json:"AircraftRegistration,omitempty"`
 }
 
 type DeleteMaintenanceResponse struct {
-	XMLName xml.Name `xml:"tns:DeleteMaintenanceResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ DeleteMaintenanceResponse"`
 
-	DeleteMaintenanceResult bool `xml:"tns:DeleteMaintenanceResult,omitempty" json:"DeleteMaintenanceResult,omitempty"`
+	DeleteMaintenanceResult bool `xml:"http://raido.aviolinx.com/api/ DeleteMaintenanceResult,omitempty" json:"DeleteMaintenanceResult,omitempty"`
 }
 
 type SetAircraftData struct {
-	XMLName xml.Name `xml:"tns:SetAircraftData"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetAircraftData"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	VehicleRegistration string `xml:"tns:VehicleRegistration,omitempty" json:"VehicleRegistration,omitempty"`
+	VehicleRegistration string `xml:"http://raido.aviolinx.com/api/ VehicleRegistration,omitempty" json:"VehicleRegistration,omitempty"`
 
-	MinimumEquipmentList *ArrayOfMinimumEquipment `xml:"tns:MinimumEquipmentList,omitempty" json:"MinimumEquipmentList,omitempty"`
+	MinimumEquipmentList *ArrayOfMinimumEquipment `xml:"http://raido.aviolinx.com/api/ MinimumEquipmentList,omitempty" json:"MinimumEquipmentList,omitempty"`
 }
 
 type SetAircraftDataResponse struct {
-	XMLName xml.Name `xml:"tns:SetAircraftDataResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetAircraftDataResponse"`
 
-	SetAircraftDataResult bool `xml:"tns:SetAircraftDataResult,omitempty" json:"SetAircraftDataResult,omitempty"`
+	SetAircraftDataResult bool `xml:"http://raido.aviolinx.com/api/ SetAircraftDataResult,omitempty" json:"SetAircraftDataResult,omitempty"`
 }
 
 type DeleteRosters struct {
-	XMLName xml.Name `xml:"tns:DeleteRosters"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ DeleteRosters"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	UniqueIds string `xml:"tns:UniqueIds,omitempty" json:"UniqueIds,omitempty"`
+	UniqueIds string `xml:"http://raido.aviolinx.com/api/ UniqueIds,omitempty" json:"UniqueIds,omitempty"`
 
-	StartTime xsd.DateTime `xml:"tns:StartTime,omitempty" json:"StartTime,omitempty"`
+	StartTime xsd.DateTime `xml:"http://raido.aviolinx.com/api/ StartTime,omitempty" json:"StartTime,omitempty"`
 
-	EndTime xsd.DateTime `xml:"tns:EndTime,omitempty" json:"EndTime,omitempty"`
+	EndTime xsd.DateTime `xml:"http://raido.aviolinx.com/api/ EndTime,omitempty" json:"EndTime,omitempty"`
 
-	FilterName *string `xml:"tns:FilterName,omitempty" json:"FilterName,omitempty"`
+	FilterName *string `xml:"http://raido.aviolinx.com/api/ FilterName,omitempty" json:"FilterName,omitempty"`
 
-	CrewNumber *string `xml:"tns:CrewNumber,omitempty" json:"CrewNumber,omitempty"`
+	CrewNumber *string `xml:"http://raido.aviolinx.com/api/ CrewNumber,omitempty" json:"CrewNumber,omitempty"`
 
-	RosterActivityCode *string `xml:"tns:RosterActivityCode,omitempty" json:"RosterActivityCode,omitempty"`
+	RosterActivityCode *string `xml:"http://raido.aviolinx.com/api/ RosterActivityCode,omitempty" json:"RosterActivityCode,omitempty"`
 }
 
 type DeleteRostersResponse struct {
-	XMLName xml.Name `xml:"tns:DeleteRostersResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ DeleteRostersResponse"`
 
-	DeleteRostersResult bool `xml:"tns:DeleteRostersResult,omitempty" json:"DeleteRostersResult,omitempty"`
+	DeleteRostersResult bool `xml:"http://raido.aviolinx.com/api/ DeleteRostersResult,omitempty" json:"DeleteRostersResult,omitempty"`
 }
 
 type SetExternalCrew struct {
-	XMLName xml.Name `xml:"tns:SetExternalCrew"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetExternalCrew"`
 
-	Username *string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username *string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	Password *string `xml:"tns:Password,omitempty" json:"Password,omitempty"`
+	Password *string `xml:"http://raido.aviolinx.com/api/ Password,omitempty" json:"Password,omitempty"`
 
-	ExternalCrews *ArrayOfExternalCrew `xml:"tns:ExternalCrews,omitempty" json:"ExternalCrews,omitempty"`
+	ExternalCrews *ArrayOfExternalCrew `xml:"http://raido.aviolinx.com/api/ ExternalCrews,omitempty" json:"ExternalCrews,omitempty"`
 }
 
 type SetExternalCrewResponse struct {
-	XMLName xml.Name `xml:"tns:SetExternalCrewResponse"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SetExternalCrewResponse"`
 
-	SetExternalCrewResult bool `xml:"tns:SetExternalCrewResult,omitempty" json:"SetExternalCrewResult,omitempty"`
+	SetExternalCrewResult bool `xml:"http://raido.aviolinx.com/api/ SetExternalCrewResult,omitempty" json:"SetExternalCrewResult,omitempty"`
 }
 
 type ScheduleRequestFilter struct {
 	*DateRangeBasicRequestFilter
 
-	Airline string `xml:"tns:Airline,omitempty" json:"Airline,omitempty"`
+	Airline string `xml:"http://raido.aviolinx.com/api/ Airline,omitempty" json:"Airline,omitempty"`
 
-	FlightNumber string `xml:"tns:FlightNumber,omitempty" json:"FlightNumber,omitempty"`
+	FlightNumber string `xml:"http://raido.aviolinx.com/api/ FlightNumber,omitempty" json:"FlightNumber,omitempty"`
 
-	Suffix string `xml:"tns:Suffix,omitempty" json:"Suffix,omitempty"`
+	Suffix string `xml:"http://raido.aviolinx.com/api/ Suffix,omitempty" json:"Suffix,omitempty"`
 
-	DepartureAirport string `xml:"tns:DepartureAirport,omitempty" json:"DepartureAirport,omitempty"`
+	DepartureAirport string `xml:"http://raido.aviolinx.com/api/ DepartureAirport,omitempty" json:"DepartureAirport,omitempty"`
 
-	ArrivalAirport string `xml:"tns:ArrivalAirport,omitempty" json:"ArrivalAirport,omitempty"`
+	ArrivalAirport string `xml:"http://raido.aviolinx.com/api/ ArrivalAirport,omitempty" json:"ArrivalAirport,omitempty"`
 
-	ServiceTypeCode string `xml:"tns:ServiceTypeCode,omitempty" json:"ServiceTypeCode,omitempty"`
+	ServiceTypeCode string `xml:"http://raido.aviolinx.com/api/ ServiceTypeCode,omitempty" json:"ServiceTypeCode,omitempty"`
 
-	AdHoc bool `xml:"tns:AdHoc,omitempty" json:"AdHoc,omitempty"`
+	AdHoc bool `xml:"http://raido.aviolinx.com/api/ AdHoc,omitempty" json:"AdHoc,omitempty"`
 }
 
 type DateRangeBasicRequestFilter struct {
 	*BasicRequestFilter
 
-	From *xsd.DateTime `xml:"tns:From,omitempty" json:"From,omitempty"`
+	From *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ From,omitempty" json:"From,omitempty"`
 
-	To *xsd.DateTime `xml:"tns:To,omitempty" json:"To,omitempty"`
+	To *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ To,omitempty" json:"To,omitempty"`
 }
 
 type BasicRequestFilter struct {
-	FilterId *int32 `xml:"tns:FilterId,omitempty" json:"FilterId,omitempty"`
+	FilterId *int32 `xml:"http://raido.aviolinx.com/api/ FilterId,omitempty" json:"FilterId,omitempty"`
 
-	FilterName string `xml:"tns:FilterName,omitempty" json:"FilterName,omitempty"`
+	FilterName string `xml:"http://raido.aviolinx.com/api/ FilterName,omitempty" json:"FilterName,omitempty"`
 
-	UniqueId string `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId string `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 }
 
 type ScheduleRequestData struct {
-	Airports bool `xml:"tns:Airports,omitempty" json:"Airports,omitempty"`
+	Airports bool `xml:"http://raido.aviolinx.com/api/ Airports,omitempty" json:"Airports,omitempty"`
 
-	Slots bool `xml:"tns:Slots,omitempty" json:"Slots,omitempty"`
+	Slots bool `xml:"http://raido.aviolinx.com/api/ Slots,omitempty" json:"Slots,omitempty"`
 
-	DataElementIdentifiers bool `xml:"tns:DataElementIdentifiers,omitempty" json:"DataElementIdentifiers,omitempty"`
+	DataElementIdentifiers bool `xml:"http://raido.aviolinx.com/api/ DataElementIdentifiers,omitempty" json:"DataElementIdentifiers,omitempty"`
 }
 
 type ArrayOfSchedule struct {
-	XMLName xml.Name `xml:"tns:GetSchedulesResult"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetSchedulesResult"`
 
-	Schedule []*Schedule `xml:"tns:Schedule,omitempty" json:"Schedule,omitempty"`
+	Schedule []*Schedule `xml:"http://raido.aviolinx.com/api/ Schedule,omitempty" json:"Schedule,omitempty"`
 }
 
 type Schedule struct {
-	UniqueId int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	AirlineCode string `xml:"tns:AirlineCode,omitempty" json:"AirlineCode,omitempty"`
+	AirlineCode string `xml:"http://raido.aviolinx.com/api/ AirlineCode,omitempty" json:"AirlineCode,omitempty"`
 
-	ICAOAirlineCode string `xml:"tns:ICAOAirlineCode,omitempty" json:"ICAOAirlineCode,omitempty"`
+	ICAOAirlineCode string `xml:"http://raido.aviolinx.com/api/ ICAOAirlineCode,omitempty" json:"ICAOAirlineCode,omitempty"`
 
-	FlightNumber int32 `xml:"tns:FlightNumber,omitempty" json:"FlightNumber,omitempty"`
+	FlightNumber int32 `xml:"http://raido.aviolinx.com/api/ FlightNumber,omitempty" json:"FlightNumber,omitempty"`
 
-	Suffix string `xml:"tns:Suffix,omitempty" json:"Suffix,omitempty"`
+	Suffix string `xml:"http://raido.aviolinx.com/api/ Suffix,omitempty" json:"Suffix,omitempty"`
 
-	DepartureAirportCode string `xml:"tns:DepartureAirportCode,omitempty" json:"DepartureAirportCode,omitempty"`
+	DepartureAirportCode string `xml:"http://raido.aviolinx.com/api/ DepartureAirportCode,omitempty" json:"DepartureAirportCode,omitempty"`
 
-	ArrivalAirportCode string `xml:"tns:ArrivalAirportCode,omitempty" json:"ArrivalAirportCode,omitempty"`
+	ArrivalAirportCode string `xml:"http://raido.aviolinx.com/api/ ArrivalAirportCode,omitempty" json:"ArrivalAirportCode,omitempty"`
 
-	PeriodStart xsd.Date `xml:"tns:PeriodStart,omitempty" json:"PeriodStart,omitempty"`
+	PeriodStart xsd.Date `xml:"http://raido.aviolinx.com/api/ PeriodStart,omitempty" json:"PeriodStart,omitempty"`
 
-	PeriodEnd xsd.Date `xml:"tns:PeriodEnd,omitempty" json:"PeriodEnd,omitempty"`
+	PeriodEnd xsd.Date `xml:"http://raido.aviolinx.com/api/ PeriodEnd,omitempty" json:"PeriodEnd,omitempty"`
 
-	Frequency string `xml:"tns:Frequency,omitempty" json:"Frequency,omitempty"`
+	Frequency string `xml:"http://raido.aviolinx.com/api/ Frequency,omitempty" json:"Frequency,omitempty"`
 
-	WeekFrequency int32 `xml:"tns:WeekFrequency,omitempty" json:"WeekFrequency,omitempty"`
+	WeekFrequency int32 `xml:"http://raido.aviolinx.com/api/ WeekFrequency,omitempty" json:"WeekFrequency,omitempty"`
 
-	STD int32 `xml:"tns:STD,omitempty" json:"STD,omitempty"`
+	STD int32 `xml:"http://raido.aviolinx.com/api/ STD,omitempty" json:"STD,omitempty"`
 
-	STA int32 `xml:"tns:STA,omitempty" json:"STA,omitempty"`
+	STA int32 `xml:"http://raido.aviolinx.com/api/ STA,omitempty" json:"STA,omitempty"`
 
-	ServiceTypeCode string `xml:"tns:ServiceTypeCode,omitempty" json:"ServiceTypeCode,omitempty"`
+	ServiceTypeCode string `xml:"http://raido.aviolinx.com/api/ ServiceTypeCode,omitempty" json:"ServiceTypeCode,omitempty"`
 
-	OnwardAirlineCode string `xml:"tns:OnwardAirlineCode,omitempty" json:"OnwardAirlineCode,omitempty"`
+	OnwardAirlineCode string `xml:"http://raido.aviolinx.com/api/ OnwardAirlineCode,omitempty" json:"OnwardAirlineCode,omitempty"`
 
-	OnwardFlightNumber int32 `xml:"tns:OnwardFlightNumber,omitempty" json:"OnwardFlightNumber,omitempty"`
+	OnwardFlightNumber int32 `xml:"http://raido.aviolinx.com/api/ OnwardFlightNumber,omitempty" json:"OnwardFlightNumber,omitempty"`
 
-	OnwardSuffix string `xml:"tns:OnwardSuffix,omitempty" json:"OnwardSuffix,omitempty"`
+	OnwardSuffix string `xml:"http://raido.aviolinx.com/api/ OnwardSuffix,omitempty" json:"OnwardSuffix,omitempty"`
 
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	AircraftType string `xml:"tns:AircraftType,omitempty" json:"AircraftType,omitempty"`
+	AircraftType string `xml:"http://raido.aviolinx.com/api/ AircraftType,omitempty" json:"AircraftType,omitempty"`
 
-	AircraftVersion string `xml:"tns:AircraftVersion,omitempty" json:"AircraftVersion,omitempty"`
+	AircraftVersion string `xml:"http://raido.aviolinx.com/api/ AircraftVersion,omitempty" json:"AircraftVersion,omitempty"`
 
-	AircraftConfig string `xml:"tns:AircraftConfig,omitempty" json:"AircraftConfig,omitempty"`
+	AircraftConfig string `xml:"http://raido.aviolinx.com/api/ AircraftConfig,omitempty" json:"AircraftConfig,omitempty"`
 
-	DepartureLocalTimeDiff int32 `xml:"tns:DepartureLocalTimeDiff,omitempty" json:"DepartureLocalTimeDiff,omitempty"`
+	DepartureLocalTimeDiff int32 `xml:"http://raido.aviolinx.com/api/ DepartureLocalTimeDiff,omitempty" json:"DepartureLocalTimeDiff,omitempty"`
 
-	ArrivalLocalTimeDiff int32 `xml:"tns:ArrivalLocalTimeDiff,omitempty" json:"ArrivalLocalTimeDiff,omitempty"`
+	ArrivalLocalTimeDiff int32 `xml:"http://raido.aviolinx.com/api/ ArrivalLocalTimeDiff,omitempty" json:"ArrivalLocalTimeDiff,omitempty"`
 
-	AircraftOwner string `xml:"tns:AircraftOwner,omitempty" json:"AircraftOwner,omitempty"`
+	AircraftOwner string `xml:"http://raido.aviolinx.com/api/ AircraftOwner,omitempty" json:"AircraftOwner,omitempty"`
 
-	CockpitCrewEmployer string `xml:"tns:CockpitCrewEmployer,omitempty" json:"CockpitCrewEmployer,omitempty"`
+	CockpitCrewEmployer string `xml:"http://raido.aviolinx.com/api/ CockpitCrewEmployer,omitempty" json:"CockpitCrewEmployer,omitempty"`
 
-	CabinCrewEmployer string `xml:"tns:CabinCrewEmployer,omitempty" json:"CabinCrewEmployer,omitempty"`
+	CabinCrewEmployer string `xml:"http://raido.aviolinx.com/api/ CabinCrewEmployer,omitempty" json:"CabinCrewEmployer,omitempty"`
 
-	Airports *Airports `xml:"tns:Airports,omitempty" json:"Airports,omitempty"`
+	Airports *Airports `xml:"http://raido.aviolinx.com/api/ Airports,omitempty" json:"Airports,omitempty"`
 
-	Notes *ArrayOfNote `xml:"tns:Notes,omitempty" json:"Notes,omitempty"`
+	Notes *ArrayOfNote `xml:"http://raido.aviolinx.com/api/ Notes,omitempty" json:"Notes,omitempty"`
 
-	DataElementIdentifiers *ArrayOfDataElementIdentifier `xml:"tns:DataElementIdentifiers,omitempty" json:"DataElementIdentifiers,omitempty"`
+	DataElementIdentifiers *ArrayOfDataElementIdentifier `xml:"http://raido.aviolinx.com/api/ DataElementIdentifiers,omitempty" json:"DataElementIdentifiers,omitempty"`
 }
 
 type Airports struct {
-	DepartureAirport *Airport `xml:"tns:DepartureAirport,omitempty" json:"DepartureAirport,omitempty"`
+	DepartureAirport *Airport `xml:"http://raido.aviolinx.com/api/ DepartureAirport,omitempty" json:"DepartureAirport,omitempty"`
 
-	ArrivalAirport *Airport `xml:"tns:ArrivalAirport,omitempty" json:"ArrivalAirport,omitempty"`
+	ArrivalAirport *Airport `xml:"http://raido.aviolinx.com/api/ ArrivalAirport,omitempty" json:"ArrivalAirport,omitempty"`
 
-	DiversionAirport *Airport `xml:"tns:DiversionAirport,omitempty" json:"DiversionAirport,omitempty"`
+	DiversionAirport *Airport `xml:"http://raido.aviolinx.com/api/ DiversionAirport,omitempty" json:"DiversionAirport,omitempty"`
 
-	ScheduleDepartureAirport *Airport `xml:"tns:ScheduleDepartureAirport,omitempty" json:"ScheduleDepartureAirport,omitempty"`
+	ScheduleDepartureAirport *Airport `xml:"http://raido.aviolinx.com/api/ ScheduleDepartureAirport,omitempty" json:"ScheduleDepartureAirport,omitempty"`
 
-	ScheduleArrivalAirport *Airport `xml:"tns:ScheduleArrivalAirport,omitempty" json:"ScheduleArrivalAirport,omitempty"`
+	ScheduleArrivalAirport *Airport `xml:"http://raido.aviolinx.com/api/ ScheduleArrivalAirport,omitempty" json:"ScheduleArrivalAirport,omitempty"`
 }
 
 type Airport struct {
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	LocalName string `xml:"tns:LocalName,omitempty" json:"LocalName,omitempty"`
+	LocalName string `xml:"http://raido.aviolinx.com/api/ LocalName,omitempty" json:"LocalName,omitempty"`
 
-	IATA string `xml:"tns:IATA,omitempty" json:"IATA,omitempty"`
+	IATA string `xml:"http://raido.aviolinx.com/api/ IATA,omitempty" json:"IATA,omitempty"`
 
-	ICAO string `xml:"tns:ICAO,omitempty" json:"ICAO,omitempty"`
+	ICAO string `xml:"http://raido.aviolinx.com/api/ ICAO,omitempty" json:"ICAO,omitempty"`
 
-	Country string `xml:"tns:Country,omitempty" json:"Country,omitempty"`
+	Country string `xml:"http://raido.aviolinx.com/api/ Country,omitempty" json:"Country,omitempty"`
 
-	Gate string `xml:"tns:Gate,omitempty" json:"Gate,omitempty"`
+	Gate string `xml:"http://raido.aviolinx.com/api/ Gate,omitempty" json:"Gate,omitempty"`
 
-	Stand string `xml:"tns:Stand,omitempty" json:"Stand,omitempty"`
+	Stand string `xml:"http://raido.aviolinx.com/api/ Stand,omitempty" json:"Stand,omitempty"`
 
-	Latitude float64 `xml:"tns:Latitude,omitempty" json:"Latitude,omitempty"`
+	Latitude float64 `xml:"http://raido.aviolinx.com/api/ Latitude,omitempty" json:"Latitude,omitempty"`
 
-	Longitude float64 `xml:"tns:Longitude,omitempty" json:"Longitude,omitempty"`
+	Longitude float64 `xml:"http://raido.aviolinx.com/api/ Longitude,omitempty" json:"Longitude,omitempty"`
 
-	SlotLevel string `xml:"tns:SlotLevel,omitempty" json:"SlotLevel,omitempty"`
+	SlotLevel string `xml:"http://raido.aviolinx.com/api/ SlotLevel,omitempty" json:"SlotLevel,omitempty"`
 
-	DaylightSavingTimes *ArrayOfDaylightSavingTime `xml:"tns:DaylightSavingTimes,omitempty" json:"DaylightSavingTimes,omitempty"`
+	DaylightSavingTimes *ArrayOfDaylightSavingTime `xml:"http://raido.aviolinx.com/api/ DaylightSavingTimes,omitempty" json:"DaylightSavingTimes,omitempty"`
 
-	Timezones *ArrayOfTimezone `xml:"tns:Timezones,omitempty" json:"Timezones,omitempty"`
+	Timezones *ArrayOfTimezone `xml:"http://raido.aviolinx.com/api/ Timezones,omitempty" json:"Timezones,omitempty"`
 
-	SlotLevels *ArrayOfSlotLevel `xml:"tns:SlotLevels,omitempty" json:"SlotLevels,omitempty"`
+	SlotLevels *ArrayOfSlotLevel `xml:"http://raido.aviolinx.com/api/ SlotLevels,omitempty" json:"SlotLevels,omitempty"`
 
-	StationFacilities *ArrayOfStationFacility `xml:"tns:StationFacilities,omitempty" json:"StationFacilities,omitempty"`
+	StationFacilities *ArrayOfStationFacility `xml:"http://raido.aviolinx.com/api/ StationFacilities,omitempty" json:"StationFacilities,omitempty"`
 }
 
 type ArrayOfDaylightSavingTime struct {
-	XMLName xml.Name `xml:"tns:DaylightSavingTimes"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ DaylightSavingTimes"`
 
-	DaylightSavingTime []*DaylightSavingTime `xml:"tns:DaylightSavingTime,omitempty" json:"DaylightSavingTime,omitempty"`
+	DaylightSavingTime []*DaylightSavingTime `xml:"http://raido.aviolinx.com/api/ DaylightSavingTime,omitempty" json:"DaylightSavingTime,omitempty"`
 }
 
 type DaylightSavingTime struct {
 	*Period
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	Info string `xml:"tns:Info,omitempty" json:"Info,omitempty"`
+	Info string `xml:"http://raido.aviolinx.com/api/ Info,omitempty" json:"Info,omitempty"`
 
-	TimeChanges *ArrayOfTimeChange `xml:"tns:TimeChanges,omitempty" json:"TimeChanges,omitempty"`
+	TimeChanges *ArrayOfTimeChange `xml:"http://raido.aviolinx.com/api/ TimeChanges,omitempty" json:"TimeChanges,omitempty"`
 }
 
 type Period struct {
@@ -952,21 +952,21 @@ type Period struct {
 type StationFacilityAttribute struct {
 	*Period
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	Value string `xml:"tns:Value,omitempty" json:"Value,omitempty"`
+	Value string `xml:"http://raido.aviolinx.com/api/ Value,omitempty" json:"Value,omitempty"`
 
-	Comment string `xml:"tns:Comment,omitempty" json:"Comment,omitempty"`
+	Comment string `xml:"http://raido.aviolinx.com/api/ Comment,omitempty" json:"Comment,omitempty"`
 
-	Frequency string `xml:"tns:Frequency,omitempty" json:"Frequency,omitempty"`
+	Frequency string `xml:"http://raido.aviolinx.com/api/ Frequency,omitempty" json:"Frequency,omitempty"`
 }
 
 type SlotLevel struct {
 	*Period
 
-	Level string `xml:"tns:Level,omitempty" json:"Level,omitempty"`
+	Level string `xml:"http://raido.aviolinx.com/api/ Level,omitempty" json:"Level,omitempty"`
 
-	Season string `xml:"tns:Season,omitempty" json:"Season,omitempty"`
+	Season string `xml:"http://raido.aviolinx.com/api/ Season,omitempty" json:"Season,omitempty"`
 
 	Turnaround bool `xml:"Turnaround,attr,omitempty" json:"Turnaround,omitempty"`
 }
@@ -974,421 +974,421 @@ type SlotLevel struct {
 type Timezone struct {
 	*Period
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	Info string `xml:"tns:Info,omitempty" json:"Info,omitempty"`
+	Info string `xml:"http://raido.aviolinx.com/api/ Info,omitempty" json:"Info,omitempty"`
 
-	TimeChanges *ArrayOfTimeChange `xml:"tns:TimeChanges,omitempty" json:"TimeChanges,omitempty"`
+	TimeChanges *ArrayOfTimeChange `xml:"http://raido.aviolinx.com/api/ TimeChanges,omitempty" json:"TimeChanges,omitempty"`
 }
 
 type ArrayOfTimeChange struct {
-	TimeChange []*TimeChange `xml:"tns:TimeChange,omitempty" json:"TimeChange,omitempty"`
+	TimeChange []*TimeChange `xml:"http://raido.aviolinx.com/api/ TimeChange,omitempty" json:"TimeChange,omitempty"`
 }
 
 type TimeChange struct {
 	*Period
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	Bias int32 `xml:"tns:Bias,omitempty" json:"Bias,omitempty"`
+	Bias int32 `xml:"http://raido.aviolinx.com/api/ Bias,omitempty" json:"Bias,omitempty"`
 }
 
 type ArrayOfTimezone struct {
-	XMLName xml.Name `xml:"tns:Timezones"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Timezones"`
 
-	Timezone []*Timezone `xml:"tns:Timezone,omitempty" json:"Timezone,omitempty"`
+	Timezone []*Timezone `xml:"http://raido.aviolinx.com/api/ Timezone,omitempty" json:"Timezone,omitempty"`
 }
 
 type ArrayOfSlotLevel struct {
-	XMLName xml.Name `xml:"tns:SlotLevels"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SlotLevels"`
 
-	SlotLevel []*SlotLevel `xml:"tns:SlotLevel,omitempty" json:"SlotLevel,omitempty"`
+	SlotLevel []*SlotLevel `xml:"http://raido.aviolinx.com/api/ SlotLevel,omitempty" json:"SlotLevel,omitempty"`
 }
 
 type ArrayOfStationFacility struct {
-	XMLName xml.Name `xml:"tns:StationFacilities"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ StationFacilities"`
 
-	StationFacility []*StationFacility `xml:"tns:StationFacility,omitempty" json:"StationFacility,omitempty"`
+	StationFacility []*StationFacility `xml:"http://raido.aviolinx.com/api/ StationFacility,omitempty" json:"StationFacility,omitempty"`
 }
 
 type StationFacility struct {
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	Attributes *ArrayOfStationFacilityAttribute `xml:"tns:Attributes,omitempty" json:"Attributes,omitempty"`
+	Attributes *ArrayOfStationFacilityAttribute `xml:"http://raido.aviolinx.com/api/ Attributes,omitempty" json:"Attributes,omitempty"`
 }
 
 type ArrayOfStationFacilityAttribute struct {
-	XMLName xml.Name `xml:"tns:Attributes"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Attributes"`
 
-	StationFacilityAttribute []*StationFacilityAttribute `xml:"tns:StationFacilityAttribute,omitempty" json:"StationFacilityAttribute,omitempty"`
+	StationFacilityAttribute []*StationFacilityAttribute `xml:"http://raido.aviolinx.com/api/ StationFacilityAttribute,omitempty" json:"StationFacilityAttribute,omitempty"`
 }
 
 type ArrayOfNote struct {
-	Note []*Note `xml:"tns:Note,omitempty" json:"Note,omitempty"`
+	Note []*Note `xml:"http://raido.aviolinx.com/api/ Note,omitempty" json:"Note,omitempty"`
 }
 
 type Note struct {
-	Timestamp xsd.DateTime `xml:"tns:Timestamp,omitempty" json:"Timestamp,omitempty"`
+	Timestamp xsd.DateTime `xml:"http://raido.aviolinx.com/api/ Timestamp,omitempty" json:"Timestamp,omitempty"`
 
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	Message string `xml:"tns:Message,omitempty" json:"Message,omitempty"`
+	Message string `xml:"http://raido.aviolinx.com/api/ Message,omitempty" json:"Message,omitempty"`
 }
 
 type ArrayOfDataElementIdentifier struct {
-	XMLName xml.Name `xml:"tns:DataElementIdentifiers"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ DataElementIdentifiers"`
 
-	DataElementIdentifier []*DataElementIdentifier `xml:"tns:DataElementIdentifier,omitempty" json:"DataElementIdentifier,omitempty"`
+	DataElementIdentifier []*DataElementIdentifier `xml:"http://raido.aviolinx.com/api/ DataElementIdentifier,omitempty" json:"DataElementIdentifier,omitempty"`
 }
 
 type DataElementIdentifier struct {
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	Value string `xml:"tns:Value,omitempty" json:"Value,omitempty"`
+	Value string `xml:"http://raido.aviolinx.com/api/ Value,omitempty" json:"Value,omitempty"`
 }
 
 type FlightRequestFilter struct {
 	*DateRangeBasicRequestFilter
 
-	Airline string `xml:"tns:Airline,omitempty" json:"Airline,omitempty"`
+	Airline string `xml:"http://raido.aviolinx.com/api/ Airline,omitempty" json:"Airline,omitempty"`
 
-	FlightNumber string `xml:"tns:FlightNumber,omitempty" json:"FlightNumber,omitempty"`
+	FlightNumber string `xml:"http://raido.aviolinx.com/api/ FlightNumber,omitempty" json:"FlightNumber,omitempty"`
 
-	Suffix string `xml:"tns:Suffix,omitempty" json:"Suffix,omitempty"`
+	Suffix string `xml:"http://raido.aviolinx.com/api/ Suffix,omitempty" json:"Suffix,omitempty"`
 
-	DepartureAirport string `xml:"tns:DepartureAirport,omitempty" json:"DepartureAirport,omitempty"`
+	DepartureAirport string `xml:"http://raido.aviolinx.com/api/ DepartureAirport,omitempty" json:"DepartureAirport,omitempty"`
 
-	ArrivalAirport string `xml:"tns:ArrivalAirport,omitempty" json:"ArrivalAirport,omitempty"`
+	ArrivalAirport string `xml:"http://raido.aviolinx.com/api/ ArrivalAirport,omitempty" json:"ArrivalAirport,omitempty"`
 
-	AircraftRegistration string `xml:"tns:AircraftRegistration,omitempty" json:"AircraftRegistration,omitempty"`
+	AircraftRegistration string `xml:"http://raido.aviolinx.com/api/ AircraftRegistration,omitempty" json:"AircraftRegistration,omitempty"`
 }
 
 type FlightRequestData struct {
-	Aircraft bool `xml:"tns:Aircraft,omitempty" json:"Aircraft,omitempty"`
+	Aircraft bool `xml:"http://raido.aviolinx.com/api/ Aircraft,omitempty" json:"Aircraft,omitempty"`
 
-	Airports bool `xml:"tns:Airports,omitempty" json:"Airports,omitempty"`
+	Airports bool `xml:"http://raido.aviolinx.com/api/ Airports,omitempty" json:"Airports,omitempty"`
 
-	CrewOnBoards bool `xml:"tns:CrewOnBoards,omitempty" json:"CrewOnBoards,omitempty"`
+	CrewOnBoards bool `xml:"http://raido.aviolinx.com/api/ CrewOnBoards,omitempty" json:"CrewOnBoards,omitempty"`
 
-	Delays bool `xml:"tns:Delays,omitempty" json:"Delays,omitempty"`
+	Delays bool `xml:"http://raido.aviolinx.com/api/ Delays,omitempty" json:"Delays,omitempty"`
 
-	Flightplan bool `xml:"tns:Flightplan,omitempty" json:"Flightplan,omitempty"`
+	Flightplan bool `xml:"http://raido.aviolinx.com/api/ Flightplan,omitempty" json:"Flightplan,omitempty"`
 
-	Fuels bool `xml:"tns:Fuels,omitempty" json:"Fuels,omitempty"`
+	Fuels bool `xml:"http://raido.aviolinx.com/api/ Fuels,omitempty" json:"Fuels,omitempty"`
 
-	Loads bool `xml:"tns:Loads,omitempty" json:"Loads,omitempty"`
+	Loads bool `xml:"http://raido.aviolinx.com/api/ Loads,omitempty" json:"Loads,omitempty"`
 
-	Notes bool `xml:"tns:Notes,omitempty" json:"Notes,omitempty"`
+	Notes bool `xml:"http://raido.aviolinx.com/api/ Notes,omitempty" json:"Notes,omitempty"`
 
-	Times bool `xml:"tns:Times,omitempty" json:"Times,omitempty"`
+	Times bool `xml:"http://raido.aviolinx.com/api/ Times,omitempty" json:"Times,omitempty"`
 
-	ProjectCodes *bool `xml:"tns:ProjectCodes,omitempty" json:"ProjectCodes,omitempty"`
+	ProjectCodes *bool `xml:"http://raido.aviolinx.com/api/ ProjectCodes,omitempty" json:"ProjectCodes,omitempty"`
 
-	Jumpseaters bool `xml:"tns:Jumpseaters,omitempty" json:"Jumpseaters,omitempty"`
+	Jumpseaters bool `xml:"http://raido.aviolinx.com/api/ Jumpseaters,omitempty" json:"Jumpseaters,omitempty"`
 
-	DetailedStatus *bool `xml:"tns:DetailedStatus,omitempty" json:"DetailedStatus,omitempty"`
+	DetailedStatus *bool `xml:"http://raido.aviolinx.com/api/ DetailedStatus,omitempty" json:"DetailedStatus,omitempty"`
 }
 
 type ArrayOfFlight struct {
-	XMLName xml.Name `xml:"tns:GetFlightsResult"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetFlightsResult"`
 
-	Flight []*Flight `xml:"tns:Flight,omitempty" json:"Flight,omitempty"`
+	Flight []*Flight `xml:"http://raido.aviolinx.com/api/ Flight,omitempty" json:"Flight,omitempty"`
 }
 
 type Flight struct {
-	UniqueId int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	AirlineCode string `xml:"tns:AirlineCode,omitempty" json:"AirlineCode,omitempty"`
+	AirlineCode string `xml:"http://raido.aviolinx.com/api/ AirlineCode,omitempty" json:"AirlineCode,omitempty"`
 
-	ICAOAirlineCode string `xml:"tns:ICAOAirlineCode,omitempty" json:"ICAOAirlineCode,omitempty"`
+	ICAOAirlineCode string `xml:"http://raido.aviolinx.com/api/ ICAOAirlineCode,omitempty" json:"ICAOAirlineCode,omitempty"`
 
-	FlightNumber int32 `xml:"tns:FlightNumber,omitempty" json:"FlightNumber,omitempty"`
+	FlightNumber int32 `xml:"http://raido.aviolinx.com/api/ FlightNumber,omitempty" json:"FlightNumber,omitempty"`
 
-	Suffix string `xml:"tns:Suffix,omitempty" json:"Suffix,omitempty"`
+	Suffix string `xml:"http://raido.aviolinx.com/api/ Suffix,omitempty" json:"Suffix,omitempty"`
 
-	DepartureAirportCode string `xml:"tns:DepartureAirportCode,omitempty" json:"DepartureAirportCode,omitempty"`
+	DepartureAirportCode string `xml:"http://raido.aviolinx.com/api/ DepartureAirportCode,omitempty" json:"DepartureAirportCode,omitempty"`
 
-	ArrivalAirportCode string `xml:"tns:ArrivalAirportCode,omitempty" json:"ArrivalAirportCode,omitempty"`
+	ArrivalAirportCode string `xml:"http://raido.aviolinx.com/api/ ArrivalAirportCode,omitempty" json:"ArrivalAirportCode,omitempty"`
 
-	DiversionAirportCode string `xml:"tns:DiversionAirportCode,omitempty" json:"DiversionAirportCode,omitempty"`
+	DiversionAirportCode string `xml:"http://raido.aviolinx.com/api/ DiversionAirportCode,omitempty" json:"DiversionAirportCode,omitempty"`
 
-	FlightDate xsd.DateTime `xml:"tns:FlightDate,omitempty" json:"FlightDate,omitempty"`
+	FlightDate xsd.DateTime `xml:"http://raido.aviolinx.com/api/ FlightDate,omitempty" json:"FlightDate,omitempty"`
 
-	STD xsd.DateTime `xml:"tns:STD,omitempty" json:"STD,omitempty"`
+	STD xsd.DateTime `xml:"http://raido.aviolinx.com/api/ STD,omitempty" json:"STD,omitempty"`
 
-	STA xsd.DateTime `xml:"tns:STA,omitempty" json:"STA,omitempty"`
+	STA xsd.DateTime `xml:"http://raido.aviolinx.com/api/ STA,omitempty" json:"STA,omitempty"`
 
-	AircraftRegistration string `xml:"tns:AircraftRegistration,omitempty" json:"AircraftRegistration,omitempty"`
+	AircraftRegistration string `xml:"http://raido.aviolinx.com/api/ AircraftRegistration,omitempty" json:"AircraftRegistration,omitempty"`
 
-	ServiceTypeCode string `xml:"tns:ServiceTypeCode,omitempty" json:"ServiceTypeCode,omitempty"`
+	ServiceTypeCode string `xml:"http://raido.aviolinx.com/api/ ServiceTypeCode,omitempty" json:"ServiceTypeCode,omitempty"`
 
-	OnwardAirlineCode string `xml:"tns:OnwardAirlineCode,omitempty" json:"OnwardAirlineCode,omitempty"`
+	OnwardAirlineCode string `xml:"http://raido.aviolinx.com/api/ OnwardAirlineCode,omitempty" json:"OnwardAirlineCode,omitempty"`
 
-	OnwardFlightNumber int32 `xml:"tns:OnwardFlightNumber,omitempty" json:"OnwardFlightNumber,omitempty"`
+	OnwardFlightNumber int32 `xml:"http://raido.aviolinx.com/api/ OnwardFlightNumber,omitempty" json:"OnwardFlightNumber,omitempty"`
 
-	OnwardSuffix string `xml:"tns:OnwardSuffix,omitempty" json:"OnwardSuffix,omitempty"`
+	OnwardSuffix string `xml:"http://raido.aviolinx.com/api/ OnwardSuffix,omitempty" json:"OnwardSuffix,omitempty"`
 
-	Status string `xml:"tns:Status,omitempty" json:"Status,omitempty"`
+	Status string `xml:"http://raido.aviolinx.com/api/ Status,omitempty" json:"Status,omitempty"`
 
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	Canceled bool `xml:"tns:Canceled,omitempty" json:"Canceled,omitempty"`
+	Canceled bool `xml:"http://raido.aviolinx.com/api/ Canceled,omitempty" json:"Canceled,omitempty"`
 
-	DepartureLocalTimeDiff int32 `xml:"tns:DepartureLocalTimeDiff,omitempty" json:"DepartureLocalTimeDiff,omitempty"`
+	DepartureLocalTimeDiff int32 `xml:"http://raido.aviolinx.com/api/ DepartureLocalTimeDiff,omitempty" json:"DepartureLocalTimeDiff,omitempty"`
 
-	ArrivalLocalTimeDiff int32 `xml:"tns:ArrivalLocalTimeDiff,omitempty" json:"ArrivalLocalTimeDiff,omitempty"`
+	ArrivalLocalTimeDiff int32 `xml:"http://raido.aviolinx.com/api/ ArrivalLocalTimeDiff,omitempty" json:"ArrivalLocalTimeDiff,omitempty"`
 
-	IROPSParentId *int32 `xml:"tns:IROPSParentId,omitempty" json:"IROPSParentId,omitempty"`
+	IROPSParentId *int32 `xml:"http://raido.aviolinx.com/api/ IROPSParentId,omitempty" json:"IROPSParentId,omitempty"`
 
-	ASMReasons string `xml:"tns:ASMReasons,omitempty" json:"ASMReasons,omitempty"`
+	ASMReasons string `xml:"http://raido.aviolinx.com/api/ ASMReasons,omitempty" json:"ASMReasons,omitempty"`
 
-	Complement string `xml:"tns:Complement,omitempty" json:"Complement,omitempty"`
+	Complement string `xml:"http://raido.aviolinx.com/api/ Complement,omitempty" json:"Complement,omitempty"`
 
-	CO2 float64 `xml:"tns:CO2,omitempty" json:"CO2,omitempty"`
+	CO2 float64 `xml:"http://raido.aviolinx.com/api/ CO2,omitempty" json:"CO2,omitempty"`
 
-	Aircraft *Aircraft `xml:"tns:Aircraft,omitempty" json:"Aircraft,omitempty"`
+	Aircraft *Aircraft `xml:"http://raido.aviolinx.com/api/ Aircraft,omitempty" json:"Aircraft,omitempty"`
 
-	Airports *Airports `xml:"tns:Airports,omitempty" json:"Airports,omitempty"`
+	Airports *Airports `xml:"http://raido.aviolinx.com/api/ Airports,omitempty" json:"Airports,omitempty"`
 
-	CrewOnBoard *ArrayOfCrewOnBoard `xml:"tns:CrewOnBoard,omitempty" json:"CrewOnBoard,omitempty"`
+	CrewOnBoard *ArrayOfCrewOnBoard `xml:"http://raido.aviolinx.com/api/ CrewOnBoard,omitempty" json:"CrewOnBoard,omitempty"`
 
-	Delays *Delays `xml:"tns:Delays,omitempty" json:"Delays,omitempty"`
+	Delays *Delays `xml:"http://raido.aviolinx.com/api/ Delays,omitempty" json:"Delays,omitempty"`
 
-	Flightplan *Flightplan `xml:"tns:Flightplan,omitempty" json:"Flightplan,omitempty"`
+	Flightplan *Flightplan `xml:"http://raido.aviolinx.com/api/ Flightplan,omitempty" json:"Flightplan,omitempty"`
 
-	Fuels *ArrayOfFuel `xml:"tns:Fuels,omitempty" json:"Fuels,omitempty"`
+	Fuels *ArrayOfFuel `xml:"http://raido.aviolinx.com/api/ Fuels,omitempty" json:"Fuels,omitempty"`
 
-	Loads *Loads `xml:"tns:Loads,omitempty" json:"Loads,omitempty"`
+	Loads *Loads `xml:"http://raido.aviolinx.com/api/ Loads,omitempty" json:"Loads,omitempty"`
 
-	Notes *ArrayOfNote `xml:"tns:Notes,omitempty" json:"Notes,omitempty"`
+	Notes *ArrayOfNote `xml:"http://raido.aviolinx.com/api/ Notes,omitempty" json:"Notes,omitempty"`
 
-	Times *ArrayOfTime `xml:"tns:Times,omitempty" json:"Times,omitempty"`
+	Times *ArrayOfTime `xml:"http://raido.aviolinx.com/api/ Times,omitempty" json:"Times,omitempty"`
 
-	ProjectCodes *ArrayOfProjectCode `xml:"tns:ProjectCodes,omitempty" json:"ProjectCodes,omitempty"`
+	ProjectCodes *ArrayOfProjectCode `xml:"http://raido.aviolinx.com/api/ ProjectCodes,omitempty" json:"ProjectCodes,omitempty"`
 
-	Jumpseaters *ArrayOfJumpseater `xml:"tns:Jumpseaters,omitempty" json:"Jumpseaters,omitempty"`
+	Jumpseaters *ArrayOfJumpseater `xml:"http://raido.aviolinx.com/api/ Jumpseaters,omitempty" json:"Jumpseaters,omitempty"`
 
-	FuelData *FuelData `xml:"tns:FuelData,omitempty" json:"FuelData,omitempty"`
+	FuelData *FuelData `xml:"http://raido.aviolinx.com/api/ FuelData,omitempty" json:"FuelData,omitempty"`
 
-	DetailedStatuses *ArrayOfString `xml:"tns:DetailedStatuses,omitempty" json:"DetailedStatuses,omitempty"`
+	DetailedStatuses *ArrayOfString `xml:"http://raido.aviolinx.com/api/ DetailedStatuses,omitempty" json:"DetailedStatuses,omitempty"`
 }
 
 type Aircraft struct {
-	UniqueId int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	Registration string `xml:"tns:Registration,omitempty" json:"Registration,omitempty"`
+	Registration string `xml:"http://raido.aviolinx.com/api/ Registration,omitempty" json:"Registration,omitempty"`
 
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	Version string `xml:"tns:Version,omitempty" json:"Version,omitempty"`
+	Version string `xml:"http://raido.aviolinx.com/api/ Version,omitempty" json:"Version,omitempty"`
 
-	Config string `xml:"tns:Config,omitempty" json:"Config,omitempty"`
+	Config string `xml:"http://raido.aviolinx.com/api/ Config,omitempty" json:"Config,omitempty"`
 
-	SerialNumber string `xml:"tns:SerialNumber,omitempty" json:"SerialNumber,omitempty"`
+	SerialNumber string `xml:"http://raido.aviolinx.com/api/ SerialNumber,omitempty" json:"SerialNumber,omitempty"`
 
-	MinimumEquipmentList *ArrayOfMinimumEquipment `xml:"tns:MinimumEquipmentList,omitempty" json:"MinimumEquipmentList,omitempty"`
+	MinimumEquipmentList *ArrayOfMinimumEquipment `xml:"http://raido.aviolinx.com/api/ MinimumEquipmentList,omitempty" json:"MinimumEquipmentList,omitempty"`
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	NickName string `xml:"tns:NickName,omitempty" json:"NickName,omitempty"`
+	NickName string `xml:"http://raido.aviolinx.com/api/ NickName,omitempty" json:"NickName,omitempty"`
 }
 
 type ArrayOfMinimumEquipment struct {
-	MinimumEquipment []*MinimumEquipment `xml:"tns:MinimumEquipment,omitempty" json:"MinimumEquipment,omitempty"`
+	MinimumEquipment []*MinimumEquipment `xml:"http://raido.aviolinx.com/api/ MinimumEquipment,omitempty" json:"MinimumEquipment,omitempty"`
 }
 
 type MinimumEquipment struct {
 	*Period
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	Condition string `xml:"tns:Condition,omitempty" json:"Condition,omitempty"`
+	Condition string `xml:"http://raido.aviolinx.com/api/ Condition,omitempty" json:"Condition,omitempty"`
 
-	Category string `xml:"tns:Category,omitempty" json:"Category,omitempty"`
+	Category string `xml:"http://raido.aviolinx.com/api/ Category,omitempty" json:"Category,omitempty"`
 
-	Comment string `xml:"tns:Comment,omitempty" json:"Comment,omitempty"`
+	Comment string `xml:"http://raido.aviolinx.com/api/ Comment,omitempty" json:"Comment,omitempty"`
 
-	ValidHours int32 `xml:"tns:ValidHours,omitempty" json:"ValidHours,omitempty"`
+	ValidHours int32 `xml:"http://raido.aviolinx.com/api/ ValidHours,omitempty" json:"ValidHours,omitempty"`
 
-	ValidCycles int32 `xml:"tns:ValidCycles,omitempty" json:"ValidCycles,omitempty"`
+	ValidCycles int32 `xml:"http://raido.aviolinx.com/api/ ValidCycles,omitempty" json:"ValidCycles,omitempty"`
 
-	ExternalReferenceId int32 `xml:"tns:ExternalReferenceId,omitempty" json:"ExternalReferenceId,omitempty"`
+	ExternalReferenceId int32 `xml:"http://raido.aviolinx.com/api/ ExternalReferenceId,omitempty" json:"ExternalReferenceId,omitempty"`
 
 	Deleted bool `xml:"Deleted,attr,omitempty" json:"Deleted,omitempty"`
 }
 
 type ArrayOfCrewOnBoard struct {
-	CrewOnBoard []*CrewOnBoard `xml:"tns:CrewOnBoard,omitempty" json:"CrewOnBoard,omitempty"`
+	CrewOnBoard []*CrewOnBoard `xml:"http://raido.aviolinx.com/api/ CrewOnBoard,omitempty" json:"CrewOnBoard,omitempty"`
 }
 
 type CrewOnBoard struct {
-	AssignedRank string `xml:"tns:AssignedRank,omitempty" json:"AssignedRank,omitempty"`
+	AssignedRank string `xml:"http://raido.aviolinx.com/api/ AssignedRank,omitempty" json:"AssignedRank,omitempty"`
 
-	RosterDesignator string `xml:"tns:RosterDesignator,omitempty" json:"RosterDesignator,omitempty"`
+	RosterDesignator string `xml:"http://raido.aviolinx.com/api/ RosterDesignator,omitempty" json:"RosterDesignator,omitempty"`
 
-	LegalException string `xml:"tns:LegalException,omitempty" json:"LegalException,omitempty"`
+	LegalException string `xml:"http://raido.aviolinx.com/api/ LegalException,omitempty" json:"LegalException,omitempty"`
 
-	Crew *Crew `xml:"tns:Crew,omitempty" json:"Crew,omitempty"`
+	Crew *Crew `xml:"http://raido.aviolinx.com/api/ Crew,omitempty" json:"Crew,omitempty"`
 }
 
 type Crew struct {
-	Active bool `xml:"tns:Active,omitempty" json:"Active,omitempty"`
+	Active bool `xml:"http://raido.aviolinx.com/api/ Active,omitempty" json:"Active,omitempty"`
 
-	UniqueId int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	Number string `xml:"tns:Number,omitempty" json:"Number,omitempty"`
+	Number string `xml:"http://raido.aviolinx.com/api/ Number,omitempty" json:"Number,omitempty"`
 
-	Code1 string `xml:"tns:Code1,omitempty" json:"Code1,omitempty"`
+	Code1 string `xml:"http://raido.aviolinx.com/api/ Code1,omitempty" json:"Code1,omitempty"`
 
-	Code2 string `xml:"tns:Code2,omitempty" json:"Code2,omitempty"`
+	Code2 string `xml:"http://raido.aviolinx.com/api/ Code2,omitempty" json:"Code2,omitempty"`
 
-	Firstname string `xml:"tns:Firstname,omitempty" json:"Firstname,omitempty"`
+	Firstname string `xml:"http://raido.aviolinx.com/api/ Firstname,omitempty" json:"Firstname,omitempty"`
 
-	Middlename string `xml:"tns:Middlename,omitempty" json:"Middlename,omitempty"`
+	Middlename string `xml:"http://raido.aviolinx.com/api/ Middlename,omitempty" json:"Middlename,omitempty"`
 
-	Lastname string `xml:"tns:Lastname,omitempty" json:"Lastname,omitempty"`
+	Lastname string `xml:"http://raido.aviolinx.com/api/ Lastname,omitempty" json:"Lastname,omitempty"`
 
-	Nickname string `xml:"tns:Nickname,omitempty" json:"Nickname,omitempty"`
+	Nickname string `xml:"http://raido.aviolinx.com/api/ Nickname,omitempty" json:"Nickname,omitempty"`
 
-	Gender string `xml:"tns:Gender,omitempty" json:"Gender,omitempty"`
+	Gender string `xml:"http://raido.aviolinx.com/api/ Gender,omitempty" json:"Gender,omitempty"`
 
-	Seniority int32 `xml:"tns:Seniority,omitempty" json:"Seniority,omitempty"`
+	Seniority int32 `xml:"http://raido.aviolinx.com/api/ Seniority,omitempty" json:"Seniority,omitempty"`
 
-	Base string `xml:"tns:Base,omitempty" json:"Base,omitempty"`
+	Base string `xml:"http://raido.aviolinx.com/api/ Base,omitempty" json:"Base,omitempty"`
 
-	Rank string `xml:"tns:Rank,omitempty" json:"Rank,omitempty"`
+	Rank string `xml:"http://raido.aviolinx.com/api/ Rank,omitempty" json:"Rank,omitempty"`
 
-	Qualification string `xml:"tns:Qualification,omitempty" json:"Qualification,omitempty"`
+	Qualification string `xml:"http://raido.aviolinx.com/api/ Qualification,omitempty" json:"Qualification,omitempty"`
 
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	CreatedAt xsd.DateTime `xml:"tns:CreatedAt,omitempty" json:"CreatedAt,omitempty"`
+	CreatedAt xsd.DateTime `xml:"http://raido.aviolinx.com/api/ CreatedAt,omitempty" json:"CreatedAt,omitempty"`
 
-	ModifiedAt xsd.DateTime `xml:"tns:ModifiedAt,omitempty" json:"ModifiedAt,omitempty"`
+	ModifiedAt xsd.DateTime `xml:"http://raido.aviolinx.com/api/ ModifiedAt,omitempty" json:"ModifiedAt,omitempty"`
 
-	Addresses *ArrayOfAddress `xml:"tns:Addresses,omitempty" json:"Addresses,omitempty"`
+	Addresses *ArrayOfAddress `xml:"http://raido.aviolinx.com/api/ Addresses,omitempty" json:"Addresses,omitempty"`
 
-	Phones *ArrayOfPhone `xml:"tns:Phones,omitempty" json:"Phones,omitempty"`
+	Phones *ArrayOfPhone `xml:"http://raido.aviolinx.com/api/ Phones,omitempty" json:"Phones,omitempty"`
 
-	Emails *ArrayOfEmail `xml:"tns:Emails,omitempty" json:"Emails,omitempty"`
+	Emails *ArrayOfEmail `xml:"http://raido.aviolinx.com/api/ Emails,omitempty" json:"Emails,omitempty"`
 
-	Documents *ArrayOfDocument `xml:"tns:Documents,omitempty" json:"Documents,omitempty"`
+	Documents *ArrayOfDocument `xml:"http://raido.aviolinx.com/api/ Documents,omitempty" json:"Documents,omitempty"`
 
-	Bases *ArrayOfBase `xml:"tns:Bases,omitempty" json:"Bases,omitempty"`
+	Bases *ArrayOfBase `xml:"http://raido.aviolinx.com/api/ Bases,omitempty" json:"Bases,omitempty"`
 
-	Ranks *ArrayOfRank `xml:"tns:Ranks,omitempty" json:"Ranks,omitempty"`
+	Ranks *ArrayOfRank `xml:"http://raido.aviolinx.com/api/ Ranks,omitempty" json:"Ranks,omitempty"`
 
-	Qualifications *ArrayOfQualification `xml:"tns:Qualifications,omitempty" json:"Qualifications,omitempty"`
+	Qualifications *ArrayOfQualification `xml:"http://raido.aviolinx.com/api/ Qualifications,omitempty" json:"Qualifications,omitempty"`
 
-	SpecialRoles *ArrayOfSpecialRole `xml:"tns:SpecialRoles,omitempty" json:"SpecialRoles,omitempty"`
+	SpecialRoles *ArrayOfSpecialRole `xml:"http://raido.aviolinx.com/api/ SpecialRoles,omitempty" json:"SpecialRoles,omitempty"`
 
-	RosterActivities *ArrayOfRosterActivity `xml:"tns:RosterActivities,omitempty" json:"RosterActivities,omitempty"`
+	RosterActivities *ArrayOfRosterActivity `xml:"http://raido.aviolinx.com/api/ RosterActivities,omitempty" json:"RosterActivities,omitempty"`
 
-	Pairings *ArrayOfPairing `xml:"tns:Pairings,omitempty" json:"Pairings,omitempty"`
+	Pairings *ArrayOfPairing `xml:"http://raido.aviolinx.com/api/ Pairings,omitempty" json:"Pairings,omitempty"`
 
-	Contracts *ArrayOfContract `xml:"tns:Contracts,omitempty" json:"Contracts,omitempty"`
+	Contracts *ArrayOfContract `xml:"http://raido.aviolinx.com/api/ Contracts,omitempty" json:"Contracts,omitempty"`
 
-	CrewType *CrewType `xml:"tns:CrewType,omitempty" json:"CrewType,omitempty"`
+	CrewType *CrewType `xml:"http://raido.aviolinx.com/api/ CrewType,omitempty" json:"CrewType,omitempty"`
 
-	Revision *Revision `xml:"tns:Revision,omitempty" json:"Revision,omitempty"`
+	Revision *Revision `xml:"http://raido.aviolinx.com/api/ Revision,omitempty" json:"Revision,omitempty"`
 
-	RosterTransactions *ArrayOfRosterTransaction `xml:"tns:RosterTransactions,omitempty" json:"RosterTransactions,omitempty"`
+	RosterTransactions *ArrayOfRosterTransaction `xml:"http://raido.aviolinx.com/api/ RosterTransactions,omitempty" json:"RosterTransactions,omitempty"`
 }
 
 type ArrayOfAddress struct {
-	Address []*Address `xml:"tns:Address,omitempty" json:"Address,omitempty"`
+	Address []*Address `xml:"http://raido.aviolinx.com/api/ Address,omitempty" json:"Address,omitempty"`
 }
 
 type Address struct {
 	*StandardContactField
 
-	Street string `xml:"tns:Street,omitempty" json:"Street,omitempty"`
+	Street string `xml:"http://raido.aviolinx.com/api/ Street,omitempty" json:"Street,omitempty"`
 
-	StreetNumber string `xml:"tns:StreetNumber,omitempty" json:"StreetNumber,omitempty"`
+	StreetNumber string `xml:"http://raido.aviolinx.com/api/ StreetNumber,omitempty" json:"StreetNumber,omitempty"`
 
-	ZipCode string `xml:"tns:ZipCode,omitempty" json:"ZipCode,omitempty"`
+	ZipCode string `xml:"http://raido.aviolinx.com/api/ ZipCode,omitempty" json:"ZipCode,omitempty"`
 
-	City string `xml:"tns:City,omitempty" json:"City,omitempty"`
+	City string `xml:"http://raido.aviolinx.com/api/ City,omitempty" json:"City,omitempty"`
 
-	Country string `xml:"tns:Country,omitempty" json:"Country,omitempty"`
+	Country string `xml:"http://raido.aviolinx.com/api/ Country,omitempty" json:"Country,omitempty"`
 
-	State string `xml:"tns:State,omitempty" json:"State,omitempty"`
+	State string `xml:"http://raido.aviolinx.com/api/ State,omitempty" json:"State,omitempty"`
 }
 
 type StandardContactField struct {
 	*Period
 
-	Priority int32 `xml:"tns:Priority,omitempty" json:"Priority,omitempty"`
+	Priority int32 `xml:"http://raido.aviolinx.com/api/ Priority,omitempty" json:"Priority,omitempty"`
 
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	Comment string `xml:"tns:Comment,omitempty" json:"Comment,omitempty"`
+	Comment string `xml:"http://raido.aviolinx.com/api/ Comment,omitempty" json:"Comment,omitempty"`
 }
 
 type Email struct {
 	*StandardContactField
 
-	EmailAddress string `xml:"tns:EmailAddress,omitempty" json:"EmailAddress,omitempty"`
+	EmailAddress string `xml:"http://raido.aviolinx.com/api/ EmailAddress,omitempty" json:"EmailAddress,omitempty"`
 }
 
 type Phone struct {
 	*StandardContactField
 
-	CountryPrefix string `xml:"tns:CountryPrefix,omitempty" json:"CountryPrefix,omitempty"`
+	CountryPrefix string `xml:"http://raido.aviolinx.com/api/ CountryPrefix,omitempty" json:"CountryPrefix,omitempty"`
 
-	RegionPrefix string `xml:"tns:RegionPrefix,omitempty" json:"RegionPrefix,omitempty"`
+	RegionPrefix string `xml:"http://raido.aviolinx.com/api/ RegionPrefix,omitempty" json:"RegionPrefix,omitempty"`
 
-	PhoneNumber string `xml:"tns:PhoneNumber,omitempty" json:"PhoneNumber,omitempty"`
+	PhoneNumber string `xml:"http://raido.aviolinx.com/api/ PhoneNumber,omitempty" json:"PhoneNumber,omitempty"`
 }
 
 type ArrayOfPhone struct {
-	Phone []*Phone `xml:"tns:Phone,omitempty" json:"Phone,omitempty"`
+	Phone []*Phone `xml:"http://raido.aviolinx.com/api/ Phone,omitempty" json:"Phone,omitempty"`
 }
 
 type ArrayOfEmail struct {
-	Email []*Email `xml:"tns:Email,omitempty" json:"Email,omitempty"`
+	Email []*Email `xml:"http://raido.aviolinx.com/api/ Email,omitempty" json:"Email,omitempty"`
 }
 
 type ArrayOfDocument struct {
-	Document []*Document `xml:"tns:Document,omitempty" json:"Document,omitempty"`
+	Document []*Document `xml:"http://raido.aviolinx.com/api/ Document,omitempty" json:"Document,omitempty"`
 }
 
 type Document struct {
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 
-	FirstName string `xml:"tns:FirstName,omitempty" json:"FirstName,omitempty"`
+	FirstName string `xml:"http://raido.aviolinx.com/api/ FirstName,omitempty" json:"FirstName,omitempty"`
 
-	LastName string `xml:"tns:LastName,omitempty" json:"LastName,omitempty"`
+	LastName string `xml:"http://raido.aviolinx.com/api/ LastName,omitempty" json:"LastName,omitempty"`
 
-	MiddleName string `xml:"tns:MiddleName,omitempty" json:"MiddleName,omitempty"`
+	MiddleName string `xml:"http://raido.aviolinx.com/api/ MiddleName,omitempty" json:"MiddleName,omitempty"`
 
-	MaidenName string `xml:"tns:MaidenName,omitempty" json:"MaidenName,omitempty"`
+	MaidenName string `xml:"http://raido.aviolinx.com/api/ MaidenName,omitempty" json:"MaidenName,omitempty"`
 
-	DateOfBirth *xsd.DateTime `xml:"tns:DateOfBirth,omitempty" json:"DateOfBirth,omitempty"`
+	DateOfBirth *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ DateOfBirth,omitempty" json:"DateOfBirth,omitempty"`
 
-	PlaceOfBirth string `xml:"tns:PlaceOfBirth,omitempty" json:"PlaceOfBirth,omitempty"`
+	PlaceOfBirth string `xml:"http://raido.aviolinx.com/api/ PlaceOfBirth,omitempty" json:"PlaceOfBirth,omitempty"`
 
-	CountryOfBirth string `xml:"tns:CountryOfBirth,omitempty" json:"CountryOfBirth,omitempty"`
+	CountryOfBirth string `xml:"http://raido.aviolinx.com/api/ CountryOfBirth,omitempty" json:"CountryOfBirth,omitempty"`
 
-	Country string `xml:"tns:Country,omitempty" json:"Country,omitempty"`
+	Country string `xml:"http://raido.aviolinx.com/api/ Country,omitempty" json:"Country,omitempty"`
 
-	Number string `xml:"tns:Number,omitempty" json:"Number,omitempty"`
+	Number string `xml:"http://raido.aviolinx.com/api/ Number,omitempty" json:"Number,omitempty"`
 
-	IssueAuthority string `xml:"tns:IssueAuthority,omitempty" json:"IssueAuthority,omitempty"`
+	IssueAuthority string `xml:"http://raido.aviolinx.com/api/ IssueAuthority,omitempty" json:"IssueAuthority,omitempty"`
 
-	Issue *xsd.DateTime `xml:"tns:Issue,omitempty" json:"Issue,omitempty"`
+	Issue *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ Issue,omitempty" json:"Issue,omitempty"`
 
-	IssueCountry string `xml:"tns:IssueCountry,omitempty" json:"IssueCountry,omitempty"`
+	IssueCountry string `xml:"http://raido.aviolinx.com/api/ IssueCountry,omitempty" json:"IssueCountry,omitempty"`
 
-	Expiry *xsd.DateTime `xml:"tns:Expiry,omitempty" json:"Expiry,omitempty"`
+	Expiry *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ Expiry,omitempty" json:"Expiry,omitempty"`
 
-	DocumentName string `xml:"tns:DocumentName,omitempty" json:"DocumentName,omitempty"`
+	DocumentName string `xml:"http://raido.aviolinx.com/api/ DocumentName,omitempty" json:"DocumentName,omitempty"`
 
 	Active bool `xml:"Active,attr,omitempty" json:"Active,omitempty"`
 }
 
 type ArrayOfBase struct {
-	Base []*Base `xml:"tns:Base,omitempty" json:"Base,omitempty"`
+	Base []*Base `xml:"http://raido.aviolinx.com/api/ Base,omitempty" json:"Base,omitempty"`
 }
 
 type Base struct {
@@ -1398,9 +1398,9 @@ type Base struct {
 }
 
 type ArrayOfRank struct {
-	XMLName xml.Name `xml:"tns:Ranks"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Ranks"`
 
-	Rank []*Rank `xml:"tns:Rank,omitempty" json:"Rank,omitempty"`
+	Rank []*Rank `xml:"http://raido.aviolinx.com/api/ Rank,omitempty" json:"Rank,omitempty"`
 }
 
 type Rank struct {
@@ -1408,9 +1408,9 @@ type Rank struct {
 }
 
 type ArrayOfQualification struct {
-	XMLName xml.Name `xml:"tns:Qualifications"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Qualifications"`
 
-	Qualification []*Qualification `xml:"tns:Qualification,omitempty" json:"Qualification,omitempty"`
+	Qualification []*Qualification `xml:"http://raido.aviolinx.com/api/ Qualification,omitempty" json:"Qualification,omitempty"`
 }
 
 type Qualification struct {
@@ -1418,7 +1418,7 @@ type Qualification struct {
 }
 
 type ArrayOfSpecialRole struct {
-	SpecialRole []*SpecialRole `xml:"tns:SpecialRole,omitempty" json:"SpecialRole,omitempty"`
+	SpecialRole []*SpecialRole `xml:"http://raido.aviolinx.com/api/ SpecialRole,omitempty" json:"SpecialRole,omitempty"`
 }
 
 type SpecialRole struct {
@@ -1426,99 +1426,99 @@ type SpecialRole struct {
 }
 
 type ArrayOfRosterActivity struct {
-	RosterActivity []*RosterActivity `xml:"tns:RosterActivity,omitempty" json:"RosterActivity,omitempty"`
+	RosterActivity []*RosterActivity `xml:"http://raido.aviolinx.com/api/ RosterActivity,omitempty" json:"RosterActivity,omitempty"`
 }
 
 type RosterActivity struct {
 	*ActivityBase
 
-	AssignedRank string `xml:"tns:AssignedRank,omitempty" json:"AssignedRank,omitempty"`
+	AssignedRank string `xml:"http://raido.aviolinx.com/api/ AssignedRank,omitempty" json:"AssignedRank,omitempty"`
 
-	Times *ArrayOfTime `xml:"tns:Times,omitempty" json:"Times,omitempty"`
+	Times *ArrayOfTime `xml:"http://raido.aviolinx.com/api/ Times,omitempty" json:"Times,omitempty"`
 
-	Notes *ArrayOfNote `xml:"tns:Notes,omitempty" json:"Notes,omitempty"`
+	Notes *ArrayOfNote `xml:"http://raido.aviolinx.com/api/ Notes,omitempty" json:"Notes,omitempty"`
 
-	PairingId int32 `xml:"tns:PairingId,omitempty" json:"PairingId,omitempty"`
+	PairingId int32 `xml:"http://raido.aviolinx.com/api/ PairingId,omitempty" json:"PairingId,omitempty"`
 
-	PairingStart *xsd.DateTime `xml:"tns:PairingStart,omitempty" json:"PairingStart,omitempty"`
+	PairingStart *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ PairingStart,omitempty" json:"PairingStart,omitempty"`
 
-	PairingEnd *xsd.DateTime `xml:"tns:PairingEnd,omitempty" json:"PairingEnd,omitempty"`
+	PairingEnd *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ PairingEnd,omitempty" json:"PairingEnd,omitempty"`
 
-	PairingName string `xml:"tns:PairingName,omitempty" json:"PairingName,omitempty"`
+	PairingName string `xml:"http://raido.aviolinx.com/api/ PairingName,omitempty" json:"PairingName,omitempty"`
 
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 
-	TrainingSession *TrainingSession `xml:"tns:TrainingSession,omitempty" json:"TrainingSession,omitempty"`
+	TrainingSession *TrainingSession `xml:"http://raido.aviolinx.com/api/ TrainingSession,omitempty" json:"TrainingSession,omitempty"`
 
-	HotelDetail *HotelDetail `xml:"tns:HotelDetail,omitempty" json:"HotelDetail,omitempty"`
+	HotelDetail *HotelDetail `xml:"http://raido.aviolinx.com/api/ HotelDetail,omitempty" json:"HotelDetail,omitempty"`
 
-	RefUniqueId int32 `xml:"tns:RefUniqueId,omitempty" json:"RefUniqueId,omitempty"`
+	RefUniqueId int32 `xml:"http://raido.aviolinx.com/api/ RefUniqueId,omitempty" json:"RefUniqueId,omitempty"`
 
-	CrewOnBoard *ArrayOfCrewOnBoard `xml:"tns:CrewOnBoard,omitempty" json:"CrewOnBoard,omitempty"`
+	CrewOnBoard *ArrayOfCrewOnBoard `xml:"http://raido.aviolinx.com/api/ CrewOnBoard,omitempty" json:"CrewOnBoard,omitempty"`
 
-	DeadHeadBookingNumber string `xml:"tns:DeadHeadBookingNumber,omitempty" json:"DeadHeadBookingNumber,omitempty"`
+	DeadHeadBookingNumber string `xml:"http://raido.aviolinx.com/api/ DeadHeadBookingNumber,omitempty" json:"DeadHeadBookingNumber,omitempty"`
 }
 
 type ActivityBase struct {
-	UniqueId int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	ActivityType *ActivityType `xml:"tns:ActivityType,omitempty" json:"ActivityType,omitempty"`
+	ActivityType *ActivityType `xml:"http://raido.aviolinx.com/api/ ActivityType,omitempty" json:"ActivityType,omitempty"`
 
-	ActivitySubType string `xml:"tns:ActivitySubType,omitempty" json:"ActivitySubType,omitempty"`
+	ActivitySubType string `xml:"http://raido.aviolinx.com/api/ ActivitySubType,omitempty" json:"ActivitySubType,omitempty"`
 
-	ActivityCode string `xml:"tns:ActivityCode,omitempty" json:"ActivityCode,omitempty"`
+	ActivityCode string `xml:"http://raido.aviolinx.com/api/ ActivityCode,omitempty" json:"ActivityCode,omitempty"`
 
-	StartAirportCode string `xml:"tns:StartAirportCode,omitempty" json:"StartAirportCode,omitempty"`
+	StartAirportCode string `xml:"http://raido.aviolinx.com/api/ StartAirportCode,omitempty" json:"StartAirportCode,omitempty"`
 
-	EndAirportCode string `xml:"tns:EndAirportCode,omitempty" json:"EndAirportCode,omitempty"`
+	EndAirportCode string `xml:"http://raido.aviolinx.com/api/ EndAirportCode,omitempty" json:"EndAirportCode,omitempty"`
 
-	Start xsd.DateTime `xml:"tns:Start,omitempty" json:"Start,omitempty"`
+	Start xsd.DateTime `xml:"http://raido.aviolinx.com/api/ Start,omitempty" json:"Start,omitempty"`
 
-	End xsd.DateTime `xml:"tns:End,omitempty" json:"End,omitempty"`
+	End xsd.DateTime `xml:"http://raido.aviolinx.com/api/ End,omitempty" json:"End,omitempty"`
 
-	StartLocalTimeDiff int32 `xml:"tns:StartLocalTimeDiff,omitempty" json:"StartLocalTimeDiff,omitempty"`
+	StartLocalTimeDiff int32 `xml:"http://raido.aviolinx.com/api/ StartLocalTimeDiff,omitempty" json:"StartLocalTimeDiff,omitempty"`
 
-	EndLocalTimeDiff int32 `xml:"tns:EndLocalTimeDiff,omitempty" json:"EndLocalTimeDiff,omitempty"`
+	EndLocalTimeDiff int32 `xml:"http://raido.aviolinx.com/api/ EndLocalTimeDiff,omitempty" json:"EndLocalTimeDiff,omitempty"`
 
-	StartBaseTimeDiff int32 `xml:"tns:StartBaseTimeDiff,omitempty" json:"StartBaseTimeDiff,omitempty"`
+	StartBaseTimeDiff int32 `xml:"http://raido.aviolinx.com/api/ StartBaseTimeDiff,omitempty" json:"StartBaseTimeDiff,omitempty"`
 
-	EndBaseTimeDiff int32 `xml:"tns:EndBaseTimeDiff,omitempty" json:"EndBaseTimeDiff,omitempty"`
+	EndBaseTimeDiff int32 `xml:"http://raido.aviolinx.com/api/ EndBaseTimeDiff,omitempty" json:"EndBaseTimeDiff,omitempty"`
 
-	EquipmentType string `xml:"tns:EquipmentType,omitempty" json:"EquipmentType,omitempty"`
+	EquipmentType string `xml:"http://raido.aviolinx.com/api/ EquipmentType,omitempty" json:"EquipmentType,omitempty"`
 
-	EquipmentVersion string `xml:"tns:EquipmentVersion,omitempty" json:"EquipmentVersion,omitempty"`
+	EquipmentVersion string `xml:"http://raido.aviolinx.com/api/ EquipmentVersion,omitempty" json:"EquipmentVersion,omitempty"`
 
-	Complement string `xml:"tns:Complement,omitempty" json:"Complement,omitempty"`
+	Complement string `xml:"http://raido.aviolinx.com/api/ Complement,omitempty" json:"Complement,omitempty"`
 
-	RosterDesignator string `xml:"tns:RosterDesignator,omitempty" json:"RosterDesignator,omitempty"`
+	RosterDesignator string `xml:"http://raido.aviolinx.com/api/ RosterDesignator,omitempty" json:"RosterDesignator,omitempty"`
 
-	LegalException string `xml:"tns:LegalException,omitempty" json:"LegalException,omitempty"`
+	LegalException string `xml:"http://raido.aviolinx.com/api/ LegalException,omitempty" json:"LegalException,omitempty"`
 
-	Credit int32 `xml:"tns:Credit,omitempty" json:"Credit,omitempty"`
+	Credit int32 `xml:"http://raido.aviolinx.com/api/ Credit,omitempty" json:"Credit,omitempty"`
 
-	Comment string `xml:"tns:Comment,omitempty" json:"Comment,omitempty"`
+	Comment string `xml:"http://raido.aviolinx.com/api/ Comment,omitempty" json:"Comment,omitempty"`
 }
 
 type PairingActivity struct {
 	*ActivityBase
 
-	Times *ArrayOfTime `xml:"tns:Times,omitempty" json:"Times,omitempty"`
+	Times *ArrayOfTime `xml:"http://raido.aviolinx.com/api/ Times,omitempty" json:"Times,omitempty"`
 
-	ComplementDescriptions *ArrayOfComplementDescription `xml:"tns:ComplementDescriptions,omitempty" json:"ComplementDescriptions,omitempty"`
+	ComplementDescriptions *ArrayOfComplementDescription `xml:"http://raido.aviolinx.com/api/ ComplementDescriptions,omitempty" json:"ComplementDescriptions,omitempty"`
 }
 
 type ArrayOfTime struct {
-	Time []*xsd.Time `xml:"tns:Time,omitempty" json:"Time,omitempty"`
+	Time []*xsd.Time `xml:"http://raido.aviolinx.com/api/ Time,omitempty" json:"Time,omitempty"`
 }
 
 type Time struct {
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	DateTime xsd.DateTime `xml:"tns:DateTime,omitempty" json:"DateTime,omitempty"`
+	DateTime xsd.DateTime `xml:"http://raido.aviolinx.com/api/ DateTime,omitempty" json:"DateTime,omitempty"`
 }
 
 type ArrayOfComplementDescription struct {
-	ComplementDescription []*ComplementDescription `xml:"tns:ComplementDescription,omitempty" json:"ComplementDescription,omitempty"`
+	ComplementDescription []*ComplementDescription `xml:"http://raido.aviolinx.com/api/ ComplementDescription,omitempty" json:"ComplementDescription,omitempty"`
 }
 
 type ComplementDescription struct {
@@ -1534,91 +1534,91 @@ type ComplementDescription struct {
 }
 
 type TrainingSession struct {
-	UniqueId int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	Facility string `xml:"tns:Facility,omitempty" json:"Facility,omitempty"`
+	Facility string `xml:"http://raido.aviolinx.com/api/ Facility,omitempty" json:"Facility,omitempty"`
 
-	Qualifications string `xml:"tns:Qualifications,omitempty" json:"Qualifications,omitempty"`
+	Qualifications string `xml:"http://raido.aviolinx.com/api/ Qualifications,omitempty" json:"Qualifications,omitempty"`
 }
 
 type HotelDetail struct {
-	UniqueId int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	ReservationComment string `xml:"tns:ReservationComment,omitempty" json:"ReservationComment,omitempty"`
+	ReservationComment string `xml:"http://raido.aviolinx.com/api/ ReservationComment,omitempty" json:"ReservationComment,omitempty"`
 
-	ReservationNo string `xml:"tns:ReservationNo,omitempty" json:"ReservationNo,omitempty"`
+	ReservationNo string `xml:"http://raido.aviolinx.com/api/ ReservationNo,omitempty" json:"ReservationNo,omitempty"`
 
-	PickupFrom *HotelPickup `xml:"tns:PickupFrom,omitempty" json:"PickupFrom,omitempty"`
+	PickupFrom *HotelPickup `xml:"http://raido.aviolinx.com/api/ PickupFrom,omitempty" json:"PickupFrom,omitempty"`
 
-	PickupTo *HotelPickup `xml:"tns:PickupTo,omitempty" json:"PickupTo,omitempty"`
+	PickupTo *HotelPickup `xml:"http://raido.aviolinx.com/api/ PickupTo,omitempty" json:"PickupTo,omitempty"`
 }
 
 type HotelPickup struct {
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	Company string `xml:"tns:Company,omitempty" json:"Company,omitempty"`
+	Company string `xml:"http://raido.aviolinx.com/api/ Company,omitempty" json:"Company,omitempty"`
 
-	Length *int32 `xml:"tns:Length,omitempty" json:"Length,omitempty"`
+	Length *int32 `xml:"http://raido.aviolinx.com/api/ Length,omitempty" json:"Length,omitempty"`
 }
 
 type ArrayOfPairing struct {
-	Pairing []*Pairing `xml:"tns:Pairing,omitempty" json:"Pairing,omitempty"`
+	Pairing []*Pairing `xml:"http://raido.aviolinx.com/api/ Pairing,omitempty" json:"Pairing,omitempty"`
 }
 
 type Pairing struct {
-	UniqueId int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	Start xsd.DateTime `xml:"tns:Start,omitempty" json:"Start,omitempty"`
+	Start xsd.DateTime `xml:"http://raido.aviolinx.com/api/ Start,omitempty" json:"Start,omitempty"`
 
-	End xsd.DateTime `xml:"tns:End,omitempty" json:"End,omitempty"`
+	End xsd.DateTime `xml:"http://raido.aviolinx.com/api/ End,omitempty" json:"End,omitempty"`
 
-	Base string `xml:"tns:Base,omitempty" json:"Base,omitempty"`
+	Base string `xml:"http://raido.aviolinx.com/api/ Base,omitempty" json:"Base,omitempty"`
 
-	StartBaseTimeDiff int32 `xml:"tns:StartBaseTimeDiff,omitempty" json:"StartBaseTimeDiff,omitempty"`
+	StartBaseTimeDiff int32 `xml:"http://raido.aviolinx.com/api/ StartBaseTimeDiff,omitempty" json:"StartBaseTimeDiff,omitempty"`
 
-	EndBaseTimeDiff int32 `xml:"tns:EndBaseTimeDiff,omitempty" json:"EndBaseTimeDiff,omitempty"`
+	EndBaseTimeDiff int32 `xml:"http://raido.aviolinx.com/api/ EndBaseTimeDiff,omitempty" json:"EndBaseTimeDiff,omitempty"`
 
-	Complement string `xml:"tns:Complement,omitempty" json:"Complement,omitempty"`
+	Complement string `xml:"http://raido.aviolinx.com/api/ Complement,omitempty" json:"Complement,omitempty"`
 
-	Qualification string `xml:"tns:Qualification,omitempty" json:"Qualification,omitempty"`
+	Qualification string `xml:"http://raido.aviolinx.com/api/ Qualification,omitempty" json:"Qualification,omitempty"`
 
-	PairingClass string `xml:"tns:PairingClass,omitempty" json:"PairingClass,omitempty"`
+	PairingClass string `xml:"http://raido.aviolinx.com/api/ PairingClass,omitempty" json:"PairingClass,omitempty"`
 
-	Credit int32 `xml:"tns:Credit,omitempty" json:"Credit,omitempty"`
+	Credit int32 `xml:"http://raido.aviolinx.com/api/ Credit,omitempty" json:"Credit,omitempty"`
 
-	PairingActivities *ArrayOfPairingActivity `xml:"tns:PairingActivities,omitempty" json:"PairingActivities,omitempty"`
+	PairingActivities *ArrayOfPairingActivity `xml:"http://raido.aviolinx.com/api/ PairingActivities,omitempty" json:"PairingActivities,omitempty"`
 
-	AssignedCrews *ArrayOfAssignedCrew `xml:"tns:AssignedCrews,omitempty" json:"AssignedCrews,omitempty"`
+	AssignedCrews *ArrayOfAssignedCrew `xml:"http://raido.aviolinx.com/api/ AssignedCrews,omitempty" json:"AssignedCrews,omitempty"`
 
-	ComplementDescriptions *ArrayOfComplementDescription `xml:"tns:ComplementDescriptions,omitempty" json:"ComplementDescriptions,omitempty"`
+	ComplementDescriptions *ArrayOfComplementDescription `xml:"http://raido.aviolinx.com/api/ ComplementDescriptions,omitempty" json:"ComplementDescriptions,omitempty"`
 }
 
 type ArrayOfPairingActivity struct {
-	XMLName xml.Name `xml:"tns:PairingActivities"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ PairingActivities"`
 
-	PairingActivity []*PairingActivity `xml:"tns:PairingActivity,omitempty" json:"PairingActivity,omitempty"`
+	PairingActivity []*PairingActivity `xml:"http://raido.aviolinx.com/api/ PairingActivity,omitempty" json:"PairingActivity,omitempty"`
 }
 
 type ArrayOfAssignedCrew struct {
-	XMLName xml.Name `xml:"tns:AssignedCrews"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ AssignedCrews"`
 
-	AssignedCrew []*AssignedCrew `xml:"tns:AssignedCrew,omitempty" json:"AssignedCrew,omitempty"`
+	AssignedCrew []*AssignedCrew `xml:"http://raido.aviolinx.com/api/ AssignedCrew,omitempty" json:"AssignedCrew,omitempty"`
 }
 
 type AssignedCrew struct {
-	AssignedRank string `xml:"tns:AssignedRank,omitempty" json:"AssignedRank,omitempty"`
+	AssignedRank string `xml:"http://raido.aviolinx.com/api/ AssignedRank,omitempty" json:"AssignedRank,omitempty"`
 
-	Crew *Crew `xml:"tns:Crew,omitempty" json:"Crew,omitempty"`
+	Crew *Crew `xml:"http://raido.aviolinx.com/api/ Crew,omitempty" json:"Crew,omitempty"`
 }
 
 type ArrayOfContract struct {
-	Contract []*Contract `xml:"tns:Contract,omitempty" json:"Contract,omitempty"`
+	Contract []*Contract `xml:"http://raido.aviolinx.com/api/ Contract,omitempty" json:"Contract,omitempty"`
 }
 
 type Contract struct {
@@ -1626,884 +1626,884 @@ type Contract struct {
 }
 
 type CrewType struct {
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 }
 
 type Revision struct {
-	UniqueId string `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId string `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	CrewNotes string `xml:"tns:CrewNotes,omitempty" json:"CrewNotes,omitempty"`
+	CrewNotes string `xml:"http://raido.aviolinx.com/api/ CrewNotes,omitempty" json:"CrewNotes,omitempty"`
 
-	PreviousRosterActivities *ArrayOfRosterActivity `xml:"tns:PreviousRosterActivities,omitempty" json:"PreviousRosterActivities,omitempty"`
+	PreviousRosterActivities *ArrayOfRosterActivity `xml:"http://raido.aviolinx.com/api/ PreviousRosterActivities,omitempty" json:"PreviousRosterActivities,omitempty"`
 
-	NewRosterActivities *ArrayOfRosterActivity `xml:"tns:NewRosterActivities,omitempty" json:"NewRosterActivities,omitempty"`
+	NewRosterActivities *ArrayOfRosterActivity `xml:"http://raido.aviolinx.com/api/ NewRosterActivities,omitempty" json:"NewRosterActivities,omitempty"`
 }
 
 type ArrayOfRosterTransaction struct {
-	XMLName xml.Name `xml:"tns:RosterTransactions"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ RosterTransactions"`
 
-	RosterTransaction []*RosterTransaction `xml:"tns:RosterTransaction,omitempty" json:"RosterTransaction,omitempty"`
+	RosterTransaction []*RosterTransaction `xml:"http://raido.aviolinx.com/api/ RosterTransaction,omitempty" json:"RosterTransaction,omitempty"`
 }
 
 type RosterTransaction struct {
-	Timestamp xsd.DateTime `xml:"tns:Timestamp,omitempty" json:"Timestamp,omitempty"`
+	Timestamp xsd.DateTime `xml:"http://raido.aviolinx.com/api/ Timestamp,omitempty" json:"Timestamp,omitempty"`
 
-	CreatedByUniqueId int32 `xml:"tns:CreatedByUniqueId,omitempty" json:"CreatedByUniqueId,omitempty"`
+	CreatedByUniqueId int32 `xml:"http://raido.aviolinx.com/api/ CreatedByUniqueId,omitempty" json:"CreatedByUniqueId,omitempty"`
 
-	Status string `xml:"tns:Status,omitempty" json:"Status,omitempty"`
+	Status string `xml:"http://raido.aviolinx.com/api/ Status,omitempty" json:"Status,omitempty"`
 
-	RevisionNumber int32 `xml:"tns:RevisionNumber,omitempty" json:"RevisionNumber,omitempty"`
+	RevisionNumber int32 `xml:"http://raido.aviolinx.com/api/ RevisionNumber,omitempty" json:"RevisionNumber,omitempty"`
 
-	ChangeType string `xml:"tns:ChangeType,omitempty" json:"ChangeType,omitempty"`
+	ChangeType string `xml:"http://raido.aviolinx.com/api/ ChangeType,omitempty" json:"ChangeType,omitempty"`
 
-	TransactionCode string `xml:"tns:TransactionCode,omitempty" json:"TransactionCode,omitempty"`
+	TransactionCode string `xml:"http://raido.aviolinx.com/api/ TransactionCode,omitempty" json:"TransactionCode,omitempty"`
 
-	IsOriginal bool `xml:"tns:IsOriginal,omitempty" json:"IsOriginal,omitempty"`
+	IsOriginal bool `xml:"http://raido.aviolinx.com/api/ IsOriginal,omitempty" json:"IsOriginal,omitempty"`
 
-	IsReleased bool `xml:"tns:IsReleased,omitempty" json:"IsReleased,omitempty"`
+	IsReleased bool `xml:"http://raido.aviolinx.com/api/ IsReleased,omitempty" json:"IsReleased,omitempty"`
 
-	ConfirmedDate xsd.DateTime `xml:"tns:ConfirmedDate,omitempty" json:"ConfirmedDate,omitempty"`
+	ConfirmedDate xsd.DateTime `xml:"http://raido.aviolinx.com/api/ ConfirmedDate,omitempty" json:"ConfirmedDate,omitempty"`
 
-	RosterActivities *ArrayOfRosterActivity `xml:"tns:RosterActivities,omitempty" json:"RosterActivities,omitempty"`
+	RosterActivities *ArrayOfRosterActivity `xml:"http://raido.aviolinx.com/api/ RosterActivities,omitempty" json:"RosterActivities,omitempty"`
 }
 
 type Delays struct {
-	Delay1 *Delay `xml:"tns:Delay1,omitempty" json:"Delay1,omitempty"`
+	Delay1 *Delay `xml:"http://raido.aviolinx.com/api/ Delay1,omitempty" json:"Delay1,omitempty"`
 
-	Delay2 *Delay `xml:"tns:Delay2,omitempty" json:"Delay2,omitempty"`
+	Delay2 *Delay `xml:"http://raido.aviolinx.com/api/ Delay2,omitempty" json:"Delay2,omitempty"`
 
-	Delay3 *Delay `xml:"tns:Delay3,omitempty" json:"Delay3,omitempty"`
+	Delay3 *Delay `xml:"http://raido.aviolinx.com/api/ Delay3,omitempty" json:"Delay3,omitempty"`
 
-	Delay4 *Delay `xml:"tns:Delay4,omitempty" json:"Delay4,omitempty"`
+	Delay4 *Delay `xml:"http://raido.aviolinx.com/api/ Delay4,omitempty" json:"Delay4,omitempty"`
 
-	ArrivalDelay1 *Delay `xml:"tns:ArrivalDelay1,omitempty" json:"ArrivalDelay1,omitempty"`
+	ArrivalDelay1 *Delay `xml:"http://raido.aviolinx.com/api/ ArrivalDelay1,omitempty" json:"ArrivalDelay1,omitempty"`
 
-	ArrivalDelay2 *Delay `xml:"tns:ArrivalDelay2,omitempty" json:"ArrivalDelay2,omitempty"`
+	ArrivalDelay2 *Delay `xml:"http://raido.aviolinx.com/api/ ArrivalDelay2,omitempty" json:"ArrivalDelay2,omitempty"`
 
-	ReturnToRampDelay1 *Delay `xml:"tns:ReturnToRampDelay1,omitempty" json:"ReturnToRampDelay1,omitempty"`
+	ReturnToRampDelay1 *Delay `xml:"http://raido.aviolinx.com/api/ ReturnToRampDelay1,omitempty" json:"ReturnToRampDelay1,omitempty"`
 
-	ReturnToRampDelay2 *Delay `xml:"tns:ReturnToRampDelay2,omitempty" json:"ReturnToRampDelay2,omitempty"`
+	ReturnToRampDelay2 *Delay `xml:"http://raido.aviolinx.com/api/ ReturnToRampDelay2,omitempty" json:"ReturnToRampDelay2,omitempty"`
 
-	ForcedReturnDelay1 *Delay `xml:"tns:ForcedReturnDelay1,omitempty" json:"ForcedReturnDelay1,omitempty"`
+	ForcedReturnDelay1 *Delay `xml:"http://raido.aviolinx.com/api/ ForcedReturnDelay1,omitempty" json:"ForcedReturnDelay1,omitempty"`
 
-	ForcedReturnDelay2 *Delay `xml:"tns:ForcedReturnDelay2,omitempty" json:"ForcedReturnDelay2,omitempty"`
+	ForcedReturnDelay2 *Delay `xml:"http://raido.aviolinx.com/api/ ForcedReturnDelay2,omitempty" json:"ForcedReturnDelay2,omitempty"`
 
-	DivertDelay1 *Delay `xml:"tns:DivertDelay1,omitempty" json:"DivertDelay1,omitempty"`
+	DivertDelay1 *Delay `xml:"http://raido.aviolinx.com/api/ DivertDelay1,omitempty" json:"DivertDelay1,omitempty"`
 
-	DivertDelay2 *Delay `xml:"tns:DivertDelay2,omitempty" json:"DivertDelay2,omitempty"`
+	DivertDelay2 *Delay `xml:"http://raido.aviolinx.com/api/ DivertDelay2,omitempty" json:"DivertDelay2,omitempty"`
 }
 
 type Delay struct {
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 
-	Code2 string `xml:"tns:Code2,omitempty" json:"Code2,omitempty"`
+	Code2 string `xml:"http://raido.aviolinx.com/api/ Code2,omitempty" json:"Code2,omitempty"`
 
-	Minutes int32 `xml:"tns:Minutes,omitempty" json:"Minutes,omitempty"`
+	Minutes int32 `xml:"http://raido.aviolinx.com/api/ Minutes,omitempty" json:"Minutes,omitempty"`
 }
 
 type Flightplan struct {
-	Callsign string `xml:"tns:Callsign,omitempty" json:"Callsign,omitempty"`
+	Callsign string `xml:"http://raido.aviolinx.com/api/ Callsign,omitempty" json:"Callsign,omitempty"`
 
-	Route string `xml:"tns:Route,omitempty" json:"Route,omitempty"`
+	Route string `xml:"http://raido.aviolinx.com/api/ Route,omitempty" json:"Route,omitempty"`
 
-	EstimatedElapsedTime *int32 `xml:"tns:EstimatedElapsedTime,omitempty" json:"EstimatedElapsedTime,omitempty"`
+	EstimatedElapsedTime *int32 `xml:"http://raido.aviolinx.com/api/ EstimatedElapsedTime,omitempty" json:"EstimatedElapsedTime,omitempty"`
 
-	CruisingSpeedLevel string `xml:"tns:CruisingSpeedLevel,omitempty" json:"CruisingSpeedLevel,omitempty"`
+	CruisingSpeedLevel string `xml:"http://raido.aviolinx.com/api/ CruisingSpeedLevel,omitempty" json:"CruisingSpeedLevel,omitempty"`
 }
 
 type ArrayOfFuel struct {
-	Fuel []*Fuel `xml:"tns:Fuel,omitempty" json:"Fuel,omitempty"`
+	Fuel []*Fuel `xml:"http://raido.aviolinx.com/api/ Fuel,omitempty" json:"Fuel,omitempty"`
 }
 
 type Fuel struct {
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	Source string `xml:"tns:Source,omitempty" json:"Source,omitempty"`
+	Source string `xml:"http://raido.aviolinx.com/api/ Source,omitempty" json:"Source,omitempty"`
 
-	Quantity float64 `xml:"tns:Quantity,omitempty" json:"Quantity,omitempty"`
+	Quantity float64 `xml:"http://raido.aviolinx.com/api/ Quantity,omitempty" json:"Quantity,omitempty"`
 
-	QuantityUnit string `xml:"tns:QuantityUnit,omitempty" json:"QuantityUnit,omitempty"`
+	QuantityUnit string `xml:"http://raido.aviolinx.com/api/ QuantityUnit,omitempty" json:"QuantityUnit,omitempty"`
 
-	Density float64 `xml:"tns:Density,omitempty" json:"Density,omitempty"`
+	Density float64 `xml:"http://raido.aviolinx.com/api/ Density,omitempty" json:"Density,omitempty"`
 
-	DensityUnit string `xml:"tns:DensityUnit,omitempty" json:"DensityUnit,omitempty"`
+	DensityUnit string `xml:"http://raido.aviolinx.com/api/ DensityUnit,omitempty" json:"DensityUnit,omitempty"`
 }
 
 type Loads struct {
-	BookedPassengerPerWeight *PassengerPerWeight `xml:"tns:BookedPassengerPerWeight,omitempty" json:"BookedPassengerPerWeight,omitempty"`
+	BookedPassengerPerWeight *PassengerPerWeight `xml:"http://raido.aviolinx.com/api/ BookedPassengerPerWeight,omitempty" json:"BookedPassengerPerWeight,omitempty"`
 
-	ActualPassengerPerWeight *PassengerPerWeight `xml:"tns:ActualPassengerPerWeight,omitempty" json:"ActualPassengerPerWeight,omitempty"`
+	ActualPassengerPerWeight *PassengerPerWeight `xml:"http://raido.aviolinx.com/api/ ActualPassengerPerWeight,omitempty" json:"ActualPassengerPerWeight,omitempty"`
 
-	BookedPassengerPerClass *ArrayOfPassengerPerClass `xml:"tns:BookedPassengerPerClass,omitempty" json:"BookedPassengerPerClass,omitempty"`
+	BookedPassengerPerClass *ArrayOfPassengerPerClass `xml:"http://raido.aviolinx.com/api/ BookedPassengerPerClass,omitempty" json:"BookedPassengerPerClass,omitempty"`
 
-	ActualPassengerPerClass *ArrayOfPassengerPerClass `xml:"tns:ActualPassengerPerClass,omitempty" json:"ActualPassengerPerClass,omitempty"`
+	ActualPassengerPerClass *ArrayOfPassengerPerClass `xml:"http://raido.aviolinx.com/api/ ActualPassengerPerClass,omitempty" json:"ActualPassengerPerClass,omitempty"`
 
-	BookedDeadload *ArrayOfDeadload `xml:"tns:BookedDeadload,omitempty" json:"BookedDeadload,omitempty"`
+	BookedDeadload *ArrayOfDeadload `xml:"http://raido.aviolinx.com/api/ BookedDeadload,omitempty" json:"BookedDeadload,omitempty"`
 
-	ActualDeadload *ArrayOfDeadload `xml:"tns:ActualDeadload,omitempty" json:"ActualDeadload,omitempty"`
+	ActualDeadload *ArrayOfDeadload `xml:"http://raido.aviolinx.com/api/ ActualDeadload,omitempty" json:"ActualDeadload,omitempty"`
 }
 
 type PassengerPerWeight struct {
-	Adults *int32 `xml:"tns:Adults,omitempty" json:"Adults,omitempty"`
+	Adults *int32 `xml:"http://raido.aviolinx.com/api/ Adults,omitempty" json:"Adults,omitempty"`
 
-	Males *int32 `xml:"tns:Males,omitempty" json:"Males,omitempty"`
+	Males *int32 `xml:"http://raido.aviolinx.com/api/ Males,omitempty" json:"Males,omitempty"`
 
-	Females *int32 `xml:"tns:Females,omitempty" json:"Females,omitempty"`
+	Females *int32 `xml:"http://raido.aviolinx.com/api/ Females,omitempty" json:"Females,omitempty"`
 
-	Children *int32 `xml:"tns:Children,omitempty" json:"Children,omitempty"`
+	Children *int32 `xml:"http://raido.aviolinx.com/api/ Children,omitempty" json:"Children,omitempty"`
 
-	Infants *int32 `xml:"tns:Infants,omitempty" json:"Infants,omitempty"`
+	Infants *int32 `xml:"http://raido.aviolinx.com/api/ Infants,omitempty" json:"Infants,omitempty"`
 }
 
 type ArrayOfPassengerPerClass struct {
-	PassengerPerClass []*PassengerPerClass `xml:"tns:PassengerPerClass,omitempty" json:"PassengerPerClass,omitempty"`
+	PassengerPerClass []*PassengerPerClass `xml:"http://raido.aviolinx.com/api/ PassengerPerClass,omitempty" json:"PassengerPerClass,omitempty"`
 }
 
 type PassengerPerClass struct {
-	Class string `xml:"tns:Class,omitempty" json:"Class,omitempty"`
+	Class string `xml:"http://raido.aviolinx.com/api/ Class,omitempty" json:"Class,omitempty"`
 
-	Amount *int32 `xml:"tns:Amount,omitempty" json:"Amount,omitempty"`
+	Amount *int32 `xml:"http://raido.aviolinx.com/api/ Amount,omitempty" json:"Amount,omitempty"`
 
-	PADAmount *int32 `xml:"tns:PADAmount,omitempty" json:"PADAmount,omitempty"`
+	PADAmount *int32 `xml:"http://raido.aviolinx.com/api/ PADAmount,omitempty" json:"PADAmount,omitempty"`
 }
 
 type ArrayOfDeadload struct {
-	Deadload []*Deadload `xml:"tns:Deadload,omitempty" json:"Deadload,omitempty"`
+	Deadload []*Deadload `xml:"http://raido.aviolinx.com/api/ Deadload,omitempty" json:"Deadload,omitempty"`
 }
 
 type Deadload struct {
-	Compartment string `xml:"tns:Compartment,omitempty" json:"Compartment,omitempty"`
+	Compartment string `xml:"http://raido.aviolinx.com/api/ Compartment,omitempty" json:"Compartment,omitempty"`
 
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	Amount *int32 `xml:"tns:Amount,omitempty" json:"Amount,omitempty"`
+	Amount *int32 `xml:"http://raido.aviolinx.com/api/ Amount,omitempty" json:"Amount,omitempty"`
 }
 
 type ArrayOfProjectCode struct {
-	ProjectCode []*ProjectCode `xml:"tns:ProjectCode,omitempty" json:"ProjectCode,omitempty"`
+	ProjectCode []*ProjectCode `xml:"http://raido.aviolinx.com/api/ ProjectCode,omitempty" json:"ProjectCode,omitempty"`
 }
 
 type ProjectCode struct {
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 }
 
 type ArrayOfJumpseater struct {
-	XMLName xml.Name `xml:"tns:Jumpseaters"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Jumpseaters"`
 
-	Jumpseater []*Jumpseater `xml:"tns:Jumpseater,omitempty" json:"Jumpseater,omitempty"`
+	Jumpseater []*Jumpseater `xml:"http://raido.aviolinx.com/api/ Jumpseater,omitempty" json:"Jumpseater,omitempty"`
 }
 
 type Jumpseater struct {
-	FirstName string `xml:"tns:FirstName,omitempty" json:"FirstName,omitempty"`
+	FirstName string `xml:"http://raido.aviolinx.com/api/ FirstName,omitempty" json:"FirstName,omitempty"`
 
-	MiddleNames string `xml:"tns:MiddleNames,omitempty" json:"MiddleNames,omitempty"`
+	MiddleNames string `xml:"http://raido.aviolinx.com/api/ MiddleNames,omitempty" json:"MiddleNames,omitempty"`
 
-	LastName string `xml:"tns:LastName,omitempty" json:"LastName,omitempty"`
+	LastName string `xml:"http://raido.aviolinx.com/api/ LastName,omitempty" json:"LastName,omitempty"`
 
-	DateOfBirth *xsd.DateTime `xml:"tns:DateOfBirth,omitempty" json:"DateOfBirth,omitempty"`
+	DateOfBirth *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ DateOfBirth,omitempty" json:"DateOfBirth,omitempty"`
 
-	PlaceOfBirth string `xml:"tns:PlaceOfBirth,omitempty" json:"PlaceOfBirth,omitempty"`
+	PlaceOfBirth string `xml:"http://raido.aviolinx.com/api/ PlaceOfBirth,omitempty" json:"PlaceOfBirth,omitempty"`
 
-	CountryOfBirth string `xml:"tns:CountryOfBirth,omitempty" json:"CountryOfBirth,omitempty"`
+	CountryOfBirth string `xml:"http://raido.aviolinx.com/api/ CountryOfBirth,omitempty" json:"CountryOfBirth,omitempty"`
 
-	Nationality string `xml:"tns:Nationality,omitempty" json:"Nationality,omitempty"`
+	Nationality string `xml:"http://raido.aviolinx.com/api/ Nationality,omitempty" json:"Nationality,omitempty"`
 
-	StateOfBirth string `xml:"tns:StateOfBirth,omitempty" json:"StateOfBirth,omitempty"`
+	StateOfBirth string `xml:"http://raido.aviolinx.com/api/ StateOfBirth,omitempty" json:"StateOfBirth,omitempty"`
 
-	Sex string `xml:"tns:Sex,omitempty" json:"Sex,omitempty"`
+	Sex string `xml:"http://raido.aviolinx.com/api/ Sex,omitempty" json:"Sex,omitempty"`
 
-	Street string `xml:"tns:Street,omitempty" json:"Street,omitempty"`
+	Street string `xml:"http://raido.aviolinx.com/api/ Street,omitempty" json:"Street,omitempty"`
 
-	Zipcode string `xml:"tns:Zipcode,omitempty" json:"Zipcode,omitempty"`
+	Zipcode string `xml:"http://raido.aviolinx.com/api/ Zipcode,omitempty" json:"Zipcode,omitempty"`
 
-	CityName string `xml:"tns:CityName,omitempty" json:"CityName,omitempty"`
+	CityName string `xml:"http://raido.aviolinx.com/api/ CityName,omitempty" json:"CityName,omitempty"`
 
-	State string `xml:"tns:State,omitempty" json:"State,omitempty"`
+	State string `xml:"http://raido.aviolinx.com/api/ State,omitempty" json:"State,omitempty"`
 
-	AddressCountry string `xml:"tns:AddressCountry,omitempty" json:"AddressCountry,omitempty"`
+	AddressCountry string `xml:"http://raido.aviolinx.com/api/ AddressCountry,omitempty" json:"AddressCountry,omitempty"`
 
-	DocumentNumber string `xml:"tns:DocumentNumber,omitempty" json:"DocumentNumber,omitempty"`
+	DocumentNumber string `xml:"http://raido.aviolinx.com/api/ DocumentNumber,omitempty" json:"DocumentNumber,omitempty"`
 
-	DocumentIssueCountry string `xml:"tns:DocumentIssueCountry,omitempty" json:"DocumentIssueCountry,omitempty"`
+	DocumentIssueCountry string `xml:"http://raido.aviolinx.com/api/ DocumentIssueCountry,omitempty" json:"DocumentIssueCountry,omitempty"`
 
-	ExpiryDate *xsd.DateTime `xml:"tns:ExpiryDate,omitempty" json:"ExpiryDate,omitempty"`
+	ExpiryDate *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ ExpiryDate,omitempty" json:"ExpiryDate,omitempty"`
 
-	LicenseNumber string `xml:"tns:LicenseNumber,omitempty" json:"LicenseNumber,omitempty"`
+	LicenseNumber string `xml:"http://raido.aviolinx.com/api/ LicenseNumber,omitempty" json:"LicenseNumber,omitempty"`
 
-	LicenseIssueCountry string `xml:"tns:LicenseIssueCountry,omitempty" json:"LicenseIssueCountry,omitempty"`
+	LicenseIssueCountry string `xml:"http://raido.aviolinx.com/api/ LicenseIssueCountry,omitempty" json:"LicenseIssueCountry,omitempty"`
 
-	LicenseExpiryDate *xsd.DateTime `xml:"tns:LicenseExpiryDate,omitempty" json:"LicenseExpiryDate,omitempty"`
+	LicenseExpiryDate *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ LicenseExpiryDate,omitempty" json:"LicenseExpiryDate,omitempty"`
 
-	CrewStatus string `xml:"tns:CrewStatus,omitempty" json:"CrewStatus,omitempty"`
+	CrewStatus string `xml:"http://raido.aviolinx.com/api/ CrewStatus,omitempty" json:"CrewStatus,omitempty"`
 
-	Apis string `xml:"tns:Apis,omitempty" json:"Apis,omitempty"`
+	Apis string `xml:"http://raido.aviolinx.com/api/ Apis,omitempty" json:"Apis,omitempty"`
 
-	Active bool `xml:"tns:Active,omitempty" json:"Active,omitempty"`
+	Active bool `xml:"http://raido.aviolinx.com/api/ Active,omitempty" json:"Active,omitempty"`
 }
 
 type FuelData struct {
-	Company string `xml:"tns:Company,omitempty" json:"Company,omitempty"`
+	Company string `xml:"http://raido.aviolinx.com/api/ Company,omitempty" json:"Company,omitempty"`
 
-	Cost float64 `xml:"tns:Cost,omitempty" json:"Cost,omitempty"`
+	Cost float64 `xml:"http://raido.aviolinx.com/api/ Cost,omitempty" json:"Cost,omitempty"`
 
-	Currency string `xml:"tns:Currency,omitempty" json:"Currency,omitempty"`
+	Currency string `xml:"http://raido.aviolinx.com/api/ Currency,omitempty" json:"Currency,omitempty"`
 
-	PaymentType string `xml:"tns:PaymentType,omitempty" json:"PaymentType,omitempty"`
+	PaymentType string `xml:"http://raido.aviolinx.com/api/ PaymentType,omitempty" json:"PaymentType,omitempty"`
 
-	Receipt string `xml:"tns:Receipt,omitempty" json:"Receipt,omitempty"`
+	Receipt string `xml:"http://raido.aviolinx.com/api/ Receipt,omitempty" json:"Receipt,omitempty"`
 
-	Comment string `xml:"tns:Comment,omitempty" json:"Comment,omitempty"`
+	Comment string `xml:"http://raido.aviolinx.com/api/ Comment,omitempty" json:"Comment,omitempty"`
 }
 
 type ArrayOfString struct {
-	XMLName xml.Name `xml:"tns:DetailedStatuses"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ DetailedStatuses"`
 
-	DetailedStatus []*string `xml:"tns:DetailedStatus,omitempty" json:"DetailedStatus,omitempty"`
+	DetailedStatus []*string `xml:"http://raido.aviolinx.com/api/ DetailedStatus,omitempty" json:"DetailedStatus,omitempty"`
 }
 
 type MaintenanceRequestFilter struct {
 	*DateRangeBasicRequestFilter
 
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	Station string `xml:"tns:Station,omitempty" json:"Station,omitempty"`
+	Station string `xml:"http://raido.aviolinx.com/api/ Station,omitempty" json:"Station,omitempty"`
 
-	AircraftRegistration string `xml:"tns:AircraftRegistration,omitempty" json:"AircraftRegistration,omitempty"`
+	AircraftRegistration string `xml:"http://raido.aviolinx.com/api/ AircraftRegistration,omitempty" json:"AircraftRegistration,omitempty"`
 
-	MaintenanceType *MaintenanceType `xml:"tns:MaintenanceType,omitempty" json:"MaintenanceType,omitempty"`
+	MaintenanceType *MaintenanceType `xml:"http://raido.aviolinx.com/api/ MaintenanceType,omitempty" json:"MaintenanceType,omitempty"`
 }
 
 type MaintenanceRequestData struct {
-	Aircraft bool `xml:"tns:Aircraft,omitempty" json:"Aircraft,omitempty"`
+	Aircraft bool `xml:"http://raido.aviolinx.com/api/ Aircraft,omitempty" json:"Aircraft,omitempty"`
 
-	Airport bool `xml:"tns:Airport,omitempty" json:"Airport,omitempty"`
+	Airport bool `xml:"http://raido.aviolinx.com/api/ Airport,omitempty" json:"Airport,omitempty"`
 
-	Notes bool `xml:"tns:Notes,omitempty" json:"Notes,omitempty"`
+	Notes bool `xml:"http://raido.aviolinx.com/api/ Notes,omitempty" json:"Notes,omitempty"`
 
-	Times bool `xml:"tns:Times,omitempty" json:"Times,omitempty"`
+	Times bool `xml:"http://raido.aviolinx.com/api/ Times,omitempty" json:"Times,omitempty"`
 }
 
 type ArrayOfMaintenance struct {
-	XMLName xml.Name `xml:"tns:GetMaintenancesResult"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetMaintenancesResult"`
 
-	Maintenance []*Maintenance `xml:"tns:Maintenance,omitempty" json:"Maintenance,omitempty"`
+	Maintenance []*Maintenance `xml:"http://raido.aviolinx.com/api/ Maintenance,omitempty" json:"Maintenance,omitempty"`
 }
 
 type Maintenance struct {
-	UniqueId int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	ExternalReferenceId int32 `xml:"tns:ExternalReferenceId,omitempty" json:"ExternalReferenceId,omitempty"`
+	ExternalReferenceId int32 `xml:"http://raido.aviolinx.com/api/ ExternalReferenceId,omitempty" json:"ExternalReferenceId,omitempty"`
 
-	MaintenanceType *MaintenanceType `xml:"tns:MaintenanceType,omitempty" json:"MaintenanceType,omitempty"`
+	MaintenanceType *MaintenanceType `xml:"http://raido.aviolinx.com/api/ MaintenanceType,omitempty" json:"MaintenanceType,omitempty"`
 
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	AirportCode string `xml:"tns:AirportCode,omitempty" json:"AirportCode,omitempty"`
+	AirportCode string `xml:"http://raido.aviolinx.com/api/ AirportCode,omitempty" json:"AirportCode,omitempty"`
 
-	StartDateTime xsd.DateTime `xml:"tns:StartDateTime,omitempty" json:"StartDateTime,omitempty"`
+	StartDateTime xsd.DateTime `xml:"http://raido.aviolinx.com/api/ StartDateTime,omitempty" json:"StartDateTime,omitempty"`
 
-	EndDateTime xsd.DateTime `xml:"tns:EndDateTime,omitempty" json:"EndDateTime,omitempty"`
+	EndDateTime xsd.DateTime `xml:"http://raido.aviolinx.com/api/ EndDateTime,omitempty" json:"EndDateTime,omitempty"`
 
-	AircraftRegistration string `xml:"tns:AircraftRegistration,omitempty" json:"AircraftRegistration,omitempty"`
+	AircraftRegistration string `xml:"http://raido.aviolinx.com/api/ AircraftRegistration,omitempty" json:"AircraftRegistration,omitempty"`
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	Aircraft *Aircraft `xml:"tns:Aircraft,omitempty" json:"Aircraft,omitempty"`
+	Aircraft *Aircraft `xml:"http://raido.aviolinx.com/api/ Aircraft,omitempty" json:"Aircraft,omitempty"`
 
-	Airport *Airport `xml:"tns:Airport,omitempty" json:"Airport,omitempty"`
+	Airport *Airport `xml:"http://raido.aviolinx.com/api/ Airport,omitempty" json:"Airport,omitempty"`
 
-	Notes *ArrayOfNote `xml:"tns:Notes,omitempty" json:"Notes,omitempty"`
+	Notes *ArrayOfNote `xml:"http://raido.aviolinx.com/api/ Notes,omitempty" json:"Notes,omitempty"`
 
-	Times *ArrayOfTime `xml:"tns:Times,omitempty" json:"Times,omitempty"`
+	Times *ArrayOfTime `xml:"http://raido.aviolinx.com/api/ Times,omitempty" json:"Times,omitempty"`
 }
 
 type CrewRequestFilter struct {
 	*BasicRequestFilter
 
-	ReferenceDate xsd.DateTime `xml:"tns:ReferenceDate,omitempty" json:"ReferenceDate,omitempty"`
+	ReferenceDate xsd.DateTime `xml:"http://raido.aviolinx.com/api/ ReferenceDate,omitempty" json:"ReferenceDate,omitempty"`
 
-	OnlyActiveCrew bool `xml:"tns:OnlyActiveCrew,omitempty" json:"OnlyActiveCrew,omitempty"`
+	OnlyActiveCrew bool `xml:"http://raido.aviolinx.com/api/ OnlyActiveCrew,omitempty" json:"OnlyActiveCrew,omitempty"`
 
-	OnlyActiveRecords bool `xml:"tns:OnlyActiveRecords,omitempty" json:"OnlyActiveRecords,omitempty"`
+	OnlyActiveRecords bool `xml:"http://raido.aviolinx.com/api/ OnlyActiveRecords,omitempty" json:"OnlyActiveRecords,omitempty"`
 
-	CrewNumber string `xml:"tns:CrewNumber,omitempty" json:"CrewNumber,omitempty"`
+	CrewNumber string `xml:"http://raido.aviolinx.com/api/ CrewNumber,omitempty" json:"CrewNumber,omitempty"`
 }
 
 type CrewRequestData struct {
-	Addresses bool `xml:"tns:Addresses,omitempty" json:"Addresses,omitempty"`
+	Addresses bool `xml:"http://raido.aviolinx.com/api/ Addresses,omitempty" json:"Addresses,omitempty"`
 
-	Phones bool `xml:"tns:Phones,omitempty" json:"Phones,omitempty"`
+	Phones bool `xml:"http://raido.aviolinx.com/api/ Phones,omitempty" json:"Phones,omitempty"`
 
-	Emails bool `xml:"tns:Emails,omitempty" json:"Emails,omitempty"`
+	Emails bool `xml:"http://raido.aviolinx.com/api/ Emails,omitempty" json:"Emails,omitempty"`
 
-	Documents bool `xml:"tns:Documents,omitempty" json:"Documents,omitempty"`
+	Documents bool `xml:"http://raido.aviolinx.com/api/ Documents,omitempty" json:"Documents,omitempty"`
 
-	Bases bool `xml:"tns:Bases,omitempty" json:"Bases,omitempty"`
+	Bases bool `xml:"http://raido.aviolinx.com/api/ Bases,omitempty" json:"Bases,omitempty"`
 
-	Ranks bool `xml:"tns:Ranks,omitempty" json:"Ranks,omitempty"`
+	Ranks bool `xml:"http://raido.aviolinx.com/api/ Ranks,omitempty" json:"Ranks,omitempty"`
 
-	Qualifications bool `xml:"tns:Qualifications,omitempty" json:"Qualifications,omitempty"`
+	Qualifications bool `xml:"http://raido.aviolinx.com/api/ Qualifications,omitempty" json:"Qualifications,omitempty"`
 
-	SpecialRoles bool `xml:"tns:SpecialRoles,omitempty" json:"SpecialRoles,omitempty"`
+	SpecialRoles bool `xml:"http://raido.aviolinx.com/api/ SpecialRoles,omitempty" json:"SpecialRoles,omitempty"`
 
-	Contracts bool `xml:"tns:Contracts,omitempty" json:"Contracts,omitempty"`
+	Contracts bool `xml:"http://raido.aviolinx.com/api/ Contracts,omitempty" json:"Contracts,omitempty"`
 
-	CrewType bool `xml:"tns:CrewType,omitempty" json:"CrewType,omitempty"`
+	CrewType bool `xml:"http://raido.aviolinx.com/api/ CrewType,omitempty" json:"CrewType,omitempty"`
 }
 
 type ArrayOfCrew struct {
-	Crew []*Crew `xml:"tns:Crew,omitempty" json:"Crew,omitempty"`
+	Crew []*Crew `xml:"http://raido.aviolinx.com/api/ Crew,omitempty" json:"Crew,omitempty"`
 }
 
 type UserRequestFilter struct {
-	UniqueId string `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId string `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	OnlyActiveUser bool `xml:"tns:OnlyActiveUser,omitempty" json:"OnlyActiveUser,omitempty"`
+	OnlyActiveUser bool `xml:"http://raido.aviolinx.com/api/ OnlyActiveUser,omitempty" json:"OnlyActiveUser,omitempty"`
 
-	Username string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 }
 
 type UserRequestData struct {
 }
 
 type ArrayOfUser struct {
-	XMLName xml.Name `xml:"tns:GetUsersResult"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetUsersResult"`
 
-	User []*User `xml:"tns:User,omitempty" json:"User,omitempty"`
+	User []*User `xml:"http://raido.aviolinx.com/api/ User,omitempty" json:"User,omitempty"`
 }
 
 type User struct {
-	UniqueId string `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId string `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	Username string `xml:"tns:Username,omitempty" json:"Username,omitempty"`
+	Username string `xml:"http://raido.aviolinx.com/api/ Username,omitempty" json:"Username,omitempty"`
 
-	FirstName string `xml:"tns:FirstName,omitempty" json:"FirstName,omitempty"`
+	FirstName string `xml:"http://raido.aviolinx.com/api/ FirstName,omitempty" json:"FirstName,omitempty"`
 
-	LastName string `xml:"tns:LastName,omitempty" json:"LastName,omitempty"`
+	LastName string `xml:"http://raido.aviolinx.com/api/ LastName,omitempty" json:"LastName,omitempty"`
 
-	Email string `xml:"tns:Email,omitempty" json:"Email,omitempty"`
+	Email string `xml:"http://raido.aviolinx.com/api/ Email,omitempty" json:"Email,omitempty"`
 
-	TypeB string `xml:"tns:TypeB,omitempty" json:"TypeB,omitempty"`
+	TypeB string `xml:"http://raido.aviolinx.com/api/ TypeB,omitempty" json:"TypeB,omitempty"`
 
-	Phone string `xml:"tns:Phone,omitempty" json:"Phone,omitempty"`
+	Phone string `xml:"http://raido.aviolinx.com/api/ Phone,omitempty" json:"Phone,omitempty"`
 
-	Mobile string `xml:"tns:Mobile,omitempty" json:"Mobile,omitempty"`
+	Mobile string `xml:"http://raido.aviolinx.com/api/ Mobile,omitempty" json:"Mobile,omitempty"`
 
-	VOIP string `xml:"tns:VOIP,omitempty" json:"VOIP,omitempty"`
+	VOIP string `xml:"http://raido.aviolinx.com/api/ VOIP,omitempty" json:"VOIP,omitempty"`
 
-	ADUser string `xml:"tns:ADUser,omitempty" json:"ADUser,omitempty"`
+	ADUser string `xml:"http://raido.aviolinx.com/api/ ADUser,omitempty" json:"ADUser,omitempty"`
 
-	Active bool `xml:"tns:Active,omitempty" json:"Active,omitempty"`
+	Active bool `xml:"http://raido.aviolinx.com/api/ Active,omitempty" json:"Active,omitempty"`
 
-	Groups string `xml:"tns:Groups,omitempty" json:"Groups,omitempty"`
+	Groups string `xml:"http://raido.aviolinx.com/api/ Groups,omitempty" json:"Groups,omitempty"`
 }
 
 type RosterRequestFilter struct {
 	*DateRangeBasicRequestFilter
 
-	RosterFilterId *int32 `xml:"tns:RosterFilterId,omitempty" json:"RosterFilterId,omitempty"`
+	RosterFilterId *int32 `xml:"http://raido.aviolinx.com/api/ RosterFilterId,omitempty" json:"RosterFilterId,omitempty"`
 
-	RosterFilterName string `xml:"tns:RosterFilterName,omitempty" json:"RosterFilterName,omitempty"`
+	RosterFilterName string `xml:"http://raido.aviolinx.com/api/ RosterFilterName,omitempty" json:"RosterFilterName,omitempty"`
 
-	RosterType *RosterType `xml:"tns:RosterType,omitempty" json:"RosterType,omitempty"`
+	RosterType *RosterType `xml:"http://raido.aviolinx.com/api/ RosterType,omitempty" json:"RosterType,omitempty"`
 
-	ReferenceActivity string `xml:"tns:ReferenceActivity,omitempty" json:"ReferenceActivity,omitempty"`
+	ReferenceActivity string `xml:"http://raido.aviolinx.com/api/ ReferenceActivity,omitempty" json:"ReferenceActivity,omitempty"`
 
-	OnlyActive bool `xml:"tns:OnlyActive,omitempty" json:"OnlyActive,omitempty"`
+	OnlyActive bool `xml:"http://raido.aviolinx.com/api/ OnlyActive,omitempty" json:"OnlyActive,omitempty"`
 }
 
 type RosterRequestData struct {
-	Times bool `xml:"tns:Times,omitempty" json:"Times,omitempty"`
+	Times bool `xml:"http://raido.aviolinx.com/api/ Times,omitempty" json:"Times,omitempty"`
 
-	Notes bool `xml:"tns:Notes,omitempty" json:"Notes,omitempty"`
+	Notes bool `xml:"http://raido.aviolinx.com/api/ Notes,omitempty" json:"Notes,omitempty"`
 
-	TrainingSessions bool `xml:"tns:TrainingSessions,omitempty" json:"TrainingSessions,omitempty"`
+	TrainingSessions bool `xml:"http://raido.aviolinx.com/api/ TrainingSessions,omitempty" json:"TrainingSessions,omitempty"`
 
-	HotelDetails bool `xml:"tns:HotelDetails,omitempty" json:"HotelDetails,omitempty"`
+	HotelDetails bool `xml:"http://raido.aviolinx.com/api/ HotelDetails,omitempty" json:"HotelDetails,omitempty"`
 
-	CrewOnBoard bool `xml:"tns:CrewOnBoard,omitempty" json:"CrewOnBoard,omitempty"`
+	CrewOnBoard bool `xml:"http://raido.aviolinx.com/api/ CrewOnBoard,omitempty" json:"CrewOnBoard,omitempty"`
 }
 
 type PairingRequestFilter struct {
 	*DateRangeBasicRequestFilter
 
-	Station string `xml:"tns:Station,omitempty" json:"Station,omitempty"`
+	Station string `xml:"http://raido.aviolinx.com/api/ Station,omitempty" json:"Station,omitempty"`
 
-	RosterType *RosterType `xml:"tns:RosterType,omitempty" json:"RosterType,omitempty"`
+	RosterType *RosterType `xml:"http://raido.aviolinx.com/api/ RosterType,omitempty" json:"RosterType,omitempty"`
 }
 
 type PairingRequestData struct {
-	PairingDetails bool `xml:"tns:PairingDetails,omitempty" json:"PairingDetails,omitempty"`
+	PairingDetails bool `xml:"http://raido.aviolinx.com/api/ PairingDetails,omitempty" json:"PairingDetails,omitempty"`
 
-	AssignedCrew bool `xml:"tns:AssignedCrew,omitempty" json:"AssignedCrew,omitempty"`
+	AssignedCrew bool `xml:"http://raido.aviolinx.com/api/ AssignedCrew,omitempty" json:"AssignedCrew,omitempty"`
 
-	Times bool `xml:"tns:Times,omitempty" json:"Times,omitempty"`
+	Times bool `xml:"http://raido.aviolinx.com/api/ Times,omitempty" json:"Times,omitempty"`
 }
 
 type AircraftRequestFilter struct {
 	*BasicRequestFilter
 
-	Registration string `xml:"tns:Registration,omitempty" json:"Registration,omitempty"`
+	Registration string `xml:"http://raido.aviolinx.com/api/ Registration,omitempty" json:"Registration,omitempty"`
 }
 
 type AircraftRequestData struct {
-	MinimumEquipmentList bool `xml:"tns:MinimumEquipmentList,omitempty" json:"MinimumEquipmentList,omitempty"`
+	MinimumEquipmentList bool `xml:"http://raido.aviolinx.com/api/ MinimumEquipmentList,omitempty" json:"MinimumEquipmentList,omitempty"`
 }
 
 type ArrayOfAircraft struct {
-	XMLName xml.Name `xml:"tns:GetAircraftsResult"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetAircraftsResult"`
 
-	Aircraft []*Aircraft `xml:"tns:Aircraft,omitempty" json:"Aircraft,omitempty"`
+	Aircraft []*Aircraft `xml:"http://raido.aviolinx.com/api/ Aircraft,omitempty" json:"Aircraft,omitempty"`
 }
 
 type AccumulatedValuesRequestFilter struct {
 	*DateRangeBasicRequestFilter
 
-	RemoveEmpty bool `xml:"tns:RemoveEmpty,omitempty" json:"RemoveEmpty,omitempty"`
+	RemoveEmpty bool `xml:"http://raido.aviolinx.com/api/ RemoveEmpty,omitempty" json:"RemoveEmpty,omitempty"`
 }
 
 type AccumulatedValuesRequestData struct {
-	Labels *ArrayOfString1 `xml:"tns:Labels,omitempty" json:"Labels,omitempty"`
+	Labels *ArrayOfString1 `xml:"http://raido.aviolinx.com/api/ Labels,omitempty" json:"Labels,omitempty"`
 
-	AggregateDays *int32 `xml:"tns:AggregateDays,omitempty" json:"AggregateDays,omitempty"`
+	AggregateDays *int32 `xml:"http://raido.aviolinx.com/api/ AggregateDays,omitempty" json:"AggregateDays,omitempty"`
 
-	Type *AccumulatedValuesRequestDataType `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type *AccumulatedValuesRequestDataType `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 }
 
 type ArrayOfString1 struct {
-	XMLName xml.Name `xml:"tns:Labels"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Labels"`
 
-	Label []*string `xml:"tns:Label,omitempty" json:"Label,omitempty"`
+	Label []*string `xml:"http://raido.aviolinx.com/api/ Label,omitempty" json:"Label,omitempty"`
 }
 
 type ArrayOfAccumulatedValue struct {
-	XMLName xml.Name `xml:"tns:GetAccumulatedValuesResult"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetAccumulatedValuesResult"`
 
-	AccumulatedValue []*AccumulatedValue `xml:"tns:AccumulatedValue,omitempty" json:"AccumulatedValue,omitempty"`
+	AccumulatedValue []*AccumulatedValue `xml:"http://raido.aviolinx.com/api/ AccumulatedValue,omitempty" json:"AccumulatedValue,omitempty"`
 }
 
 type AccumulatedValue struct {
-	Crew *Crew `xml:"tns:Crew,omitempty" json:"Crew,omitempty"`
+	Crew *Crew `xml:"http://raido.aviolinx.com/api/ Crew,omitempty" json:"Crew,omitempty"`
 
-	Aircraft *Aircraft `xml:"tns:Aircraft,omitempty" json:"Aircraft,omitempty"`
+	Aircraft *Aircraft `xml:"http://raido.aviolinx.com/api/ Aircraft,omitempty" json:"Aircraft,omitempty"`
 
-	Labels *ArrayOfAccumulatedValueLabel `xml:"tns:Labels,omitempty" json:"Labels,omitempty"`
+	Labels *ArrayOfAccumulatedValueLabel `xml:"http://raido.aviolinx.com/api/ Labels,omitempty" json:"Labels,omitempty"`
 }
 
 type ArrayOfAccumulatedValueLabel struct {
-	XMLName xml.Name `xml:"tns:Labels"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Labels"`
 
-	AccumulatedValueLabel []*AccumulatedValueLabel `xml:"tns:AccumulatedValueLabel,omitempty" json:"AccumulatedValueLabel,omitempty"`
+	AccumulatedValueLabel []*AccumulatedValueLabel `xml:"http://raido.aviolinx.com/api/ AccumulatedValueLabel,omitempty" json:"AccumulatedValueLabel,omitempty"`
 }
 
 type AccumulatedValueLabel struct {
-	Value string `xml:"tns:Value,omitempty" json:"Value,omitempty"`
+	Value string `xml:"http://raido.aviolinx.com/api/ Value,omitempty" json:"Value,omitempty"`
 
-	Label string `xml:"tns:Label,omitempty" json:"Label,omitempty"`
+	Label string `xml:"http://raido.aviolinx.com/api/ Label,omitempty" json:"Label,omitempty"`
 
-	DateFrom xsd.DateTime `xml:"tns:DateFrom,omitempty" json:"DateFrom,omitempty"`
+	DateFrom xsd.DateTime `xml:"http://raido.aviolinx.com/api/ DateFrom,omitempty" json:"DateFrom,omitempty"`
 
-	DateTo xsd.DateTime `xml:"tns:DateTo,omitempty" json:"DateTo,omitempty"`
+	DateTo xsd.DateTime `xml:"http://raido.aviolinx.com/api/ DateTo,omitempty" json:"DateTo,omitempty"`
 }
 
 type RevisionsRequestFilter struct {
 	*BasicRequestFilter
 
-	CrewNumber string `xml:"tns:CrewNumber,omitempty" json:"CrewNumber,omitempty"`
+	CrewNumber string `xml:"http://raido.aviolinx.com/api/ CrewNumber,omitempty" json:"CrewNumber,omitempty"`
 }
 
 type RevisionsRequestData struct {
-	Times bool `xml:"tns:Times,omitempty" json:"Times,omitempty"`
+	Times bool `xml:"http://raido.aviolinx.com/api/ Times,omitempty" json:"Times,omitempty"`
 }
 
 type AirportRequestFilter struct {
-	OnlyActive bool `xml:"tns:OnlyActive,omitempty" json:"OnlyActive,omitempty"`
+	OnlyActive bool `xml:"http://raido.aviolinx.com/api/ OnlyActive,omitempty" json:"OnlyActive,omitempty"`
 
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 }
 
 type AirportRequestData struct {
-	DaylightSavingTimes bool `xml:"tns:DaylightSavingTimes,omitempty" json:"DaylightSavingTimes,omitempty"`
+	DaylightSavingTimes bool `xml:"http://raido.aviolinx.com/api/ DaylightSavingTimes,omitempty" json:"DaylightSavingTimes,omitempty"`
 
-	Timezones bool `xml:"tns:Timezones,omitempty" json:"Timezones,omitempty"`
+	Timezones bool `xml:"http://raido.aviolinx.com/api/ Timezones,omitempty" json:"Timezones,omitempty"`
 
-	SlotLevels bool `xml:"tns:SlotLevels,omitempty" json:"SlotLevels,omitempty"`
+	SlotLevels bool `xml:"http://raido.aviolinx.com/api/ SlotLevels,omitempty" json:"SlotLevels,omitempty"`
 
-	Facilities bool `xml:"tns:Facilities,omitempty" json:"Facilities,omitempty"`
+	Facilities bool `xml:"http://raido.aviolinx.com/api/ Facilities,omitempty" json:"Facilities,omitempty"`
 }
 
 type ArrayOfAirport struct {
-	XMLName xml.Name `xml:"tns:GetAirportsResult"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetAirportsResult"`
 
-	Airport []*Airport `xml:"tns:Airport,omitempty" json:"Airport,omitempty"`
+	Airport []*Airport `xml:"http://raido.aviolinx.com/api/ Airport,omitempty" json:"Airport,omitempty"`
 }
 
 type ArrayOfHotelBooking struct {
-	XMLName xml.Name `xml:"tns:GetHotelBookingsResult"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetHotelBookingsResult"`
 
-	HotelBooking []*HotelBooking `xml:"tns:HotelBooking,omitempty" json:"HotelBooking,omitempty"`
+	HotelBooking []*HotelBooking `xml:"http://raido.aviolinx.com/api/ HotelBooking,omitempty" json:"HotelBooking,omitempty"`
 }
 
 type HotelBooking struct {
-	Start xsd.DateTime `xml:"tns:Start,omitempty" json:"Start,omitempty"`
+	Start xsd.DateTime `xml:"http://raido.aviolinx.com/api/ Start,omitempty" json:"Start,omitempty"`
 
-	End xsd.DateTime `xml:"tns:End,omitempty" json:"End,omitempty"`
+	End xsd.DateTime `xml:"http://raido.aviolinx.com/api/ End,omitempty" json:"End,omitempty"`
 
-	HotelName string `xml:"tns:HotelName,omitempty" json:"HotelName,omitempty"`
+	HotelName string `xml:"http://raido.aviolinx.com/api/ HotelName,omitempty" json:"HotelName,omitempty"`
 
-	HotelUniqueId int32 `xml:"tns:HotelUniqueId,omitempty" json:"HotelUniqueId,omitempty"`
+	HotelUniqueId int32 `xml:"http://raido.aviolinx.com/api/ HotelUniqueId,omitempty" json:"HotelUniqueId,omitempty"`
 
-	EmpNo string `xml:"tns:EmpNo,omitempty" json:"EmpNo,omitempty"`
+	EmpNo string `xml:"http://raido.aviolinx.com/api/ EmpNo,omitempty" json:"EmpNo,omitempty"`
 
-	PickupsFrom *ArrayOfPickup `xml:"tns:PickupsFrom,omitempty" json:"PickupsFrom,omitempty"`
+	PickupsFrom *ArrayOfPickup `xml:"http://raido.aviolinx.com/api/ PickupsFrom,omitempty" json:"PickupsFrom,omitempty"`
 
-	PickupsTo *ArrayOfPickup `xml:"tns:PickupsTo,omitempty" json:"PickupsTo,omitempty"`
+	PickupsTo *ArrayOfPickup `xml:"http://raido.aviolinx.com/api/ PickupsTo,omitempty" json:"PickupsTo,omitempty"`
 
-	BookingDatas *ArrayOfBookingData `xml:"tns:BookingDatas,omitempty" json:"BookingDatas,omitempty"`
+	BookingDatas *ArrayOfBookingData `xml:"http://raido.aviolinx.com/api/ BookingDatas,omitempty" json:"BookingDatas,omitempty"`
 }
 
 type ArrayOfPickup struct {
-	Pickup []*Pickup `xml:"tns:Pickup,omitempty" json:"Pickup,omitempty"`
+	Pickup []*Pickup `xml:"http://raido.aviolinx.com/api/ Pickup,omitempty" json:"Pickup,omitempty"`
 }
 
 type Pickup struct {
-	Start *xsd.DateTime `xml:"tns:Start,omitempty" json:"Start,omitempty"`
+	Start *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ Start,omitempty" json:"Start,omitempty"`
 
-	LengthInMinutes int32 `xml:"tns:LengthInMinutes,omitempty" json:"LengthInMinutes,omitempty"`
+	LengthInMinutes int32 `xml:"http://raido.aviolinx.com/api/ LengthInMinutes,omitempty" json:"LengthInMinutes,omitempty"`
 
-	Type *PickupType `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type *PickupType `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	Company *Company `xml:"tns:Company,omitempty" json:"Company,omitempty"`
+	Company *Company `xml:"http://raido.aviolinx.com/api/ Company,omitempty" json:"Company,omitempty"`
 }
 
 type Company struct {
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 }
 
 type ArrayOfBookingData struct {
-	XMLName xml.Name `xml:"tns:BookingDatas"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ BookingDatas"`
 
-	BookingData []*BookingData `xml:"tns:BookingData,omitempty" json:"BookingData,omitempty"`
+	BookingData []*BookingData `xml:"http://raido.aviolinx.com/api/ BookingData,omitempty" json:"BookingData,omitempty"`
 }
 
 type BookingData struct {
-	Start xsd.DateTime `xml:"tns:Start,omitempty" json:"Start,omitempty"`
+	Start xsd.DateTime `xml:"http://raido.aviolinx.com/api/ Start,omitempty" json:"Start,omitempty"`
 
-	End xsd.DateTime `xml:"tns:End,omitempty" json:"End,omitempty"`
+	End xsd.DateTime `xml:"http://raido.aviolinx.com/api/ End,omitempty" json:"End,omitempty"`
 
-	Station string `xml:"tns:Station,omitempty" json:"Station,omitempty"`
+	Station string `xml:"http://raido.aviolinx.com/api/ Station,omitempty" json:"Station,omitempty"`
 
-	BookingStatus string `xml:"tns:BookingStatus,omitempty" json:"BookingStatus,omitempty"`
+	BookingStatus string `xml:"http://raido.aviolinx.com/api/ BookingStatus,omitempty" json:"BookingStatus,omitempty"`
 
-	ReservationNumber string `xml:"tns:ReservationNumber,omitempty" json:"ReservationNumber,omitempty"`
+	ReservationNumber string `xml:"http://raido.aviolinx.com/api/ ReservationNumber,omitempty" json:"ReservationNumber,omitempty"`
 
-	ReservationComment string `xml:"tns:ReservationComment,omitempty" json:"ReservationComment,omitempty"`
+	ReservationComment string `xml:"http://raido.aviolinx.com/api/ ReservationComment,omitempty" json:"ReservationComment,omitempty"`
 }
 
 type ConfigurationRequestData struct {
-	Type *ConfigurationType `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type *ConfigurationType `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 }
 
 type ConfigurationDataFilter struct {
-	ProjectFilter *ProjectFilter `xml:"tns:ProjectFilter,omitempty" json:"ProjectFilter,omitempty"`
+	ProjectFilter *ProjectFilter `xml:"http://raido.aviolinx.com/api/ ProjectFilter,omitempty" json:"ProjectFilter,omitempty"`
 
-	TransactionCodeFilter *TransactionCodeFilter `xml:"tns:TransactionCodeFilter,omitempty" json:"TransactionCodeFilter,omitempty"`
+	TransactionCodeFilter *TransactionCodeFilter `xml:"http://raido.aviolinx.com/api/ TransactionCodeFilter,omitempty" json:"TransactionCodeFilter,omitempty"`
 
-	ReasonFilter *ReasonRequestFilter `xml:"tns:ReasonFilter,omitempty" json:"ReasonFilter,omitempty"`
+	ReasonFilter *ReasonRequestFilter `xml:"http://raido.aviolinx.com/api/ ReasonFilter,omitempty" json:"ReasonFilter,omitempty"`
 
-	ReasonCategoryFilter *ReasonCategoryRequestFilter `xml:"tns:ReasonCategoryFilter,omitempty" json:"ReasonCategoryFilter,omitempty"`
+	ReasonCategoryFilter *ReasonCategoryRequestFilter `xml:"http://raido.aviolinx.com/api/ ReasonCategoryFilter,omitempty" json:"ReasonCategoryFilter,omitempty"`
 
-	HotelInfoFilter *HotelInfoRequestFilter `xml:"tns:HotelInfoFilter,omitempty" json:"HotelInfoFilter,omitempty"`
+	HotelInfoFilter *HotelInfoRequestFilter `xml:"http://raido.aviolinx.com/api/ HotelInfoFilter,omitempty" json:"HotelInfoFilter,omitempty"`
 
-	CrewComplementFilter *CrewComplementFilter `xml:"tns:CrewComplementFilter,omitempty" json:"CrewComplementFilter,omitempty"`
+	CrewComplementFilter *CrewComplementFilter `xml:"http://raido.aviolinx.com/api/ CrewComplementFilter,omitempty" json:"CrewComplementFilter,omitempty"`
 
-	ReferenceActivityFilter *ReferenceActivityRequestFilter `xml:"tns:ReferenceActivityFilter,omitempty" json:"ReferenceActivityFilter,omitempty"`
+	ReferenceActivityFilter *ReferenceActivityRequestFilter `xml:"http://raido.aviolinx.com/api/ ReferenceActivityFilter,omitempty" json:"ReferenceActivityFilter,omitempty"`
 
-	AircraftTypeFilter *AircraftTypeFilter `xml:"tns:AircraftTypeFilter,omitempty" json:"AircraftTypeFilter,omitempty"`
+	AircraftTypeFilter *AircraftTypeFilter `xml:"http://raido.aviolinx.com/api/ AircraftTypeFilter,omitempty" json:"AircraftTypeFilter,omitempty"`
 }
 
 type ProjectFilter struct {
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	ShortCode string `xml:"tns:ShortCode,omitempty" json:"ShortCode,omitempty"`
+	ShortCode string `xml:"http://raido.aviolinx.com/api/ ShortCode,omitempty" json:"ShortCode,omitempty"`
 
-	ProjectNumber string `xml:"tns:ProjectNumber,omitempty" json:"ProjectNumber,omitempty"`
+	ProjectNumber string `xml:"http://raido.aviolinx.com/api/ ProjectNumber,omitempty" json:"ProjectNumber,omitempty"`
 
-	COCEID string `xml:"tns:COCEID,omitempty" json:"COCEID,omitempty"`
+	COCEID string `xml:"http://raido.aviolinx.com/api/ COCEID,omitempty" json:"COCEID,omitempty"`
 
-	Company string `xml:"tns:Company,omitempty" json:"Company,omitempty"`
+	Company string `xml:"http://raido.aviolinx.com/api/ Company,omitempty" json:"Company,omitempty"`
 }
 
 type TransactionCodeFilter struct {
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	ShortCode string `xml:"tns:ShortCode,omitempty" json:"ShortCode,omitempty"`
+	ShortCode string `xml:"http://raido.aviolinx.com/api/ ShortCode,omitempty" json:"ShortCode,omitempty"`
 }
 
 type ReasonRequestFilter struct {
-	XMLName xml.Name `xml:"tns:ReasonFilter"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ ReasonFilter"`
 
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 }
 
 type ReasonCategoryRequestFilter struct {
-	XMLName xml.Name `xml:"tns:ReasonCategoryFilter"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ ReasonCategoryFilter"`
 
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 }
 
 type HotelInfoRequestFilter struct {
-	XMLName xml.Name `xml:"tns:HotelInfoFilter"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ HotelInfoFilter"`
 
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 }
 
 type CrewComplementFilter struct {
-	ShortCode string `xml:"tns:ShortCode,omitempty" json:"ShortCode,omitempty"`
+	ShortCode string `xml:"http://raido.aviolinx.com/api/ ShortCode,omitempty" json:"ShortCode,omitempty"`
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 }
 
 type ReferenceActivityRequestFilter struct {
-	XMLName xml.Name `xml:"tns:ReferenceActivityFilter"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ ReferenceActivityFilter"`
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	ShortCode string `xml:"tns:ShortCode,omitempty" json:"ShortCode,omitempty"`
+	ShortCode string `xml:"http://raido.aviolinx.com/api/ ShortCode,omitempty" json:"ShortCode,omitempty"`
 }
 
 type AircraftTypeFilter struct {
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	IATA string `xml:"tns:IATA,omitempty" json:"IATA,omitempty"`
+	IATA string `xml:"http://raido.aviolinx.com/api/ IATA,omitempty" json:"IATA,omitempty"`
 
-	ICAO string `xml:"tns:ICAO,omitempty" json:"ICAO,omitempty"`
+	ICAO string `xml:"http://raido.aviolinx.com/api/ ICAO,omitempty" json:"ICAO,omitempty"`
 }
 
 type ConfigurationData struct {
-	XMLName xml.Name `xml:"tns:GetConfigurationDataResult"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetConfigurationDataResult"`
 
-	Projects *ArrayOfProject `xml:"tns:Projects,omitempty" json:"Projects,omitempty"`
+	Projects *ArrayOfProject `xml:"http://raido.aviolinx.com/api/ Projects,omitempty" json:"Projects,omitempty"`
 
-	TransactionCodes *ArrayOfTransactionCode `xml:"tns:TransactionCodes,omitempty" json:"TransactionCodes,omitempty"`
+	TransactionCodes *ArrayOfTransactionCode `xml:"http://raido.aviolinx.com/api/ TransactionCodes,omitempty" json:"TransactionCodes,omitempty"`
 
-	Reasons *ArrayOfReason `xml:"tns:Reasons,omitempty" json:"Reasons,omitempty"`
+	Reasons *ArrayOfReason `xml:"http://raido.aviolinx.com/api/ Reasons,omitempty" json:"Reasons,omitempty"`
 
-	ReasonCategories *ArrayOfReasonCategory `xml:"tns:ReasonCategories,omitempty" json:"ReasonCategories,omitempty"`
+	ReasonCategories *ArrayOfReasonCategory `xml:"http://raido.aviolinx.com/api/ ReasonCategories,omitempty" json:"ReasonCategories,omitempty"`
 
-	HotelInfos *ArrayOfHotelInfo `xml:"tns:HotelInfos,omitempty" json:"HotelInfos,omitempty"`
+	HotelInfos *ArrayOfHotelInfo `xml:"http://raido.aviolinx.com/api/ HotelInfos,omitempty" json:"HotelInfos,omitempty"`
 
-	CrewComplements *ArrayOfCrewComplement `xml:"tns:CrewComplements,omitempty" json:"CrewComplements,omitempty"`
+	CrewComplements *ArrayOfCrewComplement `xml:"http://raido.aviolinx.com/api/ CrewComplements,omitempty" json:"CrewComplements,omitempty"`
 
-	ReferenceActivities *ArrayOfReferenceActivity `xml:"tns:ReferenceActivities,omitempty" json:"ReferenceActivities,omitempty"`
+	ReferenceActivities *ArrayOfReferenceActivity `xml:"http://raido.aviolinx.com/api/ ReferenceActivities,omitempty" json:"ReferenceActivities,omitempty"`
 
-	AircraftTypes *ArrayOfAircraftType `xml:"tns:AircraftTypes,omitempty" json:"AircraftTypes,omitempty"`
+	AircraftTypes *ArrayOfAircraftType `xml:"http://raido.aviolinx.com/api/ AircraftTypes,omitempty" json:"AircraftTypes,omitempty"`
 }
 
 type ArrayOfProject struct {
-	XMLName xml.Name `xml:"tns:Projects"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Projects"`
 
-	Project []*Project `xml:"tns:Project,omitempty" json:"Project,omitempty"`
+	Project []*Project `xml:"http://raido.aviolinx.com/api/ Project,omitempty" json:"Project,omitempty"`
 }
 
 type Project struct {
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	Company string `xml:"tns:Company,omitempty" json:"Company,omitempty"`
+	Company string `xml:"http://raido.aviolinx.com/api/ Company,omitempty" json:"Company,omitempty"`
 
-	ShortCode string `xml:"tns:ShortCode,omitempty" json:"ShortCode,omitempty"`
+	ShortCode string `xml:"http://raido.aviolinx.com/api/ ShortCode,omitempty" json:"ShortCode,omitempty"`
 
-	ProjectNumber string `xml:"tns:ProjectNumber,omitempty" json:"ProjectNumber,omitempty"`
+	ProjectNumber string `xml:"http://raido.aviolinx.com/api/ ProjectNumber,omitempty" json:"ProjectNumber,omitempty"`
 
-	CostCenters string `xml:"tns:CostCenters,omitempty" json:"CostCenters,omitempty"`
+	CostCenters string `xml:"http://raido.aviolinx.com/api/ CostCenters,omitempty" json:"CostCenters,omitempty"`
 }
 
 type ArrayOfTransactionCode struct {
-	XMLName xml.Name `xml:"tns:TransactionCodes"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ TransactionCodes"`
 
-	TransactionCode []*TransactionCode `xml:"tns:TransactionCode,omitempty" json:"TransactionCode,omitempty"`
+	TransactionCode []*TransactionCode `xml:"http://raido.aviolinx.com/api/ TransactionCode,omitempty" json:"TransactionCode,omitempty"`
 }
 
 type TransactionCode struct {
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	ShortCode string `xml:"tns:ShortCode,omitempty" json:"ShortCode,omitempty"`
+	ShortCode string `xml:"http://raido.aviolinx.com/api/ ShortCode,omitempty" json:"ShortCode,omitempty"`
 }
 
 type ArrayOfReason struct {
-	XMLName xml.Name `xml:"tns:Reasons"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Reasons"`
 
-	Reason []*Reason `xml:"tns:Reason,omitempty" json:"Reason,omitempty"`
+	Reason []*Reason `xml:"http://raido.aviolinx.com/api/ Reason,omitempty" json:"Reason,omitempty"`
 }
 
 type Reason struct {
-	Code1 string `xml:"tns:Code1,omitempty" json:"Code1,omitempty"`
+	Code1 string `xml:"http://raido.aviolinx.com/api/ Code1,omitempty" json:"Code1,omitempty"`
 
-	Code2 string `xml:"tns:Code2,omitempty" json:"Code2,omitempty"`
+	Code2 string `xml:"http://raido.aviolinx.com/api/ Code2,omitempty" json:"Code2,omitempty"`
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	Group string `xml:"tns:Group,omitempty" json:"Group,omitempty"`
+	Group string `xml:"http://raido.aviolinx.com/api/ Group,omitempty" json:"Group,omitempty"`
 
-	Category string `xml:"tns:Category,omitempty" json:"Category,omitempty"`
+	Category string `xml:"http://raido.aviolinx.com/api/ Category,omitempty" json:"Category,omitempty"`
 }
 
 type ArrayOfReasonCategory struct {
-	XMLName xml.Name `xml:"tns:ReasonCategories"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ ReasonCategories"`
 
-	ReasonCategory []*ReasonCategory `xml:"tns:ReasonCategory,omitempty" json:"ReasonCategory,omitempty"`
+	ReasonCategory []*ReasonCategory `xml:"http://raido.aviolinx.com/api/ ReasonCategory,omitempty" json:"ReasonCategory,omitempty"`
 }
 
 type ReasonCategory struct {
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 }
 
 type ArrayOfHotelInfo struct {
-	XMLName xml.Name `xml:"tns:HotelInfos"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ HotelInfos"`
 
-	HotelInfo []*HotelInfo `xml:"tns:HotelInfo,omitempty" json:"HotelInfo,omitempty"`
+	HotelInfo []*HotelInfo `xml:"http://raido.aviolinx.com/api/ HotelInfo,omitempty" json:"HotelInfo,omitempty"`
 }
 
 type HotelInfo struct {
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	UniqueId int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	Stations *ArrayOfString2 `xml:"tns:Stations,omitempty" json:"Stations,omitempty"`
+	Stations *ArrayOfString2 `xml:"http://raido.aviolinx.com/api/ Stations,omitempty" json:"Stations,omitempty"`
 
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 
-	Company *Company `xml:"tns:Company,omitempty" json:"Company,omitempty"`
+	Company *Company `xml:"http://raido.aviolinx.com/api/ Company,omitempty" json:"Company,omitempty"`
 
-	Street string `xml:"tns:Street,omitempty" json:"Street,omitempty"`
+	Street string `xml:"http://raido.aviolinx.com/api/ Street,omitempty" json:"Street,omitempty"`
 
-	Zip string `xml:"tns:Zip,omitempty" json:"Zip,omitempty"`
+	Zip string `xml:"http://raido.aviolinx.com/api/ Zip,omitempty" json:"Zip,omitempty"`
 
-	City string `xml:"tns:City,omitempty" json:"City,omitempty"`
+	City string `xml:"http://raido.aviolinx.com/api/ City,omitempty" json:"City,omitempty"`
 
-	Country string `xml:"tns:Country,omitempty" json:"Country,omitempty"`
+	Country string `xml:"http://raido.aviolinx.com/api/ Country,omitempty" json:"Country,omitempty"`
 
-	Priority int32 `xml:"tns:Priority,omitempty" json:"Priority,omitempty"`
+	Priority int32 `xml:"http://raido.aviolinx.com/api/ Priority,omitempty" json:"Priority,omitempty"`
 
-	PickupToHotel *Pickup `xml:"tns:PickupToHotel,omitempty" json:"PickupToHotel,omitempty"`
+	PickupToHotel *Pickup `xml:"http://raido.aviolinx.com/api/ PickupToHotel,omitempty" json:"PickupToHotel,omitempty"`
 
-	PickupFromHotel *Pickup `xml:"tns:PickupFromHotel,omitempty" json:"PickupFromHotel,omitempty"`
+	PickupFromHotel *Pickup `xml:"http://raido.aviolinx.com/api/ PickupFromHotel,omitempty" json:"PickupFromHotel,omitempty"`
 
-	EarliestCheckIn string `xml:"tns:EarliestCheckIn,omitempty" json:"EarliestCheckIn,omitempty"`
+	EarliestCheckIn string `xml:"http://raido.aviolinx.com/api/ EarliestCheckIn,omitempty" json:"EarliestCheckIn,omitempty"`
 
-	LatestCheckOut string `xml:"tns:LatestCheckOut,omitempty" json:"LatestCheckOut,omitempty"`
+	LatestCheckOut string `xml:"http://raido.aviolinx.com/api/ LatestCheckOut,omitempty" json:"LatestCheckOut,omitempty"`
 
 	Active bool `xml:"Active,attr,omitempty" json:"Active,omitempty"`
 }
 
 type ArrayOfString2 struct {
-	XMLName xml.Name `xml:"tns:Stations"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Stations"`
 
-	String_ []*string `xml:"tns:string,omitempty" json:"string,omitempty"`
+	String_ []*string `xml:"http://raido.aviolinx.com/api/ string,omitempty" json:"string,omitempty"`
 }
 
 type ArrayOfCrewComplement struct {
-	XMLName xml.Name `xml:"tns:CrewComplements"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ CrewComplements"`
 
-	CrewComplement []*CrewComplement `xml:"tns:CrewComplement,omitempty" json:"CrewComplement,omitempty"`
+	CrewComplement []*CrewComplement `xml:"http://raido.aviolinx.com/api/ CrewComplement,omitempty" json:"CrewComplement,omitempty"`
 }
 
 type CrewComplement struct {
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	ShortCode string `xml:"tns:ShortCode,omitempty" json:"ShortCode,omitempty"`
+	ShortCode string `xml:"http://raido.aviolinx.com/api/ ShortCode,omitempty" json:"ShortCode,omitempty"`
 
-	Comment string `xml:"tns:Comment,omitempty" json:"Comment,omitempty"`
+	Comment string `xml:"http://raido.aviolinx.com/api/ Comment,omitempty" json:"Comment,omitempty"`
 
-	Training bool `xml:"tns:Training,omitempty" json:"Training,omitempty"`
+	Training bool `xml:"http://raido.aviolinx.com/api/ Training,omitempty" json:"Training,omitempty"`
 
-	Flight bool `xml:"tns:Flight,omitempty" json:"Flight,omitempty"`
+	Flight bool `xml:"http://raido.aviolinx.com/api/ Flight,omitempty" json:"Flight,omitempty"`
 
-	Details *ArrayOfCrewComplementDetail `xml:"tns:Details,omitempty" json:"Details,omitempty"`
+	Details *ArrayOfCrewComplementDetail `xml:"http://raido.aviolinx.com/api/ Details,omitempty" json:"Details,omitempty"`
 }
 
 type ArrayOfCrewComplementDetail struct {
-	XMLName xml.Name `xml:"tns:Details"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Details"`
 
-	CrewComplementDetail []*CrewComplementDetail `xml:"tns:CrewComplementDetail,omitempty" json:"CrewComplementDetail,omitempty"`
+	CrewComplementDetail []*CrewComplementDetail `xml:"http://raido.aviolinx.com/api/ CrewComplementDetail,omitempty" json:"CrewComplementDetail,omitempty"`
 }
 
 type CrewComplementDetail struct {
-	Filter string `xml:"tns:Filter,omitempty" json:"Filter,omitempty"`
+	Filter string `xml:"http://raido.aviolinx.com/api/ Filter,omitempty" json:"Filter,omitempty"`
 
-	Minimum int32 `xml:"tns:Minimum,omitempty" json:"Minimum,omitempty"`
+	Minimum int32 `xml:"http://raido.aviolinx.com/api/ Minimum,omitempty" json:"Minimum,omitempty"`
 
-	Maximum int32 `xml:"tns:Maximum,omitempty" json:"Maximum,omitempty"`
+	Maximum int32 `xml:"http://raido.aviolinx.com/api/ Maximum,omitempty" json:"Maximum,omitempty"`
 
-	Supplementary int32 `xml:"tns:Supplementary,omitempty" json:"Supplementary,omitempty"`
+	Supplementary int32 `xml:"http://raido.aviolinx.com/api/ Supplementary,omitempty" json:"Supplementary,omitempty"`
 
-	Order int32 `xml:"tns:Order,omitempty" json:"Order,omitempty"`
+	Order int32 `xml:"http://raido.aviolinx.com/api/ Order,omitempty" json:"Order,omitempty"`
 }
 
 type ArrayOfReferenceActivity struct {
-	XMLName xml.Name `xml:"tns:ReferenceActivities"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ ReferenceActivities"`
 
-	ReferenceActivity []*ReferenceActivity `xml:"tns:ReferenceActivity,omitempty" json:"ReferenceActivity,omitempty"`
+	ReferenceActivity []*ReferenceActivity `xml:"http://raido.aviolinx.com/api/ ReferenceActivity,omitempty" json:"ReferenceActivity,omitempty"`
 }
 
 type ReferenceActivity struct {
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	ShortCode string `xml:"tns:ShortCode,omitempty" json:"ShortCode,omitempty"`
+	ShortCode string `xml:"http://raido.aviolinx.com/api/ ShortCode,omitempty" json:"ShortCode,omitempty"`
 
-	ShortCode2 string `xml:"tns:ShortCode2,omitempty" json:"ShortCode2,omitempty"`
+	ShortCode2 string `xml:"http://raido.aviolinx.com/api/ ShortCode2,omitempty" json:"ShortCode2,omitempty"`
 
-	WholeDay bool `xml:"tns:WholeDay,omitempty" json:"WholeDay,omitempty"`
+	WholeDay bool `xml:"http://raido.aviolinx.com/api/ WholeDay,omitempty" json:"WholeDay,omitempty"`
 
-	Active bool `xml:"tns:Active,omitempty" json:"Active,omitempty"`
+	Active bool `xml:"http://raido.aviolinx.com/api/ Active,omitempty" json:"Active,omitempty"`
 
-	Comment string `xml:"tns:Comment,omitempty" json:"Comment,omitempty"`
+	Comment string `xml:"http://raido.aviolinx.com/api/ Comment,omitempty" json:"Comment,omitempty"`
 
-	DataType string `xml:"tns:DataType,omitempty" json:"DataType,omitempty"`
+	DataType string `xml:"http://raido.aviolinx.com/api/ DataType,omitempty" json:"DataType,omitempty"`
 
-	Filter string `xml:"tns:Filter,omitempty" json:"Filter,omitempty"`
+	Filter string `xml:"http://raido.aviolinx.com/api/ Filter,omitempty" json:"Filter,omitempty"`
 
-	Type string `xml:"tns:Type,omitempty" json:"Type,omitempty"`
+	Type string `xml:"http://raido.aviolinx.com/api/ Type,omitempty" json:"Type,omitempty"`
 
-	DutyType string `xml:"tns:DutyType,omitempty" json:"DutyType,omitempty"`
+	DutyType string `xml:"http://raido.aviolinx.com/api/ DutyType,omitempty" json:"DutyType,omitempty"`
 
-	TimeMode string `xml:"tns:TimeMode,omitempty" json:"TimeMode,omitempty"`
+	TimeMode string `xml:"http://raido.aviolinx.com/api/ TimeMode,omitempty" json:"TimeMode,omitempty"`
 
-	ReferenceGroup string `xml:"tns:ReferenceGroup,omitempty" json:"ReferenceGroup,omitempty"`
+	ReferenceGroup string `xml:"http://raido.aviolinx.com/api/ ReferenceGroup,omitempty" json:"ReferenceGroup,omitempty"`
 
-	DefaultStartTime *int32 `xml:"tns:DefaultStartTime,omitempty" json:"DefaultStartTime,omitempty"`
+	DefaultStartTime *int32 `xml:"http://raido.aviolinx.com/api/ DefaultStartTime,omitempty" json:"DefaultStartTime,omitempty"`
 
-	DefaultEndTime *int32 `xml:"tns:DefaultEndTime,omitempty" json:"DefaultEndTime,omitempty"`
+	DefaultEndTime *int32 `xml:"http://raido.aviolinx.com/api/ DefaultEndTime,omitempty" json:"DefaultEndTime,omitempty"`
 
-	DefaultLength *int32 `xml:"tns:DefaultLength,omitempty" json:"DefaultLength,omitempty"`
+	DefaultLength *int32 `xml:"http://raido.aviolinx.com/api/ DefaultLength,omitempty" json:"DefaultLength,omitempty"`
 }
 
 type ArrayOfAircraftType struct {
-	XMLName xml.Name `xml:"tns:AircraftTypes"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ AircraftTypes"`
 
-	AircraftType []*AircraftType `xml:"tns:AircraftType,omitempty" json:"AircraftType,omitempty"`
+	AircraftType []*AircraftType `xml:"http://raido.aviolinx.com/api/ AircraftType,omitempty" json:"AircraftType,omitempty"`
 }
 
 type AircraftType struct {
-	UniqueId int32 `xml:"tns:UniqueId,omitempty" json:"UniqueId,omitempty"`
+	UniqueId int32 `xml:"http://raido.aviolinx.com/api/ UniqueId,omitempty" json:"UniqueId,omitempty"`
 
-	Name string `xml:"tns:Name,omitempty" json:"Name,omitempty"`
+	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
-	IATA string `xml:"tns:IATA,omitempty" json:"IATA,omitempty"`
+	IATA string `xml:"http://raido.aviolinx.com/api/ IATA,omitempty" json:"IATA,omitempty"`
 
-	ICAO string `xml:"tns:ICAO,omitempty" json:"ICAO,omitempty"`
+	ICAO string `xml:"http://raido.aviolinx.com/api/ ICAO,omitempty" json:"ICAO,omitempty"`
 
 	Active bool `xml:"Active,attr,omitempty" json:"Active,omitempty"`
 }
@@ -2511,118 +2511,118 @@ type AircraftType struct {
 type RosterTransactionRequestFilter struct {
 	*DateRangeBasicRequestFilter
 
-	TransactionFrom *xsd.DateTime `xml:"tns:TransactionFrom,omitempty" json:"TransactionFrom,omitempty"`
+	TransactionFrom *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ TransactionFrom,omitempty" json:"TransactionFrom,omitempty"`
 
-	TransactionTo *xsd.DateTime `xml:"tns:TransactionTo,omitempty" json:"TransactionTo,omitempty"`
+	TransactionTo *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ TransactionTo,omitempty" json:"TransactionTo,omitempty"`
 
-	OnlyActive bool `xml:"tns:OnlyActive,omitempty" json:"OnlyActive,omitempty"`
+	OnlyActive bool `xml:"http://raido.aviolinx.com/api/ OnlyActive,omitempty" json:"OnlyActive,omitempty"`
 
-	OnlyWithTransactions bool `xml:"tns:OnlyWithTransactions,omitempty" json:"OnlyWithTransactions,omitempty"`
+	OnlyWithTransactions bool `xml:"http://raido.aviolinx.com/api/ OnlyWithTransactions,omitempty" json:"OnlyWithTransactions,omitempty"`
 }
 
 type RosterTransactionRequestData struct {
 }
 
 type VoyageReport struct {
-	ArrivalPilot string `xml:"tns:ArrivalPilot,omitempty" json:"ArrivalPilot,omitempty"`
+	ArrivalPilot string `xml:"http://raido.aviolinx.com/api/ ArrivalPilot,omitempty" json:"ArrivalPilot,omitempty"`
 
-	DeparturePilot string `xml:"tns:DeparturePilot,omitempty" json:"DeparturePilot,omitempty"`
+	DeparturePilot string `xml:"http://raido.aviolinx.com/api/ DeparturePilot,omitempty" json:"DeparturePilot,omitempty"`
 
-	Landings int32 `xml:"tns:Landings,omitempty" json:"Landings,omitempty"`
+	Landings int32 `xml:"http://raido.aviolinx.com/api/ Landings,omitempty" json:"Landings,omitempty"`
 
-	Delays *Delays `xml:"tns:Delays,omitempty" json:"Delays,omitempty"`
+	Delays *Delays `xml:"http://raido.aviolinx.com/api/ Delays,omitempty" json:"Delays,omitempty"`
 }
 
 type ArrayOfRosterDesignator struct {
-	XMLName xml.Name `xml:"tns:Designators"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Designators"`
 
-	RosterDesignator []*RosterDesignator `xml:"tns:RosterDesignator,omitempty" json:"RosterDesignator,omitempty"`
+	RosterDesignator []*RosterDesignator `xml:"http://raido.aviolinx.com/api/ RosterDesignator,omitempty" json:"RosterDesignator,omitempty"`
 }
 
 type RosterDesignator struct {
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 }
 
 type RosterTime struct {
-	CheckInTime string `xml:"tns:CheckInTime,omitempty" json:"CheckInTime,omitempty"`
+	CheckInTime string `xml:"http://raido.aviolinx.com/api/ CheckInTime,omitempty" json:"CheckInTime,omitempty"`
 
-	CheckOutTime string `xml:"tns:CheckOutTime,omitempty" json:"CheckOutTime,omitempty"`
+	CheckOutTime string `xml:"http://raido.aviolinx.com/api/ CheckOutTime,omitempty" json:"CheckOutTime,omitempty"`
 }
 
 type ArrayOfRosterLegalException struct {
-	XMLName xml.Name `xml:"tns:LegalExceptions"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ LegalExceptions"`
 
-	RosterLegalException []*RosterLegalException `xml:"tns:RosterLegalException,omitempty" json:"RosterLegalException,omitempty"`
+	RosterLegalException []*RosterLegalException `xml:"http://raido.aviolinx.com/api/ RosterLegalException,omitempty" json:"RosterLegalException,omitempty"`
 }
 
 type RosterLegalException struct {
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 }
 
 type SetRostersFilter struct {
-	From *xsd.DateTime `xml:"tns:From,omitempty" json:"From,omitempty"`
+	From *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ From,omitempty" json:"From,omitempty"`
 
-	To *xsd.DateTime `xml:"tns:To,omitempty" json:"To,omitempty"`
+	To *xsd.DateTime `xml:"http://raido.aviolinx.com/api/ To,omitempty" json:"To,omitempty"`
 
-	RemoveCarryInActivities bool `xml:"tns:RemoveCarryInActivities,omitempty" json:"RemoveCarryInActivities,omitempty"`
+	RemoveCarryInActivities bool `xml:"http://raido.aviolinx.com/api/ RemoveCarryInActivities,omitempty" json:"RemoveCarryInActivities,omitempty"`
 
-	RemoveCarryOutActivities bool `xml:"tns:RemoveCarryOutActivities,omitempty" json:"RemoveCarryOutActivities,omitempty"`
+	RemoveCarryOutActivities bool `xml:"http://raido.aviolinx.com/api/ RemoveCarryOutActivities,omitempty" json:"RemoveCarryOutActivities,omitempty"`
 }
 
 type ArrayOfQualRank struct {
-	XMLName xml.Name `xml:"tns:QualRankData"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ QualRankData"`
 
-	QualRank []*QualRank `xml:"tns:QualRank,omitempty" json:"QualRank,omitempty"`
+	QualRank []*QualRank `xml:"http://raido.aviolinx.com/api/ QualRank,omitempty" json:"QualRank,omitempty"`
 }
 
 type QualRank struct {
 	*Period
 
-	Uprank *bool `xml:"tns:Uprank,omitempty" json:"Uprank,omitempty"`
+	Uprank *bool `xml:"http://raido.aviolinx.com/api/ Uprank,omitempty" json:"Uprank,omitempty"`
 
-	Downrank *bool `xml:"tns:Downrank,omitempty" json:"Downrank,omitempty"`
+	Downrank *bool `xml:"http://raido.aviolinx.com/api/ Downrank,omitempty" json:"Downrank,omitempty"`
 
-	Rank string `xml:"tns:Rank,omitempty" json:"Rank,omitempty"`
+	Rank string `xml:"http://raido.aviolinx.com/api/ Rank,omitempty" json:"Rank,omitempty"`
 
-	Qual string `xml:"tns:Qual,omitempty" json:"Qual,omitempty"`
+	Qual string `xml:"http://raido.aviolinx.com/api/ Qual,omitempty" json:"Qual,omitempty"`
 
-	Comment string `xml:"tns:Comment,omitempty" json:"Comment,omitempty"`
+	Comment string `xml:"http://raido.aviolinx.com/api/ Comment,omitempty" json:"Comment,omitempty"`
 }
 
 type ContractsData struct {
-	EmploymentDate1 xsd.DateTime `xml:"tns:EmploymentDate1,omitempty" json:"EmploymentDate1,omitempty"`
+	EmploymentDate1 xsd.DateTime `xml:"http://raido.aviolinx.com/api/ EmploymentDate1,omitempty" json:"EmploymentDate1,omitempty"`
 
-	EmploymentDate2 xsd.DateTime `xml:"tns:EmploymentDate2,omitempty" json:"EmploymentDate2,omitempty"`
+	EmploymentDate2 xsd.DateTime `xml:"http://raido.aviolinx.com/api/ EmploymentDate2,omitempty" json:"EmploymentDate2,omitempty"`
 
-	EmploymentDate3 xsd.DateTime `xml:"tns:EmploymentDate3,omitempty" json:"EmploymentDate3,omitempty"`
+	EmploymentDate3 xsd.DateTime `xml:"http://raido.aviolinx.com/api/ EmploymentDate3,omitempty" json:"EmploymentDate3,omitempty"`
 
-	Contracts *ArrayOfContract `xml:"tns:Contracts,omitempty" json:"Contracts,omitempty"`
+	Contracts *ArrayOfContract `xml:"http://raido.aviolinx.com/api/ Contracts,omitempty" json:"Contracts,omitempty"`
 }
 
 type ArrayOfExternalCrew struct {
-	XMLName xml.Name `xml:"tns:ExternalCrews"`
+	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ ExternalCrews"`
 
-	ExternalCrew []*ExternalCrew `xml:"tns:ExternalCrew,omitempty" json:"ExternalCrew,omitempty"`
+	ExternalCrew []*ExternalCrew `xml:"http://raido.aviolinx.com/api/ ExternalCrew,omitempty" json:"ExternalCrew,omitempty"`
 }
 
 type ExternalCrew struct {
-	FlightLegDate xsd.DateTime `xml:"tns:FlightLegDate,omitempty" json:"FlightLegDate,omitempty"`
+	FlightLegDate xsd.DateTime `xml:"http://raido.aviolinx.com/api/ FlightLegDate,omitempty" json:"FlightLegDate,omitempty"`
 
-	FlightNumber string `xml:"tns:FlightNumber,omitempty" json:"FlightNumber,omitempty"`
+	FlightNumber string `xml:"http://raido.aviolinx.com/api/ FlightNumber,omitempty" json:"FlightNumber,omitempty"`
 
-	DepartureAirport string `xml:"tns:DepartureAirport,omitempty" json:"DepartureAirport,omitempty"`
+	DepartureAirport string `xml:"http://raido.aviolinx.com/api/ DepartureAirport,omitempty" json:"DepartureAirport,omitempty"`
 
-	ArrivalAirport string `xml:"tns:ArrivalAirport,omitempty" json:"ArrivalAirport,omitempty"`
+	ArrivalAirport string `xml:"http://raido.aviolinx.com/api/ ArrivalAirport,omitempty" json:"ArrivalAirport,omitempty"`
 
-	SortOrder int32 `xml:"tns:SortOrder,omitempty" json:"SortOrder,omitempty"`
+	SortOrder int32 `xml:"http://raido.aviolinx.com/api/ SortOrder,omitempty" json:"SortOrder,omitempty"`
 
-	AssignedRank string `xml:"tns:AssignedRank,omitempty" json:"AssignedRank,omitempty"`
+	AssignedRank string `xml:"http://raido.aviolinx.com/api/ AssignedRank,omitempty" json:"AssignedRank,omitempty"`
 
-	Code string `xml:"tns:Code,omitempty" json:"Code,omitempty"`
+	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 
-	FirstName string `xml:"tns:FirstName,omitempty" json:"FirstName,omitempty"`
+	FirstName string `xml:"http://raido.aviolinx.com/api/ FirstName,omitempty" json:"FirstName,omitempty"`
 
-	LastName string `xml:"tns:LastName,omitempty" json:"LastName,omitempty"`
+	LastName string `xml:"http://raido.aviolinx.com/api/ LastName,omitempty" json:"LastName,omitempty"`
 
-	Comment string `xml:"tns:Comment,omitempty" json:"Comment,omitempty"`
+	Comment string `xml:"http://raido.aviolinx.com/api/ Comment,omitempty" json:"Comment,omitempty"`
 }

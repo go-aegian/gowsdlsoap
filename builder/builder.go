@@ -349,13 +349,12 @@ func (b *Builder) parseTypes() ([]byte, error) {
 	funcMap := template.FuncMap{
 		"isBasicType":              isBasicType,
 		"toGoType":                 toGoType,
-		"stripNamespaceFromType":   stripNamespaceFromType,
+		"stripAliasNSFromType":     stripAliasNSFromType,
 		"replaceReservedWords":     replaceReservedWords,
 		"replaceAttrReservedWords": replaceAttrReservedWords,
 		"normalize":                normalize,
 		"makeFieldPublic":          makePublic,
 		"comment":                  comment,
-		"stripNamespace":           stripNamespace,
 		"goString":                 goString,
 		"isInnerBasicType":         b.isInnerBasicType,
 		"isAbstract":               b.isAbstract,
@@ -366,8 +365,10 @@ func (b *Builder) parseTypes() ([]byte, error) {
 		"setNamespace":             b.setNamespace,
 		"getNamespace":             b.getNamespace,
 		"packageName":              b.packageName,
-		"getTypeNS":                getTypeNS,
+		"getAliasNS":               getAliasNS,
+		"getNSFromType":            b.getNSFromType,
 		"getNSAlias":               b.getNSAlias,
+		"getNS":                    getNS,
 	}
 
 	data := new(bytes.Buffer)
@@ -384,17 +385,17 @@ func (b *Builder) parseTypes() ([]byte, error) {
 
 func (b *Builder) parseOperations() ([]byte, error) {
 	funcMap := template.FuncMap{
-		"toGoType":               toGoType,
-		"stripNamespaceFromType": stripNamespaceFromType,
-		"replaceReservedWords":   replaceReservedWords,
-		"normalize":              normalize,
-		"makePrivate":            makePrivate,
-		"packageName":            b.packageName,
-		"makePublic":             b.makePublicFn,
-		"findMessageType":        b.findMessageType,
-		"findSOAPAction":         b.findSOAPAction,
-		"findServiceAddress":     b.findServiceAddress,
-		"getXmlns":               b.getXmlns,
+		"toGoType":             toGoType,
+		"stripAliasNSFromType": stripAliasNSFromType,
+		"replaceReservedWords": replaceReservedWords,
+		"normalize":            normalize,
+		"makePrivate":          makePrivate,
+		"packageName":          b.packageName,
+		"makePublic":           b.makePublicFn,
+		"findMessageType":      b.findMessageType,
+		"findSOAPAction":       b.findSOAPAction,
+		"findServiceAddress":   b.findServiceAddress,
+		"getXmlns":             b.getXmlns,
 	}
 
 	data := new(bytes.Buffer)
@@ -411,13 +412,13 @@ func (b *Builder) parseOperations() ([]byte, error) {
 
 func (b *Builder) parseHeader() ([]byte, error) {
 	funcMap := template.FuncMap{
-		"toGoType":               toGoType,
-		"stripNamespaceFromType": stripNamespaceFromType,
-		"replaceReservedWords":   replaceReservedWords,
-		"normalize":              normalize,
-		"comment":                comment,
-		"makePublic":             b.makePublicFn,
-		"findMessageType":        b.findMessageType,
+		"toGoType":             toGoType,
+		"stripAliasNSFromType": stripAliasNSFromType,
+		"replaceReservedWords": replaceReservedWords,
+		"normalize":            normalize,
+		"comment":              comment,
+		"makePublic":           b.makePublicFn,
+		"findMessageType":      b.findMessageType,
 	}
 
 	data := new(bytes.Buffer)
@@ -437,7 +438,7 @@ func (b *Builder) packageName() string {
 }
 
 func (b *Builder) isAbstract(t string, checkParent bool) bool {
-	t = stripNamespaceFromType(t)
+	t = stripAliasNSFromType(t)
 	if isBasicType(t) {
 		return true
 	}
@@ -449,7 +450,7 @@ func (b *Builder) isAbstract(t string, checkParent bool) bool {
 					if complexType.Abstract {
 						return true
 					}
-					baseType := stripNamespaceFromType(complexType.ComplexContent.Extension.Base)
+					baseType := stripAliasNSFromType(complexType.ComplexContent.Extension.Base)
 
 					if baseType == "" {
 						return false
@@ -471,7 +472,7 @@ func (b *Builder) isAbstract(t string, checkParent bool) bool {
 }
 
 func (b *Builder) isInnerBasicType(t string) bool {
-	t = stripNamespaceFromType(t)
+	t = stripAliasNSFromType(t)
 	if isBasicType(t) {
 		return true
 	}
@@ -496,7 +497,7 @@ func (b *Builder) isInnerBasicType(t string) bool {
 }
 
 func (b *Builder) findMessageType(message string) string {
-	message = stripNamespaceFromType(message)
+	message = stripAliasNSFromType(message)
 
 	for _, msg := range b.wsdl.Messages {
 		if msg.Name != message {
@@ -513,16 +514,16 @@ func (b *Builder) findMessageType(message string) string {
 
 		part := msg.Parts[0]
 		if part.Type != "" {
-			return stripNamespaceFromType(part.Type)
+			return stripAliasNSFromType(part.Type)
 		}
 
-		elRef := stripNamespaceFromType(part.Element)
+		elRef := stripAliasNSFromType(part.Element)
 
 		for _, schema := range b.wsdl.Types.Schemas {
 			for _, el := range schema.Elements {
 				if strings.EqualFold(elRef, el.Name) {
 					if el.Type != "" {
-						return stripNamespaceFromType(el.Type)
+						return stripAliasNSFromType(el.Type)
 					}
 
 					return el.Name
@@ -546,12 +547,33 @@ func (b *Builder) getNSAlias(ns string) string {
 	return ""
 }
 
-func getTypeNS(typeName string) string {
+func (b *Builder) getNSFromType(ns string) string {
+	aliasNS := getAliasNS(ns)
+
+	for _, schema := range b.wsdl.Types.Schemas {
+		for alias, url := range schema.Xmlns {
+			if alias == aliasNS {
+				return url
+			}
+		}
+	}
+	return ""
+}
+
+func getAliasNS(typeName string) string {
 	r := strings.Split(typeName, ":")
 	if len(r) == 2 && r[0] != "xs" {
 		return r[0] + ":"
 	}
 	return ""
+}
+
+func getNS(ns string) string {
+	r := strings.Split(ns, ":")
+	if len(r) == 1 {
+		return r[0]
+	}
+	return r[1]
 }
 
 // Given a type, check if there's an Element with that type, and return its name.
@@ -561,7 +583,7 @@ func (b *Builder) findNameByType(name string, getNS bool) string {
 
 func (b *Builder) findSOAPAction(operation, portType string) string {
 	for _, binding := range b.wsdl.Binding {
-		if strings.ToUpper(stripNamespaceFromType(binding.Type)) != strings.ToUpper(portType) {
+		if strings.ToUpper(stripAliasNSFromType(binding.Type)) != strings.ToUpper(portType) {
 			continue
 		}
 
@@ -641,26 +663,8 @@ func goString(s string) string {
 	return strings.Replace(s, "\"", "\\\"", -1)
 }
 
-func stripNamespace(xsdType string) string {
-	// Handles name space, ie. xsd:string, xs:string
-	r := strings.Split(xsdType, ":")
-
-	if len(r) == 2 {
-		return r[1]
-	}
-
-	return r[0]
-}
-
 func toGoType(xsdType string, nillable bool) string {
-	// Handles name space, ie. xsd:string, xs:string
-	r := strings.Split(xsdType, ":")
-	t := r[0]
-
-	if len(r) == 2 {
-		t = r[1]
-	}
-
+	t := stripAliasNSFromType(xsdType)
 	value := xsd2GoTypes[strings.ToLower(t)]
 
 	if value != "" {
@@ -677,8 +681,8 @@ func stripPointerFromType(goType string) string {
 	return regexp.MustCompile("^\\s*\\*").ReplaceAllLiteralString(goType, "")
 }
 
-func stripNamespaceFromType(xsdType string) string {
-	r := strings.Split(xsdType, ":")
+func stripAliasNSFromType(fullType string) string {
+	r := strings.Split(fullType, ":")
 	t := r[0]
 
 	if len(r) == 2 {
@@ -717,7 +721,7 @@ func makePrivate(identifier string) string {
 }
 
 func isBasicType(identifier string) bool {
-	_, exists := basicTypes[stripNamespaceFromType(identifier)]
+	_, exists := basicTypes[stripAliasNSFromType(identifier)]
 	return exists
 }
 
