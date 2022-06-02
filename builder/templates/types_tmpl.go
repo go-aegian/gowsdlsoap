@@ -213,11 +213,12 @@ import (
 		{{else}}
 			type {{$typeName}} struct {
 				{{$type := findNameByType .Name false}}
+				{{$type = stripAliasNSFromType $type}}
 				{{$aliasNS := getAliasNS $type}}
 				{{$ns := printf "%s " $targetNamespace}}
 				{{$isAbstract := isAbstract $typeName false}}
-				{{$hasXMLName := and (ne (printf "%s%s" $aliasNS .Name) $type) (eq $isAbstract false)}}
-				{{$type = stripAliasNSFromType $type}}
+				{{$fullType:=printf "%sType" $type}}
+				{{$hasXMLName := and (eq .Name $fullType) (eq $isAbstract false)}}
 				{{if $hasXMLName}}
 					XMLName xml.Name ` + "`xml:\"{{$ns}}{{$type}}\"`" + `
 				{{end}}

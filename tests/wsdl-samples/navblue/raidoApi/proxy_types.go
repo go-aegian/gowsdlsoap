@@ -818,8 +818,6 @@ type ScheduleRequestData struct {
 }
 
 type ArrayOfSchedule struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetSchedulesResult"`
-
 	Schedule []*Schedule `xml:"http://raido.aviolinx.com/api/ Schedule,omitempty" json:"Schedule,omitempty"`
 }
 
@@ -926,8 +924,6 @@ type Airport struct {
 }
 
 type ArrayOfDaylightSavingTime struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ DaylightSavingTimes"`
-
 	DaylightSavingTime []*DaylightSavingTime `xml:"http://raido.aviolinx.com/api/ DaylightSavingTime,omitempty" json:"DaylightSavingTime,omitempty"`
 }
 
@@ -994,20 +990,14 @@ type TimeChange struct {
 }
 
 type ArrayOfTimezone struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Timezones"`
-
 	Timezone []*Timezone `xml:"http://raido.aviolinx.com/api/ Timezone,omitempty" json:"Timezone,omitempty"`
 }
 
 type ArrayOfSlotLevel struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ SlotLevels"`
-
 	SlotLevel []*SlotLevel `xml:"http://raido.aviolinx.com/api/ SlotLevel,omitempty" json:"SlotLevel,omitempty"`
 }
 
 type ArrayOfStationFacility struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ StationFacilities"`
-
 	StationFacility []*StationFacility `xml:"http://raido.aviolinx.com/api/ StationFacility,omitempty" json:"StationFacility,omitempty"`
 }
 
@@ -1018,8 +1008,6 @@ type StationFacility struct {
 }
 
 type ArrayOfStationFacilityAttribute struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Attributes"`
-
 	StationFacilityAttribute []*StationFacilityAttribute `xml:"http://raido.aviolinx.com/api/ StationFacilityAttribute,omitempty" json:"StationFacilityAttribute,omitempty"`
 }
 
@@ -1036,8 +1024,6 @@ type Note struct {
 }
 
 type ArrayOfDataElementIdentifier struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ DataElementIdentifiers"`
-
 	DataElementIdentifier []*DataElementIdentifier `xml:"http://raido.aviolinx.com/api/ DataElementIdentifier,omitempty" json:"DataElementIdentifier,omitempty"`
 }
 
@@ -1090,8 +1076,6 @@ type FlightRequestData struct {
 }
 
 type ArrayOfFlight struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetFlightsResult"`
-
 	Flight []*Flight `xml:"http://raido.aviolinx.com/api/ Flight,omitempty" json:"Flight,omitempty"`
 }
 
@@ -1398,8 +1382,6 @@ type Base struct {
 }
 
 type ArrayOfRank struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Ranks"`
-
 	Rank []*Rank `xml:"http://raido.aviolinx.com/api/ Rank,omitempty" json:"Rank,omitempty"`
 }
 
@@ -1408,8 +1390,6 @@ type Rank struct {
 }
 
 type ArrayOfQualification struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Qualifications"`
-
 	Qualification []*Qualification `xml:"http://raido.aviolinx.com/api/ Qualification,omitempty" json:"Qualification,omitempty"`
 }
 
@@ -1600,14 +1580,10 @@ type Pairing struct {
 }
 
 type ArrayOfPairingActivity struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ PairingActivities"`
-
 	PairingActivity []*PairingActivity `xml:"http://raido.aviolinx.com/api/ PairingActivity,omitempty" json:"PairingActivity,omitempty"`
 }
 
 type ArrayOfAssignedCrew struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ AssignedCrews"`
-
 	AssignedCrew []*AssignedCrew `xml:"http://raido.aviolinx.com/api/ AssignedCrew,omitempty" json:"AssignedCrew,omitempty"`
 }
 
@@ -1644,8 +1620,6 @@ type Revision struct {
 }
 
 type ArrayOfRosterTransaction struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ RosterTransactions"`
-
 	RosterTransaction []*RosterTransaction `xml:"http://raido.aviolinx.com/api/ RosterTransaction,omitempty" json:"RosterTransaction,omitempty"`
 }
 
@@ -1792,8 +1766,6 @@ type ProjectCode struct {
 }
 
 type ArrayOfJumpseater struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Jumpseaters"`
-
 	Jumpseater []*Jumpseater `xml:"http://raido.aviolinx.com/api/ Jumpseater,omitempty" json:"Jumpseater,omitempty"`
 }
 
@@ -1860,8 +1832,6 @@ type FuelData struct {
 }
 
 type ArrayOfString struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ DetailedStatuses"`
-
 	DetailedStatus []*string `xml:"http://raido.aviolinx.com/api/ DetailedStatus,omitempty" json:"DetailedStatus,omitempty"`
 }
 
@@ -1888,8 +1858,6 @@ type MaintenanceRequestData struct {
 }
 
 type ArrayOfMaintenance struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetMaintenancesResult"`
-
 	Maintenance []*Maintenance `xml:"http://raido.aviolinx.com/api/ Maintenance,omitempty" json:"Maintenance,omitempty"`
 }
 
@@ -1971,8 +1939,6 @@ type UserRequestData struct {
 }
 
 type ArrayOfUser struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetUsersResult"`
-
 	User []*User `xml:"http://raido.aviolinx.com/api/ User,omitempty" json:"User,omitempty"`
 }
 
@@ -2055,8 +2021,6 @@ type AircraftRequestData struct {
 }
 
 type ArrayOfAircraft struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetAircraftsResult"`
-
 	Aircraft []*Aircraft `xml:"http://raido.aviolinx.com/api/ Aircraft,omitempty" json:"Aircraft,omitempty"`
 }
 
@@ -2075,14 +2039,10 @@ type AccumulatedValuesRequestData struct {
 }
 
 type ArrayOfString1 struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Labels"`
-
 	Label []*string `xml:"http://raido.aviolinx.com/api/ Label,omitempty" json:"Label,omitempty"`
 }
 
 type ArrayOfAccumulatedValue struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetAccumulatedValuesResult"`
-
 	AccumulatedValue []*AccumulatedValue `xml:"http://raido.aviolinx.com/api/ AccumulatedValue,omitempty" json:"AccumulatedValue,omitempty"`
 }
 
@@ -2095,8 +2055,6 @@ type AccumulatedValue struct {
 }
 
 type ArrayOfAccumulatedValueLabel struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Labels"`
-
 	AccumulatedValueLabel []*AccumulatedValueLabel `xml:"http://raido.aviolinx.com/api/ AccumulatedValueLabel,omitempty" json:"AccumulatedValueLabel,omitempty"`
 }
 
@@ -2139,14 +2097,10 @@ type AirportRequestData struct {
 }
 
 type ArrayOfAirport struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetAirportsResult"`
-
 	Airport []*Airport `xml:"http://raido.aviolinx.com/api/ Airport,omitempty" json:"Airport,omitempty"`
 }
 
 type ArrayOfHotelBooking struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetHotelBookingsResult"`
-
 	HotelBooking []*HotelBooking `xml:"http://raido.aviolinx.com/api/ HotelBooking,omitempty" json:"HotelBooking,omitempty"`
 }
 
@@ -2189,8 +2143,6 @@ type Company struct {
 }
 
 type ArrayOfBookingData struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ BookingDatas"`
-
 	BookingData []*BookingData `xml:"http://raido.aviolinx.com/api/ BookingData,omitempty" json:"BookingData,omitempty"`
 }
 
@@ -2249,20 +2201,14 @@ type TransactionCodeFilter struct {
 }
 
 type ReasonRequestFilter struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ ReasonFilter"`
-
 	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 }
 
 type ReasonCategoryRequestFilter struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ ReasonCategoryFilter"`
-
 	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 }
 
 type HotelInfoRequestFilter struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ HotelInfoFilter"`
-
 	Code string `xml:"http://raido.aviolinx.com/api/ Code,omitempty" json:"Code,omitempty"`
 
 	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
@@ -2275,8 +2221,6 @@ type CrewComplementFilter struct {
 }
 
 type ReferenceActivityRequestFilter struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ ReferenceActivityFilter"`
-
 	Name string `xml:"http://raido.aviolinx.com/api/ Name,omitempty" json:"Name,omitempty"`
 
 	ShortCode string `xml:"http://raido.aviolinx.com/api/ ShortCode,omitempty" json:"ShortCode,omitempty"`
@@ -2291,8 +2235,6 @@ type AircraftTypeFilter struct {
 }
 
 type ConfigurationData struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ GetConfigurationDataResult"`
-
 	Projects *ArrayOfProject `xml:"http://raido.aviolinx.com/api/ Projects,omitempty" json:"Projects,omitempty"`
 
 	TransactionCodes *ArrayOfTransactionCode `xml:"http://raido.aviolinx.com/api/ TransactionCodes,omitempty" json:"TransactionCodes,omitempty"`
@@ -2311,8 +2253,6 @@ type ConfigurationData struct {
 }
 
 type ArrayOfProject struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Projects"`
-
 	Project []*Project `xml:"http://raido.aviolinx.com/api/ Project,omitempty" json:"Project,omitempty"`
 }
 
@@ -2329,8 +2269,6 @@ type Project struct {
 }
 
 type ArrayOfTransactionCode struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ TransactionCodes"`
-
 	TransactionCode []*TransactionCode `xml:"http://raido.aviolinx.com/api/ TransactionCode,omitempty" json:"TransactionCode,omitempty"`
 }
 
@@ -2341,8 +2279,6 @@ type TransactionCode struct {
 }
 
 type ArrayOfReason struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Reasons"`
-
 	Reason []*Reason `xml:"http://raido.aviolinx.com/api/ Reason,omitempty" json:"Reason,omitempty"`
 }
 
@@ -2359,8 +2295,6 @@ type Reason struct {
 }
 
 type ArrayOfReasonCategory struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ ReasonCategories"`
-
 	ReasonCategory []*ReasonCategory `xml:"http://raido.aviolinx.com/api/ ReasonCategory,omitempty" json:"ReasonCategory,omitempty"`
 }
 
@@ -2371,8 +2305,6 @@ type ReasonCategory struct {
 }
 
 type ArrayOfHotelInfo struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ HotelInfos"`
-
 	HotelInfo []*HotelInfo `xml:"http://raido.aviolinx.com/api/ HotelInfo,omitempty" json:"HotelInfo,omitempty"`
 }
 
@@ -2409,14 +2341,10 @@ type HotelInfo struct {
 }
 
 type ArrayOfString2 struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Stations"`
-
 	String_ []*string `xml:"http://raido.aviolinx.com/api/ string,omitempty" json:"string,omitempty"`
 }
 
 type ArrayOfCrewComplement struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ CrewComplements"`
-
 	CrewComplement []*CrewComplement `xml:"http://raido.aviolinx.com/api/ CrewComplement,omitempty" json:"CrewComplement,omitempty"`
 }
 
@@ -2435,8 +2363,6 @@ type CrewComplement struct {
 }
 
 type ArrayOfCrewComplementDetail struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Details"`
-
 	CrewComplementDetail []*CrewComplementDetail `xml:"http://raido.aviolinx.com/api/ CrewComplementDetail,omitempty" json:"CrewComplementDetail,omitempty"`
 }
 
@@ -2453,8 +2379,6 @@ type CrewComplementDetail struct {
 }
 
 type ArrayOfReferenceActivity struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ ReferenceActivities"`
-
 	ReferenceActivity []*ReferenceActivity `xml:"http://raido.aviolinx.com/api/ ReferenceActivity,omitempty" json:"ReferenceActivity,omitempty"`
 }
 
@@ -2491,8 +2415,6 @@ type ReferenceActivity struct {
 }
 
 type ArrayOfAircraftType struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ AircraftTypes"`
-
 	AircraftType []*AircraftType `xml:"http://raido.aviolinx.com/api/ AircraftType,omitempty" json:"AircraftType,omitempty"`
 }
 
@@ -2534,8 +2456,6 @@ type VoyageReport struct {
 }
 
 type ArrayOfRosterDesignator struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ Designators"`
-
 	RosterDesignator []*RosterDesignator `xml:"http://raido.aviolinx.com/api/ RosterDesignator,omitempty" json:"RosterDesignator,omitempty"`
 }
 
@@ -2550,8 +2470,6 @@ type RosterTime struct {
 }
 
 type ArrayOfRosterLegalException struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ LegalExceptions"`
-
 	RosterLegalException []*RosterLegalException `xml:"http://raido.aviolinx.com/api/ RosterLegalException,omitempty" json:"RosterLegalException,omitempty"`
 }
 
@@ -2570,8 +2488,6 @@ type SetRostersFilter struct {
 }
 
 type ArrayOfQualRank struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ QualRankData"`
-
 	QualRank []*QualRank `xml:"http://raido.aviolinx.com/api/ QualRank,omitempty" json:"QualRank,omitempty"`
 }
 
@@ -2600,8 +2516,6 @@ type ContractsData struct {
 }
 
 type ArrayOfExternalCrew struct {
-	XMLName xml.Name `xml:"http://raido.aviolinx.com/api/ ExternalCrews"`
-
 	ExternalCrew []*ExternalCrew `xml:"http://raido.aviolinx.com/api/ ExternalCrew,omitempty" json:"ExternalCrew,omitempty"`
 }
 
