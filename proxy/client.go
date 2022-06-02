@@ -98,11 +98,11 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 
 	soapRequest := soap.NewEnvelope(s.xmlns)
 
-	defer func() {
+	defer func(msg interface{}) {
 		if s.opts.LogRequests {
-			LogXml("Request", soapRequest)
+			LogXml("Request", msg)
 		}
-	}()
+	}(soapRequest)
 
 	if s.headers != nil && len(s.headers) > 0 {
 		soapRequest.Header = &soap.Header{Headers: s.headers}
@@ -207,11 +207,11 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 		},
 	}
 
-	defer func() {
+	defer func(msg interface{}) {
 		if s.opts.LogResponses {
-			LogXml("Response", soapResponse)
+			LogXml("Response", msg)
 		}
-	}()
+	}(soapResponse)
 
 	mtomBoundary, err := getMtomHeader(res.Header.Get(soap.ContentTypeHeader))
 	if err != nil {
