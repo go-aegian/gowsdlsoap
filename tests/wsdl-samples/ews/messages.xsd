@@ -2448,7 +2448,7 @@
         <xs:complexContent mixed="false">
             <xs:extension base="m:BaseRequestType">
                 <xs:sequence>
-                    <!-- Input Will Be A Single RoomList of Types EmailAddressType -->
+                    <!-- Input Will Be A Single RoomList of Type EmailAddressType -->
                     <xs:element name="RoomList" type="t:EmailAddressType" minOccurs="1" maxOccurs="1"/>
                 </xs:sequence>
             </xs:extension>
@@ -2460,7 +2460,7 @@
         <xs:complexContent>
             <xs:extension base="m:ResponseMessageType">
                 <xs:sequence>
-                    <!-- Output Should Be Rooms of Types ArrayOfRoomsType, Created In Types.xsd, Which Contains EmailAddress -->
+                    <!-- Output Should Be Rooms of Type ArrayOfRoomsType, Created In Types.xsd, Which Contains EmailAddress -->
                     <!-- Keep In Mind, Availability Service Requests For ArrayOfMailboxData -->
                     <xs:element name="Rooms" type="t:ArrayOfRoomsType" minOccurs="0"/>
                 </xs:sequence>
@@ -3772,7 +3772,7 @@
                     <xs:element name="SearchWindowStart" type="xs:dateTime"/>
                     <xs:element name="SearchWindowDuration" type="xs:duration"/>
                     <xs:element name="MeetingDurationInMinutes" type="xs:int" minOccurs="0"/>
-                    <xs:element name="location" type="xs:string" minOccurs="0"/>
+                    <xs:element name="Location" type="xs:string" minOccurs="0"/>
                     <xs:element name="MaxCandidates" type="xs:int" minOccurs="0"/>
                     <xs:element name="ActivityDomain" type="t:ActivityDomainType" minOccurs="0"/>
                 </xs:sequence>

@@ -7,6 +7,21 @@ import (
 	"github.com/go-aegian/gowsdlsoap/proxy"
 )
 
+var envelopeXmlns map[string]string = map[string]string{
+
+	"http": "http://schemas.xmlsoap.org/wsdl/http/",
+
+	"s": "http://www.w3.org/2001/XMLSchema",
+
+	"soap": "http://schemas.xmlsoap.org/wsdl/soap/",
+
+	"soap12": "http://schemas.xmlsoap.org/wsdl/soap12/",
+
+	"tns": "http://raido.aviolinx.com/api/",
+
+	"wsdl": "http://schemas.xmlsoap.org/wsdl/",
+}
+
 type RaidoAPISoap interface {
 	Ping(request *Ping) (*PingResponse, error)
 
@@ -138,6 +153,7 @@ type raidoAPISoap struct {
 }
 
 func NewRaidoAPISoap(client *proxy.Client) RaidoAPISoap {
+	client.SetXmlns(envelopeXmlns)
 	return &raidoAPISoap{client: client}
 }
 

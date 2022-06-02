@@ -154,7 +154,6 @@ type Builder struct {
 	xsdExternals          map[string]bool
 	currentRecursionLevel uint8
 	currentNamespace      string
-	hasXMLName            bool
 }
 
 func New(file, pkg string, ignoreTLS bool, exportAllTypes bool) (*Builder, error) {
@@ -183,24 +182,23 @@ func New(file, pkg string, ignoreTLS bool, exportAllTypes bool) (*Builder, error
 		pkg:          pkg,
 		skipTls:      ignoreTLS,
 		makePublicFn: makePublicFn,
-		hasXMLName:   false,
 	}, nil
 }
 
 // Build initiates the code generation process by starting two goroutines:
 //   generate types
 //   generate operations
-func (g *Builder) Build() (map[string][]byte, error) {
+func (b *Builder) Build() (map[string][]byte, error) {
 	code := make(map[string][]byte)
 
-	err := g.unmarshal()
+	err := b.unmarshal()
 	if err != nil {
 		return nil, err
 	}
 
 	// Process WSDL nodes
-	for _, schema := range g.wsdl.Types.Schemas {
-		NewXsdParser(schema, g.wsdl.Types.Schemas).parse()
+	for _, schema := range b.wsdl.Types.Schemas {
+		NewXsdParser(schema, b.wsdl.Types.Schemas).parse()
 	}
 
 	var wg sync.WaitGroup
@@ -210,7 +208,7 @@ func (g *Builder) Build() (map[string][]byte, error) {
 		defer wg.Done()
 		var err error
 
-		code["types"], err = g.parseTypes()
+		code["types"], err = b.parseTypes()
 		if err != nil {
 			log.Println("parseTypes", "error", err)
 		}
@@ -221,7 +219,7 @@ func (g *Builder) Build() (map[string][]byte, error) {
 		defer wg.Done()
 		var err error
 
-		code["operations"], err = g.parseOperations()
+		code["operations"], err = b.parseOperations()
 		if err != nil {
 			log.Println("parseOperations", "error", err)
 		}
@@ -229,7 +227,7 @@ func (g *Builder) Build() (map[string][]byte, error) {
 
 	wg.Wait()
 
-	code["header"], err = g.parseHeader()
+	code["header"], err = b.parseHeader()
 	if err != nil {
 		log.Println(err)
 	}
@@ -238,17 +236,17 @@ func (g *Builder) Build() (map[string][]byte, error) {
 }
 
 // Method setNamespace sets (and returns) the currently active XML namespace.
-func (g *Builder) setNamespace(ns string) string {
-	g.currentNamespace = ns
-	return g.currentNamespace
+func (b *Builder) setNamespace(ns string) string {
+	b.currentNamespace = ns
+	return b.currentNamespace
 }
 
 // Method setNamespace returns the currently active XML namespace.
-func (g *Builder) getNamespace() string {
-	return g.currentNamespace
+func (b *Builder) getNamespace() string {
+	return b.currentNamespace
 }
 
-func (g *Builder) readFile(loc *location) (data []byte, err error) {
+func (b *Builder) readFile(loc *location) (data []byte, err error) {
 	if loc.file != "" {
 		log.Println("Reading", "file", loc.file)
 		data, err = ioutil.ReadFile(loc.file)
@@ -256,24 +254,24 @@ func (g *Builder) readFile(loc *location) (data []byte, err error) {
 	}
 
 	log.Println("Downloading", "file", loc.url.String())
-	data, err = downloadFile(loc.url.String(), g.skipTls)
+	data, err = downloadFile(loc.url.String(), b.skipTls)
 	return
 }
 
-func (g *Builder) unmarshal() error {
-	data, err := g.readFile(g.location)
+func (b *Builder) unmarshal() error {
+	data, err := b.readFile(b.location)
 	if err != nil {
 		return err
 	}
 
-	g.wsdl = new(wsdl.WSDL)
-	err = xml.Unmarshal(data, g.wsdl)
+	b.wsdl = new(wsdl.WSDL)
+	err = xml.Unmarshal(data, b.wsdl)
 	if err != nil {
 		return err
 	}
 
-	for _, schema := range g.wsdl.Types.Schemas {
-		err = g.resolveExternal(schema, g.location)
+	for _, schema := range b.wsdl.Types.Schemas {
+		err = b.resolveExternal(schema, b.location)
 		if err != nil {
 			return err
 		}
@@ -282,7 +280,7 @@ func (g *Builder) unmarshal() error {
 	return nil
 }
 
-func (g *Builder) resolveExternal(schema *xsd.Schema, loc *location) error {
+func (b *Builder) resolveExternal(schema *xsd.Schema, loc *location) error {
 	download := func(base *location, ref string) error {
 		location, err := base.Parse(ref)
 		if err != nil {
@@ -290,18 +288,18 @@ func (g *Builder) resolveExternal(schema *xsd.Schema, loc *location) error {
 		}
 
 		schemaKey := location.String()
-		if g.xsdExternals[location.String()] {
+		if b.xsdExternals[location.String()] {
 			return nil
 		}
 
-		if g.xsdExternals == nil {
-			g.xsdExternals = make(map[string]bool, maxRecursion)
+		if b.xsdExternals == nil {
+			b.xsdExternals = make(map[string]bool, maxRecursion)
 		}
 
-		g.xsdExternals[schemaKey] = true
+		b.xsdExternals[schemaKey] = true
 
 		var data []byte
-		if data, err = g.readFile(location); err != nil {
+		if data, err = b.readFile(location); err != nil {
 			return err
 		}
 
@@ -312,17 +310,16 @@ func (g *Builder) resolveExternal(schema *xsd.Schema, loc *location) error {
 			return err
 		}
 
-		if (len(newSchema.Includes) > 0 || len(newSchema.Imports) > 0) &&
-			maxRecursion > g.currentRecursionLevel {
-			g.currentRecursionLevel++
+		if (len(newSchema.Includes) > 0 || len(newSchema.Imports) > 0) && maxRecursion > b.currentRecursionLevel {
+			b.currentRecursionLevel++
 
-			err = g.resolveExternal(newSchema, location)
+			err = b.resolveExternal(newSchema, location)
 			if err != nil {
 				return err
 			}
 		}
 
-		g.wsdl.Types.Schemas = append(g.wsdl.Types.Schemas, newSchema)
+		b.wsdl.Types.Schemas = append(b.wsdl.Types.Schemas, newSchema)
 
 		return nil
 	}
@@ -348,7 +345,7 @@ func (g *Builder) resolveExternal(schema *xsd.Schema, loc *location) error {
 	return nil
 }
 
-func (g *Builder) parseTypes() ([]byte, error) {
+func (b *Builder) parseTypes() ([]byte, error) {
 	funcMap := template.FuncMap{
 		"isBasicType":              isBasicType,
 		"toGoType":                 toGoType,
@@ -360,24 +357,24 @@ func (g *Builder) parseTypes() ([]byte, error) {
 		"comment":                  comment,
 		"stripNamespace":           stripNamespace,
 		"goString":                 goString,
-		"setHasXMLName":            g.setHasXMLName,
-		"getHasXMLName":            g.getHasXMLName,
-		"isInnerBasicType":         g.isInnerBasicType,
-		"isAbstract":               g.isAbstract,
-		"makePublic":               g.makePublicFn,
-		"findMessageType":          g.findMessageType,
-		"findNameByType":           g.findNameByType,
+		"isInnerBasicType":         b.isInnerBasicType,
+		"isAbstract":               b.isAbstract,
+		"makePublic":               b.makePublicFn,
+		"findMessageType":          b.findMessageType,
+		"findNameByType":           b.findNameByType,
 		"stripPointerFromType":     stripPointerFromType,
-		"setNamespace":             g.setNamespace,
-		"getNamespace":             g.getNamespace,
-		"packageName":              g.packageName,
+		"setNamespace":             b.setNamespace,
+		"getNamespace":             b.getNamespace,
+		"packageName":              b.packageName,
+		"getTypeNS":                getTypeNS,
+		"getNSAlias":               b.getNSAlias,
 	}
 
 	data := new(bytes.Buffer)
 
 	tmpl := template.Must(template.New("types").Funcs(funcMap).Parse(templates.Types))
 
-	err := tmpl.Execute(data, g.wsdl.Types)
+	err := tmpl.Execute(data, b.wsdl.Types)
 	if err != nil {
 		return nil, err
 	}
@@ -385,25 +382,26 @@ func (g *Builder) parseTypes() ([]byte, error) {
 	return data.Bytes(), nil
 }
 
-func (g *Builder) parseOperations() ([]byte, error) {
+func (b *Builder) parseOperations() ([]byte, error) {
 	funcMap := template.FuncMap{
 		"toGoType":               toGoType,
 		"stripNamespaceFromType": stripNamespaceFromType,
 		"replaceReservedWords":   replaceReservedWords,
 		"normalize":              normalize,
 		"makePrivate":            makePrivate,
-		"packageName":            g.packageName,
-		"makePublic":             g.makePublicFn,
-		"findMessageType":        g.findMessageType,
-		"findSOAPAction":         g.findSOAPAction,
-		"findServiceAddress":     g.findServiceAddress,
+		"packageName":            b.packageName,
+		"makePublic":             b.makePublicFn,
+		"findMessageType":        b.findMessageType,
+		"findSOAPAction":         b.findSOAPAction,
+		"findServiceAddress":     b.findServiceAddress,
+		"getXmlns":               b.getXmlns,
 	}
 
 	data := new(bytes.Buffer)
 
 	tmpl := template.Must(template.New("operations").Funcs(funcMap).Parse(templates.Operations))
 
-	err := tmpl.Execute(data, g.wsdl.PortTypes)
+	err := tmpl.Execute(data, b.wsdl.PortTypes)
 	if err != nil {
 		return nil, err
 	}
@@ -411,22 +409,22 @@ func (g *Builder) parseOperations() ([]byte, error) {
 	return data.Bytes(), nil
 }
 
-func (g *Builder) parseHeader() ([]byte, error) {
+func (b *Builder) parseHeader() ([]byte, error) {
 	funcMap := template.FuncMap{
 		"toGoType":               toGoType,
 		"stripNamespaceFromType": stripNamespaceFromType,
 		"replaceReservedWords":   replaceReservedWords,
 		"normalize":              normalize,
 		"comment":                comment,
-		"makePublic":             g.makePublicFn,
-		"findMessageType":        g.findMessageType,
+		"makePublic":             b.makePublicFn,
+		"findMessageType":        b.findMessageType,
 	}
 
 	data := new(bytes.Buffer)
 
 	tmpl := template.Must(template.New("header").Funcs(funcMap).Parse(templates.Header))
 
-	err := tmpl.Execute(data, g.pkg)
+	err := tmpl.Execute(data, b.pkg)
 	if err != nil {
 		return nil, err
 	}
@@ -434,17 +432,17 @@ func (g *Builder) parseHeader() ([]byte, error) {
 	return data.Bytes(), nil
 }
 
-func (g *Builder) packageName() string {
-	return g.pkg
+func (b *Builder) packageName() string {
+	return b.pkg
 }
 
-func (g *Builder) isAbstract(t string, checkParent bool) bool {
+func (b *Builder) isAbstract(t string, checkParent bool) bool {
 	t = stripNamespaceFromType(t)
 	if isBasicType(t) {
 		return true
 	}
 
-	for _, schema := range g.wsdl.Types.Schemas {
+	for _, schema := range b.wsdl.Types.Schemas {
 		for _, complexType := range schema.ComplexTypes {
 			if complexType.Name == t {
 				if checkParent {
@@ -472,21 +470,13 @@ func (g *Builder) isAbstract(t string, checkParent bool) bool {
 	return false
 }
 
-func (g *Builder) setHasXMLName(b bool) bool {
-	g.hasXMLName = b
-	return g.hasXMLName
-}
-func (g *Builder) getHasXMLName() bool {
-	return g.hasXMLName
-}
-
-func (g *Builder) isInnerBasicType(t string) bool {
+func (b *Builder) isInnerBasicType(t string) bool {
 	t = stripNamespaceFromType(t)
 	if isBasicType(t) {
 		return true
 	}
 
-	for _, schema := range g.wsdl.Types.Schemas {
+	for _, schema := range b.wsdl.Types.Schemas {
 		for _, simpleType := range schema.SimpleType {
 			if simpleType.Name == t {
 				return true
@@ -494,7 +484,7 @@ func (g *Builder) isInnerBasicType(t string) bool {
 		}
 	}
 
-	for _, schema := range g.wsdl.Types.Schemas {
+	for _, schema := range b.wsdl.Types.Schemas {
 		for _, complexType := range schema.ComplexTypes {
 			if complexType.Name == t && !complexType.Mixed && (len(complexType.Sequence) > 0 || len(complexType.Choice) > 0 || len(complexType.SequenceChoice) > 0 || complexType.Abstract) {
 				return true
@@ -505,10 +495,10 @@ func (g *Builder) isInnerBasicType(t string) bool {
 	return false
 }
 
-func (g *Builder) findMessageType(message string) string {
+func (b *Builder) findMessageType(message string) string {
 	message = stripNamespaceFromType(message)
 
-	for _, msg := range g.wsdl.Messages {
+	for _, msg := range b.wsdl.Messages {
 		if msg.Name != message {
 			continue
 		}
@@ -528,7 +518,7 @@ func (g *Builder) findMessageType(message string) string {
 
 		elRef := stripNamespaceFromType(part.Element)
 
-		for _, schema := range g.wsdl.Types.Schemas {
+		for _, schema := range b.wsdl.Types.Schemas {
 			for _, el := range schema.Elements {
 				if strings.EqualFold(elRef, el.Name) {
 					if el.Type != "" {
@@ -543,13 +533,34 @@ func (g *Builder) findMessageType(message string) string {
 	return ""
 }
 
-// Given a type, check if there's an Element with that type, and return its name.
-func (g *Builder) findNameByType(name string) string {
-	return NewXsdParser(nil, g.wsdl.Types.Schemas).findNameByType(name)
+func (b *Builder) getNSAlias(ns string) string {
+	for _, schema := range b.wsdl.Types.Schemas {
+		if schema.TargetNamespace == ns {
+			for alias, url := range schema.Xmlns {
+				if url == ns {
+					return alias + ":"
+				}
+			}
+		}
+	}
+	return ""
 }
 
-func (g *Builder) findSOAPAction(operation, portType string) string {
-	for _, binding := range g.wsdl.Binding {
+func getTypeNS(typeName string) string {
+	r := strings.Split(typeName, ":")
+	if len(r) == 2 && r[0] != "xs" {
+		return r[0] + ":"
+	}
+	return ""
+}
+
+// Given a type, check if there's an Element with that type, and return its name.
+func (b *Builder) findNameByType(name string, getNS bool) string {
+	return NewXsdParser(nil, b.wsdl.Types.Schemas).findNameByType(name, getNS)
+}
+
+func (b *Builder) findSOAPAction(operation, portType string) string {
+	for _, binding := range b.wsdl.Binding {
 		if strings.ToUpper(stripNamespaceFromType(binding.Type)) != strings.ToUpper(portType) {
 			continue
 		}
@@ -564,8 +575,8 @@ func (g *Builder) findSOAPAction(operation, portType string) string {
 	return ""
 }
 
-func (g *Builder) findServiceAddress(name string) string {
-	for _, service := range g.wsdl.Service {
+func (b *Builder) findServiceAddress(name string) string {
+	for _, service := range b.wsdl.Service {
 		for _, port := range service.Ports {
 			if port.Name == name {
 				return port.SOAPAddress.Location
@@ -574,6 +585,19 @@ func (g *Builder) findServiceAddress(name string) string {
 	}
 
 	return ""
+}
+
+func (b *Builder) getXmlns() map[string]string {
+	for alias, url := range b.wsdl.Xmlns {
+		if alias == "tns" {
+			for _, schema := range b.wsdl.Types.Schemas {
+				if schema.TargetNamespace == url {
+					return schema.Xmlns
+				}
+			}
+		}
+	}
+	return map[string]string{}
 }
 
 // replaceReservedWords Go reserved keywords to avoid compilation issues

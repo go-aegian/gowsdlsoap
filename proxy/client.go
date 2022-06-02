@@ -25,6 +25,7 @@ type Client struct {
 	opts        *Options
 	headers     []interface{}
 	attachments []soap.MIMEMultipartAttachment
+	xmlns       map[string]string
 }
 
 // NewClient creates new SOAP client instance
@@ -35,6 +36,11 @@ func NewClient(url string, opt ...Option) *Client {
 	}
 
 	return &Client{url: url, opts: &opts}
+}
+
+// SetXmlns sets the envelope namespaces
+func (s *Client) SetXmlns(ns map[string]string) {
+	s.xmlns = ns
 }
 
 // AddHeader adds envelope header
@@ -90,8 +96,11 @@ func (s *Client) CallWithFaultDetail(soapAction string, request, response interf
 func (s *Client) call(ctx context.Context, soapAction string, request, response interface{}, faultDetail soap.FaultError,
 	retAttachments *[]soap.MIMEMultipartAttachment) error {
 
-	soapRequest := soap.NewEnvelope()
-	defer LogXml("Request", soapRequest)
+	soapRequest := soap.NewEnvelope(s.xmlns)
+
+	if s.opts.LogRequests {
+		defer LogXml("Request", soapRequest)
+	}
 
 	if s.headers != nil && len(s.headers) > 0 {
 		soapRequest.Header = &soap.Header{Headers: s.headers}
@@ -188,14 +197,17 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 
 	// xml Decoder (used with and without MTOM) cannot handle namespace prefixes (yet),
 	// so use a namespace-less response envelope
-	soapResponse := soap.NewEnvelopeResponse()
+	soapResponse := soap.NewEnvelopeResponse(s.xmlns)
 	soapResponse.Body = soap.BodyResponse{
 		Content: response,
 		Fault: &soap.Fault{
 			Detail: faultDetail,
 		},
 	}
-	defer LogXml("Response", soapResponse)
+
+	if s.opts.LogResponses {
+		defer LogXml("Response", soapResponse)
+	}
 
 	mtomBoundary, err := getMtomHeader(res.Header.Get(soap.ContentTypeHeader))
 	if err != nil {

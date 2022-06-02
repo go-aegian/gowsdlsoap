@@ -7,11 +7,11 @@
                   xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
                   xmlns:t="http://schemas.microsoft.com/exchange/services/2006/types"
                   targetNamespace="http://schemas.microsoft.com/exchange/services/2006/messages"
-                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.xmlsoap.org/wsdl/soap/ namespaces/soap.xml http://schemas.xmlsoap.org/wsdl/ namespaces/wsdl.xml http://schemas.microsoft.com/exchange/services/2006/messages ./namespaces/messages.xsd http://schemas.microsoft.com/exchange/services/2006/types ./namespaces/types.xsd">
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.xmlsoap.org/wsdl/soap/ soap.xml http://schemas.xmlsoap.org/wsdl/ namespaces/wsdl.xml http://schemas.microsoft.com/exchange/services/2006/messages messages.xsd http://schemas.microsoft.com/exchange/services/2006/types ./namespaces/types.xsd">
     <wsdl:types>
         <xs:schema>
-            <xs:import namespace="http://schemas.microsoft.com/exchange/services/2006/messages" schemaLocation="namespaces/messages.xsd"/>
-            <xs:import namespace="http://schemas.microsoft.com/exchange/services/2006/types" schemaLocation="namespaces/types.xsd"/>
+            <xs:import namespace="http://schemas.microsoft.com/exchange/services/2006/messages" schemaLocation="messages.xsd"/>
+            <xs:import namespace="http://schemas.microsoft.com/exchange/services/2006/types" schemaLocation="types.xsd"/>
         </xs:schema>
     </wsdl:types>
     <wsdl:message name="FindAvailableMeetingTimesSoapIn">

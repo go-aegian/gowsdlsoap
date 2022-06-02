@@ -47,16 +47,12 @@ import (
 {{end}}
 
 {{define "Attributes"}}
-	{{ $hasXMLName := getHasXMLName }}
-    {{ $targetNamespace := getNamespace }}
 	{{range .}}
 		{{if .Doc}} {{.Doc | comment}} {{end}}
 		{{ if ne .Type "" }}
-			{{if eq $hasXMLName true}}
-				{{ normalize .Name | makeFieldPublic}} {{toGoType .Type false}} ` + "`" + `xml:"{{if eq (isInnerBasicType .Type) false}}{{$targetNamespace}} {{end}}{{.Name}},attr,omitempty" json:"{{.Name}},omitempty"` + "`" + `
-			{{else}}
-				{{ normalize .Name | makeFieldPublic}} {{toGoType .Type false}} ` + "`" + `xml:"{{if eq (isBasicType .Type) false}}{{$targetNamespace}} {{end}}{{.Name}},attr,omitempty" json:"{{.Name}},omitempty"` + "`" + `
-			{{end}}
+			{{$type := findNameByType .Name false}}
+			{{$namespace := getTypeNS $type}}
+			{{ normalize .Name | makeFieldPublic}} {{toGoType .Type false}} ` + "`" + `xml:"{{.Name}},attr,omitempty" json:"{{$namespace}}{{.Name}},omitempty"` + "`" + `
 		{{ else }}
 			{{ normalize .Name | makeFieldPublic}} string ` + "`" + `xml:"{{.Name}},attr,omitempty" json:"{{.Name}},omitempty"` + "`" + `
 		{{ end }}
@@ -69,14 +65,11 @@ import (
 {{end}}
 
 {{define "ComplexTypeInline"}}
-	{{ $targetNamespace := getNamespace }}
 	{{replaceReservedWords .Name | makePublic}} {{if eq .MaxOccurs "unbounded"}}[]{{end}}struct {
 	{{with .ComplexType}}
 		{{if ne .ComplexContent.Extension.Base ""}}
-			{{$hasXMLName := setHasXMLName false}}
 			{{template "ComplexContent" .ComplexContent}}
 		{{else if ne .SimpleContent.Extension.Base ""}}
-			{{$hasXMLName := setHasXMLName false}}
 			{{template "SimpleContent" .SimpleContent}}
 		{{else}}
 			{{template "Elements" .Sequence}}
@@ -91,7 +84,6 @@ import (
 
 {{define "Elements"}}
 	{{ $targetNamespace := getNamespace }}
-	{{ $hasXMLName := getHasXMLName }}
 	{{range .}}
 		{{if ne .Ref ""}}
 			{{stripNamespace .Ref | replaceReservedWords  | makePublic}} {{if eq .MaxOccurs "unbounded"}}[]{{end}}{{toGoType .Ref .Nillable }} ` + "`" + `xml:"{{.Ref | stripNamespace}},omitempty" json:"{{.Ref | stripNamespace}},omitempty"` + "`" + `
@@ -109,7 +101,8 @@ import (
 				{{end}}
 			{{else}}
 				{{if .Doc}} {{.Doc | comment}} {{end}}
-				{{replaceAttrReservedWords .Name | makeFieldPublic}} {{if eq .MaxOccurs "unbounded"}}[]{{end}}{{toGoType .Type .Nillable }} ` + "`" + `xml:"{{if and (eq $hasXMLName false) (eq (isBasicType .Type) false)}}{{$targetNamespace}} {{end}}{{.Name}},omitempty" json:"{{.Name}},omitempty"` + "`" + `
+				{{$namespace:=getNSAlias getNamespace}}
+				{{replaceAttrReservedWords .Name | makeFieldPublic}} {{if eq .MaxOccurs "unbounded"}}[]{{end}}{{toGoType .Type .Nillable }} ` + "`" + `xml:"{{$namespace}}{{.Name}},omitempty" json:"{{.Name}},omitempty"` + "`" + `
 			{{end}}
 		{{end}}
 	{{end}}
@@ -133,8 +126,12 @@ import (
 			{{/* ComplexTypeLocal */}}
 			{{with .ComplexType}}
 				type {{$typeName}} struct {
-					{{$hasXMLName := setHasXMLName true}}
-					XMLName xml.Name ` + "`xml:\"{{if eq (isInnerBasicType $typeName) false}}{{$targetNamespace}} {{end}}{{$name}}\"`" + `
+					{{$type := findNameByType .Name false}}
+					{{$namespace := getTypeNS $type}}
+					{{if eq $namespace ""}}
+						{{$namespace = getNSAlias $targetNamespace}}
+					{{end}}
+					XMLName xml.Name ` + "`xml:\"{{$namespace}}{{$name}}\"`" + `
 					{{if ne .ComplexContent.Extension.Base ""}}
 						{{template "ComplexContent" .ComplexContent}}
 					{{else if ne .SimpleContent.Extension.Base ""}}
@@ -212,12 +209,12 @@ import (
 			type {{$typeName}} string
 		{{else}}
 			type {{$typeName}} struct {
-				{{$type := findNameByType .Name}}
+				{{$type := findNameByType .Name false}}
+				{{$namespace := getTypeNS $type}}
 				{{$isAbstract := isAbstract $typeName false}}
-				{{$hasXMLName := and (ne .Name $type) (eq $isAbstract false)}}
-				{{$hasXMLName := setHasXMLName $hasXMLName}}
+				{{$hasXMLName := and (ne (printf "%s%s" $namespace .Name) $type) (eq $isAbstract false)}}
 				{{if $hasXMLName}}
-					XMLName xml.Name ` + "`xml:\"{{if eq (isInnerBasicType $typeName) false}}{{$targetNamespace}} {{end}}{{$type}}\"`" + `
+					XMLName xml.Name ` + "`xml:\"{{$type}}\"`" + `
 				{{end}}
 				{{if ne .ComplexContent.Extension.Base ""}}
 					{{template "ComplexContent" .ComplexContent}}
@@ -235,5 +232,4 @@ import (
 		{{end}}
 	{{end}}
 {{end}}
-
 `

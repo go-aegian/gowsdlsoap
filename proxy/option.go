@@ -19,6 +19,8 @@ type Options struct {
 	TlsHandshakeTimeout time.Duration
 	BasicAuth           *Credential
 	NtlmAuth            *DomainCredential
+	LogRequests         bool
+	LogResponses        bool
 }
 
 // Option allows to customize the default http client or

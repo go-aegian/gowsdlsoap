@@ -23,25 +23,25 @@
            id="types"
            elementFormDefault="qualified"
            targetNamespace="http://schemas.microsoft.com/exchange/services/2006/types">
-    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd" />
     <!--  SOAP header to indicate language for mailbox interaction -->
 
-    <!--  START:  Custom types that are missing from the original xsd so needs to be added here -->
+<!--  START:  Custom types that are missing from the original xsd so needs to be added here -->
     <xs:complexType name="nonNegativeInteger">
         <xs:simpleContent>
             <xs:extension base="xs:nonNegativeInteger">
-                <xs:anyAttribute namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+                <xs:anyAttribute namespace="http://schemas.xmlsoap.org/soap/envelope/" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
     <xs:complexType name="Language">
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:anyAttribute namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+                <xs:anyAttribute namespace="http://schemas.xmlsoap.org/soap/envelope/" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
-    <!-- END:   Custom types that are missing from the original xsd so needs to be added here -->
+<!-- END:   Custom types that are missing from the original xsd so needs to be added here -->
 
     <xs:complexType name="MailboxCultureType">
         <xs:simpleContent>
@@ -61,7 +61,7 @@
             <xs:element name="MarketplaceAssetId" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="Enabled" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
             <xs:element name="ConsentState" type="xs:string" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="Types" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Type" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="LicenseStatus" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="TrialExpirationDate" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
             <xs:element name="ProviderName" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -353,7 +353,7 @@
     <xs:complexType name="ReminderType">
         <xs:sequence>
             <xs:element minOccurs="1" maxOccurs="1" name="Subject" type="xs:string"/>
-            <xs:element minOccurs="0" maxOccurs="1" name="location" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="Location" type="xs:string"/>
             <xs:element minOccurs="1" maxOccurs="1" name="ReminderTime" type="xs:dateTime"/>
             <xs:element minOccurs="1" maxOccurs="1" name="StartDate" type="xs:dateTime"/>
             <xs:element minOccurs="1" maxOccurs="1" name="EndDate" type="xs:dateTime"/>
@@ -520,7 +520,7 @@
             <xs:enumeration value="calendar:EndTimeZoneId"/>
             <xs:enumeration value="calendar:IsAllDayEvent"/>
             <xs:enumeration value="calendar:LegacyFreeBusyStatus"/>
-            <xs:enumeration value="calendar:location"/>
+            <xs:enumeration value="calendar:Location"/>
             <xs:enumeration value="calendar:EnhancedLocation"/>
             <xs:enumeration value="calendar:When"/>
             <xs:enumeration value="calendar:IsMeeting"/>
@@ -907,7 +907,7 @@
             <xs:enumeration value="booking:CustomerId"/>
             <!-- Insight fields -->
             <xs:enumeration value="insight:InsightId"/>
-            <xs:enumeration value="insight:Types"/>
+            <xs:enumeration value="insight:Type"/>
             <xs:enumeration value="insight:StartTimeUtc"/>
             <xs:enumeration value="insight:EndTimeUtc"/>
             <xs:enumeration value="insight:Status"/>
@@ -1208,7 +1208,7 @@
     <!--  auto-conflict resolution levels  -->
     <xs:simpleType name="ConflictResolutionType">
         <xs:annotation>
-            <xs:documentation>Types of conflict resolution to attempt during update</xs:documentation>
+            <xs:documentation>Type of conflict resolution to attempt during update</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
             <xs:enumeration value="NeverOverwrite"/>
@@ -1561,7 +1561,7 @@
             <xs:enumeration value="High"/>
         </xs:restriction>
     </xs:simpleType>
-    <!--  Types of body returned  -->
+    <!--  Type of body returned  -->
     <xs:simpleType name="BodyTypeType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="HTML"/>
@@ -1847,7 +1847,7 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!--  Calendar Folder Types -->
+    <!--  Calendar Folder Type -->
     <xs:complexType name="CalendarFolderType">
         <xs:complexContent>
             <xs:extension base="t:BaseFolderType">
@@ -1858,7 +1858,7 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!--  Reminder Action Types  -->
+    <!--  Reminder Action Type  -->
     <xs:simpleType name="ReminderActionType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Dismiss"/>
@@ -1877,7 +1877,7 @@
             <xs:element name="ReminderItemAction" type="t:ReminderItemActionType" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
-    <!--  Contacts Folder Types -->
+    <!--  Contacts Folder Type -->
     <xs:complexType name="ContactsFolderType">
         <xs:complexContent>
             <xs:extension base="t:BaseFolderType">
@@ -1890,7 +1890,7 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!--  Search Folder Types -->
+    <!--  Search Folder Type -->
     <xs:complexType name="SearchFolderType">
         <xs:complexContent>
             <xs:extension base="t:FolderType">
@@ -1900,7 +1900,7 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    <!--  Tasks Folder Types -->
+    <!--  Tasks Folder Type -->
     <xs:complexType name="TasksFolderType">
         <xs:complexContent>
             <xs:extension base="t:FolderType"/>
@@ -1927,7 +1927,7 @@
     <!--  Item Service types.  -->
     <xs:complexType name="BaseItemIdType" abstract="true">
         <xs:annotation>
-            <xs:documentation>Abstract base type for item identifiers. Should never be used in web base calls</xs:documentation>
+            <xs:documentation>Abstract base type for item identifiers. Should never be used in web service calls</xs:documentation>
         </xs:annotation>
     </xs:complexType>
     <xs:element name="BaseItemId" type="t:BaseItemIdType"/>
@@ -2315,7 +2315,7 @@
             <xs:extension base="t:EntityType">
                 <xs:sequence>
                     <xs:element name="Attendees" type="t:ArrayOfEmailUsersType" minOccurs="0" maxOccurs="1"/>
-                    <xs:element name="location" type="xs:string" minOccurs="0"/>
+                    <xs:element name="Location" type="xs:string" minOccurs="0"/>
                     <xs:element name="Subject" type="xs:string" minOccurs="0"/>
                     <xs:element name="MeetingString" type="xs:string" minOccurs="0"/>
                     <xs:element name="StartTime" type="xs:dateTime" minOccurs="0"/>
@@ -2363,7 +2363,7 @@
         <xs:sequence>
             <xs:element name="OriginalPhoneString" type="xs:string" minOccurs="0"/>
             <xs:element name="PhoneString" type="xs:string" minOccurs="0"/>
-            <xs:element name="Types" type="xs:string" minOccurs="0"/>
+            <xs:element name="Type" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="ArrayOfPhoneEntitiesType">
@@ -2377,7 +2377,7 @@
                 <xs:sequence>
                     <xs:element name="OriginalPhoneString" type="xs:string" minOccurs="0"/>
                     <xs:element name="PhoneString" type="xs:string" minOccurs="0"/>
-                    <xs:element name="Types" type="xs:string" minOccurs="0"/>
+                    <xs:element name="Type" type="xs:string" minOccurs="0"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -2783,7 +2783,7 @@
     <xs:complexType name="PersonaPhoneNumberType">
         <xs:sequence>
             <xs:element name="Number" type="xs:string" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="Types" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="Type" type="xs:string" minOccurs="1" maxOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="PhoneNumberAttributedValueType">
@@ -2800,7 +2800,7 @@
             <xs:element name="Country" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="PostalCode" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="PostOfficeBox" type="xs:string" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="Types" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Type" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="Latitude" type="xs:double" minOccurs="0" maxOccurs="1"/>
             <xs:element name="Longitude" type="xs:double" minOccurs="0" maxOccurs="1"/>
             <xs:element name="Accuracy" type="xs:double" minOccurs="0" maxOccurs="1"/>
@@ -3002,7 +3002,7 @@
                     <xs:element name="Subject" type="xs:string" minOccurs="0" maxOccurs="1"/>
                     <xs:element name="StartUtcTicks" type="xs:long" minOccurs="0" maxOccurs="1"/>
                     <xs:element name="EndUtcTicks" type="xs:long" minOccurs="0" maxOccurs="1"/>
-                    <xs:element name="location" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="Location" type="xs:string" minOccurs="0" maxOccurs="1"/>
                     <xs:element name="Organizer" type="t:ProfileInsightValue" minOccurs="0" maxOccurs="1"/>
                     <xs:element name="Attendees" type="t:ArrayOfProfileInsightValue" minOccurs="0" maxOccurs="1"/>
                 </xs:sequence>
@@ -3194,7 +3194,7 @@
             <xs:element name="Title" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="Department" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="CompanyName" type="xs:string" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="location" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Location" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="EmailAddress" type="t:EmailAddressType" minOccurs="0" maxOccurs="1"/>
             <xs:element name="EmailAddresses" type="t:ArrayOfEmailAddressesType" minOccurs="0" maxOccurs="1"/>
             <xs:element name="PhoneNumber" type="t:PersonaPhoneNumberType" minOccurs="0" maxOccurs="1"/>
@@ -3310,7 +3310,7 @@
             <xs:element name="WeddingAnniversaries" type="t:ArrayOfStringAttributedValuesType" minOccurs="0"/>
             <!--  Values map to ContactSchema.Birthday -->
             <xs:element name="Birthdays" type="t:ArrayOfStringAttributedValuesType" minOccurs="0"/>
-            <!--  Values map to ContactSchema.location -->
+            <!--  Values map to ContactSchema.Location -->
             <xs:element name="Locations" type="t:ArrayOfStringAttributedValuesType" minOccurs="0"/>
             <xs:element name="InlineLinks" type="t:ArrayOfStringAttributedValuesType" minOccurs="0"/>
             <xs:element name="ItemLinkIds" type="t:ArrayOfStringArrayAttributedValuesType" minOccurs="0"/>
@@ -4442,7 +4442,7 @@
                     <xs:element name="OriginalStart" type="xs:dateTime" minOccurs="0"/>
                     <xs:element name="IsAllDayEvent" type="xs:boolean" minOccurs="0"/>
                     <xs:element name="LegacyFreeBusyStatus" type="t:LegacyFreeBusyType" minOccurs="0"/>
-                    <xs:element name="location" type="xs:string" minOccurs="0"/>
+                    <xs:element name="Location" type="xs:string" minOccurs="0"/>
                     <xs:element name="When" type="xs:string" minOccurs="0"/>
                     <xs:element name="IsMeeting" type="xs:boolean" minOccurs="0"/>
                     <xs:element name="IsCancelled" type="xs:boolean" minOccurs="0"/>
@@ -4520,7 +4520,7 @@
     <xs:complexType name="ChangeHighlightsType">
         <xs:sequence>
             <xs:element name="HasLocationChanged" type="xs:boolean" minOccurs="0"/>
-            <xs:element name="location" type="xs:string" minOccurs="0"/>
+            <xs:element name="Location" type="xs:string" minOccurs="0"/>
             <xs:element name="HasStartTimeChanged" type="xs:boolean" minOccurs="0"/>
             <xs:element name="Start" type="xs:dateTime" minOccurs="0"/>
             <xs:element name="HasEndTimeChanged" type="xs:boolean" minOccurs="0"/>
@@ -4542,7 +4542,7 @@
                     <xs:element name="OriginalStart" type="xs:dateTime" minOccurs="0"/>
                     <xs:element name="IsAllDayEvent" type="xs:boolean" minOccurs="0"/>
                     <xs:element name="LegacyFreeBusyStatus" type="t:LegacyFreeBusyType" minOccurs="0"/>
-                    <xs:element name="location" type="xs:string" minOccurs="0"/>
+                    <xs:element name="Location" type="xs:string" minOccurs="0"/>
                     <xs:element name="When" type="xs:string" minOccurs="0"/>
                     <xs:element name="IsMeeting" type="xs:boolean" minOccurs="0"/>
                     <xs:element name="IsCancelled" type="xs:boolean" minOccurs="0"/>
@@ -4595,7 +4595,7 @@
                 <xs:sequence>
                     <xs:element name="Start" type="xs:dateTime" minOccurs="0"/>
                     <xs:element name="End" type="xs:dateTime" minOccurs="0"/>
-                    <xs:element name="location" type="xs:string" minOccurs="0"/>
+                    <xs:element name="Location" type="xs:string" minOccurs="0"/>
                     <xs:element name="Recurrence" type="t:RecurrenceType" minOccurs="0"/>
                     <xs:element name="CalendarItemType" type="xs:string" minOccurs="0"/>
                     <xs:element name="ProposedStart" type="xs:dateTime" minOccurs="0"/>
@@ -4611,7 +4611,7 @@
                 <xs:sequence>
                     <xs:element name="Start" type="xs:dateTime" minOccurs="0"/>
                     <xs:element name="End" type="xs:dateTime" minOccurs="0"/>
-                    <xs:element name="location" type="xs:string" minOccurs="0"/>
+                    <xs:element name="Location" type="xs:string" minOccurs="0"/>
                     <xs:element name="Recurrence" type="t:RecurrenceType" minOccurs="0"/>
                     <xs:element name="CalendarItemType" type="xs:string" minOccurs="0"/>
                     <xs:element name="EnhancedLocation" type="t:EnhancedLocationType" minOccurs="0"/>
@@ -4772,14 +4772,14 @@
     </xs:complexType>
     <xs:complexType name="ContactUrlDictionaryEntryType">
         <xs:sequence>
-            <xs:element name="Types" type="t:ContactUrlKeyType" minOccurs="1"/>
+            <xs:element name="Type" type="t:ContactUrlKeyType" minOccurs="1"/>
             <xs:element name="Name" type="xs:string" minOccurs="0"/>
             <xs:element name="Address" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="AbchEmailAddressDictionaryEntryType">
         <xs:sequence>
-            <xs:element name="Types" type="t:AbchEmailAddressTypeType" minOccurs="1"/>
+            <xs:element name="Type" type="t:AbchEmailAddressTypeType" minOccurs="1"/>
             <xs:element name="Address" type="xs:string" minOccurs="1"/>
             <xs:element name="IsMessengerEnabled" type="xs:boolean" minOccurs="0"/>
             <xs:element name="Capabilities" type="xs:long" minOccurs="0"/>
@@ -4867,7 +4867,7 @@
             <xs:extension base="t:ItemType">
                 <xs:sequence>
                     <xs:element name="DisplayName" type="xs:string" minOccurs="0"/>
-                    <xs:element name="Types" type="t:RoleMemberTypeType" minOccurs="0"/>
+                    <xs:element name="Type" type="t:RoleMemberTypeType" minOccurs="0"/>
                     <xs:element name="MemberId" type="xs:string" minOccurs="0"/>
                 </xs:sequence>
             </xs:extension>
@@ -5610,7 +5610,7 @@
         <xs:sequence>
             <xs:element minOccurs="0" maxOccurs="1" name="ID" type="xs:string"/>
             <xs:element minOccurs="0" maxOccurs="1" name="Subject" type="xs:string"/>
-            <xs:element minOccurs="0" maxOccurs="1" name="location" type="xs:string"/>
+            <xs:element minOccurs="0" maxOccurs="1" name="Location" type="xs:string"/>
             <xs:element minOccurs="1" maxOccurs="1" name="IsMeeting" type="xs:boolean"/>
             <xs:element minOccurs="1" maxOccurs="1" name="IsRecurring" type="xs:boolean"/>
             <xs:element minOccurs="1" maxOccurs="1" name="IsException" type="xs:boolean"/>
@@ -5875,7 +5875,7 @@
     <xs:complexType name="ReminderMessageDataType">
         <xs:sequence>
             <xs:element name="ReminderText" type="xs:string" minOccurs="0"/>
-            <xs:element name="location" type="xs:string" minOccurs="0"/>
+            <xs:element name="Location" type="xs:string" minOccurs="0"/>
             <xs:element name="StartTime" type="xs:dateTime" minOccurs="0"/>
             <xs:element name="EndTime" type="xs:dateTime" minOccurs="0"/>
             <xs:element name="AssociatedCalendarItemId" type="t:ItemIdType" minOccurs="0"/>
@@ -6427,7 +6427,7 @@
     </xs:simpleType>
     <xs:complexType name="UserConfigurationDictionaryObjectType">
         <xs:sequence>
-            <xs:element name="Types" type="t:UserConfigurationDictionaryObjectTypesType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="Type" type="t:UserConfigurationDictionaryObjectTypesType" minOccurs="1" maxOccurs="1"/>
             <xs:element name="Value" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
@@ -7576,7 +7576,7 @@
             <xs:element name="DisplayName" type="xs:string" minOccurs="1" maxOccurs="1"/>
             <xs:element name="RetentionId" type="t:GuidType" minOccurs="1" maxOccurs="1"/>
             <xs:element name="RetentionPeriod" type="xs:int" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="Types" type="t:ElcFolderType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="Type" type="t:ElcFolderType" minOccurs="1" maxOccurs="1"/>
             <xs:element name="RetentionAction" type="t:RetentionActionType" minOccurs="1" maxOccurs="1"/>
             <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="IsVisible" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
@@ -7634,7 +7634,7 @@
         <xs:attribute name="IsMandatory" type="xs:boolean" use="optional"/>
         <xs:attribute name="IsEnabledByDefault" type="xs:boolean" use="optional"/>
         <xs:attribute name="ProvidedTo" type="t:ClientExtensionProvidedToType" use="optional"/>
-        <xs:attribute name="Types" type="t:ClientExtensionTypeType" use="optional"/>
+        <xs:attribute name="Type" type="t:ClientExtensionTypeType" use="optional"/>
         <xs:attribute name="Scope" type="t:ClientExtensionScopeType" use="optional"/>
         <xs:attribute name="MarketplaceAssetId" type="xs:string" use="optional"/>
         <xs:attribute name="MarketplaceContentMarket" type="xs:string" use="optional"/>
@@ -7780,7 +7780,7 @@
         <xs:sequence>
             <xs:element name="Id" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="ChangeKey" type="xs:string" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="Types" type="t:MeetingSpaceTypeEnum" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Type" type="t:MeetingSpaceTypeEnum" minOccurs="0" maxOccurs="1"/>
             <xs:element name="Version" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="JoinUrl" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="DateTimeCreated" type="xs:string" minOccurs="0" maxOccurs="1"/>
@@ -7834,7 +7834,7 @@
             <xs:element name="ContentLocation" type="xs:string" minOccurs="1" maxOccurs="1"/>
             <xs:element name="StartTime" type="xs:string" minOccurs="1" maxOccurs="1"/>
             <xs:element name="EndTime" type="xs:string" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="Types" type="t:ContentActivityType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="Type" type="t:ContentActivityType" minOccurs="1" maxOccurs="1"/>
             <xs:element name="MediaType" type="t:ContentActivityMediaType" minOccurs="1" maxOccurs="1"/>
             <xs:element name="Acl" type="t:ContentActivityAcl" minOccurs="1" maxOccurs="1"/>
         </xs:sequence>
@@ -8439,7 +8439,7 @@
         <xs:sequence>
             <xs:element name="ItemId" type="t:ItemIdType" minOccurs="1" maxOccurs="1"/>
             <xs:element name="InsightId" type="t:GuidType" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="Types" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Type" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="StartTimeUtc" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
             <xs:element name="EndTimeUtc" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
             <xs:element name="Status" type="t:InsightStatusType" minOccurs="0" maxOccurs="1"/>

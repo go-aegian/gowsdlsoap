@@ -20,6 +20,7 @@ type xsdParser struct {
 	mode              parseMode
 	typeName          string
 	foundElementName  string
+	namespace         string
 	typeUsageConflict bool
 }
 
@@ -113,9 +114,10 @@ func (t *xsdParser) findElementName(element *xsd.Element) {
 		return
 	}
 
-	if stripNamespaceFromType(element.Type) == t.typeName {
+	if stripNamespaceFromType(element.Type) == stripNamespaceFromType(t.typeName) {
 		if len(t.foundElementName) == 0 {
 			t.foundElementName = element.Name
+			t.setNamespace(element.Type)
 			return
 		}
 
@@ -124,6 +126,16 @@ func (t *xsdParser) findElementName(element *xsd.Element) {
 			t.typeUsageConflict = true
 			return
 		}
+	}
+}
+
+func (t *xsdParser) setNamespace(typeName string) {
+	r := strings.Split(typeName, ":")
+	t.namespace = ""
+	if len(r) == 2 && r[0] != "xs" {
+		t.namespace = r[0] + ":"
+		t.foundElementName = t.namespace + t.foundElementName
+		t.typeName = t.namespace + t.typeName
 	}
 }
 
@@ -165,7 +177,7 @@ func (t *xsdParser) initFindNameByType(name string) {
 	t.typeUsageConflict = false
 }
 
-func (t *xsdParser) findNameByType(name string) string {
+func (t *xsdParser) findNameByType(name string, getNS bool) string {
 	t.initFindNameByType(name)
 
 	for _, schema := range t.all {
@@ -180,6 +192,10 @@ func (t *xsdParser) findNameByType(name string) string {
 		for _, st := range schema.SimpleType {
 			t.parseSimpleType(st)
 		}
+	}
+
+	if getNS {
+		return t.namespace
 	}
 
 	// Return found element name if given type is used only once

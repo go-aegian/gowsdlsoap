@@ -2,14 +2,25 @@ package tests
 
 import (
 	"encoding/xml"
+	"fmt"
 	"strings"
 	"testing"
 
 	"github.com/go-aegian/gowsdlsoap/builder/soap"
 	"github.com/go-aegian/gowsdlsoap/proxy"
 	"github.com/go-aegian/gowsdlsoap/tests/wsdl-samples/ews/ewsApi"
+	"github.com/go-aegian/gowsdlsoap/tests/wsdl-samples/navblue/raidoApi"
 	"github.com/stretchr/testify/assert"
 )
+
+func TestMarshallXMLNS(t *testing.T) {
+	r := soap.NewEnvelope()
+	r.AddXmlns("xmlns:tns", "http://test")
+	r.Body.Content = raidoApi.Ping{}
+	bytes, err := xml.Marshal(&r)
+	assert.NoError(t, err)
+	fmt.Printf("%s", string(bytes))
+}
 
 func TestParseEwsCreateItemResponse(t *testing.T) {
 	responseXml := `<?xml version="1.0" encoding="utf-8"?>
