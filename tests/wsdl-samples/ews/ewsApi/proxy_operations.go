@@ -7,17 +7,6 @@ import (
 	"github.com/go-aegian/gowsdlsoap/proxy"
 )
 
-var envelopeXmlns map[string]string = map[string]string{
-
-	"m": "http://schemas.microsoft.com/exchange/services/2006/messages",
-
-	"t": "http://schemas.microsoft.com/exchange/services/2006/types",
-
-	"xs": "http://www.w3.org/2001/XMLSchema",
-
-	"xsi": "http://www.w3.org/2001/XMLSchema-instance",
-}
-
 type ExchangeServicePortType interface {
 	ResolveNames(request *ResolveNamesType) (*ResolveNamesResponseType, error)
 
@@ -513,7 +502,6 @@ type exchangeServicePortType struct {
 }
 
 func NewExchangeServicePortType(client *proxy.Client) ExchangeServicePortType {
-	client.SetXmlns(envelopeXmlns)
 	return &exchangeServicePortType{client: client}
 }
 

@@ -356,7 +356,6 @@ func (b *Builder) parseTypes() ([]byte, error) {
 		"makeFieldPublic":          makePublic,
 		"comment":                  comment,
 		"goString":                 goString,
-		"isInnerBasicType":         b.isInnerBasicType,
 		"isAbstract":               b.isAbstract,
 		"makePublic":               b.makePublicFn,
 		"findMessageType":          b.findMessageType,
@@ -367,8 +366,6 @@ func (b *Builder) parseTypes() ([]byte, error) {
 		"packageName":              b.packageName,
 		"getAliasNS":               getAliasNS,
 		"getNSFromType":            b.getNSFromType,
-		"getNSAlias":               b.getNSAlias,
-		"getNS":                    getNS,
 	}
 
 	data := new(bytes.Buffer)
@@ -395,7 +392,6 @@ func (b *Builder) parseOperations() ([]byte, error) {
 		"findMessageType":      b.findMessageType,
 		"findSOAPAction":       b.findSOAPAction,
 		"findServiceAddress":   b.findServiceAddress,
-		"getXmlns":             b.getXmlns,
 	}
 
 	data := new(bytes.Buffer)
@@ -471,31 +467,6 @@ func (b *Builder) isAbstract(t string, checkParent bool) bool {
 	return false
 }
 
-func (b *Builder) isInnerBasicType(t string) bool {
-	t = stripAliasNSFromType(t)
-	if isBasicType(t) {
-		return true
-	}
-
-	for _, schema := range b.wsdl.Types.Schemas {
-		for _, simpleType := range schema.SimpleType {
-			if simpleType.Name == t {
-				return true
-			}
-		}
-	}
-
-	for _, schema := range b.wsdl.Types.Schemas {
-		for _, complexType := range schema.ComplexTypes {
-			if complexType.Name == t && !complexType.Mixed && (len(complexType.Sequence) > 0 || len(complexType.Choice) > 0 || len(complexType.SequenceChoice) > 0 || complexType.Abstract) {
-				return true
-			}
-		}
-	}
-
-	return false
-}
-
 func (b *Builder) findMessageType(message string) string {
 	message = stripAliasNSFromType(message)
 
@@ -534,19 +505,6 @@ func (b *Builder) findMessageType(message string) string {
 	return ""
 }
 
-func (b *Builder) getNSAlias(ns string) string {
-	for _, schema := range b.wsdl.Types.Schemas {
-		if schema.TargetNamespace == ns {
-			for alias, url := range schema.Xmlns {
-				if url == ns {
-					return alias + ":"
-				}
-			}
-		}
-	}
-	return ""
-}
-
 func (b *Builder) getNSFromType(ns string) string {
 	aliasNS := getAliasNS(ns)
 
@@ -568,17 +526,9 @@ func getAliasNS(typeName string) string {
 	return ""
 }
 
-func getNS(ns string) string {
-	r := strings.Split(ns, ":")
-	if len(r) == 1 {
-		return r[0]
-	}
-	return r[1]
-}
-
 // Given a type, check if there's an Element with that type, and return its name.
-func (b *Builder) findNameByType(name string, getNS bool) string {
-	return NewXsdParser(nil, b.wsdl.Types.Schemas).findNameByType(name, getNS)
+func (b *Builder) findNameByType(name string) string {
+	return NewXsdParser(nil, b.wsdl.Types.Schemas).findNameByType(name)
 }
 
 func (b *Builder) findSOAPAction(operation, portType string) string {
@@ -607,19 +557,6 @@ func (b *Builder) findServiceAddress(name string) string {
 	}
 
 	return ""
-}
-
-func (b *Builder) getXmlns() map[string]string {
-	for alias, url := range b.wsdl.Xmlns {
-		if alias == "tns" {
-			for _, schema := range b.wsdl.Types.Schemas {
-				if schema.TargetNamespace == url {
-					return schema.Xmlns
-				}
-			}
-		}
-	}
-	return map[string]string{}
 }
 
 // replaceReservedWords Go reserved keywords to avoid compilation issues

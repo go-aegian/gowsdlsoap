@@ -10,12 +10,6 @@ import (
 	"github.com/go-aegian/gowsdlsoap/proxy"
 )
 
-var envelopeXmlns map[string]string = map[string]string {
-	{{range $alias, $url := getXmlns }}
-	  "{{$alias}}": "{{$url}}" ,
-	{{end}}
-}
-
 {{range .}}
 	{{$privateType := .Name | makePrivate}}
 	{{$exportType := .Name | makePublic}}
@@ -45,7 +39,6 @@ var envelopeXmlns map[string]string = map[string]string {
 	}
 
 	func New{{$exportType}}(client *proxy.Client) {{$exportType}} {
-		client.SetXmlns(envelopeXmlns)
 		return &{{$privateType}}{client: client}
 	}
 

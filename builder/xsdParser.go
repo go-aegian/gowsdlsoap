@@ -177,7 +177,7 @@ func (t *xsdParser) initFindNameByType(name string) {
 	t.typeUsageConflict = false
 }
 
-func (t *xsdParser) findNameByType(name string, getNS bool) string {
+func (t *xsdParser) findNameByType(name string) string {
 	t.initFindNameByType(name)
 
 	for _, schema := range t.all {
@@ -192,10 +192,6 @@ func (t *xsdParser) findNameByType(name string, getNS bool) string {
 		for _, st := range schema.SimpleType {
 			t.parseSimpleType(st)
 		}
-	}
-
-	if getNS {
-		return t.namespace
 	}
 
 	// Return found element name if given type is used only once

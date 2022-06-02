@@ -50,12 +50,12 @@ import (
 	{{range .}}
 		{{if .Doc}} {{.Doc | comment}} {{end}}
 		{{ if ne .Type "" }}
-			{{$type := findNameByType .Name false}}
-			{{$aliasNS := getNSFromType $type }}
-			{{if ne $aliasNS ""}}
-				{{$aliasNS = printf "%s " $aliasNS }}
+			{{$type := findNameByType .Name}}
+			{{$namespace := getNSFromType $type }}
+			{{if ne $namespace ""}}
+				{{$namespace = printf "%s " $namespace}}
 			{{end}}
-			{{ normalize .Name | makeFieldPublic}} {{toGoType .Type false}} ` + "`" + `xml:"{{.Name}},attr,omitempty" json:"{{$aliasNS}}{{.Name}},omitempty"` + "`" + `
+			{{ normalize .Name | makeFieldPublic}} {{toGoType .Type false}} ` + "`" + `xml:"{{.Name}},attr,omitempty" json:"{{$namespace}}{{.Name}},omitempty"` + "`" + `
 		{{ else }}
 			{{ normalize .Name | makeFieldPublic}} string ` + "`" + `xml:"{{.Name}},attr,omitempty" json:"{{.Name}},omitempty"` + "`" + `
 		{{ end }}
@@ -104,8 +104,8 @@ import (
 				{{end}}
 			{{else}}
 				{{if .Doc}} {{.Doc | comment}} {{end}}
-				{{$aliasNS:=printf "%s " getNamespace}}
-				{{replaceAttrReservedWords .Name | makeFieldPublic}} {{if eq .MaxOccurs "unbounded"}}[]{{end}}{{toGoType .Type .Nillable }} ` + "`" + `xml:"{{$aliasNS}}{{.Name}},omitempty" json:"{{.Name}},omitempty"` + "`" + `
+				{{$namespace:=printf "%s " getNamespace}}
+				{{replaceAttrReservedWords .Name | makeFieldPublic}} {{if eq .MaxOccurs "unbounded"}}[]{{end}}{{toGoType .Type .Nillable }} ` + "`" + `xml:"{{$namespace}}{{.Name}},omitempty" json:"{{.Name}},omitempty"` + "`" + `
 			{{end}}
 		{{end}}
 	{{end}}
@@ -129,12 +129,9 @@ import (
 			{{/* ComplexTypeLocal */}}
 			{{with .ComplexType}}
 				type {{$typeName}} struct {
-					{{$type := findNameByType .Name false}}
-					{{$aliasNS := getAliasNS $type}}
-					{{if eq $aliasNS ""}}
-						{{$aliasNS = printf "%s " $targetNamespace }}
-					{{end}}
-					XMLName xml.Name ` + "`xml:\"{{$aliasNS}}{{$name}}\"`" + `
+					{{$type := findNameByType .Name}}
+					{{$namespace := printf "%s " $targetNamespace }}
+					XMLName xml.Name ` + "`xml:\"{{$namespace}}{{$name}}\"`" + `
 					{{if ne .ComplexContent.Extension.Base ""}}
 						{{template "ComplexContent" .ComplexContent}}
 					{{else if ne .SimpleContent.Extension.Base ""}}
@@ -212,13 +209,18 @@ import (
 			type {{$typeName}} string
 		{{else}}
 			type {{$typeName}} struct {
-				{{$type := findNameByType .Name false}}
+
+				{{$type := findNameByType .Name}}
 				{{$type = stripAliasNSFromType $type}}
-				{{$aliasNS := getAliasNS $type}}
+
 				{{$ns := printf "%s " $targetNamespace}}
+
 				{{$isAbstract := isAbstract $typeName false}}
-				{{$fullType:=printf "%sType" $type}}
+
+				{{$fullType := printf "%sType" $type}}
+
 				{{$hasXMLName := and (eq .Name $fullType) (eq $isAbstract false)}}
+
 				{{if $hasXMLName}}
 					XMLName xml.Name ` + "`xml:\"{{$ns}}{{$type}}\"`" + `
 				{{end}}

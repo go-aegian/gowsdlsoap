@@ -25,7 +25,6 @@ type Client struct {
 	opts        *Options
 	headers     []interface{}
 	attachments []soap.MIMEMultipartAttachment
-	xmlns       map[string]string
 }
 
 // NewClient creates new SOAP client instance
@@ -36,11 +35,6 @@ func NewClient(url string, opt ...Option) *Client {
 	}
 
 	return &Client{url: url, opts: &opts}
-}
-
-// SetXmlns sets the envelope namespaces
-func (s *Client) SetXmlns(ns map[string]string) {
-	s.xmlns = ns
 }
 
 // AddHeader adds envelope header
@@ -97,13 +91,6 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 	retAttachments *[]soap.MIMEMultipartAttachment) error {
 
 	soapRequest := soap.NewEnvelope()
-	// soapRequest := soap.NewEnvelope(s.xmlns)
-
-	defer func(msg interface{}) {
-		if s.opts.LogRequests {
-			LogXml("Request", msg)
-		}
-	}(soapRequest)
 
 	if s.headers != nil && len(s.headers) > 0 {
 		soapRequest.Header = &soap.Header{Headers: s.headers}
@@ -191,6 +178,9 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 	}(res.Body)
 
 	if res.StatusCode >= 400 {
+		if s.opts.LogRequests {
+			LogXml("Request", soapRequest)
+		}
 		body, _ := ioutil.ReadAll(res.Body)
 		return &soap.HTTPError{
 			StatusCode:   res.StatusCode,
@@ -198,10 +188,7 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 		}
 	}
 
-	// xml Decoder (used with and without MTOM) cannot handle namespace prefixes (yet),
-	// so use a namespace-less response envelope
 	soapResponse := soap.NewEnvelopeResponse()
-	// soapResponse := soap.NewEnvelopeResponse(s.xmlns)
 	soapResponse.Body = soap.BodyResponse{
 		Content: response,
 		Fault: &soap.Fault{
@@ -214,6 +201,12 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 			LogXml("Response", msg)
 		}
 	}(soapResponse)
+
+	defer func(msg interface{}) {
+		if s.opts.LogRequests {
+			LogXml("Request", msg)
+		}
+	}(soapRequest)
 
 	mtomBoundary, err := getMtomHeader(res.Header.Get(soap.ContentTypeHeader))
 	if err != nil {
@@ -244,6 +237,7 @@ func (s *Client) call(ctx context.Context, soapAction string, request, response 
 	if soapResponse.Attachments != nil {
 		*retAttachments = soapResponse.Attachments
 	}
+
 	return soapResponse.Body.ErrorFromFault()
 }
 
