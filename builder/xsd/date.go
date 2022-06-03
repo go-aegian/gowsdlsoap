@@ -13,8 +13,8 @@ type Date struct {
 }
 
 // NewDate creates an object represent xsd:datetime object in Golang
-func NewDate(date time.Time, hasTz bool) Date {
-	return Date{innerDate: date, hasTz: hasTz}
+func NewDate(date time.Time, hasTz bool) *Date {
+	return &Date{innerDate: date, hasTz: hasTz}
 }
 
 // StripTz removes the TZ information from the date

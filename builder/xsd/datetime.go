@@ -18,8 +18,8 @@ type DateTime struct {
 }
 
 // NewDateTime creates an object representing xsd:datetime
-func NewDateTime(dt time.Time, hasTz bool) DateTime {
-	return DateTime{innerTime: dt, hasTz: hasTz}
+func NewDateTime(dt time.Time, hasTz bool) *DateTime {
+	return &DateTime{innerTime: dt, hasTz: hasTz}
 }
 
 // StripTz removes TZ information from the datetime

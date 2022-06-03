@@ -332,11 +332,11 @@ func Test_Client_FaultDefault(t *testing.T) {
 func TestXsdDateTime(t *testing.T) {
 	type TestDateTime struct {
 		XMLName  xml.Name `xml:"TestDateTime"`
-		Datetime xsd.DateTime
+		Datetime *xsd.DateTime
 	}
 	type TestAttrDateTime struct {
-		XMLName  xml.Name     `xml:"TestAttrDateTime"`
-		Datetime xsd.DateTime `xml:"Datetime,attr"`
+		XMLName  xml.Name      `xml:"TestAttrDateTime"`
+		Datetime *xsd.DateTime `xml:"Datetime,attr"`
 	}
 	{
 		// without nanosecond
@@ -417,12 +417,12 @@ func TestXsdDateTime(t *testing.T) {
 func TestXsdDate(t *testing.T) {
 	type TestDate struct {
 		XMLName xml.Name `xml:"TestDate"`
-		Date    xsd.Date
+		Date    *xsd.Date
 	}
 
 	type TestAttrDate struct {
-		XMLName xml.Name `xml:"TestAttrDate"`
-		Date    xsd.Date `xml:"Date,attr"`
+		XMLName xml.Name  `xml:"TestAttrDate"`
+		Date    *xsd.Date `xml:"Date,attr"`
 	}
 
 	// test marshalling
@@ -498,12 +498,12 @@ func TestXsdDate(t *testing.T) {
 func TestXsdTime(t *testing.T) {
 	type TestTime struct {
 		XMLName xml.Name `xml:"TestTime"`
-		Time    xsd.Time
+		Time    *xsd.Time
 	}
 
 	type TestAttrTime struct {
-		XMLName xml.Name `xml:"TestAttrTime"`
-		Time    xsd.Time `xml:"Time,attr"`
+		XMLName xml.Name  `xml:"TestAttrTime"`
+		Time    *xsd.Time `xml:"Time,attr"`
 	}
 
 	// test marshalling

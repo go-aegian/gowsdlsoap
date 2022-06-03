@@ -13,13 +13,13 @@ type Time struct {
 }
 
 // NewTime creates an object representing xsd:time in Golang
-func NewTime(hour int, min int, sec int, nanoseconds int, loc *time.Location) Time {
+func NewTime(hour int, min int, sec int, nanoseconds int, loc *time.Location) *Time {
 	realLoc := loc
 	if realLoc == nil {
 		realLoc = time.Local
 	}
 
-	return Time{InnerTime: time.Date(1951, 10, 22, hour, min, sec, nanoseconds, realLoc), hasTz: loc != nil}
+	return &Time{InnerTime: time.Date(1951, 10, 22, hour, min, sec, nanoseconds, realLoc), hasTz: loc != nil}
 }
 
 // MarshalXML implements xml.MarshalAttr on XSDTime
